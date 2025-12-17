@@ -1,0 +1,28 @@
+# .claudeignore template
+# add these items to the project leve .claudeignore
+
+# X-System framework internals (you interact via /x-* commands)
+.ignore/*
+.x-project/*
+
+# Backlog archive and completed (reduces noise)
+x-project/backlog/archive/
+x-project/backlog/completed/
+
+# Backup and temp files
+*.backup
+*.tmp
+*~
+.backup/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/

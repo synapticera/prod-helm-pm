@@ -1,0 +1,87 @@
+version: "1.0"
+title: Project Menu
+sections:
+  Build Workflow:
+    description: Build Workflow commands
+    items:
+      - name: Intake
+        action: cc-command
+        prompt: /x-intake
+        description: Intake new requirements
+      - name: Intake from File
+        action: cc-command
+        prompt: /x-intake-file
+        description: Intake from intake.md file
+      - name: Design
+        action: cc-command
+        prompt: /x-design
+        description: Build design for requirements
+      - name: Get Tasks
+        action: cc-command
+        prompt: /x-get-tasks
+        description: Decompose into backlog tasks
+      - name: Do Tasks
+        action: cc-command
+        prompt: /x-do-tasks
+        description: Implement open tasks
+      - name: QA
+        action: cc-command
+        prompt: /x-qa
+        description: Run QA checks
+      - name: Create PR
+        action: cc-command
+        prompt: /x-pr
+        description: Create pull request
+  Tasks & Backlog:
+    description: Tasks & Backlog commands
+    items:
+      - name: Add Task
+        action: cc-command
+        prompt: /x-add-task
+        description: Add task to backlog
+      - name: Archive Tasks
+        action: cc-command
+        prompt: /x-archive-tasks
+        description: Archive completed tasks
+      - name: Task Board
+        action: browser
+        url: https://backlog.synapticera.com
+        description: Open backlog board
+  Project Files:
+    description: Project Files commands
+    items:
+      - name: Project Data
+        action: edit-file
+        file: x-project/project-data.md
+        description: Project metadata
+      - name: Project Notes
+        action: edit-file
+        file: x-project/project-notes.md
+        description: Project notes
+      - name: Master Spec
+        action: edit-file
+        file: x-project/master-spec.md
+        description: Master specification
+      - name: Master State
+        action: edit-file
+        file: x-project/master-state.md
+        description: Current project state
+      - name: CLAUDE.md
+        action: edit-file
+        file: CLAUDE.md
+        description: Workflow configuration
+  Learning:
+    description: Learning commands
+    items:
+      - name: Learn Session
+        action: cc-command
+        prompt: /x-learn-session
+        description: Start a learning session
+      - name: Learn Last
+        action: cc-command
+        prompt: /x-learn-last
+        description: Review last learning session
+      - name: Learn Review
+        action: cc-command
+        prompt: /x-learn-review
+        description: Review and summarize recent learning sessions
