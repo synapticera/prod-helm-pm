@@ -1,0 +1,31 @@
+{
+  "title": "Helm by Synaptic - Investor Presentation",
+  "date": "2026-01-05T23:26:23.237Z",
+  "slides": 15,
+  "format": "HTML",
+  "branding": {
+    "colors": {
+      "darkNavy": "#07253D",
+      "cyan": "#01A9DB",
+      "orange": "#FB4100",
+      "white": "#FFFFFF",
+      "gray": "#44546A",
+      "lightGray": "#E7E6E6"
+    },
+    "fonts": {
+      "primary": "Arial",
+      "sizes": {
+        "title": "48px",
+        "subtitle": "28px",
+        "header": "24px",
+        "body": "14px"
+      }
+    },
+    "company": "Helm by Synaptic"
+  },
+  "files": {
+    "interactive": "helm-deck.html",
+    "printReady": "helm-deck-print.html",
+    "assets": "../design-assets/"
+  }
+}
