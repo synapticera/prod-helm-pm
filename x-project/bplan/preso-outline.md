@@ -298,6 +298,13 @@
 - [To fill in: Product usage metrics]
 - [To fill in: NPS or customer satisfaction scores]
 
+✅ **Product Demos & Prototypes:**
+- ✅ **Radar UI Prototype** - Interactive visualization showing real-time decision patterns across service operations
+  - Demonstrates Mine module capability: Capturing decision traces at scale
+  - Visual representation of decision health, patterns, anomalies
+  - Compelling for investors: Shows "decision data" as real product capability
+  - Use case: Open presentation with live radar demo showing decision landscape
+
 ✅ **Team & Credentials:**
 - [To fill in: Founding team expertise]
 - [To fill in: Previous exits or relevant experience]
@@ -506,6 +513,59 @@ We didn't invent this observation. Here's what market leaders are saying RIGHT N
 
 ---
 
+### Using the Radar UI Prototype in Your Pitch
+
+The radar UI is a powerful demonstration tool that makes "decision intelligence" concrete:
+
+#### **What the Radar Shows**
+- Real-time decision patterns across the service operation
+- Decision health/anomalies (what's working, what's broken)
+- Decision types and frequency
+- Patterns that would be invisible in traditional monitoring
+- Concrete visual proof that "decision data" exists and is valuable
+
+#### **How to Use It in the Pitch**
+
+**Opening Hook (First 5 minutes):**
+- Start with positioning: "Decision Intelligence Platform for Customer Service"
+- Transition to demo: "Let me show you what decision data looks like when you capture it at scale"
+- Pull up radar UI showing real decision patterns from customer service operation
+- **Effect**: Moves from abstract ("decision traces") to visceral ("here's actual decision data")
+
+**During Market Problem Section:**
+- Reference the radar: "This is what companies can't see without Helm"
+- Show how traditional monitoring misses decision patterns
+- Ask: "How would you course-correct agents if you couldn't see this?"
+- **Effect**: Demonstrates that the problem is real and visible
+
+**During Solution Section:**
+- Position radar as Mine module output: "Mine captures this automatically"
+- Show how the radar would guide Design and Manage decisions
+- "This is your decision landscape. From here, you design policies."
+- **Effect**: Shows product is real, not theoretical
+
+#### **Demo Tips**
+
+✅ **Make it interactive**: Let investors hover/click to see decision details
+✅ **Use real customer data**: If possible, show actual customer service patterns
+✅ **Narrate the pattern**: "See this spike in refund decisions? That's your governance boundary."
+✅ **Connect to business**: "These 200 decisions per day are costing you $X per wrong decision. That's why governance matters."
+✅ **Show the moat**: "This data is your competitive advantage. The more decisions you capture, the better your recommendations get."
+
+#### **What Not to Do**
+
+❌ Don't get lost in technical details during the demo
+❌ Don't assume investors understand "decision traces" without the visual
+❌ Don't spend more than 2-3 minutes on the demo (keep momentum for the rest of pitch)
+❌ Don't show a demo that's clearly fake/synthetic (use real data when possible)
+
+#### **Transition from Demo Back to Pitch**
+
+After demo:
+> "What you just saw is Mine. The Mine module captures your decision landscape automatically. From here, Design helps you build policies, Manage ensures agents follow them, and Monitor drives continuous improvement. This is the infrastructure that separates winners from those wasting 90% of their AI opportunity."
+
+---
+
 ### Memorable Quotes (Use in Conversation)
 
 - "History doesn't repeat, but it rhymes. Vibes coding was the last big wave; this is the next."
@@ -513,6 +573,7 @@ We didn't invent this observation. Here's what market leaders are saying RIGHT N
 - "When VCs and analysts start writing about what you've been building, the market is ready."
 - "The real competition isn't getting here first; it's owning the narrative before others catch up."
 - **"We don't have to convince anyone this is real. Our customers are asking for it, we see it happening in our own products, and Ed Sim is writing about it. Three independent sources all pointing to the same answer."**
+- **"This is decision data. This is what you need to govern agents at scale. This is Helm."** (After radar demo)
 
 ---
 
