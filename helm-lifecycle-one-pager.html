@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Executive Function Lifecycle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #07253D 0%, #0a3a5a 100%);
+            color: #44546A;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #01A9DB;
+            font-weight: 500;
+        }
+
+        /* Main lifecycle flow */
+        .lifecycle-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-bottom: 100px;
+            position: relative;
+        }
+
+        /* Connecting line */
+        .lifecycle-container::before {
+            content: '';
+            position: absolute;
+            top: 120px;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: linear-gradient(to right, #01A9DB 0%, #01A9DB 80%, transparent 100%);
+            z-index: 0;
+            animation: expandWidth 0.8s ease-out 0.3s forwards;
+            transform-origin: left;
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .stage {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .stage:nth-child(1) { animation-delay: 0.1s; }
+        .stage:nth-child(2) { animation-delay: 0.2s; }
+        .stage:nth-child(3) { animation-delay: 0.3s; }
+        .stage:nth-child(4) { animation-delay: 0.4s; }
+        .stage:nth-child(5) { animation-delay: 0.5s; }
+
+        .stage-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #01A9DB;
+            border-radius: 50%;
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(1, 169, 219, 0.3);
+        }
+
+        .stage-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stage-subtitle {
+            font-size: 13px;
+            color: #01A9DB;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .stage-description {
+            font-size: 14px;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .stage-question {
+            background: rgba(1, 169, 219, 0.1);
+            border-left: 3px solid #01A9DB;
+            padding: 12px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #FFFFFF;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .stage-helm {
+            font-size: 12px;
+            color: #FB4100;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Consequence section */
+        .consequence-section {
+            margin-bottom: 100px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .consequence-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .consequence-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(1, 169, 219, 0.3);
+            border-radius: 8px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .consequence-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(1, 169, 219, 0.6);
+            transform: translateY(-4px);
+        }
+
+        .consequence-card.skip {
+            border-left: 4px solid #FB4100;
+        }
+
+        .consequence-card.success {
+            border-left: 4px solid #01A9DB;
+        }
+
+        .consequence-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .consequence-icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        .consequence-label {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .consequence-card.skip .consequence-label {
+            color: #FB4100;
+        }
+
+        .consequence-card.success .consequence-label {
+            color: #01A9DB;
+        }
+
+        .consequence-items {
+            list-style: none;
+        }
+
+        .consequence-items li {
+            font-size: 14px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .consequence-items li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+        }
+
+        .consequence-card.skip .consequence-items li::before {
+            color: #FB4100;
+        }
+
+        .consequence-card.success .consequence-items li::before {
+            color: #01A9DB;
+        }
+
+        /* Success path section */
+        .success-path {
+            background: linear-gradient(135deg, rgba(1, 169, 219, 0.1) 0%, rgba(251, 65, 0, 0.05) 100%);
+            border: 2px solid #01A9DB;
+            border-radius: 12px;
+            padding: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .success-path h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .success-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 32px;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #01A9DB;
+            margin-bottom: 8px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Footer callout */
+        .footer-callout {
+            background: rgba(251, 65, 0, 0.15);
+            border: 2px solid #FB4100;
+            border-radius: 8px;
+            padding: 32px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+
+        .footer-callout p {
+            font-size: 18px;
+            color: #FFFFFF;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .footer-callout .highlight {
+            color: #FB4100;
+            font-weight: 700;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .lifecycle-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+
+            .lifecycle-container::before {
+                display: none;
+            }
+
+            .container {
+                padding: 40px 24px;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .success-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .lifecycle-container {
+                grid-template-columns: 1fr;
+            }
+
+            .consequence-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 32px 20px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .success-path {
+                padding: 32px;
+            }
+
+            .success-path h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Helm Executive Function Lifecycle</h1>
+            <p>The 5-Stage Framework for Successful Agent Deployment</p>
+        </div>
+
+        <!-- Lifecycle Stages -->
+        <div class="lifecycle-container">
+            <!-- Stage 1: Understand -->
+            <div class="stage">
+                <div class="stage-number">1</div>
+                <div class="stage-title">Understand</div>
+                <div class="stage-subtitle">Current State</div>
+                <div class="stage-description">
+                    Capture decisions being made today—patterns, exceptions, outcomes, and context.
+                </div>
+                <div class="stage-question">
+                    "What decisions are we actually making right now?"
+                </div>
+                <div class="stage-helm">🔍 Mine Module</div>
+            </div>
+
+            <!-- Stage 2: Plan -->
+            <div class="stage">
+                <div class="stage-number">2</div>
+                <div class="stage-title">Plan</div>
+                <div class="stage-subtitle">Agent Design</div>
+                <div class="stage-description">
+                    Design which decisions agents should own, what policies govern them, what context they need.
+                </div>
+                <div class="stage-question">
+                    "What should agents decide vs. what stays human?"
+                </div>
+                <div class="stage-helm">📐 Design Module</div>
+            </div>
+
+            <!-- Stage 3: Sell -->
+            <div class="stage">
+                <div class="stage-number">3</div>
+                <div class="stage-title">Sell</div>
+                <div class="stage-subtitle">Stakeholder Consensus</div>
+                <div class="stage-description">
+                    Build buy-in from service leaders, compliance, frontline teams, and executives with transparency.
+                </div>
+                <div class="stage-question">
+                    "Who's bought in? Who has concerns?"
+                </div>
+                <div class="stage-helm">🤝 Design Transparency</div>
+            </div>
+
+            <!-- Stage 4: Execute -->
+            <div class="stage">
+                <div class="stage-number">4</div>
+                <div class="stage-title">Execute</div>
+                <div class="stage-subtitle">Deployment & Governance</div>
+                <div class="stage-description">
+                    Deploy agents, monitor they follow policies, log every decision with full context and governance.
+                </div>
+                <div class="stage-question">
+                    "Are agents following the plan? Is every decision auditable?"
+                </div>
+                <div class="stage-helm">⚙️ Manage Module</div>
+            </div>
+
+            <!-- Stage 5: Monitor -->
+            <div class="stage">
+                <div class="stage-number">5</div>
+                <div class="stage-title">Monitor & Correct</div>
+                <div class="stage-subtitle">Continuous Improvement</div>
+                <div class="stage-description">
+                    Track agent performance, identify patterns in failures, adjust policies, build feedback loops.
+                </div>
+                <div class="stage-question">
+                    "Are agents delivering intended outcomes? What needs adjustment?"
+                </div>
+                <div class="stage-helm">📊 Monitor Module</div>
+            </div>
+        </div>
+
+        <!-- What Happens When You Skip -->
+        <div class="consequence-section">
+            <h2 class="section-title">What Happens When You Skip Stages</h2>
+
+            <div class="consequence-grid">
+                <!-- Failure Path -->
+                <div class="consequence-card skip">
+                    <div class="consequence-header">
+                        <span class="consequence-icon">❌</span>
+                        <div class="consequence-label">95% Failure Path</div>
+                    </div>
+                    <div class="consequence-subtitle" style="color: #FB4100; font-size: 12px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase;">Skip 1→3, Jump to Execute</div>
+                    <ul class="consequence-items">
+                        <li>Build agents without understanding current decisions</li>
+                        <li>Deploy without stakeholder buy-in</li>
+                        <li>Frontline teams reject agents they weren't sold on</li>
+                        <li>No governance layer—agents operate in chaos</li>
+                        <li>Can't audit decisions → compliance fails</li>
+                        <li>33% fail outright; 30% create parallel functions</li>
+                        <li>Capture only 10-20% of productivity potential</li>
+                    </ul>
+                </div>
+
+                <!-- Success Path -->
+                <div class="consequence-card success">
+                    <div class="consequence-header">
+                        <span class="consequence-icon">✅</span>
+                        <div class="consequence-label">5-7x Better Outcomes</div>
+                    </div>
+                    <div class="consequence-subtitle" style="color: #01A9DB; font-size: 12px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase;">Execute Full Lifecycle</div>
+                    <ul class="consequence-items">
+                        <li>Understand current decisions before automating them</li>
+                        <li>Design agents with clear intent and boundaries</li>
+                        <li>Get team buy-in before deploying</li>
+                        <li>Execute with full governance and control</li>
+                        <li>Every decision is auditable with full context</li>
+                        <li>Continuous feedback loops improve outcomes</li>
+                        <li>Capture 5-7x better productivity gains</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Path Metrics -->
+        <div class="success-path">
+            <h3>Companies Executing the Full Lifecycle See:</h3>
+            <div class="success-metrics">
+                <div class="metric">
+                    <div class="metric-value">5-7x</div>
+                    <div class="metric-label">Better Outcomes vs. Ad-Hoc Deployment</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Decision Auditability & Governance</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">95%+</div>
+                    <div class="metric-label">Stakeholder Adoption & Trust</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Callout -->
+        <div class="footer-callout">
+            <p>The constraint isn't building agents.</p>
+            <p><span class="highlight">The constraint is managing them successfully.</span></p>
+            <p style="margin-top: 20px; font-size: 14px; color: #CCCCCC;">Helm provides the platform for the complete executive function lifecycle—turning agent deployment from a 95% failure rate into a strategic advantage.</p>
+        </div>
+    </div>
+</body>
+</html>
