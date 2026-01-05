@@ -6,9 +6,11 @@
 
 ## Core Positioning Statement
 
-**Helm is the Decision Intelligence Platform for Customer Service.**
+**Helm is the Executive Agent for Service Leaders.**
 
-We provide the infrastructure that enables companies to understand current operations, plan agent decision-making, build stakeholder consensus, execute with governance, and continuously improve—the complete executive function lifecycle for successful AI agent deployment.
+We provide the executive function layer that enables service leaders to understand current operations, plan agent integration, execute with governance, and continuously improve—separating winners (5-7x productivity gains) from those wasting 90% of their opportunity.
+
+**Supporting Technical Language**: Built on Decision Intelligence infrastructure (decision traces, policy enforcement, continuous learning) that makes safe, auditable, scalable agent deployment possible.
 
 ---
 
@@ -60,9 +62,9 @@ We provide the infrastructure that enables companies to understand current opera
 5. **Economics**:
    - **Immediate TAM**: Every company pursuing the $1T productivity opportunity needs this
    - **Defensible Moat**: Decision trace data becomes competitive advantage—more customers = better precedent library = stronger recommendations
-   - **Expansion Path**: Start in customer service (largest AI deployment use case), expand to finance, operations, HR—each $100B+ market
-   - **Analyst Alignment**: First to claim "Decision Intelligence for Customer Service" category; can own "Decision Intelligence" across verticals
-   - **Regulatory Tailwind**: EU AI Act requires "meaningful human review" and transparent decision lineage—Helm's governance is native compliance
+   - **Expansion Path**: Start with service leaders in customer service (largest, highest-ROI AI use case), expand to finance, operations, HR executives—each $100B+ market
+   - **Category Ownership**: First to claim "Executive Agent" category (what the market will buy); Decision Intelligence is the underlying technical foundation
+   - **Regulatory Tailwind**: EU AI Act requires "meaningful human review" and transparent decision lineage—Helm's Decision Intelligence infrastructure is native compliance
 
 **Closing**:
 > "2026 is when productivity through AI becomes mainstream—and the failure crisis becomes visible. Those that execute the full Understand → Envision → Execute lifecycle win 5-7x better productivity outcomes. Helm provides the foundational infrastructure that separates winners from those wasting 90% of their productivity opportunity. This is table stakes infrastructure for the AI-driven enterprise."
@@ -71,13 +73,15 @@ We provide the infrastructure that enables companies to understand current opera
 
 ### Entry Point 3: For Analysts / Industry
 **Lead with**: Category Definition
-**Hook**: "Decision Intelligence is emerging as infrastructure, just like databases did for data-driven software."
+**Hook**: "Everyone will eventually have personal agents. The question is who defines that category first."
 
 **The Narrative**:
-- **2026 Inflection**: Market moving from "agent adoption" to "agent maturity"
-- **What's Missing**: Companies have agent capability; they lack decision infrastructure (decision traces, context graphs, governance)
-- **The Category**: Decision Intelligence = infrastructure for HOW agents should decide
-- **Helm's Role**: Pioneering "Decision Intelligence for Customer Service" category
+- **2026 Inflection**: Market moving from "agent adoption" to "agent maturity" and "agent management"
+- **What's Missing**: Companies have agent capability; they lack executive function infrastructure (understanding, planning, stakeholder consensus, execution, monitoring)
+- **The Category**: "Executive Agent" for knowledge workers (starting with executives/service leaders)
+- **Helm's Role**: Pioneering "Executive Agent for Service Leaders" category—underpinned by Decision Intelligence infrastructure
+- **Analyst Opportunity**: First mover in "Agent Management" or "Executive Agent" category definition = analyst coverage opportunity
+- **Technical Foundation**: What Gartner calls Decision Intelligence, Forrester calls Agent Control Planes, we implement as Executive Agent infrastructure
 - **Market Implication**: Mirrors how databases became mandatory for data applications, CRM for sales, PM tools for product development
 
 **Key Stats to Reference**:
