@@ -12,6 +12,11 @@ This directory contains Helm's strategic positioning, business planning, and inv
 - **`preso-outline.md`** - Investor presentation outline. Complete 10+ slide structure with presenter notes, market-first approach, financial projections, and vibes coding narrative.
 - **`2026-01-03-category-brand-comparison.md`** - Strategic analysis comparing positioning candidates (Helm vs. EA2 vs. Decision Intelligence for CS).
 
+**EU AI Act Strategic Opportunity Documents** (ready for leadership decision):
+- **`helm-eu-ai-act-strategy-selector.html`** - Interactive visual decision framework showing three strategic paths (Aggressive Compliance, Balanced Compliance+Strategy, Productivity-Only) with timeline, audience, messaging, TAM, and pros/cons. Includes head-to-head comparison table and decision guidance.
+- **`docs/helm-compliance-messaging-playbook.md`** - Ready-to-activate messaging variants for compliance-focused GTM campaigns. Organized by path, phase, and audience type with subject lines, email openings, landing page copy, and implementation checklists.
+- **`docs/helm-eu-ai-act-implementation-roadmap.md`** - Month-by-month execution plan for each strategic path. Includes messaging & marketing, sales execution, analyst engagement, product preparation, metrics, risks, and go/no-go checkpoints.
+
 ---
 
 ## 📁 Subdirectories
@@ -72,6 +77,30 @@ This directory contains Helm's strategic positioning, business planning, and inv
 1. Start with `docs/helm-messaging-guide.md` (Analyst section)
 2. Reference `helm-positioning-master.md` (Emerging Category section)
 3. Show competitive positioning materials
+
+### For EU AI Act Strategic Decision
+1. Open `helm-eu-ai-act-strategy-selector.html` in browser (visual framework with three paths)
+2. Review `HELM-EU-AI-ACT-OPPORTUNITIES.md` (detailed market analysis and opportunity sizing)
+3. Reference `docs/helm-eu-ai-act-implementation-roadmap.md` (execution plan for chosen path)
+4. Use `docs/helm-compliance-messaging-playbook.md` (messaging ready to activate)
+
+---
+
+## 🎯 EU AI Act Compliance Opportunity (August 2, 2026)
+
+**The Market Inflection**: EU AI Act full compliance requirements become mandatory August 2, 2026. This creates a unique regulatory inflection that Helm can capitalize on.
+
+**Three Strategic Paths**:
+1. **Aggressive Compliance Focus** (€500M-1B in 6 months) - Go all-in on compliance market
+2. **Balanced Compliance + Strategy** (€900M-1B + €11B expansion) - RECOMMENDED - Capture both compliance urgency and long-term expansion opportunity
+3. **Productivity-Only** (€100-200M) - Ignore compliance wave, stay focused on productivity
+
+**Status**: Market research complete. Leadership decision required to activate GTM strategy.
+
+**Key Documents**:
+- `helm-eu-ai-act-strategy-selector.html` - Visual comparison of three paths (open in browser)
+- `HELM-EU-AI-ACT-OPPORTUNITIES.md` (in parent bplan directory) - Detailed analysis
+- `x-project/reference/market-research/2026-01-05-eu-ai-act-governance-requirements.md` - Complete compliance research
 
 ---
 
