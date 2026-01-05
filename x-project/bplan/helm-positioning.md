@@ -208,6 +208,59 @@ Companies can deploy agents. But they can't easily execute the full lifecycle:
 
 Without Helm (or something like it), companies attempt 1-2 stages and fail. With Helm, they can execute the full lifecycle—which is why they actually succeed instead of joining the 95% failure rate.
 
+#### The Strategic Principle: Attack the NEXT Constraint, Not the Current One
+
+**The Opportunity Gap**: Most companies solve the current constraint. Winners attack the *next* constraint before it becomes the bottleneck.
+
+**How This Shows Up in Practice**:
+
+**Mistake: Solving the current constraint**
+- Current constraint: "Can we build agents?" → Hundreds of vendors build agents
+- Result: Commodity market, race to the bottom, no differentiation
+- Companies doing this: Every foundation model provider, agent framework, LLM fine-tuning company
+
+**Opportunity: Attacking the next constraint**
+- Next constraint: "Can we successfully deploy and manage agents?" → Very few vendors
+- Result: Market leadership, defensible positioning, high margins
+- Companies doing this: Helm
+
+**The Pattern Repeats Across Ecosystems**:
+
+1. **Email (1990s)**
+   - Current constraint: "Can we send digital messages?" → Sendmail, Exchange commoditized
+   - Next constraint: "How do we organize, search, prioritize messages?" → Gmail captured the value
+
+2. **Software Development (2000s-2010s)**
+   - Current constraint: "Can we write and deploy code?" → Solved by version control, CI/CD
+   - Next constraint: "What should we build and why?" → Jira, product management tools captured the value
+
+3. **Cloud Infrastructure (2010s-2020s)**
+   - Current constraint: "Can we provision compute?" → AWS commoditized
+   - Next constraint: "How do we optimize costs and manage complexity?" → Tools like Datadog, PagerDuty, cost optimization platforms captured the value
+
+4. **AI Agents (2025-2026)**
+   - Current constraint: "Can we build agents?" → Claude, GPT, open models commoditized
+   - Next constraint: "How do we successfully manage and deploy agents?" → This is where Helm wins
+   - Future constraint (2027+): "How do we coordinate and orchestrate agents at scale?" (someone else will own this)
+
+**Why Constraint-Hunting Wins**:
+
+1. **Timing**: You enter before the market realizes it's a constraint
+2. **Defensibility**: You're solving something nobody else is focused on yet
+3. **Margins**: No competitor yet, so no race to bottom
+4. **First-Mover Category**: You define the category before anyone else claims it
+5. **Network Effects**: Constraint-solvers accumulate data/insights that competitors can't replicate
+
+**The Competitive Trap**:
+Companies making agents are competing in a market that will be commoditized. We're competing in a market that's emerging. Their margin is declining. Ours is expanding.
+
+**Strategic Implication for Helm's Roadmap**:
+
+This principle should guide what we build:
+- ✅ **Build**: Things that solve the executive function lifecycle constraint (Understand → Plan → Sell → Execute → Monitor/Correct)
+- ❌ **Don't build**: Better agents, faster models, new LLM capabilities (others are doing this, we'd lose in commodity market)
+- 👁️ **Watch**: What's the constraint AFTER executive function becomes solved? (Likely: agent orchestration and coordination at scale)
+
 ---
 
 ## The Emerging Category
