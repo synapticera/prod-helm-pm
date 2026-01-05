@@ -40,6 +40,7 @@
 - 150,000+ SMB companies + 8,000+ enterprise companies = 158,000 total addressable
 - Customer service is highest ROI AI use case (cost per contact, CSAT improvement)
 - Decision infrastructure need is acute and urgent (33% of deployments failing)
+- Salesforce Service Cloud: 70K+ customers, $9B in revenue (~$125K ACV), massive installed base ready for agent governance
 
 ### Slide 2b: The AI Deployment Crisis
 ✅ **The Problem (Validated by 2026 Predictions):**
@@ -795,6 +796,101 @@ We had the thesis early. We saw AI coding coming. But we didn't capitalize. Here
 - Market Research: `x-project/reference/market-research/`
 - 2026 AI Predictions: `x-project/reference/market-research/2026-01-05-synaptic-ai-predictions-2026-comprehensive.md`
 - Design Philosophy: `x-project/bplan/design-assets/helm-transformation-philosophy.md`
+
+---
+
+## 7. Future Opportunity: Markdown-Native Governance (H2 2026 Roadmap)
+
+### Slide 7: The Next Layer - Policy-as-Code for AI
+
+✅ **Market Gap:**
+- Companies deploying AI agents urgently need to document decisions, policies, and governance rules
+- Traditional GUI tools force users into point-and-click workflows (slow, non-collaborative)
+- Technical teams want Markdown + Git for version control, team collaboration, audit trails
+
+✅ **Helm's Unique Opportunity:**
+- **Policy-as-Code**: Write decision policies as Markdown documents (version-controlled, Git-friendly)
+- **Compliance Automation**: Auto-generate EU AI Act documentation from Markdown policies
+- **Git Integration**: Pull request-based policy changes, developer-friendly workflows
+- **Team Collaboration**: Comments, discussions, change tracking on policies
+- **Real-Time Governance**: Monitor policy adherence, compliance status, decision analytics
+
+✅ **Why This Matters:**
+- AI governance market growing at 45% CAGR (vs 8% AI industry CAGR)
+- First-mover advantage: Company that owns "Markdown governance" defines the category
+- Defensible moat: Markdown + Git integration is hard for competitors to retrofit
+- Natural fit with Helm's Mine/Design/Manage lifecycle
+
+### Market Opportunity: $3.2B - $4.8B TAM
+
+**Immediate TAM (Service Cloud):**
+- 70,000 Service Cloud customers
+- 28,000 deploying AI agents in 2026 (40% adoption)
+- 15,000-18,000 high-priority targets (Enterprise + Mid-Market)
+- **Base case TAM: $913M** (at $25K-$50K ACV for documentation module)
+
+**Extended TAM (2H 2026 - 2027):**
+- Expansion beyond Service Cloud (Finance, Operations, HR)
+- Enterprise AI Governance segment (+10K CIOs/CTOs)
+- Consulting & Implementation Partners (+5K firms)
+- **Extended TAM: $3.2B - $4.8B**
+
+**H2 2026 Revenue Potential:**
+- Conservative: 75 customers × $20K ACV = $1.5M
+- Base case: 150 customers × $25K ACV = $3.75M
+- Optimistic: 250 customers × $30K ACV = $7.5M
+
+### Competitive Position: Why Helm Wins
+
+| Dimension | Helm | Credo AI | FairNow | DataRobot | IBM |
+|-----------|------|----------|---------|-----------|-----|
+| **Markdown-Native** | ✅ Yes | ❌ GUI-only | ❌ GUI-only | ❌ GUI-only | ❌ GUI-only |
+| **Git Integration** | ✅ Yes | ❌ No | ❌ No | ❌ No | ❌ No |
+| **Vertical Specialization** | ✅ Service Cloud | ❌ Generic | ❌ Generic | ❌ Generic | ❌ Generic |
+| **Fast Deployment** | ✅ Hours | Weeks | Weeks | Months | Months |
+| **Developer UX** | ✅ Code-like | Enterprise UX | Complex | Heavy | Heavy |
+
+**Strategic Advantages:**
+1. **Architectural Lock-In**: Markdown-first requires platform redesign (12-18 month head start)
+2. **Developer Ecosystem**: Git integration attracts technical teams (competitors lack this)
+3. **Vertical Specialization**: Deep Service Cloud focus (2-3 year head start)
+4. **Speed Advantage**: Deploy policies in hours vs days/weeks (3-5x faster)
+5. **Defensible Moat**: Decision trace library + developer mindshare
+
+### Roadmap: Three-Phase Execution (2H 2026 - 2H 2027)
+
+**Phase 1: Foundation (June-July 2026)**
+- Build Markdown editor + Git sync
+- Compliance document generator (EU AI Act templates)
+- Audit trail engine (complete change tracking)
+- Analyst briefing: "Policy-as-Code for AI Governance"
+
+**Phase 2: Early Adopter Launch (Aug-Sep 2026)**
+- GA: Markdown Documentation Platform
+- 50-100 early adopter contracts ($15K-$30K ACV)
+- Analyst coverage push (Gartner, Forrester)
+- **Q3 2026 Revenue: $3.75M-$7.5M**
+
+**Phase 3: Scale & Expand (Q4 2026 - 2H 2027)**
+- Scale to 1,000+ customers (expand ACV to $30K-$50K)
+- Expand beyond Service Cloud (Finance, Operations, HR)
+- International expansion (UK AI Bill, Canada AIDA, etc.)
+- **2027 ARR: $30M-$75M**
+
+### Investment Thesis
+
+**Why This Is Strategic:**
+- AI governance is 45% CAGR growth (5x AI industry growth)
+- Category ownership opportunity: First-mover defines "Markdown governance" as standard
+- Defensible moat: Hard for incumbents to retrofit Markdown + Git capabilities
+- Expansion path: Markdown governance applicable across all functions (Finance, Ops, HR)
+- Exit value: Strategic acquisition by Salesforce, Workday, or IPO
+
+**Why Now:**
+- EU AI Act compliance deadline (Aug 2, 2026) creates urgency for governance infrastructure
+- 40% of enterprise apps will have agents by end of 2026 (demand inflection)
+- Developer mindshare: Technical teams prefer Markdown + Git over GUI tools
+- Market readiness: Credo AI, FairNow, DataRobot competing but none offer Markdown-native approach
 
 ---
 
