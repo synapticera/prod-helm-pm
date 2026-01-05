@@ -102,6 +102,33 @@ This positioning:
 
 ## Market POV and Thesis
 
+### The $1 Trillion Productivity Opportunity: The Entry Point
+
+**The Market Context**: Every enterprise is pursuing productivity gains through AI. The opportunity is massive—some estimate a $1T market for productivity tools and services across industries.
+
+**The Insight**: To drive productivity gains, you must first **understand how work is done today**. Without understanding, you can't envision how to do it tomorrow. Without envisioning, you can't execute the transition.
+
+**The Flow**:
+```
+Understand Today (Mine) → Envision Tomorrow (Design) → Execute Transition (Manage) = Productivity Gains
+```
+
+Companies across customer service, finance, operations, and HR are asking: "How do we use AI to make our teams more productive?" But they're stuck at the first question: "What decisions and processes are we actually running right now?"
+
+**This is where Helm enters**: We provide the building blocks to **Understand → Envision → Execute** the productivity transformation.
+
+- **Understand**: Mine captures how work is actually done (decisions, patterns, exceptions, outcomes)
+- **Envision**: Design models the new way work could happen with agents
+- **Sell**: Precedents and transparency build consensus for the new way
+- **Execute**: Manage ensures the transition happens with governance and control
+- **Monitor**: Feedback loop proves the productivity gains are real
+
+Without this systematic approach, companies deploy agents haphazardly and capture only 10-20% of potential productivity gains. With this approach, they capture 5-7x better outcomes.
+
+**The $1T Opportunity**: This isn't just for customer service. Every function that relies on decision-making and knowledge work is pursuing this productivity transformation. Helm provides the foundational layer that makes that transformation possible.
+
+---
+
 ### The Constraint-Based Thesis: Executive Function Lifecycle Is the Missing Layer
 
 **Our Core Insight**: The AI industry has solved the "arms and legs" problem. What's emerging as the critical constraint is **executive function**—the entire lifecycle of understanding current work, planning how agents should operate, selling the plan to stakeholders, executing it, and continuously correcting course.
@@ -577,38 +604,64 @@ Compare these pitches to VCs:
 
 ## Strategic Narrative Architecture
 
-### For Investors (Executive Function Lifecycle Angle)
+### For Investors (Productivity + Constraint Angle)
 
-**Headline**: "Helm: The Executive Function Lifecycle Platform—95% of AI Projects Fail Because Companies Skip Stages 1-3"
+**Headline**: "Helm: The $1T Productivity Opportunity Platform—Capturing Executive Function as the Constraint"
 
-**Key Points**:
-- **The Market Reality**: 95% of AI projects fail, not because agents aren't smart, but because companies skip the executive function lifecycle (Understand → Plan → Sell → Execute → Monitor/Correct)
+**The Productivity Thesis**:
+- **The Market**: Every enterprise pursues productivity gains. $1T+ opportunity across all functions (customer service, finance, operations, HR)
+- **The Blocker**: To achieve productivity gains, companies must understand how work is done today. Most can't answer: "What decisions are we making? How? What context matters?"
+- **Helm's Entry Point**: Mine provides the understanding required to envision and execute productivity transformations
+- **The Productivity Flow**: Understand Today (Mine) → Envision Tomorrow (Design) → Execute Transition (Manage) = Productivity Gains
+
+**The Constraint Thesis**:
+- **The Market Reality**: 95% of AI projects fail, not because agents aren't smart, but because companies skip the executive function lifecycle
 - **The Evidence**: 40% of enterprise apps will have agents by 2026. But 33% will fail because companies jump straight from "we have an agent" to "deploy it" without understanding current decisions or building stakeholder buy-in
 - **The Constraint**: AI execution (building agents) is now table stakes. The real bottleneck is: Who decides HOW agents should decide? What outcomes matter? How do we course-correct?
-- **Helm's Position**: We don't build agents (everyone is building them). We provide the executive function layer that enables the full 5-stage lifecycle
-- **The Analogy**: Just as product management tools (Jira, Asana) became mandatory infrastructure when PM became the constraint in software, executive function platforms will become mandatory as agent deployment becomes the constraint
-- **Defensible Moat**: Decision trace data from UNDERSTAND phase becomes competitive advantage over time—more customers = better precedent library = stronger recommendations = network effects moat
-- **Immediate TAM**: Every company attempting agent deployment needs this. 40% of enterprise apps = billions in deals
-- **Regulatory Tailwind**: EU AI Act requires "meaningful human review" and transparent decision lineage—Helm's EXECUTE + MONITOR phases are native compliance
-- **Analyst Alignment**: First to claim "Decision Intelligence for Customer Service" category; can expand to other verticals
+- **Helm's Position**: We don't build agents (everyone is). We provide the executive function layer that enables understanding → envisioning → executing productivity transformation
 
-**Investor Takeaway**: 2026 is when agent deployment becomes mainstream—and the failure crisis becomes visible (95% fail because they skip stages). Companies will realize you can't skip Understand/Plan/Sell and succeed. Those that execute the full lifecycle win 5-7x better outcomes. Helm provides the infrastructure that separates winners from the 95% who fail.
+**The Economics**:
+- **The Analogy**: Just as product management tools (Jira, Asana) became mandatory infrastructure when PM became the constraint in software, executive function platforms will become mandatory as agent deployment becomes the constraint
+- **Defensible Moat**: Decision trace data becomes competitive advantage—more customers = better precedent library = stronger recommendations = network effects moat
+- **Immediate TAM**: Every company pursuing productivity gains needs this. $1T productivity opportunity = billions in Helm's addressable market
+- **Expansion Path**: Starting in customer service (largest AI deployment use case), can expand to finance, operations, HR—each is a $100B+ market
+- **Regulatory Tailwind**: EU AI Act requires "meaningful human review" and transparent decision lineage—Helm's governance is native compliance
+- **Analyst Alignment**: First to claim "Decision Intelligence for Customer Service" category; can own "Decision Intelligence" across verticals
+
+**Investor Takeaway**: 2026 is when productivity through AI becomes mainstream—and the failure crisis becomes visible. Companies pursuing the $1T productivity opportunity will realize you can't skip understanding-today and succeed. Those that execute the full Understand → Envision → Execute lifecycle win 5-7x better productivity outcomes. Helm provides the foundational infrastructure that separates winners from those wasting 90% of their productivity opportunity.
 
 ---
 
-### For Service Leaders (Pragmatism + ROI Angle)
+### For Service Leaders (Productivity Gains + Execution Angle)
 
-**Headline**: "Helm: Your AI Command Center. Understand Decisions. Govern Agents. Drive Results."
+**Headline**: "Helm: Unlock Your Service Team's Productivity—Understand Today, Transform Tomorrow, Prove the Results"
 
 **Key Points**:
-- Your service AI deployment is happening in 2026
-- Most deployments struggle without proper decision context (33% fail)
-- Helm solves this by capturing how decisions are made
-- Result: AI that operates with intelligence, not just automation
-- Compliance: Every decision is auditable and explainable
-- ROI: Better CSAT, lower AHT, controlled cost-per-contact
 
-**Buyer Takeaway**: "I don't just want to deploy AI. I want to deploy AI that works, that I understand, that I can manage, and that passes regulatory review."
+**The Opportunity**:
+- You want to drive productivity gains through AI agents (everyone does)
+- But you can't measure or envision the gains without understanding your current operations
+- Helm starts with understanding: "What decisions are we making? How? What's working? What's broken?"
+
+**The Execution Path**:
+1. **Understand** (Mine): Capture how your team actually makes decisions today—patterns, exceptions, outcomes
+2. **Plan** (Design): Model how agents could handle routine decisions, what needs human judgment
+3. **Sell** (Transparency): Show your team the plan with precedents and logic so they're bought in
+4. **Execute** (Manage): Deploy agents with guardrails, governance, full audit trails
+5. **Prove** (Monitor): Track real productivity gains—CSAT improvement, AHT reduction, cost-per-contact control
+
+**The Business Results**:
+- Productivity gains: 5-7x better outcomes than ad-hoc agent deployment
+- Compliance: Every decision is auditable and explainable (meets regulatory requirements)
+- Confidence: You understand why agents make decisions; you can course-correct
+- ROI Proof: Clear metrics on CSAT, AHT, cost-per-contact, team satisfaction
+
+**Why It Works**:
+- Most teams deploy agents and capture only 10-20% of potential gains because they skip understanding
+- Teams that understand their current operations first unlock 5-7x better productivity gains
+- Helm makes this systematic and measurable
+
+**Buyer Takeaway**: "I don't just want to deploy AI. I want to drive real productivity gains—which means understanding my current operations, planning the transition carefully, getting my team bought in, executing with control, and proving the results. Helm is the platform that makes that possible."
 
 ---
 
