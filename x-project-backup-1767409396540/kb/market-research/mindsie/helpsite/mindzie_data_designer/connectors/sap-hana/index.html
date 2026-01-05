@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Sap Hana | Connectors | mindzieDataDesigner Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">DataDesigner Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../index.html" class="product-item active">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieDataDesigner</strong></span></a><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="data-transformation-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Data Transformation</span></div>
+                <div id="data-transformation" class="nav-section-content"><a href="../../data-transformation/data-etl/index.html" class="nav-subitem ">Data Ingestion and ETL</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="database-connectors-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Database Connectors</span></div>
+                <div id="database-connectors" class="nav-section-content"><a href="../overview/index.html" class="nav-subitem ">Overview</a><!--!-->
+                    <a href="../sqlite/index.html" class="nav-subitem ">SQLite</a><!--!-->
+                    <a href="../sql-server/index.html" class="nav-subitem ">Microsoft SQL Server</a><!--!-->
+                    <a href="../oracle/index.html" class="nav-subitem ">Oracle</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">SAP HANA</a><!--!-->
+                    <a href="../mysql/index.html" class="nav-subitem ">MySQL</a><!--!-->
+                    <a href="../postgresql/index.html" class="nav-subitem ">PostgreSQL</a><!--!-->
+                    <a href="../odbc/index.html" class="nav-subitem ">ODBC</a><!--!-->
+                    <a href="../ibm-db2/index.html" class="nav-subitem ">IBM DB2</a><!--!-->
+                    <a href="../snowflake/index.html" class="nav-subitem ">Snowflake</a><!--!-->
+                    <a href="../microsoft-access/index.html" class="nav-subitem ">Microsoft Access</a><!--!-->
+                    <a href="../vertica/index.html" class="nav-subitem ">Vertica</a><!--!-->
+                    <a href="../h2/index.html" class="nav-subitem ">H2</a><!--!-->
+                    <a href="../amazon-redshift/index.html" class="nav-subitem ">Amazon Redshift</a><!--!-->
+                    <a href="../sybase-ase/index.html" class="nav-subitem ">Sybase ASE</a><!--!-->
+                    <a href="../firebird/index.html" class="nav-subitem ">Firebird</a><!--!-->
+                    <a href="../teradata/index.html" class="nav-subitem ">Teradata</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Sap Hana</h1><div class="page-breadcrumb">Connectors</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p><strong>Category:</strong> Database Connectors</p>
+<h2 id="introduction">Introduction</h2>
+<p>This document is created to help setup a mindzieDataDesigner connector to SAP HANA database. The mindzieDataDesigner is the ETL tool used by mindzieStudio to convert database tables to process mining event logs. The purpose of this document is to help creating the connection string and opening ports on the firewall if required.</p>
+<h2 id="overview">Overview</h2>
+<p>The SAP HANA connector uses ODBC to provide robust connectivity to SAP HANA databases. This connector is optimized for enterprise SAP environments and supports on-premise SAP HANA instances, making it ideal for process mining large-scale enterprise data.</p>
+<h2 id="system-requirements">System Requirements</h2>
+<ul>
+<li><strong>Database System:</strong> SAP HANA 1.0 or later (2.0 recommended)</li>
+<li><strong>Deployment Options:</strong> On-premise</li>
+<li><strong>ODBC Driver:</strong> SAP HANA ODBC Driver (minimum version 2.4)</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The SAP HANA ODBC driver must be installed on your system. Please refer to SAP documentation for installation instructions.</p>
+<h2 id="connection-string-format">Connection String Format</h2>
+<h3 id="basic-odbc-connection">Basic ODBC Connection</h3>
+<pre><code>Driver={HDBODBC};ServerNode=hostname:port;Database=database_name;UID=username;PWD=password;
+</code></pre>
+<h3 id="connection-parameters">Connection Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Driver</code></td>
+<td>ODBC driver name</td>
+<td>Yes</td>
+<td><code>{HDBODBC}</code> or <code>{SAP HANA ODBC Driver}</code></td>
+</tr>
+<tr>
+<td><code>ServerNode</code></td>
+<td>HANA server and port</td>
+<td>Yes</td>
+<td><code>hana-server.company.com:30015</code></td>
+</tr>
+<tr>
+<td><code>Database</code></td>
+<td>Target database/tenant</td>
+<td>No</td>
+<td><code>PRD</code> or <code>SystemDB</code></td>
+</tr>
+<tr>
+<td><code>UID</code></td>
+<td>Username</td>
+<td>Yes</td>
+<td><code>MINDZIE_USER</code></td>
+</tr>
+<tr>
+<td><code>PWD</code></td>
+<td>Password</td>
+<td>Yes</td>
+<td><code>SecurePassword123</code></td>
+</tr>
+<tr>
+<td><code>CHAR_AS_UTF8</code></td>
+<td>UTF-8 character handling</td>
+<td>No</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>CONNECTTIMEOUT</code></td>
+<td>Connection timeout</td>
+<td>No</td>
+<td><code>30</code></td>
+</tr>
+<tr>
+<td><code>COMMUNICATIONTIMEOUT</code></td>
+<td>Communication timeout</td>
+<td>No</td>
+<td><code>0</code> (unlimited)</td>
+</tr>
+<tr>
+<td><code>RECONNECT</code></td>
+<td>Auto-reconnect setting</td>
+<td>No</td>
+<td><code>1</code> (enabled)</td>
+</tr>
+<tr>
+<td><code>ENCRYPT</code></td>
+<td>Enable encryption</td>
+<td>No</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="connection-examples">Connection Examples</h2>
+<h3 id="standard-on-premise-connection">Standard On-Premise Connection</h3>
+<pre><code>Driver={HDBODBC};ServerNode=hana-prod.company.com:30015;Database=PRD;UID=PROCESS_MINING_USER;PWD=SecurePassword123;CHAR_AS_UTF8=1;
+</code></pre>
+<h3 id="multi-tenant-database-container-mdc">Multi-Tenant Database Container (MDC)</h3>
+<pre><code>Driver={HDBODBC};ServerNode=hana-server:30013;Database=TENANT_DB;UID=MINDZIE_USER;PWD=password;
+</code></pre>
+<h3 id="high-availability-connection">High Availability Connection</h3>
+<pre><code>Driver={HDBODBC};ServerNode=hana-node1:30015,hana-node2:30015,hana-node3:30015;Database=PRD;UID=MINDZIE_USER;PWD=password;RECONNECT=1;
+</code></pre>
+<h2 id="required-sap-hana-permissions">Required SAP HANA Permissions</h2>
+<p>The following SQL examples show the typical permissions needed for process mining. Replace the sample schema, table, and user names with your actual values:</p>
+<pre><code class="language-sql">-- Grant schema access (replace "PROCESS_MINING" with your schema name)
+GRANT SELECT ON SCHEMA "YOUR_SCHEMA_NAME" TO YOUR_USERNAME;
+
+-- Grant table-level permissions (replace with your actual table names)
+GRANT SELECT ON "YOUR_SCHEMA_NAME"."YOUR_TABLE_NAME" TO YOUR_USERNAME;
+
+-- For system views (if needed for metadata access)
+GRANT SELECT ON SYS.M_DATABASES TO YOUR_USERNAME;
+</code></pre>
+<p><strong>Example with sample names:</strong></p>
+<pre><code class="language-sql">-- Sample permissions using example names
+GRANT SELECT ON SCHEMA "PROCESS_MINING" TO MINDZIE_USER;
+GRANT SELECT ON "PROCESS_MINING"."EVENT_LOG" TO MINDZIE_USER;
+GRANT SELECT ON SYS.M_DATABASES TO MINDZIE_USER;
+</code></pre>
+<h2 id="testing-odbc-connections">Testing ODBC Connections</h2>
+<p>After configuring your ODBC connection, you can test it using various tools:</p>
+<h3 id="windows-odbc-data-source-administrator">Windows ODBC Data Source Administrator</h3>
+<ul>
+<li>Built-in Windows utility (<code>odbcad32.exe</code>)</li>
+<li>Configure and test ODBC connections</li>
+<li>Access via Control Panel → Administrative Tools → ODBC Data Sources</li>
+</ul>
+<h3 id="database-client-tools">Database Client Tools</h3>
+<ul>
+<li><strong>DBeaver:</strong> Free, cross-platform database tool with ODBC support</li>
+<li><strong>HeidiSQL:</strong> Windows-based SQL client supporting ODBC connections</li>
+<li><strong>SQL Server Management Studio:</strong> Can connect to SAP HANA via ODBC</li>
+<li><strong>Toad for SAP:</strong> Commercial tool with native SAP HANA support</li>
+</ul>
+<h3 id="microsoft-office-applications">Microsoft Office Applications</h3>
+<ul>
+<li><strong>Excel:</strong> Connect via Data → Get Data → From Other Sources → From ODBC</li>
+<li><strong>Power BI:</strong> Native SAP HANA connector and ODBC support</li>
+<li><strong>Access:</strong> Link tables via ODBC connections</li>
+</ul>
+<h3 id="command-line-tools">Command Line Tools</h3>
+<ul>
+<li><strong>isql:</strong> Unix/Linux command line tool for testing ODBC connections</li>
+<li><strong>osql/sqlcmd:</strong> Windows command line utilities (limited SAP HANA support)</li>
+</ul>
+<h3 id="simple-test-query">Simple Test Query</h3>
+<p>Once connected, test with a basic query:</p>
+<pre><code class="language-sql">SELECT CURRENT_TIMESTAMP FROM SYS.DUMMY;
+</code></pre>
+<h2 id="firewall-configuration">Firewall Configuration</h2>
+<h3 id="required-firewall-ports">Required Firewall Ports</h3>
+<p>The following ports need to be opened on your firewall for SAP HANA ODBC connections:</p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Purpose</th>
+<th>Default Instance (00)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30013</td>
+<td>SystemDB SQL Connection</td>
+<td>System database access</td>
+</tr>
+<tr>
+<td>30015</td>
+<td>Tenant Database SQL Connection</td>
+<td>First tenant database</td>
+</tr>
+<tr>
+<td>443</td>
+<td>SAP HANA Cloud (HTTPS/SSL)</td>
+<td>Cloud connections only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="port-numbering-scheme">Port Numbering Scheme</h3>
+<ul>
+<li><strong>System Database:</strong> Port 30013 (for default instance 00)</li>
+<li><strong>Tenant Database:</strong> Port 30015 (for default instance 00)</li>
+<li><strong>Pattern:</strong> 3<strong>NN</strong>13 (SystemDB) or 3<strong>NN</strong>15 (Tenant DB), where <strong>NN</strong> = instance number</li>
+</ul>
+<p><strong>Note:</strong> Port numbers can be customized during SAP HANA installation. Check with your SAP HANA administrator for the exact ports used in your environment.</p>
+<h3 id="additional-considerations">Additional Considerations</h3>
+<ul>
+<li><strong>High Availability:</strong> Multiple ports may be required for cluster configurations</li>
+<li><strong>Load Balancers:</strong> Additional ports may be needed for load balancer configurations</li>
+</ul>
+<p><strong>Reference:</strong> SAP Note 2477204 - FAQ: SAP HANA Services and Ports (requires SAP support access)</p>
+<h3 id="mindzie-server-access">mindzie Server Access</h3>
+<p>For enhanced security, you can configure your firewall to only allow connections from mindzie servers by whitelisting specific IP addresses. Contact mindzie support to obtain the current IP addresses for the mindzie servers you are using.</p>
+<h2 id="cdpos-change-document-extraction">CDPOS Change Document Extraction</h2>
+<p>CDPOS is a crucial SAP table that stores field-level changes to business objects, commonly used in process mining to track detailed modifications. Since CDPOS doesn't contain date fields directly, it must be joined with CDHDR (Change Document Header) for time-based filtering.</p>
+<h3 id="oracle-database-query">Oracle Database Query</h3>
+<pre><code class="language-sql">-- ORACLE SQL VERSION: GET ALL CDPOS RECORDS FOR LAST 2 YEARS
+-- CDPOS does NOT have date/time fields - must join with CDHDR for filtering
+
+-- DOCUMENTATION REFERENCES:
+-- 1. CDHDR.UDATE = "Creation date of the change document" (SAP Datasheet)
+-- 2. CDPOS.CHANGENR = CDHDR.CHANGENR is the standard join (SAP Community)
+-- 3. "These two tables are connected by the change number" (Techlorean)
+-- 4. CDHDR contains header info, CDPOS contains field-level details
+
+SELECT CDPOS.*
+FROM CDPOS
+INNER JOIN CDHDR ON CDPOS.CHANGENR = CDHDR.CHANGENR
+WHERE CDHDR.UDATE &gt;= ADD_MONTHS(SYSDATE, -24)  -- Oracle: Last 24 months (2 years)
+
+-- ORACLE SPECIFIC NOTES:
+-- 1. Uses ADD_MONTHS(SYSDATE, -24) for 2-year date calculation
+-- 2. SYSDATE returns current date/time
+-- 3. Alternative: CDHDR.UDATE &gt;= SYSDATE - INTERVAL '2' YEAR
+-- 4. Date format in CDHDR.UDATE should be compatible with Oracle DATE type
+</code></pre>
+<h3 id="sap-odbc-query">SAP ODBC Query</h3>
+<pre><code class="language-sql">-- SAP SQL VIA ODBC CONNECTOR: GET ALL CDPOS RECORDS FOR LAST 2 YEARS
+-- CDPOS does NOT have date/time fields - must join with CDHDR for filtering
+
+-- DOCUMENTATION REFERENCES:
+-- 1. CDHDR.UDATE = "Creation date of the change document" (SAP Datasheet)
+-- 2. CDPOS.CHANGENR = CDHDR.CHANGENR is the standard join (SAP Community)
+-- 3. "These two tables are connected by the change number" (Techlorean)
+-- 4. CDHDR contains header info, CDPOS contains field-level details
+
+-- IMPORTANT: CDPOS is a cluster table - direct joins may not work via ODBC
+-- This query may need to be split into separate queries depending on SAP version
+
+SELECT CDPOS.*
+FROM CDPOS
+INNER JOIN CDHDR ON CDPOS.CHANGENR = CDHDR.CHANGENR
+WHERE CDHDR.UDATE &gt;= ADD_DAYS(CURRENT_DATE, -730)  -- SAP HANA: Last 730 days (2 years)
+
+-- SAP SQL SPECIFIC NOTES:
+-- 1. Uses ADD_DAYS(CURRENT_DATE, -730) for 2-year calculation (SAP HANA)
+-- 2. For older SAP systems, may need: CDHDR.UDATE &gt;= '20220101' (hardcoded date)
+-- 3. CDPOS is a cluster table - may require special handling via ODBC
+-- 4. Alternative for non-HANA: Use DATE subtraction if supported
+-- 5. Date format: CDHDR.UDATE is typically YYYYMMDD format in SAP
+-- 6. For maximum compatibility, use client-side date parameter:
+--    WHERE CDHDR.UDATE &gt;= '?' -- Parameter for 2 years ago date
+
+-- CLUSTER TABLE WARNING:
+-- CDPOS is a cluster table in SAP, which may cause issues with ODBC connections
+-- Consider using SAP RFC or function modules for better performance
+-- Alternative: Query CDHDR first, then CDPOS separately using CHANGENR values
+</code></pre>
+<h3 id="sql-server-t-sql-query">SQL Server (T-SQL) Query</h3>
+<pre><code class="language-sql">-- T-SQL (SQL SERVER) VERSION: GET ALL CDPOS RECORDS FOR LAST 2 YEARS
+-- CDPOS does NOT have date/time fields - must join with CDHDR for filtering
+
+-- DOCUMENTATION REFERENCES:
+-- 1. CDHDR.UDATE = "Creation date of the change document" (SAP Datasheet)
+-- 2. CDPOS.CHANGENR = CDHDR.CHANGENR is the standard join (SAP Community)
+-- 3. "These two tables are connected by the change number" (Techlorean)
+-- 4. CDHDR contains header info, CDPOS contains field-level details
+
+SELECT CDPOS.*
+FROM CDPOS
+INNER JOIN CDHDR ON CDPOS.CHANGENR = CDHDR.CHANGENR
+WHERE CDHDR.UDATE &gt;= DATEADD(YEAR, -2, GETDATE())  -- T-SQL: Last 2 years from current date
+
+-- T-SQL SPECIFIC NOTES:
+-- 1. Uses DATEADD(YEAR, -2, GETDATE()) for 2-year date calculation
+-- 2. GETDATE() returns current date/time
+-- 3. Alternative: CDHDR.UDATE &gt;= DATEADD(MONTH, -24, GETDATE())
+-- 4. Date format in CDHDR.UDATE should be compatible with SQL Server datetime
+-- 5. May need CONVERT() if UDATE is stored as string in YYYYMMDD format:
+--    WHERE CONVERT(datetime, CDHDR.UDATE, 112) &gt;= DATEADD(YEAR, -2, GETDATE())
+</code></pre>
+<h2 id="odbc-driver-installation-mindziestudio-server-only">ODBC Driver Installation (mindzieStudio Server Only)</h2>
+<p><strong>Note:</strong> This section is only required for the server running mindzieStudio.</p>
+<h3 id="download">Download</h3>
+<p>Go to: <strong><a href="https://tools.hana.ondemand.com/#hanatools">https://tools.hana.ondemand.com/#hanatools</a></strong></p>
+<ol>
+<li>Create a free SAP account if needed (quick registration)</li>
+<li>Find: <strong>SAP HANA Client</strong></li>
+<li>Download: <strong>Windows on x64 64bit</strong> version</li>
+<li>File name: <code>hanaclient-x.x.x.x-windows-x64.zip</code></li>
+</ol>
+<h3 id="install">Install</h3>
+<ol>
+<li>Extract the ZIP file</li>
+<li>Run <code>hdbsetup.exe</code> as Administrator</li>
+<li>Select "Install new SAP HANA client"</li>
+<li>Follow the wizard (accept defaults)</li>
+<li>Done!</li>
+</ol>
+<h3 id="verify-installation">Verify Installation</h3>
+<p>Run in PowerShell:</p>
+<pre><code class="language-powershell">Get-OdbcDriver | Where-Object {$_.Name -like "*HDB*"}
+</code></pre>
+<p>Should show: <code>HDBODBC [64-bit]</code></p>
+<h3 id="driver-not-listed-after-installation">Driver Not Listed After Installation</h3>
+<pre><code class="language-cmd">cd "C:\Program Files\SAP\hdbclient"
+hdbodbc_cons.exe -i
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-connection-issues">Common Connection Issues</h3>
+<p><strong>"Cannot connect to server" Error</strong></p>
+<ul>
+<li>Verify server hostname and port number</li>
+<li>Check network connectivity and firewall rules</li>
+<li>Ensure SAP HANA instance is running and accepting connections</li>
+<li>Validate HANA service status with <code>HDB info</code></li>
+</ul>
+<p><strong>"Authentication failed" Error</strong></p>
+<ul>
+<li>Verify username and password are correct</li>
+<li>Check if user account is locked or expired</li>
+<li>Ensure user has CONNECT privilege</li>
+<li>Verify password policy compliance</li>
+</ul>
+<p><strong>"Driver not found" Error</strong></p>
+<ul>
+<li>Install SAP HANA ODBC driver from SAP HANA Client</li>
+<li>Verify driver registration in ODBC Data Source Administrator</li>
+<li>Check for 32-bit vs 64-bit driver compatibility</li>
+<li>Ensure driver path is in system PATH</li>
+</ul>
+<p><strong>"Table or view does not exist" Error</strong></p>
+<ul>
+<li>Verify table/view names and schema references</li>
+<li>Check user permissions on specific objects</li>
+<li>Use fully qualified names: <code>SCHEMA.TABLE</code></li>
+<li>Validate case sensitivity in object names</li>
+</ul>
+<h2 id="related-information">Related Information</h2>
+<ul>
+<li><strong>SAP HANA Documentation:</strong> <a href="https://help.sap.com/hana">SAP Help Portal</a></li>
+<li><strong>SAP HANA Client:</strong> <a href="https://support.sap.com/swdc">SAP Software Downloads</a></li>
+<li><strong>ODBC Driver Reference:</strong> <a href="https://help.sap.com/docs/SAP_HANA_CLIENT">SAP HANA ODBC Driver Guide</a></li>
+<li><strong>Connection Security:</strong> <a href="https://help.sap.com/docs/SAP_HANA_PLATFORM">SAP HANA Security Guide</a></li>
+<li><strong>Performance Tuning:</strong> <a href="https://help.sap.com/docs/SAP_HANA_PLATFORM">SAP HANA Performance Guide</a></li>
+</ul>
+<hr>
+<h2 id="sources-and-references">Sources and References</h2>
+<p>This documentation is based on the following sources:</p>
+<h3 id="official-sap-documentation">Official SAP Documentation</h3>
+<ul>
+<li><strong><a href="https://help.sap.com/docs/SAP_HANA_PLATFORM">SAP HANA Platform Documentation</a></strong> - Official SAP HANA platform documentation</li>
+<li><strong><a href="https://help.sap.com/docs/SAP_HANA_PLATFORM/0eec0d68141541d1b07893a39944924e/7cab593774474f2f8db335710b2f5c50.html">SAP HANA ODBC Connection Properties</a></strong> - Official ODBC connection parameters</li>
+<li><strong><a href="https://userapps.support.sap.com/sap/support/knowledge/en/2477204">SAP HANA Services and Ports (SAP Note 2477204)</a></strong> - Official port documentation (requires SAP support access)</li>
+</ul>
+<h3 id="community-and-technical-resources">Community and Technical Resources</h3>
+<ul>
+<li><strong><a href="https://community.qlik.com/t5/Connectivity-Data-Prep/Connection-string-ODBC-for-SAP-Hana/td-p/2484444">Qlik Community - SAP HANA ODBC Connection String</a></strong> - Community validation of connection string format</li>
+<li><strong><a href="https://learn.microsoft.com/en-us/power-query/connectors/sap-hana/">Microsoft Power Query SAP HANA Documentation</a></strong> - Microsoft's SAP HANA connector documentation</li>
+</ul>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

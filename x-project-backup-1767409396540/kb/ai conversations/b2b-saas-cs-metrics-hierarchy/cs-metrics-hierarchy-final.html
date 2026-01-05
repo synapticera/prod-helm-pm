@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Support Metrics Hierarchy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: white;
+            color: #1e293b;
+            padding: 3rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Main Flow */
+        .flow {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Left Column - Input Metrics */
+        .input-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .metric-group {
+        }
+
+        .group-header {
+            background: #0f4c75;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.25rem;
+            width: 280px;
+            text-align: center;
+        }
+
+        .metric-items {
+            margin-top: 0.25rem;
+        }
+
+        .metric-item {
+            background: #3282b8;
+            color: white;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.25rem;
+            margin-bottom: 0.1875rem;
+            margin-left: 0.75rem;
+            width: 260px;
+            text-align: center;
+        }
+
+        .metric-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Arrow */
+        .arrow {
+            flex-shrink: 0;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow svg {
+            width: 55px;
+            height: 200px;
+        }
+
+        /* Middle Column - Intermediate Outcomes */
+        .outcome-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-self: center;
+        }
+
+        .outcome-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            width: 220px;
+            text-align: center;
+        }
+
+        .outcome-box .title {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: #0f4c75;
+            margin-bottom: 0.25rem;
+        }
+
+        .outcome-box .subtitle {
+            font-size: 0.6875rem;
+            color: #64748b;
+            margin-bottom: 0.75rem;
+        }
+
+        .outcome-box .value {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #3282b8;
+            margin-bottom: 0.5rem;
+        }
+
+        .outcome-box .details {
+            font-size: 0.6875rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .multiply {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+
+        /* Right Column - Business Impact */
+        .impact-column {
+            align-self: center;
+        }
+
+        .impact-box {
+            background: #0f4c75;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            width: 200px;
+            text-align: center;
+        }
+
+        .impact-box .label {
+            font-size: 0.625rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-box .title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .impact-box .divider {
+            border-top: 1px solid #3282b8;
+            margin: 0.75rem 0;
+        }
+
+        .impact-box .benchmarks-label {
+            font-size: 0.6875rem;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .impact-box .benchmarks-items {
+            font-size: 0.625rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Flow -->
+        <div class="flow">
+            
+            <!-- Left: Input Metrics -->
+            <div class="input-column">
+                
+                <!-- Need for Support -->
+                <div class="metric-group">
+                    <div class="group-header">Need for Support</div>
+                    <div class="metric-items">
+                        <div class="metric-item">Volume</div>
+                        <div class="metric-item">Intent</div>
+                        <div class="metric-item">Root Cause</div>
+                        <div class="metric-item">Complexity</div>
+                        <div class="metric-item">Severity</div>
+                    </div>
+                </div>
+
+                <!-- Response Effectiveness -->
+                <div class="metric-group">
+                    <div class="group-header">Response Effectiveness</div>
+                    <div class="metric-items">
+                        <div class="metric-item">Preventability</div>
+                        <div class="metric-item">Resolution Quality</div>
+                        <div class="metric-item">First Contact Resolution</div>
+                        <div class="metric-item">Team Performance</div>
+                    </div>
+                </div>
+
+                <!-- Response Efficiency -->
+                <div class="metric-group">
+                    <div class="group-header">Response Efficiency</div>
+                    <div class="metric-items">
+                        <div class="metric-item">Channel Mix</div>
+                        <div class="metric-item">Resolution Mix</div>
+                        <div class="metric-item">Resolution Speed</div>
+                        <div class="metric-item">Resolution Cost</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow 1 -->
+            <div class="arrow">
+                <svg viewBox="0 0 55 200" fill="none">
+                    <polygon points="0,0 35,0 55,100 35,200 0,200 20,100" fill="#d1d5db"/>
+                </svg>
+            </div>
+
+            <!-- Middle: Intermediate Outcomes -->
+            <div class="outcome-column">
+                <div class="outcome-box">
+                    <div class="title">Effectiveness</div>
+                    <div class="subtitle">Doing the RIGHT things</div>
+                    <div class="value">Net Retention</div>
+                    <div class="details">
+                        - Expansion Rate<br>
+                        - Renewal Rate
+                    </div>
+                </div>
+                
+                <div class="multiply">×</div>
+                
+                <div class="outcome-box">
+                    <div class="title">Efficiency</div>
+                    <div class="subtitle">Doing things RIGHT</div>
+                    <div class="value">Cost to Serve</div>
+                    <div class="details">
+                        - Total Cost<br>
+                        - Total Revenue
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow 2 -->
+            <div class="arrow">
+                <svg viewBox="0 0 55 200" fill="none">
+                    <polygon points="0,0 35,0 55,100 35,200 0,200 20,100" fill="#d1d5db"/>
+                </svg>
+            </div>
+
+            <!-- Right: Business Impact -->
+            <div class="impact-column">
+                <div class="impact-box">
+                    <div class="label">Business Impact</div>
+                    <div class="title">CS Net Impact Index</div>
+                    <div class="divider"></div>
+                    <div class="benchmarks-label">Comparative Benchmark</div>
+                    <div class="benchmarks-items">
+                        vs. Industry<br>
+                        vs. Historical
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

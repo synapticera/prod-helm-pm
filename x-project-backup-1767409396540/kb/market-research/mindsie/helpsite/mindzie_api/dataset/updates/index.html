@@ -1,0 +1,516 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Updates | Dataset | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../../action/index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../../action/ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="../../action/execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../../action/history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../../block/index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../../block/management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../../block/execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../../block/results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../../block/types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Dataset Updates</a><!--!-->
+                    <a href="../formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Updates</h1><div class="page-breadcrumb">Dataset</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="update-existing-datasets">Update Existing Datasets</h2>
+<p>Update existing datasets with new data from CSV files, ZIP packages, or binary files. Updates preserve the dataset ID and associated configurations.</p>
+<h2 id="update-dataset-from-csv">Update Dataset from CSV</h2>
+<p><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/dataset/{datasetId}/csv</code></p>
+<p>Replaces the data in an existing dataset with new data from a CSV file. The system automatically detects column mappings from the dataset configuration.</p>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The project identifier</td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The dataset identifier to update</td>
+</tr>
+</tbody>
+</table>
+<h3 id="request-multipartform-data">Request (multipart/form-data)</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>file</td>
+<td>Yes</td>
+<td>CSV file with new data (max 1GB)</td>
+</tr>
+<tr>
+<td><code>cultureInfo</code></td>
+<td>string</td>
+<td>No</td>
+<td>Culture for parsing (default: "en-US")</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-200-ok">Response (200 OK)</h3>
+<pre><code class="language-json">{
+  "datasetId": "550e8400-e29b-41d4-a716-446655440000",
+  "caseCount": 5500,
+  "eventCount": 165000,
+  "invalidValueCount": 0,
+  "skippedRowsCount": 0,
+  "errors": [],
+  "rowIssues": [],
+  "statusCode": 200
+}
+</code></pre>
+<h3 id="error-responses">Error Responses</h3>
+<p><strong>Bad Request (400):</strong></p>
+<pre><code>dataset with id '{datasetId}' not found
+</code></pre>
+<pre><code>can't update '{datasetName}' because it's not an original dataset
+</code></pre>
+<h2 id="update-dataset-from-zip-package">Update Dataset from ZIP Package</h2>
+<p><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/dataset/{datasetId}/package</code></p>
+<p>Replaces the data in an existing dataset with new data from a ZIP package.</p>
+<h3 id="request-multipartform-data-1">Request (multipart/form-data)</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>file</td>
+<td>Yes</td>
+<td>ZIP package file with new data (max 1GB)</td>
+</tr>
+<tr>
+<td><code>cultureInfo</code></td>
+<td>string</td>
+<td>No</td>
+<td>Culture for parsing (default: "en-US")</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-200-ok-1">Response (200 OK)</h3>
+<p>Same structure as CSV update response.</p>
+<h3 id="error-response-422-unprocessable-entity">Error Response (422 Unprocessable Entity)</h3>
+<pre><code class="language-json">{
+  "errors": ["Invalid package structure"],
+  "rowIssues": [
+    {
+      "rowIndex": 15,
+      "columnName": "Timestamp",
+      "errorType": "ParseError",
+      "outcome": "Skipped",
+      "message": "Unable to parse date value"
+    }
+  ],
+  "statusCode": 422
+}
+</code></pre>
+<h2 id="update-dataset-from-binary">Update Dataset from Binary</h2>
+<p><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/dataset/{datasetId}/binary</code></p>
+<p>Replaces the data in an existing dataset with new data from a binary format file.</p>
+<h3 id="request-multipartform-data-2">Request (multipart/form-data)</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code></td>
+<td>file</td>
+<td>Yes</td>
+<td>Binary file with new data (max 1GB)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-200-ok-2">Response (200 OK)</h3>
+<p>Same structure as CSV update response.</p>
+<h2 id="update-restrictions">Update Restrictions</h2>
+<ul>
+<li><strong>Original Datasets Only:</strong> Only original datasets can be updated. Datasets derived from filters or other transformations cannot be updated directly.</li>
+<li><strong>Preserve Configuration:</strong> Updates preserve the dataset ID and all associated configurations (notebooks, blocks, etc.)</li>
+<li><strong>Column Consistency:</strong> The new data should have the same column structure as the original dataset</li>
+</ul>
+<h2 id="implementation-examples">Implementation Examples</h2>
+<h3 id="curl-update-from-csv">cURL - Update from CSV</h3>
+<pre><code class="language-bash">curl -X PUT "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/dataset/550e8400-e29b-41d4-a716-446655440000/csv" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -F "file=@updated_event_log.csv" \
+  -F "cultureInfo=en-US"
+</code></pre>
+<h3 id="curl-update-from-zip-package">cURL - Update from ZIP Package</h3>
+<pre><code class="language-bash">curl -X PUT "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/dataset/550e8400-e29b-41d4-a716-446655440000/package" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -F "file=@updated_data_package.zip" \
+  -F "cultureInfo=en-US"
+</code></pre>
+<h3 id="python">Python</h3>
+<pre><code class="language-python">import requests
+
+TENANT_ID = '12345678-1234-1234-1234-123456789012'
+PROJECT_ID = '87654321-4321-4321-4321-210987654321'
+BASE_URL = 'https://your-mindzie-instance.com'
+
+class DatasetUpdater:
+    def __init__(self, token):
+        self.headers = {'Authorization': f'Bearer {token}'}
+
+    def update_from_csv(self, dataset_id, file_path, culture='en-US'):
+        """Update dataset from CSV file."""
+        url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/dataset/{dataset_id}/csv'
+
+        with open(file_path, 'rb') as f:
+            files = {'file': (file_path, f, 'text/csv')}
+            data = {'cultureInfo': culture}
+
+            response = requests.put(url, headers=self.headers, files=files, data=data)
+
+        if response.ok:
+            return response.json()
+        else:
+            raise Exception(f'Update failed: {response.text}')
+
+    def update_from_package(self, dataset_id, file_path, culture='en-US'):
+        """Update dataset from ZIP package."""
+        url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/dataset/{dataset_id}/package'
+
+        with open(file_path, 'rb') as f:
+            files = {'file': (file_path, f, 'application/zip')}
+            data = {'cultureInfo': culture}
+
+            response = requests.put(url, headers=self.headers, files=files, data=data)
+
+        if response.ok:
+            return response.json()
+        elif response.status_code == 422:
+            result = response.json()
+            print(f"Validation errors: {result['errors']}")
+            for issue in result.get('rowIssues', []):
+                print(f"  Row {issue['rowIndex']}: {issue['message']}")
+            raise Exception('Data validation failed')
+        else:
+            raise Exception(f'Update failed: {response.text}')
+
+    def update_from_binary(self, dataset_id, file_path):
+        """Update dataset from binary file."""
+        url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/dataset/{dataset_id}/binary'
+
+        with open(file_path, 'rb') as f:
+            files = {'file': (file_path, f, 'application/octet-stream')}
+
+            response = requests.put(url, headers=self.headers, files=files)
+
+        if response.ok:
+            return response.json()
+        else:
+            raise Exception(f'Update failed: {response.text}')
+
+# Usage
+updater = DatasetUpdater('your-auth-token')
+
+# Update from CSV
+result = updater.update_from_csv(
+    '550e8400-e29b-41d4-a716-446655440000',
+    'updated_event_log.csv'
+)
+print(f"Updated dataset: {result['datasetId']}")
+print(f"New case count: {result['caseCount']}")
+print(f"New event count: {result['eventCount']}")
+
+# Check for issues
+if result['skippedRowsCount'] &gt; 0:
+    print(f"Warning: {result['skippedRowsCount']} rows were skipped")
+if result['invalidValueCount'] &gt; 0:
+    print(f"Warning: {result['invalidValueCount']} invalid values found")
+</code></pre>
+<h3 id="javascriptnode.js">JavaScript/Node.js</h3>
+<pre><code class="language-javascript">const TENANT_ID = '12345678-1234-1234-1234-123456789012';
+const PROJECT_ID = '87654321-4321-4321-4321-210987654321';
+const BASE_URL = 'https://your-mindzie-instance.com';
+
+class DatasetUpdater {
+  constructor(token) {
+    this.token = token;
+  }
+
+  async updateFromCsv(datasetId, file, culture = 'en-US') {
+    const url = `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/dataset/${datasetId}/csv`;
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('cultureInfo', culture);
+
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${this.token}` },
+      body: formData
+    });
+
+    if (response.ok) {
+      return await response.json();
+    } else if (response.status === 422) {
+      const result = await response.json();
+      throw new Error(`Validation failed: ${result.errors.join(', ')}`);
+    } else {
+      throw new Error(`Update failed: ${await response.text()}`);
+    }
+  }
+
+  async updateFromPackage(datasetId, file, culture = 'en-US') {
+    const url = `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/dataset/${datasetId}/package`;
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('cultureInfo', culture);
+
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: { 'Authorization': `Bearer ${this.token}` },
+      body: formData
+    });
+
+    if (response.ok) {
+      return await response.json();
+    } else {
+      const error = await response.json();
+      throw new Error(`Update failed: ${error.errors?.join(', ') || response.statusText}`);
+    }
+  }
+}
+
+// Usage (browser)
+const updater = new DatasetUpdater('your-auth-token');
+const fileInput = document.getElementById('updateFile');
+
+fileInput.addEventListener('change', async (e) =&gt; {
+  const file = e.target.files[0];
+  const datasetId = '550e8400-e29b-41d4-a716-446655440000';
+
+  try {
+    const result = await updater.updateFromCsv(datasetId, file);
+
+    console.log(`Updated: ${result.datasetId}`);
+    console.log(`New cases: ${result.caseCount}`);
+    console.log(`New events: ${result.eventCount}`);
+
+    if (result.skippedRowsCount &gt; 0) {
+      console.warn(`Skipped ${result.skippedRowsCount} rows`);
+    }
+  } catch (error) {
+    console.error('Update failed:', error.message);
+  }
+});
+</code></pre>
+<h2 id="response-fields">Response Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>datasetId</code></td>
+<td>GUID</td>
+<td>ID of the updated dataset</td>
+</tr>
+<tr>
+<td><code>caseCount</code></td>
+<td>integer</td>
+<td>Number of unique cases in updated data</td>
+</tr>
+<tr>
+<td><code>eventCount</code></td>
+<td>integer</td>
+<td>Total number of events in updated data</td>
+</tr>
+<tr>
+<td><code>invalidValueCount</code></td>
+<td>integer</td>
+<td>Number of invalid values encountered</td>
+</tr>
+<tr>
+<td><code>skippedRowsCount</code></td>
+<td>integer</td>
+<td>Number of rows skipped due to errors</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td>array</td>
+<td>List of error messages</td>
+</tr>
+<tr>
+<td><code>rowIssues</code></td>
+<td>array</td>
+<td>Detailed information about row-level issues</td>
+</tr>
+<tr>
+<td><code>statusCode</code></td>
+<td>integer</td>
+<td>HTTP status code</td>
+</tr>
+</tbody>
+</table>
+<h2 id="row-issue-structure">Row Issue Structure</h2>
+<pre><code class="language-json">{
+  "rowIndex": 15,
+  "columnName": "Timestamp",
+  "errorType": "ParseError",
+  "outcome": "Skipped",
+  "message": "Unable to parse date value '2024-13-45'"
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rowIndex</code></td>
+<td>Row number with the issue</td>
+</tr>
+<tr>
+<td><code>columnName</code></td>
+<td>Column containing the problematic value</td>
+</tr>
+<tr>
+<td><code>errorType</code></td>
+<td>Type of error (ParseError, ValidationError, etc.)</td>
+</tr>
+<tr>
+<td><code>outcome</code></td>
+<td>What happened (Skipped, DefaultValue, etc.)</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>Human-readable error description</td>
+</tr>
+</tbody>
+</table>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><strong>Backup First:</strong> Consider exporting current data before updates</li>
+<li><strong>Verify Structure:</strong> Ensure new data has the same column structure</li>
+<li><strong>Check Results:</strong> Review <code>rowIssues</code> and <code>skippedRowsCount</code> after updates</li>
+<li><strong>Test First:</strong> Test updates on a non-production dataset first</li>
+<li><strong>Culture Settings:</strong> Use the correct culture for date and number formats</li>
+</ul>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

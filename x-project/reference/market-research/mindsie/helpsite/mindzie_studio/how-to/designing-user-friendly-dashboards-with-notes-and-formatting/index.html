@@ -1,0 +1,779 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Designing User Friendly Dashboards With Notes And Formatting | How To | mindzieStudio Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><!--!--><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">Studio Documentation</span></div></div>
+        <div class="header-right"><!--!--><div class="search-container"><div class="search-box "><div class="search-input-wrapper"><!--!--><span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search documentation... (Ctrl+K)" autocomplete="off" spellcheck="false" _bl_2=""><button class="search-page-button" title="Go to search page"><!--!--><span>🔎</span></button></div></div></div><!--!-->
+            <!--!--><nav class="product-nav"><a href="../../index.html" class="product-item active">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header><!--!-->
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>Home</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="core-concepts-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Core Concepts</span></div>
+                <div id="core-concepts" class="nav-section-content"><div class="nav-subsection collapsed" id="filters-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Filters</span></button><!--!-->
+                        <div id="filters" class="nav-subsection-items"><a href="../../filters/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../filters/activity-frequency/index.html" class="nav-subitem">Activity Frequency</a><!--!-->
+                            <a href="../../filters/activity-not-performed/index.html" class="nav-subitem">Activity Not Performed</a><!--!-->
+                            <a href="../../filters/activity-performed-once/index.html" class="nav-subitem">Activity Performed Once</a><!--!-->
+                            <a href="../../filters/case-end/index.html" class="nav-subitem">Case End</a><!--!-->
+                            <a href="../../filters/case-start/index.html" class="nav-subitem">Case Start</a><!--!-->
+                            <a href="../../filters/cases-with-attribute/index.html" class="nav-subitem">Cases with Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-changed-attribute/index.html" class="nav-subitem">Cases with Changed Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-dates/index.html" class="nav-subitem">Cases with Identical Event Dates</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-timestamps/index.html" class="nav-subitem">Cases with Identical Event Timestamps</a><!--!-->
+                            <a href="../../filters/cases-with-unchanged-attribute/index.html" class="nav-subitem">Cases with Unchanged Attribute</a><!--!-->
+                            <a href="../../filters/compare-attribute-values/index.html" class="nav-subitem">Compare Attribute Values</a><!--!-->
+                            <a href="../../filters/deadline/index.html" class="nav-subitem">Deadline</a><!--!-->
+                            <a href="../../filters/event-order/index.html" class="nav-subitem">Event Order</a><!--!-->
+                            <a href="../../filters/events-before-or-after-activity/index.html" class="nav-subitem">Events Before or After Activity</a><!--!-->
+                            <a href="../../filters/events-with-attribute/index.html" class="nav-subitem">Events with Attribute</a><!--!-->
+                            <a href="../../filters/filter-list/index.html" class="nav-subitem">Filter List</a><!--!-->
+                            <a href="../../filters/keep-events-with-same-value-as-case-attribute/index.html" class="nav-subitem">Keep Events with Same Value as Case Attribute</a><!--!-->
+                            <a href="../../filters/or-filter/index.html" class="nav-subitem">Or Filter</a><!--!-->
+                            <a href="../../filters/process-variants/index.html" class="nav-subitem">Process Variants</a><!--!-->
+                            <a href="../../filters/remove-activity-loops/index.html" class="nav-subitem">Remove Activity Loops</a><!--!-->
+                            <a href="../../filters/remove-activity-with-same-date/index.html" class="nav-subitem">Remove Activity with Same Date</a><!--!-->
+                            <a href="../../filters/remove-activity-with-similar-time/index.html" class="nav-subitem">Remove Activity with Similar Time</a><!--!-->
+                            <a href="../../filters/remove-data-from-underactive-periods/index.html" class="nav-subitem">Remove Data from Underactive Periods</a><!--!-->
+                            <a href="../../filters/select-variants/index.html" class="nav-subitem">Select Variants</a><!--!-->
+                            <a href="../../filters/selected-activity-frequency/index.html" class="nav-subitem">Selected Activity Frequency</a><!--!-->
+                            <a href="../../filters/single-activity-cases/index.html" class="nav-subitem">Single Activity Cases</a><!--!-->
+                            <a href="../../filters/text-search/index.html" class="nav-subitem">Text Search</a><!--!-->
+                            <a href="../../filters/time-between-activities/index.html" class="nav-subitem">Time Between Activities</a><!--!-->
+                            <a href="../../filters/time-period/index.html" class="nav-subitem">Time Period</a><!--!-->
+                            <a href="../../filters/value-frequency/index.html" class="nav-subitem">Value Frequency</a><!--!-->
+                            <a href="../../filters/variant-frequency/index.html" class="nav-subitem">Variant Frequency</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection collapsed" id="calculators-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Calculators</span></button><!--!-->
+                        <div id="calculators" class="nav-subsection-items"><a href="../../calculators/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../calculators/activity-information/index.html" class="nav-subitem">Activity Information</a><!--!-->
+                            <a href="../../calculators/average-value/index.html" class="nav-subitem">Average Value</a><!--!-->
+                            <a href="../../calculators/automation/index.html" class="nav-subitem">Automation Calculator</a><!--!-->
+                            <a href="../../calculators/breakdown-by-categories/index.html" class="nav-subitem">Breakdown By Categories</a><!--!-->
+                            <a href="../../calculators/case-count/index.html" class="nav-subitem">Case Count</a><!--!-->
+                            <a href="../../calculators/case-duration/index.html" class="nav-subitem">Case Duration</a><!--!-->
+                            <a href="../../calculators/chair-usage/index.html" class="nav-subitem">Chair Usage</a><!--!-->
+                            <a href="../../calculators/column-info/index.html" class="nav-subitem">Column Info</a><!--!-->
+                            <a href="../../calculators/data-selector/index.html" class="nav-subitem">Data Selector</a><!--!-->
+                            <a href="../../calculators/days-of-sales-outstanding-dpo/index.html" class="nav-subitem">Days Of Sales Outstanding / DPO</a><!--!-->
+                            <a href="../../calculators/dataset-information/index.html" class="nav-subitem">Dataset Information</a><!--!-->
+                            <a href="../../calculators/duplicate-cases/index.html" class="nav-subitem">Duplicate Cases</a><!--!-->
+                            <a href="../../calculators/event-count/index.html" class="nav-subitem">Event Count</a><!--!-->
+                            <a href="../../calculators/find-date-outliers/index.html" class="nav-subitem">Find Date Outliers</a><!--!-->
+                            <a href="../../calculators/find-text-in-attributes/index.html" class="nav-subitem">Find Text In Attributes</a><!--!-->
+                            <a href="../../calculators/general-3-way-match/index.html" class="nav-subitem">General 3 Way Match</a><!--!-->
+                            <a href="../../calculators/histogram/index.html" class="nav-subitem">Histogram</a><!--!-->
+                            <a href="../../calculators/llm-prompts/index.html" class="nav-subitem">LLM Prompts</a><!--!-->
+                            <a href="../../calculators/maximum-value/index.html" class="nav-subitem">Maximum Value</a><!--!-->
+                            <a href="../../calculators/metadata/index.html" class="nav-subitem">Metadata</a><!--!-->
+                            <a href="../../calculators/minimum-value/index.html" class="nav-subitem">Minimum Value</a><!--!-->
+                            <a href="../../calculators/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                            <a href="../../calculators/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                            <a href="../../calculators/rate/index.html" class="nav-subitem">Rate</a><!--!-->
+                            <a href="../../calculators/rate-over-time/index.html" class="nav-subitem">Rate Over Time</a><!--!-->
+                            <a href="../../calculators/repeated-activities/index.html" class="nav-subitem">Repeated Activities</a><!--!-->
+                            <a href="../../calculators/resource-performance-vs-conformance/index.html" class="nav-subitem">Resource Performance Vs Conformance</a><!--!-->
+                            <a href="../../calculators/root-cause-analysis/index.html" class="nav-subitem">Root Cause Analysis</a><!--!-->
+                            <a href="../../calculators/same-time-pairs/index.html" class="nav-subitem">Same Time Pairs</a><!--!-->
+                            <a href="../../calculators/show-notes/index.html" class="nav-subitem">Show Notes</a><!--!-->
+                            <a href="../../calculators/sum-of-values/index.html" class="nav-subitem">Sum Of Values</a><!--!-->
+                            <a href="../../calculators/sum-of-values-for-activity/index.html" class="nav-subitem">Sum Of Values For Activity</a><!--!-->
+                            <a href="../../calculators/standard-checker/index.html" class="nav-subitem">Standard Checker</a><!--!-->
+                            <a href="../../calculators/time-between-all-activity-pairs/index.html" class="nav-subitem">Time Between All Activity Pairs</a><!--!-->
+                            <a href="../../calculators/time-between-selected-events/index.html" class="nav-subitem">Time Between Selected Events</a><!--!-->
+                            <a href="../../calculators/time-from-case-start-to-selected-event/index.html" class="nav-subitem">Time From Case Start To Selected Event</a><!--!-->
+                            <a href="../../calculators/trend/index.html" class="nav-subitem">Trend</a><!--!-->
+                            <a href="../../calculators/variant-dna/index.html" class="nav-subitem">Variant DNA</a><!--!-->
+                            <a href="../../calculators/value-count-in-case-attribute/index.html" class="nav-subitem">Value Count In Case Attribute</a><!--!-->
+                            <a href="../../calculators/value-count-in-event-attribute/index.html" class="nav-subitem">Value Count In Event Attribute</a><!--!-->
+                            <a href="../../calculators/what-if-simulation-working-capital/index.html" class="nav-subitem">What If Simulation Working Capital</a><!--!-->
+                            <a href="../../calculators/world-map/index.html" class="nav-subitem">World Map</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection collapsed" id="enrichments-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Enrichments</span></button><!--!-->
+                        <div id="enrichments" class="nav-subsection-items"><a href="../../enrichments/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../enrichments/2-way-match/index.html" class="nav-subitem ">2 Way Match</a><!--!-->
+                            <a href="../../enrichments/activity-copy-latest-event-value/index.html" class="nav-subitem ">Activity Copy Latest EventValue</a><!--!-->
+                            <a href="../../enrichments/activity-order-classification/index.html" class="nav-subitem ">Activity Order Classification</a><!--!-->
+                            <a href="../../enrichments/add-activity-from-case-attribute/index.html" class="nav-subitem ">Add Activity From Case Attribute</a><!--!-->
+                            <a href="../../enrichments/create-update-activity/index.html" class="nav-subitem ">Create Update Activity</a><!--!-->
+                            <a href="../../enrichments/fill-blanks-in-event-attribute/index.html" class="nav-subitem ">Fill Blanks In Event Attribute</a><!--!-->
+                            <a href="../../enrichments/remove-activities/index.html" class="nav-subitem ">Remove Activities</a><!--!-->
+                            <a href="../../enrichments/remove-duplicate-events/index.html" class="nav-subitem ">Remove Duplicate Events</a><!--!-->
+                            <a href="../../enrichments/remove-repeated-activities/index.html" class="nav-subitem ">Remove Repeated Activities</a><!--!-->
+                            <a href="../../enrichments/add/index.html" class="nav-subitem ">Add</a><!--!-->
+                            <a href="../../enrichments/divide/index.html" class="nav-subitem ">Divide</a><!--!-->
+                            <a href="../../enrichments/multiply/index.html" class="nav-subitem ">Multiply</a><!--!-->
+                            <a href="../../enrichments/subtract/index.html" class="nav-subitem ">Subtract</a><!--!-->
+                            <a href="../../enrichments/anonymize/index.html" class="nav-subitem ">Anonymize</a><!--!-->
+                            <a href="../../enrichments/change-attribute-display-name/index.html" class="nav-subitem ">Change Attribute Display Name</a><!--!-->
+                            <a href="../../enrichments/change-attribute-name/index.html" class="nav-subitem ">Change Attribute Name</a><!--!-->
+                            <a href="../../enrichments/combine-boolean-attributes/index.html" class="nav-subitem ">Combine Boolean Attributes</a><!--!-->
+                            <a href="../../enrichments/concatenate-attributes/index.html" class="nav-subitem ">Concatenate Attributes</a><!--!-->
+                            <a href="../../enrichments/convert-currency-to-base/index.html" class="nav-subitem ">Convert Currency To Base</a><!--!-->
+                            <a href="../../enrichments/convert-to-case-attributes/index.html" class="nav-subitem ">Convert To Case Attributes</a><!--!-->
+                            <a href="../../enrichments/convert-to-integer/index.html" class="nav-subitem ">Convert To Integer</a><!--!-->
+                            <a href="../../enrichments/copy-attribute/index.html" class="nav-subitem ">Copy Attribute</a><!--!-->
+                            <a href="../../enrichments/hide-attribute/index.html" class="nav-subitem ">Hide Attribute</a><!--!-->
+                            <a href="../../enrichments/hide-blank-attributes/index.html" class="nav-subitem ">Hide Blank Attributes</a><!--!-->
+                            <a href="../../enrichments/set-group-value/index.html" class="nav-subitem ">Set Group Value</a><!--!-->
+                            <a href="../../enrichments/attribute-changes-between-two-activities/index.html" class="nav-subitem ">Attribute Changes Between Two Activities</a><!--!-->
+                            <a href="../../enrichments/attribute-changes-in-a-case/index.html" class="nav-subitem ">Attribute Changes In A Case</a><!--!-->
+                            <a href="../../enrichments/compare-activity-counts/index.html" class="nav-subitem ">Compare Activity Counts</a><!--!-->
+                            <a href="../../enrichments/compare-case-attributes/index.html" class="nav-subitem ">Compare Case Attributes</a><!--!-->
+                            <a href="../../enrichments/compare-event-attributes-for-two-activities/index.html" class="nav-subitem ">Compare Event Attributes For Two Activities</a><!--!-->
+                            <a href="../../enrichments/compare-multiple-case-attributes/index.html" class="nav-subitem ">Compare Multiple Case Attributes</a><!--!-->
+                            <a href="../../enrichments/event-order-algorithm/index.html" class="nav-subitem ">Event Order Algorithm</a><!--!-->
+                            <a href="../../enrichments/allowed-case-end-activities/index.html" class="nav-subitem ">Allowed Case End Activities</a><!--!-->
+                            <a href="../../enrichments/allowed-case-start-activities/index.html" class="nav-subitem ">Allowed Case Start Activities</a><!--!-->
+                            <a href="../../enrichments/conformance-issue/index.html" class="nav-subitem ">Conformance Issue</a><!--!-->
+                            <a href="../../enrichments/expected-order/index.html" class="nav-subitem ">Expected Order</a><!--!-->
+                            <a href="../../enrichments/mandatory-activity/index.html" class="nav-subitem ">Mandatory Activity</a><!--!-->
+                            <a href="../../enrichments/repeated-activity/index.html" class="nav-subitem ">Repeated Activity</a><!--!-->
+                            <a href="../../enrichments/undesired-activity/index.html" class="nav-subitem ">Undesired Activity</a><!--!-->
+                            <a href="../../enrichments/wrong-activity-order/index.html" class="nav-subitem ">Wrong Activity Order</a><!--!-->
+                            <a href="../../enrichments/case-closed/index.html" class="nav-subitem ">Case Closed</a><!--!-->
+                            <a href="../../enrichments/categorize-attribute-values/index.html" class="nav-subitem ">Categorize Attribute Values</a><!--!-->
+                            <a href="../../enrichments/categorize-duration/index.html" class="nav-subitem ">Categorize Duration</a><!--!-->
+                            <a href="../../enrichments/count-boolean-attributes-with-value/index.html" class="nav-subitem ">Count Boolean Attributes With Value</a><!--!-->
+                            <a href="../../enrichments/group-attribute-values/index.html" class="nav-subitem ">Group Attribute Values</a><!--!-->
+                            <a href="../../enrichments/representative-case-attribute/index.html" class="nav-subitem ">Representative Case Attribute</a><!--!-->
+                            <a href="../../enrichments/representative-case-attribute-2/index.html" class="nav-subitem ">Representative Case Attribute 2</a><!--!-->
+                            <a href="../../enrichments/logical-or/index.html" class="nav-subitem ">Logical OR</a><!--!-->
+                            <a href="../../enrichments/negate/index.html" class="nav-subitem ">Negate</a><!--!-->
+                            <a href="../../enrichments/case-duration-category-for-activity/index.html" class="nav-subitem ">Case Duration Category For Activity</a><!--!-->
+                            <a href="../../enrichments/categorize-duration-for-activity/index.html" class="nav-subitem ">Categorize Duration For Activity</a><!--!-->
+                            <a href="../../enrichments/categorize-duration-for-selected-cases/index.html" class="nav-subitem ">Categorize Duration For Selected Cases</a><!--!-->
+                            <a href="../../enrichments/ai-case-prediction/index.html" class="nav-subitem ">AI Case Prediction</a><!--!-->
+                            <a href="../../enrichments/format-string/index.html" class="nav-subitem ">Format String</a><!--!-->
+                            <a href="../../enrichments/python/index.html" class="nav-subitem ">Python</a><!--!-->
+                            <a href="../../enrichments/count-activities/index.html" class="nav-subitem ">Count Activities</a><!--!-->
+                            <a href="../../enrichments/count-values/index.html" class="nav-subitem ">Count Values</a><!--!-->
+                            <a href="../../enrichments/event-count/index.html" class="nav-subitem ">Event Count</a><!--!-->
+                            <a href="../../enrichments/max-value/index.html" class="nav-subitem ">Max Value</a><!--!-->
+                            <a href="../../enrichments/predict-value/index.html" class="nav-subitem ">Predict Value</a><!--!-->
+                            <a href="../../enrichments/summarize-values/index.html" class="nav-subitem ">Summarize Values</a><!--!-->
+                            <a href="../../enrichments/limit-text-length/index.html" class="nav-subitem ">Limit Text Length</a><!--!-->
+                            <a href="../../enrichments/replace-text/index.html" class="nav-subitem ">Replace Text</a><!--!-->
+                            <a href="../../enrichments/text-end/index.html" class="nav-subitem ">Text End</a><!--!-->
+                            <a href="../../enrichments/text-start/index.html" class="nav-subitem ">Text Start</a><!--!-->
+                            <a href="../../enrichments/trim-text/index.html" class="nav-subitem ">Trim Text</a><!--!-->
+                            <a href="../../enrichments/upper-case/index.html" class="nav-subitem ">Upper Case</a><!--!-->
+                            <a href="../../enrichments/add-days-to-a-date/index.html" class="nav-subitem ">Add Days To A Date</a><!--!-->
+                            <a href="../../enrichments/add-time-to-attributes/index.html" class="nav-subitem ">Add Time To Attributes</a><!--!-->
+                            <a href="../../enrichments/correct-time-zone/index.html" class="nav-subitem ">Correct Time Zone</a><!--!-->
+                            <a href="../../enrichments/duration-between-an-activity-and-current-time/index.html" class="nav-subitem ">Duration Between An Activity And Current Time</a><!--!-->
+                            <a href="../../enrichments/duration-between-an-attribute-and-an-activity/index.html" class="nav-subitem ">Duration Between An Attribute And An Activity</a><!--!-->
+                            <a href="../../enrichments/duration-between-an-attribute-and-current-time/index.html" class="nav-subitem ">Duration Between An Attribute And Current Time</a><!--!-->
+                            <a href="../../enrichments/duration-between-two-activities/index.html" class="nav-subitem ">Duration Between Two Activities</a><!--!-->
+                            <a href="../../enrichments/duration-between-two-event-attributes/index.html" class="nav-subitem ">Duration Between Two Event Attributes</a><!--!-->
+                            <a href="../../enrichments/durations-between-case-attribute-and-activity-times/index.html" class="nav-subitem ">Durations Between Case Attribute And Activity Times</a><!--!-->
+                            <a href="../../enrichments/freeze-time/index.html" class="nav-subitem ">Freeze Time</a><!--!-->
+                            <a href="../../enrichments/shift-activity-time/index.html" class="nav-subitem ">Shift Activity Time</a><!--!-->
+                            <a href="../../enrichments/sort-log-on-start-time/index.html" class="nav-subitem ">Sort Log On Start Time</a><!--!-->
+                            <a href="../../enrichments/time-to-previous-case-in-group/index.html" class="nav-subitem ">Time To Previous Case In Group</a><!--!-->
+                            <a href="../../enrichments/filter-process-log/index.html" class="nav-subitem ">Filter Process Log</a></div></div></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="process-discovery-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Process Discovery</span></div>
+                <div id="process-discovery" class="nav-section-content"><a href="../../process-discovery/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../process-discovery/case-explorer/index.html" class="nav-subitem">Case Explorer</a><!--!-->
+                    <a href="../../process-discovery/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                    <a href="../../process-discovery/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                    <a href="../../process-discovery/process-variants/index.html" class="nav-subitem">Process Variants</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="ai-assistants-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">AI Assistants</span></div>
+                <div id="ai-assistants" class="nav-section-content"><a href="../../ai-assistants/ai-model-configuration/index.html" class="nav-subitem">AI Model Configuration</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="how-to-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">How To</span></div>
+                <div id="how-to" class="nav-section-content"><a href="../index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../getting-started-creating-first-project/index.html" class="nav-subitem">Getting Started: Creating Your First Project</a><!--!-->
+                    <a href="../uploading-configuring-data-sources/index.html" class="nav-subitem">Uploading and Configuring Data Sources</a><!--!-->
+                    <a href="../understanding-dual-dataset-architecture/index.html" class="nav-subitem">Understanding Dual Dataset Architecture</a><!--!-->
+                    <a href="../planning-dashboard-structure-for-user-roles/index.html" class="nav-subitem">Planning Dashboard Structure for User Roles</a><!--!-->
+                    <a href="../working-with-investigations-and-notebooks/index.html" class="nav-subitem">Working with Investigations and Notebooks</a><!--!-->
+                    <a href="../mastering-log-enrichment-engine/index.html" class="nav-subitem">Mastering Log Enrichment Engine</a><!--!-->
+                    <a href="../building-conformance-rules-for-compliance/index.html" class="nav-subitem">Building Conformance Rules for Compliance</a><!--!-->
+                    <a href="../creating-analysis-with-filters-and-calculators/index.html" class="nav-subitem">Creating Analysis with Filters and Calculators</a><!--!-->
+                    <a href="../publishing-metrics-from-notebooks-to-dashboards/index.html" class="nav-subitem">Publishing Metrics from Notebooks to Dashboards</a><!--!-->
+                    <a href="../advanced-implementing-activity-based-costing/index.html" class="nav-subitem">Advanced: Implementing Activity Based Costing</a><!--!-->
+                    <a href="../reusing-analysis-copying-and-adapting-notebooks/index.html" class="nav-subitem">Reusing Analysis: Copying and Adapting Notebooks</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Designing User-Friendly Dashboards with Notes and Formatting</a><!--!-->
+                    <a href="../understanding-drill-down-and-continuous-monitoring/index.html" class="nav-subitem">Understanding Drill Down and Continuous Monitoring</a><!--!-->
+                    <a href="../end-to-end-project-build-complete-workflow/index.html" class="nav-subitem">End to End Project Build: Complete Workflow</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="on-premise-server-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">On-Premise Server</span></div>
+                <div id="on-premise-server" class="nav-section-content"><a href="../../on-premise-server/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../on-premise-server/installation-guide/index.html" class="nav-subitem">Installation Guide</a><!--!-->
+                    <a href="../../on-premise-server/install-sql-server-express/index.html" class="nav-subitem">Install SQL Server Express</a><!--!-->
+                    <a href="../../on-premise-server/technical-requirements/index.html" class="nav-subitem">Technical Requirements</a><!--!-->
+                    <a href="../../on-premise-server/auto-update/index.html" class="nav-subitem">Auto Update</a><!--!-->
+                    <a href="../../on-premise-server/force-update/index.html" class="nav-subitem">Force Update</a><!--!-->
+                    <a href="../../on-premise-server/backup-strategy/index.html" class="nav-subitem">Backup Strategy</a></div></div><!--!-->
+
+
+            <div class="nav-section always-expanded expanded" id="tenant-settings-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Tenant Settings</span></div>
+                <div id="tenant-settings" class="nav-section-content"><a href="../../tenant-settings/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="active-directory-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Active Directory</span></button><!--!-->
+                        <div id="active-directory" class="nav-subsection-items"><a href="../../tenant-settings/active-directory/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/setup-guide/index.html" class="nav-subitem ">Setup Guide</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/azure-ad-app-registration/index.html" class="nav-subitem ">Azure AD App Registration</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="administration-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Administration</span></div>
+                <div id="administration" class="nav-section-content"><a href="../../administration/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <a href="../../administration/tenant-management/index.html" class="nav-subitem ">Tenant Management</a><!--!-->
+                    <a href="../../administration/email_settings/index.html" class="nav-subitem ">Email Settings</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="user-management-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">User Management</span></button><!--!-->
+                        <div id="user-management" class="nav-subsection-items"><a href="../../administration/user-management/index.html" class="nav-subitem overview-item">Overview</a></div></div><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="service-accounts-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Service Accounts</span></button><!--!-->
+                        <div id="service-accounts" class="nav-subsection-items"><a href="../../administration/service-accounts/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../administration/service-accounts/what-are-service-accounts/index.html" class="nav-subitem ">What Are Service Accounts</a><!--!-->
+                            <a href="../../administration/service-accounts/promote-user-to-service-account/index.html" class="nav-subitem ">Promote User to Service Account</a><!--!-->
+                            <a href="../../administration/service-accounts/manage-service-accounts/index.html" class="nav-subitem ">Manage Service Accounts</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="resources-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Resources</span></div>
+                <div id="resources" class="nav-section-content"><a href="../../resources/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../resources/sample-datasets/index.html" class="nav-subitem">Sample Datasets</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="application-guide-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Application Guide</span></div>
+                <div id="application-guide" class="nav-section-content"><a href="../../application-guide/ai-copilot/index.html" class="nav-subitem">AI Copilot</a><!--!-->
+                    <a href="../../application-guide/actions-engine/index.html" class="nav-subitem">Actions Engine</a><!--!-->
+                    <a href="../../application-guide/bpmn-editor/index.html" class="nav-subitem">BPMN Editor</a><!--!-->
+                    <a href="../../application-guide/projects/index.html" class="nav-subitem">Projects</a><!--!-->
+                    <a href="../../application-guide/business-apps/index.html" class="nav-subitem">Business Apps</a></div></div><!--!-->
+
+            <div class="nav-section always-expanded expanded" id="task-mining-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Task Mining</span></div>                <div id="task-mining" class="nav-section-content"><a href="../../task-mining/task-mining-agent-installation/index.html" class="nav-subitem">Task Mining Agent Installation</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Designing User Friendly Dashboards With Notes And Formatting</h1><div class="page-breadcrumb">How To</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<div class="overview"><h2 id="overview">Overview</h2>
+<p>Creating effective dashboards in mindzie Studio goes beyond simply displaying metrics. Professional, user-friendly dashboards combine visual appeal with functional information delivery, helping end users understand not just what the metrics show, but how to interact with them and what actions to take.</p>
+<p>This guide covers best practices for designing dashboards that balance aesthetics with usability, using markdown formatting, note panels, color schemes, and thoughtful layout design to create intuitive user experiences.</p>
+</div>
+<h2 id="why-dashboard-design-matters">Why Dashboard Design Matters</h2>
+<p>Well-designed dashboards serve multiple purposes:</p>
+<ul>
+<li><strong>Guide users</strong> through complex data with clear instructions</li>
+<li><strong>Provide context</strong> for metrics and KPIs</li>
+<li><strong>Enhance usability</strong> by explaining drill-down capabilities and interactions</li>
+<li><strong>Maintain visual appeal</strong> while delivering dense information</li>
+<li><strong>Support different user roles</strong> with targeted guidance and explanations</li>
+<li><strong>Enable self-service analytics</strong> by empowering users to explore data independently</li>
+</ul>
+<h2 id="using-note-panels-for-dashboard-instructions">Using Note Panels for Dashboard Instructions</h2>
+<p>Note panels are one of the most powerful tools for creating user-friendly dashboards. They allow you to add contextual information, instructions, and explanations directly within your dashboard layout.</p>
+<h3 id="creating-a-note-panel">Creating a Note Panel</h3>
+<p>When building or editing a dashboard layout, you can add note panels to provide information to users:</p>
+<ol>
+<li>Click <strong>Edit Layout</strong> on your dashboard</li>
+<li>Click <strong>Note</strong> to add a new note panel</li>
+<li>Configure the note panel properties</li>
+</ol>
+<p><img src="../../../docs-master/mindzieStudio/how-to/designing-user-friendly-dashboards-with-notes-and-formatting/images/note-panel-configuration.png" alt="Note Panel Configuration"></p>
+<h3 id="note-panel-configuration-options">Note Panel Configuration Options</h3>
+<p>The Dashboard Note Panel dialog provides several customization options:</p>
+<ul>
+<li><strong>Title</strong>: Add a descriptive title for the note panel</li>
+<li><strong>Note</strong>: Enter your content using markdown formatting</li>
+<li><strong>Disable Title</strong>: Check this option to hide the title and display only the note content (useful for full-width informational banners)</li>
+<li><strong>Background Color</strong>: Choose a background color to make the note stand out</li>
+<li><strong>Title Color</strong>: Customize the title text color</li>
+<li><strong>Text Color</strong>: Set the color for the main note text</li>
+</ul>
+<h3 id="common-use-cases-for-note-panels">Common Use Cases for Note Panels</h3>
+<p><strong>Dashboard Instructions</strong>
+Add a prominent note panel at the top of dashboards to explain how users should interact with the metrics:</p>
+<pre><code class="language-markdown">## Process Overview Dashboard
+
+** Hover over any of the KPIs to see the link icon, then click the icon to drill into that KPI
+</code></pre>
+<p><strong>Process Context</strong>
+Provide background information about the process being analyzed, helping users understand the business objectives and what they should be monitoring.</p>
+<p><strong>Guidance for Analysts</strong>
+If you're a process analyst building multiple investigations and KPIs, use note panels to document what you've done, why specific metrics were chosen, and any important considerations for future updates.</p>
+<h2 id="leveraging-markdown-for-text-formatting">Leveraging Markdown for Text Formatting</h2>
+<p>mindzie Studio supports markdown language in note panels, enabling rich text formatting to enhance readability and visual hierarchy.</p>
+<h3 id="markdown-formatting-capabilities">Markdown Formatting Capabilities</h3>
+<p><strong>Headers</strong>
+Use markdown headers to create visual hierarchy:</p>
+<pre><code class="language-markdown"># Main Title (H1)
+## Section Header (H2)
+### Subsection (H3)
+</code></pre>
+<p><strong>Emphasis</strong>
+Add emphasis to important information:</p>
+<pre><code class="language-markdown">*italic text*
+**bold text**
+*** bold and italic***
+</code></pre>
+<p><strong>Lists</strong>
+Create organized lists for instructions or process steps:</p>
+<pre><code class="language-markdown">- Bullet point item
+- Another bullet point
+  - Nested item
+
+1. Numbered item
+2. Another numbered item
+</code></pre>
+<p><strong>Links and More</strong>
+Include hyperlinks, code blocks, and other markdown elements to create comprehensive dashboard documentation.</p>
+<h2 id="working-with-color-schemes">Working with Color Schemes</h2>
+<p>Color plays a critical role in dashboard design, helping to create visual hierarchy, draw attention to important information, and maintain consistency with your organization's branding.</p>
+<h3 id="creating-dark-theme-note-panels">Creating Dark Theme Note Panels</h3>
+<p>For high-impact informational panels:</p>
+<ol>
+<li>Set <strong>Background Color</strong> to a dark shade (such as dark blue or teal)</li>
+<li>Set <strong>Text Color</strong> to light or white for contrast</li>
+<li>Check <strong>Disable Title</strong> to create a seamless banner effect</li>
+<li>Maximize the panel across the screen width</li>
+</ol>
+<p><img src="../../../docs-master/mindzieStudio/how-to/designing-user-friendly-dashboards-with-notes-and-formatting/images/dashboard-with-instructions.png" alt="Dashboard with Dark Theme Header"></p>
+<p>This creates a professional header that clearly separates instructional content from analytical metrics.</p>
+<h3 id="light-theme-panels">Light Theme Panels</h3>
+<p>For less prominent notes or embedded guidance:</p>
+<ul>
+<li>Use lighter background colors</li>
+<li>Maintain dark text for readability</li>
+<li>Keep titles enabled to provide clear section labels</li>
+</ul>
+<h3 id="color-consistency">Color Consistency</h3>
+<p>Maintain visual consistency across your dashboard set:</p>
+<ul>
+<li>Use the same color scheme for similar types of information across all dashboards</li>
+<li>Apply consistent styling for instructions versus contextual notes</li>
+<li>Consider your end users' preferences and accessibility needs</li>
+</ul>
+<h2 id="using-edit-layout-to-arrange-dashboard-elements">Using Edit Layout to Arrange Dashboard Elements</h2>
+<p>The Edit Layout feature provides a flexible grid system for organizing dashboard components.</p>
+<p><img src="../../../docs-master/mindzieStudio/how-to/designing-user-friendly-dashboards-with-notes-and-formatting/images/dashboard-with-metrics-layout.png" alt="Dashboard Layout with Metrics"></p>
+<h3 id="layout-best-practices">Layout Best Practices</h3>
+<p><strong>Full-Screen Information Panels</strong>
+For instructional note panels, maximize them across the full width of the dashboard. This creates clear separation between guidance and metrics.</p>
+<p><strong>Side-by-Side Metrics</strong>
+Arrange related KPIs side-by-side to enable easy comparison. You can place multiple metrics in a single row to maximize screen real estate.</p>
+<p><strong>Logical Flow</strong>
+Organize your dashboard from top to bottom:</p>
+<ol>
+<li>Instructional header or context panel</li>
+<li>Primary KPIs and high-level metrics</li>
+<li>Detailed breakdowns and supporting analysis</li>
+<li>Additional context or guidance as needed</li>
+</ol>
+<p><strong>Responsive Sizing</strong>
+Consider how your dashboard will appear on different screen sizes. mindzie Studio's grid system helps maintain readability across devices.</p>
+<h2 id="adding-hover-instructions-and-drill-in-guidance">Adding Hover Instructions and Drill-In Guidance</h2>
+<p>One of mindzie Studio's most powerful features is the ability to drill down from dashboard metrics into the underlying analysis notebooks. However, users may not discover this capability without clear guidance.</p>
+<h3 id="explaining-drill-down-functionality">Explaining Drill-Down Functionality</h3>
+<p>Use note panels to explicitly tell users how to drill down:</p>
+<pre><code class="language-markdown">** Hover over any of the KPIs to see the link icon, then click the icon to drill into that KPI
+</code></pre>
+<p>This simple instruction helps users understand that dashboards are not static displays, but interactive tools for exploration.</p>
+<h3 id="what-users-see-when-they-drill-down">What Users See When They Drill Down</h3>
+<p>When users click the link icon on a dashboard metric, they access the full analysis notebook containing:</p>
+<ul>
+<li>The <strong>Dashboard</strong> tab showing the specific metric</li>
+<li><strong>Process Map</strong> visualizations</li>
+<li><strong>Variant DNA</strong> analysis</li>
+<li><strong>Data Overview</strong> with detailed statistics</li>
+<li><strong>Case Explorer</strong> for individual case examination</li>
+<li><strong>AI Co-pilot</strong> for guided analysis</li>
+</ul>
+<p><img src="../../../docs-master/mindzieStudio/how-to/designing-user-friendly-dashboards-with-notes-and-formatting/images/drill-down-view.png" alt="Drill-Down View"></p>
+<h3 id="guiding-users-through-the-notebook">Guiding Users Through the Notebook</h3>
+<p>You can also add note calculators within analysis notebooks themselves to explain:</p>
+<ul>
+<li>What the analysis is measuring</li>
+<li>Why it matters to the business</li>
+<li>How to interpret the results</li>
+<li>What actions to take based on the findings</li>
+</ul>
+<h2 id="balancing-visual-appeal-with-information-density">Balancing Visual Appeal with Information Density</h2>
+<p>Effective dashboard design requires finding the right balance between aesthetics and information delivery.</p>
+<h3 id="avoiding-information-overload">Avoiding Information Overload</h3>
+<p><strong>Start with Key Metrics</strong>
+Don't try to display everything on a single dashboard. Focus on the most important KPIs for each user role or business function.</p>
+<p><strong>Use Progressive Disclosure</strong>
+Present high-level summaries on dashboards, with drill-down capabilities providing access to detailed analysis.</p>
+<p><strong>White Space Matters</strong>
+Don't crowd every inch of the dashboard. Strategic use of white space improves readability and reduces cognitive load.</p>
+<h3 id="creating-visual-interest">Creating Visual Interest</h3>
+<p><strong>Vary Panel Sizes</strong>
+Not all metrics need the same amount of space. Size panels according to the complexity and importance of the information.</p>
+<p><strong>Use Color Strategically</strong>
+Apply color to draw attention to key information, but avoid creating a "rainbow effect" with too many competing colors.</p>
+<p><strong>Consistent Styling</strong>
+Apply consistent formatting, fonts, and colors to create a polished, professional appearance.</p>
+<h2 id="dashboard-structure-for-different-user-roles">Dashboard Structure for Different User Roles</h2>
+<p>When creating dashboard sets for an organization, consider designing role-specific views with appropriate formatting and guidance.</p>
+<h3 id="executive-dashboards">Executive Dashboards</h3>
+<ul>
+<li>Minimal text, maximum visual impact</li>
+<li>High-level KPIs prominently displayed</li>
+<li>Brief context notes explaining business objectives</li>
+<li>Clean, uncluttered layouts</li>
+</ul>
+<h3 id="operations-dashboards">Operations Dashboards</h3>
+<ul>
+<li>Detailed metrics with breakdowns</li>
+<li>Instructions for common operational tasks</li>
+<li>Links to related dashboards for different process areas</li>
+<li>Time-based trending information</li>
+</ul>
+<h3 id="process-improvement-dashboards">Process Improvement Dashboards</h3>
+<ul>
+<li>Extensive use of note panels to document analysis approach</li>
+<li>Detailed drill-down guidance</li>
+<li>Context about process baselines and improvement targets</li>
+<li>Instructions for interpreting root cause analysis</li>
+</ul>
+<h3 id="compliance-dashboards">Compliance Dashboards</h3>
+<ul>
+<li>Clear explanations of conformance rules</li>
+<li>Instructions for investigating violations</li>
+<li>Context about regulatory requirements</li>
+<li>Guidance on remediation steps</li>
+</ul>
+<h2 id="step-by-step-creating-a-formatted-dashboard">Step-by-Step: Creating a Formatted Dashboard</h2>
+<p>Let's walk through creating a professional dashboard with formatted notes and metrics.</p>
+<h3 id="step-1-create-the-dashboard-structure">Step 1: Create the Dashboard Structure</h3>
+<ol>
+<li>Navigate to <strong>Dashboards</strong> in mindzie Studio</li>
+<li>Click <strong>Add New Dashboard</strong></li>
+<li>Enter a descriptive name (e.g., "Process Overview Dashboard")</li>
+<li>Optionally add a description</li>
+<li>Click <strong>Create</strong></li>
+</ol>
+<p><img src="../../../docs-master/mindzieStudio/how-to/designing-user-friendly-dashboards-with-notes-and-formatting/images/new-dashboard-dialog.png" alt="New Dashboard Dialog"></p>
+<h3 id="step-2-add-metrics-to-the-dashboard">Step 2: Add Metrics to the Dashboard</h3>
+<p>Before focusing on formatting, publish your key metrics from analysis notebooks to the dashboard:</p>
+<ol>
+<li>Open your analysis notebook</li>
+<li>Click the three-dot menu on a calculator</li>
+<li>Select <strong>Publish to Dashboard</strong></li>
+<li>Choose your target dashboard</li>
+</ol>
+<h3 id="step-3-add-an-instructional-note-panel">Step 3: Add an Instructional Note Panel</h3>
+<ol>
+<li>Click <strong>Edit Layout</strong> on your dashboard</li>
+<li>Click <strong>Note</strong> to add a note panel</li>
+<li>Configure the note:
+<ul>
+<li><strong>Disable Title</strong>: Check this box</li>
+<li><strong>Background Color</strong>: Select a dark color (e.g., dark teal)</li>
+<li><strong>Text Color</strong>: Select white or light color</li>
+<li><strong>Note</strong>: Enter your markdown content:</li>
+</ul>
+<pre><code class="language-markdown">## Process Overview Dashboard
+
+** Hover over any of the KPIs to see the link icon, then click the icon to drill into that KPI
+</code></pre>
+</li>
+<li>Click <strong>Create</strong></li>
+</ol>
+<h3 id="step-4-arrange-the-layout">Step 4: Arrange the Layout</h3>
+<ol>
+<li>Drag the note panel to the top of the dashboard</li>
+<li>Maximize it across the full width</li>
+<li>Arrange your metrics below, placing related KPIs side-by-side</li>
+<li>Adjust panel sizes to create visual balance</li>
+</ol>
+<h3 id="step-5-review-and-refine">Step 5: Review and Refine</h3>
+<ol>
+<li>Exit edit mode to see the dashboard as users will see it</li>
+<li>Test the drill-down functionality</li>
+<li>Review the visual hierarchy and readability</li>
+<li>Make adjustments as needed</li>
+</ol>
+<h2 id="tips-and-best-practices">Tips and Best Practices</h2>
+<h3 id="for-dashboard-designers">For Dashboard Designers</h3>
+<ul>
+<li><strong>Work front-to-back</strong>: Plan your dashboard structure before populating it with metrics</li>
+<li><strong>Document as you build</strong>: Use note panels to capture decisions and rationale while they're fresh</li>
+<li><strong>Test with real users</strong>: Get feedback from actual dashboard consumers before finalizing</li>
+<li><strong>Iterate based on usage</strong>: Monitor which dashboards and metrics get used most, and refine accordingly</li>
+</ul>
+<h3 id="for-note-panel-content">For Note Panel Content</h3>
+<ul>
+<li><strong>Be concise</strong>: Users skim dashboards; keep instructions brief and actionable</li>
+<li><strong>Use active voice</strong>: "Click the icon to drill in" rather than "The icon can be clicked for drilling in"</li>
+<li><strong>Provide examples</strong>: When explaining complex interactions, give specific examples</li>
+<li><strong>Update regularly</strong>: Keep dashboard instructions current as features and workflows evolve</li>
+</ul>
+<h3 id="for-visual-design">For Visual Design</h3>
+<ul>
+<li><strong>Maintain consistency</strong>: Use the same formatting patterns across all dashboards in a project</li>
+<li><strong>Consider accessibility</strong>: Ensure sufficient color contrast for users with visual impairments</li>
+<li><strong>Prioritize readability</strong>: If a design choice makes text harder to read, simplify</li>
+<li><strong>Less is more</strong>: When in doubt, remove visual elements rather than adding them</li>
+</ul>
+<h3 id="for-user-guidance">For User Guidance</h3>
+<ul>
+<li><strong>Assume no prior knowledge</strong>: Many dashboard users may be new to process mining</li>
+<li><strong>Explain the "why"</strong>: Help users understand why metrics matter, not just what they show</li>
+<li><strong>Enable self-service</strong>: Provide enough guidance that users can explore independently</li>
+<li><strong>Link to resources</strong>: Reference additional documentation or help resources when appropriate</li>
+</ul>
+<h2 id="common-pitfalls-to-avoid">Common Pitfalls to Avoid</h2>
+<p><strong>Too Much Text</strong>
+While note panels are valuable, avoid creating "wall of text" dashboards. Keep notes focused and concise.</p>
+<p><strong>Inconsistent Formatting</strong>
+Switching between different color schemes and styles across dashboards creates a disjointed user experience.</p>
+<p><strong>Missing Instructions</strong>
+Don't assume users will discover drill-down capabilities on their own. Explicitly explain how to interact with the dashboard.</p>
+<p><strong>Overcrowded Layouts</strong>
+Trying to fit too many metrics on a single dashboard reduces the impact of each individual KPI.</p>
+<p><strong>Ignoring Mobile Users</strong>
+If users access dashboards on tablets or smaller screens, ensure your layouts remain readable.</p>
+<p><strong>Static Design Thinking</strong>
+Remember that mindzie dashboards support drill-down and interaction. Design with these capabilities in mind.</p>
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+<h3 id="markdown-templates">Markdown Templates</h3>
+<p>Create reusable markdown templates for common dashboard types:</p>
+<p><strong>Executive Dashboard Template</strong></p>
+<pre><code class="language-markdown">## [Process Name] Executive Overview
+
+Key metrics for [process objective]. Updated [frequency].
+
+** Hover over metrics to drill into detailed analysis
+</code></pre>
+<p><strong>Operational Dashboard Template</strong></p>
+<pre><code class="language-markdown">## [Process Name] Operations Dashboard
+
+Monitor daily performance and identify issues requiring attention.
+
+**How to use this dashboard:**
+- Review KPIs for current performance
+- Click any metric to see detailed breakdowns
+- Use filters to focus on specific regions/departments
+</code></pre>
+<h3 id="color-palette-consistency">Color Palette Consistency</h3>
+<p>Define a standard color palette for your organization:</p>
+<ul>
+<li><strong>Primary instruction panels</strong>: Dark teal background, white text</li>
+<li><strong>Warning notes</strong>: Amber background, dark text</li>
+<li><strong>Success indicators</strong>: Green accent colors</li>
+<li><strong>Neutral information</strong>: Light gray background, dark text</li>
+</ul>
+<p>Document this palette and apply it consistently across all projects.</p>
+<h3 id="progressive-dashboard-sets">Progressive Dashboard Sets</h3>
+<p>Design dashboard sets that guide users from high-level to detailed views:</p>
+<ol>
+<li><strong>Setup/Information Dashboard</strong>: Explains the project and how to navigate</li>
+<li><strong>Executive Dashboard</strong>: High-level KPIs with minimal detail</li>
+<li><strong>Operational Dashboards</strong>: Department or function-specific metrics</li>
+<li><strong>Analytical Dashboards</strong>: Detailed breakdowns for process improvement teams</li>
+</ol>
+<p>Each dashboard includes appropriate note panels guiding users to related dashboards.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Designing user-friendly dashboards in mindzie Studio requires thoughtful attention to both form and function. By leveraging note panels with markdown formatting, applying consistent color schemes, arranging layouts strategically, and providing clear user guidance, you can create dashboards that not only look professional but truly empower users to understand and act on process intelligence.</p>
+<p>Remember that dashboard design is iterative. Start with clear structure and basic formatting, gather user feedback, and refine your approach over time. The most effective dashboards are those that evolve based on actual usage patterns and user needs.</p>
+<h2 id="related-topics">Related Topics</h2>
+<ul>
+<li><strong>Planning Your Dashboard Structure for Different User Roles</strong>: Strategic guidance on organizing dashboards for different personas</li>
+<li><strong>Publishing Metrics from Notebooks to Dashboards</strong>: How to move analysis into user-facing dashboards</li>
+<li><strong>Understanding Drill-Down and Continuous Monitoring</strong>: Deep dive into dashboard interactivity</li>
+<li><strong>Creating Analysis with Filters and Calculators</strong>: Building the metrics that populate your dashboards</li>
+</ul>
+</div></div></main></div><!--!-->
+
+<!--!--><script>
+    // Search keyboard shortcut (Ctrl+K or Cmd+K)
+    window.registerSearchShortcut = function(dotNetRef) {
+        document.addEventListener('keydown', function(e) {
+            // Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                dotNetRef.invokeMethodAsync('OpenSearch');
+            }
+        });
+    };
+
+    window.toggleSection = function(sectionId) {
+        const section = document.getElementById(sectionId + '-section');
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            // Save state
+            const isExpanded = section.classList.contains('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsection = function(subsectionId) {
+        const subsection = document.getElementById(subsectionId + '-subsection');
+        if (subsection) {
+            // Toggle between collapsed and expanded
+            if (subsection.classList.contains('expanded')) {
+                subsection.classList.remove('expanded');
+                subsection.classList.add('collapsed');
+            } else {
+                subsection.classList.remove('collapsed');
+                subsection.classList.add('expanded');
+            }
+            
+            // Save state
+            const isExpanded = subsection.classList.contains('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSectionHelper = function(sectionId) {
+        var section = document.getElementById(sectionId);
+        var sectionWrapper = document.querySelector('#' + sectionId + '-section');
+        if (section && sectionWrapper) {
+            var isExpanded = sectionWrapper.classList.toggle('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsectionHelper = function(subsectionId) {
+        console.log('Toggling subsection:', subsectionId);
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            // Toggle between collapsed and expanded
+            var isCurrentlyExpanded = subsectionWrapper.classList.contains('expanded');
+            console.log('Currently expanded:', isCurrentlyExpanded);
+
+            if (isCurrentlyExpanded) {
+                subsectionWrapper.classList.remove('expanded');
+                subsectionWrapper.classList.add('collapsed');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'false');
+                console.log('Collapsed:', subsectionId);
+            } else {
+                subsectionWrapper.classList.remove('collapsed');
+                subsectionWrapper.classList.add('expanded');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'true');
+                console.log('Expanded:', subsectionId);
+            }
+        } else {
+            console.error('Subsection not found:', subsectionId);
+        }
+    };
+    
+    window.expandSubsection = function(subsectionId) {
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            subsectionWrapper.classList.remove('collapsed');
+            subsectionWrapper.classList.add('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, true);
+        }
+    };
+    
+    window.initializeNavigation = function() {
+        // Set Core Concepts and other always-expanded sections
+        document.querySelectorAll('.nav-section.always-expanded').forEach(section => {
+            section.classList.add('expanded');
+        });
+
+        // Restore saved states for other sections
+        document.querySelectorAll('.nav-section:not(.always-expanded)[id$="-section"]').forEach(section => {
+            const sectionId = section.id.replace('-section', '');
+            const savedState = localStorage.getItem('nav-section-' + sectionId);
+            if (savedState === 'true') {
+                section.classList.add('expanded');
+            }
+        });
+
+        // Initialize ALL subsections as collapsed by default
+        document.querySelectorAll('.nav-subsection[id$="-subsection"]').forEach(subsection => {
+            // Remove any existing state classes first
+            subsection.classList.remove('collapsed');
+            subsection.classList.remove('expanded');
+
+            // Always start collapsed, ignore saved state for now to ensure they start collapsed
+            subsection.classList.add('collapsed');
+
+            // Clear any saved states to ensure fresh start
+            const subsectionId = subsection.id.replace('-subsection', '');
+            localStorage.removeItem('nav-subsection-' + subsectionId);
+        });
+    };
+
+    window.scrollToActiveMenuItem = function() {
+        // Find the active menu item
+        var activeItem = document.querySelector('.nav-subitem.active, .nav-item.active, .nav-section-title-link.active');
+        if (activeItem) {
+            // Get the sidebar element
+            var sidebar = document.querySelector('.frame-sidebar');
+            if (sidebar) {
+                // Calculate the position to scroll to
+                var itemTop = activeItem.offsetTop;
+                var itemHeight = activeItem.offsetHeight;
+                var sidebarHeight = sidebar.clientHeight;
+
+                // Scroll so the active item is visible, preferably centered
+                var scrollPosition = itemTop - (sidebarHeight / 2) + (itemHeight / 2);
+
+                // Smooth scroll to the active item
+                sidebar.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
+</script><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

@@ -1,0 +1,32 @@
+name: pm-core
+display_name: Project Management - Core
+description: Core project management workflows and utilities for project management projects
+version: 1.0.0
+commands:
+  - x-pm-help.md
+agents: []
+webviews: []
+scripts: []
+skills:
+  - x-synaptic-style.md
+  - x:brand-guidelines/SKILL.md
+  - x:docx/SKILL.md
+  - x:pdf/SKILL.md
+  - x:pptx/SKILL.md
+  - x:skill-creator/SKILL.md
+  - xlsx/SKILL.md
+templates: []
+dependencies:
+  - name: node
+    check: node --version
+    min_version: 18.0.0
+default_for_types:
+  - pm-start
+claude_addendum: CLAUDE.md
+menu_items:
+  - section: Project Management
+    items:
+      - name: PM Help
+        action: cc-command
+        prompt: /x-pm-help
+        description: Get help with PM commands and workflows

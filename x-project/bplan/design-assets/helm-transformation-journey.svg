@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800">
+  <!-- Background -->
+  <rect width="1400" height="800" fill="#FFFFFF"/>
+  
+  <!-- Title -->
+  <text x="700" y="90" font-size="48" font-weight="bold" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif">
+    HELM TRANSFORMATION JOURNEY
+  </text>
+  <text x="700" y="125" font-size="24" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-style="italic">
+    Four Modules to Decision Intelligence
+  </text>
+  
+  <!-- Connection line -->
+  <line x1="220" y1="450" x2="1180" y2="450" stroke="#44546A" stroke-width="3" opacity="0.3"/>
+  
+  <!-- Module 1: EXPLORE (Navy) -->
+  <rect x="100" y="280" width="240" height="340" rx="20" fill="#07253D" stroke="#07253D" stroke-width="5"/>
+  
+  <text x="220" y="590" font-size="36" font-weight="bold" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    EXPLORE
+  </text>
+  
+  <text x="220" y="630" font-size="20" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    Free
+  </text>
+  
+  <!-- Icon 1: Compass -->
+  <circle cx="220" cy="360" r="30" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="190" y1="360" x2="250" y2="360" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="220" y1="330" x2="220" y2="390" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <text x="220" y="430" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold">
+    Individual
+  </text>
+  <text x="220" y="455" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold">
+    Contributors
+  </text>
+  
+  <text x="220" y="505" font-size="16" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-style="italic">
+    Build Familiarity
+  </text>
+  <text x="220" y="530" font-size="16" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-style="italic">
+    No Friction
+  </text>
+  
+  <text x="220" y="680" font-size="20" font-weight="bold" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif">
+    50K+ Users
+  </text>
+  
+  <!-- Arrow 1 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#44546A" opacity="0.5"/>
+    </marker>
+  </defs>
+  <line x1="340" y1="450" x2="420" y2="450" stroke="#44546A" stroke-width="3" opacity="0.5" marker-end="url(#arrowhead)"/>
+  
+  <!-- Module 2: MINE (Cyan) -->
+  <rect x="440" y="280" width="240" height="340" rx="20" fill="#01A9DB" stroke="#01A9DB" stroke-width="5"/>
+  
+  <text x="560" y="590" font-size="36" font-weight="bold" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    MINE
+  </text>
+  
+  <text x="560" y="630" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    One-Time
+  </text>
+  <text x="560" y="655" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    $10K–$50K
+  </text>
+  
+  <!-- Icon 2: Analysis bars -->
+  <line x1="530" y1="340" x2="590" y2="340" stroke="#FFFFFF" stroke-width="3"/>
+  <line x1="530" y1="365" x2="590" y2="365" stroke="#FFFFFF" stroke-width="3"/>
+  <line x1="530" y1="390" x2="590" y2="390" stroke="#FFFFFF" stroke-width="3"/>
+  
+  <text x="560" y="430" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold">
+    Directors
+  </text>
+  <text x="560" y="455" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold">
+    VPs
+  </text>
+  
+  <text x="560" y="505" font-size="16" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-style="italic">
+    Baseline Understanding
+  </text>
+  <text x="560" y="530" font-size="16" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-style="italic">
+    Quick Wins
+  </text>
+  
+  <text x="560" y="680" font-size="20" font-weight="bold" text-anchor="middle" fill="#01A9DB" font-family="Arial, sans-serif">
+    1K Paying
+  </text>
+  
+  <!-- Arrow 2 -->
+  <line x1="680" y1="450" x2="760" y2="450" stroke="#44546A" stroke-width="3" opacity="0.5" marker-end="url(#arrowhead)"/>
+  
+  <!-- Module 3: DESIGN (Orange) -->
+  <rect x="780" y="280" width="240" height="340" rx="20" fill="#FB4100" stroke="#FB4100" stroke-width="5"/>
+  
+  <text x="900" y="590" font-size="36" font-weight="bold" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    DESIGN
+  </text>
+  
+  <text x="900" y="630" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    One-Time
+  </text>
+  <text x="900" y="655" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif">
+    $25K–$100K
+  </text>
+  
+  <!-- Icon 3: Grid -->
+  <circle cx="880" cy="350" r="4" fill="#FFFFFF"/>
+  <circle cx="900" cy="350" r="4" fill="#FFFFFF"/>
+  <circle cx="920" cy="350" r="4" fill="#FFFFFF"/>
+  <circle cx="880" cy="370" r="4" fill="#FFFFFF"/>
+  <circle cx="900" cy="370" r="4" fill="#FFFFFF"/>
+  <circle cx="920" cy="370" r="4" fill="#FFFFFF"/>
+  <circle cx="880" cy="390" r="4" fill="#FFFFFF"/>
+  <circle cx="900" cy="390" r="4" fill="#FFFFFF"/>
+  <circle cx="920" cy="390" r="4" fill="#FFFFFF"/>
+  
+  <text x="900" y="430" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold">
+    VPs
+  </text>
+  <text x="900" y="455" font-size="18" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-weight="bold">
+    C-Suite
+  </text>
+  
+  <text x="900" y="505" font-size="16" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-style="italic">
+    Strategic Roadmap
+  </text>
+  <text x="900" y="530" font-size="16" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-style="italic">
+    AI Readiness
+  </text>
+  
+  <text x="900" y="680" font-size="20" font-weight="bold" text-anchor="middle" fill="#FB4100" font-family="Arial, sans-serif">
+    4K Customers
+  </text>
+  
+  <!-- Arrow 3 -->
+  <line x1="1020" y1="450" x2="1100" y2="450" stroke="#44546A" stroke-width="3" opacity="0.5" marker-end="url(#arrowhead)"/>
+  
+  <!-- Module 4: MANAGE (White with Navy border) -->
+  <rect x="1120" y="280" width="240" height="340" rx="20" fill="#FFFFFF" stroke="#07253D" stroke-width="5"/>
+  
+  <text x="1240" y="590" font-size="36" font-weight="bold" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif">
+    MANAGE
+  </text>
+  
+  <text x="1240" y="630" font-size="16" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif">
+    Subscription
+  </text>
+  <text x="1240" y="655" font-size="16" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif">
+    $500–$50K/mo
+  </text>
+  
+  <!-- Icon 4: Arrow up -->
+  <line x1="1240" y1="330" x2="1240" y2="400" stroke="#07253D" stroke-width="3"/>
+  <polygon points="1240,405 1230,390 1250,390" fill="#07253D"/>
+  
+  <text x="1240" y="430" font-size="18" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif" font-weight="bold">
+    C-Suite
+  </text>
+  <text x="1240" y="455" font-size="18" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif" font-weight="bold">
+    Compliance
+  </text>
+  
+  <text x="1240" y="505" font-size="16" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif" font-style="italic">
+    Continuous Improvement
+  </text>
+  <text x="1240" y="530" font-size="16" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif" font-style="italic">
+    Governance
+  </text>
+  
+  <text x="1240" y="680" font-size="20" font-weight="bold" text-anchor="middle" fill="#07253D" font-family="Arial, sans-serif">
+    $5–10M ARR
+  </text>
+  
+  <!-- Bottom metrics section -->
+  <text x="350" y="760" font-size="20" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-weight="bold">
+    2% Free-to-Paid
+  </text>
+  <text x="350" y="785" font-size="20" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-weight="bold">
+    Conversion
+  </text>
+  
+  <text x="700" y="760" font-size="20" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-weight="bold">
+    60% Mine → Design
+  </text>
+  <text x="700" y="785" font-size="20" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-weight="bold">
+    Expansion Revenue
+  </text>
+  
+  <text x="1050" y="760" font-size="20" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-weight="bold">
+    NDR 110–180%
+  </text>
+  <text x="1050" y="785" font-size="20" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-weight="bold">
+    by Segment
+  </text>
+  
+  <!-- Footer -->
+  <text x="700" y="740" font-size="16" text-anchor="middle" fill="#44546A" font-family="Arial, sans-serif" font-style="italic">
+    Helm by Synaptic — Decision Intelligence Platform for Customer Service
+  </text>
+</svg>

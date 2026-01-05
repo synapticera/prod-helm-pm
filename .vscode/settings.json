@@ -1,0 +1,134 @@
+{
+    "xml.preferences.showSchemaDocumentationType": "none",
+
+    // Dark Purple Theme - Professional and sophisticated
+    "workbench.colorCustomizations": {
+        // Title Bar
+        "titleBar.activeBackground": "#4c1d95",
+        "titleBar.activeForeground": "#e0e7ff",
+        "titleBar.inactiveBackground": "#1e1b4b",
+        "titleBar.inactiveForeground": "#9ca3af",
+        "titleBar.border": "#5b21b6",
+
+        // Activity Bar (Left Sidebar)
+        "activityBar.background": "#1e1b4b",
+        "activityBar.foreground": "#e0e7ff",
+        "activityBar.activeBorder": "#5b21b6",
+        "activityBar.activeBackground": "#4c1d95",
+        "activityBar.border": "#5b21b6",
+
+        // Status Bar (Bottom)
+        "statusBar.background": "#4c1d95",
+        "statusBar.foreground": "#e0e7ff",
+        "statusBar.border": "#5b21b6",
+        "statusBar.debuggingBackground": "#5b21b6",
+        "statusBar.debuggingForeground": "#ffffff",
+        "statusBar.noFolderBackground": "#1e1b4b",
+
+        // Editor
+        "editor.background": "#0f0a1f",
+        "editor.foreground": "#e0e7ff",
+        "editor.lineHighlightBackground": "#1e1b4b40",
+        "editorLineNumber.foreground": "#5b21b6",
+        "editorLineNumber.activeForeground": "#a78bfa",
+        "editorCursor.foreground": "#a78bfa",
+        "editor.selectionBackground": "#4c1d9560",
+
+        // Tabs
+        "tab.activeBackground": "#4c1d95",
+        "tab.inactiveBackground": "#1e1b4b",
+        "tab.activeForeground": "#e0e7ff",
+        "tab.inactiveForeground": "#9ca3af",
+        "tab.border": "#5b21b6",
+        "editorGroupHeader.tabsBackground": "#1e1b4b",
+        "editorGroupHeader.border": "#5b21b6",
+
+        // Sidebar
+        "sideBar.background": "#1e1b4b",
+        "sideBar.foreground": "#e0e7ff",
+        "sideBar.border": "#5b21b6",
+        "sideBarSectionHeader.background": "#4c1d95",
+        "sideBarSectionHeader.foreground": "#e0e7ff",
+
+        // Panel (Terminal, Output, etc.)
+        "panel.background": "#1e1b4b",
+        "panel.border": "#5b21b6",
+        "panelTitle.activeBorder": "#5b21b6",
+        "panelTitle.activeForeground": "#e0e7ff",
+
+        // Terminal
+        "terminal.background": "#0f0a1f",
+        "terminal.foreground": "#e0e7ff",
+        "terminal.border": "#5b21b6",
+        "terminalCursor.foreground": "#a78bfa",
+
+        // Input Fields
+        "input.background": "#1e1b4b",
+        "input.foreground": "#e0e7ff",
+        "input.border": "#5b21b6",
+        "inputOption.activeBackground": "#4c1d95",
+        "inputOption.activeForeground": "#e0e7ff",
+
+        // Buttons
+        "button.background": "#5b21b6",
+        "button.foreground": "#ffffff",
+        "button.hoverBackground": "#6d28d9",
+
+        // Dropdowns
+        "dropdown.background": "#1e1b4b",
+        "dropdown.border": "#5b21b6",
+        "dropdown.foreground": "#e0e7ff",
+
+        // Lists
+        "list.activeSelectionBackground": "#4c1d95",
+        "list.activeSelectionForeground": "#e0e7ff",
+        "list.hoverBackground": "#1e1b4b80",
+        "list.inactiveSelectionBackground": "#4c1d9540",
+
+        // Scrollbar
+        "scrollbarSlider.background": "#4c1d9560",
+        "scrollbarSlider.hoverBackground": "#5b21b680",
+        "scrollbarSlider.activeBackground": "#5b21b6",
+
+        // Badges
+        "badge.background": "#5b21b6",
+        "badge.foreground": "#ffffff",
+
+        // Widgets & Menus
+        "menu.background": "#1e1b4b",
+        "menu.foreground": "#e0e7ff",
+        "menu.selectionBackground": "#4c1d95",
+        "widget.shadow": "#00000080",
+
+        // Borders & Separators
+        "editorWidget.border": "#5b21b6",
+        "focusBorder": "#5b21b6"
+    },
+    "files.exclude": {
+        ".claudeignore": true,
+        ".forceignore": true,
+        ".gitignore": true,
+        ".husky": true,
+        ".men*": true,
+        ".prett*": true,
+        ".sfdx": true,
+        ".vscode": true,
+        "*.json": true,
+        "backlog": true,
+        "eslint*": true,
+        "jest*": true,
+        "node_modules": true,
+        "x-project/workflow*": true
+    },
+
+    // Synaptic MAX Extension Settings
+    "synapticMax.claudeCodeExperience": "vscode-plugin",
+    "synapticMax.paths.projectFilesPath": "",
+    "synapticMax.devMode": false,
+    "synapticMax.localLibraryPath": "../x-library",
+
+    // Claude Code Settings - Bypass permissions mode
+    "claudeCode.allowDangerouslySkipPermissions": true,
+    "claudeCode.initialPermissionMode": "bypassPermissions",
+    "claudeCode.bashPermissionMode": "bypassPermissions"
+}

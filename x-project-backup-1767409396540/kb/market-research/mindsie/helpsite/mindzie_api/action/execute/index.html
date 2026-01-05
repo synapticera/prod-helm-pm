@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Execute | Action | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Execute Actions</a><!--!-->
+                    <a href="../history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../../block/index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../../block/management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../../block/execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../../block/results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../../block/types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../../dataset/index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../../dataset/creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../../dataset/import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="../../dataset/updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="../../dataset/formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Execute</h1><div class="page-breadcrumb">Action</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p>Trigger action execution programmatically within mindzieStudio.</p>
+<h2 id="overview">Overview</h2>
+<p>The Execute Action endpoint allows you to trigger a specific action within mindzieStudio. Actions are queued for asynchronous execution and you receive an execution ID to track progress.</p>
+<h2 id="execute-action-1">Execute Action</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/action/execute/{actionId}</code></p>
+<p>Execute a specific action by its ID. The action is added to an execution queue and processed asynchronously.</p>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">GET https://your-mindzie-instance.com/api/{tenantId}/{projectId}/action/execute/{actionId}
+Authorization: Bearer {your-access-token}
+</code></pre>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>Your tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>Your project identifier</td>
+</tr>
+<tr>
+<td><code>actionId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The action to execute</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response</h3>
+<p><strong>Success (200 OK):</strong></p>
+<pre><code class="language-json">{
+  "actionId": "87654321-4321-4321-4321-210987654321",
+  "actionExecutionId": "11111111-2222-3333-4444-555555555555",
+  "dateStarted": "2024-01-15T10:30:00Z",
+  "dateEnded": null,
+  "status": "Queued",
+  "notes": null
+}
+</code></pre>
+<h3 id="response-fields">Response Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>actionId</code></td>
+<td>GUID</td>
+<td>The ID of the action being executed</td>
+</tr>
+<tr>
+<td><code>actionExecutionId</code></td>
+<td>GUID</td>
+<td>Unique identifier for this execution instance</td>
+</tr>
+<tr>
+<td><code>dateStarted</code></td>
+<td>datetime</td>
+<td>When the execution was queued</td>
+</tr>
+<tr>
+<td><code>dateEnded</code></td>
+<td>datetime</td>
+<td>When execution completed (null if still running)</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Current execution status</td>
+</tr>
+<tr>
+<td><code>notes</code></td>
+<td>string</td>
+<td>Additional execution notes or error messages</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-responses">Error Responses</h3>
+<p><strong>Action Not Found (404):</strong></p>
+<pre><code class="language-json">{
+  "error": "Action not found",
+  "actionId": "87654321-4321-4321-4321-210987654321"
+}
+</code></pre>
+<p><strong>Execution Creation Failed (404):</strong></p>
+<pre><code class="language-json">{
+  "error": "Action can't create execution",
+  "actionId": "87654321-4321-4321-4321-210987654321"
+}
+</code></pre>
+<p><strong>Unauthorized (401):</strong></p>
+<pre><code>HTTP/1.1 401 Unauthorized
+
+{error message describing authorization failure}
+</code></pre>
+<h2 id="execution-status-values">Execution Status Values</h2>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Queued</td>
+<td>Action is queued and waiting to be processed</td>
+</tr>
+<tr>
+<td>Running</td>
+<td>Action is currently executing</td>
+</tr>
+<tr>
+<td>Completed</td>
+<td>Action completed successfully</td>
+</tr>
+<tr>
+<td>Failed</td>
+<td>Action execution failed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="implementation-examples">Implementation Examples</h2>
+<h3 id="curl">cURL</h3>
+<pre><code class="language-bash">curl -X GET "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/action/execute/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+</code></pre>
+<h3 id="javascriptnode.js">JavaScript/Node.js</h3>
+<pre><code class="language-javascript">const TENANT_ID = '12345678-1234-1234-1234-123456789012';
+const PROJECT_ID = '87654321-4321-4321-4321-210987654321';
+const BASE_URL = 'https://your-mindzie-instance.com';
+
+const executeAction = async (actionId, token) =&gt; {
+  const url = `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/action/execute/${actionId}`;
+
+  try {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+      console.log('Action queued:', result);
+      console.log('Execution ID:', result.actionExecutionId);
+      return result;
+    } else if (response.status === 404) {
+      const error = await response.json();
+      console.error('Action not found:', error);
+      throw new Error(error.error);
+    } else {
+      throw new Error(`Execution failed: ${response.status}`);
+    }
+  } catch (error) {
+    console.error('Error executing action:', error);
+    throw error;
+  }
+};
+
+// Example usage
+executeAction('aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee', 'your_token')
+  .then(result =&gt; {
+    // Store actionExecutionId for tracking
+    const executionId = result.actionExecutionId;
+  });
+</code></pre>
+<h3 id="python">Python</h3>
+<pre><code class="language-python">import requests
+
+TENANT_ID = '12345678-1234-1234-1234-123456789012'
+PROJECT_ID = '87654321-4321-4321-4321-210987654321'
+BASE_URL = 'https://your-mindzie-instance.com'
+
+def execute_action(action_id, token):
+    """Execute an action and return execution details."""
+    url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/action/execute/{action_id}'
+    headers = {
+        'Authorization': f'Bearer {token}'
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.ok:
+        result = response.json()
+        print(f'Action queued: {result}')
+        print(f'Execution ID: {result["actionExecutionId"]}')
+        return result
+    elif response.status_code == 404:
+        error = response.json()
+        print(f'Action not found: {error}')
+        raise Exception(error['error'])
+    else:
+        raise Exception(f'Execution failed: {response.status_code}')
+
+# Example usage
+result = execute_action('aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee', 'your_token')
+execution_id = result['actionExecutionId']
+</code></pre>
+<h3 id="c">C#</h3>
+<pre><code class="language-csharp">using System;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+public class ActionExecutionResult
+{
+    public Guid ActionId { get; set; }
+    public Guid ActionExecutionId { get; set; }
+    public DateTime? DateStarted { get; set; }
+    public DateTime? DateEnded { get; set; }
+    public string Status { get; set; }
+    public string Notes { get; set; }
+}
+
+public class ActionApiClient
+{
+    private readonly HttpClient _httpClient;
+    private readonly string _baseUrl;
+    private readonly Guid _tenantId;
+    private readonly Guid _projectId;
+
+    public ActionApiClient(string baseUrl, Guid tenantId, Guid projectId, string accessToken)
+    {
+        _baseUrl = baseUrl;
+        _tenantId = tenantId;
+        _projectId = projectId;
+        _httpClient = new HttpClient();
+        _httpClient.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+    }
+
+    public async Task&lt;ActionExecutionResult&gt; ExecuteActionAsync(Guid actionId)
+    {
+        var url = $"{_baseUrl}/api/{_tenantId}/{_projectId}/action/execute/{actionId}";
+        var response = await _httpClient.GetAsync(url);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            var result = JsonSerializer.Deserialize&lt;ActionExecutionResult&gt;(json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            Console.WriteLine($"Action queued. Execution ID: {result.ActionExecutionId}");
+            return result;
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            throw new Exception($"Action {actionId} not found");
+        }
+        else
+        {
+            throw new Exception($"Execution failed: {response.StatusCode}");
+        }
+    }
+}
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><strong>Store Execution ID:</strong> Always store the <code>actionExecutionId</code> returned to track execution progress</li>
+<li><strong>Check Action Exists:</strong> Use the Get Action endpoint first to verify the action exists and is enabled</li>
+<li><strong>Handle Async Nature:</strong> Actions execute asynchronously - the response indicates the action was queued, not completed</li>
+<li><strong>Error Handling:</strong> Implement proper error handling for 404 responses (action not found) and 401 (unauthorized)</li>
+<li><strong>Idempotency:</strong> Each call creates a new execution - avoid duplicate calls if not intended</li>
+</ul>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

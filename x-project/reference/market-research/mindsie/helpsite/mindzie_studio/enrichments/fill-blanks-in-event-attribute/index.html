@@ -1,0 +1,652 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Fill Blanks In Event Attribute | Enrichments | mindzieStudio Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><!--!--><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">Studio Documentation</span></div></div>
+        <div class="header-right"><!--!--><div class="search-container"><div class="search-box "><div class="search-input-wrapper"><!--!--><span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search documentation... (Ctrl+K)" autocomplete="off" spellcheck="false" _bl_2=""><button class="search-page-button" title="Go to search page"><!--!--><span>🔎</span></button></div></div></div><!--!-->
+            <!--!--><nav class="product-nav"><a href="../../index.html" class="product-item active">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header><!--!-->
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>Home</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="core-concepts-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Core Concepts</span></div>
+                <div id="core-concepts" class="nav-section-content"><div class="nav-subsection collapsed" id="filters-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Filters</span></button><!--!-->
+                        <div id="filters" class="nav-subsection-items"><a href="../../filters/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../filters/activity-frequency/index.html" class="nav-subitem">Activity Frequency</a><!--!-->
+                            <a href="../../filters/activity-not-performed/index.html" class="nav-subitem">Activity Not Performed</a><!--!-->
+                            <a href="../../filters/activity-performed-once/index.html" class="nav-subitem">Activity Performed Once</a><!--!-->
+                            <a href="../../filters/case-end/index.html" class="nav-subitem">Case End</a><!--!-->
+                            <a href="../../filters/case-start/index.html" class="nav-subitem">Case Start</a><!--!-->
+                            <a href="../../filters/cases-with-attribute/index.html" class="nav-subitem">Cases with Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-changed-attribute/index.html" class="nav-subitem">Cases with Changed Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-dates/index.html" class="nav-subitem">Cases with Identical Event Dates</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-timestamps/index.html" class="nav-subitem">Cases with Identical Event Timestamps</a><!--!-->
+                            <a href="../../filters/cases-with-unchanged-attribute/index.html" class="nav-subitem">Cases with Unchanged Attribute</a><!--!-->
+                            <a href="../../filters/compare-attribute-values/index.html" class="nav-subitem">Compare Attribute Values</a><!--!-->
+                            <a href="../../filters/deadline/index.html" class="nav-subitem">Deadline</a><!--!-->
+                            <a href="../../filters/event-order/index.html" class="nav-subitem">Event Order</a><!--!-->
+                            <a href="../../filters/events-before-or-after-activity/index.html" class="nav-subitem">Events Before or After Activity</a><!--!-->
+                            <a href="../../filters/events-with-attribute/index.html" class="nav-subitem">Events with Attribute</a><!--!-->
+                            <a href="../../filters/filter-list/index.html" class="nav-subitem">Filter List</a><!--!-->
+                            <a href="../../filters/keep-events-with-same-value-as-case-attribute/index.html" class="nav-subitem">Keep Events with Same Value as Case Attribute</a><!--!-->
+                            <a href="../../filters/or-filter/index.html" class="nav-subitem">Or Filter</a><!--!-->
+                            <a href="../../filters/process-variants/index.html" class="nav-subitem">Process Variants</a><!--!-->
+                            <a href="../../filters/remove-activity-loops/index.html" class="nav-subitem">Remove Activity Loops</a><!--!-->
+                            <a href="../../filters/remove-activity-with-same-date/index.html" class="nav-subitem">Remove Activity with Same Date</a><!--!-->
+                            <a href="../../filters/remove-activity-with-similar-time/index.html" class="nav-subitem">Remove Activity with Similar Time</a><!--!-->
+                            <a href="../../filters/remove-data-from-underactive-periods/index.html" class="nav-subitem">Remove Data from Underactive Periods</a><!--!-->
+                            <a href="../../filters/select-variants/index.html" class="nav-subitem">Select Variants</a><!--!-->
+                            <a href="../../filters/selected-activity-frequency/index.html" class="nav-subitem">Selected Activity Frequency</a><!--!-->
+                            <a href="../../filters/single-activity-cases/index.html" class="nav-subitem">Single Activity Cases</a><!--!-->
+                            <a href="../../filters/text-search/index.html" class="nav-subitem">Text Search</a><!--!-->
+                            <a href="../../filters/time-between-activities/index.html" class="nav-subitem">Time Between Activities</a><!--!-->
+                            <a href="../../filters/time-period/index.html" class="nav-subitem">Time Period</a><!--!-->
+                            <a href="../../filters/value-frequency/index.html" class="nav-subitem">Value Frequency</a><!--!-->
+                            <a href="../../filters/variant-frequency/index.html" class="nav-subitem">Variant Frequency</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection collapsed" id="calculators-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Calculators</span></button><!--!-->
+                        <div id="calculators" class="nav-subsection-items"><a href="../../calculators/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../calculators/activity-information/index.html" class="nav-subitem">Activity Information</a><!--!-->
+                            <a href="../../calculators/average-value/index.html" class="nav-subitem">Average Value</a><!--!-->
+                            <a href="../../calculators/automation/index.html" class="nav-subitem">Automation Calculator</a><!--!-->
+                            <a href="../../calculators/breakdown-by-categories/index.html" class="nav-subitem">Breakdown By Categories</a><!--!-->
+                            <a href="../../calculators/case-count/index.html" class="nav-subitem">Case Count</a><!--!-->
+                            <a href="../../calculators/case-duration/index.html" class="nav-subitem">Case Duration</a><!--!-->
+                            <a href="../../calculators/chair-usage/index.html" class="nav-subitem">Chair Usage</a><!--!-->
+                            <a href="../../calculators/column-info/index.html" class="nav-subitem">Column Info</a><!--!-->
+                            <a href="../../calculators/data-selector/index.html" class="nav-subitem">Data Selector</a><!--!-->
+                            <a href="../../calculators/days-of-sales-outstanding-dpo/index.html" class="nav-subitem">Days Of Sales Outstanding / DPO</a><!--!-->
+                            <a href="../../calculators/dataset-information/index.html" class="nav-subitem">Dataset Information</a><!--!-->
+                            <a href="../../calculators/duplicate-cases/index.html" class="nav-subitem">Duplicate Cases</a><!--!-->
+                            <a href="../../calculators/event-count/index.html" class="nav-subitem">Event Count</a><!--!-->
+                            <a href="../../calculators/find-date-outliers/index.html" class="nav-subitem">Find Date Outliers</a><!--!-->
+                            <a href="../../calculators/find-text-in-attributes/index.html" class="nav-subitem">Find Text In Attributes</a><!--!-->
+                            <a href="../../calculators/general-3-way-match/index.html" class="nav-subitem">General 3 Way Match</a><!--!-->
+                            <a href="../../calculators/histogram/index.html" class="nav-subitem">Histogram</a><!--!-->
+                            <a href="../../calculators/llm-prompts/index.html" class="nav-subitem">LLM Prompts</a><!--!-->
+                            <a href="../../calculators/maximum-value/index.html" class="nav-subitem">Maximum Value</a><!--!-->
+                            <a href="../../calculators/metadata/index.html" class="nav-subitem">Metadata</a><!--!-->
+                            <a href="../../calculators/minimum-value/index.html" class="nav-subitem">Minimum Value</a><!--!-->
+                            <a href="../../calculators/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                            <a href="../../calculators/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                            <a href="../../calculators/rate/index.html" class="nav-subitem">Rate</a><!--!-->
+                            <a href="../../calculators/rate-over-time/index.html" class="nav-subitem">Rate Over Time</a><!--!-->
+                            <a href="../../calculators/repeated-activities/index.html" class="nav-subitem">Repeated Activities</a><!--!-->
+                            <a href="../../calculators/resource-performance-vs-conformance/index.html" class="nav-subitem">Resource Performance Vs Conformance</a><!--!-->
+                            <a href="../../calculators/root-cause-analysis/index.html" class="nav-subitem">Root Cause Analysis</a><!--!-->
+                            <a href="../../calculators/same-time-pairs/index.html" class="nav-subitem">Same Time Pairs</a><!--!-->
+                            <a href="../../calculators/show-notes/index.html" class="nav-subitem">Show Notes</a><!--!-->
+                            <a href="../../calculators/sum-of-values/index.html" class="nav-subitem">Sum Of Values</a><!--!-->
+                            <a href="../../calculators/sum-of-values-for-activity/index.html" class="nav-subitem">Sum Of Values For Activity</a><!--!-->
+                            <a href="../../calculators/standard-checker/index.html" class="nav-subitem">Standard Checker</a><!--!-->
+                            <a href="../../calculators/time-between-all-activity-pairs/index.html" class="nav-subitem">Time Between All Activity Pairs</a><!--!-->
+                            <a href="../../calculators/time-between-selected-events/index.html" class="nav-subitem">Time Between Selected Events</a><!--!-->
+                            <a href="../../calculators/time-from-case-start-to-selected-event/index.html" class="nav-subitem">Time From Case Start To Selected Event</a><!--!-->
+                            <a href="../../calculators/trend/index.html" class="nav-subitem">Trend</a><!--!-->
+                            <a href="../../calculators/variant-dna/index.html" class="nav-subitem">Variant DNA</a><!--!-->
+                            <a href="../../calculators/value-count-in-case-attribute/index.html" class="nav-subitem">Value Count In Case Attribute</a><!--!-->
+                            <a href="../../calculators/value-count-in-event-attribute/index.html" class="nav-subitem">Value Count In Event Attribute</a><!--!-->
+                            <a href="../../calculators/what-if-simulation-working-capital/index.html" class="nav-subitem">What If Simulation Working Capital</a><!--!-->
+                            <a href="../../calculators/world-map/index.html" class="nav-subitem">World Map</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection expanded" id="enrichments-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Enrichments</span></button><!--!-->
+                        <div id="enrichments" class="nav-subsection-items"><a href="../index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../2-way-match/index.html" class="nav-subitem ">2 Way Match</a><!--!-->
+                            <a href="../activity-copy-latest-event-value/index.html" class="nav-subitem ">Activity Copy Latest EventValue</a><!--!-->
+                            <a href="../activity-order-classification/index.html" class="nav-subitem ">Activity Order Classification</a><!--!-->
+                            <a href="../add-activity-from-case-attribute/index.html" class="nav-subitem ">Add Activity From Case Attribute</a><!--!-->
+                            <a href="../create-update-activity/index.html" class="nav-subitem ">Create Update Activity</a><!--!-->
+                            <a href="index.html" class="nav-subitem active">Fill Blanks In Event Attribute</a><!--!-->
+                            <a href="../remove-activities/index.html" class="nav-subitem ">Remove Activities</a><!--!-->
+                            <a href="../remove-duplicate-events/index.html" class="nav-subitem ">Remove Duplicate Events</a><!--!-->
+                            <a href="../remove-repeated-activities/index.html" class="nav-subitem ">Remove Repeated Activities</a><!--!-->
+                            <a href="../add/index.html" class="nav-subitem ">Add</a><!--!-->
+                            <a href="../divide/index.html" class="nav-subitem ">Divide</a><!--!-->
+                            <a href="../multiply/index.html" class="nav-subitem ">Multiply</a><!--!-->
+                            <a href="../subtract/index.html" class="nav-subitem ">Subtract</a><!--!-->
+                            <a href="../anonymize/index.html" class="nav-subitem ">Anonymize</a><!--!-->
+                            <a href="../change-attribute-display-name/index.html" class="nav-subitem ">Change Attribute Display Name</a><!--!-->
+                            <a href="../change-attribute-name/index.html" class="nav-subitem ">Change Attribute Name</a><!--!-->
+                            <a href="../combine-boolean-attributes/index.html" class="nav-subitem ">Combine Boolean Attributes</a><!--!-->
+                            <a href="../concatenate-attributes/index.html" class="nav-subitem ">Concatenate Attributes</a><!--!-->
+                            <a href="../convert-currency-to-base/index.html" class="nav-subitem ">Convert Currency To Base</a><!--!-->
+                            <a href="../convert-to-case-attributes/index.html" class="nav-subitem ">Convert To Case Attributes</a><!--!-->
+                            <a href="../convert-to-integer/index.html" class="nav-subitem ">Convert To Integer</a><!--!-->
+                            <a href="../copy-attribute/index.html" class="nav-subitem ">Copy Attribute</a><!--!-->
+                            <a href="../hide-attribute/index.html" class="nav-subitem ">Hide Attribute</a><!--!-->
+                            <a href="../hide-blank-attributes/index.html" class="nav-subitem ">Hide Blank Attributes</a><!--!-->
+                            <a href="../set-group-value/index.html" class="nav-subitem ">Set Group Value</a><!--!-->
+                            <a href="../attribute-changes-between-two-activities/index.html" class="nav-subitem ">Attribute Changes Between Two Activities</a><!--!-->
+                            <a href="../attribute-changes-in-a-case/index.html" class="nav-subitem ">Attribute Changes In A Case</a><!--!-->
+                            <a href="../compare-activity-counts/index.html" class="nav-subitem ">Compare Activity Counts</a><!--!-->
+                            <a href="../compare-case-attributes/index.html" class="nav-subitem ">Compare Case Attributes</a><!--!-->
+                            <a href="../compare-event-attributes-for-two-activities/index.html" class="nav-subitem ">Compare Event Attributes For Two Activities</a><!--!-->
+                            <a href="../compare-multiple-case-attributes/index.html" class="nav-subitem ">Compare Multiple Case Attributes</a><!--!-->
+                            <a href="../event-order-algorithm/index.html" class="nav-subitem ">Event Order Algorithm</a><!--!-->
+                            <a href="../allowed-case-end-activities/index.html" class="nav-subitem ">Allowed Case End Activities</a><!--!-->
+                            <a href="../allowed-case-start-activities/index.html" class="nav-subitem ">Allowed Case Start Activities</a><!--!-->
+                            <a href="../conformance-issue/index.html" class="nav-subitem ">Conformance Issue</a><!--!-->
+                            <a href="../expected-order/index.html" class="nav-subitem ">Expected Order</a><!--!-->
+                            <a href="../mandatory-activity/index.html" class="nav-subitem ">Mandatory Activity</a><!--!-->
+                            <a href="../repeated-activity/index.html" class="nav-subitem ">Repeated Activity</a><!--!-->
+                            <a href="../undesired-activity/index.html" class="nav-subitem ">Undesired Activity</a><!--!-->
+                            <a href="../wrong-activity-order/index.html" class="nav-subitem ">Wrong Activity Order</a><!--!-->
+                            <a href="../case-closed/index.html" class="nav-subitem ">Case Closed</a><!--!-->
+                            <a href="../categorize-attribute-values/index.html" class="nav-subitem ">Categorize Attribute Values</a><!--!-->
+                            <a href="../categorize-duration/index.html" class="nav-subitem ">Categorize Duration</a><!--!-->
+                            <a href="../count-boolean-attributes-with-value/index.html" class="nav-subitem ">Count Boolean Attributes With Value</a><!--!-->
+                            <a href="../group-attribute-values/index.html" class="nav-subitem ">Group Attribute Values</a><!--!-->
+                            <a href="../representative-case-attribute/index.html" class="nav-subitem ">Representative Case Attribute</a><!--!-->
+                            <a href="../representative-case-attribute-2/index.html" class="nav-subitem ">Representative Case Attribute 2</a><!--!-->
+                            <a href="../logical-or/index.html" class="nav-subitem ">Logical OR</a><!--!-->
+                            <a href="../negate/index.html" class="nav-subitem ">Negate</a><!--!-->
+                            <a href="../case-duration-category-for-activity/index.html" class="nav-subitem ">Case Duration Category For Activity</a><!--!-->
+                            <a href="../categorize-duration-for-activity/index.html" class="nav-subitem ">Categorize Duration For Activity</a><!--!-->
+                            <a href="../categorize-duration-for-selected-cases/index.html" class="nav-subitem ">Categorize Duration For Selected Cases</a><!--!-->
+                            <a href="../ai-case-prediction/index.html" class="nav-subitem ">AI Case Prediction</a><!--!-->
+                            <a href="../format-string/index.html" class="nav-subitem ">Format String</a><!--!-->
+                            <a href="../python/index.html" class="nav-subitem ">Python</a><!--!-->
+                            <a href="../count-activities/index.html" class="nav-subitem ">Count Activities</a><!--!-->
+                            <a href="../count-values/index.html" class="nav-subitem ">Count Values</a><!--!-->
+                            <a href="../event-count/index.html" class="nav-subitem ">Event Count</a><!--!-->
+                            <a href="../max-value/index.html" class="nav-subitem ">Max Value</a><!--!-->
+                            <a href="../predict-value/index.html" class="nav-subitem ">Predict Value</a><!--!-->
+                            <a href="../summarize-values/index.html" class="nav-subitem ">Summarize Values</a><!--!-->
+                            <a href="../limit-text-length/index.html" class="nav-subitem ">Limit Text Length</a><!--!-->
+                            <a href="../replace-text/index.html" class="nav-subitem ">Replace Text</a><!--!-->
+                            <a href="../text-end/index.html" class="nav-subitem ">Text End</a><!--!-->
+                            <a href="../text-start/index.html" class="nav-subitem ">Text Start</a><!--!-->
+                            <a href="../trim-text/index.html" class="nav-subitem ">Trim Text</a><!--!-->
+                            <a href="../upper-case/index.html" class="nav-subitem ">Upper Case</a><!--!-->
+                            <a href="../add-days-to-a-date/index.html" class="nav-subitem ">Add Days To A Date</a><!--!-->
+                            <a href="../add-time-to-attributes/index.html" class="nav-subitem ">Add Time To Attributes</a><!--!-->
+                            <a href="../correct-time-zone/index.html" class="nav-subitem ">Correct Time Zone</a><!--!-->
+                            <a href="../duration-between-an-activity-and-current-time/index.html" class="nav-subitem ">Duration Between An Activity And Current Time</a><!--!-->
+                            <a href="../duration-between-an-attribute-and-an-activity/index.html" class="nav-subitem ">Duration Between An Attribute And An Activity</a><!--!-->
+                            <a href="../duration-between-an-attribute-and-current-time/index.html" class="nav-subitem ">Duration Between An Attribute And Current Time</a><!--!-->
+                            <a href="../duration-between-two-activities/index.html" class="nav-subitem ">Duration Between Two Activities</a><!--!-->
+                            <a href="../duration-between-two-event-attributes/index.html" class="nav-subitem ">Duration Between Two Event Attributes</a><!--!-->
+                            <a href="../durations-between-case-attribute-and-activity-times/index.html" class="nav-subitem ">Durations Between Case Attribute And Activity Times</a><!--!-->
+                            <a href="../freeze-time/index.html" class="nav-subitem ">Freeze Time</a><!--!-->
+                            <a href="../shift-activity-time/index.html" class="nav-subitem ">Shift Activity Time</a><!--!-->
+                            <a href="../sort-log-on-start-time/index.html" class="nav-subitem ">Sort Log On Start Time</a><!--!-->
+                            <a href="../time-to-previous-case-in-group/index.html" class="nav-subitem ">Time To Previous Case In Group</a><!--!-->
+                            <a href="../filter-process-log/index.html" class="nav-subitem ">Filter Process Log</a></div></div></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="process-discovery-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Process Discovery</span></div>
+                <div id="process-discovery" class="nav-section-content"><a href="../../process-discovery/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../process-discovery/case-explorer/index.html" class="nav-subitem">Case Explorer</a><!--!-->
+                    <a href="../../process-discovery/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                    <a href="../../process-discovery/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                    <a href="../../process-discovery/process-variants/index.html" class="nav-subitem">Process Variants</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="ai-assistants-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">AI Assistants</span></div>
+                <div id="ai-assistants" class="nav-section-content"><a href="../../ai-assistants/ai-model-configuration/index.html" class="nav-subitem">AI Model Configuration</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="how-to-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">How To</span></div>
+                <div id="how-to" class="nav-section-content"><a href="../../how-to/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../how-to/getting-started-creating-first-project/index.html" class="nav-subitem">Getting Started: Creating Your First Project</a><!--!-->
+                    <a href="../../how-to/uploading-configuring-data-sources/index.html" class="nav-subitem">Uploading and Configuring Data Sources</a><!--!-->
+                    <a href="../../how-to/understanding-dual-dataset-architecture/index.html" class="nav-subitem">Understanding Dual Dataset Architecture</a><!--!-->
+                    <a href="../../how-to/planning-dashboard-structure-for-user-roles/index.html" class="nav-subitem">Planning Dashboard Structure for User Roles</a><!--!-->
+                    <a href="../../how-to/working-with-investigations-and-notebooks/index.html" class="nav-subitem">Working with Investigations and Notebooks</a><!--!-->
+                    <a href="../../how-to/mastering-log-enrichment-engine/index.html" class="nav-subitem">Mastering Log Enrichment Engine</a><!--!-->
+                    <a href="../../how-to/building-conformance-rules-for-compliance/index.html" class="nav-subitem">Building Conformance Rules for Compliance</a><!--!-->
+                    <a href="../../how-to/creating-analysis-with-filters-and-calculators/index.html" class="nav-subitem">Creating Analysis with Filters and Calculators</a><!--!-->
+                    <a href="../../how-to/publishing-metrics-from-notebooks-to-dashboards/index.html" class="nav-subitem">Publishing Metrics from Notebooks to Dashboards</a><!--!-->
+                    <a href="../../how-to/advanced-implementing-activity-based-costing/index.html" class="nav-subitem">Advanced: Implementing Activity Based Costing</a><!--!-->
+                    <a href="../../how-to/reusing-analysis-copying-and-adapting-notebooks/index.html" class="nav-subitem">Reusing Analysis: Copying and Adapting Notebooks</a><!--!-->
+                    <a href="../../how-to/designing-user-friendly-dashboards-with-notes-and-formatting/index.html" class="nav-subitem">Designing User-Friendly Dashboards with Notes and Formatting</a><!--!-->
+                    <a href="../../how-to/understanding-drill-down-and-continuous-monitoring/index.html" class="nav-subitem">Understanding Drill Down and Continuous Monitoring</a><!--!-->
+                    <a href="../../how-to/end-to-end-project-build-complete-workflow/index.html" class="nav-subitem">End to End Project Build: Complete Workflow</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="on-premise-server-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">On-Premise Server</span></div>
+                <div id="on-premise-server" class="nav-section-content"><a href="../../on-premise-server/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../on-premise-server/installation-guide/index.html" class="nav-subitem">Installation Guide</a><!--!-->
+                    <a href="../../on-premise-server/install-sql-server-express/index.html" class="nav-subitem">Install SQL Server Express</a><!--!-->
+                    <a href="../../on-premise-server/technical-requirements/index.html" class="nav-subitem">Technical Requirements</a><!--!-->
+                    <a href="../../on-premise-server/auto-update/index.html" class="nav-subitem">Auto Update</a><!--!-->
+                    <a href="../../on-premise-server/force-update/index.html" class="nav-subitem">Force Update</a><!--!-->
+                    <a href="../../on-premise-server/backup-strategy/index.html" class="nav-subitem">Backup Strategy</a></div></div><!--!-->
+
+
+            <div class="nav-section always-expanded expanded" id="tenant-settings-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Tenant Settings</span></div>
+                <div id="tenant-settings" class="nav-section-content"><a href="../../tenant-settings/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="active-directory-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Active Directory</span></button><!--!-->
+                        <div id="active-directory" class="nav-subsection-items"><a href="../../tenant-settings/active-directory/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/setup-guide/index.html" class="nav-subitem ">Setup Guide</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/azure-ad-app-registration/index.html" class="nav-subitem ">Azure AD App Registration</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="administration-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Administration</span></div>
+                <div id="administration" class="nav-section-content"><a href="../../administration/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <a href="../../administration/tenant-management/index.html" class="nav-subitem ">Tenant Management</a><!--!-->
+                    <a href="../../administration/email_settings/index.html" class="nav-subitem ">Email Settings</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="user-management-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">User Management</span></button><!--!-->
+                        <div id="user-management" class="nav-subsection-items"><a href="../../administration/user-management/index.html" class="nav-subitem overview-item">Overview</a></div></div><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="service-accounts-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Service Accounts</span></button><!--!-->
+                        <div id="service-accounts" class="nav-subsection-items"><a href="../../administration/service-accounts/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../administration/service-accounts/what-are-service-accounts/index.html" class="nav-subitem ">What Are Service Accounts</a><!--!-->
+                            <a href="../../administration/service-accounts/promote-user-to-service-account/index.html" class="nav-subitem ">Promote User to Service Account</a><!--!-->
+                            <a href="../../administration/service-accounts/manage-service-accounts/index.html" class="nav-subitem ">Manage Service Accounts</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="resources-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Resources</span></div>
+                <div id="resources" class="nav-section-content"><a href="../../resources/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../resources/sample-datasets/index.html" class="nav-subitem">Sample Datasets</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="application-guide-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Application Guide</span></div>
+                <div id="application-guide" class="nav-section-content"><a href="../../application-guide/ai-copilot/index.html" class="nav-subitem">AI Copilot</a><!--!-->
+                    <a href="../../application-guide/actions-engine/index.html" class="nav-subitem">Actions Engine</a><!--!-->
+                    <a href="../../application-guide/bpmn-editor/index.html" class="nav-subitem">BPMN Editor</a><!--!-->
+                    <a href="../../application-guide/projects/index.html" class="nav-subitem">Projects</a><!--!-->
+                    <a href="../../application-guide/business-apps/index.html" class="nav-subitem">Business Apps</a></div></div><!--!-->
+
+            <div class="nav-section always-expanded expanded" id="task-mining-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Task Mining</span></div>                <div id="task-mining" class="nav-section-content"><a href="../../task-mining/task-mining-agent-installation/index.html" class="nav-subitem">Task Mining Agent Installation</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Fill Blanks In Event Attribute</h1><div class="page-breadcrumb">Enrichments</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="overview">Overview</h2>
+<p>The Fill Blanks in Event Attribute enrichment is a powerful data quality operator that intelligently fills null or blank values in event-level attributes by propagating non-null values forward within each case. This essential data cleanup tool addresses a common data quality issue where event attributes contain incomplete information - such as order statuses, approval states, or tracking numbers that may not be recorded at every process step but should logically persist until they change. The enrichment uses a forward-fill strategy, carrying the last known value forward to subsequent events that have missing or null values.</p>
+<p>This enrichment operates at the event level within each case, processing events in chronological order to ensure that blank values inherit the most recent non-null value from previous events in the same case. The forward-fill approach is particularly valuable for state-based attributes where the absence of a value typically means "no change" rather than "no value." By filling these blanks, you create a complete, consistent view of attribute values throughout the case lifecycle, enabling more accurate process analysis, filtering, and reporting without losing the temporal relationship between events.</p>
+<h2 id="common-uses">Common Uses</h2>
+<ul>
+<li>Complete order status attributes in purchase-to-pay processes where status changes are only recorded when they occur, not repeated at every step</li>
+<li>Fill in approval states in workflow processes where approval decisions persist across subsequent activities until the next approval stage</li>
+<li>Propagate tracking numbers or reference IDs that are assigned early in the process but needed for analysis throughout all events</li>
+<li>Complete product or customer attributes that are captured at order creation but missing from fulfillment and shipping events</li>
+<li>Fill shipment carrier information that is determined at dispatch but should be associated with all subsequent tracking events</li>
+<li>Maintain project phase or stage attributes across all activities within each phase of project execution</li>
+<li>Complete sales representative or team assignments that apply to all events in a case after initial assignment</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<p><strong>Event Attribute Name:</strong> Select the event-level attribute that contains blank or null values you want to fill. The dropdown displays all event attributes in your dataset. The enrichment will process each case independently, filling blank values by carrying forward the last known non-null value from previous events within the same case. Only values that are explicitly null or blank are filled - existing non-null values are preserved and used as the basis for filling subsequent blanks. Choose attributes where missing values logically mean "use the previous value" rather than "truly no value," such as status fields, state indicators, or reference codes that persist across multiple activities.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-purchase-order-status-completion">Example 1: Purchase Order Status Completion</h3>
+<p><strong>Scenario:</strong> An e-commerce company's order processing system records order status changes in an event attribute called "Order_Status," but this attribute is only populated when the status actually changes. Most events have null values for Order_Status, making it impossible to filter or analyze orders by their status at specific process stages.</p>
+<p><strong>Event Data Before Enrichment:</strong>
+| Case ID | Activity | Timestamp | Order_Status | Order_Amount |
+|---------|----------|-----------|--------------|--------------|
+| PO-1001 | Create Order | 2024-01-10 08:00 | Pending | 1500.00 |
+| PO-1001 | Credit Check | 2024-01-10 08:15 | null | 1500.00 |
+| PO-1001 | Approve Order | 2024-01-10 09:30 | Approved | 1500.00 |
+| PO-1001 | Pick Items | 2024-01-10 10:00 | null | 1500.00 |
+| PO-1001 | Pack Items | 2024-01-10 11:00 | null | 1500.00 |
+| PO-1001 | Ship Order | 2024-01-10 14:00 | Shipped | 1500.00 |
+| PO-1001 | Delivery Confirmed | 2024-01-10 16:00 | null | 1500.00 |</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Event Attribute Name: Order_Status</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>Event Data After Enrichment:
+| Case ID | Activity | Timestamp | Order_Status | Order_Amount |
+|---------|----------|-----------|--------------|--------------|
+| PO-1001 | Create Order | 2024-01-10 08:00 | Pending | 1500.00 |
+| PO-1001 | Credit Check | 2024-01-10 08:15 | Pending | 1500.00 |
+| PO-1001 | Approve Order | 2024-01-10 09:30 | Approved | 1500.00 |
+| PO-1001 | Pick Items | 2024-01-10 10:00 | Approved | 1500.00 |
+| PO-1001 | Pack Items | 2024-01-10 11:00 | Approved | 1500.00 |
+| PO-1001 | Ship Order | 2024-01-10 14:00 | Shipped | 1500.00 |
+| PO-1001 | Delivery Confirmed | 2024-01-10 16:00 | Shipped | 1500.00 |</p>
+<p>The enrichment filled null values with the most recent status: "Pending" carries forward to Credit Check, "Approved" carries forward to picking and packing activities, and "Shipped" carries forward to delivery confirmation.</p>
+<p><strong>Insights:</strong> Now you can accurately filter process maps to show "all picking activities where status was Approved" or calculate performance metrics for approved vs. pending orders at any process stage. The complete status information enables precise bottleneck analysis and compliance checking at every step.</p>
+<h3 id="example-2-shipment-tracking-number-propagation">Example 2: Shipment Tracking Number Propagation</h3>
+<p><strong>Scenario:</strong> A logistics company assigns tracking numbers when shipments are created, but their system only records the tracking number in the dispatch event. All subsequent scanning and tracking events have null tracking numbers, preventing end-to-end shipment analysis.</p>
+<p><strong>Event Data Before Enrichment:</strong>
+| Case ID | Activity | Timestamp | Tracking_Number | Location | Scanner_ID |
+|---------|----------|-----------|-----------------|----------|------------|
+| SHIP-501 | Create Shipment | 2024-01-15 06:00 | null | Warehouse A | SYS001 |
+| SHIP-501 | Assign to Route | 2024-01-15 06:30 | null | Warehouse A | USER123 |
+| SHIP-501 | Dispatch | 2024-01-15 07:00 | TRK-789456123 | Warehouse A | SCAN001 |
+| SHIP-501 | In Transit Scan | 2024-01-15 10:00 | null | Hub Central | SCAN045 |
+| SHIP-501 | Arrival Scan | 2024-01-15 14:00 | null | Hub East | SCAN089 |
+| SHIP-501 | Out for Delivery | 2024-01-15 16:00 | null | Branch 12 | SCAN102 |
+| SHIP-501 | Delivered | 2024-01-15 18:30 | null | Customer | SCAN102 |</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Event Attribute Name: Tracking_Number</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>After enrichment, all events from dispatch onward have the tracking number:
+| Case ID | Activity | Timestamp | Tracking_Number | Location | Scanner_ID |
+|---------|----------|-----------|-----------------|----------|------------|
+| SHIP-501 | Create Shipment | 2024-01-15 06:00 | null | Warehouse A | SYS001 |
+| SHIP-501 | Assign to Route | 2024-01-15 06:30 | null | Warehouse A | USER123 |
+| SHIP-501 | Dispatch | 2024-01-15 07:00 | TRK-789456123 | Warehouse A | SCAN001 |
+| SHIP-501 | In Transit Scan | 2024-01-15 10:00 | TRK-789456123 | Hub Central | SCAN045 |
+| SHIP-501 | Arrival Scan | 2024-01-15 14:00 | TRK-789456123 | Hub East | SCAN089 |
+| SHIP-501 | Out for Delivery | 2024-01-15 16:00 | TRK-789456123 | Branch 12 | SCAN102 |
+| SHIP-501 | Delivered | 2024-01-15 18:30 | TRK-789456123 | Customer | SCAN102 |</p>
+<p>Note that the first two events remain null because no tracking number had been assigned yet - the forward-fill only propagates values after they first appear.</p>
+<p><strong>Insights:</strong> Customer service can now search for any tracking number and see the complete journey including all scan events. Performance analysis can measure handling times at each location with proper tracking number attribution. Exception handling can identify cases where tracking numbers appear at unexpected stages.</p>
+<h3 id="example-3-healthcare-patient-insurance-status">Example 3: Healthcare Patient Insurance Status</h3>
+<p><strong>Scenario:</strong> A hospital's patient management system records insurance verification results in an event attribute, but this status only updates when verification occurs or when insurance changes. Most treatment events have null insurance status, making it difficult to analyze treatment patterns by insurance coverage type.</p>
+<p><strong>Event Data Before Enrichment:</strong>
+| Case ID | Activity | Timestamp | Insurance_Status | Treatment_Code | Provider |
+|---------|----------|-----------|------------------|----------------|----------|
+| PAT-2001 | Registration | 2024-02-01 08:00 | Pending | null | Clerk A |
+| PAT-2001 | Insurance Verification | 2024-02-01 08:15 | Verified | null | System |
+| PAT-2001 | Triage Assessment | 2024-02-01 08:30 | null | TRIAGE-01 | Nurse B |
+| PAT-2001 | Physician Consult | 2024-02-01 09:00 | null | CONSULT-01 | Dr. Smith |
+| PAT-2001 | Lab Test Order | 2024-02-01 09:30 | null | LAB-CBC | Dr. Smith |
+| PAT-2001 | Lab Collection | 2024-02-01 10:00 | null | LAB-CBC | Tech C |
+| PAT-2001 | Insurance Re-verification | 2024-02-01 11:00 | Approved | null | System |
+| PAT-2001 | Treatment | 2024-02-01 12:00 | null | TX-MINOR | Dr. Jones |
+| PAT-2001 | Discharge | 2024-02-01 14:00 | null | DISCHARGE | Nurse D |</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Event Attribute Name: Insurance_Status</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>After enrichment, insurance status is complete throughout the patient journey:
+| Case ID | Activity | Timestamp | Insurance_Status | Treatment_Code | Provider |
+|---------|----------|-----------|------------------|----------------|----------|
+| PAT-2001 | Registration | 2024-02-01 08:00 | Pending | null | Clerk A |
+| PAT-2001 | Insurance Verification | 2024-02-01 08:15 | Verified | null | System |
+| PAT-2001 | Triage Assessment | 2024-02-01 08:30 | Verified | TRIAGE-01 | Nurse B |
+| PAT-2001 | Physician Consult | 2024-02-01 09:00 | Verified | CONSULT-01 | Dr. Smith |
+| PAT-2001 | Lab Test Order | 2024-02-01 09:30 | Verified | LAB-CBC | Dr. Smith |
+| PAT-2001 | Lab Collection | 2024-02-01 10:00 | Verified | LAB-CBC | Tech C |
+| PAT-2001 | Insurance Re-verification | 2024-02-01 11:00 | Approved | null | System |
+| PAT-2001 | Treatment | 2024-02-01 12:00 | Approved | TX-MINOR | Dr. Jones |
+| PAT-2001 | Discharge | 2024-02-01 14:00 | Approved | DISCHARGE | Nurse D |</p>
+<p><strong>Insights:</strong> The hospital can now accurately track which treatments occurred under which insurance authorization status. Compliance reporting can verify that all procedures had appropriate insurance approval. Quality analysis can identify delays between insurance verification and treatment initiation.</p>
+<h3 id="example-4-manufacturing-work-order-priority">Example 4: Manufacturing Work Order Priority</h3>
+<p><strong>Scenario:</strong> A manufacturing plant assigns priority levels to work orders, but priority is only recorded when the order is created or when it changes due to customer requests. Production activities don't carry priority information, making it impossible to analyze resource allocation by priority level.</p>
+<p><strong>Event Data Before Enrichment:</strong>
+| Case ID | Activity | Timestamp | Priority | Machine | Operator |
+|---------|----------|-----------|----------|---------|----------|
+| WO-3005 | Create Work Order | 2024-03-01 06:00 | Normal | null | System |
+| WO-3005 | Material Allocation | 2024-03-01 07:00 | null | null | Planner A |
+| WO-3005 | Setup Machine | 2024-03-01 08:00 | null | MC-205 | Tech B |
+| WO-3005 | Start Production | 2024-03-01 09:00 | null | MC-205 | Operator C |
+| WO-3005 | Priority Escalation | 2024-03-01 11:00 | Urgent | null | Supervisor |
+| WO-3005 | Quality Check | 2024-03-01 13:00 | null | QC-12 | Inspector D |
+| WO-3005 | Finish Production | 2024-03-01 15:00 | null | MC-205 | Operator C |
+| WO-3005 | Packaging | 2024-03-01 16:00 | null | PKG-08 | Packer E |</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Event Attribute Name: Priority</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>The enrichment propagates priority values forward, showing exactly when priority changed:
+| Case ID | Activity | Timestamp | Priority | Machine | Operator |
+|---------|----------|-----------|----------|---------|----------|
+| WO-3005 | Create Work Order | 2024-03-01 06:00 | Normal | null | System |
+| WO-3005 | Material Allocation | 2024-03-01 07:00 | Normal | null | Planner A |
+| WO-3005 | Setup Machine | 2024-03-01 08:00 | Normal | MC-205 | Tech B |
+| WO-3005 | Start Production | 2024-03-01 09:00 | Normal | MC-205 | Operator C |
+| WO-3005 | Priority Escalation | 2024-03-01 11:00 | Urgent | null | Supervisor |
+| WO-3005 | Quality Check | 2024-03-01 13:00 | Urgent | QC-12 | Inspector D |
+| WO-3005 | Finish Production | 2024-03-01 15:00 | Urgent | MC-205 | Operator C |
+| WO-3005 | Packaging | 2024-03-01 16:00 | Urgent | PKG-08 | Packer E |</p>
+<p><strong>Insights:</strong> Production managers can now identify which activities were performed under urgent priority, measure the impact of priority escalations on cycle times, and optimize resource allocation based on real-time priority status at each production stage.</p>
+<h3 id="example-5-financial-transaction-approval-authority">Example 5: Financial Transaction Approval Authority</h3>
+<p><strong>Scenario:</strong> A bank's transaction processing system records the approval authority level (Branch, Regional, Corporate) only when transactions are submitted for approval. Subsequent processing steps have null authority values, preventing analysis of workflow routing by authority level.</p>
+<p><strong>Event Data Before Enrichment:</strong>
+| Case ID | Activity | Timestamp | Approval_Authority | Amount | Status |
+|---------|----------|-----------|-------------------|--------|--------|
+| TXN-8001 | Initiate Transfer | 2024-04-01 09:00 | null | 250000.00 | Pending |
+| TXN-8001 | Risk Assessment | 2024-04-01 09:15 | null | 250000.00 | Pending |
+| TXN-8001 | Route for Approval | 2024-04-01 09:30 | Regional | 250000.00 | Pending |
+| TXN-8001 | Document Review | 2024-04-01 10:00 | null | 250000.00 | Pending |
+| TXN-8001 | Compliance Check | 2024-04-01 10:30 | null | 250000.00 | Pending |
+| TXN-8001 | Regional Approval | 2024-04-01 11:00 | null | 250000.00 | Approved |
+| TXN-8001 | Execute Transfer | 2024-04-01 11:15 | null | 250000.00 | Completed |
+| TXN-8001 | Confirmation Sent | 2024-04-01 11:20 | null | 250000.00 | Completed |</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Event Attribute Name: Approval_Authority</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>After enrichment, all events after routing show the authority level:
+| Case ID | Activity | Timestamp | Approval_Authority | Amount | Status |
+|---------|----------|-----------|-------------------|--------|--------|
+| TXN-8001 | Initiate Transfer | 2024-04-01 09:00 | null | 250000.00 | Pending |
+| TXN-8001 | Risk Assessment | 2024-04-01 09:15 | null | 250000.00 | Pending |
+| TXN-8001 | Route for Approval | 2024-04-01 09:30 | Regional | 250000.00 | Pending |
+| TXN-8001 | Document Review | 2024-04-01 10:00 | Regional | 250000.00 | Pending |
+| TXN-8001 | Compliance Check | 2024-04-01 10:30 | Regional | 250000.00 | Pending |
+| TXN-8001 | Regional Approval | 2024-04-01 11:00 | Regional | 250000.00 | Approved |
+| TXN-8001 | Execute Transfer | 2024-04-01 11:15 | Regional | 250000.00 | Completed |
+| TXN-8001 | Confirmation Sent | 2024-04-01 11:20 | Regional | 250000.00 | Completed |</p>
+<p><strong>Insights:</strong> The bank can now measure processing times by approval authority level, identify bottlenecks in regional vs. corporate approval workflows, and ensure compliance with authority-level routing policies. Performance dashboards can show average approval times segmented by authority level.</p>
+<h2 id="output">Output</h2>
+<p>The Fill Blanks in Event Attribute enrichment modifies the selected event attribute in-place, replacing null or blank values with the most recently occurring non-null value from previous events within the same case. The enrichment processes each case independently, ensuring that values never propagate across case boundaries.</p>
+<p><strong>Forward-Fill Algorithm:</strong> The enrichment processes events in chronological order within each case, maintaining a "last known value" variable. When an event has a non-null value for the selected attribute, that value becomes the new "last known value." When an event has a null or blank value, the enrichment fills it with the current "last known value" if one exists. This forward-fill approach creates a step function where values persist until they explicitly change to a new non-null value.</p>
+<p><strong>Handling Null Values:</strong> The enrichment only fills values that are explicitly null or blank - it never overwrites existing non-null values, even if they differ from the previous value. If the first few events in a case have null values and no prior value exists to carry forward, those initial null values remain unchanged until the first non-null value appears in a subsequent event.</p>
+<p><strong>Case-Level Isolation:</strong> Each case is processed completely independently. The enrichment never carries values from one case to another, ensuring data integrity and preventing cross-contamination of attribute values between different cases. When a new case begins, the "last known value" resets to null.</p>
+<p><strong>Data Type Preservation:</strong> The enrichment maintains the original data type of the attribute being filled. Text values, numbers, dates, and other data types are all handled correctly, ensuring that filled values match the type of the original non-null values.</p>
+<p><strong>Event Order Dependency:</strong> The enrichment depends on proper event ordering within each case. Events should be sorted by timestamp before applying this enrichment to ensure that values propagate in the correct chronological sequence. If events are not properly ordered, the forward-fill may produce unexpected results.</p>
+<p><strong>Use with Other Enrichments:</strong> This enrichment should typically be applied early in your enrichment workflow, immediately after any data cleanup operations that affect event ordering. Once blanks are filled, other enrichments and filters can reliably reference the attribute knowing that it contains complete information. The filled attribute can be used in:</p>
+<ul>
+<li>Process map filters to show variants by attribute value at specific stages</li>
+<li>Calculators that require complete attribute values across all events</li>
+<li>Conformance checking that validates attribute values at specific activities</li>
+<li>Performance analysis that segments cases by attribute states during different process phases</li>
+</ul>
+<p><strong>Performance Impact:</strong> The enrichment processes data efficiently by iterating through each case's events exactly once. For large datasets, performance is linear with the number of events. The operation modifies data in memory without creating new attributes, making it memory-efficient.</p>
+<p><strong>When Not to Use This Enrichment:</strong> This enrichment is designed for state-based attributes where missing values logically mean "no change." Do not use it for:</p>
+<ul>
+<li>Measurement attributes where null means "not measured" rather than "use previous value" (temperature readings, quantities)</li>
+<li>Event-specific data that genuinely varies per event (activity names, timestamps, resources)</li>
+<li>Attributes where null has business meaning distinct from the previous value</li>
+<li>Random or independent values that should not propagate (transaction IDs, unique identifiers)</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong>Convert to Case Attributes</strong> - Automatically convert event attributes to case level when values don't change</li>
+<li><strong>Representative Case Attribute</strong> - Select a representative value from event attributes to create case attributes</li>
+<li><strong>Hide Blank Attributes</strong> - Remove attributes with no values from the dataset</li>
+<li><strong>Anonymize</strong> - Protect sensitive data while maintaining analytical value</li>
+<li><strong>Sort Log on Start Time</strong> - Ensure proper event ordering before filling blanks</li>
+<li><strong>Group Attribute Values</strong> - Combine similar attribute values into standardized categories</li>
+<li><strong>Replace Text</strong> - Find and replace text values in attributes</li>
+<li><strong>Trim Text</strong> - Clean up attribute values by removing extra whitespace</li>
+</ul>
+<hr>
+<p><em>This documentation is part of the mindzie Studio process mining platform.</em></p>
+</div></div></main></div><!--!-->
+
+<!--!--><script>
+    // Search keyboard shortcut (Ctrl+K or Cmd+K)
+    window.registerSearchShortcut = function(dotNetRef) {
+        document.addEventListener('keydown', function(e) {
+            // Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                dotNetRef.invokeMethodAsync('OpenSearch');
+            }
+        });
+    };
+
+    window.toggleSection = function(sectionId) {
+        const section = document.getElementById(sectionId + '-section');
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            // Save state
+            const isExpanded = section.classList.contains('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsection = function(subsectionId) {
+        const subsection = document.getElementById(subsectionId + '-subsection');
+        if (subsection) {
+            // Toggle between collapsed and expanded
+            if (subsection.classList.contains('expanded')) {
+                subsection.classList.remove('expanded');
+                subsection.classList.add('collapsed');
+            } else {
+                subsection.classList.remove('collapsed');
+                subsection.classList.add('expanded');
+            }
+            
+            // Save state
+            const isExpanded = subsection.classList.contains('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSectionHelper = function(sectionId) {
+        var section = document.getElementById(sectionId);
+        var sectionWrapper = document.querySelector('#' + sectionId + '-section');
+        if (section && sectionWrapper) {
+            var isExpanded = sectionWrapper.classList.toggle('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsectionHelper = function(subsectionId) {
+        console.log('Toggling subsection:', subsectionId);
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            // Toggle between collapsed and expanded
+            var isCurrentlyExpanded = subsectionWrapper.classList.contains('expanded');
+            console.log('Currently expanded:', isCurrentlyExpanded);
+
+            if (isCurrentlyExpanded) {
+                subsectionWrapper.classList.remove('expanded');
+                subsectionWrapper.classList.add('collapsed');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'false');
+                console.log('Collapsed:', subsectionId);
+            } else {
+                subsectionWrapper.classList.remove('collapsed');
+                subsectionWrapper.classList.add('expanded');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'true');
+                console.log('Expanded:', subsectionId);
+            }
+        } else {
+            console.error('Subsection not found:', subsectionId);
+        }
+    };
+    
+    window.expandSubsection = function(subsectionId) {
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            subsectionWrapper.classList.remove('collapsed');
+            subsectionWrapper.classList.add('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, true);
+        }
+    };
+    
+    window.initializeNavigation = function() {
+        // Set Core Concepts and other always-expanded sections
+        document.querySelectorAll('.nav-section.always-expanded').forEach(section => {
+            section.classList.add('expanded');
+        });
+
+        // Restore saved states for other sections
+        document.querySelectorAll('.nav-section:not(.always-expanded)[id$="-section"]').forEach(section => {
+            const sectionId = section.id.replace('-section', '');
+            const savedState = localStorage.getItem('nav-section-' + sectionId);
+            if (savedState === 'true') {
+                section.classList.add('expanded');
+            }
+        });
+
+        // Initialize ALL subsections as collapsed by default
+        document.querySelectorAll('.nav-subsection[id$="-subsection"]').forEach(subsection => {
+            // Remove any existing state classes first
+            subsection.classList.remove('collapsed');
+            subsection.classList.remove('expanded');
+
+            // Always start collapsed, ignore saved state for now to ensure they start collapsed
+            subsection.classList.add('collapsed');
+
+            // Clear any saved states to ensure fresh start
+            const subsectionId = subsection.id.replace('-subsection', '');
+            localStorage.removeItem('nav-subsection-' + subsectionId);
+        });
+    };
+
+    window.scrollToActiveMenuItem = function() {
+        // Find the active menu item
+        var activeItem = document.querySelector('.nav-subitem.active, .nav-item.active, .nav-section-title-link.active');
+        if (activeItem) {
+            // Get the sidebar element
+            var sidebar = document.querySelector('.frame-sidebar');
+            if (sidebar) {
+                // Calculate the position to scroll to
+                var itemTop = activeItem.offsetTop;
+                var itemHeight = activeItem.offsetHeight;
+                var sidebarHeight = sidebar.clientHeight;
+
+                // Scroll so the active item is visible, preferably centered
+                var scrollPosition = itemTop - (sidebarHeight / 2) + (itemHeight / 2);
+
+                // Smooth scroll to the active item
+                sidebar.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
+</script><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

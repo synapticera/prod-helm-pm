@@ -1,0 +1,587 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Attribute Changes In A Case | Enrichments | mindzieStudio Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><!--!--><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">Studio Documentation</span></div></div>
+        <div class="header-right"><!--!--><div class="search-container"><div class="search-box "><div class="search-input-wrapper"><!--!--><span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search documentation... (Ctrl+K)" autocomplete="off" spellcheck="false" _bl_2=""><button class="search-page-button" title="Go to search page"><!--!--><span>🔎</span></button></div></div></div><!--!-->
+            <!--!--><nav class="product-nav"><a href="../../index.html" class="product-item active">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header><!--!-->
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>Home</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="core-concepts-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Core Concepts</span></div>
+                <div id="core-concepts" class="nav-section-content"><div class="nav-subsection collapsed" id="filters-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Filters</span></button><!--!-->
+                        <div id="filters" class="nav-subsection-items"><a href="../../filters/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../filters/activity-frequency/index.html" class="nav-subitem">Activity Frequency</a><!--!-->
+                            <a href="../../filters/activity-not-performed/index.html" class="nav-subitem">Activity Not Performed</a><!--!-->
+                            <a href="../../filters/activity-performed-once/index.html" class="nav-subitem">Activity Performed Once</a><!--!-->
+                            <a href="../../filters/case-end/index.html" class="nav-subitem">Case End</a><!--!-->
+                            <a href="../../filters/case-start/index.html" class="nav-subitem">Case Start</a><!--!-->
+                            <a href="../../filters/cases-with-attribute/index.html" class="nav-subitem">Cases with Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-changed-attribute/index.html" class="nav-subitem">Cases with Changed Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-dates/index.html" class="nav-subitem">Cases with Identical Event Dates</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-timestamps/index.html" class="nav-subitem">Cases with Identical Event Timestamps</a><!--!-->
+                            <a href="../../filters/cases-with-unchanged-attribute/index.html" class="nav-subitem">Cases with Unchanged Attribute</a><!--!-->
+                            <a href="../../filters/compare-attribute-values/index.html" class="nav-subitem">Compare Attribute Values</a><!--!-->
+                            <a href="../../filters/deadline/index.html" class="nav-subitem">Deadline</a><!--!-->
+                            <a href="../../filters/event-order/index.html" class="nav-subitem">Event Order</a><!--!-->
+                            <a href="../../filters/events-before-or-after-activity/index.html" class="nav-subitem">Events Before or After Activity</a><!--!-->
+                            <a href="../../filters/events-with-attribute/index.html" class="nav-subitem">Events with Attribute</a><!--!-->
+                            <a href="../../filters/filter-list/index.html" class="nav-subitem">Filter List</a><!--!-->
+                            <a href="../../filters/keep-events-with-same-value-as-case-attribute/index.html" class="nav-subitem">Keep Events with Same Value as Case Attribute</a><!--!-->
+                            <a href="../../filters/or-filter/index.html" class="nav-subitem">Or Filter</a><!--!-->
+                            <a href="../../filters/process-variants/index.html" class="nav-subitem">Process Variants</a><!--!-->
+                            <a href="../../filters/remove-activity-loops/index.html" class="nav-subitem">Remove Activity Loops</a><!--!-->
+                            <a href="../../filters/remove-activity-with-same-date/index.html" class="nav-subitem">Remove Activity with Same Date</a><!--!-->
+                            <a href="../../filters/remove-activity-with-similar-time/index.html" class="nav-subitem">Remove Activity with Similar Time</a><!--!-->
+                            <a href="../../filters/remove-data-from-underactive-periods/index.html" class="nav-subitem">Remove Data from Underactive Periods</a><!--!-->
+                            <a href="../../filters/select-variants/index.html" class="nav-subitem">Select Variants</a><!--!-->
+                            <a href="../../filters/selected-activity-frequency/index.html" class="nav-subitem">Selected Activity Frequency</a><!--!-->
+                            <a href="../../filters/single-activity-cases/index.html" class="nav-subitem">Single Activity Cases</a><!--!-->
+                            <a href="../../filters/text-search/index.html" class="nav-subitem">Text Search</a><!--!-->
+                            <a href="../../filters/time-between-activities/index.html" class="nav-subitem">Time Between Activities</a><!--!-->
+                            <a href="../../filters/time-period/index.html" class="nav-subitem">Time Period</a><!--!-->
+                            <a href="../../filters/value-frequency/index.html" class="nav-subitem">Value Frequency</a><!--!-->
+                            <a href="../../filters/variant-frequency/index.html" class="nav-subitem">Variant Frequency</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection collapsed" id="calculators-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Calculators</span></button><!--!-->
+                        <div id="calculators" class="nav-subsection-items"><a href="../../calculators/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../calculators/activity-information/index.html" class="nav-subitem">Activity Information</a><!--!-->
+                            <a href="../../calculators/average-value/index.html" class="nav-subitem">Average Value</a><!--!-->
+                            <a href="../../calculators/automation/index.html" class="nav-subitem">Automation Calculator</a><!--!-->
+                            <a href="../../calculators/breakdown-by-categories/index.html" class="nav-subitem">Breakdown By Categories</a><!--!-->
+                            <a href="../../calculators/case-count/index.html" class="nav-subitem">Case Count</a><!--!-->
+                            <a href="../../calculators/case-duration/index.html" class="nav-subitem">Case Duration</a><!--!-->
+                            <a href="../../calculators/chair-usage/index.html" class="nav-subitem">Chair Usage</a><!--!-->
+                            <a href="../../calculators/column-info/index.html" class="nav-subitem">Column Info</a><!--!-->
+                            <a href="../../calculators/data-selector/index.html" class="nav-subitem">Data Selector</a><!--!-->
+                            <a href="../../calculators/days-of-sales-outstanding-dpo/index.html" class="nav-subitem">Days Of Sales Outstanding / DPO</a><!--!-->
+                            <a href="../../calculators/dataset-information/index.html" class="nav-subitem">Dataset Information</a><!--!-->
+                            <a href="../../calculators/duplicate-cases/index.html" class="nav-subitem">Duplicate Cases</a><!--!-->
+                            <a href="../../calculators/event-count/index.html" class="nav-subitem">Event Count</a><!--!-->
+                            <a href="../../calculators/find-date-outliers/index.html" class="nav-subitem">Find Date Outliers</a><!--!-->
+                            <a href="../../calculators/find-text-in-attributes/index.html" class="nav-subitem">Find Text In Attributes</a><!--!-->
+                            <a href="../../calculators/general-3-way-match/index.html" class="nav-subitem">General 3 Way Match</a><!--!-->
+                            <a href="../../calculators/histogram/index.html" class="nav-subitem">Histogram</a><!--!-->
+                            <a href="../../calculators/llm-prompts/index.html" class="nav-subitem">LLM Prompts</a><!--!-->
+                            <a href="../../calculators/maximum-value/index.html" class="nav-subitem">Maximum Value</a><!--!-->
+                            <a href="../../calculators/metadata/index.html" class="nav-subitem">Metadata</a><!--!-->
+                            <a href="../../calculators/minimum-value/index.html" class="nav-subitem">Minimum Value</a><!--!-->
+                            <a href="../../calculators/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                            <a href="../../calculators/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                            <a href="../../calculators/rate/index.html" class="nav-subitem">Rate</a><!--!-->
+                            <a href="../../calculators/rate-over-time/index.html" class="nav-subitem">Rate Over Time</a><!--!-->
+                            <a href="../../calculators/repeated-activities/index.html" class="nav-subitem">Repeated Activities</a><!--!-->
+                            <a href="../../calculators/resource-performance-vs-conformance/index.html" class="nav-subitem">Resource Performance Vs Conformance</a><!--!-->
+                            <a href="../../calculators/root-cause-analysis/index.html" class="nav-subitem">Root Cause Analysis</a><!--!-->
+                            <a href="../../calculators/same-time-pairs/index.html" class="nav-subitem">Same Time Pairs</a><!--!-->
+                            <a href="../../calculators/show-notes/index.html" class="nav-subitem">Show Notes</a><!--!-->
+                            <a href="../../calculators/sum-of-values/index.html" class="nav-subitem">Sum Of Values</a><!--!-->
+                            <a href="../../calculators/sum-of-values-for-activity/index.html" class="nav-subitem">Sum Of Values For Activity</a><!--!-->
+                            <a href="../../calculators/standard-checker/index.html" class="nav-subitem">Standard Checker</a><!--!-->
+                            <a href="../../calculators/time-between-all-activity-pairs/index.html" class="nav-subitem">Time Between All Activity Pairs</a><!--!-->
+                            <a href="../../calculators/time-between-selected-events/index.html" class="nav-subitem">Time Between Selected Events</a><!--!-->
+                            <a href="../../calculators/time-from-case-start-to-selected-event/index.html" class="nav-subitem">Time From Case Start To Selected Event</a><!--!-->
+                            <a href="../../calculators/trend/index.html" class="nav-subitem">Trend</a><!--!-->
+                            <a href="../../calculators/variant-dna/index.html" class="nav-subitem">Variant DNA</a><!--!-->
+                            <a href="../../calculators/value-count-in-case-attribute/index.html" class="nav-subitem">Value Count In Case Attribute</a><!--!-->
+                            <a href="../../calculators/value-count-in-event-attribute/index.html" class="nav-subitem">Value Count In Event Attribute</a><!--!-->
+                            <a href="../../calculators/what-if-simulation-working-capital/index.html" class="nav-subitem">What If Simulation Working Capital</a><!--!-->
+                            <a href="../../calculators/world-map/index.html" class="nav-subitem">World Map</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection expanded" id="enrichments-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Enrichments</span></button><!--!-->
+                        <div id="enrichments" class="nav-subsection-items"><a href="../index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../2-way-match/index.html" class="nav-subitem ">2 Way Match</a><!--!-->
+                            <a href="../activity-copy-latest-event-value/index.html" class="nav-subitem ">Activity Copy Latest EventValue</a><!--!-->
+                            <a href="../activity-order-classification/index.html" class="nav-subitem ">Activity Order Classification</a><!--!-->
+                            <a href="../add-activity-from-case-attribute/index.html" class="nav-subitem ">Add Activity From Case Attribute</a><!--!-->
+                            <a href="../create-update-activity/index.html" class="nav-subitem ">Create Update Activity</a><!--!-->
+                            <a href="../fill-blanks-in-event-attribute/index.html" class="nav-subitem ">Fill Blanks In Event Attribute</a><!--!-->
+                            <a href="../remove-activities/index.html" class="nav-subitem ">Remove Activities</a><!--!-->
+                            <a href="../remove-duplicate-events/index.html" class="nav-subitem ">Remove Duplicate Events</a><!--!-->
+                            <a href="../remove-repeated-activities/index.html" class="nav-subitem ">Remove Repeated Activities</a><!--!-->
+                            <a href="../add/index.html" class="nav-subitem ">Add</a><!--!-->
+                            <a href="../divide/index.html" class="nav-subitem ">Divide</a><!--!-->
+                            <a href="../multiply/index.html" class="nav-subitem ">Multiply</a><!--!-->
+                            <a href="../subtract/index.html" class="nav-subitem ">Subtract</a><!--!-->
+                            <a href="../anonymize/index.html" class="nav-subitem ">Anonymize</a><!--!-->
+                            <a href="../change-attribute-display-name/index.html" class="nav-subitem ">Change Attribute Display Name</a><!--!-->
+                            <a href="../change-attribute-name/index.html" class="nav-subitem ">Change Attribute Name</a><!--!-->
+                            <a href="../combine-boolean-attributes/index.html" class="nav-subitem ">Combine Boolean Attributes</a><!--!-->
+                            <a href="../concatenate-attributes/index.html" class="nav-subitem ">Concatenate Attributes</a><!--!-->
+                            <a href="../convert-currency-to-base/index.html" class="nav-subitem ">Convert Currency To Base</a><!--!-->
+                            <a href="../convert-to-case-attributes/index.html" class="nav-subitem ">Convert To Case Attributes</a><!--!-->
+                            <a href="../convert-to-integer/index.html" class="nav-subitem ">Convert To Integer</a><!--!-->
+                            <a href="../copy-attribute/index.html" class="nav-subitem ">Copy Attribute</a><!--!-->
+                            <a href="../hide-attribute/index.html" class="nav-subitem ">Hide Attribute</a><!--!-->
+                            <a href="../hide-blank-attributes/index.html" class="nav-subitem ">Hide Blank Attributes</a><!--!-->
+                            <a href="../set-group-value/index.html" class="nav-subitem ">Set Group Value</a><!--!-->
+                            <a href="../attribute-changes-between-two-activities/index.html" class="nav-subitem ">Attribute Changes Between Two Activities</a><!--!-->
+                            <a href="index.html" class="nav-subitem active">Attribute Changes In A Case</a><!--!-->
+                            <a href="../compare-activity-counts/index.html" class="nav-subitem ">Compare Activity Counts</a><!--!-->
+                            <a href="../compare-case-attributes/index.html" class="nav-subitem ">Compare Case Attributes</a><!--!-->
+                            <a href="../compare-event-attributes-for-two-activities/index.html" class="nav-subitem ">Compare Event Attributes For Two Activities</a><!--!-->
+                            <a href="../compare-multiple-case-attributes/index.html" class="nav-subitem ">Compare Multiple Case Attributes</a><!--!-->
+                            <a href="../event-order-algorithm/index.html" class="nav-subitem ">Event Order Algorithm</a><!--!-->
+                            <a href="../allowed-case-end-activities/index.html" class="nav-subitem ">Allowed Case End Activities</a><!--!-->
+                            <a href="../allowed-case-start-activities/index.html" class="nav-subitem ">Allowed Case Start Activities</a><!--!-->
+                            <a href="../conformance-issue/index.html" class="nav-subitem ">Conformance Issue</a><!--!-->
+                            <a href="../expected-order/index.html" class="nav-subitem ">Expected Order</a><!--!-->
+                            <a href="../mandatory-activity/index.html" class="nav-subitem ">Mandatory Activity</a><!--!-->
+                            <a href="../repeated-activity/index.html" class="nav-subitem ">Repeated Activity</a><!--!-->
+                            <a href="../undesired-activity/index.html" class="nav-subitem ">Undesired Activity</a><!--!-->
+                            <a href="../wrong-activity-order/index.html" class="nav-subitem ">Wrong Activity Order</a><!--!-->
+                            <a href="../case-closed/index.html" class="nav-subitem ">Case Closed</a><!--!-->
+                            <a href="../categorize-attribute-values/index.html" class="nav-subitem ">Categorize Attribute Values</a><!--!-->
+                            <a href="../categorize-duration/index.html" class="nav-subitem ">Categorize Duration</a><!--!-->
+                            <a href="../count-boolean-attributes-with-value/index.html" class="nav-subitem ">Count Boolean Attributes With Value</a><!--!-->
+                            <a href="../group-attribute-values/index.html" class="nav-subitem ">Group Attribute Values</a><!--!-->
+                            <a href="../representative-case-attribute/index.html" class="nav-subitem ">Representative Case Attribute</a><!--!-->
+                            <a href="../representative-case-attribute-2/index.html" class="nav-subitem ">Representative Case Attribute 2</a><!--!-->
+                            <a href="../logical-or/index.html" class="nav-subitem ">Logical OR</a><!--!-->
+                            <a href="../negate/index.html" class="nav-subitem ">Negate</a><!--!-->
+                            <a href="../case-duration-category-for-activity/index.html" class="nav-subitem ">Case Duration Category For Activity</a><!--!-->
+                            <a href="../categorize-duration-for-activity/index.html" class="nav-subitem ">Categorize Duration For Activity</a><!--!-->
+                            <a href="../categorize-duration-for-selected-cases/index.html" class="nav-subitem ">Categorize Duration For Selected Cases</a><!--!-->
+                            <a href="../ai-case-prediction/index.html" class="nav-subitem ">AI Case Prediction</a><!--!-->
+                            <a href="../format-string/index.html" class="nav-subitem ">Format String</a><!--!-->
+                            <a href="../python/index.html" class="nav-subitem ">Python</a><!--!-->
+                            <a href="../count-activities/index.html" class="nav-subitem ">Count Activities</a><!--!-->
+                            <a href="../count-values/index.html" class="nav-subitem ">Count Values</a><!--!-->
+                            <a href="../event-count/index.html" class="nav-subitem ">Event Count</a><!--!-->
+                            <a href="../max-value/index.html" class="nav-subitem ">Max Value</a><!--!-->
+                            <a href="../predict-value/index.html" class="nav-subitem ">Predict Value</a><!--!-->
+                            <a href="../summarize-values/index.html" class="nav-subitem ">Summarize Values</a><!--!-->
+                            <a href="../limit-text-length/index.html" class="nav-subitem ">Limit Text Length</a><!--!-->
+                            <a href="../replace-text/index.html" class="nav-subitem ">Replace Text</a><!--!-->
+                            <a href="../text-end/index.html" class="nav-subitem ">Text End</a><!--!-->
+                            <a href="../text-start/index.html" class="nav-subitem ">Text Start</a><!--!-->
+                            <a href="../trim-text/index.html" class="nav-subitem ">Trim Text</a><!--!-->
+                            <a href="../upper-case/index.html" class="nav-subitem ">Upper Case</a><!--!-->
+                            <a href="../add-days-to-a-date/index.html" class="nav-subitem ">Add Days To A Date</a><!--!-->
+                            <a href="../add-time-to-attributes/index.html" class="nav-subitem ">Add Time To Attributes</a><!--!-->
+                            <a href="../correct-time-zone/index.html" class="nav-subitem ">Correct Time Zone</a><!--!-->
+                            <a href="../duration-between-an-activity-and-current-time/index.html" class="nav-subitem ">Duration Between An Activity And Current Time</a><!--!-->
+                            <a href="../duration-between-an-attribute-and-an-activity/index.html" class="nav-subitem ">Duration Between An Attribute And An Activity</a><!--!-->
+                            <a href="../duration-between-an-attribute-and-current-time/index.html" class="nav-subitem ">Duration Between An Attribute And Current Time</a><!--!-->
+                            <a href="../duration-between-two-activities/index.html" class="nav-subitem ">Duration Between Two Activities</a><!--!-->
+                            <a href="../duration-between-two-event-attributes/index.html" class="nav-subitem ">Duration Between Two Event Attributes</a><!--!-->
+                            <a href="../durations-between-case-attribute-and-activity-times/index.html" class="nav-subitem ">Durations Between Case Attribute And Activity Times</a><!--!-->
+                            <a href="../freeze-time/index.html" class="nav-subitem ">Freeze Time</a><!--!-->
+                            <a href="../shift-activity-time/index.html" class="nav-subitem ">Shift Activity Time</a><!--!-->
+                            <a href="../sort-log-on-start-time/index.html" class="nav-subitem ">Sort Log On Start Time</a><!--!-->
+                            <a href="../time-to-previous-case-in-group/index.html" class="nav-subitem ">Time To Previous Case In Group</a><!--!-->
+                            <a href="../filter-process-log/index.html" class="nav-subitem ">Filter Process Log</a></div></div></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="process-discovery-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Process Discovery</span></div>
+                <div id="process-discovery" class="nav-section-content"><a href="../../process-discovery/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../process-discovery/case-explorer/index.html" class="nav-subitem">Case Explorer</a><!--!-->
+                    <a href="../../process-discovery/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                    <a href="../../process-discovery/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                    <a href="../../process-discovery/process-variants/index.html" class="nav-subitem">Process Variants</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="ai-assistants-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">AI Assistants</span></div>
+                <div id="ai-assistants" class="nav-section-content"><a href="../../ai-assistants/ai-model-configuration/index.html" class="nav-subitem">AI Model Configuration</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="how-to-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">How To</span></div>
+                <div id="how-to" class="nav-section-content"><a href="../../how-to/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../how-to/getting-started-creating-first-project/index.html" class="nav-subitem">Getting Started: Creating Your First Project</a><!--!-->
+                    <a href="../../how-to/uploading-configuring-data-sources/index.html" class="nav-subitem">Uploading and Configuring Data Sources</a><!--!-->
+                    <a href="../../how-to/understanding-dual-dataset-architecture/index.html" class="nav-subitem">Understanding Dual Dataset Architecture</a><!--!-->
+                    <a href="../../how-to/planning-dashboard-structure-for-user-roles/index.html" class="nav-subitem">Planning Dashboard Structure for User Roles</a><!--!-->
+                    <a href="../../how-to/working-with-investigations-and-notebooks/index.html" class="nav-subitem">Working with Investigations and Notebooks</a><!--!-->
+                    <a href="../../how-to/mastering-log-enrichment-engine/index.html" class="nav-subitem">Mastering Log Enrichment Engine</a><!--!-->
+                    <a href="../../how-to/building-conformance-rules-for-compliance/index.html" class="nav-subitem">Building Conformance Rules for Compliance</a><!--!-->
+                    <a href="../../how-to/creating-analysis-with-filters-and-calculators/index.html" class="nav-subitem">Creating Analysis with Filters and Calculators</a><!--!-->
+                    <a href="../../how-to/publishing-metrics-from-notebooks-to-dashboards/index.html" class="nav-subitem">Publishing Metrics from Notebooks to Dashboards</a><!--!-->
+                    <a href="../../how-to/advanced-implementing-activity-based-costing/index.html" class="nav-subitem">Advanced: Implementing Activity Based Costing</a><!--!-->
+                    <a href="../../how-to/reusing-analysis-copying-and-adapting-notebooks/index.html" class="nav-subitem">Reusing Analysis: Copying and Adapting Notebooks</a><!--!-->
+                    <a href="../../how-to/designing-user-friendly-dashboards-with-notes-and-formatting/index.html" class="nav-subitem">Designing User-Friendly Dashboards with Notes and Formatting</a><!--!-->
+                    <a href="../../how-to/understanding-drill-down-and-continuous-monitoring/index.html" class="nav-subitem">Understanding Drill Down and Continuous Monitoring</a><!--!-->
+                    <a href="../../how-to/end-to-end-project-build-complete-workflow/index.html" class="nav-subitem">End to End Project Build: Complete Workflow</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="on-premise-server-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">On-Premise Server</span></div>
+                <div id="on-premise-server" class="nav-section-content"><a href="../../on-premise-server/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../on-premise-server/installation-guide/index.html" class="nav-subitem">Installation Guide</a><!--!-->
+                    <a href="../../on-premise-server/install-sql-server-express/index.html" class="nav-subitem">Install SQL Server Express</a><!--!-->
+                    <a href="../../on-premise-server/technical-requirements/index.html" class="nav-subitem">Technical Requirements</a><!--!-->
+                    <a href="../../on-premise-server/auto-update/index.html" class="nav-subitem">Auto Update</a><!--!-->
+                    <a href="../../on-premise-server/force-update/index.html" class="nav-subitem">Force Update</a><!--!-->
+                    <a href="../../on-premise-server/backup-strategy/index.html" class="nav-subitem">Backup Strategy</a></div></div><!--!-->
+
+
+            <div class="nav-section always-expanded expanded" id="tenant-settings-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Tenant Settings</span></div>
+                <div id="tenant-settings" class="nav-section-content"><a href="../../tenant-settings/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="active-directory-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Active Directory</span></button><!--!-->
+                        <div id="active-directory" class="nav-subsection-items"><a href="../../tenant-settings/active-directory/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/setup-guide/index.html" class="nav-subitem ">Setup Guide</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/azure-ad-app-registration/index.html" class="nav-subitem ">Azure AD App Registration</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="administration-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Administration</span></div>
+                <div id="administration" class="nav-section-content"><a href="../../administration/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <a href="../../administration/tenant-management/index.html" class="nav-subitem ">Tenant Management</a><!--!-->
+                    <a href="../../administration/email_settings/index.html" class="nav-subitem ">Email Settings</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="user-management-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">User Management</span></button><!--!-->
+                        <div id="user-management" class="nav-subsection-items"><a href="../../administration/user-management/index.html" class="nav-subitem overview-item">Overview</a></div></div><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="service-accounts-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Service Accounts</span></button><!--!-->
+                        <div id="service-accounts" class="nav-subsection-items"><a href="../../administration/service-accounts/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../administration/service-accounts/what-are-service-accounts/index.html" class="nav-subitem ">What Are Service Accounts</a><!--!-->
+                            <a href="../../administration/service-accounts/promote-user-to-service-account/index.html" class="nav-subitem ">Promote User to Service Account</a><!--!-->
+                            <a href="../../administration/service-accounts/manage-service-accounts/index.html" class="nav-subitem ">Manage Service Accounts</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="resources-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Resources</span></div>
+                <div id="resources" class="nav-section-content"><a href="../../resources/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../resources/sample-datasets/index.html" class="nav-subitem">Sample Datasets</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="application-guide-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Application Guide</span></div>
+                <div id="application-guide" class="nav-section-content"><a href="../../application-guide/ai-copilot/index.html" class="nav-subitem">AI Copilot</a><!--!-->
+                    <a href="../../application-guide/actions-engine/index.html" class="nav-subitem">Actions Engine</a><!--!-->
+                    <a href="../../application-guide/bpmn-editor/index.html" class="nav-subitem">BPMN Editor</a><!--!-->
+                    <a href="../../application-guide/projects/index.html" class="nav-subitem">Projects</a><!--!-->
+                    <a href="../../application-guide/business-apps/index.html" class="nav-subitem">Business Apps</a></div></div><!--!-->
+
+            <div class="nav-section always-expanded expanded" id="task-mining-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Task Mining</span></div>                <div id="task-mining" class="nav-section-content"><a href="../../task-mining/task-mining-agent-installation/index.html" class="nav-subitem">Task Mining Agent Installation</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Attribute Changes In A Case</h1><div class="page-breadcrumb">Enrichments</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="overview">Overview</h2>
+<p>The Attribute Changes in a Case enrichment is a powerful analytical tool that detects and quantifies value changes in event attributes throughout the lifecycle of a case. This enrichment automatically examines every event attribute in your dataset and creates new case-level metrics that reveal patterns of change, stability, and variation within each process instance. By transforming event-level variations into case-level insights, this enrichment enables you to identify process inconsistencies, track state transitions, and measure process stability at scale.</p>
+<p>This enrichment is particularly valuable for understanding process dynamics and variability. It answers critical questions about how attribute values evolve during case execution - whether status fields change frequently, if resource assignments remain consistent, or how many distinct values an attribute takes within a single case. The enrichment creates up to three different types of metrics for each event attribute, giving you flexibility in how you analyze and visualize attribute changes across your process.</p>
+<h2 id="common-uses">Common Uses</h2>
+<ul>
+<li><strong>Status transition analysis</strong> - Track how many times order status, approval status, or case status changes throughout the process lifecycle</li>
+<li><strong>Resource consistency monitoring</strong> - Identify cases where ownership or responsibility changes hands multiple times, indicating potential handover issues</li>
+<li><strong>Data quality validation</strong> - Detect unexpected variations in attributes that should remain constant, revealing data entry errors or system inconsistencies</li>
+<li><strong>Process complexity measurement</strong> - Quantify the number of distinct values or states a case passes through to measure process complexity</li>
+<li><strong>Change frequency analysis</strong> - Count the total number of value changes to identify highly volatile cases requiring investigation</li>
+<li><strong>Conformance checking</strong> - Verify that certain attributes maintain expected values or change patterns according to business rules</li>
+<li><strong>Performance categorization</strong> - Group cases by their change patterns to understand which types of cases follow simpler versus more complex paths</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<p><strong>Ignore Null:</strong> Determines whether null (empty) values should be excluded when analyzing attribute changes. When enabled, the enrichment will skip over events where the attribute value is null, focusing only on actual value changes. This is useful when null values represent missing data rather than meaningful state changes. Default value is true (enabled). Enable this when nulls represent data gaps; disable when null is a meaningful state in your process.</p>
+<p><strong>Create Change Count Attribute:</strong> Controls whether to create attributes that count the total number of value changes for each event attribute. When enabled, creates attributes with the suffix "-Changes" that contain the count of how many times the value changed from one event to the next. This provides a sequential change count metric. Default value is true (enabled). Use this to measure volatility and identify cases with frequent state transitions.</p>
+<p><strong>Create Group Count Attribute:</strong> Determines whether to create attributes that count the number of distinct values (groups) each event attribute takes within a case. When enabled, creates attributes with the suffix "-Groups" containing the count of unique values. This measures diversity rather than change frequency. Default value is true (enabled). Enable this to understand value diversity and process complexity.</p>
+<p><strong>Create Bool Change Attribute:</strong> Controls whether to create boolean attributes indicating if any change occurred for each event attribute. When enabled, creates attributes with the suffix "-Change" that contain true/false values - true if the attribute had any distinct values, false otherwise. Default value is true (enabled). Use this for simple binary classification of cases with or without changes.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-order-status-monitoring-in-procurement">Example 1: Order Status Monitoring in Procurement</h3>
+<p><strong>Scenario:</strong> A procurement team needs to identify purchase orders with excessive status changes, which often indicate process complications or delays requiring manual intervention.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Ignore Null: true</li>
+<li>Create Change Count Attribute: true</li>
+<li>Create Group Count Attribute: true</li>
+<li>Create Bool Change Attribute: false</li>
+</ul>
+<p><strong>Output:</strong>
+For an event attribute "Order_Status" that transitions through values: "Created" → "Approved" → "In Review" → "Approved" → "Processed", the enrichment creates:</p>
+<ul>
+<li><code>Order_Status-Changes</code>: 4 (counts each transition)</li>
+<li><code>Order_Status-Groups</code>: 4 (counts distinct values: Created, Approved, In Review, Processed)</li>
+</ul>
+<p>Cases with <code>Order_Status-Changes</code> &gt; 5 are flagged for review as they indicate repeated back-and-forth status changes.</p>
+<p><strong>Insights:</strong> Orders with high change counts correlate with longer cycle times and higher costs. The procurement team implements automated alerts for orders exceeding 3 status changes to proactively manage exceptions.</p>
+<h3 id="example-2-patient-care-team-transitions-in-healthcare">Example 2: Patient Care Team Transitions in Healthcare</h3>
+<p><strong>Scenario:</strong> A hospital wants to analyze care continuity by tracking how often patients are transferred between different medical teams or departments during their stay.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Ignore Null: true</li>
+<li>Create Change Count Attribute: true</li>
+<li>Create Group Count Attribute: true</li>
+<li>Create Bool Change Attribute: true</li>
+</ul>
+<p><strong>Output:</strong>
+For an event attribute "Assigned_Team" with values: "ER" → "ER" → "ICU" → "Surgery" → "ICU" → "Recovery", the enrichment creates:</p>
+<ul>
+<li><code>Assigned_Team-Changes</code>: 4 (ER to ICU, ICU to Surgery, Surgery to ICU, ICU to Recovery)</li>
+<li><code>Assigned_Team-Groups</code>: 4 (ER, ICU, Surgery, Recovery)</li>
+<li><code>Assigned_Team-Change</code>: true (changes occurred)</li>
+</ul>
+<p><strong>Insights:</strong> Patients with more than 3 team transitions show 40% longer average length of stay. The hospital implements care coordination protocols for high-transition patients to improve outcomes and efficiency.</p>
+<h3 id="example-3-manufacturing-quality-control-tracking">Example 3: Manufacturing Quality Control Tracking</h3>
+<p><strong>Scenario:</strong> A manufacturing plant needs to monitor quality inspection results throughout the production process to identify products requiring multiple quality interventions.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Ignore Null: false</li>
+<li>Create Change Count Attribute: true</li>
+<li>Create Group Count Attribute: true</li>
+<li>Create Bool Change Attribute: false</li>
+</ul>
+<p><strong>Output:</strong>
+For an event attribute "Quality_Status" with values: null → "Pass" → "Fail" → "Rework" → "Pass", the enrichment creates:</p>
+<ul>
+<li><code>Quality_Status-Changes</code>: 4 (including the initial null to Pass transition)</li>
+<li><code>Quality_Status-Groups</code>: 5 (null, Pass, Fail, Rework, and Pass counted as distinct)</li>
+</ul>
+<p>Products with <code>Quality_Status-Groups</code> &gt; 2 are analyzed for root cause analysis of quality issues.</p>
+<p><strong>Insights:</strong> Products experiencing quality status changes correlate with specific production lines and shifts, leading to targeted training and equipment maintenance programs.</p>
+<h3 id="example-4-financial-transaction-approval-workflow">Example 4: Financial Transaction Approval Workflow</h3>
+<p><strong>Scenario:</strong> A bank wants to analyze the complexity of their loan approval process by tracking how many different approval levels and decision states each application passes through.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Ignore Null: true</li>
+<li>Create Change Count Attribute: false</li>
+<li>Create Group Count Attribute: true</li>
+<li>Create Bool Change Attribute: true</li>
+</ul>
+<p><strong>Output:</strong>
+For an event attribute "Approval_Level" with values: "Initial_Review" → "Credit_Check" → "Manager_Review" → "Credit_Check" → "Final_Approval", the enrichment creates:</p>
+<ul>
+<li><code>Approval_Level-Groups</code>: 4 (Initial_Review, Credit_Check, Manager_Review, Final_Approval)</li>
+<li><code>Approval_Level-Change</code>: true</li>
+</ul>
+<p>Loan applications with <code>Approval_Level-Groups</code> &gt; 5 indicate complex cases requiring process optimization.</p>
+<p><strong>Insights:</strong> Applications with fewer approval level groups have 60% faster processing times. The bank streamlines the process for standard applications while maintaining thorough review for complex cases.</p>
+<h3 id="example-5-it-incident-resolution-tracking">Example 5: IT Incident Resolution Tracking</h3>
+<p><strong>Scenario:</strong> An IT service desk needs to track how often incident priorities and assignees change to identify tickets that bounce between teams without resolution.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Ignore Null: true</li>
+<li>Create Change Count Attribute: true</li>
+<li>Create Group Count Attribute: true</li>
+<li>Create Bool Change Attribute: true</li>
+</ul>
+<p><strong>Output:</strong>
+For event attributes "Priority" and "Assigned_Group":</p>
+<ul>
+<li><code>Priority-Changes</code>: Number of priority escalations or de-escalations</li>
+<li><code>Priority-Groups</code>: Count of distinct priority levels used</li>
+<li><code>Assigned_Group-Changes</code>: Number of times the ticket was reassigned</li>
+<li><code>Assigned_Group-Groups</code>: Number of different teams that handled the ticket</li>
+<li><code>Assigned_Group-Change</code>: true/false indicating if any reassignment occurred</li>
+</ul>
+<p>Tickets with both <code>Priority-Changes</code> &gt; 2 and <code>Assigned_Group-Changes</code> &gt; 3 are flagged as "hot potato" tickets requiring management attention.</p>
+<p><strong>Insights:</strong> Incidents with multiple reassignments show 3x longer resolution times. The service desk implements a "sticky assignment" policy where the first responding team must coordinate resolution even if expertise from other teams is needed.</p>
+<h2 id="output">Output</h2>
+<p>The Attribute Changes in a Case enrichment creates new case-level attributes for each non-system event attribute in your dataset. The enrichment automatically processes all event attributes except system columns (Activity, Timestamp, Start Time) and hidden or calculated columns.</p>
+<p><strong>Generated Attributes:</strong></p>
+<ul>
+<li><p><strong>[AttributeName]-Changes</strong> (Integer): Contains the count of value transitions for the attribute. A change is counted each time the value differs from the previous event. Values range from 0 (no changes) to n-1 where n is the number of events in the case.</p>
+</li>
+<li><p><strong>[AttributeName]-Groups</strong> (Integer): Contains the count of distinct values the attribute takes within the case. This measures value diversity regardless of change frequency. A value of 1 indicates the attribute remained constant throughout the case.</p>
+</li>
+<li><p><strong>[AttributeName]-Change</strong> (Boolean): Contains true if the attribute had any distinct values within the case, false if it remained constant or had no values. This provides a simple binary indicator of change presence.</p>
+</li>
+</ul>
+<p><strong>Data Types and Formats:</strong></p>
+<ul>
+<li>Change count attributes: Integer values displayed with number formatting</li>
+<li>Group count attributes: Integer values displayed with number formatting</li>
+<li>Boolean change attributes: Boolean values displayed as Yes/No</li>
+</ul>
+<p><strong>Integration with Other Features:</strong></p>
+<ul>
+<li>Use these attributes in filters to identify cases with specific change patterns</li>
+<li>Combine with calculators to create change ratios or percentages</li>
+<li>Apply in dashboards to visualize process stability metrics</li>
+<li>Use in conformance checking to verify expected change patterns</li>
+<li>Leverage in machine learning models as process complexity features</li>
+</ul>
+<p><strong>Naming Conventions:</strong>
+The enrichment preserves the original attribute name and appends clear suffixes (-Changes, -Groups, -Change) making it easy to identify the source attribute and metric type. These attributes appear in the case attribute list and can be used immediately in all mindzieStudio analysis features.</p>
+<hr>
+<p><em>This documentation is part of the mindzie Studio process mining platform.</em></p>
+</div></div></main></div><!--!-->
+
+<!--!--><script>
+    // Search keyboard shortcut (Ctrl+K or Cmd+K)
+    window.registerSearchShortcut = function(dotNetRef) {
+        document.addEventListener('keydown', function(e) {
+            // Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                dotNetRef.invokeMethodAsync('OpenSearch');
+            }
+        });
+    };
+
+    window.toggleSection = function(sectionId) {
+        const section = document.getElementById(sectionId + '-section');
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            // Save state
+            const isExpanded = section.classList.contains('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsection = function(subsectionId) {
+        const subsection = document.getElementById(subsectionId + '-subsection');
+        if (subsection) {
+            // Toggle between collapsed and expanded
+            if (subsection.classList.contains('expanded')) {
+                subsection.classList.remove('expanded');
+                subsection.classList.add('collapsed');
+            } else {
+                subsection.classList.remove('collapsed');
+                subsection.classList.add('expanded');
+            }
+            
+            // Save state
+            const isExpanded = subsection.classList.contains('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSectionHelper = function(sectionId) {
+        var section = document.getElementById(sectionId);
+        var sectionWrapper = document.querySelector('#' + sectionId + '-section');
+        if (section && sectionWrapper) {
+            var isExpanded = sectionWrapper.classList.toggle('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsectionHelper = function(subsectionId) {
+        console.log('Toggling subsection:', subsectionId);
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            // Toggle between collapsed and expanded
+            var isCurrentlyExpanded = subsectionWrapper.classList.contains('expanded');
+            console.log('Currently expanded:', isCurrentlyExpanded);
+
+            if (isCurrentlyExpanded) {
+                subsectionWrapper.classList.remove('expanded');
+                subsectionWrapper.classList.add('collapsed');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'false');
+                console.log('Collapsed:', subsectionId);
+            } else {
+                subsectionWrapper.classList.remove('collapsed');
+                subsectionWrapper.classList.add('expanded');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'true');
+                console.log('Expanded:', subsectionId);
+            }
+        } else {
+            console.error('Subsection not found:', subsectionId);
+        }
+    };
+    
+    window.expandSubsection = function(subsectionId) {
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            subsectionWrapper.classList.remove('collapsed');
+            subsectionWrapper.classList.add('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, true);
+        }
+    };
+    
+    window.initializeNavigation = function() {
+        // Set Core Concepts and other always-expanded sections
+        document.querySelectorAll('.nav-section.always-expanded').forEach(section => {
+            section.classList.add('expanded');
+        });
+
+        // Restore saved states for other sections
+        document.querySelectorAll('.nav-section:not(.always-expanded)[id$="-section"]').forEach(section => {
+            const sectionId = section.id.replace('-section', '');
+            const savedState = localStorage.getItem('nav-section-' + sectionId);
+            if (savedState === 'true') {
+                section.classList.add('expanded');
+            }
+        });
+
+        // Initialize ALL subsections as collapsed by default
+        document.querySelectorAll('.nav-subsection[id$="-subsection"]').forEach(subsection => {
+            // Remove any existing state classes first
+            subsection.classList.remove('collapsed');
+            subsection.classList.remove('expanded');
+
+            // Always start collapsed, ignore saved state for now to ensure they start collapsed
+            subsection.classList.add('collapsed');
+
+            // Clear any saved states to ensure fresh start
+            const subsectionId = subsection.id.replace('-subsection', '');
+            localStorage.removeItem('nav-subsection-' + subsectionId);
+        });
+    };
+
+    window.scrollToActiveMenuItem = function() {
+        // Find the active menu item
+        var activeItem = document.querySelector('.nav-subitem.active, .nav-item.active, .nav-section-title-link.active');
+        if (activeItem) {
+            // Get the sidebar element
+            var sidebar = document.querySelector('.frame-sidebar');
+            if (sidebar) {
+                // Calculate the position to scroll to
+                var itemTop = activeItem.offsetTop;
+                var itemHeight = activeItem.offsetHeight;
+                var sidebarHeight = sidebar.clientHeight;
+
+                // Scroll so the active item is visible, preferably centered
+                var scrollPosition = itemTop - (sidebarHeight / 2) + (itemHeight / 2);
+
+                // Smooth scroll to the active item
+                sidebar.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
+</script><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

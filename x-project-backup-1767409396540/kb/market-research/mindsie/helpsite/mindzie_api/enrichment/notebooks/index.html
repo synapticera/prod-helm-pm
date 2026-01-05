@@ -1,0 +1,826 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Notebooks | Enrichment | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../../action/index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../../action/ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="../../action/execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../../action/history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../../block/index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../../block/management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../../block/execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../../block/results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../../block/types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../../dataset/index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../../dataset/creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../../dataset/import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="../../dataset/updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="../../dataset/formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Notebooks</h1><div class="page-breadcrumb">Enrichment</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p><strong>Jupyter Notebook Integration</strong></p>
+<p>Integrate Jupyter notebooks for custom enrichments, data analysis, and machine learning workflows.</p>
+<h2 id="get-notebook-details">Get Notebook Details</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/notebook/{notebookId}</code></p>
+<p>Retrieves comprehensive information about a Jupyter notebook including its cells, execution status, and integration parameters.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Location</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Path</td>
+<td>The tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Path</td>
+<td>The project identifier</td>
+</tr>
+<tr>
+<td><code>notebookId</code></td>
+<td>GUID</td>
+<td>Path</td>
+<td>The notebook identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response</h3>
+<pre><code class="language-json">{
+  "notebookId": "aa0e8400-e29b-41d4-a716-446655440000",
+  "projectId": "660e8400-e29b-41d4-a716-446655440000",
+  "notebookName": "Process Mining Analysis",
+  "notebookDescription": "Custom analysis for customer journey optimization",
+  "notebookVersion": "1.3.2",
+  "kernelType": "python3",
+  "status": "Ready",
+  "integration": {
+    "enrichmentMode": true,
+    "datasetBinding": "880e8400-e29b-41d4-a716-446655440000",
+    "outputFormat": "enriched_dataframe",
+    "autoExecution": false
+  },
+  "cells": [
+    {
+      "cellId": "cell-001",
+      "cellType": "code",
+      "executionCount": 15,
+      "hasOutput": true,
+      "lastExecuted": "2024-01-20T10:30:00Z",
+      "executionStatus": "Success"
+    },
+    {
+      "cellId": "cell-002",
+      "cellType": "markdown",
+      "lastModified": "2024-01-19T14:20:00Z"
+    }
+  ],
+  "environment": {
+    "pythonVersion": "3.9.18",
+    "packages": ["pandas", "numpy", "scikit-learn", "mindzie-sdk"],
+    "customLibraries": ["process_mining_utils", "customer_analytics"]
+  },
+  "dateCreated": "2024-01-15T10:30:00Z",
+  "dateModified": "2024-01-20T10:30:00Z",
+  "createdBy": "user123",
+  "lastExecutionDate": "2024-01-20T10:30:00Z",
+  "executionCount": 47
+}
+</code></pre>
+<h2 id="list-all-notebooks">List All Notebooks</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/notebooks</code></p>
+<p>Retrieves a list of all Jupyter notebooks in the project with basic metadata and execution status.</p>
+<h3 id="query-parameters">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Filter by status: Ready, Running, Error, Kernel_Dead</td>
+</tr>
+<tr>
+<td><code>kernelType</code></td>
+<td>string</td>
+<td>Filter by kernel type: python3, r, scala</td>
+</tr>
+<tr>
+<td><code>enrichmentMode</code></td>
+<td>boolean</td>
+<td>Filter notebooks configured for data enrichment</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td>integer</td>
+<td>Page number for pagination (default: 1)</td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td>integer</td>
+<td>Number of items per page (default: 20, max: 100)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-1">Response</h3>
+<pre><code class="language-json">{
+  "notebooks": [
+    {
+      "notebookId": "aa0e8400-e29b-41d4-a716-446655440000",
+      "notebookName": "Process Mining Analysis",
+      "kernelType": "python3",
+      "status": "Ready",
+      "enrichmentMode": true,
+      "cellCount": 12,
+      "lastExecutionDate": "2024-01-20T10:30:00Z",
+      "dateCreated": "2024-01-15T10:30:00Z"
+    }
+  ],
+  "totalCount": 8,
+  "page": 1,
+  "pageSize": 20,
+  "hasNextPage": false
+}
+</code></pre>
+<h2 id="create-new-notebook">Create New Notebook</h2>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/notebook</code></p>
+<p>Creates a new Jupyter notebook with specified configuration and optional template. The notebook is automatically configured for mindzie data integration.</p>
+<h3 id="request-body">Request Body</h3>
+<pre><code class="language-json">{
+  "notebookName": "Advanced Customer Analytics",
+  "notebookDescription": "Machine learning models for customer behavior prediction",
+  "kernelType": "python3",
+  "template": "process_mining_starter",
+  "integration": {
+    "enrichmentMode": true,
+    "datasetBinding": "880e8400-e29b-41d4-a716-446655440000",
+    "outputFormat": "enriched_dataframe",
+    "autoExecution": false
+  },
+  "environment": {
+    "packages": ["pandas", "numpy", "scikit-learn", "matplotlib", "seaborn"],
+    "customLibraries": ["process_mining_utils"]
+  },
+  "initialCells": [
+    {
+      "cellType": "markdown",
+      "content": "# Customer Analytics Notebook\n\nThis notebook analyzes customer journey data using process mining techniques."
+    },
+    {
+      "cellType": "code",
+      "content": "import pandas as pd\nimport numpy as np\nfrom mindzie_sdk import ProcessMiningClient\n\n# Initialize mindzie client\nclient = ProcessMiningClient()"
+    }
+  ]
+}
+</code></pre>
+<h3 id="response-2">Response</h3>
+<p>Returns <code>201 Created</code> with the complete notebook object including generated notebook ID and initial session information.</p>
+<h2 id="execute-notebook">Execute Notebook</h2>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/notebook/{notebookId}/execute</code></p>
+<p>Executes all cells in the notebook or specified cell range. Execution runs asynchronously and results are stored for retrieval.</p>
+<h3 id="request-body-1">Request Body</h3>
+<pre><code class="language-json">{
+  "executionMode": "all",
+  "cellRange": {
+    "startCell": "cell-001",
+    "endCell": "cell-010"
+  },
+  "parameters": {
+    "dataset_id": "880e8400-e29b-41d4-a716-446655440000",
+    "analysis_period": "2024-01",
+    "include_weekends": false
+  },
+  "outputOptions": {
+    "captureOutputs": true,
+    "saveIntermediateResults": true,
+    "generateReport": true
+  },
+  "timeout": 1800,
+  "priority": "Normal"
+}
+</code></pre>
+<h3 id="response-3">Response</h3>
+<pre><code class="language-json">{
+  "executionId": "bb0e8400-e29b-41d4-a716-446655440000",
+  "notebookId": "aa0e8400-e29b-41d4-a716-446655440000",
+  "status": "Running",
+  "startTime": "2024-01-20T10:30:00Z",
+  "estimatedDuration": "15-20 minutes",
+  "currentCell": "cell-003",
+  "progress": {
+    "totalCells": 12,
+    "completedCells": 2,
+    "currentCellIndex": 3,
+    "percentComplete": 17
+  },
+  "parameters": {
+    "dataset_id": "880e8400-e29b-41d4-a716-446655440000",
+    "analysis_period": "2024-01",
+    "include_weekends": false
+  }
+}
+</code></pre>
+<h2 id="get-execution-status">Get Execution Status</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/notebook/{notebookId}/execution/{executionId}</code></p>
+<p>Retrieves the current status and progress of a notebook execution, including cell-by-cell execution details and any errors.</p>
+<h3 id="response-4">Response</h3>
+<pre><code class="language-json">{
+  "executionId": "bb0e8400-e29b-41d4-a716-446655440000",
+  "notebookId": "aa0e8400-e29b-41d4-a716-446655440000",
+  "status": "Completed",
+  "startTime": "2024-01-20T10:30:00Z",
+  "endTime": "2024-01-20T10:47:00Z",
+  "totalDuration": "17 minutes",
+  "progress": {
+    "totalCells": 12,
+    "completedCells": 12,
+    "successfulCells": 11,
+    "failedCells": 1,
+    "percentComplete": 100
+  },
+  "cellResults": [
+    {
+      "cellId": "cell-001",
+      "status": "Success",
+      "executionTime": "0.5 seconds",
+      "hasOutput": false
+    },
+    {
+      "cellId": "cell-002",
+      "status": "Success",
+      "executionTime": "3.2 seconds",
+      "hasOutput": true,
+      "outputType": "display_data"
+    },
+    {
+      "cellId": "cell-003",
+      "status": "Error",
+      "executionTime": "1.1 seconds",
+      "errorType": "KeyError",
+      "errorMessage": "'customer_id' column not found in dataset"
+    }
+  ],
+  "outputs": {
+    "dataFrames": 3,
+    "plots": 5,
+    "models": 2,
+    "enrichedData": {
+      "recordCount": 15420,
+      "newColumns": ["customer_segment", "journey_score", "anomaly_flag"]
+    }
+  },
+  "resources": {
+    "peakMemoryUsage": "2.3 GB",
+    "cpuTime": "8.5 minutes",
+    "diskUsage": "450 MB"
+  }
+}
+</code></pre>
+<h2 id="get-execution-results">Get Execution Results</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/notebook/{notebookId}/execution/{executionId}/results</code></p>
+<p>Retrieves the outputs and results from a completed notebook execution, including generated data, plots, and enriched datasets.</p>
+<h3 id="query-parameters-1">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>outputType</code></td>
+<td>string</td>
+<td>Filter by output type: all, data, plots, models, reports</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>string</td>
+<td>Response format: summary, detailed, download</td>
+</tr>
+<tr>
+<td><code>cellId</code></td>
+<td>string</td>
+<td>Get results from specific cell only</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-5">Response</h3>
+<pre><code class="language-json">{
+  "executionId": "bb0e8400-e29b-41d4-a716-446655440000",
+  "status": "Completed",
+  "outputs": [
+    {
+      "cellId": "cell-002",
+      "outputType": "display_data",
+      "contentType": "text/html",
+      "title": "Dataset Overview",
+      "content": "&lt;div&gt;Dataset contains 15,420 records...&lt;/div&gt;",
+      "downloadUrl": "https://api.mindzie.com/downloads/cell-002-bb0e8400.html"
+    },
+    {
+      "cellId": "cell-005",
+      "outputType": "image/png",
+      "title": "Customer Journey Flow Chart",
+      "dimensions": {"width": 800, "height": 600},
+      "downloadUrl": "https://api.mindzie.com/downloads/cell-005-bb0e8400.png"
+    },
+    {
+      "cellId": "cell-008",
+      "outputType": "application/json",
+      "title": "Process Mining Metrics",
+      "content": {
+        "avgCycleTime": "4.2 hours",
+        "bottleneckActivities": ["Review Application", "Manager Approval"],
+        "processEfficiency": 78.5,
+        "customerSatisfactionScore": 8.2
+      },
+      "downloadUrl": "https://api.mindzie.com/downloads/cell-008-bb0e8400.json"
+    }
+  ],
+  "enrichedDatasets": [
+    {
+      "name": "customer_journey_enhanced",
+      "recordCount": 15420,
+      "newColumns": ["customer_segment", "journey_score", "anomaly_flag"],
+      "format": "pandas_dataframe",
+      "downloadUrl": "https://api.mindzie.com/downloads/enriched-bb0e8400.csv"
+    }
+  ],
+  "models": [
+    {
+      "name": "customer_churn_predictor",
+      "modelType": "RandomForestClassifier",
+      "accuracy": 0.87,
+      "features": ["journey_score", "cycle_time", "touchpoint_count"],
+      "downloadUrl": "https://api.mindzie.com/downloads/model-bb0e8400.pkl"
+    }
+  ],
+  "reports": [
+    {
+      "name": "Customer Analytics Summary",
+      "format": "html",
+      "downloadUrl": "https://api.mindzie.com/downloads/report-bb0e8400.html"
+    }
+  ]
+}
+</code></pre>
+<h2 id="update-notebook">Update Notebook</h2>
+<p><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/notebook/{notebookId}</code></p>
+<p>Updates notebook configuration, cells, or integration settings. Changes to cells will trigger a new notebook version.</p>
+<h3 id="request-body-2">Request Body</h3>
+<pre><code class="language-json">{
+  "notebookName": "Advanced Customer Analytics v2",
+  "notebookDescription": "Enhanced ML models with real-time prediction capabilities",
+  "integration": {
+    "enrichmentMode": true,
+    "datasetBinding": "880e8400-e29b-41d4-a716-446655440000",
+    "outputFormat": "enriched_dataframe",
+    "autoExecution": true,
+    "scheduleExecution": "0 2 * * *"
+  },
+  "environment": {
+    "packages": ["pandas", "numpy", "scikit-learn", "tensorflow", "matplotlib"],
+    "customLibraries": ["process_mining_utils", "ml_models"]
+  }
+}
+</code></pre>
+<h3 id="response-6">Response</h3>
+<p>Returns the updated notebook object with incremented version number and modification timestamps.</p>
+<h2 id="delete-notebook">Delete Notebook</h2>
+<p><strong>DELETE</strong> <code>/api/{tenantId}/{projectId}/notebook/{notebookId}</code></p>
+<p>Permanently removes a notebook and all its execution history. This operation cannot be undone and will stop any currently running executions.</p>
+<h3 id="response-codes">Response Codes</h3>
+<ul>
+<li><code>204 No Content</code> - Notebook deleted successfully</li>
+<li><code>404 Not Found</code> - Notebook not found or access denied</li>
+<li><code>409 Conflict</code> - Notebook is currently executing and cannot be deleted</li>
+</ul>
+<h2 id="upload-existing-notebook">Upload Existing Notebook</h2>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/notebook/upload</code></p>
+<p>Uploads an existing Jupyter notebook (.ipynb file) and configures it for mindzie integration. The notebook will be parsed and cells will be validated.</p>
+<h3 id="request-multipart-form-data">Request (Multipart Form Data)</h3>
+<pre><code>Content-Type: multipart/form-data
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="analysis.ipynb"
+Content-Type: application/json
+
+{notebook content}
+--boundary
+Content-Disposition: form-data; name="notebookName"
+
+Customer Journey Analysis
+--boundary
+Content-Disposition: form-data; name="enrichmentMode"
+
+true
+--boundary
+Content-Disposition: form-data; name="datasetBinding"
+
+880e8400-e29b-41d4-a716-446655440000
+--boundary--
+</code></pre>
+<h3 id="response-7">Response</h3>
+<p>Returns <code>201 Created</code> with the uploaded notebook object including parsing results and any validation warnings.</p>
+<h2 id="example-complete-notebook-workflow">Example: Complete Notebook Workflow</h2>
+<p>This example demonstrates creating, executing, and retrieving results from a Jupyter notebook:</p>
+<pre><code class="language-javascript">// 1. Create a new notebook
+const createNotebook = async () =&gt; {
+  const response = await fetch('/api/{tenantId}/{projectId}/notebook', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      notebookName: 'Process Mining Analysis',
+      notebookDescription: 'Advanced analytics for process optimization',
+      kernelType: 'python3',
+      template: 'process_mining_starter',
+      integration: {
+        enrichmentMode: true,
+        datasetBinding: '880e8400-e29b-41d4-a716-446655440000',
+        outputFormat: 'enriched_dataframe',
+        autoExecution: false
+      },
+      environment: {
+        packages: ['pandas', 'numpy', 'scikit-learn', 'matplotlib'],
+        customLibraries: ['process_mining_utils']
+      },
+      initialCells: [
+        {
+          cellType: 'markdown',
+          content: '# Process Mining Analysis\n\nAnalyzing process efficiency and bottlenecks.'
+        },
+        {
+          cellType: 'code',
+          content: 'import pandas as pd\nfrom mindzie_sdk import ProcessMiningClient\n\nclient = ProcessMiningClient()'
+        }
+      ]
+    })
+  });
+
+  return await response.json();
+};
+
+// 2. Execute the notebook
+const executeNotebook = async (notebookId) =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/notebook/${notebookId}/execute`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      executionMode: 'all',
+      parameters: {
+        dataset_id: '880e8400-e29b-41d4-a716-446655440000',
+        analysis_period: '2024-01',
+        include_weekends: false
+      },
+      outputOptions: {
+        captureOutputs: true,
+        saveIntermediateResults: true,
+        generateReport: true
+      },
+      timeout: 1800,
+      priority: 'High'
+    })
+  });
+
+  return await response.json();
+};
+
+// 3. Monitor execution progress
+const monitorNotebookExecution = async (notebookId, executionId) =&gt; {
+  const checkStatus = async () =&gt; {
+    const response = await fetch(`/api/{tenantId}/{projectId}/notebook/${notebookId}/execution/${executionId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    const execution = await response.json();
+    console.log(`Status: ${execution.status}, Progress: ${execution.progress.percentComplete}%`);
+
+    if (execution.status === 'Running') {
+      setTimeout(() =&gt; checkStatus(), 15000);
+    } else if (execution.status === 'Completed') {
+      console.log('Notebook execution completed!');
+      await getNotebookResults(notebookId, executionId);
+    } else if (execution.status === 'Error') {
+      console.log('Execution failed:', execution.cellResults.filter(c =&gt; c.status === 'Error'));
+    }
+  };
+
+  await checkStatus();
+};
+
+// 4. Get execution results
+const getNotebookResults = async (notebookId, executionId) =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/notebook/${notebookId}/execution/${executionId}/results?format=detailed`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  const results = await response.json();
+  console.log('Execution Results:', results);
+  console.log('Enriched Datasets:', results.enrichedDatasets);
+  console.log('Generated Models:', results.models);
+
+  return results;
+};
+
+// Execute the workflow
+createNotebook()
+  .then(notebook =&gt; {
+    console.log(`Created notebook: ${notebook.notebookId}`);
+    return executeNotebook(notebook.notebookId);
+  })
+  .then(execution =&gt; {
+    console.log(`Started execution: ${execution.executionId}`);
+    return monitorNotebookExecution(execution.notebookId, execution.executionId);
+  })
+  .catch(error =&gt; console.error('Notebook workflow failed:', error));
+</code></pre>
+<h2 id="python-example">Python Example</h2>
+<pre><code class="language-python">import requests
+import time
+import json
+from pathlib import Path
+
+class NotebookManager:
+    def __init__(self, base_url, tenant_id, project_id, token):
+        self.base_url = base_url
+        self.tenant_id = tenant_id
+        self.project_id = project_id
+        self.headers = {
+            'Authorization': f'Bearer {token}',
+            'Content-Type': 'application/json'
+        }
+
+    def create_notebook(self, name, description, kernel_type="python3", template=None, integration=None):
+        """Create a new Jupyter notebook"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/notebook"
+        payload = {
+            'notebookName': name,
+            'notebookDescription': description,
+            'kernelType': kernel_type,
+            'template': template,
+            'integration': integration or {
+                'enrichmentMode': True,
+                'outputFormat': 'enriched_dataframe',
+                'autoExecution': False
+            }
+        }
+        response = requests.post(url, json=payload, headers=self.headers)
+        return response.json()
+
+    def upload_notebook(self, file_path, name, dataset_binding=None):
+        """Upload an existing notebook file"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/notebook/upload"
+
+        with open(file_path, 'rb') as file:
+            files = {'file': (Path(file_path).name, file, 'application/json')}
+            data = {
+                'notebookName': name,
+                'enrichmentMode': 'true',
+                'datasetBinding': dataset_binding or ''
+            }
+            # Remove Content-Type header for multipart upload
+            headers = {k: v for k, v in self.headers.items() if k != 'Content-Type'}
+            response = requests.post(url, files=files, data=data, headers=headers)
+
+        return response.json()
+
+    def execute_notebook(self, notebook_id, parameters=None, timeout=1800):
+        """Execute all cells in a notebook"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/notebook/{notebook_id}/execute"
+        payload = {
+            'executionMode': 'all',
+            'parameters': parameters or {},
+            'outputOptions': {
+                'captureOutputs': True,
+                'saveIntermediateResults': True,
+                'generateReport': True
+            },
+            'timeout': timeout,
+            'priority': 'Normal'
+        }
+        response = requests.post(url, json=payload, headers=self.headers)
+        return response.json()
+
+    def get_execution_status(self, notebook_id, execution_id):
+        """Get notebook execution status"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/notebook/{notebook_id}/execution/{execution_id}"
+        response = requests.get(url, headers=self.headers)
+        return response.json()
+
+    def wait_for_completion(self, notebook_id, execution_id, poll_interval=15, timeout=3600):
+        """Wait for notebook execution to complete"""
+        start_time = time.time()
+
+        while time.time() - start_time &lt; timeout:
+            status = self.get_execution_status(notebook_id, execution_id)
+            print(f"Notebook {notebook_id}: {status['status']} ({status['progress']['percentComplete']}%)")
+
+            if status['status'] in ['Completed', 'Error', 'Cancelled']:
+                return status
+
+            time.sleep(poll_interval)
+
+        raise TimeoutError(f"Notebook execution {execution_id} did not complete within {timeout} seconds")
+
+    def get_execution_results(self, notebook_id, execution_id, output_type="all", format_type="detailed"):
+        """Get notebook execution results"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/notebook/{notebook_id}/execution/{execution_id}/results"
+        params = {
+            'outputType': output_type,
+            'format': format_type
+        }
+        response = requests.get(url, params=params, headers=self.headers)
+        return response.json()
+
+    def list_notebooks(self, status=None, enrichment_mode=None, page=1, page_size=20):
+        """List all notebooks with optional filtering"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/notebooks"
+        params = {'page': page, 'pageSize': page_size}
+
+        if status:
+            params['status'] = status
+        if enrichment_mode is not None:
+            params['enrichmentMode'] = str(enrichment_mode).lower()
+
+        response = requests.get(url, params=params, headers=self.headers)
+        return response.json()
+
+# Usage example
+manager = NotebookManager(
+    'https://your-mindzie-instance.com',
+    'tenant-guid',
+    'project-guid',
+    'your-auth-token'
+)
+
+try:
+    # Create a process mining notebook
+    notebook = manager.create_notebook(
+        'Advanced Process Analytics',
+        'Machine learning-based process analysis with anomaly detection',
+        'python3',
+        'process_mining_starter',
+        {
+            'enrichmentMode': True,
+            'datasetBinding': 'dataset-guid',
+            'outputFormat': 'enriched_dataframe',
+            'autoExecution': False
+        }
+    )
+
+    print(f"Created notebook: {notebook['notebookId']}")
+
+    # Execute with custom parameters
+    execution_params = {
+        'dataset_id': 'dataset-guid',
+        'analysis_type': 'full_analysis',
+        'time_window': '30_days',
+        'ml_models': ['anomaly_detection', 'process_prediction'],
+        'generate_visualizations': True
+    }
+
+    execution = manager.execute_notebook(
+        notebook['notebookId'],
+        execution_params,
+        timeout=2400  # 40 minutes
+    )
+
+    print(f"Started execution: {execution['executionId']}")
+    print(f"Estimated duration: {execution['estimatedDuration']}")
+
+    # Wait for completion
+    final_status = manager.wait_for_completion(
+        notebook['notebookId'],
+        execution['executionId']
+    )
+
+    if final_status['status'] == 'Completed':
+        # Get detailed results
+        results = manager.get_execution_results(
+            notebook['notebookId'],
+            execution['executionId'],
+            'all',
+            'detailed'
+        )
+
+        print("Notebook execution completed successfully!")
+        print(f"Generated outputs: {len(results['outputs'])}")
+        print(f"Enriched datasets: {len(results['enrichedDatasets'])}")
+        print(f"ML models created: {len(results['models'])}")
+
+        # Download enriched data
+        for dataset in results['enrichedDatasets']:
+            print(f"Download enriched data: {dataset['downloadUrl']}")
+
+        # Download models
+        for model in results['models']:
+            print(f"Download model '{model['name']}': {model['downloadUrl']}")
+
+    else:
+        print(f"Notebook execution failed with status: {final_status['status']}")
+        failed_cells = [cell for cell in final_status['cellResults'] if cell['status'] == 'Error']
+        for cell in failed_cells:
+            print(f"Cell {cell['cellId']} failed: {cell['errorMessage']}")
+
+except Exception as e:
+    print(f"Error in notebook workflow: {e}")
+</code></pre>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

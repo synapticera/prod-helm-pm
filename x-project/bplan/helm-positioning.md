@@ -341,6 +341,19 @@ This is what agents need to replicate human judgment.
 6. **Moat Shift**: Companies realize competitive advantage isn't in having agents; it's in the decision data that governs agents
 7. **Ecosystem Convergence**: VCs, analysts, and tech leaders all converging on same problem—the missing executive function layer
 
+#### The ROI Crisis: Forrester's 2026 Reality Check
+
+**Critical Market Signal** (Forrester, Q1 2026):
+- **25% of planned AI spending will defer to 2027** as CFOs demand concrete ROI justification
+- **Fewer than one-third of decision-makers can "tie the value of AI to their organization's financial growth"**
+- Companies are deploying agents but can't prove productivity gains
+
+**Why This Validates Helm's Positioning**:
+- Companies deploying agents haphazardly (without understanding current decisions, planning the transition, building stakeholder buy-in) cannot measure ROI
+- This is exactly the executive function gap Helm solves: systematic UNDERSTAND → PLAN → SELL → EXECUTE → MONITOR approach enables measurable ROI
+- 25% spending deferral creates urgency: companies need to fix failed deployments NOW before Q2-Q3 ROI reviews
+- The companies that *will* capture ROI are the ones executing the full lifecycle (the ones with Helm's infrastructure)
+
 ---
 
 ## Positioning Candidate Analysis

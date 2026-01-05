@@ -1,0 +1,257 @@
+# AF: Discovery MVP User Journey: From Process Chaos to Operational Excellence
+
+Here\'s how a customer support leader transforms their operations using
+AgentFinder, presented as a seamless journey from initial pain point to
+measurable business impact:
+
+### **The Starting Point: Sarah\'s Challenge**
+
+Sarah, VP of Customer Success at a 500-person SaaS company, knows her
+support operations are inefficient but can\'t pinpoint exactly where or
+why. Her team handles 3,500 tickets monthly across email, phone, and
+chat, but customer satisfaction is declining while costs are rising.
+
+### **Step 1: The 5-Minute Discovery Interview**
+
+Sarah logs into AgentFinder and immediately starts a conversational
+interview. The AI interviewer feels like talking to an expert
+consultant - asking targeted questions about her domain
+\"acmesupport.com\", support channels, and critically, the systems her
+team uses daily: \"Do you use Salesforce for case management? Slack for
+internal communication? What about your knowledge base?\" The system
+automatically enriches the conversation with company context from her
+domain.
+
+**Key UX Moment:** The split-screen interface keeps her engaged -
+interview on the left, real-time process catalog building on the right.
+She sees immediate value accumulating as she speaks. The interview is
+concise and focused, respecting her time.
+
+### **Step 2: Automated Data Fusion (The Magic Happens)**
+
+While Sarah continues the interview, she drags and drops her existing
+Visio diagram of their \"ideal\" process into the system. She then
+clicks \"Connect Salesforce\" - a simple OAuth flow grants read-only
+access to their case data.
+
+**Transformation Point:** Within 60 seconds of completing the interview,
+AgentFinder synthesizes all three data sources - her narrative, the
+Visio diagram, and 6 months of actual Salesforce case history - into a
+living process model.
+
+### **Step 3: The Reality Check**
+
+Sarah sees her actual processes for the first time. The interactive
+canvas shows three distinct workflows that emerged from the data:
+
+-   Email Support (2,456 cases/month)
+
+-   Phone Support (1,890 cases/month)
+
+-   Escalation Process (234 cases/month)
+
+The heatmap overlay immediately draws her attention - red nodes indicate
+bottlenecks. She hovers over \"Agent Assignment\" and discovers it\'s
+consuming 10.8 FTEs at \$780,000 annually, with an 8% rework rate.
+
+**Key Insight:** The confidence indicators (82%, 76%, 71%) show the
+system\'s transparency - this isn\'t black-box magic, every element
+links back to evidence from her interview, artifacts, or Salesforce
+data.
+
+### **Step 4: Interactive Refinement**
+
+Sarah notices the system identified a \"Billing Queue\" that was
+actually consolidated last quarter. She simply deletes the node and
+reconnects the workflow. The system saves this as Version 2, maintaining
+full audit trail. She updates the default salary assumption from \$65K
+to their actual \$72K average, and all cost metrics recalculate
+instantly.
+
+### **Step 5: The Roadmap Reveal**
+
+The moment of truth - Sarah clicks \"Generate Recommendations\" and
+receives a stack-ranked list of improvements:
+
+**Top Recommendation:** \"Automate Password Reset Requests\"
+
+-   ROI: 4.1x (410% return)
+
+-   Implementation Cost: \$30,000
+
+-   Annual Savings: \$131,040
+
+-   Payback Period: 2.7 months
+
+-   Evidence: 1,456 password reset tickets/month taking 15 minutes each
+
+The system doesn\'t just identify opportunities - it quantifies them
+with hard data from her actual operations.
+
+### **Step 6: Strategic Decision Making**
+
+Sarah filters recommendations by timeline to find \"quick wins\" for Q1.
+She can see exactly which process nodes each recommendation impacts. The
+trade-off analysis is explicit - for the chatbot recommendation, the
+system warns about the need for a clear \"talk to human\" escape path
+and suggests starting with password resets only.
+
+### **Step 7: From Insight to Action**
+
+Sarah marks three recommendations as priorities, adds notes about budget
+constraints, and publishes the process as the official baseline. The
+published version becomes the single source of truth - any future edits
+create new versions without losing this snapshot of current state.
+
+### **The Outcome: Measurable Transformation**
+
+In under 1 hour, Sarah has:
+
+-   Discovered her actual (not assumed) process flows
+
+-   Identified \$500K+ in annual savings opportunities
+
+-   Created a prioritized roadmap with ROI calculations
+
+-   Established a baseline for measuring improvements
+
+-   Armed herself with data-driven justification for automation
+    > investments
+
+### **The Delight Factor**
+
+The interface respects Sarah\'s expertise while augmenting it with
+AI-powered analysis. She\'s not fighting with complex process notation
+or spending weeks in discovery workshops. The system shows its work -
+every recommendation cites specific evidence, building trust through
+transparency.
+
+### **Post-MVP Enhancement (The Growth Path)**
+
+As Sarah returns in subsequent weeks, the system detects anti-patterns
+like \"status ping-pong\" where cases bounce between states,
+automatically flagging systemic issues. The confidence scores have
+evolved to show not just a number, but the convergence of multiple
+signals that support each recommendation.
+
+# More Ambitious Steps 5 -7 
+
+### **Step 5: The Transformation Roadmap - From Quick Wins to Full Autonomy**
+
+Sarah clicks \"Generate Recommendations\" and receives a comprehensive
+transformation roadmap organized into three strategic categories:
+
+**Process Reengineering (Immediate Impact):**
+
+-   \"Consolidate duplicate triage steps\" - ROI: 2.3x
+
+-   \"Parallelize approval workflows\" - ROI: 1.5x
+
+-   \"Eliminate redundant handoffs between queues\" - ROI: 1.8x
+
+**Systems Integration & Automation (Modernization):**
+
+-   \"Integrate Slack notifications with case escalations\" - ROI: 2.1x
+
+-   \"Connect knowledge base API for auto-suggestions\" - ROI: 2.8x
+
+-   \"Automate data sync between Salesforce and billing system\" - ROI:
+    > 3.2x
+
+**AI Agent Opportunities (The Autonomous Future):**
+
+-   \"Deploy human-in-the-loop AI for password resets\" - ROI: 4.1x
+
+    -   Implementation Cost: \$30,000
+
+    -   Annual Savings: \$131,040
+
+    -   Agent reviews edge cases; AI handles 80% autonomously
+
+-   \"Implement fully autonomous tier-1 FAQ chatbot\" - ROI: 3.2x
+
+    -   Handles routine queries without human intervention
+
+    -   Seamless handoff to human for complex issues
+
+-   \"NLP-based auto-triage and routing\" - ROI: 2.9x
+
+    -   AI reads intent, categorizes, and routes to right queue
+
+    -   Human touchpoint only for exception handling
+
+### **Step 6: Strategic Orchestration - Building the Automation Journey**
+
+Sarah sees her complete automation evolution laid out. She filters by
+timeline to sequence implementation:
+
+**Quarter 1 (Quick Wins):** Process improvements requiring no new
+technology - just workflow changes
+
+**Quarter 2 (Foundation):** System integrations that lay groundwork for
+automation - connecting Slack, APIs, and knowledge bases
+
+**Quarter 3-4 (Intelligence Layer):** Progressive AI deployment:
+
+-   Start with human-in-the-loop AI agents where humans validate
+    > decisions
+
+-   Gradually increase autonomy as confidence builds
+
+-   Eventually reach full autonomy for high-confidence, high-volume
+    > tasks
+
+The trade-off analysis is explicit - for the autonomous chatbot, the
+system shows:
+
+-   **Benefits:** 24/7 availability, instant resolution, 40% deflection
+    > rate
+
+-   **Considerations:** Needs clear escalation path, requires 2-3 months
+    > of training
+
+-   **Mitigation:** Start with narrow use case (password resets), expand
+    > gradually
+
+Sarah can see the complete journey from manual processes to intelligent
+automation, with each step building on the previous, reducing risk while
+maximizing ROI.
+
+### **Step 7: From Insight to Action**
+
+Sarah marks three recommendations as priorities across all categories -
+a process improvement for immediate impact, a Slack integration for Q2,
+and the password reset AI agent for Q3. She publishes the process as the
+official baseline with her strategic roadmap attached.
+
+### **The Outcome: Measurable Transformation**
+
+In under 1 hour, Sarah has:
+
+-   Discovered her actual (not assumed) process flows
+
+-   Identified \$500K+ in annual savings opportunities across process,
+    > systems, and AI improvements
+
+-   Created a phased automation journey from quick wins to full autonomy
+
+-   Established a baseline for measuring improvements
+
+-   Armed herself with data-driven justification for each stage of
+    > automation investment
+
+### **The Delight Factor**
+
+The interface respects Sarah\'s expertise while augmenting it with
+AI-powered analysis. She\'s not fighting with complex process notation
+or spending weeks in discovery workshops. The system shows her not just
+what to fix, but the entire spectrum of how to evolve - from simple
+process tweaks to fully autonomous AI agents.
+
+### **Post-MVP Enhancement (The Growth Path)**
+
+As Sarah returns in subsequent weeks, the system detects anti-patterns
+like \"status ping-pong\" where cases bounce between states,
+automatically flagging systemic issues. The confidence scores have
+evolved to show not just a number, but the convergence of multiple
+signals that support each recommendation.

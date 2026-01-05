@@ -1,0 +1,689 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Azure Ad App Registration | Active Directory | mindzieStudio Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><!--!--><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">Studio Documentation</span></div></div>
+        <div class="header-right"><!--!--><div class="search-container"><div class="search-box "><div class="search-input-wrapper"><!--!--><span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search documentation... (Ctrl+K)" autocomplete="off" spellcheck="false" _bl_2=""><button class="search-page-button" title="Go to search page"><!--!--><span>🔎</span></button></div></div></div><!--!-->
+            <!--!--><nav class="product-nav"><a href="../../../index.html" class="product-item active">mindzieStudio</a>
+                <a href="../../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header><!--!-->
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>Home</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="core-concepts-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Core Concepts</span></div>
+                <div id="core-concepts" class="nav-section-content"><div class="nav-subsection collapsed" id="filters-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Filters</span></button><!--!-->
+                        <div id="filters" class="nav-subsection-items"><a href="../../../filters/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../../filters/activity-frequency/index.html" class="nav-subitem">Activity Frequency</a><!--!-->
+                            <a href="../../../filters/activity-not-performed/index.html" class="nav-subitem">Activity Not Performed</a><!--!-->
+                            <a href="../../../filters/activity-performed-once/index.html" class="nav-subitem">Activity Performed Once</a><!--!-->
+                            <a href="../../../filters/case-end/index.html" class="nav-subitem">Case End</a><!--!-->
+                            <a href="../../../filters/case-start/index.html" class="nav-subitem">Case Start</a><!--!-->
+                            <a href="../../../filters/cases-with-attribute/index.html" class="nav-subitem">Cases with Attribute</a><!--!-->
+                            <a href="../../../filters/cases-with-changed-attribute/index.html" class="nav-subitem">Cases with Changed Attribute</a><!--!-->
+                            <a href="../../../filters/cases-with-identical-event-dates/index.html" class="nav-subitem">Cases with Identical Event Dates</a><!--!-->
+                            <a href="../../../filters/cases-with-identical-event-timestamps/index.html" class="nav-subitem">Cases with Identical Event Timestamps</a><!--!-->
+                            <a href="../../../filters/cases-with-unchanged-attribute/index.html" class="nav-subitem">Cases with Unchanged Attribute</a><!--!-->
+                            <a href="../../../filters/compare-attribute-values/index.html" class="nav-subitem">Compare Attribute Values</a><!--!-->
+                            <a href="../../../filters/deadline/index.html" class="nav-subitem">Deadline</a><!--!-->
+                            <a href="../../../filters/event-order/index.html" class="nav-subitem">Event Order</a><!--!-->
+                            <a href="../../../filters/events-before-or-after-activity/index.html" class="nav-subitem">Events Before or After Activity</a><!--!-->
+                            <a href="../../../filters/events-with-attribute/index.html" class="nav-subitem">Events with Attribute</a><!--!-->
+                            <a href="../../../filters/filter-list/index.html" class="nav-subitem">Filter List</a><!--!-->
+                            <a href="../../../filters/keep-events-with-same-value-as-case-attribute/index.html" class="nav-subitem">Keep Events with Same Value as Case Attribute</a><!--!-->
+                            <a href="../../../filters/or-filter/index.html" class="nav-subitem">Or Filter</a><!--!-->
+                            <a href="../../../filters/process-variants/index.html" class="nav-subitem">Process Variants</a><!--!-->
+                            <a href="../../../filters/remove-activity-loops/index.html" class="nav-subitem">Remove Activity Loops</a><!--!-->
+                            <a href="../../../filters/remove-activity-with-same-date/index.html" class="nav-subitem">Remove Activity with Same Date</a><!--!-->
+                            <a href="../../../filters/remove-activity-with-similar-time/index.html" class="nav-subitem">Remove Activity with Similar Time</a><!--!-->
+                            <a href="../../../filters/remove-data-from-underactive-periods/index.html" class="nav-subitem">Remove Data from Underactive Periods</a><!--!-->
+                            <a href="../../../filters/select-variants/index.html" class="nav-subitem">Select Variants</a><!--!-->
+                            <a href="../../../filters/selected-activity-frequency/index.html" class="nav-subitem">Selected Activity Frequency</a><!--!-->
+                            <a href="../../../filters/single-activity-cases/index.html" class="nav-subitem">Single Activity Cases</a><!--!-->
+                            <a href="../../../filters/text-search/index.html" class="nav-subitem">Text Search</a><!--!-->
+                            <a href="../../../filters/time-between-activities/index.html" class="nav-subitem">Time Between Activities</a><!--!-->
+                            <a href="../../../filters/time-period/index.html" class="nav-subitem">Time Period</a><!--!-->
+                            <a href="../../../filters/value-frequency/index.html" class="nav-subitem">Value Frequency</a><!--!-->
+                            <a href="../../../filters/variant-frequency/index.html" class="nav-subitem">Variant Frequency</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection collapsed" id="calculators-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Calculators</span></button><!--!-->
+                        <div id="calculators" class="nav-subsection-items"><a href="../../../calculators/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../../calculators/activity-information/index.html" class="nav-subitem">Activity Information</a><!--!-->
+                            <a href="../../../calculators/average-value/index.html" class="nav-subitem">Average Value</a><!--!-->
+                            <a href="../../../calculators/automation/index.html" class="nav-subitem">Automation Calculator</a><!--!-->
+                            <a href="../../../calculators/breakdown-by-categories/index.html" class="nav-subitem">Breakdown By Categories</a><!--!-->
+                            <a href="../../../calculators/case-count/index.html" class="nav-subitem">Case Count</a><!--!-->
+                            <a href="../../../calculators/case-duration/index.html" class="nav-subitem">Case Duration</a><!--!-->
+                            <a href="../../../calculators/chair-usage/index.html" class="nav-subitem">Chair Usage</a><!--!-->
+                            <a href="../../../calculators/column-info/index.html" class="nav-subitem">Column Info</a><!--!-->
+                            <a href="../../../calculators/data-selector/index.html" class="nav-subitem">Data Selector</a><!--!-->
+                            <a href="../../../calculators/days-of-sales-outstanding-dpo/index.html" class="nav-subitem">Days Of Sales Outstanding / DPO</a><!--!-->
+                            <a href="../../../calculators/dataset-information/index.html" class="nav-subitem">Dataset Information</a><!--!-->
+                            <a href="../../../calculators/duplicate-cases/index.html" class="nav-subitem">Duplicate Cases</a><!--!-->
+                            <a href="../../../calculators/event-count/index.html" class="nav-subitem">Event Count</a><!--!-->
+                            <a href="../../../calculators/find-date-outliers/index.html" class="nav-subitem">Find Date Outliers</a><!--!-->
+                            <a href="../../../calculators/find-text-in-attributes/index.html" class="nav-subitem">Find Text In Attributes</a><!--!-->
+                            <a href="../../../calculators/general-3-way-match/index.html" class="nav-subitem">General 3 Way Match</a><!--!-->
+                            <a href="../../../calculators/histogram/index.html" class="nav-subitem">Histogram</a><!--!-->
+                            <a href="../../../calculators/llm-prompts/index.html" class="nav-subitem">LLM Prompts</a><!--!-->
+                            <a href="../../../calculators/maximum-value/index.html" class="nav-subitem">Maximum Value</a><!--!-->
+                            <a href="../../../calculators/metadata/index.html" class="nav-subitem">Metadata</a><!--!-->
+                            <a href="../../../calculators/minimum-value/index.html" class="nav-subitem">Minimum Value</a><!--!-->
+                            <a href="../../../calculators/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                            <a href="../../../calculators/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                            <a href="../../../calculators/rate/index.html" class="nav-subitem">Rate</a><!--!-->
+                            <a href="../../../calculators/rate-over-time/index.html" class="nav-subitem">Rate Over Time</a><!--!-->
+                            <a href="../../../calculators/repeated-activities/index.html" class="nav-subitem">Repeated Activities</a><!--!-->
+                            <a href="../../../calculators/resource-performance-vs-conformance/index.html" class="nav-subitem">Resource Performance Vs Conformance</a><!--!-->
+                            <a href="../../../calculators/root-cause-analysis/index.html" class="nav-subitem">Root Cause Analysis</a><!--!-->
+                            <a href="../../../calculators/same-time-pairs/index.html" class="nav-subitem">Same Time Pairs</a><!--!-->
+                            <a href="../../../calculators/show-notes/index.html" class="nav-subitem">Show Notes</a><!--!-->
+                            <a href="../../../calculators/sum-of-values/index.html" class="nav-subitem">Sum Of Values</a><!--!-->
+                            <a href="../../../calculators/sum-of-values-for-activity/index.html" class="nav-subitem">Sum Of Values For Activity</a><!--!-->
+                            <a href="../../../calculators/standard-checker/index.html" class="nav-subitem">Standard Checker</a><!--!-->
+                            <a href="../../../calculators/time-between-all-activity-pairs/index.html" class="nav-subitem">Time Between All Activity Pairs</a><!--!-->
+                            <a href="../../../calculators/time-between-selected-events/index.html" class="nav-subitem">Time Between Selected Events</a><!--!-->
+                            <a href="../../../calculators/time-from-case-start-to-selected-event/index.html" class="nav-subitem">Time From Case Start To Selected Event</a><!--!-->
+                            <a href="../../../calculators/trend/index.html" class="nav-subitem">Trend</a><!--!-->
+                            <a href="../../../calculators/variant-dna/index.html" class="nav-subitem">Variant DNA</a><!--!-->
+                            <a href="../../../calculators/value-count-in-case-attribute/index.html" class="nav-subitem">Value Count In Case Attribute</a><!--!-->
+                            <a href="../../../calculators/value-count-in-event-attribute/index.html" class="nav-subitem">Value Count In Event Attribute</a><!--!-->
+                            <a href="../../../calculators/what-if-simulation-working-capital/index.html" class="nav-subitem">What If Simulation Working Capital</a><!--!-->
+                            <a href="../../../calculators/world-map/index.html" class="nav-subitem">World Map</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection collapsed" id="enrichments-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Enrichments</span></button><!--!-->
+                        <div id="enrichments" class="nav-subsection-items"><a href="../../../enrichments/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../../enrichments/2-way-match/index.html" class="nav-subitem ">2 Way Match</a><!--!-->
+                            <a href="../../../enrichments/activity-copy-latest-event-value/index.html" class="nav-subitem ">Activity Copy Latest EventValue</a><!--!-->
+                            <a href="../../../enrichments/activity-order-classification/index.html" class="nav-subitem ">Activity Order Classification</a><!--!-->
+                            <a href="../../../enrichments/add-activity-from-case-attribute/index.html" class="nav-subitem ">Add Activity From Case Attribute</a><!--!-->
+                            <a href="../../../enrichments/create-update-activity/index.html" class="nav-subitem ">Create Update Activity</a><!--!-->
+                            <a href="../../../enrichments/fill-blanks-in-event-attribute/index.html" class="nav-subitem ">Fill Blanks In Event Attribute</a><!--!-->
+                            <a href="../../../enrichments/remove-activities/index.html" class="nav-subitem ">Remove Activities</a><!--!-->
+                            <a href="../../../enrichments/remove-duplicate-events/index.html" class="nav-subitem ">Remove Duplicate Events</a><!--!-->
+                            <a href="../../../enrichments/remove-repeated-activities/index.html" class="nav-subitem ">Remove Repeated Activities</a><!--!-->
+                            <a href="../../../enrichments/add/index.html" class="nav-subitem ">Add</a><!--!-->
+                            <a href="../../../enrichments/divide/index.html" class="nav-subitem ">Divide</a><!--!-->
+                            <a href="../../../enrichments/multiply/index.html" class="nav-subitem ">Multiply</a><!--!-->
+                            <a href="../../../enrichments/subtract/index.html" class="nav-subitem ">Subtract</a><!--!-->
+                            <a href="../../../enrichments/anonymize/index.html" class="nav-subitem ">Anonymize</a><!--!-->
+                            <a href="../../../enrichments/change-attribute-display-name/index.html" class="nav-subitem ">Change Attribute Display Name</a><!--!-->
+                            <a href="../../../enrichments/change-attribute-name/index.html" class="nav-subitem ">Change Attribute Name</a><!--!-->
+                            <a href="../../../enrichments/combine-boolean-attributes/index.html" class="nav-subitem ">Combine Boolean Attributes</a><!--!-->
+                            <a href="../../../enrichments/concatenate-attributes/index.html" class="nav-subitem ">Concatenate Attributes</a><!--!-->
+                            <a href="../../../enrichments/convert-currency-to-base/index.html" class="nav-subitem ">Convert Currency To Base</a><!--!-->
+                            <a href="../../../enrichments/convert-to-case-attributes/index.html" class="nav-subitem ">Convert To Case Attributes</a><!--!-->
+                            <a href="../../../enrichments/convert-to-integer/index.html" class="nav-subitem ">Convert To Integer</a><!--!-->
+                            <a href="../../../enrichments/copy-attribute/index.html" class="nav-subitem ">Copy Attribute</a><!--!-->
+                            <a href="../../../enrichments/hide-attribute/index.html" class="nav-subitem ">Hide Attribute</a><!--!-->
+                            <a href="../../../enrichments/hide-blank-attributes/index.html" class="nav-subitem ">Hide Blank Attributes</a><!--!-->
+                            <a href="../../../enrichments/set-group-value/index.html" class="nav-subitem ">Set Group Value</a><!--!-->
+                            <a href="../../../enrichments/attribute-changes-between-two-activities/index.html" class="nav-subitem ">Attribute Changes Between Two Activities</a><!--!-->
+                            <a href="../../../enrichments/attribute-changes-in-a-case/index.html" class="nav-subitem ">Attribute Changes In A Case</a><!--!-->
+                            <a href="../../../enrichments/compare-activity-counts/index.html" class="nav-subitem ">Compare Activity Counts</a><!--!-->
+                            <a href="../../../enrichments/compare-case-attributes/index.html" class="nav-subitem ">Compare Case Attributes</a><!--!-->
+                            <a href="../../../enrichments/compare-event-attributes-for-two-activities/index.html" class="nav-subitem ">Compare Event Attributes For Two Activities</a><!--!-->
+                            <a href="../../../enrichments/compare-multiple-case-attributes/index.html" class="nav-subitem ">Compare Multiple Case Attributes</a><!--!-->
+                            <a href="../../../enrichments/event-order-algorithm/index.html" class="nav-subitem ">Event Order Algorithm</a><!--!-->
+                            <a href="../../../enrichments/allowed-case-end-activities/index.html" class="nav-subitem ">Allowed Case End Activities</a><!--!-->
+                            <a href="../../../enrichments/allowed-case-start-activities/index.html" class="nav-subitem ">Allowed Case Start Activities</a><!--!-->
+                            <a href="../../../enrichments/conformance-issue/index.html" class="nav-subitem ">Conformance Issue</a><!--!-->
+                            <a href="../../../enrichments/expected-order/index.html" class="nav-subitem ">Expected Order</a><!--!-->
+                            <a href="../../../enrichments/mandatory-activity/index.html" class="nav-subitem ">Mandatory Activity</a><!--!-->
+                            <a href="../../../enrichments/repeated-activity/index.html" class="nav-subitem ">Repeated Activity</a><!--!-->
+                            <a href="../../../enrichments/undesired-activity/index.html" class="nav-subitem ">Undesired Activity</a><!--!-->
+                            <a href="../../../enrichments/wrong-activity-order/index.html" class="nav-subitem ">Wrong Activity Order</a><!--!-->
+                            <a href="../../../enrichments/case-closed/index.html" class="nav-subitem ">Case Closed</a><!--!-->
+                            <a href="../../../enrichments/categorize-attribute-values/index.html" class="nav-subitem ">Categorize Attribute Values</a><!--!-->
+                            <a href="../../../enrichments/categorize-duration/index.html" class="nav-subitem ">Categorize Duration</a><!--!-->
+                            <a href="../../../enrichments/count-boolean-attributes-with-value/index.html" class="nav-subitem ">Count Boolean Attributes With Value</a><!--!-->
+                            <a href="../../../enrichments/group-attribute-values/index.html" class="nav-subitem ">Group Attribute Values</a><!--!-->
+                            <a href="../../../enrichments/representative-case-attribute/index.html" class="nav-subitem ">Representative Case Attribute</a><!--!-->
+                            <a href="../../../enrichments/representative-case-attribute-2/index.html" class="nav-subitem ">Representative Case Attribute 2</a><!--!-->
+                            <a href="../../../enrichments/logical-or/index.html" class="nav-subitem ">Logical OR</a><!--!-->
+                            <a href="../../../enrichments/negate/index.html" class="nav-subitem ">Negate</a><!--!-->
+                            <a href="../../../enrichments/case-duration-category-for-activity/index.html" class="nav-subitem ">Case Duration Category For Activity</a><!--!-->
+                            <a href="../../../enrichments/categorize-duration-for-activity/index.html" class="nav-subitem ">Categorize Duration For Activity</a><!--!-->
+                            <a href="../../../enrichments/categorize-duration-for-selected-cases/index.html" class="nav-subitem ">Categorize Duration For Selected Cases</a><!--!-->
+                            <a href="../../../enrichments/ai-case-prediction/index.html" class="nav-subitem ">AI Case Prediction</a><!--!-->
+                            <a href="../../../enrichments/format-string/index.html" class="nav-subitem ">Format String</a><!--!-->
+                            <a href="../../../enrichments/python/index.html" class="nav-subitem ">Python</a><!--!-->
+                            <a href="../../../enrichments/count-activities/index.html" class="nav-subitem ">Count Activities</a><!--!-->
+                            <a href="../../../enrichments/count-values/index.html" class="nav-subitem ">Count Values</a><!--!-->
+                            <a href="../../../enrichments/event-count/index.html" class="nav-subitem ">Event Count</a><!--!-->
+                            <a href="../../../enrichments/max-value/index.html" class="nav-subitem ">Max Value</a><!--!-->
+                            <a href="../../../enrichments/predict-value/index.html" class="nav-subitem ">Predict Value</a><!--!-->
+                            <a href="../../../enrichments/summarize-values/index.html" class="nav-subitem ">Summarize Values</a><!--!-->
+                            <a href="../../../enrichments/limit-text-length/index.html" class="nav-subitem ">Limit Text Length</a><!--!-->
+                            <a href="../../../enrichments/replace-text/index.html" class="nav-subitem ">Replace Text</a><!--!-->
+                            <a href="../../../enrichments/text-end/index.html" class="nav-subitem ">Text End</a><!--!-->
+                            <a href="../../../enrichments/text-start/index.html" class="nav-subitem ">Text Start</a><!--!-->
+                            <a href="../../../enrichments/trim-text/index.html" class="nav-subitem ">Trim Text</a><!--!-->
+                            <a href="../../../enrichments/upper-case/index.html" class="nav-subitem ">Upper Case</a><!--!-->
+                            <a href="../../../enrichments/add-days-to-a-date/index.html" class="nav-subitem ">Add Days To A Date</a><!--!-->
+                            <a href="../../../enrichments/add-time-to-attributes/index.html" class="nav-subitem ">Add Time To Attributes</a><!--!-->
+                            <a href="../../../enrichments/correct-time-zone/index.html" class="nav-subitem ">Correct Time Zone</a><!--!-->
+                            <a href="../../../enrichments/duration-between-an-activity-and-current-time/index.html" class="nav-subitem ">Duration Between An Activity And Current Time</a><!--!-->
+                            <a href="../../../enrichments/duration-between-an-attribute-and-an-activity/index.html" class="nav-subitem ">Duration Between An Attribute And An Activity</a><!--!-->
+                            <a href="../../../enrichments/duration-between-an-attribute-and-current-time/index.html" class="nav-subitem ">Duration Between An Attribute And Current Time</a><!--!-->
+                            <a href="../../../enrichments/duration-between-two-activities/index.html" class="nav-subitem ">Duration Between Two Activities</a><!--!-->
+                            <a href="../../../enrichments/duration-between-two-event-attributes/index.html" class="nav-subitem ">Duration Between Two Event Attributes</a><!--!-->
+                            <a href="../../../enrichments/durations-between-case-attribute-and-activity-times/index.html" class="nav-subitem ">Durations Between Case Attribute And Activity Times</a><!--!-->
+                            <a href="../../../enrichments/freeze-time/index.html" class="nav-subitem ">Freeze Time</a><!--!-->
+                            <a href="../../../enrichments/shift-activity-time/index.html" class="nav-subitem ">Shift Activity Time</a><!--!-->
+                            <a href="../../../enrichments/sort-log-on-start-time/index.html" class="nav-subitem ">Sort Log On Start Time</a><!--!-->
+                            <a href="../../../enrichments/time-to-previous-case-in-group/index.html" class="nav-subitem ">Time To Previous Case In Group</a><!--!-->
+                            <a href="../../../enrichments/filter-process-log/index.html" class="nav-subitem ">Filter Process Log</a></div></div></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="process-discovery-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Process Discovery</span></div>
+                <div id="process-discovery" class="nav-section-content"><a href="../../../process-discovery/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../../process-discovery/case-explorer/index.html" class="nav-subitem">Case Explorer</a><!--!-->
+                    <a href="../../../process-discovery/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                    <a href="../../../process-discovery/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                    <a href="../../../process-discovery/process-variants/index.html" class="nav-subitem">Process Variants</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="ai-assistants-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">AI Assistants</span></div>
+                <div id="ai-assistants" class="nav-section-content"><a href="../../../ai-assistants/ai-model-configuration/index.html" class="nav-subitem">AI Model Configuration</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="how-to-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">How To</span></div>
+                <div id="how-to" class="nav-section-content"><a href="../../../how-to/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../../how-to/getting-started-creating-first-project/index.html" class="nav-subitem">Getting Started: Creating Your First Project</a><!--!-->
+                    <a href="../../../how-to/uploading-configuring-data-sources/index.html" class="nav-subitem">Uploading and Configuring Data Sources</a><!--!-->
+                    <a href="../../../how-to/understanding-dual-dataset-architecture/index.html" class="nav-subitem">Understanding Dual Dataset Architecture</a><!--!-->
+                    <a href="../../../how-to/planning-dashboard-structure-for-user-roles/index.html" class="nav-subitem">Planning Dashboard Structure for User Roles</a><!--!-->
+                    <a href="../../../how-to/working-with-investigations-and-notebooks/index.html" class="nav-subitem">Working with Investigations and Notebooks</a><!--!-->
+                    <a href="../../../how-to/mastering-log-enrichment-engine/index.html" class="nav-subitem">Mastering Log Enrichment Engine</a><!--!-->
+                    <a href="../../../how-to/building-conformance-rules-for-compliance/index.html" class="nav-subitem">Building Conformance Rules for Compliance</a><!--!-->
+                    <a href="../../../how-to/creating-analysis-with-filters-and-calculators/index.html" class="nav-subitem">Creating Analysis with Filters and Calculators</a><!--!-->
+                    <a href="../../../how-to/publishing-metrics-from-notebooks-to-dashboards/index.html" class="nav-subitem">Publishing Metrics from Notebooks to Dashboards</a><!--!-->
+                    <a href="../../../how-to/advanced-implementing-activity-based-costing/index.html" class="nav-subitem">Advanced: Implementing Activity Based Costing</a><!--!-->
+                    <a href="../../../how-to/reusing-analysis-copying-and-adapting-notebooks/index.html" class="nav-subitem">Reusing Analysis: Copying and Adapting Notebooks</a><!--!-->
+                    <a href="../../../how-to/designing-user-friendly-dashboards-with-notes-and-formatting/index.html" class="nav-subitem">Designing User-Friendly Dashboards with Notes and Formatting</a><!--!-->
+                    <a href="../../../how-to/understanding-drill-down-and-continuous-monitoring/index.html" class="nav-subitem">Understanding Drill Down and Continuous Monitoring</a><!--!-->
+                    <a href="../../../how-to/end-to-end-project-build-complete-workflow/index.html" class="nav-subitem">End to End Project Build: Complete Workflow</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="on-premise-server-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">On-Premise Server</span></div>
+                <div id="on-premise-server" class="nav-section-content"><a href="../../../on-premise-server/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../../on-premise-server/installation-guide/index.html" class="nav-subitem">Installation Guide</a><!--!-->
+                    <a href="../../../on-premise-server/install-sql-server-express/index.html" class="nav-subitem">Install SQL Server Express</a><!--!-->
+                    <a href="../../../on-premise-server/technical-requirements/index.html" class="nav-subitem">Technical Requirements</a><!--!-->
+                    <a href="../../../on-premise-server/auto-update/index.html" class="nav-subitem">Auto Update</a><!--!-->
+                    <a href="../../../on-premise-server/force-update/index.html" class="nav-subitem">Force Update</a><!--!-->
+                    <a href="../../../on-premise-server/backup-strategy/index.html" class="nav-subitem">Backup Strategy</a></div></div><!--!-->
+
+
+            <div class="nav-section always-expanded expanded" id="tenant-settings-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Tenant Settings</span></div>
+                <div id="tenant-settings" class="nav-section-content"><a href="../../index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <div class="nav-subsection expanded" id="active-directory-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Active Directory</span></button><!--!-->
+                        <div id="active-directory" class="nav-subsection-items"><a href="../index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../setup-guide/index.html" class="nav-subitem ">Setup Guide</a><!--!-->
+                            <a href="index.html" class="nav-subitem active">Azure AD App Registration</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="administration-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Administration</span></div>
+                <div id="administration" class="nav-section-content"><a href="../../../administration/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <a href="../../../administration/tenant-management/index.html" class="nav-subitem ">Tenant Management</a><!--!-->
+                    <a href="../../../administration/email_settings/index.html" class="nav-subitem ">Email Settings</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="user-management-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">User Management</span></button><!--!-->
+                        <div id="user-management" class="nav-subsection-items"><a href="../../../administration/user-management/index.html" class="nav-subitem overview-item">Overview</a></div></div><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="service-accounts-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Service Accounts</span></button><!--!-->
+                        <div id="service-accounts" class="nav-subsection-items"><a href="../../../administration/service-accounts/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../../administration/service-accounts/what-are-service-accounts/index.html" class="nav-subitem ">What Are Service Accounts</a><!--!-->
+                            <a href="../../../administration/service-accounts/promote-user-to-service-account/index.html" class="nav-subitem ">Promote User to Service Account</a><!--!-->
+                            <a href="../../../administration/service-accounts/manage-service-accounts/index.html" class="nav-subitem ">Manage Service Accounts</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="resources-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Resources</span></div>
+                <div id="resources" class="nav-section-content"><a href="../../../resources/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../../resources/sample-datasets/index.html" class="nav-subitem">Sample Datasets</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="application-guide-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Application Guide</span></div>
+                <div id="application-guide" class="nav-section-content"><a href="../../../application-guide/ai-copilot/index.html" class="nav-subitem">AI Copilot</a><!--!-->
+                    <a href="../../../application-guide/actions-engine/index.html" class="nav-subitem">Actions Engine</a><!--!-->
+                    <a href="../../../application-guide/bpmn-editor/index.html" class="nav-subitem">BPMN Editor</a><!--!-->
+                    <a href="../../../application-guide/projects/index.html" class="nav-subitem">Projects</a><!--!-->
+                    <a href="../../../application-guide/business-apps/index.html" class="nav-subitem">Business Apps</a></div></div><!--!-->
+
+            <div class="nav-section always-expanded expanded" id="task-mining-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Task Mining</span></div>                <div id="task-mining" class="nav-section-content"><a href="../../../task-mining/task-mining-agent-installation/index.html" class="nav-subitem">Task Mining Agent Installation</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Azure Ad App Registration</h1><div class="page-breadcrumb">Tenant Settings/active Directory</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="overview">Overview</h2>
+<p>This guide provides step-by-step instructions for registering a mindzie Studio application in Azure Active Directory (Azure AD) to enable secure authentication and Single Sign-On (SSO) capabilities. By following this process, you'll create an Azure AD application that allows users to authenticate using their Microsoft organizational accounts.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before beginning the app registration process, ensure you have:</p>
+<ul>
+<li><strong>Azure Portal Access</strong>: Administrative access to your organization's Azure Portal</li>
+<li><strong>Azure AD Tenant</strong>: An active Azure AD tenant (single-tenant or multi-tenant)</li>
+<li><strong>Permissions</strong>: Application registration permissions in Azure AD</li>
+<li><strong>mindzie Studio Region</strong>: Knowledge of your mindzie Studio deployment region (e.g., www, Europe, Australia, KSA)</li>
+</ul>
+<h2 id="step-by-step-registration-process">Step-by-Step Registration Process</h2>
+<h3 id="step-1-access-azure-portal-app-registrations">Step 1: Access Azure Portal App Registrations</h3>
+<ol>
+<li><p><strong>Navigate to Azure Portal</strong></p>
+<ul>
+<li>Open your web browser and go to <a href="https://portal.azure.com">https://portal.azure.com</a></li>
+<li>Sign in with your administrative credentials</li>
+</ul>
+</li>
+<li><p><strong>Access App Registrations</strong></p>
+<ul>
+<li>In the Azure Portal, search for "App registrations" in the top search bar</li>
+<li>Select <strong>App registrations</strong> from the search results</li>
+<li>Alternatively, navigate through: Azure Active Directory → App registrations</li>
+</ul>
+</li>
+</ol>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/azure-portal-app-registrations.png" alt="Azure Portal App Registrations">
+<em>Azure Portal - App Registrations page</em></p>
+<h3 id="step-2-create-new-app-registration">Step 2: Create New App Registration</h3>
+<ol>
+<li><strong>Initiate New Registration</strong>
+<ul>
+<li>Click the <strong>New registration</strong> button at the top of the App registrations page</li>
+</ul>
+</li>
+</ol>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/azure-new-registration.png" alt="New Registration Button">
+<em>Creating a new app registration</em></p>
+<ol start="2">
+<li><p><strong>Configure Basic Settings</strong></p>
+<p><strong>Name:</strong></p>
+<ul>
+<li>Enter a descriptive name for your application</li>
+<li>Recommended: <code>mindzie AD Integration</code> or <code>mindzie Studio SSO</code></li>
+<li>This name will be visible to users during authentication</li>
+</ul>
+<p><strong>Supported Account Types:</strong></p>
+<ul>
+<li>Select <strong>Accounts in this organizational directory only (Single tenant)</strong></li>
+<li>Note: Currently, mindzie Studio only supports single-tenant integration</li>
+<li>Multi-tenant support may be available in future releases</li>
+</ul>
+<p><strong>Redirect URI (Platform Configuration):</strong></p>
+<ul>
+<li>Platform Type: Select <strong>Web</strong> from the dropdown</li>
+<li>Redirect URI: Enter your mindzie Studio region-specific URL:
+<pre><code>https://[region].mindziestudio.com/company/[tenant_name]/signin-oidc
+</code></pre>
+</li>
+<li>Replace <code>[region]</code> with your deployment region:
+<ul>
+<li><code>www</code> - Global/US region</li>
+<li><code>europe</code> - European region</li>
+<li><code>australia</code> - Australia/Pacific region</li>
+<li><code>ksa</code> - Kingdom of Saudi Arabia region</li>
+<li>Other regions as applicable</li>
+</ul>
+</li>
+<li>Replace [tenant_name] with the tenant you are logging into</li>
+</ul>
+</li>
+</ol>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/azure-app-registration-form.png" alt="App Registration Form">
+<em>Register an application form - Fill in the Name, select Single tenant, and configure the Redirect URI</em></p>
+<ol>
+<li><strong>Complete Registration</strong>
+<ul>
+<li>Review your settings</li>
+<li>Click <strong>Register</strong> to create the application</li>
+<li>Azure will create the app and redirect you to the app overview page</li>
+</ul>
+</li>
+</ol>
+<h3 id="step-3-configure-authentication-settings">Step 3: Configure Authentication Settings</h3>
+<p>After registration, you need to configure additional authentication settings:</p>
+<ol>
+<li><p><strong>Access Authentication Settings</strong></p>
+<ul>
+<li>From your app's overview page, select <strong>Authentication</strong> from the left navigation menu</li>
+</ul>
+</li>
+<li><p><strong>Configure Redirect URIs</strong></p>
+<p>The initial redirect URI was added during registration. Now add the sign-out URI:</p>
+<p><strong>Add Sign-out URL:</strong></p>
+<ul>
+<li>In the Web platform section, locate <strong>Front-channel logout URL</strong> field</li>
+<li>Add your region-specific logout URL:
+<pre><code>https://[region].mindziestudio.com/signout-callback-oidc
+</code></pre>
+</li>
+<li>Replace <code>[region]</code> with your deployment region (same as used in redirect URI)</li>
+<li>Example: <code>https://www.mindziestudio.com/signout-callback-oidc</code> for the global region</li>
+</ul>
+</li>
+</ol>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/azure-redirect-uris.jpg" alt="Authentication Settings">
+<em>Authentication settings page - Add the logout URL in the Front-channel logout URL field</em></p>
+<ol start="3">
+<li><p><strong>Additional Settings</strong> (Not Required)</p>
+<ul>
+<li><strong>Access tokens</strong>: Not needed for mindzie Studio integration</li>
+<li><strong>ID tokens</strong>: Already handled by the authentication flow</li>
+<li><strong>Live SDK support</strong>: Not required for mindzie Studio</li>
+</ul>
+</li>
+<li><p><strong>Save Configuration</strong></p>
+<ul>
+<li>Click <strong>Save</strong> at the top of the authentication settings page</li>
+<li>Verify both redirect and logout URLs are correctly configured</li>
+</ul>
+</li>
+</ol>
+<h3 id="step-4-create-client-secret">Step 4: Create Client Secret</h3>
+<p>A client secret is required for mindzie Studio to authenticate with Azure AD:</p>
+<ol>
+<li><strong>Navigate to Certificates &amp; Secrets</strong>
+<ul>
+<li>From the left navigation menu, select <strong>Certificates &amp; secrets</strong></li>
+<li>Choose the <strong>Client secrets</strong> tab</li>
+</ul>
+</li>
+</ol>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/azure-certificates-secrets.png" alt="Certificates &amp; Secrets Page">
+<em>Certificates &amp; Secrets section in Azure Portal</em></p>
+<ol start="2">
+<li><p><strong>Create New Client Secret</strong></p>
+<ul>
+<li>Click <strong>New client secret</strong> button</li>
+</ul>
+</li>
+<li><p><strong>Configure Secret Settings</strong></p>
+<p><strong>Description:</strong></p>
+<ul>
+<li>Enter a descriptive name: <code>mindzie Secret</code> or <code>mindzie Studio Authentication</code></li>
+<li>This helps identify the secret's purpose later</li>
+</ul>
+<p><strong>Expiration:</strong></p>
+<ul>
+<li>Select an expiration period based on your security requirements:
+<ul>
+<li><strong>180 days</strong> (Recommended) - Good balance of security and maintenance</li>
+<li><strong>365 days</strong> - Less frequent rotation required</li>
+<li><strong>730 days</strong> - Minimum maintenance but less secure</li>
+<li><strong>Custom</strong> - Set your own expiration date</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Important</strong>: Document the expiration date and set calendar reminders to rotate the secret before it expires</p>
+</blockquote>
+</li>
+<li><p><strong>Add the Secret</strong></p>
+<ul>
+<li>Click <strong>Add</strong> to create the secret</li>
+<li><strong>CRITICAL</strong>: The secret value will only be displayed once!</li>
+</ul>
+</li>
+</ol>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/azure-new-client-secret.png" alt="Client Secret Created">
+<em>Client secret created - copy the Value immediately</em></p>
+<ol start="5">
+<li><strong>Copy and Secure the Secret</strong>
+<ul>
+<li><strong>Immediately copy the Value</strong> (not the Secret ID)</li>
+<li>Store it securely - you'll need this for mindzie Studio configuration</li>
+<li>If you lose this value, you'll need to create a new secret</li>
+</ul>
+</li>
+</ol>
+<h3 id="step-5-collect-required-information">Step 5: Collect Required Information</h3>
+<p>Before configuring mindzie Studio, collect the following information from your Azure AD app:</p>
+<ol>
+<li><p><strong>Navigate to Overview Page</strong></p>
+<ul>
+<li>Return to the app's <strong>Overview</strong> page</li>
+</ul>
+</li>
+<li><p><strong>Copy Application Details</strong></p>
+<p>You need three key values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Location</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Application (client) ID</strong></td>
+<td>Overview page</td>
+<td>Unique identifier for your application</td>
+</tr>
+<tr>
+<td><strong>Directory (tenant) ID</strong></td>
+<td>Overview page</td>
+<td>Your Azure AD tenant identifier</td>
+</tr>
+<tr>
+<td><strong>Client Secret Value</strong></td>
+<td>Previously copied</td>
+<td>Authentication secret</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/azure-app-overview.png" alt="Application Overview">
+<em>Application overview showing Client ID and Tenant ID</em></p>
+<ol start="3">
+<li><p><strong>Document the Configuration</strong></p>
+<p>You will need these values to configure mindzie Studio. Create a secure record of the following information from Azure AD:</p>
+<p><strong>Required Values:</strong></p>
+<ul>
+<li><strong>Azure Tenant ID</strong>: Found in Azure Portal &gt; Azure Active Directory &gt; Properties &gt; Tenant ID</li>
+<li><strong>Application (Client) ID</strong>: Found in your App Registration &gt; Overview</li>
+<li><strong>Client Secret</strong>: The value you copied when creating the secret (not the Secret ID)</li>
+</ul>
+<p><strong>Optional Value:</strong></p>
+<ul>
+<li><strong>Primary Domain</strong>: Your Azure AD primary domain (e.g., yourcompany.onmicrosoft.com)</li>
+</ul>
+<p><img src="../../../../docs-master/mindzieStudio/tenant-settings/active-directory/azure-ad-app-registration/images/mindzie-studio-config.jpg" alt="mindzie Studio Configuration">
+<em>mindzie Studio Authentication Configuration screen showing where to enter the Azure AD values</em></p>
+<p>These values will be entered into mindzie Studio's Authentication Configuration screen as shown above. The configuration screen in mindzie Studio will validate your settings and establish the connection to Azure AD.</p>
+</li>
+</ol>
+</div></div></main></div><!--!-->
+
+<!--!--><script>
+    // Search keyboard shortcut (Ctrl+K or Cmd+K)
+    window.registerSearchShortcut = function(dotNetRef) {
+        document.addEventListener('keydown', function(e) {
+            // Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                dotNetRef.invokeMethodAsync('OpenSearch');
+            }
+        });
+    };
+
+    window.toggleSection = function(sectionId) {
+        const section = document.getElementById(sectionId + '-section');
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            // Save state
+            const isExpanded = section.classList.contains('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsection = function(subsectionId) {
+        const subsection = document.getElementById(subsectionId + '-subsection');
+        if (subsection) {
+            // Toggle between collapsed and expanded
+            if (subsection.classList.contains('expanded')) {
+                subsection.classList.remove('expanded');
+                subsection.classList.add('collapsed');
+            } else {
+                subsection.classList.remove('collapsed');
+                subsection.classList.add('expanded');
+            }
+            
+            // Save state
+            const isExpanded = subsection.classList.contains('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSectionHelper = function(sectionId) {
+        var section = document.getElementById(sectionId);
+        var sectionWrapper = document.querySelector('#' + sectionId + '-section');
+        if (section && sectionWrapper) {
+            var isExpanded = sectionWrapper.classList.toggle('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsectionHelper = function(subsectionId) {
+        console.log('Toggling subsection:', subsectionId);
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            // Toggle between collapsed and expanded
+            var isCurrentlyExpanded = subsectionWrapper.classList.contains('expanded');
+            console.log('Currently expanded:', isCurrentlyExpanded);
+
+            if (isCurrentlyExpanded) {
+                subsectionWrapper.classList.remove('expanded');
+                subsectionWrapper.classList.add('collapsed');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'false');
+                console.log('Collapsed:', subsectionId);
+            } else {
+                subsectionWrapper.classList.remove('collapsed');
+                subsectionWrapper.classList.add('expanded');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'true');
+                console.log('Expanded:', subsectionId);
+            }
+        } else {
+            console.error('Subsection not found:', subsectionId);
+        }
+    };
+    
+    window.expandSubsection = function(subsectionId) {
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            subsectionWrapper.classList.remove('collapsed');
+            subsectionWrapper.classList.add('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, true);
+        }
+    };
+    
+    window.initializeNavigation = function() {
+        // Set Core Concepts and other always-expanded sections
+        document.querySelectorAll('.nav-section.always-expanded').forEach(section => {
+            section.classList.add('expanded');
+        });
+
+        // Restore saved states for other sections
+        document.querySelectorAll('.nav-section:not(.always-expanded)[id$="-section"]').forEach(section => {
+            const sectionId = section.id.replace('-section', '');
+            const savedState = localStorage.getItem('nav-section-' + sectionId);
+            if (savedState === 'true') {
+                section.classList.add('expanded');
+            }
+        });
+
+        // Initialize ALL subsections as collapsed by default
+        document.querySelectorAll('.nav-subsection[id$="-subsection"]').forEach(subsection => {
+            // Remove any existing state classes first
+            subsection.classList.remove('collapsed');
+            subsection.classList.remove('expanded');
+
+            // Always start collapsed, ignore saved state for now to ensure they start collapsed
+            subsection.classList.add('collapsed');
+
+            // Clear any saved states to ensure fresh start
+            const subsectionId = subsection.id.replace('-subsection', '');
+            localStorage.removeItem('nav-subsection-' + subsectionId);
+        });
+    };
+
+    window.scrollToActiveMenuItem = function() {
+        // Find the active menu item
+        var activeItem = document.querySelector('.nav-subitem.active, .nav-item.active, .nav-section-title-link.active');
+        if (activeItem) {
+            // Get the sidebar element
+            var sidebar = document.querySelector('.frame-sidebar');
+            if (sidebar) {
+                // Calculate the position to scroll to
+                var itemTop = activeItem.offsetTop;
+                var itemHeight = activeItem.offsetHeight;
+                var sidebarHeight = sidebar.clientHeight;
+
+                // Scroll so the active item is visible, preferably centered
+                var scrollPosition = itemTop - (sidebarHeight / 2) + (itemHeight / 2);
+
+                // Smooth scroll to the active item
+                sidebar.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
+</script><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

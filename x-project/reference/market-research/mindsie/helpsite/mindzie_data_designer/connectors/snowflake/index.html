@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Snowflake | Connectors | mindzieDataDesigner Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">DataDesigner Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../index.html" class="product-item active">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieDataDesigner</strong></span></a><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="data-transformation-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Data Transformation</span></div>
+                <div id="data-transformation" class="nav-section-content"><a href="../../data-transformation/data-etl/index.html" class="nav-subitem ">Data Ingestion and ETL</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="database-connectors-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Database Connectors</span></div>
+                <div id="database-connectors" class="nav-section-content"><a href="../overview/index.html" class="nav-subitem ">Overview</a><!--!-->
+                    <a href="../sqlite/index.html" class="nav-subitem ">SQLite</a><!--!-->
+                    <a href="../sql-server/index.html" class="nav-subitem ">Microsoft SQL Server</a><!--!-->
+                    <a href="../oracle/index.html" class="nav-subitem ">Oracle</a><!--!-->
+                    <a href="../sap-hana/index.html" class="nav-subitem ">SAP HANA</a><!--!-->
+                    <a href="../mysql/index.html" class="nav-subitem ">MySQL</a><!--!-->
+                    <a href="../postgresql/index.html" class="nav-subitem ">PostgreSQL</a><!--!-->
+                    <a href="../odbc/index.html" class="nav-subitem ">ODBC</a><!--!-->
+                    <a href="../ibm-db2/index.html" class="nav-subitem ">IBM DB2</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Snowflake</a><!--!-->
+                    <a href="../microsoft-access/index.html" class="nav-subitem ">Microsoft Access</a><!--!-->
+                    <a href="../vertica/index.html" class="nav-subitem ">Vertica</a><!--!-->
+                    <a href="../h2/index.html" class="nav-subitem ">H2</a><!--!-->
+                    <a href="../amazon-redshift/index.html" class="nav-subitem ">Amazon Redshift</a><!--!-->
+                    <a href="../sybase-ase/index.html" class="nav-subitem ">Sybase ASE</a><!--!-->
+                    <a href="../firebird/index.html" class="nav-subitem ">Firebird</a><!--!-->
+                    <a href="../teradata/index.html" class="nav-subitem ">Teradata</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Snowflake</h1><div class="page-breadcrumb">Connectors</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p><strong>Category:</strong> Database Connectors</p>
+<h2 id="introduction">Introduction</h2>
+<p>This document is created to help setup a mindzieDataDesigner connector to Snowflake database. The mindzieDataDesigner is the ETL tool used by mindzieStudio to convert database tables to process mining event logs. The purpose of this document is to help creating the connection string and opening ports on the firewall if required.</p>
+<h2 id="overview">Overview</h2>
+<p>The Snowflake connector provides high-performance connectivity to Snowflake data warehouses. Optimized for analytical workloads and process mining scenarios.</p>
+<h2 id="system-requirements">System Requirements</h2>
+<ul>
+<li><strong>Cloud Platform:</strong> Snowflake (AWS, Azure, Google Cloud)</li>
+<li><strong>Authentication:</strong> Username/Password, SSO, Key Pair, OAuth</li>
+<li><strong>Platform Support:</strong> Cross-platform cloud access</li>
+<li><strong>Dependencies:</strong> Snowflake .NET connector</li>
+</ul>
+<h2 id="connection-string-format">Connection String Format</h2>
+<h3 id="basic-format">Basic Format</h3>
+<pre><code>Account=myaccount.region;User=username;Password=password;Database=database_name;Schema=schema_name;Warehouse=warehouse_name;
+</code></pre>
+<h3 id="connection-parameters">Connection Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Account</code></td>
+<td>Snowflake account identifier</td>
+<td>Yes</td>
+<td><code>mycompany.us-east-1</code></td>
+</tr>
+<tr>
+<td><code>User</code></td>
+<td>Snowflake username</td>
+<td>Yes</td>
+<td><code>MINDZIE_USER</code></td>
+</tr>
+<tr>
+<td><code>Password</code></td>
+<td>Snowflake password</td>
+<td>Yes*</td>
+<td><code>SecurePassword123</code></td>
+</tr>
+<tr>
+<td><code>Database</code></td>
+<td>Default database</td>
+<td>No</td>
+<td><code>PROCESS_MINING</code></td>
+</tr>
+<tr>
+<td><code>Schema</code></td>
+<td>Default schema</td>
+<td>No</td>
+<td><code>PUBLIC</code></td>
+</tr>
+<tr>
+<td><code>Warehouse</code></td>
+<td>Compute warehouse</td>
+<td>No</td>
+<td><code>ANALYTICS_WH</code></td>
+</tr>
+<tr>
+<td><code>Role</code></td>
+<td>Snowflake role</td>
+<td>No</td>
+<td><code>ANALYST</code></td>
+</tr>
+<tr>
+<td><code>Connection Timeout</code></td>
+<td>Connection timeout</td>
+<td>No</td>
+<td><code>60</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="connection-examples">Connection Examples</h2>
+<h3 id="standard-connection">Standard Connection</h3>
+<pre><code>Account=mycompany.us-east-1;User=MINDZIE_USER;Password=SecurePassword123;Database=PROCESS_MINING;Schema=PUBLIC;Warehouse=ANALYTICS_WH;
+</code></pre>
+<h3 id="connection-with-role">Connection with Role</h3>
+<pre><code>Account=mycompany.eu-west-1;User=ANALYST_USER;Password=password;Database=DATA_WAREHOUSE;Schema=ANALYTICS;Warehouse=LARGE_WH;Role=ANALYST_ROLE;
+</code></pre>
+<h3 id="multi-cloud-connection">Multi-Cloud Connection</h3>
+<pre><code>Account=mycompany.aws-us-west-2;User=SERVICE_USER;Password=password;Database=ENTERPRISE_DB;Warehouse=AUTO_WH;
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>"Authentication failed" Error</strong></p>
+<ul>
+<li>Verify account identifier format</li>
+<li>Check username and password</li>
+<li>Ensure user account is not suspended</li>
+<li>Verify MFA settings if enabled</li>
+</ul>
+<p><strong>"Warehouse not found" Error</strong></p>
+<ul>
+<li>Check warehouse name spelling and case</li>
+<li>Verify warehouse exists and is accessible</li>
+<li>Ensure user has USAGE privileges on warehouse</li>
+</ul>
+<p><strong>"Database/Schema not found" Error</strong></p>
+<ul>
+<li>Verify database and schema names</li>
+<li>Check access privileges</li>
+<li>Use fully qualified object names</li>
+</ul>
+<h2 id="related-information">Related Information</h2>
+<ul>
+<li><strong>Official Documentation:</strong> <a href="https://docs.snowflake.com/">Snowflake Documentation</a></li>
+<li><strong>Snowflake Connector:</strong> <a href="https://docs.snowflake.com/en/user-guide/dotnet-driver.html">.NET Driver Guide</a></li>
+<li><strong>Best Practices:</strong> <a href="https://docs.snowflake.com/en/user-guide/performance-tuning.html">Snowflake Performance Tuning</a></li>
+</ul>
+<hr>
+<p>💡 <strong>Tip:</strong> Use Snowflake's automatic clustering and query acceleration features to optimize performance for large-scale process mining workloads.</p>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

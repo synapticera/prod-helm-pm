@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Dataset | Dataset | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../action/index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../action/ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="../action/execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../action/history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../block/index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../block/management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../block/execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../block/results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../block/types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="index.html" class="nav-section-title-link active">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Overview</h1><div class="page-breadcrumb">Dataset</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="data-management-api">Data Management API</h2>
+<p>Upload, manage, and update datasets with support for multiple file formats including CSV, ZIP packages, and binary formats.</p>
+<h2 id="features">Features</h2>
+<h3 id="dataset-creation">Dataset Creation</h3>
+<p>Create new datasets from CSV, ZIP packages, or binary files.</p>
+<p><a href="creation/index.html">Create Datasets</a></p>
+<h3 id="data-import">Data Import</h3>
+<p>Import data with column mapping for process mining analysis.</p>
+<p><a href="import/index.html">Import Data</a></p>
+<h3 id="dataset-updates">Dataset Updates</h3>
+<p>Update existing datasets with new data while preserving configurations.</p>
+<p><a href="updates/index.html">Update Datasets</a></p>
+<h3 id="file-formats">File Formats</h3>
+<p>Supported file formats and data structures.</p>
+<p><a href="formats/index.html">View Formats</a></p>
+<h2 id="available-endpoints">Available Endpoints</h2>
+<h3 id="connectivity-testing">Connectivity Testing</h3>
+<ul>
+<li><strong>GET</strong> <code>/api/{tenantId}/{projectId}/dataset/unauthorized-ping</code> - Public connectivity test (no auth required)</li>
+<li><strong>GET</strong> <code>/api/{tenantId}/{projectId}/dataset/ping</code> - Authenticated connectivity test</li>
+</ul>
+<h3 id="dataset-operations">Dataset Operations</h3>
+<ul>
+<li><strong>GET</strong> <code>/api/{tenantId}/{projectId}/dataset</code> - List all datasets in a project</li>
+</ul>
+<h3 id="dataset-creation-1">Dataset Creation</h3>
+<ul>
+<li><strong>POST</strong> <code>/api/{tenantId}/{projectId}/dataset/csv</code> - Create dataset from CSV file</li>
+<li><strong>POST</strong> <code>/api/{tenantId}/{projectId}/dataset/package</code> - Create dataset from ZIP package</li>
+<li><strong>POST</strong> <code>/api/{tenantId}/{projectId}/dataset/binary</code> - Create dataset from binary file</li>
+</ul>
+<h3 id="dataset-updates-1">Dataset Updates</h3>
+<ul>
+<li><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/dataset/{datasetId}/csv</code> - Update dataset from CSV</li>
+<li><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/dataset/{datasetId}/package</code> - Update dataset from ZIP package</li>
+<li><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/dataset/{datasetId}/binary</code> - Update dataset from binary file</li>
+</ul>
+<h2 id="supported-file-formats">Supported File Formats</h2>
+<p>mindzieStudio supports multiple data formats for process mining:</p>
+<h3 id="csv-files">CSV Files</h3>
+<p>Comma-separated values with flexible column mapping.</p>
+<ul>
+<li>Event logs with case ID, activity, timestamp</li>
+<li>Custom culture settings for date/number parsing</li>
+<li>UTF-8 encoding support</li>
+</ul>
+<h3 id="zip-packages">ZIP Packages</h3>
+<p>Compressed packages containing multiple related files.</p>
+<ul>
+<li>Complex datasets with multiple tables</li>
+<li>Metadata and configuration files</li>
+<li>mindzie dataset packaging standards</li>
+</ul>
+<h3 id="binary-files">Binary Files</h3>
+<p>Native binary format for efficient data transfer.</p>
+<ul>
+<li>Pre-processed event log data</li>
+<li>Optimized for large datasets</li>
+<li>Column mappings required</li>
+</ul>
+<h2 id="dataset-structure">Dataset Structure</h2>
+<p>Understanding the expected data structure for process mining analysis:</p>
+<h3 id="required-columns">Required Columns</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Case ID</td>
+<td>Unique identifier for each process instance</td>
+</tr>
+<tr>
+<td>Activity</td>
+<td>Name of the activity or event</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>When the activity occurred</td>
+</tr>
+</tbody>
+</table>
+<h3 id="optional-columns">Optional Columns</h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resource</td>
+<td>User or system that performed the activity</td>
+</tr>
+<tr>
+<td>Start Time</td>
+<td>Activity start time (for duration calculations)</td>
+</tr>
+<tr>
+<td>Expected Order</td>
+<td>Sequence ordering column</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-structure">Response Structure</h3>
+<pre><code class="language-json">{
+  "datasetId": "550e8400-e29b-41d4-a716-446655440000",
+  "datasetName": "Purchase Order Process",
+  "datasetDescription": "Event log from SAP procurement",
+  "projectId": "660e8400-e29b-41d4-a716-446655440000",
+  "caseIdColumnName": "CaseID",
+  "activityColumnName": "Activity",
+  "timeColumnName": "Timestamp",
+  "resourceColumnName": "Resource",
+  "beginTimeColumnName": "StartTime",
+  "useDateOnlySorting": false,
+  "useOnlyEventColumns": false,
+  "dateCreated": "2024-01-15T10:30:00Z",
+  "dateModified": "2024-01-15T14:45:00Z",
+  "createdBy": "user@example.com",
+  "modifiedBy": "user@example.com"
+}
+</code></pre>
+<h2 id="upload-response-structure">Upload Response Structure</h2>
+<p>Dataset creation and update endpoints return import statistics:</p>
+<pre><code class="language-json">{
+  "datasetId": "550e8400-e29b-41d4-a716-446655440000",
+  "caseCount": 5200,
+  "eventCount": 150000,
+  "invalidValueCount": 12,
+  "skippedRowsCount": 3,
+  "errors": [],
+  "rowIssues": [],
+  "statusCode": 200
+}
+</code></pre>
+<h2 id="common-use-cases">Common Use Cases</h2>
+<ul>
+<li><strong>Event Log Import:</strong> Upload process event data from ERP, CRM, or BPM systems</li>
+<li><strong>Data Refresh:</strong> Update existing datasets with new data while preserving analysis configurations</li>
+<li><strong>Multi-Format Support:</strong> Import data from CSV exports or proprietary binary formats</li>
+<li><strong>Batch Processing:</strong> Upload large datasets up to 1GB with progress tracking</li>
+</ul>
+<h2 id="file-size-limits">File Size Limits</h2>
+<p>All upload endpoints support files up to <strong>1GB</strong> in size. For larger datasets, consider:</p>
+<ul>
+<li>Breaking data into multiple uploads</li>
+<li>Using the binary format for efficiency</li>
+<li>Contacting support for enterprise data solutions</li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>All Dataset API endpoints (except <code>unauthorized-ping</code>) require valid authentication with appropriate permissions for the target project and tenant.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Begin with <a href="creation/index.html">Dataset Creation</a> to learn how to create datasets, then explore <a href="import/index.html">Data Import</a> for column mapping details.</p>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

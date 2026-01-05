@@ -1,0 +1,433 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Types | Block | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../../action/index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../../action/ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="../../action/execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../../action/history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../../dataset/index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../../dataset/creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../../dataset/import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="../../dataset/updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="../../dataset/formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Types</h1><div class="page-breadcrumb">Block</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="analysis-block-categories">Analysis Block Categories</h2>
+<p>Explore different block types including filters, calculators, and alert configurations. Learn about each type's capabilities, configuration options, and creation endpoints.</p>
+<h2 id="filter-blocks">Filter Blocks</h2>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/block/filter</code></p>
+<p>Filter blocks apply data filtering criteria to datasets, reducing data by applying conditions such as date ranges, value filters, or logical expressions. They are the foundation for focused analysis on specific data subsets.</p>
+<h3 id="capabilities">Capabilities</h3>
+<ul>
+<li><strong>Date Range Filtering:</strong> Filter data within specific time periods</li>
+<li><strong>Activity Filtering:</strong> Include or exclude specific process activities</li>
+<li><strong>Case Attribute Filtering:</strong> Filter based on case properties and metadata</li>
+<li><strong>Value Range Filtering:</strong> Apply numeric and text value conditions</li>
+<li><strong>Complex Logic:</strong> Combine multiple filters with AND/OR operations</li>
+</ul>
+<h3 id="request-body">Request Body</h3>
+<pre><code class="language-json">{
+  "notebookId": "660e8400-e29b-41d4-a716-446655440000",
+  "blockTitle": "Date Range Filter",
+  "blockDescription": "Filters process data for the last 30 days"
+}
+</code></pre>
+<h3 id="configuration-examples">Configuration Examples</h3>
+<pre><code class="language-javascript">// Date range filter configuration
+{
+  "filterType": "dateRange",
+  "startDate": "2024-01-01T00:00:00Z",
+  "endDate": "2024-01-31T23:59:59Z",
+  "dateField": "timestamp"
+}
+
+// Activity filter configuration
+{
+  "filterType": "activity",
+  "include": ["Order Created", "Payment Processed"],
+  "exclude": ["System Log"]
+}
+
+// Case attribute filter configuration
+{
+  "filterType": "caseAttribute",
+  "attribute": "customerType",
+  "operator": "equals",
+  "value": "Premium"
+}
+</code></pre>
+<h2 id="calculator-blocks">Calculator Blocks</h2>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/block/calculator</code></p>
+<p>Calculator blocks perform mathematical operations and analytical calculations on datasets. They compute metrics, aggregations, statistical measures, and derived values for process mining analysis.</p>
+<h3 id="capabilities-1">Capabilities</h3>
+<ul>
+<li><strong>Duration Calculations:</strong> Process cycle times and lead times</li>
+<li><strong>Frequency Analysis:</strong> Activity occurrence rates and patterns</li>
+<li><strong>Performance Metrics:</strong> Throughput, efficiency, and utilization</li>
+<li><strong>Statistical Analysis:</strong> Mean, median, percentiles, and distributions</li>
+<li><strong>Custom Formulas:</strong> Complex mathematical expressions and KPIs</li>
+</ul>
+<h3 id="request-body-1">Request Body</h3>
+<pre><code class="language-json">{
+  "notebookId": "660e8400-e29b-41d4-a716-446655440000",
+  "blockTitle": "Process Duration Calculator",
+  "blockDescription": "Calculates average case duration and cycle times"
+}
+</code></pre>
+<h3 id="configuration-examples-1">Configuration Examples</h3>
+<pre><code class="language-javascript">// Duration calculation configuration
+{
+  "calculationType": "duration",
+  "startActivity": "Order Created",
+  "endActivity": "Order Completed",
+  "unit": "hours",
+  "aggregation": "average"
+}
+
+// Frequency calculation configuration
+{
+  "calculationType": "frequency",
+  "groupBy": "activity",
+  "timeWindow": "daily",
+  "metric": "count"
+}
+
+// Custom KPI calculation configuration
+{
+  "calculationType": "custom",
+  "formula": "(completedCases / totalCases) * 100",
+  "resultUnit": "percentage",
+  "name": "Completion Rate"
+}
+</code></pre>
+<h2 id="alert-blocks">Alert Blocks</h2>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/block/alert</code></p>
+<p>Alert blocks monitor data conditions and trigger notifications when specific criteria are met. They provide automated monitoring and exception detection for process mining workflows and compliance requirements.</p>
+<h3 id="capabilities-2">Capabilities</h3>
+<ul>
+<li><strong>Threshold Monitoring:</strong> Alert when metrics exceed defined limits</li>
+<li><strong>Pattern Detection:</strong> Identify unusual process behavior patterns</li>
+<li><strong>Compliance Monitoring:</strong> Track adherence to business rules</li>
+<li><strong>Performance Alerts:</strong> Monitor SLA violations and performance degradation</li>
+<li><strong>Real-time Notifications:</strong> Immediate alerts for critical conditions</li>
+</ul>
+<h3 id="request-body-2">Request Body</h3>
+<pre><code class="language-json">{
+  "notebookId": "660e8400-e29b-41d4-a716-446655440000",
+  "blockTitle": "SLA Violation Alert",
+  "blockDescription": "Alerts when case duration exceeds SLA threshold"
+}
+</code></pre>
+<h3 id="configuration-examples-2">Configuration Examples</h3>
+<pre><code class="language-javascript">// Threshold alert configuration
+{
+  "alertType": "threshold",
+  "metric": "caseDuration",
+  "operator": "greaterThan",
+  "threshold": 48,
+  "unit": "hours",
+  "severity": "high"
+}
+
+// Pattern deviation alert configuration
+{
+  "alertType": "patternDeviation",
+  "baselinePattern": "Order -&gt; Payment -&gt; Fulfillment",
+  "deviationTolerance": 0.1,
+  "minOccurrences": 10
+}
+
+// Compliance alert configuration
+{
+  "alertType": "compliance",
+  "rule": "approvalRequired",
+  "condition": "amount &gt; 1000",
+  "requiredActivity": "Manager Approval"
+}
+</code></pre>
+<h2 id="block-type-comparison">Block Type Comparison</h2>
+<p>Choose the right block type for your analysis needs:</p>
+<table>
+<thead>
+<tr>
+<th>Block Type</th>
+<th>Primary Purpose</th>
+<th>Input</th>
+<th>Output</th>
+<th>Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Filter</strong></td>
+<td>Data reduction and focusing</td>
+<td>Full dataset</td>
+<td>Filtered dataset</td>
+<td>Time period analysis, specific process paths</td>
+</tr>
+<tr>
+<td><strong>Calculator</strong></td>
+<td>Metrics and KPI computation</td>
+<td>Dataset (filtered or full)</td>
+<td>Calculated values/metrics</td>
+<td>Performance measurement, statistical analysis</td>
+</tr>
+<tr>
+<td><strong>Alert</strong></td>
+<td>Monitoring and notifications</td>
+<td>Metrics or dataset</td>
+<td>Alert conditions/notifications</td>
+<td>SLA monitoring, exception detection</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-complete-block-workflow">Example: Complete Block Workflow</h2>
+<p>This example demonstrates creating different block types for a comprehensive analysis:</p>
+<pre><code class="language-javascript">// Create a filter block to focus on recent data
+const createDateFilter = async (notebookId) =&gt; {
+  const response = await fetch(`/api/${tenantId}/${projectId}/block/filter`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      notebookId: notebookId,
+      blockTitle: 'Last 30 Days Filter',
+      blockDescription: 'Focus analysis on recent process data'
+    })
+  });
+  return await response.json();
+};
+
+// Create a calculator block to compute metrics
+const createDurationCalculator = async (notebookId) =&gt; {
+  const response = await fetch(`/api/${tenantId}/${projectId}/block/calculator`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      notebookId: notebookId,
+      blockTitle: 'Average Duration Calculator',
+      blockDescription: 'Calculate average case processing time'
+    })
+  });
+  return await response.json();
+};
+
+// Create an alert block for monitoring
+const createSLAAlert = async (notebookId) =&gt; {
+  const response = await fetch(`/api/${tenantId}/${projectId}/block/alert`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      notebookId: notebookId,
+      blockTitle: 'SLA Violation Alert',
+      blockDescription: 'Monitor for SLA breaches'
+    })
+  });
+  return await response.json();
+};
+
+// Build complete analysis workflow
+const buildAnalysisWorkflow = async (notebookId) =&gt; {
+  try {
+    // 1. Filter data to recent period
+    const filterBlock = await createDateFilter(notebookId);
+    console.log('Created filter block:', filterBlock.blockId);
+
+    // 2. Calculate performance metrics
+    const calculatorBlock = await createDurationCalculator(notebookId);
+    console.log('Created calculator block:', calculatorBlock.blockId);
+
+    // 3. Set up monitoring alerts
+    const alertBlock = await createSLAAlert(notebookId);
+    console.log('Created alert block:', alertBlock.blockId);
+
+    return {
+      filter: filterBlock,
+      calculator: calculatorBlock,
+      alert: alertBlock
+    };
+  } catch (error) {
+    console.error('Error building workflow:', error);
+    throw error;
+  }
+};
+</code></pre>
+<h2 id="python-implementation">Python Implementation</h2>
+<pre><code class="language-python">import requests
+from typing import Dict, Any
+
+class BlockTypeManager:
+    def __init__(self, base_url: str, tenant_id: str, project_id: str, token: str):
+        self.base_url = base_url
+        self.tenant_id = tenant_id
+        self.project_id = project_id
+        self.headers = {
+            'Authorization': f'Bearer {token}',
+            'Content-Type': 'application/json'
+        }
+
+    def create_filter_block(self, notebook_id: str, title: str, description: str) -&gt; Dict[str, Any]:
+        """Create a filter block for data reduction"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/block/filter"
+        payload = {
+            'notebookId': notebook_id,
+            'blockTitle': title,
+            'blockDescription': description
+        }
+        response = requests.post(url, json=payload, headers=self.headers)
+        response.raise_for_status()
+        return response.json()
+
+    def create_calculator_block(self, notebook_id: str, title: str, description: str) -&gt; Dict[str, Any]:
+        """Create a calculator block for metrics computation"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/block/calculator"
+        payload = {
+            'notebookId': notebook_id,
+            'blockTitle': title,
+            'blockDescription': description
+        }
+        response = requests.post(url, json=payload, headers=self.headers)
+        response.raise_for_status()
+        return response.json()
+
+    def create_alert_block(self, notebook_id: str, title: str, description: str) -&gt; Dict[str, Any]:
+        """Create an alert block for monitoring"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/block/alert"
+        payload = {
+            'notebookId': notebook_id,
+            'blockTitle': title,
+            'blockDescription': description
+        }
+        response = requests.post(url, json=payload, headers=self.headers)
+        response.raise_for_status()
+        return response.json()
+
+    def create_analysis_pipeline(self, notebook_id: str) -&gt; Dict[str, Any]:
+        """Create a complete analysis pipeline with all block types"""
+        pipeline = {}
+
+        # Create filter block
+        pipeline['filter'] = self.create_filter_block(
+            notebook_id,
+            'Data Filter',
+            'Filter dataset for analysis scope'
+        )
+
+        # Create calculator block
+        pipeline['calculator'] = self.create_calculator_block(
+            notebook_id,
+            'Performance Calculator',
+            'Calculate key performance metrics'
+        )
+
+        # Create alert block
+        pipeline['alert'] = self.create_alert_block(
+            notebook_id,
+            'Performance Alert',
+            'Monitor performance thresholds'
+        )
+
+        return pipeline
+
+# Usage example
+block_manager = BlockTypeManager(
+    'https://your-mindzie-instance.com',
+    'tenant-guid',
+    'project-guid',
+    'your-auth-token'
+)
+
+# Create complete analysis pipeline
+pipeline = block_manager.create_analysis_pipeline('notebook-guid')
+print(f"Created pipeline with {len(pipeline)} blocks")
+</code></pre>
+<h2 id="important-notes">Important Notes</h2>
+<p><strong>Block Dependencies:</strong> Blocks can be chained together where filter blocks reduce data, calculator blocks compute metrics, and alert blocks monitor the results for exceptions.</p>
+<p><strong>Best Practice:</strong> Start with filter blocks to reduce data scope, then use calculator blocks for analysis, and finally add alert blocks for ongoing monitoring and notifications.</p>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

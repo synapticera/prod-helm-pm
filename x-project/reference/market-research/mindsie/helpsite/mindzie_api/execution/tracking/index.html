@@ -1,0 +1,1283 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Tracking | Execution | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../../action/index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../../action/ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="../../action/execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../../action/history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../../block/index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../../block/management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../../block/execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../../block/results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../../block/types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../../dataset/index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../../dataset/creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../../dataset/import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="../../dataset/updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="../../dataset/formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Execution Tracking</a><!--!-->
+                    <a href="../async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Tracking</h1><div class="page-breadcrumb">Execution</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p>Monitor Job Progress</p>
+<p>Track job execution status, monitor progress, and retrieve detailed execution logs.</p>
+<h2 id="get-job-execution-logs">Get Job Execution Logs</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/execution/job/{jobId}/logs</code></p>
+<p>Retrieves detailed execution logs for a specific job, including progress updates, error messages, and performance metrics.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Location</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Path</td>
+<td>The tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Path</td>
+<td>The project identifier</td>
+</tr>
+<tr>
+<td><code>jobId</code></td>
+<td>GUID</td>
+<td>Path</td>
+<td>The job identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-parameters">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>level</code></td>
+<td>string</td>
+<td>Filter by log level: DEBUG, INFO, WARN, ERROR (default: INFO)</td>
+</tr>
+<tr>
+<td><code>fromTime</code></td>
+<td>datetime</td>
+<td>Get logs from this timestamp</td>
+</tr>
+<tr>
+<td><code>toTime</code></td>
+<td>datetime</td>
+<td>Get logs until this timestamp</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>integer</td>
+<td>Maximum number of log entries (default: 1000, max: 10000)</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td>string</td>
+<td>Response format: structured, raw (default: structured)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response</h3>
+<pre><code class="language-json">{
+  "jobId": "cc0e8400-e29b-41d4-a716-446655440000",
+  "jobName": "Customer Journey Analysis",
+  "jobStatus": "Running",
+  "logsSummary": {
+    "totalEntries": 247,
+    "debugEntries": 89,
+    "infoEntries": 145,
+    "warnEntries": 11,
+    "errorEntries": 2,
+    "timeRange": {
+      "startTime": "2024-01-20T10:30:00Z",
+      "endTime": "2024-01-20T10:45:00Z"
+    }
+  },
+  "logs": [
+    {
+      "timestamp": "2024-01-20T10:30:15Z",
+      "level": "INFO",
+      "component": "DataLoader",
+      "stage": "Initialization",
+      "message": "Starting data load for dataset 880e8400-e29b-41d4-a716-446655440000",
+      "details": {
+        "datasetSize": "45.7 MB",
+        "expectedRecords": 192850,
+        "format": "CSV"
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:32:45Z",
+      "level": "INFO",
+      "component": "ProcessMiner",
+      "stage": "Data Processing",
+      "message": "Processing batch 1 of 15",
+      "details": {
+        "batchSize": 12856,
+        "progress": 6.7,
+        "recordsPerSecond": 1247
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:38:22Z",
+      "level": "WARN",
+      "component": "DataValidator",
+      "stage": "Data Processing",
+      "message": "Found 125 records with missing timestamps",
+      "details": {
+        "affectedRecords": 125,
+        "action": "Timestamp inferred from surrounding events",
+        "impactOnAnalysis": "Minimal"
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:41:10Z",
+      "level": "ERROR",
+      "component": "AnalyticsEngine",
+      "stage": "Analysis",
+      "message": "Memory limit exceeded during bottleneck analysis",
+      "details": {
+        "memoryUsage": "3.8 GB",
+        "memoryLimit": "4.0 GB",
+        "action": "Switching to disk-based processing",
+        "retry": true
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:45:33Z",
+      "level": "INFO",
+      "component": "ReportGenerator",
+      "stage": "Output Generation",
+      "message": "Generating process map visualization",
+      "details": {
+        "activitiesCount": 47,
+        "pathsCount": 156,
+        "formatRequested": "SVG"
+      }
+    }
+  ],
+  "executionMetrics": {
+    "currentStage": "Output Generation",
+    "stageProgress": 78,
+    "overallProgress": 85,
+    "processingRate": "1250 records/second",
+    "memoryUsage": "2.3 GB",
+    "cpuUsage": 67,
+    "estimatedCompletion": "2024-01-20T10:52:00Z"
+  }
+}
+</code></pre>
+<h2 id="track-job-progress">Track Job Progress</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/execution/job/{jobId}/progress</code></p>
+<p>Retrieves real-time progress information for a running job, including stage-by-stage completion and performance metrics.</p>
+<h3 id="response-1">Response</h3>
+<pre><code class="language-json">{
+  "jobId": "cc0e8400-e29b-41d4-a716-446655440000",
+  "jobName": "Customer Journey Analysis",
+  "status": "Running",
+  "overallProgress": {
+    "percentage": 85,
+    "startTime": "2024-01-20T10:30:00Z",
+    "elapsedTime": "15 minutes 33 seconds",
+    "estimatedRemaining": "2 minutes 27 seconds",
+    "estimatedCompletion": "2024-01-20T10:52:00Z"
+  },
+  "stages": [
+    {
+      "stageName": "Data Loading",
+      "stageOrder": 1,
+      "status": "Completed",
+      "progress": 100,
+      "startTime": "2024-01-20T10:30:00Z",
+      "endTime": "2024-01-20T10:32:15Z",
+      "duration": "2 minutes 15 seconds",
+      "recordsProcessed": 192850,
+      "metrics": {
+        "throughput": "1427 records/second",
+        "dataValidated": true,
+        "errorsFound": 0
+      }
+    },
+    {
+      "stageName": "Process Discovery",
+      "stageOrder": 2,
+      "status": "Completed",
+      "progress": 100,
+      "startTime": "2024-01-20T10:32:15Z",
+      "endTime": "2024-01-20T10:41:30Z",
+      "duration": "9 minutes 15 seconds",
+      "recordsProcessed": 192850,
+      "metrics": {
+        "activitiesDiscovered": 47,
+        "variantsFound": 234,
+        "pathsIdentified": 156
+      }
+    },
+    {
+      "stageName": "Performance Analysis",
+      "stageOrder": 3,
+      "status": "Running",
+      "progress": 78,
+      "startTime": "2024-01-20T10:41:30Z",
+      "estimatedEndTime": "2024-01-20T10:48:00Z",
+      "recordsProcessed": 150243,
+      "totalRecords": 192850,
+      "metrics": {
+        "bottlenecksIdentified": 8,
+        "waitTimeCalculated": 150243,
+        "cycleTimeCalculated": 150243
+      }
+    },
+    {
+      "stageName": "Report Generation",
+      "stageOrder": 4,
+      "status": "Pending",
+      "progress": 0,
+      "estimatedStartTime": "2024-01-20T10:48:00Z",
+      "estimatedEndTime": "2024-01-20T10:52:00Z"
+    }
+  ],
+  "currentActivity": {
+    "component": "PerformanceAnalyzer",
+    "operation": "Calculating resource utilization metrics",
+    "details": "Processing activity transitions for efficiency analysis"
+  },
+  "resourceUsage": {
+    "memoryUsage": "2.3 GB",
+    "memoryLimit": "4.0 GB",
+    "cpuUsage": 67,
+    "diskUsage": "890 MB",
+    "networkIO": "12 MB",
+    "processingRate": "1250 records/second"
+  },
+  "qualityMetrics": {
+    "dataQualityScore": 94.8,
+    "validationsPassed": 15,
+    "validationsFailed": 1,
+    "warningsGenerated": 11,
+    "errorsEncountered": 2
+  }
+}
+</code></pre>
+<h2 id="get-job-execution-timeline">Get Job Execution Timeline</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/execution/job/{jobId}/timeline</code></p>
+<p>Retrieves a detailed timeline of job execution events, including stage transitions, resource allocation changes, and significant milestones.</p>
+<h3 id="query-parameters-1">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>includeSubEvents</code></td>
+<td>boolean</td>
+<td>Include detailed sub-events (default: false)</td>
+</tr>
+<tr>
+<td><code>granularity</code></td>
+<td>string</td>
+<td>Timeline granularity: seconds, minutes, major_events (default: minutes)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-2">Response</h3>
+<pre><code class="language-json">{
+  "jobId": "cc0e8400-e29b-41d4-a716-446655440000",
+  "jobName": "Customer Journey Analysis",
+  "timelineScope": {
+    "startTime": "2024-01-20T10:30:00Z",
+    "currentTime": "2024-01-20T10:45:33Z",
+    "endTime": null,
+    "granularity": "minutes"
+  },
+  "timeline": [
+    {
+      "timestamp": "2024-01-20T10:30:00Z",
+      "eventType": "JobStarted",
+      "description": "Job execution initiated",
+      "details": {
+        "submittedBy": "user123",
+        "priority": "High",
+        "estimatedDuration": "20-25 minutes",
+        "resourcesAllocated": {
+          "cpuUnits": 2,
+          "memoryGB": 4,
+          "workerNode": "worker-node-02"
+        }
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:30:15Z",
+      "eventType": "StageStarted",
+      "description": "Data Loading stage initiated",
+      "details": {
+        "stageName": "Data Loading",
+        "expectedDuration": "2-3 minutes",
+        "datasetSize": "45.7 MB",
+        "recordCount": 192850
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:32:15Z",
+      "eventType": "StageCompleted",
+      "description": "Data Loading stage completed successfully",
+      "details": {
+        "stageName": "Data Loading",
+        "actualDuration": "2 minutes 15 seconds",
+        "recordsLoaded": 192850,
+        "dataQualityScore": 98.2,
+        "errorsFound": 0
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:32:15Z",
+      "eventType": "StageStarted",
+      "description": "Process Discovery stage initiated",
+      "details": {
+        "stageName": "Process Discovery",
+        "expectedDuration": "8-12 minutes",
+        "algorithm": "Alpha Miner Enhanced"
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:35:30Z",
+      "eventType": "Milestone",
+      "description": "Process model discovered",
+      "details": {
+        "activitiesFound": 47,
+        "uniqueActivities": 47,
+        "processComplexity": "Medium"
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:38:22Z",
+      "eventType": "Warning",
+      "description": "Data quality issue detected",
+      "details": {
+        "issue": "Missing timestamps",
+        "affectedRecords": 125,
+        "resolution": "Timestamps inferred",
+        "impact": "Minimal"
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:41:10Z",
+      "eventType": "Error",
+      "description": "Memory limit approached",
+      "details": {
+        "memoryUsage": "3.8 GB",
+        "memoryLimit": "4.0 GB",
+        "action": "Switched to disk-based processing",
+        "performanceImpact": "15% slower processing"
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:41:30Z",
+      "eventType": "StageCompleted",
+      "description": "Process Discovery stage completed",
+      "details": {
+        "stageName": "Process Discovery",
+        "actualDuration": "9 minutes 15 seconds",
+        "processVariants": 234,
+        "pathsDiscovered": 156
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:41:30Z",
+      "eventType": "StageStarted",
+      "description": "Performance Analysis stage initiated",
+      "details": {
+        "stageName": "Performance Analysis",
+        "expectedDuration": "6-8 minutes",
+        "analysisTypes": ["Bottleneck", "Resource Utilization", "Cycle Time"]
+      }
+    },
+    {
+      "timestamp": "2024-01-20T10:45:33Z",
+      "eventType": "Progress",
+      "description": "Performance Analysis 78% complete",
+      "details": {
+        "stageName": "Performance Analysis",
+        "progress": 78,
+        "currentOperation": "Resource utilization analysis",
+        "recordsProcessed": 150243,
+        "remainingRecords": 42607
+      }
+    }
+  ],
+  "upcomingEvents": [
+    {
+      "estimatedTime": "2024-01-20T10:48:00Z",
+      "eventType": "StageCompletion",
+      "description": "Performance Analysis stage completion expected"
+    },
+    {
+      "estimatedTime": "2024-01-20T10:48:00Z",
+      "eventType": "StageStart",
+      "description": "Report Generation stage start expected"
+    },
+    {
+      "estimatedTime": "2024-01-20T10:52:00Z",
+      "eventType": "JobCompletion",
+      "description": "Job completion expected"
+    }
+  ]
+}
+</code></pre>
+<h2 id="get-job-performance-metrics">Get Job Performance Metrics</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/execution/job/{jobId}/metrics</code></p>
+<p>Retrieves detailed performance metrics for a job execution, including resource utilization, throughput, and efficiency measurements.</p>
+<h3 id="query-parameters-2">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>interval</code></td>
+<td>string</td>
+<td>Metrics collection interval: 1m, 5m, 15m (default: 5m)</td>
+</tr>
+<tr>
+<td><code>metrics</code></td>
+<td>string</td>
+<td>Comma-separated metrics: cpu, memory, disk, network, throughput</td>
+</tr>
+<tr>
+<td><code>includeHistory</code></td>
+<td>boolean</td>
+<td>Include historical metrics data (default: false)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-3">Response</h3>
+<pre><code class="language-json">{
+  "jobId": "cc0e8400-e29b-41d4-a716-446655440000",
+  "metricsCollectionTime": "2024-01-20T10:45:33Z",
+  "currentMetrics": {
+    "resourceUtilization": {
+      "cpu": {
+        "usage": 67,
+        "cores": 2,
+        "efficiency": 89.2
+      },
+      "memory": {
+        "used": "2.3 GB",
+        "allocated": "4.0 GB",
+        "peak": "3.8 GB",
+        "efficiency": 87.5
+      },
+      "disk": {
+        "reads": "450 MB",
+        "writes": "89 MB",
+        "iops": 145,
+        "latency": "12ms"
+      },
+      "network": {
+        "bytesIn": "67 MB",
+        "bytesOut": "12 MB",
+        "connections": 8
+      }
+    },
+    "processing": {
+      "recordsPerSecond": 1250,
+      "recordsProcessed": 150243,
+      "totalRecords": 192850,
+      "processingEfficiency": 78.3,
+      "errorRate": 0.001,
+      "retryRate": 0.015
+    },
+    "stages": {
+      "completed": 2,
+      "running": 1,
+      "pending": 1,
+      "averageStageTime": "5.75 minutes",
+      "stageEfficiency": 91.2
+    }
+  },
+  "historicalMetrics": [
+    {
+      "timestamp": "2024-01-20T10:30:00Z",
+      "cpu": 15,
+      "memory": 0.8,
+      "recordsPerSecond": 0,
+      "stage": "Initialization"
+    },
+    {
+      "timestamp": "2024-01-20T10:35:00Z",
+      "cpu": 85,
+      "memory": 1.9,
+      "recordsPerSecond": 1427,
+      "stage": "Data Loading"
+    },
+    {
+      "timestamp": "2024-01-20T10:40:00Z",
+      "cpu": 72,
+      "memory": 3.2,
+      "recordsPerSecond": 1156,
+      "stage": "Process Discovery"
+    },
+    {
+      "timestamp": "2024-01-20T10:45:00Z",
+      "cpu": 67,
+      "memory": 2.3,
+      "recordsPerSecond": 1250,
+      "stage": "Performance Analysis"
+    }
+  ],
+  "performanceTrends": {
+    "cpuTrend": "Stable",
+    "memoryTrend": "Declining",
+    "throughputTrend": "Improving",
+    "overallEfficiency": "Good",
+    "predictionAccuracy": 94.2
+  },
+  "benchmarks": {
+    "jobType": "ProcessMining",
+    "averageJobDuration": "18.5 minutes",
+    "averageThroughput": "1180 records/second",
+    "currentPerformanceRank": "85th percentile",
+    "similarJobsComparison": {
+      "fasterThan": 85,
+      "similarTo": 12,
+      "slowerThan": 3
+    }
+  }
+}
+</code></pre>
+<h2 id="track-multiple-jobs">Track Multiple Jobs</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/execution/tracking/batch</code></p>
+<p>Retrieves tracking information for multiple jobs simultaneously, useful for dashboard displays and batch monitoring.</p>
+<h3 id="query-parameters-3">Query Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jobIds</code></td>
+<td>string</td>
+<td>Comma-separated list of job IDs to track</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>string</td>
+<td>Filter by status: Running, Queued, Completed, Failed</td>
+</tr>
+<tr>
+<td><code>submittedBy</code></td>
+<td>string</td>
+<td>Filter by user who submitted jobs</td>
+</tr>
+<tr>
+<td><code>includeMetrics</code></td>
+<td>boolean</td>
+<td>Include performance metrics for each job (default: false)</td>
+</tr>
+<tr>
+<td><code>refreshInterval</code></td>
+<td>integer</td>
+<td>Auto-refresh interval in seconds for real-time tracking</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-4">Response</h3>
+<pre><code class="language-json">{
+  "trackingTime": "2024-01-20T10:45:33Z",
+  "jobCount": 5,
+  "summary": {
+    "running": 3,
+    "queued": 1,
+    "completed": 1,
+    "failed": 0
+  },
+  "jobs": [
+    {
+      "jobId": "cc0e8400-e29b-41d4-a716-446655440000",
+      "jobName": "Customer Journey Analysis",
+      "status": "Running",
+      "progress": 85,
+      "startTime": "2024-01-20T10:30:00Z",
+      "estimatedCompletion": "2024-01-20T10:52:00Z",
+      "currentStage": "Performance Analysis",
+      "submittedBy": "user123",
+      "priority": "High",
+      "resourceUsage": {
+        "cpu": 67,
+        "memory": "2.3 GB",
+        "processingRate": "1250 records/second"
+      }
+    },
+    {
+      "jobId": "dd0e8400-e29b-41d4-a716-446655440000",
+      "jobName": "Sales Data Enrichment",
+      "status": "Running",
+      "progress": 45,
+      "startTime": "2024-01-20T10:35:00Z",
+      "estimatedCompletion": "2024-01-20T11:05:00Z",
+      "currentStage": "Data Enrichment",
+      "submittedBy": "system",
+      "priority": "Normal",
+      "resourceUsage": {
+        "cpu": 52,
+        "memory": "1.8 GB",
+        "processingRate": "890 records/second"
+      }
+    },
+    {
+      "jobId": "ee0e8400-e29b-41d4-a716-446655440000",
+      "jobName": "Weekly Report Generation",
+      "status": "Queued",
+      "progress": 0,
+      "queuePosition": 2,
+      "estimatedStartTime": "2024-01-20T10:55:00Z",
+      "estimatedCompletion": "2024-01-20T11:20:00Z",
+      "submittedBy": "user456",
+      "priority": "Normal"
+    }
+  ],
+  "systemHealth": {
+    "overallLoad": 73,
+    "queueHealth": "Good",
+    "resourceAvailability": "Medium",
+    "estimatedCapacity": "6 additional jobs"
+  }
+}
+</code></pre>
+<h2 id="subscribe-to-job-events">Subscribe to Job Events</h2>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/execution/job/{jobId}/subscribe</code></p>
+<p>Establishes a real-time subscription to job events for live tracking. Supports WebSocket connections and webhook notifications.</p>
+<h3 id="request-body">Request Body</h3>
+<pre><code class="language-json">{
+  "subscriptionType": "webhook",
+  "webhookUrl": "https://your-app.com/webhooks/job-events",
+  "events": [
+    "stageStarted",
+    "stageCompleted",
+    "progressUpdate",
+    "error",
+    "warning",
+    "jobCompleted"
+  ],
+  "filters": {
+    "minProgressIncrement": 5,
+    "includeDebugEvents": false,
+    "notifyOnErrors": true
+  },
+  "authentication": {
+    "type": "bearer",
+    "token": "your-webhook-auth-token"
+  }
+}
+</code></pre>
+<h3 id="response-5">Response</h3>
+<pre><code class="language-json">{
+  "subscriptionId": "sub-123e8400-e29b-41d4-a716-446655440000",
+  "jobId": "cc0e8400-e29b-41d4-a716-446655440000",
+  "subscriptionType": "webhook",
+  "status": "Active",
+  "webhookUrl": "https://your-app.com/webhooks/job-events",
+  "eventsSubscribed": [
+    "stageStarted",
+    "stageCompleted",
+    "progressUpdate",
+    "error",
+    "warning",
+    "jobCompleted"
+  ],
+  "createdAt": "2024-01-20T10:45:33Z",
+  "expiresAt": "2024-01-20T18:45:33Z"
+}
+</code></pre>
+<h2 id="get-job-dependencies">Get Job Dependencies</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/execution/job/{jobId}/dependencies</code></p>
+<p>Retrieves information about job dependencies, including prerequisite jobs, dependent resources, and blocking conditions.</p>
+<h3 id="response-6">Response</h3>
+<pre><code class="language-json">{
+  "jobId": "cc0e8400-e29b-41d4-a716-446655440000",
+  "dependencies": {
+    "prerequisiteJobs": [
+      {
+        "jobId": "aa0e8400-e29b-41d4-a716-446655440000",
+        "jobName": "Data Preparation",
+        "status": "Completed",
+        "completedAt": "2024-01-20T10:25:00Z",
+        "dependency": "Dataset must be validated before analysis"
+      }
+    ],
+    "resourceDependencies": [
+      {
+        "resourceType": "Dataset",
+        "resourceId": "880e8400-e29b-41d4-a716-446655440000",
+        "resourceName": "Customer Journey Data",
+        "status": "Available",
+        "lastModified": "2024-01-20T10:25:00Z"
+      },
+      {
+        "resourceType": "ComputeNode",
+        "resourceId": "worker-node-02",
+        "status": "Allocated",
+        "allocatedAt": "2024-01-20T10:30:00Z"
+      }
+    ],
+    "dependentJobs": [
+      {
+        "jobId": "ee0e8400-e29b-41d4-a716-446655440000",
+        "jobName": "Weekly Report Generation",
+        "status": "Queued",
+        "waitingFor": "Customer Journey Analysis results"
+      }
+    ]
+  },
+  "blockingConditions": [
+    {
+      "condition": "Memory allocation below 2GB",
+      "status": "Resolved",
+      "resolvedAt": "2024-01-20T10:30:00Z",
+      "resolution": "Additional memory allocated"
+    }
+  ],
+  "dependencyGraph": {
+    "nodes": [
+      {
+        "id": "aa0e8400-e29b-41d4-a716-446655440000",
+        "type": "PrerequisiteJob",
+        "status": "Completed"
+      },
+      {
+        "id": "cc0e8400-e29b-41d4-a716-446655440000",
+        "type": "CurrentJob",
+        "status": "Running"
+      },
+      {
+        "id": "ee0e8400-e29b-41d4-a716-446655440000",
+        "type": "DependentJob",
+        "status": "Queued"
+      }
+    ],
+    "edges": [
+      {
+        "from": "aa0e8400-e29b-41d4-a716-446655440000",
+        "to": "cc0e8400-e29b-41d4-a716-446655440000",
+        "type": "prerequisite"
+      },
+      {
+        "from": "cc0e8400-e29b-41d4-a716-446655440000",
+        "to": "ee0e8400-e29b-41d4-a716-446655440000",
+        "type": "dependency"
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="example-complete-job-tracking-workflow">Example: Complete Job Tracking Workflow</h2>
+<p>This example demonstrates comprehensive job tracking and monitoring:</p>
+<pre><code class="language-javascript">// 1. Start tracking a job
+const trackJob = async (jobId) =&gt; {
+  // Get initial job status
+  const progress = await getJobProgress(jobId);
+  console.log(`Tracking job: ${progress.jobName}`);
+  console.log(`Current progress: ${progress.overallProgress.percentage}%`);
+
+  // Subscribe to real-time events
+  await subscribeToJobEvents(jobId);
+
+  return progress;
+};
+
+// 2. Get detailed job progress
+const getJobProgress = async (jobId) =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/execution/job/${jobId}/progress`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  return await response.json();
+};
+
+// 3. Subscribe to real-time job events
+const subscribeToJobEvents = async (jobId) =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/execution/job/${jobId}/subscribe`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    },
+    body: JSON.stringify({
+      subscriptionType: 'webhook',
+      webhookUrl: 'https://your-app.com/webhooks/job-events',
+      events: [
+        'stageStarted',
+        'stageCompleted',
+        'progressUpdate',
+        'error',
+        'warning',
+        'jobCompleted'
+      ],
+      filters: {
+        minProgressIncrement: 10,
+        includeDebugEvents: false,
+        notifyOnErrors: true
+      }
+    })
+  });
+
+  const subscription = await response.json();
+  console.log(`Subscribed to job events: ${subscription.subscriptionId}`);
+
+  return subscription;
+};
+
+// 4. Get job performance metrics
+const getJobMetrics = async (jobId) =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/execution/job/${jobId}/metrics?interval=5m&amp;includeHistory=true`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  const metrics = await response.json();
+  console.log('Performance Metrics:');
+  console.log(`  CPU Usage: ${metrics.currentMetrics.resourceUtilization.cpu.usage}%`);
+  console.log(`  Memory Usage: ${metrics.currentMetrics.resourceUtilization.memory.used}`);
+  console.log(`  Processing Rate: ${metrics.currentMetrics.processing.recordsPerSecond} records/sec`);
+
+  return metrics;
+};
+
+// 5. Get job execution logs
+const getJobLogs = async (jobId, level = 'INFO') =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/execution/job/${jobId}/logs?level=${level}&amp;limit=100`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  const logs = await response.json();
+  console.log(`Retrieved ${logs.logs.length} log entries`);
+
+  // Display recent important logs
+  logs.logs.filter(log =&gt; log.level !== 'DEBUG').forEach(log =&gt; {
+    console.log(`[${log.timestamp}] ${log.level}: ${log.message}`);
+  });
+
+  return logs;
+};
+
+// 6. Track multiple jobs in a dashboard
+const trackMultipleJobs = async (jobIds) =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/execution/tracking/batch?jobIds=${jobIds.join(',')}&amp;includeMetrics=true`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  const tracking = await response.json();
+  console.log(`Tracking ${tracking.jobCount} jobs:`);
+
+  tracking.jobs.forEach(job =&gt; {
+    console.log(`  ${job.jobName}: ${job.status} (${job.progress}%)`);
+  });
+
+  return tracking;
+};
+
+// 7. Monitor job timeline
+const getJobTimeline = async (jobId) =&gt; {
+  const response = await fetch(`/api/{tenantId}/{projectId}/execution/job/${jobId}/timeline?includeSubEvents=true&amp;granularity=minutes`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+
+  const timeline = await response.json();
+  console.log('Job Timeline:');
+
+  timeline.timeline.forEach(event =&gt; {
+    console.log(`[${event.timestamp}] ${event.eventType}: ${event.description}`);
+  });
+
+  return timeline;
+};
+
+// Execute comprehensive tracking workflow
+const runTrackingWorkflow = async (jobId) =&gt; {
+  try {
+    console.log('Starting comprehensive job tracking...');
+
+    // Track job progress
+    const progress = await trackJob(jobId);
+
+    // Get performance metrics
+    const metrics = await getJobMetrics(jobId);
+
+    // Get execution logs
+    const logs = await getJobLogs(jobId, 'WARN');
+
+    // Get timeline
+    const timeline = await getJobTimeline(jobId);
+
+    // Monitor until completion
+    const monitoring = setInterval(async () =&gt; {
+      const currentProgress = await getJobProgress(jobId);
+
+      if (currentProgress.status === 'Completed') {
+        console.log('Job completed successfully!');
+        clearInterval(monitoring);
+
+        // Get final metrics
+        const finalMetrics = await getJobMetrics(jobId);
+        console.log(`Final efficiency: ${finalMetrics.performanceTrends.overallEfficiency}`);
+
+      } else if (currentProgress.status === 'Failed') {
+        console.log('Job failed!');
+        clearInterval(monitoring);
+
+        // Get error logs
+        const errorLogs = await getJobLogs(jobId, 'ERROR');
+        console.log('Error details:', errorLogs.logs);
+      } else {
+        console.log(`Progress update: ${currentProgress.overallProgress.percentage}%`);
+      }
+    }, 30000); // Check every 30 seconds
+
+  } catch (error) {
+    console.error('Tracking workflow failed:', error);
+  }
+};
+
+// Start tracking
+runTrackingWorkflow('cc0e8400-e29b-41d4-a716-446655440000');
+</code></pre>
+<h2 id="python-example">Python Example</h2>
+<pre><code class="language-python">import requests
+import time
+import json
+from datetime import datetime, timedelta
+
+class JobTracker:
+    def __init__(self, base_url, tenant_id, project_id, token):
+        self.base_url = base_url
+        self.tenant_id = tenant_id
+        self.project_id = project_id
+        self.headers = {
+            'Authorization': f'Bearer {token}',
+            'Content-Type': 'application/json'
+        }
+
+    def get_job_progress(self, job_id):
+        """Get current job progress"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/execution/job/{job_id}/progress"
+        response = requests.get(url, headers=self.headers)
+        return response.json()
+
+    def get_job_logs(self, job_id, level='INFO', limit=1000):
+        """Get job execution logs"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/execution/job/{job_id}/logs"
+        params = {'level': level, 'limit': limit}
+        response = requests.get(url, params=params, headers=self.headers)
+        return response.json()
+
+    def get_job_metrics(self, job_id, interval='5m', include_history=False):
+        """Get job performance metrics"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/execution/job/{job_id}/metrics"
+        params = {
+            'interval': interval,
+            'includeHistory': str(include_history).lower()
+        }
+        response = requests.get(url, params=params, headers=self.headers)
+        return response.json()
+
+    def get_job_timeline(self, job_id, include_sub_events=False, granularity='minutes'):
+        """Get job execution timeline"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/execution/job/{job_id}/timeline"
+        params = {
+            'includeSubEvents': str(include_sub_events).lower(),
+            'granularity': granularity
+        }
+        response = requests.get(url, params=params, headers=self.headers)
+        return response.json()
+
+    def track_multiple_jobs(self, job_ids, include_metrics=False):
+        """Track multiple jobs simultaneously"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/execution/tracking/batch"
+        params = {
+            'jobIds': ','.join(job_ids),
+            'includeMetrics': str(include_metrics).lower()
+        }
+        response = requests.get(url, params=params, headers=self.headers)
+        return response.json()
+
+    def subscribe_to_job_events(self, job_id, webhook_url, events=None):
+        """Subscribe to real-time job events"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/execution/job/{job_id}/subscribe"
+        payload = {
+            'subscriptionType': 'webhook',
+            'webhookUrl': webhook_url,
+            'events': events or [
+                'stageStarted', 'stageCompleted', 'progressUpdate',
+                'error', 'warning', 'jobCompleted'
+            ],
+            'filters': {
+                'minProgressIncrement': 10,
+                'includeDebugEvents': False,
+                'notifyOnErrors': True
+            }
+        }
+        response = requests.post(url, json=payload, headers=self.headers)
+        return response.json()
+
+    def get_job_dependencies(self, job_id):
+        """Get job dependencies and blocking conditions"""
+        url = f"{self.base_url}/api/{self.tenant_id}/{self.project_id}/execution/job/{job_id}/dependencies"
+        response = requests.get(url, headers=self.headers)
+        return response.json()
+
+    def monitor_job_until_completion(self, job_id, check_interval=30, timeout=3600):
+        """Monitor job until completion with detailed tracking"""
+        start_time = time.time()
+
+        print(f"Starting monitoring for job {job_id}")
+
+        # Get initial state
+        progress = self.get_job_progress(job_id)
+        print(f"Job: {progress['jobName']}")
+        print(f"Initial progress: {progress['overallProgress']['percentage']}%")
+
+        while time.time() - start_time &lt; timeout:
+            try:
+                # Get current progress
+                progress = self.get_job_progress(job_id)
+                status = progress['status']
+                percentage = progress['overallProgress']['percentage']
+
+                print(f"Progress: {percentage}% - Status: {status}")
+
+                if status == 'Completed':
+                    print("Job completed successfully!")
+
+                    # Get final metrics
+                    metrics = self.get_job_metrics(job_id, include_history=True)
+                    print(f"Final efficiency: {metrics['performanceTrends']['overallEfficiency']}")
+                    print(f"Total duration: {progress['overallProgress']['elapsedTime']}")
+
+                    return progress
+
+                elif status == 'Failed':
+                    print("Job failed!")
+
+                    # Get error logs
+                    logs = self.get_job_logs(job_id, level='ERROR')
+                    print("Error logs:")
+                    for log in logs['logs']:
+                        print(f"  [{log['timestamp']}] {log['message']}")
+
+                    return progress
+
+                elif status == 'Running':
+                    # Get performance metrics
+                    metrics = self.get_job_metrics(job_id)
+                    cpu_usage = metrics['currentMetrics']['resourceUtilization']['cpu']['usage']
+                    memory_used = metrics['currentMetrics']['resourceUtilization']['memory']['used']
+                    processing_rate = metrics['currentMetrics']['processing']['recordsPerSecond']
+
+                    print(f"  CPU: {cpu_usage}%, Memory: {memory_used}, Rate: {processing_rate} rec/sec")
+
+                    # Check for warnings or errors
+                    recent_logs = self.get_job_logs(job_id, level='WARN')
+                    recent_warnings = [log for log in recent_logs['logs']
+                                     if (datetime.fromisoformat(log['timestamp'].replace('Z', '+00:00'))
+                                         &gt; datetime.now().replace(tzinfo=None) - timedelta(minutes=1))]
+
+                    if recent_warnings:
+                        for warning in recent_warnings:
+                            print(f"  WARNING: {warning['message']}")
+
+                time.sleep(check_interval)
+
+            except Exception as e:
+                print(f"Monitoring error: {e}")
+                time.sleep(60)
+
+        raise TimeoutError(f"Job {job_id} monitoring timed out after {timeout} seconds")
+
+    def create_tracking_dashboard(self, job_ids):
+        """Create a simple tracking dashboard for multiple jobs"""
+        print("Job Tracking Dashboard")
+        print("=" * 50)
+
+        while True:
+            try:
+                tracking = self.track_multiple_jobs(job_ids, include_metrics=True)
+
+                print(f"\nUpdate: {tracking['trackingTime']}")
+                print(f"System Load: {tracking['systemHealth']['overallLoad']}%")
+                print(f"Queue Health: {tracking['systemHealth']['queueHealth']}")
+                print()
+
+                for job in tracking['jobs']:
+                    status_icon = "Done" if job['status'] == 'Completed' else "Running" if job['status'] == 'Running' else "Waiting"
+                    print(f"{status_icon} {job['jobName']}: {job['progress']}% ({job['status']})")
+
+                    if job['status'] == 'Running' and 'resourceUsage' in job:
+                        print(f"    CPU: {job['resourceUsage']['cpu']}%, Memory: {job['resourceUsage']['memory']}")
+                        print(f"    Rate: {job['resourceUsage']['processingRate']}")
+
+                    if job['status'] == 'Queued':
+                        print(f"    Queue position: {job.get('queuePosition', 'Unknown')}")
+                        print(f"    Estimated start: {job.get('estimatedStartTime', 'Unknown')}")
+
+                print("\n" + "=" * 50)
+
+                # Check if all jobs are completed
+                active_jobs = [job for job in tracking['jobs'] if job['status'] in ['Running', 'Queued']]
+                if not active_jobs:
+                    print("All jobs completed!")
+                    break
+
+                time.sleep(30)
+
+            except KeyboardInterrupt:
+                print("\nDashboard stopped by user")
+                break
+            except Exception as e:
+                print(f"Dashboard error: {e}")
+                time.sleep(60)
+
+# Usage example
+tracker = JobTracker(
+    'https://your-mindzie-instance.com',
+    'tenant-guid',
+    'project-guid',
+    'your-auth-token'
+)
+
+try:
+    # Monitor a single job with comprehensive tracking
+    job_id = 'cc0e8400-e29b-41d4-a716-446655440000'
+
+    # Get initial job state
+    progress = tracker.get_job_progress(job_id)
+    print(f"Tracking job: {progress['jobName']}")
+    print(f"Status: {progress['status']}")
+    print(f"Progress: {progress['overallProgress']['percentage']}%")
+
+    # Get job dependencies
+    dependencies = tracker.get_job_dependencies(job_id)
+    if dependencies['dependencies']['prerequisiteJobs']:
+        print("Prerequisites:")
+        for prereq in dependencies['dependencies']['prerequisiteJobs']:
+            print(f"  - {prereq['jobName']}: {prereq['status']}")
+
+    # Monitor until completion
+    final_status = tracker.monitor_job_until_completion(job_id)
+
+    # Get final timeline
+    timeline = tracker.get_job_timeline(job_id, include_sub_events=True)
+    print("\nExecution Timeline:")
+    for event in timeline['timeline'][-5:]:  # Last 5 events
+        print(f"  [{event['timestamp']}] {event['eventType']}: {event['description']}")
+
+except Exception as e:
+    print(f"Error in job tracking: {e}")
+</code></pre>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

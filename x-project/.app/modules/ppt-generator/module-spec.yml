@@ -1,0 +1,22 @@
+name: ppt-generator
+display_name: PPT Generator
+description: Interactive PowerPoint presentation generator using HTML2PPTX
+  workflow with Synaptic branding
+version: 1.0.0
+commands:
+  - x-ppt-generate.md
+agents:
+  - x-ppt-generator-agent.md
+skills:
+  - pptx/SKILL.md
+dependencies:
+  - Node.js >= 18.0.0
+  - Python >= 3.8
+  - markitdown
+  - lxml
+default_for_types: []
+claude_addendum: CLAUDE.md
+menu_items:
+  - label: Generate Presentation
+    command: x-ppt-generate
+    description: Create PowerPoint presentation interactively

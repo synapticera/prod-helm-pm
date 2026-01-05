@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Sharing | Dashboard | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../../action/index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../../action/ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="../../action/execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../../action/history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../../block/index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../../block/management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../../block/execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../../block/results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../../block/types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="index.html" class="nav-subitem active"><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../../dataset/index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../../dataset/creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../../dataset/import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="../../dataset/updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="../../dataset/formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Sharing</h1><div class="page-breadcrumb">Dashboard</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="generate-shareable-dashboard-urls">Generate Shareable Dashboard URLs</h2>
+<p>Generate shareable links and embed URLs for dashboard access. Share dashboards with stakeholders or embed them in external applications.</p>
+<h2 id="get-dashboard-urls">Get Dashboard URLs</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/dashboard/{dashboardId}/url</code></p>
+<p>Generates shareable URLs for a dashboard, including standard view URLs and embed URLs for iframe integration.</p>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The project identifier</td>
+</tr>
+<tr>
+<td><code>dashboardId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The dashboard identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-200-ok">Response (200 OK)</h3>
+<pre><code class="language-json">{
+  "dashboardId": "880e8400-e29b-41d4-a716-446655440000",
+  "url": "https://your-instance.com/dashboard/880e8400-e29b-41d4-a716-446655440000",
+  "embedUrl": "https://your-instance.com/embed/dashboard/880e8400-e29b-41d4-a716-446655440000"
+}
+</code></pre>
+<h3 id="response-fields">Response Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dashboardId</code></td>
+<td>GUID</td>
+<td>The dashboard identifier</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>Standard dashboard URL (requires authentication)</td>
+</tr>
+<tr>
+<td><code>embedUrl</code></td>
+<td>string</td>
+<td>Embed URL for iframe integration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-responses">Error Responses</h3>
+<p><strong>Not Found (404):</strong></p>
+<pre><code class="language-json">{
+  "Error": "Dashboard not found",
+  "DashboardId": "880e8400-e29b-41d4-a716-446655440000"
+}
+</code></pre>
+<h2 id="dashboard-embedding">Dashboard Embedding</h2>
+<p>mindzieStudio dashboards can be embedded in external applications using iframe technology.</p>
+<h3 id="basic-embedding">Basic Embedding</h3>
+<pre><code class="language-html">&lt;iframe
+  src="https://your-instance.com/embed/dashboard/880e8400-e29b-41d4-a716-446655440000"
+  width="100%"
+  height="600"
+  frameborder="0"
+  allowfullscreen&gt;
+&lt;/iframe&gt;
+</code></pre>
+<h3 id="responsive-embedding">Responsive Embedding</h3>
+<pre><code class="language-html">&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"&gt;
+  &lt;iframe
+    src="https://your-instance.com/embed/dashboard/880e8400-e29b-41d4-a716-446655440000"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    frameborder="0"
+    allowfullscreen&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="url-types">URL Types</h2>
+<h3 id="standard-url">Standard URL</h3>
+<p>The standard dashboard URL requires user authentication:</p>
+<ul>
+<li>Users must log in to mindzieStudio to view the dashboard</li>
+<li>Provides full dashboard interactivity</li>
+<li>Suitable for internal team sharing</li>
+</ul>
+<h3 id="embed-url">Embed URL</h3>
+<p>The embed URL is designed for iframe integration:</p>
+<ul>
+<li>Simplified interface optimized for embedding</li>
+<li>May require additional authentication configuration</li>
+<li>Suitable for portals and external applications</li>
+</ul>
+<h2 id="implementation-examples">Implementation Examples</h2>
+<h3 id="curl">cURL</h3>
+<pre><code class="language-bash"># Get dashboard URLs
+curl -X GET "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/dashboard/880e8400-e29b-41d4-a716-446655440000/url" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+</code></pre>
+<h3 id="javascriptnode.js">JavaScript/Node.js</h3>
+<pre><code class="language-javascript">const TENANT_ID = '12345678-1234-1234-1234-123456789012';
+const PROJECT_ID = '87654321-4321-4321-4321-210987654321';
+const BASE_URL = 'https://your-mindzie-instance.com';
+
+async function getDashboardUrls(dashboardId, token) {
+  const url = `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/dashboard/${dashboardId}/url`;
+
+  const response = await fetch(url, {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    return await response.json();
+  } else if (response.status === 404) {
+    throw new Error('Dashboard not found');
+  } else {
+    throw new Error(`Failed to get URLs: ${response.status}`);
+  }
+}
+
+// Generate embed code
+function generateEmbedCode(embedUrl, width = '100%', height = 600) {
+  return `&lt;iframe
+  src="../$%7BembedUrl%7D/index.html"
+  width="${width}"
+  height="${height}"
+  frameborder="0"
+  allowfullscreen&gt;
+&lt;/iframe&gt;`;
+}
+
+// Usage
+const urls = await getDashboardUrls('dashboard-guid', 'your-auth-token');
+
+console.log(`Dashboard URL: ${urls.url}`);
+console.log(`Embed URL: ${urls.embedUrl}`);
+console.log('\nEmbed code:');
+console.log(generateEmbedCode(urls.embedUrl));
+</code></pre>
+<h3 id="python">Python</h3>
+<pre><code class="language-python">import requests
+
+TENANT_ID = '12345678-1234-1234-1234-123456789012'
+PROJECT_ID = '87654321-4321-4321-4321-210987654321'
+BASE_URL = 'https://your-mindzie-instance.com'
+
+def get_dashboard_urls(dashboard_id, token):
+    """Get shareable URLs for a dashboard."""
+    url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/dashboard/{dashboard_id}/url'
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'application/json'
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.ok:
+        return response.json()
+    elif response.status_code == 404:
+        raise Exception('Dashboard not found')
+    else:
+        raise Exception(f'Failed to get URLs: {response.status_code}')
+
+def generate_embed_code(embed_url, width='100%', height=600):
+    """Generate HTML embed code for a dashboard."""
+    return f'''&lt;iframe
+  src="../%7Bembed_url%7D/index.html"
+  width="{width}"
+  height="{height}"
+  frameborder="0"
+  allowfullscreen&gt;
+&lt;/iframe&gt;'''
+
+# Usage
+urls = get_dashboard_urls('dashboard-guid', 'your-auth-token')
+
+print(f"Dashboard URL: {urls['url']}")
+print(f"Embed URL: {urls['embedUrl']}")
+print('\nEmbed code:')
+print(generate_embed_code(urls['embedUrl']))
+</code></pre>
+<h3 id="c">C#</h3>
+<pre><code class="language-csharp">using System;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+public class DashboardUrlResponse
+{
+    public Guid DashboardId { get; set; }
+    public string Url { get; set; }
+    public string EmbedUrl { get; set; }
+}
+
+public class DashboardSharingClient
+{
+    private readonly HttpClient _httpClient;
+    private readonly string _baseUrl;
+    private readonly Guid _tenantId;
+    private readonly Guid _projectId;
+
+    public DashboardSharingClient(string baseUrl, Guid tenantId, Guid projectId, string accessToken)
+    {
+        _baseUrl = baseUrl;
+        _tenantId = tenantId;
+        _projectId = projectId;
+        _httpClient = new HttpClient();
+        _httpClient.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+    }
+
+    public async Task&lt;DashboardUrlResponse&gt; GetDashboardUrlsAsync(Guid dashboardId)
+    {
+        var url = $"{_baseUrl}/api/{_tenantId}/{_projectId}/dashboard/{dashboardId}/url";
+        var response = await _httpClient.GetAsync(url);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize&lt;DashboardUrlResponse&gt;(json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+        else if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+        {
+            throw new Exception($"Dashboard {dashboardId} not found");
+        }
+
+        throw new Exception($"Failed to get URLs: {response.StatusCode}");
+    }
+
+    public string GenerateEmbedCode(string embedUrl, string width = "100%", int height = 600)
+    {
+        return $@"&lt;iframe
+  src=""{embedUrl}""
+  width=""{width}""
+  height=""{height}""
+  frameborder=""0""
+  allowfullscreen&gt;
+&lt;/iframe&gt;";
+    }
+}
+
+// Usage
+var client = new DashboardSharingClient(
+    "https://your-mindzie-instance.com",
+    Guid.Parse("12345678-1234-1234-1234-123456789012"),
+    Guid.Parse("87654321-4321-4321-4321-210987654321"),
+    "your-access-token");
+
+var urls = await client.GetDashboardUrlsAsync(Guid.Parse("dashboard-guid"));
+
+Console.WriteLine($"Dashboard URL: {urls.Url}");
+Console.WriteLine($"Embed URL: {urls.EmbedUrl}");
+Console.WriteLine("\nEmbed code:");
+Console.WriteLine(client.GenerateEmbedCode(urls.EmbedUrl));
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><strong>Authentication:</strong> Standard URLs require user authentication. Plan your sharing strategy accordingly.</li>
+<li><strong>Embedding:</strong> Use embed URLs when integrating dashboards into external applications or portals.</li>
+<li><strong>Responsive Design:</strong> Use responsive iframe techniques for mobile-friendly embedding.</li>
+<li><strong>Security:</strong> Consider your organization's security policies when sharing dashboard URLs externally.</li>
+</ul>
+<h2 id="important-notes">Important Notes</h2>
+<ul>
+<li><strong>Authentication Required:</strong> Both URL types may require authentication depending on your security configuration.</li>
+<li><strong>Access Control:</strong> Users accessing shared URLs must have appropriate permissions for the tenant and project.</li>
+<li><strong>Public Sharing:</strong> Extended public sharing features (password protection, expiration, etc.) are managed through the mindzieStudio UI.</li>
+</ul>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

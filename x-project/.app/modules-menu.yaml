@@ -1,0 +1,147 @@
+version: "1.0"
+title: Modules Menu
+sections:
+  Build Workflow:
+    id: grp-1767534428492-kqavv
+    description: ""
+    open: false
+    items:
+      - name: Intake
+        action: cc-command
+        id: itm-1767534428492-6sijv
+        source_module: core
+        prompt: /x-intake
+        description: Intake new requirements
+        items: []
+      - name: Intake from File
+        action: cc-command
+        id: itm-1767534428492-2ukph
+        source_module: core
+        prompt: /x-intake-file
+        description: Intake from intake.md file
+        items: []
+      - name: Design
+        action: cc-command
+        id: itm-1767534428492-hdoeu
+        source_module: core
+        prompt: /x-design
+        description: Build design for requirements
+        items: []
+      - name: Get Tasks
+        action: cc-command
+        id: itm-1767534428492-21425
+        source_module: core
+        prompt: /x-get-tasks
+        description: Decompose into backlog tasks
+        items: []
+      - name: Do Tasks
+        action: cc-command
+        id: itm-1767534428492-zpnus
+        source_module: core
+        prompt: /x-do-tasks
+        description: Implement open tasks
+        items: []
+      - name: QA
+        action: cc-command
+        id: itm-1767534428492-o5ury
+        source_module: core
+        prompt: /x-qa
+        description: Run QA checks
+        items: []
+      - name: Create PR
+        action: cc-command
+        id: itm-1767534428492-dujss
+        source_module: core
+        prompt: /x-pr
+        description: Create pull request
+        items: []
+  Tasks & Backlog:
+    id: grp-1767534428492-e2p5s
+    description: ""
+    open: false
+    items:
+      - name: Add Task
+        action: cc-command
+        id: itm-1767534428492-hdo2g
+        source_module: core
+        prompt: /x-add-task
+        description: Add task to backlog
+        items: []
+      - name: Archive Tasks
+        action: cc-command
+        id: itm-1767534428492-u8b96
+        source_module: core
+        prompt: /x-archive-tasks
+        description: Archive completed tasks
+        items: []
+      - name: Task Board
+        action: browser
+        id: itm-1767534428492-a1mml
+        source_module: core
+        url: https://backlog.synapticera.com
+        description: Open backlog board
+        items: []
+  Knowledge Base:
+    id: grp-1767534428492-42rsg
+    description: ""
+    open: false
+    items:
+      - name: Add Knowledge
+        action: cc-command
+        id: itm-1767534428492-89zt9
+        source_module: core
+        prompt: /x-kb-add
+        description: Add item to knowledge base
+        items: []
+  Project Files:
+    id: grp-1767534428492-595gw
+    description: ""
+    open: false
+    items:
+      - name: Project Data
+        action: edit-file
+        id: itm-1767534428492-vngxs
+        source_module: core
+        file: x-project/project-data.md
+        description: Project metadata
+        items: []
+      - name: Project Notes
+        action: edit-file
+        id: itm-1767534428492-vaz6y
+        source_module: core
+        file: x-project/project-notes.md
+        description: Project notes
+        items: []
+      - name: Master Spec
+        action: edit-file
+        id: itm-1767534428492-keev8
+        source_module: core
+        file: x-project/master-spec.md
+        description: Master specification
+        items: []
+      - name: Master State
+        action: edit-file
+        id: itm-1767534428492-j9qm0
+        source_module: core
+        file: x-project/master-state.md
+        description: Current project state
+        items: []
+      - name: CLAUDE.md
+        action: edit-file
+        id: itm-1767534428492-glcam
+        source_module: core
+        file: CLAUDE.md
+        description: Workflow configuration
+        items: []
+  Project Management:
+    id: grp-1767534428492-0drxc
+    description: ""
+    open: false
+    items:
+      - name: PM Help
+        action: cc-command
+        id: itm-1767534428492-fmggz
+        source_module: pm-core
+        prompt: /x-pm-help
+        description: Get help with PM commands and workflows
+        items: []

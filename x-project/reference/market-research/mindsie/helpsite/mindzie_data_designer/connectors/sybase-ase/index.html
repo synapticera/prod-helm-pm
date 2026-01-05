@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Sybase Ase | Connectors | mindzieDataDesigner Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">DataDesigner Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../index.html" class="product-item active">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieDataDesigner</strong></span></a><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="data-transformation-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Data Transformation</span></div>
+                <div id="data-transformation" class="nav-section-content"><a href="../../data-transformation/data-etl/index.html" class="nav-subitem ">Data Ingestion and ETL</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="database-connectors-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Database Connectors</span></div>
+                <div id="database-connectors" class="nav-section-content"><a href="../overview/index.html" class="nav-subitem ">Overview</a><!--!-->
+                    <a href="../sqlite/index.html" class="nav-subitem ">SQLite</a><!--!-->
+                    <a href="../sql-server/index.html" class="nav-subitem ">Microsoft SQL Server</a><!--!-->
+                    <a href="../oracle/index.html" class="nav-subitem ">Oracle</a><!--!-->
+                    <a href="../sap-hana/index.html" class="nav-subitem ">SAP HANA</a><!--!-->
+                    <a href="../mysql/index.html" class="nav-subitem ">MySQL</a><!--!-->
+                    <a href="../postgresql/index.html" class="nav-subitem ">PostgreSQL</a><!--!-->
+                    <a href="../odbc/index.html" class="nav-subitem ">ODBC</a><!--!-->
+                    <a href="../ibm-db2/index.html" class="nav-subitem ">IBM DB2</a><!--!-->
+                    <a href="../snowflake/index.html" class="nav-subitem ">Snowflake</a><!--!-->
+                    <a href="../microsoft-access/index.html" class="nav-subitem ">Microsoft Access</a><!--!-->
+                    <a href="../vertica/index.html" class="nav-subitem ">Vertica</a><!--!-->
+                    <a href="../h2/index.html" class="nav-subitem ">H2</a><!--!-->
+                    <a href="../amazon-redshift/index.html" class="nav-subitem ">Amazon Redshift</a><!--!-->
+                    <a href="index.html" class="nav-subitem active">Sybase ASE</a><!--!-->
+                    <a href="../firebird/index.html" class="nav-subitem ">Firebird</a><!--!-->
+                    <a href="../teradata/index.html" class="nav-subitem ">Teradata</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Sybase Ase</h1><div class="page-breadcrumb">Connectors</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p><strong>Category:</strong> Database Connectors</p>
+<h2 id="introduction">Introduction</h2>
+<p>This document is created to help setup a mindzieDataDesigner connector to Sybase ASE database. The mindzieDataDesigner is the ETL tool used by mindzieStudio to convert database tables to process mining event logs. The purpose of this document is to help creating the connection string and opening ports on the firewall if required.</p>
+<h2 id="overview">Overview</h2>
+<p>The Sybase ASE connector provides connectivity to Sybase Adaptive Server Enterprise databases. This connector supports Sybase's unique features and is optimized for enterprise environments where Sybase ASE is used for business-critical applications.</p>
+<h2 id="system-requirements">System Requirements</h2>
+<ul>
+<li><strong>Database System:</strong> Sybase ASE 15.0 or later (16.0+ recommended)</li>
+<li><strong>Platform Support:</strong> Unix, Linux, Windows</li>
+<li><strong>Dependencies:</strong> Sybase ADO.NET Data Provider or ODBC driver</li>
+<li><strong>Network:</strong> TCP/IP connectivity to Sybase server</li>
+</ul>
+<h2 id="connection-string-format">Connection String Format</h2>
+<h3 id="ado.net-provider">ADO.NET Provider</h3>
+<pre><code>Data Source=hostname:port;Database=database_name;UID=username;PWD=password;
+</code></pre>
+<h3 id="odbc-connection">ODBC Connection</h3>
+<pre><code>Driver={Sybase ASE ODBC Driver};Server=hostname;Port=port;Database=database_name;UID=username;PWD=password;
+</code></pre>
+<h2 id="connection-examples">Connection Examples</h2>
+<h3 id="standard-connection">Standard Connection</h3>
+<pre><code>Data Source=sybase-server:5000;Database=process_db;UID=mindzie_user;PWD=SecurePassword123;
+</code></pre>
+<h3 id="connection-with-additional-parameters">Connection with Additional Parameters</h3>
+<pre><code>Data Source=sybase-prod:5000;Database=analytics;UID=sa;PWD=password;Connection Timeout=60;Command Timeout=300;
+</code></pre>
+<h3 id="encrypted-connection">Encrypted Connection</h3>
+<pre><code>Data Source=sybase-server:5000;Database=secure_db;UID=user;PWD=password;Encryption=ssl;
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<p><strong>"Login failed" Error</strong></p>
+<ul>
+<li>Verify username and password</li>
+<li>Check if login account is locked or disabled</li>
+<li>Ensure user has permission to access the database</li>
+<li>Validate server name and port configuration</li>
+</ul>
+<p><strong>"Server not found" Error</strong></p>
+<ul>
+<li>Check hostname and port number</li>
+<li>Verify network connectivity</li>
+<li>Ensure Sybase server is running</li>
+<li>Check interfaces file configuration</li>
+</ul>
+<p><strong>"Database not accessible" Error</strong></p>
+<ul>
+<li>Verify database exists and is online</li>
+<li>Check user permissions for the database</li>
+<li>Ensure database is not in single-user mode</li>
+</ul>
+<h2 id="related-information">Related Information</h2>
+<ul>
+<li><strong>SAP Documentation:</strong> <a href="https://help.sap.com/ase">SAP ASE Documentation</a></li>
+<li><strong>Sybase Developer Network:</strong> Historical Sybase documentation and resources</li>
+<li><strong>Migration Guide:</strong> <a href="https://help.sap.com/docs/SAP_ASE">ASE Migration Documentation</a></li>
+</ul>
+<hr>
+<p>💡 <strong>Tip:</strong> When working with legacy Sybase ASE systems, coordinate with database administrators to ensure proper backup strategies and maintenance windows for your process mining activities.</p>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

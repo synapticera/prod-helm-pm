@@ -1,21 +1,11 @@
 {
   "mcpServers": {
-    "mcpServers": {
-      "backlog": {
-        "command": "/bin/bash",
-        "args": [
-          "-c",
-          "backlog mcp start"
-        ]
-      },
-      "atlassian": {
-        "command": "npx",
-        "args": [
-          "-y",
-          "mcp-remote",
-          "https://mcp.atlassian.com/v1/sse"
-        ]
-      }
+    "backlog": {
+      "command": "/bin/bash",
+      "args": [
+        "-c",
+        "backlog mcp start"
+      ]
     }
   }
 }

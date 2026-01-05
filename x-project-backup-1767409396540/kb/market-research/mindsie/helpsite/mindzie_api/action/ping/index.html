@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Ping | Action | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="index.html" class="nav-subitem active">Ping Endpoints</a><!--!-->
+                    <a href="../execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../../block/index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="../../block/management/index.html" class="nav-subitem ">Block Management</a><!--!-->
+                    <a href="../../block/execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../../block/results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../../block/types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../../dataset/index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../../dataset/creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../../dataset/import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="../../dataset/updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="../../dataset/formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Ping</h1><div class="page-breadcrumb">Action</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p>Health monitoring and connectivity testing for the Actions API.</p>
+<h2 id="overview">Overview</h2>
+<p>Ping endpoints provide a simple way to test connectivity and validate authentication with the mindzieAPI. These endpoints are essential for monitoring system health and troubleshooting connection issues.</p>
+<h2 id="unauthorized-ping">Unauthorized Ping</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/action/unauthorized-ping</code></p>
+<p>Basic connectivity test that does not require authentication. Use this to verify the API is accessible.</p>
+<h3 id="request">Request</h3>
+<pre><code class="language-http">GET https://your-mindzie-instance.com/api/{tenantId}/{projectId}/action/unauthorized-ping
+</code></pre>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>Your tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>Your project identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response">Response</h3>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: text/plain
+
+Ping Successful
+</code></pre>
+<h3 id="use-cases">Use Cases</h3>
+<ul>
+<li>Basic connectivity testing</li>
+<li>Load balancer health checks</li>
+<li>Network troubleshooting</li>
+<li>Service availability monitoring</li>
+</ul>
+<h2 id="authenticated-ping">Authenticated Ping</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/action/ping</code></p>
+<p>Authenticated connectivity test that validates credentials and verifies access to the specified tenant and project.</p>
+<h3 id="request-1">Request</h3>
+<pre><code class="language-http">GET https://your-mindzie-instance.com/api/{tenantId}/{projectId}/action/ping
+Authorization: Bearer {your-access-token}
+</code></pre>
+<h3 id="path-parameters-1">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>Your tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>Your project identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-1">Response</h3>
+<p><strong>Success (200 OK):</strong></p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: text/plain
+
+Ping Successful (tenant id: 12345678-1234-1234-1234-123456789012)
+</code></pre>
+<p><strong>Unauthorized (401):</strong></p>
+<pre><code>HTTP/1.1 401 Unauthorized
+Content-Type: text/plain
+
+{error message describing authorization failure}
+</code></pre>
+<h3 id="use-cases-1">Use Cases</h3>
+<ul>
+<li>Authentication validation</li>
+<li>Permission verification</li>
+<li>Token validity testing</li>
+<li>Tenant/project access validation</li>
+</ul>
+<h2 id="implementation-examples">Implementation Examples</h2>
+<h3 id="curl">cURL</h3>
+<pre><code class="language-bash"># Unauthorized ping
+curl -X GET "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/action/unauthorized-ping"
+
+# Authenticated ping
+curl -X GET "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/action/ping" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+</code></pre>
+<h3 id="javascriptnode.js">JavaScript/Node.js</h3>
+<pre><code class="language-javascript">const TENANT_ID = '12345678-1234-1234-1234-123456789012';
+const PROJECT_ID = '87654321-4321-4321-4321-210987654321';
+const BASE_URL = 'https://your-mindzie-instance.com';
+
+// Unauthorized ping
+const unauthorizedPing = async () =&gt; {
+  const response = await fetch(
+    `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/action/unauthorized-ping`
+  );
+  const text = await response.text();
+  console.log('Unauthorized ping:', text);
+  return response.ok;
+};
+
+// Authenticated ping
+const authenticatedPing = async (token) =&gt; {
+  const response = await fetch(
+    `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/action/ping`,
+    {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }
+  );
+
+  if (response.ok) {
+    const text = await response.text();
+    console.log('Authenticated ping:', text);
+    return true;
+  } else {
+    console.error('Authentication failed:', response.status);
+    return false;
+  }
+};
+</code></pre>
+<h3 id="python">Python</h3>
+<pre><code class="language-python">import requests
+
+TENANT_ID = '12345678-1234-1234-1234-123456789012'
+PROJECT_ID = '87654321-4321-4321-4321-210987654321'
+BASE_URL = 'https://your-mindzie-instance.com'
+
+def unauthorized_ping():
+    """Basic connectivity test without authentication."""
+    url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/action/unauthorized-ping'
+    response = requests.get(url)
+    print(f'Unauthorized ping: {response.text}')
+    return response.ok
+
+def authenticated_ping(token):
+    """Authenticated connectivity test."""
+    url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/action/ping'
+    headers = {
+        'Authorization': f'Bearer {token}'
+    }
+
+    response = requests.get(url, headers=headers)
+
+    if response.ok:
+        print(f'Authenticated ping: {response.text}')
+        return True
+    else:
+        print(f'Authentication failed: {response.status_code}')
+        return False
+</code></pre>
+<h3 id="c">C#</h3>
+<pre><code class="language-csharp">using System.Net.Http;
+using System.Threading.Tasks;
+
+public class ActionApiClient
+{
+    private readonly HttpClient _httpClient;
+    private readonly string _baseUrl;
+    private readonly Guid _tenantId;
+    private readonly Guid _projectId;
+
+    public ActionApiClient(string baseUrl, Guid tenantId, Guid projectId, string accessToken)
+    {
+        _baseUrl = baseUrl;
+        _tenantId = tenantId;
+        _projectId = projectId;
+        _httpClient = new HttpClient();
+        _httpClient.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+    }
+
+    public async Task&lt;bool&gt; UnauthorizedPingAsync()
+    {
+        var url = $"{_baseUrl}/api/{_tenantId}/{_projectId}/action/unauthorized-ping";
+        var response = await _httpClient.GetAsync(url);
+        var content = await response.Content.ReadAsStringAsync();
+        Console.WriteLine($"Unauthorized ping: {content}");
+        return response.IsSuccessStatusCode;
+    }
+
+    public async Task&lt;bool&gt; AuthenticatedPingAsync()
+    {
+        var url = $"{_baseUrl}/api/{_tenantId}/{_projectId}/action/ping";
+        var response = await _httpClient.GetAsync(url);
+        var content = await response.Content.ReadAsStringAsync();
+
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine($"Authenticated ping: {content}");
+            return true;
+        }
+        else
+        {
+            Console.WriteLine($"Authentication failed: {response.StatusCode}");
+            return false;
+        }
+    }
+}
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li><strong>Health Checks:</strong> Use the unauthorized ping for automated health monitoring systems</li>
+<li><strong>Pre-flight Validation:</strong> Call authenticated ping before executing actions to validate credentials</li>
+<li><strong>Error Handling:</strong> Always handle network timeouts and authentication failures gracefully</li>
+<li><strong>Monitoring:</strong> Set up automated alerts based on ping failures to detect service outages early</li>
+</ul>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

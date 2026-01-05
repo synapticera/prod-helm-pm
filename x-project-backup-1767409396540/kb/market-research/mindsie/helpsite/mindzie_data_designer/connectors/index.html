@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Connectors | Connectors | mindzieDataDesigner Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">DataDesigner Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../index.html" class="product-item active">mindzieDataDesigner</a>
+                <a href="../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieDataDesigner</strong></span></a><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="data-transformation-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Data Transformation</span></div>
+                <div id="data-transformation" class="nav-section-content"><a href="../data-transformation/data-etl/index.html" class="nav-subitem ">Data Ingestion and ETL</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="database-connectors-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Database Connectors</span></div>
+                <div id="database-connectors" class="nav-section-content"><a href="overview/index.html" class="nav-subitem ">Overview</a><!--!-->
+                    <a href="sqlite/index.html" class="nav-subitem ">SQLite</a><!--!-->
+                    <a href="sql-server/index.html" class="nav-subitem ">Microsoft SQL Server</a><!--!-->
+                    <a href="oracle/index.html" class="nav-subitem ">Oracle</a><!--!-->
+                    <a href="sap-hana/index.html" class="nav-subitem ">SAP HANA</a><!--!-->
+                    <a href="mysql/index.html" class="nav-subitem ">MySQL</a><!--!-->
+                    <a href="postgresql/index.html" class="nav-subitem ">PostgreSQL</a><!--!-->
+                    <a href="odbc/index.html" class="nav-subitem ">ODBC</a><!--!-->
+                    <a href="ibm-db2/index.html" class="nav-subitem ">IBM DB2</a><!--!-->
+                    <a href="snowflake/index.html" class="nav-subitem ">Snowflake</a><!--!-->
+                    <a href="microsoft-access/index.html" class="nav-subitem ">Microsoft Access</a><!--!-->
+                    <a href="vertica/index.html" class="nav-subitem ">Vertica</a><!--!-->
+                    <a href="h2/index.html" class="nav-subitem ">H2</a><!--!-->
+                    <a href="amazon-redshift/index.html" class="nav-subitem ">Amazon Redshift</a><!--!-->
+                    <a href="sybase-ase/index.html" class="nav-subitem ">Sybase ASE</a><!--!-->
+                    <a href="firebird/index.html" class="nav-subitem ">Firebird</a><!--!-->
+                    <a href="teradata/index.html" class="nav-subitem ">Teradata</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Overview</h1><div class="page-breadcrumb">Connectors</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p><strong>Category:</strong> mindzieDataDesigner</p>
+<h2 id="introduction">Introduction</h2>
+<p>mindzieDataDesigner provides native database connectors that enable direct connectivity to your data sources. These connectors are used to extract data from various database systems and transform it into event logs for process mining analysis in mindzieStudio.</p>
+<h2 id="supported-database-systems">Supported Database Systems</h2>
+<p>mindzieDataDesigner supports a wide range of relational database systems, from lightweight embedded databases to enterprise-grade data warehouses.</p>
+<h3 id="enterprise-databases">Enterprise Databases</h3>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="sql-server/index.html">Microsoft SQL Server</a></td>
+<td>Full support for SQL Server 2012+, Azure SQL Database, and Azure SQL Managed Instance</td>
+</tr>
+<tr>
+<td><a href="oracle/index.html">Oracle</a></td>
+<td>Native connectivity to Oracle Database 11g and later versions</td>
+</tr>
+<tr>
+<td><a href="ibm-db2/index.html">IBM DB2</a></td>
+<td>Support for IBM DB2 on z/OS, i Series, and LUW platforms</td>
+</tr>
+<tr>
+<td><a href="sap-hana/index.html">SAP HANA</a></td>
+<td>High-performance connectivity to SAP HANA in-memory database</td>
+</tr>
+<tr>
+<td><a href="teradata/index.html">Teradata</a></td>
+<td>Enterprise data warehouse connectivity</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cloud-data-warehouses">Cloud Data Warehouses</h3>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="snowflake/index.html">Snowflake</a></td>
+<td>Cloud-native data warehouse connectivity</td>
+</tr>
+<tr>
+<td><a href="amazon-redshift/index.html">Amazon Redshift</a></td>
+<td>AWS cloud data warehouse support</td>
+</tr>
+</tbody>
+</table>
+<h3 id="open-source-databases">Open Source Databases</h3>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="postgresql/index.html">PostgreSQL</a></td>
+<td>Full support for PostgreSQL 9.4 and later</td>
+</tr>
+<tr>
+<td><a href="mysql/index.html">MySQL</a></td>
+<td>Support for MySQL 5.6+ and MariaDB</td>
+</tr>
+<tr>
+<td><a href="firebird/index.html">Firebird</a></td>
+<td>Open source relational database support</td>
+</tr>
+<tr>
+<td><a href="h2/index.html">H2</a></td>
+<td>Lightweight Java SQL database</td>
+</tr>
+</tbody>
+</table>
+<h3 id="desktop-and-embedded-databases">Desktop and Embedded Databases</h3>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="sqlite/index.html">SQLite</a></td>
+<td>Lightweight file-based database</td>
+</tr>
+<tr>
+<td><a href="microsoft-access/index.html">Microsoft Access</a></td>
+<td>Microsoft Access database files (.mdb, .accdb)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="legacy-and-specialized-systems">Legacy and Specialized Systems</h3>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="sybase-ase/index.html">Sybase ASE</a></td>
+<td>Sybase Adaptive Server Enterprise</td>
+</tr>
+<tr>
+<td><a href="vertica/index.html">Vertica</a></td>
+<td>High-performance analytics database</td>
+</tr>
+<tr>
+<td><a href="odbc/index.html">ODBC</a></td>
+<td>Generic ODBC connectivity for any ODBC-compliant data source</td>
+</tr>
+</tbody>
+</table>
+<h2 id="choosing-the-right-connector">Choosing the Right Connector</h2>
+<p>When selecting a connector, consider:</p>
+<ol>
+<li><p><strong>Native vs ODBC</strong>: Use native connectors when available for better performance and feature support. Use ODBC only when a native connector is not available for your database.</p>
+</li>
+<li><p><strong>Authentication</strong>: Most connectors support both database authentication and integrated authentication (Windows/Kerberos). Choose based on your security requirements.</p>
+</li>
+<li><p><strong>Network Configuration</strong>: Ensure proper firewall rules and network access between mindzieDataDesigner and your database server.</p>
+</li>
+</ol>
+<h2 id="common-configuration-steps">Common Configuration Steps</h2>
+<p>All database connectors follow a similar configuration pattern:</p>
+<ol>
+<li><strong>Install Required Drivers</strong>: Some connectors require additional client drivers to be installed</li>
+<li><strong>Configure Connection String</strong>: Build the connection string with server, database, and authentication details</li>
+<li><strong>Test Connectivity</strong>: Verify the connection before using it in data transformation scripts</li>
+<li><strong>Set Up Security</strong>: Configure appropriate database permissions for the mindzie service account</li>
+</ol>
+<h2 id="security-best-practices">Security Best Practices</h2>
+<ul>
+<li>Use dedicated service accounts with minimum required permissions</li>
+<li>Enable encrypted connections (SSL/TLS) when possible</li>
+<li>Store credentials securely using environment variables or secure vaults</li>
+<li>Regularly rotate database passwords</li>
+<li>Monitor and audit database access</li>
+</ul>
+<h2 id="getting-help">Getting Help</h2>
+<p>If you encounter issues with a specific connector:</p>
+<ol>
+<li>Check the individual connector documentation for troubleshooting steps</li>
+<li>Verify network connectivity and firewall configuration</li>
+<li>Confirm database credentials and permissions</li>
+<li>Contact mindzie support for additional assistance</li>
+</ol>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

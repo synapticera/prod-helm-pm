@@ -1,0 +1,395 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Data Etl | Data Transformation | mindzieDataDesigner Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">DataDesigner Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../index.html" class="product-item active">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieDataDesigner</strong></span></a><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="data-transformation-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Data Transformation</span></div>
+                <div id="data-transformation" class="nav-section-content"><a href="index.html" class="nav-subitem active">Data Ingestion and ETL</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded" id="database-connectors-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Database Connectors</span></div>
+                <div id="database-connectors" class="nav-section-content"><a href="../../connectors/overview/index.html" class="nav-subitem ">Overview</a><!--!-->
+                    <a href="../../connectors/sqlite/index.html" class="nav-subitem ">SQLite</a><!--!-->
+                    <a href="../../connectors/sql-server/index.html" class="nav-subitem ">Microsoft SQL Server</a><!--!-->
+                    <a href="../../connectors/oracle/index.html" class="nav-subitem ">Oracle</a><!--!-->
+                    <a href="../../connectors/sap-hana/index.html" class="nav-subitem ">SAP HANA</a><!--!-->
+                    <a href="../../connectors/mysql/index.html" class="nav-subitem ">MySQL</a><!--!-->
+                    <a href="../../connectors/postgresql/index.html" class="nav-subitem ">PostgreSQL</a><!--!-->
+                    <a href="../../connectors/odbc/index.html" class="nav-subitem ">ODBC</a><!--!-->
+                    <a href="../../connectors/ibm-db2/index.html" class="nav-subitem ">IBM DB2</a><!--!-->
+                    <a href="../../connectors/snowflake/index.html" class="nav-subitem ">Snowflake</a><!--!-->
+                    <a href="../../connectors/microsoft-access/index.html" class="nav-subitem ">Microsoft Access</a><!--!-->
+                    <a href="../../connectors/vertica/index.html" class="nav-subitem ">Vertica</a><!--!-->
+                    <a href="../../connectors/h2/index.html" class="nav-subitem ">H2</a><!--!-->
+                    <a href="../../connectors/amazon-redshift/index.html" class="nav-subitem ">Amazon Redshift</a><!--!-->
+                    <a href="../../connectors/sybase-ase/index.html" class="nav-subitem ">Sybase ASE</a><!--!-->
+                    <a href="../../connectors/firebird/index.html" class="nav-subitem ">Firebird</a><!--!-->
+                    <a href="../../connectors/teradata/index.html" class="nav-subitem ">Teradata</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Data Etl</h1><div class="page-breadcrumb">Data Transformation</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<p>This guide explains the different methods for ingesting data into mindzieStudio to perform process mining and process intelligence analysis.</p>
+<h2 id="overview">Overview</h2>
+<p>mindzieStudio supports multiple data ingestion approaches to accommodate different deployment scenarios, security requirements, and data sources. Whether you have pre-existing event logs or need to transform raw data from source systems, mindzie provides flexible ETL (Extract, Transform, Load) options.</p>
+<p>There are two fundamental approaches:</p>
+<ol>
+<li><strong>Direct Event Log Upload</strong>: Upload finished event logs in supported formats</li>
+<li><strong>Data Transformation with mindzieDataDesigner</strong>: Transform raw data from source systems into event logs</li>
+</ol>
+<p><img src="../../../docs-master/mindzieDataDesigner/data-transformation/data-etl/images/01-data-etl-architecture.jpg" alt="Data ETL Architecture Overview"></p>
+<h2 id="data-ingestion-methods">Data Ingestion Methods</h2>
+<h3 id="method-1-pre-existing-event-log-upload">Method 1: Pre-existing Event Log Upload</h3>
+<p>If you already have a finished event log, you can upload it directly to mindzieStudio.</p>
+<h4 id="supported-formats">Supported Formats</h4>
+<ul>
+<li><strong>CSV</strong>: Comma-separated values format</li>
+<li><strong>XES</strong>: Extensible Event Stream format (industry standard)</li>
+<li><strong>BIN</strong>: Proprietary mindzie binary format (smaller and faster than other formats)</li>
+</ul>
+<h4 id="upload-options">Upload Options</h4>
+<p><strong>Option A: User Interface Upload</strong></p>
+<p>The simplest method for manual uploads:</p>
+<ol>
+<li>Navigate to the dataset upload screen</li>
+<li>Select your event log file</li>
+<li>Configure the following fields:
+<ul>
+<li><strong>Case ID</strong>: The unique identifier for each case</li>
+<li><strong>Activity Name</strong>: The name of each activity/event</li>
+<li><strong>Activity Time</strong>: The timestamp for each activity</li>
+<li><strong>Resource</strong> (optional): The person or system that performed the activity</li>
+</ul>
+</li>
+</ol>
+<p><strong>Option B: Dataset API Upload</strong></p>
+<p>For automated pipelines and integration:</p>
+<ul>
+<li>Use the dataset API endpoint controller</li>
+<li>Supports the same formats as UI upload (CSV, XES, BIN)</li>
+<li>Requires an API endpoint URL and API key</li>
+<li>Ideal for automated data pipelines</li>
+</ul>
+<p><strong>When to Use Pre-existing Event Logs</strong></p>
+<p>Use this approach when:</p>
+<ul>
+<li>You already generate event logs from another application or software</li>
+<li>You have an existing ETL pipeline that produces event logs</li>
+<li>You want to manually upload historical event log files</li>
+<li>You need to integrate event log generation into an automated workflow</li>
+</ul>
+<h2 id="method-2-data-transformation-with-mindziedatadesigner">Method 2: Data Transformation with mindzieDataDesigner</h2>
+<p>If you need to transform raw data from source systems (SQL tables, SAP, Oracle, etc.) into event logs, mindzieDataDesigner provides four different connection scenarios.</p>
+<p>mindzieDataDesigner connects to approximately 20 different data sources and can connect to any system with query capability.</p>
+<h3 id="scenario-1-csv-file-upload-no-direct-database-access">Scenario 1: CSV File Upload (No Direct Database Access)</h3>
+<p><strong>Use Case</strong>: You don't have direct access to the source system but have exported CSV files.</p>
+<p><strong>How It Works</strong>:</p>
+<ol>
+<li>Export data tables from your source system (e.g., SAP) as CSV files</li>
+<li>Upload the CSV files to mindzieDataDesigner</li>
+<li>Files are imported into a SQLite database</li>
+<li>Query the data as if connected to a live database</li>
+<li>Perform ETL transformations consistently</li>
+</ol>
+<p><img src="../../../docs-master/mindzieDataDesigner/data-transformation/data-etl/images/01-scenario.jpg" alt="Scenario 1 - CSV Upload Architecture"></p>
+<h4 id="pros">Pros</h4>
+<ul>
+<li>No database credentials required</li>
+<li>No direct database access needed</li>
+<li>Works in all deployment scenarios (Desktop, On-Premise, SaaS)</li>
+<li>Easy to transition to direct database access later (if CSV file names match table names)</li>
+</ul>
+<h4 id="cons">Cons</h4>
+<ul>
+<li>CSV export quality issues are common</li>
+<li>Special characters (especially commas) must be properly escaped</li>
+<li>Incorrect CSV formatting can cause import failures</li>
+<li>Time spent cleaning up improperly exported CSV files</li>
+</ul>
+<p><strong>Important</strong>: When exporting CSV files, ensure proper escaping of special characters. Unescaped commas in comma-separated files will cause data to overflow into adjacent columns, making the file impossible to read correctly.</p>
+<p><strong>Deployment Compatibility</strong>: Desktop, On-Premise, SaaS</p>
+<hr>
+<h3 id="scenario-2-on-premise-database-with-on-premise-deployment">Scenario 2: On-Premise Database with On-Premise Deployment</h3>
+<p><strong>Use Case</strong>: You have an on-premise database and want to deploy mindzieStudio and mindzieDataDesigner on-premise.</p>
+<p><strong>How It Works</strong>:</p>
+<ol>
+<li>Install mindzieDataDesigner and mindzieStudio on-premise</li>
+<li>Configure database connection from the on-premise server</li>
+<li>Provide read-only database credentials</li>
+<li>Data Designer connects directly to the source system</li>
+</ol>
+<p><img src="../../../docs-master/mindzieDataDesigner/data-transformation/data-etl/images/02-scenario.jpg" alt="Scenario 2 - On-Premise to On-Premise"></p>
+<h4 id="connection-types">Connection Types</h4>
+<ul>
+<li><strong>SAP</strong>: ODBC connection with read-only username and password</li>
+<li><strong>Oracle</strong>: Oracle connection string with credentials</li>
+<li><strong>SQL Server</strong>: SQL Server connection with credentials</li>
+<li><strong>Other databases</strong>: Appropriate connection strings for the specific database</li>
+</ul>
+<h4 id="connection-options">Connection Options</h4>
+<p>You can connect to:</p>
+<ul>
+<li><strong>Production database</strong>: Direct connection (typically during off-peak hours like nighttime)</li>
+<li><strong>Sandbox environment</strong>: A test or development database</li>
+<li><strong>Mirrored server</strong>: A replica server that is slightly behind production (e.g., 15 minutes)</li>
+<li><strong>Data warehouse</strong>: An on-premise data warehouse where data has been consolidated</li>
+</ul>
+<h4 id="pros-1">Pros</h4>
+<ul>
+<li>Simple and straightforward setup</li>
+<li>Full access to all databases on the network</li>
+<li>No special firewall configuration required</li>
+<li>Direct control over all components</li>
+</ul>
+<h4 id="cons-1">Cons</h4>
+<ul>
+<li>External consultants need VPN or remote access to the on-premise server</li>
+<li>Port 443 (SSL) must be opened if external users need access to Data Designer UI</li>
+<li>Requires on-premise infrastructure maintenance</li>
+<li>More complex collaboration with external teams</li>
+</ul>
+<hr>
+<h3 id="scenario-3-cloud-database-with-cloud-deployment">Scenario 3: Cloud Database with Cloud Deployment</h3>
+<p><strong>Use Case</strong>: Your data is in the cloud and you want to use mindzie's SaaS environment.</p>
+<p><strong>How It Works</strong>:</p>
+<ol>
+<li>mindzieDataDesigner and mindzieStudio run in mindzie's SaaS servers</li>
+<li>Connect to cloud data warehouses (e.g., Snowflake)</li>
+<li>All data transformation occurs in the cloud</li>
+<li>No on-premise infrastructure required</li>
+</ol>
+<p><img src="../../../docs-master/mindzieDataDesigner/data-transformation/data-etl/images/03-scenario-cloud-to-cloud.jpg" alt="Scenario 3 - Cloud to Cloud"></p>
+<h4 id="pros-2">Pros</h4>
+<ul>
+<li>No on-premise infrastructure to maintain</li>
+<li>mindzie handles all software updates and maintenance</li>
+<li>Easy collaboration with external consultants</li>
+<li>Scalable cloud-based architecture</li>
+</ul>
+<h4 id="cons-2">Cons</h4>
+<ul>
+<li>Requires cloud-based data warehouse</li>
+<li>Dependent on mindzie's SaaS availability</li>
+</ul>
+<hr>
+<h3 id="scenario-4-hybrid-on-premise-database-with-cloud-saas">Scenario 4: Hybrid - On-Premise Database with Cloud SaaS</h3>
+<p><strong>Use Case</strong>: You have an on-premise database but want to use mindzie's SaaS version for easier maintenance.</p>
+<p>There are two approaches to this hybrid scenario:</p>
+<h4 id="approach-a-open-database-port-to-mindzie-servers">Approach A: Open Database Port to mindzie Servers</h4>
+<p><strong>How It Works</strong>:</p>
+<ol>
+<li>Open the database port (e.g., 1433 for SQL Server) in your firewall</li>
+<li>Whitelist mindzie's server IP addresses or DNS names</li>
+<li>mindzie's SaaS servers connect directly to your on-premise database</li>
+<li>All software runs in mindzie's SaaS environment</li>
+</ol>
+<p><img src="../../../docs-master/mindzieDataDesigner/data-transformation/data-etl/images/04-scenario-hybrid-inbound.JPG" alt="Scenario 4A - Inbound Connection to On-Premise Database"></p>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>Full database access for queries and transformation</li>
+<li>mindzie maintains all software in SaaS environment</li>
+<li>No on-premise software maintenance required</li>
+<li>Once configured, very easy to maintain</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Opening inbound ports often requires IT security approval</li>
+<li>May not be allowed in highly regulated environments</li>
+<li>Requires firewall configuration changes</li>
+<li>IT departments may be hesitant due to security policies</li>
+</ul>
+<h4 id="approach-b-install-data-designer-on-premise-push-to-cloud">Approach B: Install Data Designer On-Premise, Push to Cloud</h4>
+<p><strong>How It Works</strong>:</p>
+<ol>
+<li>Install mindzieDataDesigner on-premise</li>
+<li>Data Designer connects to your on-premise database</li>
+<li>Transformed data is pushed to mindzieStudio in the cloud</li>
+<li>Only mindzieStudio runs in mindzie's SaaS environment</li>
+</ol>
+<p><img src="../../../docs-master/mindzieDataDesigner/data-transformation/data-etl/images/05-scenario-hybrid-outbound.jpg" alt="Scenario 4B - On-Premise Data Designer Pushing to Cloud"></p>
+<p><strong>Pros</strong>:</p>
+<ul>
+<li>No inbound ports required in your firewall</li>
+<li>Outbound traffic is typically allowed by most companies</li>
+<li>Minimal on-premise software maintenance (only Data Designer)</li>
+<li>mindzieStudio fully maintained by mindzie</li>
+<li>More acceptable to IT security teams</li>
+</ul>
+<p><strong>Cons</strong>:</p>
+<ul>
+<li>Requires minimal on-premise infrastructure for Data Designer</li>
+<li>Data Designer software updates needed on-premise</li>
+<li>Slightly more complex than full SaaS solution</li>
+</ul>
+<hr>
+<h2 id="security-and-encryption">Security and Encryption</h2>
+<p>All data transfer and storage in mindzie follows strict security protocols:</p>
+<h3 id="data-in-transit">Data in Transit</h3>
+<ul>
+<li><strong>All connections use HTTPS</strong>: Every connection shown in the architecture diagrams uses encrypted HTTPS</li>
+<li><strong>No unencrypted HTTP allowed</strong>: mindzie does not support unencrypted connections</li>
+<li><strong>SSL/TLS encryption</strong>: All API calls, data uploads, and database connections are encrypted</li>
+</ul>
+<h3 id="data-at-rest">Data at Rest</h3>
+<ul>
+<li><strong>Tenant-specific encryption</strong>: Each tenant has its own unique encryption key</li>
+<li><strong>Encrypted storage</strong>: All event logs and source data stored on mindzie servers are encrypted</li>
+<li><strong>No mindzie access to keys</strong>: mindzie personnel do not have access to tenant encryption keys</li>
+<li><strong>Applies to all deployments</strong>: Both on-premise and cloud deployments use tenant-specific encryption</li>
+</ul>
+<h3 id="security-compliance">Security Compliance</h3>
+<ul>
+<li>Works with highly regulated environments</li>
+<li>Supports compliance requirements for financial services, healthcare, and other industries</li>
+<li>Can accommodate strict IT security policies</li>
+</ul>
+<h2 id="choosing-the-right-approach">Choosing the Right Approach</h2>
+<h3 id="use-csv-upload-scenario-1-when">Use CSV Upload (Scenario 1) When:</h3>
+<ul>
+<li>You don't have database credentials</li>
+<li>Your IT policy prohibits direct database connections</li>
+<li>You need a quick proof-of-concept</li>
+<li>You have small datasets to analyze</li>
+<li>You work with Desktop version of mindzieStudio</li>
+</ul>
+<h3 id="use-on-premise-to-on-premise-scenario-2-when">Use On-Premise to On-Premise (Scenario 2) When:</h3>
+<ul>
+<li>You have full control over your infrastructure</li>
+<li>You want to keep all data on-premise</li>
+<li>You have dedicated IT resources for maintenance</li>
+<li>External consultants don't need frequent access</li>
+<li>Regulatory requirements mandate on-premise deployment</li>
+</ul>
+<h3 id="use-cloud-to-cloud-scenario-3-when">Use Cloud to Cloud (Scenario 3) When:</h3>
+<ul>
+<li>Your data is already in the cloud</li>
+<li>You want mindzie to handle all maintenance</li>
+<li>You need easy collaboration with external teams</li>
+<li>You want to avoid on-premise infrastructure</li>
+<li>Scalability and availability are priorities</li>
+</ul>
+<h3 id="use-hybrid-approach-scenario-4-when">Use Hybrid Approach (Scenario 4) When:</h3>
+<ul>
+<li>Your source data is on-premise</li>
+<li>You want to use mindzie SaaS for ease of maintenance</li>
+<li>You need to balance security with convenience</li>
+<li><strong>Approach A</strong>: If your IT policy allows inbound connections with whitelisting</li>
+<li><strong>Approach B</strong>: If your IT policy restricts inbound connections but allows outbound</li>
+</ul>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="for-csv-file-upload">For CSV File Upload</h3>
+<ol>
+<li><strong>Validate CSV exports</strong>: Test that exported files can be re-imported before using in production</li>
+<li><strong>Proper escaping</strong>: Ensure special characters (commas, quotes, newlines) are correctly escaped</li>
+<li><strong>Consistent naming</strong>: Name CSV files the same as table names to ease transition to direct database access</li>
+<li><strong>Test with small samples</strong>: Validate your ETL transformations with a small dataset first</li>
+</ol>
+<h3 id="for-database-connections">For Database Connections</h3>
+<ol>
+<li><strong>Use read-only accounts</strong>: Only grant read access to the database user account</li>
+<li><strong>Off-peak extraction</strong>: Schedule data extraction during off-peak hours to minimize impact</li>
+<li><strong>Consider replica servers</strong>: Use mirrored or sandbox databases when possible</li>
+<li><strong>Monitor connection performance</strong>: Track query performance and optimize as needed</li>
+</ol>
+<h3 id="for-hybrid-deployments">For Hybrid Deployments</h3>
+<ol>
+<li><strong>Document firewall rules</strong>: Keep clear documentation of opened ports and whitelisted IPs</li>
+<li><strong>Regular security reviews</strong>: Periodically review access permissions with your IT security team</li>
+<li><strong>Test outbound connectivity</strong>: Verify outbound access to mindzie servers before deploying Data Designer</li>
+<li><strong>Plan for updates</strong>: Schedule Data Designer updates during maintenance windows</li>
+</ol>
+<h3 id="general-recommendations">General Recommendations</h3>
+<ol>
+<li><strong>Start simple</strong>: Begin with CSV upload for proof-of-concept, then move to direct connections</li>
+<li><strong>Plan for scale</strong>: Consider future data volume growth when choosing architecture</li>
+<li><strong>Involve IT early</strong>: Engage your IT and security teams early in the planning process</li>
+<li><strong>Test security policies</strong>: Verify your chosen approach complies with company security policies</li>
+<li><strong>Consider maintenance</strong>: Factor in long-term maintenance requirements when choosing deployment</li>
+</ol>
+<h2 id="technical-requirements">Technical Requirements</h2>
+<h3 id="supported-database-connections">Supported Database Connections</h3>
+<p>mindzieDataDesigner supports approximately 20 different data sources, including:</p>
+<ul>
+<li>SQL Server</li>
+<li>Oracle</li>
+<li>SAP (via ODBC)</li>
+<li>MySQL</li>
+<li>PostgreSQL</li>
+<li>Snowflake</li>
+<li>Data warehouses</li>
+<li>Any system with query capability</li>
+</ul>
+<h3 id="network-requirements">Network Requirements</h3>
+<ul>
+<li><strong>HTTPS (Port 443)</strong>: Required for all API and UI connections</li>
+<li><strong>Database ports</strong>: Specific to your database (e.g., 1433 for SQL Server)</li>
+<li><strong>Outbound connectivity</strong>: Required for pushing data to mindzie SaaS</li>
+<li><strong>Inbound connectivity</strong>: Required only for Scenario 4A (direct database access from mindzie SaaS)</li>
+</ul>
+<h3 id="authentication">Authentication</h3>
+<ul>
+<li><strong>Database credentials</strong>: Username and password (read-only recommended)</li>
+<li><strong>API authentication</strong>: API key and endpoint URL for dataset API</li>
+<li><strong>Tenant isolation</strong>: Each tenant has isolated authentication and encryption</li>
+</ul>
+<h2 id="related-documentation">Related Documentation</h2>
+<ul>
+<li><a href="../../../connectors/overview/index.html">mindzieDataDesigner Connectors</a></li>
+<li><a href="../../../resources/event-log-formats/index.html">Event Log Format Specifications</a></li>
+<li><a href="../../../api/dataset-api/index.html">API Documentation</a></li>
+<li><a href="../../../administration/security/index.html">Security and Compliance</a></li>
+</ul>
+<h2 id="support">Support</h2>
+<p>For assistance with data ingestion and ETL setup:</p>
+<ul>
+<li><strong>Email</strong>: support@mindzie.com</li>
+<li><strong>Architecture consultation</strong>: Contact your mindzie representative to discuss the best deployment scenario for your organization</li>
+<li><strong>Technical support</strong>: For connection issues, CSV import problems, or ETL transformation assistance</li>
+</ul>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Support Metrics Hierarchy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: white;
+            color: #1e293b;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .header h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .header p {
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        /* Main Flow */
+        .flow {
+            display: flex;
+            align-items: flex-start;
+            gap: 2.5rem;
+        }
+
+        /* Left Column - Input Metrics */
+        .input-column {
+            flex: 1;
+            max-width: 520px;
+        }
+
+        .metric-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .metric-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .group-label {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            padding-left: 0.25rem;
+        }
+
+        .metric-row {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .question-box {
+            flex: 1;
+            background: #475569;
+            color: white;
+            font-size: 0.8125rem;
+            padding: 0.625rem 0.875rem;
+            border-radius: 0.375rem;
+        }
+
+        .metric-box {
+            width: 160px;
+            background: #2563eb;
+            color: white;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            padding: 0.625rem 0.875rem;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+
+        /* Middle Column - Outcomes */
+        .outcome-column {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .outcome-box {
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .outcome-box .title {
+            font-size: 0.8125rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.125rem;
+        }
+
+        .outcome-box .subtitle {
+            font-size: 0.6875rem;
+            color: #64748b;
+            margin-bottom: 0.75rem;
+        }
+
+        .outcome-box .value {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .outcome-box .details {
+            font-size: 0.6875rem;
+            color: #64748b;
+        }
+
+        .multiply {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #cbd5e1;
+            margin: 0.25rem 0;
+        }
+
+        /* Right Column - Impact */
+        .impact-column {
+            width: 180px;
+            flex-shrink: 0;
+        }
+
+        .impact-box {
+            background: #1e293b;
+            color: white;
+            border-radius: 0.5rem;
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .impact-box .label {
+            font-size: 0.625rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-box .title {
+            font-size: 1.375rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .impact-box .benchmarks {
+            border-top: 1px solid #475569;
+            padding-top: 0.75rem;
+            font-size: 0.6875rem;
+        }
+
+        .impact-box .benchmarks-label {
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .impact-box .benchmarks-items {
+            color: #94a3b8;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .formula {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: #f8fafc;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .formula span {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .formula .op {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #cbd5e1;
+        }
+
+        .formula .result {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>CS Support Metrics Hierarchy</h1>
+            <p>From Operational Inputs to Business Impact</p>
+        </div>
+
+        <!-- Main Flow -->
+        <div class="flow">
+            
+            <!-- Left: Input Metrics -->
+            <div class="input-column">
+                
+                <!-- Need -->
+                <div class="metric-group">
+                    <div class="group-label">Need</div>
+                    <div class="metric-row">
+                        <div class="question-box">1) How much support demand exists?</div>
+                        <div class="metric-box">Case Volume</div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="question-box">2) What drives support demand?</div>
+                        <div class="metric-box">Root Cause</div>
+                    </div>
+                </div>
+
+                <!-- Delivery -->
+                <div class="metric-group">
+                    <div class="group-label">Delivery</div>
+                    <div class="metric-row">
+                        <div class="question-box">3) How fast do we resolve issues?</div>
+                        <div class="metric-box">Time to Resolution</div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="question-box">4) How do customers feel about it?</div>
+                        <div class="metric-box">Case Satisfaction</div>
+                    </div>
+                </div>
+
+                <!-- System -->
+                <div class="metric-group">
+                    <div class="group-label">System</div>
+                    <div class="metric-row">
+                        <div class="question-box">5) How do customers reach us?</div>
+                        <div class="metric-box">Channel Mix</div>
+                    </div>
+                    <div class="metric-row">
+                        <div class="question-box">6) How efficiently do cases flow?</div>
+                        <div class="metric-box">Resolution Efficiency</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle: Intermediate Outcomes -->
+            <div class="outcome-column">
+                <div class="outcome-box">
+                    <div class="title">Effectiveness</div>
+                    <div class="subtitle">Doing the RIGHT things</div>
+                    <div class="value">Net Retention</div>
+                    <div class="details">
+                        - Expansion Rate<br>
+                        - Renewal Rate
+                    </div>
+                </div>
+                
+                <div class="multiply">×</div>
+                
+                <div class="outcome-box">
+                    <div class="title">Efficiency</div>
+                    <div class="subtitle">Doing things RIGHT</div>
+                    <div class="value">Cost to Serve</div>
+                    <div class="details">
+                        - Total Cost<br>
+                        - Total Revenue
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Business Impact -->
+            <div class="impact-column">
+                <div class="impact-box">
+                    <div class="label">Business Impact</div>
+                    <div class="title">CS Impact<br>Index</div>
+                    <div class="benchmarks">
+                        <div class="benchmarks-label">Comparative Benchmark</div>
+                        <div class="benchmarks-items">
+                            vs. Industry<br>
+                            vs. Historical
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Formula -->
+        <div class="footer">
+            <div class="formula">
+                <span>Effectiveness</span>
+                <span class="op">×</span>
+                <span>Efficiency</span>
+                <span class="op">=</span>
+                <span class="result">CS Impact Index</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

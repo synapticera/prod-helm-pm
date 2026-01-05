@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Benchmark Scorecard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .header-meta {
+            text-align: right;
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        .header-meta strong {
+            color: white;
+            font-size: 1rem;
+        }
+
+        /* Main Content */
+        .content {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        /* Legend */
+        .legend {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.75rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-size: 0.75rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.p25 { background: #ef4444; }
+        .legend-dot.p50 { background: #f59e0b; }
+        .legend-dot.p75 { background: #10b981; }
+        .legend-dot.you { background: #2563eb; border: 2px solid white; box-shadow: 0 0 0 1px #2563eb; }
+
+        /* Metric Row */
+        .metric-row {
+            display: grid;
+            grid-template-columns: 200px 1fr 80px;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: #1e293b;
+        }
+
+        .metric-sublabel {
+            font-size: 0.6875rem;
+            color: #64748b;
+            margin-top: 0.125rem;
+        }
+
+        /* Slider Track */
+        .slider-container {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .slider-track {
+            height: 8px;
+            background: linear-gradient(90deg, #fecaca 0%, #fef3c7 50%, #d1fae5 100%);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.625rem;
+            color: #94a3b8;
+        }
+
+        /* Percentile Markers */
+        .marker {
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        .marker.p25 { left: 25%; background: #ef4444; }
+        .marker.p50 { left: 50%; background: #f59e0b; }
+        .marker.p75 { left: 75%; background: #10b981; }
+
+        .marker.you {
+            width: 18px;
+            height: 18px;
+            background: #2563eb;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            z-index: 10;
+        }
+
+        /* Your Value */
+        .your-value {
+            text-align: right;
+        }
+
+        .your-value-number {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .your-value-label {
+            font-size: 0.625rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Headers */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-header:first-of-type {
+            margin-top: 0;
+        }
+
+        .section-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+
+        .section-dot.input { background: #64748b; }
+        .section-dot.effectiveness { background: #10b981; }
+        .section-dot.efficiency { background: #3b82f6; }
+        .section-dot.outcome { background: #8b5cf6; }
+
+        .section-title {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Composite Score Footer */
+        .composite-footer {
+            margin-top: 1.5rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .composite-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .composite-score {
+            text-align: center;
+        }
+
+        .composite-score-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+
+        .composite-score-label {
+            font-size: 0.625rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+
+        .composite-info h3 {
+            color: white;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .composite-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            background: #f59e0b;
+            color: white;
+            padding: 0.25rem 0.625rem;
+            border-radius: 4px;
+            font-size: 0.625rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .composite-formula {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+        }
+
+        .composite-formula span {
+            color: white;
+            font-weight: 500;
+        }
+
+        .composite-scale {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 0.625rem;
+        }
+
+        .scale-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: #94a3b8;
+        }
+
+        .scale-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .scale-dot.red { background: #ef4444; }
+        .scale-dot.amber { background: #f59e0b; }
+        .scale-dot.green { background: #22c55e; }
+        .scale-dot.emerald { background: #10b981; }
+
+        /* Source Footer */
+        .source-footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.625rem;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <div class="header">
+            <h1>CS Metrics Benchmark Scorecard</h1>
+            <div class="header-meta">
+                <strong>$25M ARR</strong><br>
+                Enterprise B2B SaaS
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Legend -->
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-dot p25"></div>
+                    <span>P25 (Bottom)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot p50"></div>
+                    <span>P50 (Median)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot p75"></div>
+                    <span>P75 (Top)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot you"></div>
+                    <span><strong>You</strong></span>
+                </div>
+            </div>
+
+            <!-- Input Metrics -->
+            <div class="section-header">
+                <div class="section-dot input"></div>
+                <div class="section-title">Case Assessment</div>
+            </div>
+
+            <div class="metric-row">
+                <div>
+                    <div class="metric-label">Case Volume</div>
+                    <div class="metric-sublabel">Cases per 100 customers / mo (↓ better)</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="marker p25" title="P25: 85+"></div>
+                        <div class="marker p50" title="P50: 55"></div>
+                        <div class="marker p75" title="P75: <30"></div>
+                        <div class="marker you" style="left: 48%;" title="You: 52"></div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>85+ (worse)</span>
+                        <span>55</span>
+                        <span>&lt;30 (better)</span>
+                    </div>
+                </div>
+                <div class="your-value">
+                    <div class="your-value-number">52</div>
+                    <div class="your-value-label">cases</div>
+                </div>
+            </div>
+
+            <!-- Effectiveness Drivers -->
+            <div class="section-header">
+                <div class="section-dot effectiveness"></div>
+                <div class="section-title">Response Effectiveness</div>
+            </div>
+
+            <div class="metric-row">
+                <div>
+                    <div class="metric-label">Resolution Quality</div>
+                    <div class="metric-sublabel">CSAT score 1-5 (↑ better)</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="marker p25" title="P25: <3.8"></div>
+                        <div class="marker p50" title="P50: 4.15"></div>
+                        <div class="marker p75" title="P75: 4.5+"></div>
+                        <div class="marker you" style="left: 58%;" title="You: 4.2"></div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>&lt;3.8 (worse)</span>
+                        <span>4.15</span>
+                        <span>4.5+ (better)</span>
+                    </div>
+                </div>
+                <div class="your-value">
+                    <div class="your-value-number">4.2</div>
+                    <div class="your-value-label">CSAT</div>
+                </div>
+            </div>
+
+            <!-- Efficiency Drivers -->
+            <div class="section-header">
+                <div class="section-dot efficiency"></div>
+                <div class="section-title">Response Efficiency</div>
+            </div>
+
+            <div class="metric-row">
+                <div>
+                    <div class="metric-label">Self-Service Rate</div>
+                    <div class="metric-sublabel">% deflected without agent (↑ better)</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="marker p25" title="P25: <15%"></div>
+                        <div class="marker p50" title="P50: 27%"></div>
+                        <div class="marker p75" title="P75: 40%+"></div>
+                        <div class="marker you" style="left: 28%;" title="You: 18%"></div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>&lt;15% (worse)</span>
+                        <span>27%</span>
+                        <span>40%+ (better)</span>
+                    </div>
+                </div>
+                <div class="your-value">
+                    <div class="your-value-number" style="color: #ef4444;">18%</div>
+                    <div class="your-value-label">deflected</div>
+                </div>
+            </div>
+
+            <!-- Outcomes -->
+            <div class="section-header">
+                <div class="section-dot outcome"></div>
+                <div class="section-title">Business Outcomes</div>
+            </div>
+
+            <div class="metric-row">
+                <div>
+                    <div class="metric-label">Net Revenue Retention</div>
+                    <div class="metric-sublabel">Expansion + Renewal % (↑ better)</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="marker p25" title="P25: <95%"></div>
+                        <div class="marker p50" title="P50: 107%"></div>
+                        <div class="marker p75" title="P75: 118%+"></div>
+                        <div class="marker you" style="left: 56%;" title="You: 108%"></div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>&lt;95% (worse)</span>
+                        <span>107%</span>
+                        <span>118%+ (better)</span>
+                    </div>
+                </div>
+                <div class="your-value">
+                    <div class="your-value-number" style="color: #10b981;">108%</div>
+                    <div class="your-value-label">NRR</div>
+                </div>
+            </div>
+
+            <div class="metric-row">
+                <div>
+                    <div class="metric-label">Cost to Serve</div>
+                    <div class="metric-sublabel">CS cost as % of ARR (↓ better)</div>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <div class="marker p25" title="P25: 18%+"></div>
+                        <div class="marker p50" title="P50: 12%"></div>
+                        <div class="marker p75" title="P75: <8%"></div>
+                        <div class="marker you" style="left: 42%;" title="You: 14%"></div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>18%+ (worse)</span>
+                        <span>12%</span>
+                        <span>&lt;8% (better)</span>
+                    </div>
+                </div>
+                <div class="your-value">
+                    <div class="your-value-number">14%</div>
+                    <div class="your-value-label">of ARR</div>
+                </div>
+            </div>
+
+            <!-- Composite Score -->
+            <div class="composite-footer">
+                <div class="composite-left">
+                    <div class="composite-score">
+                        <div class="composite-score-value">54</div>
+                        <div class="composite-score-label">Index Score</div>
+                    </div>
+                    <div class="composite-info">
+                        <h3>CS Net Impact Index</h3>
+                        <div class="composite-rating">● Adequate</div>
+                        <div class="composite-formula">
+                            (<span>63</span> effectiveness × 0.5) + (<span>45</span> efficiency × 0.5)
+                        </div>
+                    </div>
+                </div>
+                <div class="composite-scale">
+                    <div class="scale-item"><div class="scale-dot red"></div> &lt;40</div>
+                    <div class="scale-item"><div class="scale-dot amber"></div> 40-59</div>
+                    <div class="scale-item"><div class="scale-dot green"></div> 60-74</div>
+                    <div class="scale-item"><div class="scale-dot emerald"></div> 75+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="source-footer">
+            Benchmarks: $20-50M ARR Enterprise SaaS cohort • Sources: OpenView, KeyBanc, Gainsight, TSIA
+        </div>
+    </div>
+</body>
+</html>

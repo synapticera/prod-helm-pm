@@ -1,0 +1,158 @@
+name: core
+display_name: Core Framework
+description: Essential workflow commands, agents, and templates
+version: 1.0.0
+required: true
+commands:
+  - x-kb-add.md
+  - x-add-task.md
+  - x-archive-tasks.md
+  - x-design.md
+  - x-do-tasks.md
+  - x-get-tasks.md
+  - x-improve.md
+  - x-intake-file.md
+  - x-intake.md
+  - x-pr.md
+  - x-qa.md
+  - x-refresh-master-spec.md
+  - x-style.md
+agents:
+  - x-backlog-task-manager.md
+  - x-general-assistant.md
+  - x-task-spec-generator.md
+templates:
+  - PROJECT_STATE.md
+  - project-data.md
+  - project-notes.md
+  - intake.md
+  - workflow-config.yml
+  - local-menu.md
+  - MAX-IDEAS.md
+ignore_templates:
+  - .claudeignore_template
+  - .gitignore_template
+mcp:
+  - backlog.mcp.json
+dependencies:
+  - name: git
+    display_name: Git
+    check: git --version
+    install:
+      darwin: brew install git
+      win32: winget install --id Git.Git -e --source winget
+      linux: sudo apt-get install -y git || sudo yum install -y git
+    required: true
+  - name: node
+    display_name: Node.js
+    check: node --version
+    install:
+      darwin: brew install node
+      win32: winget install --id OpenJS.NodeJS -e --source winget
+      linux: curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&
+        sudo apt-get install -y nodejs
+    required: true
+  - name: python
+    display_name: Python 3
+    check: python3 --version
+    install:
+      darwin: brew install python3
+      win32: winget install --id Python.Python.3.11 -e --source winget
+      linux: sudo apt-get install -y python3 || sudo yum install -y python3
+    required: true
+  - name: gh
+    display_name: GitHub CLI
+    check: gh --version
+    install:
+      darwin: brew install gh
+      win32: winget install --id GitHub.cli -e --source winget
+      linux: curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg
+        | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg && echo
+        'deb [arch=$(dpkg --print-architecture)
+        signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg]
+        https://cli.github.com/packages stable main' | sudo tee
+        /etc/apt/sources.list.d/github-cli.list > /dev/null && sudo apt update
+        && sudo apt install gh -y
+    required: true
+  - name: backlog
+    display_name: Backlog CLI
+    check: backlog --version
+    install:
+      darwin: brew install backlog-md
+      win32: npm install -g backlog-md
+      linux: npm install -g backlog-md
+    required: true
+claude_addendum: null
+menu_items:
+  - section: Build Workflow
+    items:
+      - name: Intake
+        action: cc-command
+        prompt: /x-intake
+        description: Intake new requirements
+      - name: Intake from File
+        action: cc-command
+        prompt: /x-intake-file
+        description: Intake from intake.md file
+      - name: Design
+        action: cc-command
+        prompt: /x-design
+        description: Build design for requirements
+      - name: Get Tasks
+        action: cc-command
+        prompt: /x-get-tasks
+        description: Decompose into backlog tasks
+      - name: Do Tasks
+        action: cc-command
+        prompt: /x-do-tasks
+        description: Implement open tasks
+      - name: QA
+        action: cc-command
+        prompt: /x-qa
+        description: Run QA checks
+      - name: Create PR
+        action: cc-command
+        prompt: /x-pr
+        description: Create pull request
+  - section: Tasks & Backlog
+    items:
+      - name: Add Task
+        action: cc-command
+        prompt: /x-add-task
+        description: Add task to backlog
+      - name: Archive Tasks
+        action: cc-command
+        prompt: /x-archive-tasks
+        description: Archive completed tasks
+      - name: Task Board
+        action: browser
+        url: https://backlog.synapticera.com
+        description: Open backlog board
+  - section: Knowledge Base
+    items:
+      - name: Add Knowledge
+        action: cc-command
+        prompt: /x-kb-add
+        description: Add item to knowledge base
+  - section: Project Files
+    items:
+      - name: Project Data
+        action: edit-file
+        file: x-project/project-data.md
+        description: Project metadata
+      - name: Project Notes
+        action: edit-file
+        file: x-project/project-notes.md
+        description: Project notes
+      - name: Master Spec
+        action: edit-file
+        file: x-project/master-spec.md
+        description: Master specification
+      - name: Master State
+        action: edit-file
+        file: x-project/master-state.md
+        description: Current project state
+      - name: CLAUDE.md
+        action: edit-file
+        file: CLAUDE.md
+        description: Workflow configuration

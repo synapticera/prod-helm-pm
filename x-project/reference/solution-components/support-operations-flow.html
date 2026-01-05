@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Operations Command Center</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f1419;
+            color: #e8eaed;
+            overflow-x: hidden;
+        }
+
+        .command-center {
+            display: grid;
+            grid-template-columns: 280px 1fr 320px;
+            grid-template-rows: auto 1fr;
+            height: 100vh;
+            gap: 0;
+        }
+
+        /* Header */
+        .header {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            padding: 20px 30px;
+            border-bottom: 3px solid #1976d2;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .header-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .time-filter {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .time-filter.active {
+            background: rgba(255,255,255,0.3);
+            border-color: white;
+        }
+
+        .time-filter:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Left Panel - Inbound Channels */
+        .inbound-panel {
+            background: #1a1d23;
+            padding: 20px;
+            border-right: 1px solid #2a2d33;
+            overflow-y: auto;
+        }
+
+        .panel-title {
+            font-size: 0.85em;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .channel-card {
+            background: linear-gradient(135deg, #2a2d33 0%, #1f2228 100%);
+            border: 2px solid #3a3d43;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .channel-card:hover {
+            border-color: #1976d2;
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+        }
+
+        .channel-card.active {
+            border-color: #2196f3;
+            background: linear-gradient(135deg, #1e3a5f 0%, #1a2332 100%);
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .channel-icon {
+            font-size: 1.5em;
+        }
+
+        .channel-name {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .channel-rate {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2196f3;
+            margin: 8px 0;
+        }
+
+        .channel-trend {
+            font-size: 0.85em;
+            color: #4caf50;
+        }
+
+        .channel-trend.down {
+            color: #f44336;
+        }
+
+        .channel-stat {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .live-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .total-inbound {
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .total-inbound .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Center Panel - Flow */
+        .flow-panel {
+            background: #16181d;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .flow-stage {
+            background: #1a1d23;
+            border: 2px solid #2a2d33;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .stage-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2a2d33;
+        }
+
+        .stage-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2196f3;
+        }
+
+        .stage-agents {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .flow-metrics {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .flow-metric {
+            flex: 1;
+            background: #222529;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .flow-metric-label {
+            font-size: 0.8em;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .flow-metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2196f3;
+            margin-top: 5px;
+        }
+
+        .flow-metric.success .flow-metric-value {
+            color: #4caf50;
+        }
+
+        .flow-metric.warning .flow-metric-value {
+            color: #ff9800;
+        }
+
+        /* Agent Grid */
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .agent-tile {
+            background: linear-gradient(135deg, #2a2d33 0%, #222529 100%);
+            border: 2px solid #3a3d43;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .agent-tile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            border-color: #2196f3;
+        }
+
+        .agent-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .agent-status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .agent-status.busy {
+            background: #4caf50;
+        }
+
+        .agent-status.available {
+            background: #ffeb3b;
+        }
+
+        .agent-status.at-capacity {
+            background: #f44336;
+        }
+
+        .agent-status.offline {
+            background: #666;
+        }
+
+        .agent-active {
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .agent-avg {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 3px;
+        }
+
+        /* Queue Bar */
+        .queue-bar {
+            background: #222529;
+            border: 1px solid #3a3d43;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .queue-stats {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .queue-stat {
+            flex: 1;
+        }
+
+        .queue-label {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .queue-value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2196f3;
+        }
+
+        .queue-progress {
+            height: 8px;
+            background: #2a2d33;
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .queue-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2196f3 0%, #4caf50 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .queue-progress-fill.warning {
+            background: linear-gradient(90deg, #ff9800 0%, #ff5722 100%);
+        }
+
+        .queue-progress-fill.danger {
+            background: linear-gradient(90deg, #f44336 0%, #d32f2f 100%);
+        }
+
+        /* Flow Arrow */
+        .flow-arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #2196f3;
+            margin: 10px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Right Panel - Metrics & Alerts */
+        .metrics-panel {
+            background: #1a1d23;
+            padding: 20px;
+            border-left: 1px solid #2a2d33;
+            overflow-y: auto;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #2a2d33 0%, #1f2228 100%);
+            border: 2px solid #3a3d43;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .metric-card-title {
+            font-size: 0.85em;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .metric-item {
+            margin-bottom: 12px;
+        }
+
+        .metric-item-label {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .metric-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .metric-bar-fill {
+            flex: 1;
+            height: 8px;
+            background: #2a2d33;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .metric-bar-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .metric-bar-value {
+            font-weight: bold;
+            color: #4caf50;
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .metric-target {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .status-badge.success {
+            background: #4caf50;
+            color: white;
+        }
+
+        .status-badge.warning {
+            background: #ff9800;
+            color: white;
+        }
+
+        .status-badge.danger {
+            background: #f44336;
+            color: white;
+        }
+
+        /* Alerts */
+        .alert {
+            background: linear-gradient(135deg, #3a1f1f 0%, #2a1616 100%);
+            border: 2px solid #f44336;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .alert:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+        }
+
+        .alert.warning {
+            background: linear-gradient(135deg, #3a2f1f 0%, #2a2016 100%);
+            border-color: #ff9800;
+        }
+
+        .alert.warning:hover {
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+
+        .alert-icon {
+            font-size: 1.2em;
+        }
+
+        .alert-title {
+            font-weight: 600;
+        }
+
+        .alert-detail {
+            font-size: 0.9em;
+            color: #aaa;
+            margin-left: 28px;
+        }
+
+        .alert-actions {
+            margin-top: 8px;
+            margin-left: 28px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .alert-btn {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .alert-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Trend Indicators */
+        .trend-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #2a2d33;
+        }
+
+        .trend-item:last-child {
+            border-bottom: none;
+        }
+
+        .trend-label {
+            color: #aaa;
+        }
+
+        .trend-value {
+            font-weight: bold;
+        }
+
+        .trend-up {
+            color: #4caf50;
+        }
+
+        .trend-down {
+            color: #f44336;
+        }
+
+        .trend-neutral {
+            color: #ff9800;
+        }
+
+        /* Top Issues */
+        .issue-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #222529;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .issue-item:hover {
+            background: #2a2d33;
+            transform: translateX(5px);
+        }
+
+        .issue-label {
+            color: #e8eaed;
+        }
+
+        .issue-count {
+            background: #f44336;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* Bot Stage (Special) */
+        .bot-stage {
+            background: linear-gradient(135deg, #1a3a1a 0%, #162816 100%);
+            border-color: #4caf50;
+        }
+
+        .bot-stage .stage-title {
+            color: #4caf50;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1d23;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3a3d43;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a4d53;
+        }
+
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .command-center {
+                grid-template-columns: 250px 1fr 280px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .command-center {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
+            }
+
+            .inbound-panel, .metrics-panel {
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="command-center">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎯 Support Operations Command Center</h1>
+            <div class="header-controls">
+                <button class="time-filter active">Live</button>
+                <button class="time-filter">Last 24h</button>
+                <button class="time-filter">Last 7d</button>
+                <span style="margin-left: auto; color: rgba(255,255,255,0.7); font-size: 0.9em;">
+                    <span class="live-indicator"></span> Updated 3 seconds ago
+                </span>
+            </div>
+        </div>
+
+        <!-- Left Panel: Inbound Channels -->
+        <div class="inbound-panel">
+            <div class="panel-title">📥 Inbound Channels</div>
+
+            <div class="channel-card" onclick="filterChannel('phone')">
+                <div class="channel-header">
+                    <div class="channel-icon">📱</div>
+                    <div class="channel-name">Phone</div>
+                </div>
+                <div class="channel-rate">245/hr</div>
+                <div class="channel-trend">▲ 8%</div>
+                <div class="channel-stat">
+                    <span><span class="live-indicator"></span>12 active</span>
+                    <span>Avg: 6.2min</span>
+                </div>
+            </div>
+
+            <div class="channel-card active" onclick="filterChannel('webchat')">
+                <div class="channel-header">
+                    <div class="channel-icon">💬</div>
+                    <div class="channel-name">Web Chat</div>
+                </div>
+                <div class="channel-rate">680/hr</div>
+                <div class="channel-trend">▲ 12%</div>
+                <div class="channel-stat">
+                    <span><span class="live-indicator"></span>34 active</span>
+                    <span>Avg: 4.2min</span>
+                </div>
+                <div class="channel-stat">
+                    <span>Bot First: 90%</span>
+                </div>
+            </div>
+
+            <div class="channel-card" onclick="filterChannel('email')">
+                <div class="channel-header">
+                    <div class="channel-icon">📧</div>
+                    <div class="channel-name">Email</div>
+                </div>
+                <div class="channel-rate">320/hr</div>
+                <div class="channel-trend trend-down">▼ 3%</div>
+                <div class="channel-stat">
+                    <span>Queue: 45</span>
+                    <span>Avg: 18min</span>
+                </div>
+            </div>
+
+            <div class="channel-card" onclick="filterChannel('inapp')">
+                <div class="channel-header">
+                    <div class="channel-icon">💻</div>
+                    <div class="channel-name">In-App</div>
+                </div>
+                <div class="channel-rate">125/hr</div>
+                <div class="channel-trend">▲ 5%</div>
+                <div class="channel-stat">
+                    <span><span class="live-indicator"></span>8 active</span>
+                    <span>Avg: 3.8min</span>
+                </div>
+            </div>
+
+            <div class="total-inbound">
+                <div style="font-size: 0.9em; color: rgba(255,255,255,0.7); margin-bottom: 5px;">TOTAL INBOUND</div>
+                <div class="value">1,370/hr</div>
+                <div style="margin-top: 5px; color: #4caf50;">▲ 12% vs yesterday</div>
+            </div>
+        </div>
+
+        <!-- Center Panel: Flow Through System -->
+        <div class="flow-panel">
+            <!-- Bot/AI Stage -->
+            <div class="flow-stage bot-stage">
+                <div class="stage-header">
+                    <div class="stage-title">🤖 Bot/AI First Response</div>
+                    <div class="stage-agents">Automated</div>
+                </div>
+
+                <div class="flow-metrics">
+                    <div class="flow-metric">
+                        <div class="flow-metric-label">Inbound</div>
+                        <div class="flow-metric-value">880/hr</div>
+                    </div>
+                    <div class="flow-metric success">
+                        <div class="flow-metric-label">Resolved</div>
+                        <div class="flow-metric-value">600/hr (68%)</div>
+                    </div>
+                    <div class="flow-metric warning">
+                        <div class="flow-metric-label">Escalated</div>
+                        <div class="flow-metric-value">280/hr (32%)</div>
+                    </div>
+                </div>
+
+                <div class="queue-bar">
+                    <div style="text-align: center; color: #4caf50; font-weight: 600; margin-bottom: 10px;">
+                        ✓ Bot deflecting 68% of traffic
+                    </div>
+                    <div style="font-size: 0.85em; color: #888; text-align: center;">
+                        Top intents: Data upload (25%), Query help (20%), Account issues (18%)
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <!-- Tier 1 -->
+            <div class="flow-stage">
+                <div class="stage-header">
+                    <div class="stage-title">👥 Tier 1 - Frontline Support</div>
+                    <div class="stage-agents">12 agents online</div>
+                </div>
+
+                <div class="flow-metrics">
+                    <div class="flow-metric">
+                        <div class="flow-metric-label">Inbound</div>
+                        <div class="flow-metric-value">218/hr</div>
+                    </div>
+                    <div class="flow-metric">
+                        <div class="flow-metric-label">Handling</div>
+                        <div class="flow-metric-value">165/hr</div>
+                    </div>
+                    <div class="flow-metric success">
+                        <div class="flow-metric-label">Resolved</div>
+                        <div class="flow-metric-value">140/hr (85%)</div>
+                    </div>
+                </div>
+
+                <div class="agent-grid">
+                    <div class="agent-tile" onclick="showAgent('Agent 1')">
+                        <div class="agent-name">Agent 1</div>
+                        <div><span class="agent-status busy"></span>Busy</div>
+                        <div class="agent-active">Active: 3</div>
+                        <div class="agent-avg">Avg: 8min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent 2')">
+                        <div class="agent-name">Agent 2</div>
+                        <div><span class="agent-status busy"></span>Busy</div>
+                        <div class="agent-active">Active: 2</div>
+                        <div class="agent-avg">Avg: 6min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent 3')">
+                        <div class="agent-name">Agent 3</div>
+                        <div><span class="agent-status at-capacity"></span>At Cap</div>
+                        <div class="agent-active">Active: 4</div>
+                        <div class="agent-avg">Avg: 12min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent 4')">
+                        <div class="agent-name">Agent 4</div>
+                        <div><span class="agent-status available"></span>Available</div>
+                        <div class="agent-active">Active: 1</div>
+                        <div class="agent-avg">Avg: 5min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent 5')">
+                        <div class="agent-name">Agent 5</div>
+                        <div><span class="agent-status busy"></span>Busy</div>
+                        <div class="agent-active">Active: 3</div>
+                        <div class="agent-avg">Avg: 9min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('More')">
+                        <div style="padding-top: 20px; color: #888;">+7 more</div>
+                    </div>
+                </div>
+
+                <div class="queue-bar">
+                    <div class="queue-stats">
+                        <div class="queue-stat">
+                            <div class="queue-label">Queue</div>
+                            <div class="queue-value">15 waiting</div>
+                        </div>
+                        <div class="queue-stat">
+                            <div class="queue-label">Avg Wait</div>
+                            <div class="queue-value">2.3 min</div>
+                        </div>
+                        <div class="queue-stat">
+                            <div class="queue-label">SLA</div>
+                            <div class="queue-value" style="color: #4caf50;">94%</div>
+                        </div>
+                    </div>
+                    <div class="queue-progress">
+                        <div class="queue-progress-fill" style="width: 53%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <!-- Tier 2 -->
+            <div class="flow-stage">
+                <div class="stage-header">
+                    <div class="stage-title">🔧 Tier 2 - Technical Support</div>
+                    <div class="stage-agents">5 agents online</div>
+                </div>
+
+                <div class="flow-metrics">
+                    <div class="flow-metric">
+                        <div class="flow-metric-label">Inbound</div>
+                        <div class="flow-metric-value">25/hr</div>
+                    </div>
+                    <div class="flow-metric">
+                        <div class="flow-metric-label">Handling</div>
+                        <div class="flow-metric-value">20/hr</div>
+                    </div>
+                    <div class="flow-metric success">
+                        <div class="flow-metric-label">Resolved</div>
+                        <div class="flow-metric-value">18/hr (90%)</div>
+                    </div>
+                </div>
+
+                <div class="agent-grid">
+                    <div class="agent-tile" onclick="showAgent('Agent A')">
+                        <div class="agent-name">Agent A</div>
+                        <div><span class="agent-status busy"></span>Busy</div>
+                        <div class="agent-active">Active: 2</div>
+                        <div class="agent-avg">Avg: 18min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent B')">
+                        <div class="agent-name">Agent B</div>
+                        <div><span class="agent-status busy"></span>Busy</div>
+                        <div class="agent-active">Active: 3</div>
+                        <div class="agent-avg">Avg: 22min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent C')">
+                        <div class="agent-name">Agent C</div>
+                        <div><span class="agent-status available"></span>Available</div>
+                        <div class="agent-active">Active: 1</div>
+                        <div class="agent-avg">Avg: 15min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent D')">
+                        <div class="agent-name">Agent D</div>
+                        <div><span class="agent-status busy"></span>Busy</div>
+                        <div class="agent-active">Active: 2</div>
+                        <div class="agent-avg">Avg: 20min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Agent E')">
+                        <div class="agent-name">Agent E</div>
+                        <div><span class="agent-status offline"></span>Offline</div>
+                        <div class="agent-active">-</div>
+                        <div class="agent-avg">-</div>
+                    </div>
+                </div>
+
+                <div class="queue-bar">
+                    <div class="queue-stats">
+                        <div class="queue-stat">
+                            <div class="queue-label">Queue</div>
+                            <div class="queue-value">8 waiting</div>
+                        </div>
+                        <div class="queue-stat">
+                            <div class="queue-label">Avg Wait</div>
+                            <div class="queue-value" style="color: #ff9800;">12 min</div>
+                        </div>
+                        <div class="queue-stat">
+                            <div class="queue-label">SLA</div>
+                            <div class="queue-value" style="color: #ff9800;">88%</div>
+                        </div>
+                    </div>
+                    <div class="queue-progress">
+                        <div class="queue-progress-fill warning" style="width: 76%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow">↓</div>
+
+            <!-- Tier 3 -->
+            <div class="flow-stage">
+                <div class="stage-header">
+                    <div class="stage-title">⚙️ Tier 3 - Engineering / Specialists</div>
+                    <div class="stage-agents">3 engineers online</div>
+                </div>
+
+                <div class="flow-metrics">
+                    <div class="flow-metric">
+                        <div class="flow-metric-label">Inbound</div>
+                        <div class="flow-metric-value">2/hr</div>
+                    </div>
+                    <div class="flow-metric">
+                        <div class="flow-metric-label">Handling</div>
+                        <div class="flow-metric-value">2/hr</div>
+                    </div>
+                    <div class="flow-metric warning">
+                        <div class="flow-metric-label">Resolved</div>
+                        <div class="flow-metric-value">1.5/hr (75%)</div>
+                    </div>
+                </div>
+
+                <div class="agent-grid">
+                    <div class="agent-tile" onclick="showAgent('Engineer 1')">
+                        <div class="agent-name">Engineer 1</div>
+                        <div><span class="agent-status busy"></span>Busy</div>
+                        <div class="agent-active">Active: 1</div>
+                        <div class="agent-avg">Avg: 45min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Engineer 2')">
+                        <div class="agent-name">Engineer 2</div>
+                        <div><span class="agent-status at-capacity"></span>At Cap</div>
+                        <div class="agent-active">Active: 2</div>
+                        <div class="agent-avg">Avg: 65min</div>
+                    </div>
+                    <div class="agent-tile" onclick="showAgent('Engineer 3')">
+                        <div class="agent-name">Engineer 3</div>
+                        <div><span class="agent-status available"></span>Available</div>
+                        <div class="agent-active">Active: 0</div>
+                        <div class="agent-avg">Avg: 38min</div>
+                    </div>
+                </div>
+
+                <div class="queue-bar">
+                    <div class="queue-stats">
+                        <div class="queue-stat">
+                            <div class="queue-label">Queue</div>
+                            <div class="queue-value">3 waiting</div>
+                        </div>
+                        <div class="queue-stat">
+                            <div class="queue-label">Avg Wait</div>
+                            <div class="queue-value" style="color: #f44336;">45 min</div>
+                        </div>
+                        <div class="queue-stat">
+                            <div class="queue-label">SLA</div>
+                            <div class="queue-value" style="color: #f44336;">67%</div>
+                        </div>
+                    </div>
+                    <div class="queue-progress">
+                        <div class="queue-progress-fill danger" style="width: 92%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Metrics & Alerts -->
+        <div class="metrics-panel">
+            <div class="panel-title">📊 End-to-End Metrics</div>
+
+            <div class="metric-card">
+                <div class="metric-card-title">Flow Performance</div>
+
+                <div class="metric-item">
+                    <div class="metric-item-label">Total Resolution Rate</div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill">
+                            <div class="metric-bar-progress" style="width: 87.2%;"></div>
+                        </div>
+                        <div class="metric-bar-value">87.2%</div>
+                    </div>
+                    <div class="metric-target">Target: 85% <span class="status-badge success">ON TARGET</span></div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-item-label">Avg Time to Resolution</div>
+                    <div class="metric-bar">
+                        <div style="font-size: 1.3em; font-weight: bold; color: #4caf50;">8.4 min</div>
+                    </div>
+                    <div class="metric-target">Target: <10min <span class="status-badge success">ON TARGET</span></div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-item-label">Total Escalation Rate</div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill">
+                            <div class="metric-bar-progress" style="width: 15.2%; background: linear-gradient(90deg, #2196f3 0%, #03a9f4 100%);"></div>
+                        </div>
+                        <div class="metric-bar-value" style="color: #2196f3;">15.2%</div>
+                    </div>
+                    <div class="metric-target">Target: <20% <span class="status-badge success">ON TARGET</span></div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-item-label">Abandon Rate</div>
+                    <div class="metric-bar">
+                        <div class="metric-bar-fill">
+                            <div class="metric-bar-progress" style="width: 4.8%; background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);"></div>
+                        </div>
+                        <div class="metric-bar-value">4.8%</div>
+                    </div>
+                    <div class="metric-target">Target: <5% <span class="status-badge success">ON TARGET</span></div>
+                </div>
+            </div>
+
+            <div class="panel-title" style="margin-top: 25px;">⚠️ Active Alerts</div>
+
+            <div class="alert" onclick="viewAlert('T2 Queue')">
+                <div class="alert-header">
+                    <div class="alert-icon">🔴</div>
+                    <div class="alert-title">T2 Queue exceeding SLA</div>
+                </div>
+                <div class="alert-detail">8 tickets waiting >15min</div>
+                <div class="alert-actions">
+                    <button class="alert-btn">View Queue</button>
+                    <button class="alert-btn">Reassign</button>
+                </div>
+            </div>
+
+            <div class="alert warning" onclick="viewAlert('T3 SLA')">
+                <div class="alert-header">
+                    <div class="alert-icon">🟡</div>
+                    <div class="alert-title">T3 SLA at risk</div>
+                </div>
+                <div class="alert-detail">3 tickets approaching limit</div>
+                <div class="alert-actions">
+                    <button class="alert-btn">View</button>
+                </div>
+            </div>
+
+            <div class="alert warning" onclick="viewAlert('Email Queue')">
+                <div class="alert-header">
+                    <div class="alert-icon">🟡</div>
+                    <div class="alert-title">Email queue building</div>
+                </div>
+                <div class="alert-detail">45 emails in queue (↑15)</div>
+                <div class="alert-actions">
+                    <button class="alert-btn">View Queue</button>
+                </div>
+            </div>
+
+            <div class="panel-title" style="margin-top: 25px;">📈 Trends (vs yesterday)</div>
+
+            <div class="metric-card">
+                <div class="trend-item">
+                    <div class="trend-label">Inbound Volume</div>
+                    <div class="trend-value trend-up">▲ 12% 🔴</div>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-label">Bot Deflection</div>
+                    <div class="trend-value trend-up">▲ 3% 🟢</div>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-label">Avg Handle Time</div>
+                    <div class="trend-value trend-down">▼ 8% 🟢</div>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-label">CSAT Score</div>
+                    <div class="trend-value trend-up">▲ 0.2 🟢</div>
+                </div>
+                <div class="trend-item">
+                    <div class="trend-label">T1 Escalations</div>
+                    <div class="trend-value trend-down">▼ 5% 🟢</div>
+                </div>
+            </div>
+
+            <div class="panel-title" style="margin-top: 25px;">🎯 Top Issues Right Now</div>
+
+            <div class="issue-item" onclick="viewIssue('Query timeout')">
+                <div class="issue-label">Query timeout errors</div>
+                <div class="issue-count">18</div>
+            </div>
+            <div class="issue-item" onclick="viewIssue('Data upload')">
+                <div class="issue-label">Data upload failures</div>
+                <div class="issue-count">12</div>
+            </div>
+            <div class="issue-item" onclick="viewIssue('SSO login')">
+                <div class="issue-label">SSO login issues</div>
+                <div class="issue-count">9</div>
+            </div>
+            <div class="issue-item" onclick="viewIssue('Dashboard')">
+                <div class="issue-label">Dashboard not loading</div>
+                <div class="issue-count">7</div>
+            </div>
+            <div class="issue-item" onclick="viewIssue('Export CSV')">
+                <div class="issue-label">Export CSV errors</div>
+                <div class="issue-count">5</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interactive functions
+        function filterChannel(channel) {
+            console.log('Filtering by channel:', channel);
+            alert('In production: Dashboard would filter all metrics to show only ' + channel + ' traffic');
+        }
+
+        function showAgent(agent) {
+            console.log('Showing agent details:', agent);
+            alert('Agent Details: ' + agent + '\n\nIn production: Would show:\n• Active conversations\n• Performance metrics\n• History\n• Availability schedule');
+        }
+
+        function viewAlert(alert) {
+            console.log('Viewing alert:', alert);
+            alert('Alert: ' + alert + '\n\nIn production: Would jump to relevant queue or escalation management view');
+        }
+
+        function viewIssue(issue) {
+            console.log('Viewing issue:', issue);
+            alert('Top Issue: ' + issue + '\n\nIn production: Would show:\n• All related tickets\n• Common patterns\n• Resolution suggestions\n• Knowledge base articles');
+        }
+
+        // Simulate real-time updates
+        setInterval(() => {
+            // In production, this would fetch real data
+            console.log('Dashboard refreshing...');
+        }, 5000);
+
+        // Add click handlers to channel cards for active state
+        document.querySelectorAll('.channel-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.channel-card').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+name: projman
+display_name: Project Manager
+description: Notes and recordings webviews for project management
+version: 1.0.0
+commands:
+  - x-notes.md
+  - x-recordings.md
+agents: []
+webviews:
+  - action: notes
+    title: Add Note
+    description: Quick capture of project notes, observations, and decisions
+  - action: note-view
+    title: View Notes
+    description: Browse and search all project notes
+  - action: recordings
+    title: Add Transcript
+    description: Save meeting recordings with metadata and AI-powered summarization
+  - action: trans-view
+    title: View Transcripts
+    description: Browse all transcripts and recordings with summaries
+scripts: []
+templates: []
+dependencies:
+  - name: node
+    check: node --version
+    min_version: 18.0.0
+default_for_types:
+  - common
+  - client-salesforce
+  - client-other
+  - product
+  - max-builder
+claude_addendum: CLAUDE.md
+menu_items:
+  - section: Project Management
+    items:
+      - name: Add Note
+        action: open-webview
+        mod-name: projman
+        mod-action: notes
+        description: Quick capture project notes
+      - name: View Notes
+        action: open-webview
+        mod-name: projman
+        mod-action: note-view
+        description: Browse all project notes
+      - name: Add Transcript
+        action: open-webview
+        mod-name: projman
+        mod-action: recordings
+        description: Save meeting recordings
+      - name: View Transcripts
+        action: open-webview
+        mod-name: projman
+        mod-action: trans-view
+        description: Browse all transcripts

@@ -1,0 +1,570 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../../mindzie_studio/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Management | Block | mindzieAPI Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">API Documentation</span></div></div>
+        <div class="header-right"><nav class="product-nav"><a href="../../../mindzie_studio/index.html" class="product-item">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../index.html" class="product-item active">mindzieAPI</a></nav></div></div></header>
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>mindzieAPI</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="getting-started-section"><div class="nav-section-header-wrapper"><a href="../../getting-started/index.html" class="nav-section-title-link ">Getting Started</a></div><!--!-->
+                <div id="getting-started" class="nav-section-content"><a href="../../authentication/index.html" class="nav-subitem ">Authentication</a><!--!-->
+                    <a href="../../quick-start/index.html" class="nav-subitem ">Quick Start</a><!--!-->
+                    <a href="../../response-formats/index.html" class="nav-subitem ">Response Formats</a></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded" id="action-api-section"><div class="nav-section-header-wrapper"><a href="../../action/index.html" class="nav-section-title-link ">Actions</a></div><!--!-->
+                <div id="action-api" class="nav-section-content"><a href="../../action/ping/index.html" class="nav-subitem ">Ping Endpoints</a><!--!-->
+                    <a href="../../action/execute/index.html" class="nav-subitem ">Execute Actions</a><!--!-->
+                    <a href="../../action/history/index.html" class="nav-subitem ">Action History</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="block-api-section"><div class="nav-section-header-wrapper"><a href="../index.html" class="nav-section-title-link ">Blocks</a></div><!--!-->
+                <div id="block-api" class="nav-section-content"><a href="index.html" class="nav-subitem active">Block Management</a><!--!-->
+                    <a href="../execution/index.html" class="nav-subitem ">Block Execution</a><!--!-->
+                    <a href="../results/index.html" class="nav-subitem ">Block Results</a><!--!-->
+                    <a href="../types/index.html" class="nav-subitem ">Block Types</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dashboard-api-section"><div class="nav-section-header-wrapper"><a href="../../dashboard/index.html" class="nav-section-title-link ">Dashboards</a></div><!--!-->
+                <div id="dashboard-api" class="nav-section-content"><a href="../../dashboard/management/index.html" class="nav-subitem ">Dashboard Management</a><!--!-->
+                    <a href="../../dashboard/panels/index.html" class="nav-subitem ">Panel Management</a><!--!-->
+                    <a href="../../dashboard/sharing/index.html" class="nav-subitem "><!--!-->Sharing &amp; URLs</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="dataset-api-section"><div class="nav-section-header-wrapper"><a href="../../dataset/index.html" class="nav-section-title-link ">Datasets</a></div><!--!-->
+                <div id="dataset-api" class="nav-section-content"><a href="../../dataset/creation/index.html" class="nav-subitem ">Dataset Creation</a><!--!-->
+                    <a href="../../dataset/import/index.html" class="nav-subitem ">Data Import</a><!--!-->
+                    <a href="../../dataset/updates/index.html" class="nav-subitem ">Dataset Updates</a><!--!-->
+                    <a href="../../dataset/formats/index.html" class="nav-subitem ">File Formats</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="enrichment-api-section"><div class="nav-section-header-wrapper"><a href="../../enrichment/index.html" class="nav-section-title-link ">Enrichments</a></div><!--!-->
+                <div id="enrichment-api" class="nav-section-content"><a href="../../enrichment/pipelines/index.html" class="nav-subitem ">Pipeline Management</a><!--!-->
+                    <a href="../../enrichment/execution/index.html" class="nav-subitem ">Pipeline Execution</a><!--!-->
+                    <a href="../../enrichment/notebooks/index.html" class="nav-subitem ">Notebook Integration</a></div></div><!--!-->
+            
+            <div class="nav-section always-expanded" id="execution-api-section"><div class="nav-section-header-wrapper"><a href="../../execution/index.html" class="nav-section-title-link ">Execution</a></div><!--!-->
+                <div id="execution-api" class="nav-section-content"><a href="../../execution/queue/index.html" class="nav-subitem ">Queue Management</a><!--!-->
+                    <a href="../../execution/tracking/index.html" class="nav-subitem ">Execution Tracking</a><!--!-->
+                    <a href="../../execution/async/index.html" class="nav-subitem ">Async Processing</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Management</h1><div class="page-breadcrumb">Block</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!-->
+        <!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="get-update-and-delete-analysis-blocks">Get, Update, and Delete Analysis Blocks</h2>
+<p>Manage analysis blocks within notebooks. Blocks are the fundamental analysis units that perform data transformations, calculations, filtering operations, and alerting.</p>
+<h2 id="connectivity-testing">Connectivity Testing</h2>
+<h3 id="unauthorized-ping">Unauthorized Ping</h3>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/block/unauthorized-ping</code></p>
+<p>Test endpoint that does not require authentication. Use this to verify the Block API is accessible.</p>
+<h4 id="response">Response</h4>
+<pre><code>Ping Successful
+</code></pre>
+<h3 id="authenticated-ping">Authenticated Ping</h3>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/block/ping</code></p>
+<p>Authenticated ping endpoint to verify API access for a specific tenant and project.</p>
+<h4 id="response-200-ok">Response (200 OK)</h4>
+<pre><code>Ping Successful (tenant id: {tenantId})
+</code></pre>
+<h4 id="response-401-unauthorized">Response (401 Unauthorized)</h4>
+<pre><code>{error message describing authorization failure}
+</code></pre>
+<h2 id="get-block-details">Get Block Details</h2>
+<p><strong>GET</strong> <code>/api/{tenantId}/{projectId}/block/{blockId}</code></p>
+<p>Retrieves comprehensive information about a specific analysis block including its configuration, execution history, and metadata.</p>
+<h3 id="path-parameters">Path Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tenantId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The tenant identifier</td>
+</tr>
+<tr>
+<td><code>projectId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The project identifier</td>
+</tr>
+<tr>
+<td><code>blockId</code></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The block identifier</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-200-ok-1">Response (200 OK)</h3>
+<pre><code class="language-json">{
+  "blockId": "550e8400-e29b-41d4-a716-446655440000",
+  "notebookId": "660e8400-e29b-41d4-a716-446655440000",
+  "blockType": "Filter",
+  "blockTitle": "Date Range Filter",
+  "blockDescription": "Filters data for the last 30 days",
+  "blockOrder": 0,
+  "configuration": "{\"filterType\": \"dateRange\", \"startDate\": \"2024-01-01\"}",
+  "isDisabled": false,
+  "dateCreated": "2024-01-15T10:30:00Z",
+  "dateModified": "2024-01-15T14:45:00Z",
+  "createdBy": "user@example.com",
+  "modifiedBy": "user@example.com",
+  "lastExecutionDate": "2024-01-15T14:45:00Z",
+  "lastExecutionStatus": "Success",
+  "executionCount": 12
+}
+</code></pre>
+<h3 id="response-fields">Response Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blockId</code></td>
+<td>GUID</td>
+<td>Unique identifier for the block</td>
+</tr>
+<tr>
+<td><code>notebookId</code></td>
+<td>GUID</td>
+<td>ID of the notebook containing this block</td>
+</tr>
+<tr>
+<td><code>blockType</code></td>
+<td>string</td>
+<td>Type of block (Filter, Calculator, Alert, etc.)</td>
+</tr>
+<tr>
+<td><code>blockTitle</code></td>
+<td>string</td>
+<td>Display title of the block</td>
+</tr>
+<tr>
+<td><code>blockDescription</code></td>
+<td>string</td>
+<td>Description of the block's purpose</td>
+</tr>
+<tr>
+<td><code>blockOrder</code></td>
+<td>integer</td>
+<td>Order of the block in the notebook (default: 0)</td>
+</tr>
+<tr>
+<td><code>configuration</code></td>
+<td>string</td>
+<td>JSON string containing block settings</td>
+</tr>
+<tr>
+<td><code>isDisabled</code></td>
+<td>boolean</td>
+<td>Whether the block is disabled</td>
+</tr>
+<tr>
+<td><code>dateCreated</code></td>
+<td>datetime</td>
+<td>When the block was created</td>
+</tr>
+<tr>
+<td><code>dateModified</code></td>
+<td>datetime</td>
+<td>When the block was last modified</td>
+</tr>
+<tr>
+<td><code>createdBy</code></td>
+<td>string</td>
+<td>User who created the block</td>
+</tr>
+<tr>
+<td><code>modifiedBy</code></td>
+<td>string</td>
+<td>User who last modified the block</td>
+</tr>
+<tr>
+<td><code>lastExecutionDate</code></td>
+<td>datetime</td>
+<td>When the block was last executed</td>
+</tr>
+<tr>
+<td><code>lastExecutionStatus</code></td>
+<td>string</td>
+<td>Status of last execution</td>
+</tr>
+<tr>
+<td><code>executionCount</code></td>
+<td>integer</td>
+<td>Number of times block has been executed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-responses">Error Responses</h3>
+<p><strong>Not Found (404):</strong></p>
+<pre><code class="language-json">{
+  "Error": "Block not found",
+  "BlockId": "550e8400-e29b-41d4-a716-446655440000"
+}
+</code></pre>
+<h2 id="update-block">Update Block</h2>
+<p><strong>PUT</strong> <code>/api/{tenantId}/{projectId}/block/{blockId}</code></p>
+<p>Updates an existing block's metadata. Preserves execution history while updating the specified fields.</p>
+<h3 id="request-body">Request Body</h3>
+<pre><code class="language-json">{
+  "blockTitle": "Updated Date Filter",
+  "blockDescription": "Filters data for custom date range",
+  "isDisabled": false
+}
+</code></pre>
+<h3 id="request-fields">Request Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>blockTitle</code></td>
+<td>string</td>
+<td>No</td>
+<td>New title for the block</td>
+</tr>
+<tr>
+<td><code>blockDescription</code></td>
+<td>string</td>
+<td>No</td>
+<td>New description for the block</td>
+</tr>
+<tr>
+<td><code>isDisabled</code></td>
+<td>boolean</td>
+<td>No</td>
+<td>Whether to disable the block</td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-200-ok-2">Response (200 OK)</h3>
+<p>Returns the updated block object with the same structure as the GET endpoint.</p>
+<h3 id="error-responses-1">Error Responses</h3>
+<p><strong>Bad Request (400):</strong></p>
+<pre><code>Failed to update block.
+</code></pre>
+<h2 id="delete-block">Delete Block</h2>
+<p><strong>DELETE</strong> <code>/api/{tenantId}/{projectId}/block/{blockId}</code></p>
+<p>Permanently removes a block and all its execution history from the notebook. This operation cannot be undone.</p>
+<h3 id="response-codes">Response Codes</h3>
+<ul>
+<li><code>204 No Content</code> - Block deleted successfully</li>
+<li><code>400 Bad Request</code> - Failed to delete block</li>
+<li><code>401 Unauthorized</code> - Not authenticated or lacks access</li>
+<li><code>404 Not Found</code> - Block not found</li>
+</ul>
+<h2 id="creating-blocks">Creating Blocks</h2>
+<p>Block creation is handled through the Notebook API, not the Block API.</p>
+<p><strong>POST</strong> <code>/api/{tenantId}/{projectId}/notebook/{notebookId}/blocks</code></p>
+<p>See <a href="../../notebook/overview/index.html">Notebook API</a> for complete block creation documentation.</p>
+<h2 id="implementation-examples">Implementation Examples</h2>
+<h3 id="curl">cURL</h3>
+<pre><code class="language-bash"># Test connectivity (no auth)
+curl -X GET "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/block/unauthorized-ping"
+
+# Test connectivity (authenticated)
+curl -X GET "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/block/ping" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+
+# Get block details
+curl -X GET "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/block/550e8400-e29b-41d4-a716-446655440000" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+
+# Update block
+curl -X PUT "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/block/550e8400-e29b-41d4-a716-446655440000" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"blockTitle": "Updated Filter", "isDisabled": false}'
+
+# Delete block
+curl -X DELETE "https://your-mindzie-instance.com/api/12345678-1234-1234-1234-123456789012/87654321-4321-4321-4321-210987654321/block/550e8400-e29b-41d4-a716-446655440000" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+</code></pre>
+<h3 id="javascriptnode.js">JavaScript/Node.js</h3>
+<pre><code class="language-javascript">const TENANT_ID = '12345678-1234-1234-1234-123456789012';
+const PROJECT_ID = '87654321-4321-4321-4321-210987654321';
+const BASE_URL = 'https://your-mindzie-instance.com';
+
+class BlockManager {
+  constructor(token) {
+    this.token = token;
+    this.headers = {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    };
+  }
+
+  async getBlock(blockId) {
+    const url = `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/block/${blockId}`;
+    const response = await fetch(url, { headers: this.headers });
+
+    if (response.ok) {
+      return await response.json();
+    } else if (response.status === 404) {
+      throw new Error('Block not found');
+    } else {
+      throw new Error(`Failed to get block: ${response.status}`);
+    }
+  }
+
+  async updateBlock(blockId, updates) {
+    const url = `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/block/${blockId}`;
+    const response = await fetch(url, {
+      method: 'PUT',
+      headers: this.headers,
+      body: JSON.stringify(updates)
+    });
+
+    if (response.ok) {
+      return await response.json();
+    } else {
+      throw new Error(`Failed to update block: ${response.status}`);
+    }
+  }
+
+  async deleteBlock(blockId) {
+    const url = `${BASE_URL}/api/${TENANT_ID}/${PROJECT_ID}/block/${blockId}`;
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: this.headers
+    });
+
+    return response.status === 204;
+  }
+}
+
+// Usage
+const manager = new BlockManager('your-auth-token');
+
+// Get block details
+const block = await manager.getBlock('block-guid');
+console.log(`Block: ${block.blockTitle} (${block.blockType})`);
+
+// Update block
+const updated = await manager.updateBlock('block-guid', {
+  blockTitle: 'Updated Title',
+  isDisabled: false
+});
+
+// Delete block
+const deleted = await manager.deleteBlock('block-guid');
+</code></pre>
+<h3 id="python">Python</h3>
+<pre><code class="language-python">import requests
+
+TENANT_ID = '12345678-1234-1234-1234-123456789012'
+PROJECT_ID = '87654321-4321-4321-4321-210987654321'
+BASE_URL = 'https://your-mindzie-instance.com'
+
+class BlockManager:
+    def __init__(self, token):
+        self.headers = {
+            'Authorization': f'Bearer {token}',
+            'Content-Type': 'application/json'
+        }
+
+    def get_block(self, block_id):
+        """Get block details."""
+        url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/block/{block_id}'
+        response = requests.get(url, headers=self.headers)
+
+        if response.ok:
+            return response.json()
+        elif response.status_code == 404:
+            raise Exception('Block not found')
+        else:
+            raise Exception(f'Failed to get block: {response.status_code}')
+
+    def update_block(self, block_id, title=None, description=None, disabled=None):
+        """Update block metadata."""
+        url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/block/{block_id}'
+        payload = {}
+        if title is not None:
+            payload['blockTitle'] = title
+        if description is not None:
+            payload['blockDescription'] = description
+        if disabled is not None:
+            payload['isDisabled'] = disabled
+
+        response = requests.put(url, json=payload, headers=self.headers)
+
+        if response.ok:
+            return response.json()
+        else:
+            raise Exception(f'Failed to update block: {response.status_code}')
+
+    def delete_block(self, block_id):
+        """Delete a block."""
+        url = f'{BASE_URL}/api/{TENANT_ID}/{PROJECT_ID}/block/{block_id}'
+        response = requests.delete(url, headers=self.headers)
+        return response.status_code == 204
+
+# Usage
+manager = BlockManager('your-auth-token')
+
+# Get block
+block = manager.get_block('block-guid')
+print(f"Block: {block['blockTitle']} ({block['blockType']})")
+print(f"Execution count: {block['executionCount']}")
+
+# Update block
+updated = manager.update_block('block-guid', title='New Title', disabled=False)
+print(f"Updated: {updated['blockTitle']}")
+
+# Delete block
+if manager.delete_block('block-guid'):
+    print('Block deleted successfully')
+</code></pre>
+<h3 id="c">C#</h3>
+<pre><code class="language-csharp">using System;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
+
+public class BlockReturn
+{
+    public Guid BlockId { get; set; }
+    public Guid NotebookId { get; set; }
+    public string BlockType { get; set; }
+    public string BlockTitle { get; set; }
+    public string BlockDescription { get; set; }
+    public int BlockOrder { get; set; }
+    public string Configuration { get; set; }
+    public bool IsDisabled { get; set; }
+    public DateTime DateCreated { get; set; }
+    public DateTime DateModified { get; set; }
+    public string CreatedBy { get; set; }
+    public string ModifiedBy { get; set; }
+    public DateTime? LastExecutionDate { get; set; }
+    public string LastExecutionStatus { get; set; }
+    public int ExecutionCount { get; set; }
+}
+
+public class BlockApiClient
+{
+    private readonly HttpClient _httpClient;
+    private readonly string _baseUrl;
+    private readonly Guid _tenantId;
+    private readonly Guid _projectId;
+
+    public BlockApiClient(string baseUrl, Guid tenantId, Guid projectId, string accessToken)
+    {
+        _baseUrl = baseUrl;
+        _tenantId = tenantId;
+        _projectId = projectId;
+        _httpClient = new HttpClient();
+        _httpClient.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", accessToken);
+    }
+
+    public async Task&lt;BlockReturn&gt; GetBlockAsync(Guid blockId)
+    {
+        var url = $"{_baseUrl}/api/{_tenantId}/{_projectId}/block/{blockId}";
+        var response = await _httpClient.GetAsync(url);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize&lt;BlockReturn&gt;(json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+
+        throw new Exception($"Failed to get block: {response.StatusCode}");
+    }
+
+    public async Task&lt;BlockReturn&gt; UpdateBlockAsync(Guid blockId, string title, string description, bool? isDisabled)
+    {
+        var url = $"{_baseUrl}/api/{_tenantId}/{_projectId}/block/{blockId}";
+        var payload = new
+        {
+            blockTitle = title,
+            blockDescription = description,
+            isDisabled = isDisabled
+        };
+
+        var content = new StringContent(
+            JsonSerializer.Serialize(payload),
+            Encoding.UTF8,
+            "application/json");
+
+        var response = await _httpClient.PutAsync(url, content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var json = await response.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize&lt;BlockReturn&gt;(json,
+                new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+
+        throw new Exception($"Failed to update block: {response.StatusCode}");
+    }
+
+    public async Task&lt;bool&gt; DeleteBlockAsync(Guid blockId)
+    {
+        var url = $"{_baseUrl}/api/{_tenantId}/{_projectId}/block/{blockId}";
+        var response = await _httpClient.DeleteAsync(url);
+        return response.StatusCode == System.Net.HttpStatusCode.NoContent;
+    }
+}
+</code></pre>
+</div></div></main></div><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

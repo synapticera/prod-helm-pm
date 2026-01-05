@@ -1,0 +1,809 @@
+<!DOCTYPE html><html lang="en" style="--blazor-load-percentage: 100%; --blazor-load-percentage-text: &quot;100%&quot;;"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <base href="../../index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link href="../css/mindzie-style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../favicon.png">
+<!--!--><!--!--><!--!--><title>Data Selector | Calculators | mindzieStudio Documentation</title><!--!--><!--!--><!--!--></head>
+<body>
+    <div id="app"><!--!--><!--!--><!--!--><!--!--><header class="main-header"><div class="header-content"><!--!--><div class="header-left"><div class="logo"><span class="logo-text">mindzie</span>
+                <span class="logo-subtitle">Studio Documentation</span></div></div>
+        <div class="header-right"><!--!--><div class="search-container"><div class="search-box "><div class="search-input-wrapper"><!--!--><span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search documentation... (Ctrl+K)" autocomplete="off" spellcheck="false" _bl_2=""><button class="search-page-button" title="Go to search page"><!--!--><span>🔎</span></button></div></div></div><!--!-->
+            <!--!--><nav class="product-nav"><a href="../../index.html" class="product-item active">mindzieStudio</a>
+                <a href="../../../mindzie_data_designer/index.html" class="product-item">mindzieDataDesigner</a>
+                <a href="../../../mindzie_api/index.html" class="product-item">mindzieAPI</a></nav></div></div></header><!--!-->
+
+
+<div class="frame-main"><nav class="frame-sidebar"><div class="sidebar-content"><a href="../../index.html" class="nav-item overview "><!--!--><span class="nav-text"><strong>Home</strong></span></a><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="core-concepts-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Core Concepts</span></div>
+                <div id="core-concepts" class="nav-section-content"><div class="nav-subsection collapsed" id="filters-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Filters</span></button><!--!-->
+                        <div id="filters" class="nav-subsection-items"><a href="../../filters/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../filters/activity-frequency/index.html" class="nav-subitem">Activity Frequency</a><!--!-->
+                            <a href="../../filters/activity-not-performed/index.html" class="nav-subitem">Activity Not Performed</a><!--!-->
+                            <a href="../../filters/activity-performed-once/index.html" class="nav-subitem">Activity Performed Once</a><!--!-->
+                            <a href="../../filters/case-end/index.html" class="nav-subitem">Case End</a><!--!-->
+                            <a href="../../filters/case-start/index.html" class="nav-subitem">Case Start</a><!--!-->
+                            <a href="../../filters/cases-with-attribute/index.html" class="nav-subitem">Cases with Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-changed-attribute/index.html" class="nav-subitem">Cases with Changed Attribute</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-dates/index.html" class="nav-subitem">Cases with Identical Event Dates</a><!--!-->
+                            <a href="../../filters/cases-with-identical-event-timestamps/index.html" class="nav-subitem">Cases with Identical Event Timestamps</a><!--!-->
+                            <a href="../../filters/cases-with-unchanged-attribute/index.html" class="nav-subitem">Cases with Unchanged Attribute</a><!--!-->
+                            <a href="../../filters/compare-attribute-values/index.html" class="nav-subitem">Compare Attribute Values</a><!--!-->
+                            <a href="../../filters/deadline/index.html" class="nav-subitem">Deadline</a><!--!-->
+                            <a href="../../filters/event-order/index.html" class="nav-subitem">Event Order</a><!--!-->
+                            <a href="../../filters/events-before-or-after-activity/index.html" class="nav-subitem">Events Before or After Activity</a><!--!-->
+                            <a href="../../filters/events-with-attribute/index.html" class="nav-subitem">Events with Attribute</a><!--!-->
+                            <a href="../../filters/filter-list/index.html" class="nav-subitem">Filter List</a><!--!-->
+                            <a href="../../filters/keep-events-with-same-value-as-case-attribute/index.html" class="nav-subitem">Keep Events with Same Value as Case Attribute</a><!--!-->
+                            <a href="../../filters/or-filter/index.html" class="nav-subitem">Or Filter</a><!--!-->
+                            <a href="../../filters/process-variants/index.html" class="nav-subitem">Process Variants</a><!--!-->
+                            <a href="../../filters/remove-activity-loops/index.html" class="nav-subitem">Remove Activity Loops</a><!--!-->
+                            <a href="../../filters/remove-activity-with-same-date/index.html" class="nav-subitem">Remove Activity with Same Date</a><!--!-->
+                            <a href="../../filters/remove-activity-with-similar-time/index.html" class="nav-subitem">Remove Activity with Similar Time</a><!--!-->
+                            <a href="../../filters/remove-data-from-underactive-periods/index.html" class="nav-subitem">Remove Data from Underactive Periods</a><!--!-->
+                            <a href="../../filters/select-variants/index.html" class="nav-subitem">Select Variants</a><!--!-->
+                            <a href="../../filters/selected-activity-frequency/index.html" class="nav-subitem">Selected Activity Frequency</a><!--!-->
+                            <a href="../../filters/single-activity-cases/index.html" class="nav-subitem">Single Activity Cases</a><!--!-->
+                            <a href="../../filters/text-search/index.html" class="nav-subitem">Text Search</a><!--!-->
+                            <a href="../../filters/time-between-activities/index.html" class="nav-subitem">Time Between Activities</a><!--!-->
+                            <a href="../../filters/time-period/index.html" class="nav-subitem">Time Period</a><!--!-->
+                            <a href="../../filters/value-frequency/index.html" class="nav-subitem">Value Frequency</a><!--!-->
+                            <a href="../../filters/variant-frequency/index.html" class="nav-subitem">Variant Frequency</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection expanded" id="calculators-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Calculators</span></button><!--!-->
+                        <div id="calculators" class="nav-subsection-items"><a href="../index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../activity-information/index.html" class="nav-subitem">Activity Information</a><!--!-->
+                            <a href="../average-value/index.html" class="nav-subitem">Average Value</a><!--!-->
+                            <a href="../automation/index.html" class="nav-subitem">Automation Calculator</a><!--!-->
+                            <a href="../breakdown-by-categories/index.html" class="nav-subitem">Breakdown By Categories</a><!--!-->
+                            <a href="../case-count/index.html" class="nav-subitem">Case Count</a><!--!-->
+                            <a href="../case-duration/index.html" class="nav-subitem">Case Duration</a><!--!-->
+                            <a href="../chair-usage/index.html" class="nav-subitem">Chair Usage</a><!--!-->
+                            <a href="../column-info/index.html" class="nav-subitem">Column Info</a><!--!-->
+                            <a href="index.html" class="nav-subitem active">Data Selector</a><!--!-->
+                            <a href="../days-of-sales-outstanding-dpo/index.html" class="nav-subitem">Days Of Sales Outstanding / DPO</a><!--!-->
+                            <a href="../dataset-information/index.html" class="nav-subitem">Dataset Information</a><!--!-->
+                            <a href="../duplicate-cases/index.html" class="nav-subitem">Duplicate Cases</a><!--!-->
+                            <a href="../event-count/index.html" class="nav-subitem">Event Count</a><!--!-->
+                            <a href="../find-date-outliers/index.html" class="nav-subitem">Find Date Outliers</a><!--!-->
+                            <a href="../find-text-in-attributes/index.html" class="nav-subitem">Find Text In Attributes</a><!--!-->
+                            <a href="../general-3-way-match/index.html" class="nav-subitem">General 3 Way Match</a><!--!-->
+                            <a href="../histogram/index.html" class="nav-subitem">Histogram</a><!--!-->
+                            <a href="../llm-prompts/index.html" class="nav-subitem">LLM Prompts</a><!--!-->
+                            <a href="../maximum-value/index.html" class="nav-subitem">Maximum Value</a><!--!-->
+                            <a href="../metadata/index.html" class="nav-subitem">Metadata</a><!--!-->
+                            <a href="../minimum-value/index.html" class="nav-subitem">Minimum Value</a><!--!-->
+                            <a href="../process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                            <a href="../process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                            <a href="../rate/index.html" class="nav-subitem">Rate</a><!--!-->
+                            <a href="../rate-over-time/index.html" class="nav-subitem">Rate Over Time</a><!--!-->
+                            <a href="../repeated-activities/index.html" class="nav-subitem">Repeated Activities</a><!--!-->
+                            <a href="../resource-performance-vs-conformance/index.html" class="nav-subitem">Resource Performance Vs Conformance</a><!--!-->
+                            <a href="../root-cause-analysis/index.html" class="nav-subitem">Root Cause Analysis</a><!--!-->
+                            <a href="../same-time-pairs/index.html" class="nav-subitem">Same Time Pairs</a><!--!-->
+                            <a href="../show-notes/index.html" class="nav-subitem">Show Notes</a><!--!-->
+                            <a href="../sum-of-values/index.html" class="nav-subitem">Sum Of Values</a><!--!-->
+                            <a href="../sum-of-values-for-activity/index.html" class="nav-subitem">Sum Of Values For Activity</a><!--!-->
+                            <a href="../standard-checker/index.html" class="nav-subitem">Standard Checker</a><!--!-->
+                            <a href="../time-between-all-activity-pairs/index.html" class="nav-subitem">Time Between All Activity Pairs</a><!--!-->
+                            <a href="../time-between-selected-events/index.html" class="nav-subitem">Time Between Selected Events</a><!--!-->
+                            <a href="../time-from-case-start-to-selected-event/index.html" class="nav-subitem">Time From Case Start To Selected Event</a><!--!-->
+                            <a href="../trend/index.html" class="nav-subitem">Trend</a><!--!-->
+                            <a href="../variant-dna/index.html" class="nav-subitem">Variant DNA</a><!--!-->
+                            <a href="../value-count-in-case-attribute/index.html" class="nav-subitem">Value Count In Case Attribute</a><!--!-->
+                            <a href="../value-count-in-event-attribute/index.html" class="nav-subitem">Value Count In Event Attribute</a><!--!-->
+                            <a href="../what-if-simulation-working-capital/index.html" class="nav-subitem">What If Simulation Working Capital</a><!--!-->
+                            <a href="../world-map/index.html" class="nav-subitem">World Map</a></div></div><!--!-->
+                    
+                    
+                    <div class="nav-subsection collapsed" id="enrichments-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Enrichments</span></button><!--!-->
+                        <div id="enrichments" class="nav-subsection-items"><a href="../../enrichments/index.html" class="nav-subitem overview-item"><!--!-->📊 Overview</a><!--!-->
+                            <a href="../../enrichments/2-way-match/index.html" class="nav-subitem ">2 Way Match</a><!--!-->
+                            <a href="../../enrichments/activity-copy-latest-event-value/index.html" class="nav-subitem ">Activity Copy Latest EventValue</a><!--!-->
+                            <a href="../../enrichments/activity-order-classification/index.html" class="nav-subitem ">Activity Order Classification</a><!--!-->
+                            <a href="../../enrichments/add-activity-from-case-attribute/index.html" class="nav-subitem ">Add Activity From Case Attribute</a><!--!-->
+                            <a href="../../enrichments/create-update-activity/index.html" class="nav-subitem ">Create Update Activity</a><!--!-->
+                            <a href="../../enrichments/fill-blanks-in-event-attribute/index.html" class="nav-subitem ">Fill Blanks In Event Attribute</a><!--!-->
+                            <a href="../../enrichments/remove-activities/index.html" class="nav-subitem ">Remove Activities</a><!--!-->
+                            <a href="../../enrichments/remove-duplicate-events/index.html" class="nav-subitem ">Remove Duplicate Events</a><!--!-->
+                            <a href="../../enrichments/remove-repeated-activities/index.html" class="nav-subitem ">Remove Repeated Activities</a><!--!-->
+                            <a href="../../enrichments/add/index.html" class="nav-subitem ">Add</a><!--!-->
+                            <a href="../../enrichments/divide/index.html" class="nav-subitem ">Divide</a><!--!-->
+                            <a href="../../enrichments/multiply/index.html" class="nav-subitem ">Multiply</a><!--!-->
+                            <a href="../../enrichments/subtract/index.html" class="nav-subitem ">Subtract</a><!--!-->
+                            <a href="../../enrichments/anonymize/index.html" class="nav-subitem ">Anonymize</a><!--!-->
+                            <a href="../../enrichments/change-attribute-display-name/index.html" class="nav-subitem ">Change Attribute Display Name</a><!--!-->
+                            <a href="../../enrichments/change-attribute-name/index.html" class="nav-subitem ">Change Attribute Name</a><!--!-->
+                            <a href="../../enrichments/combine-boolean-attributes/index.html" class="nav-subitem ">Combine Boolean Attributes</a><!--!-->
+                            <a href="../../enrichments/concatenate-attributes/index.html" class="nav-subitem ">Concatenate Attributes</a><!--!-->
+                            <a href="../../enrichments/convert-currency-to-base/index.html" class="nav-subitem ">Convert Currency To Base</a><!--!-->
+                            <a href="../../enrichments/convert-to-case-attributes/index.html" class="nav-subitem ">Convert To Case Attributes</a><!--!-->
+                            <a href="../../enrichments/convert-to-integer/index.html" class="nav-subitem ">Convert To Integer</a><!--!-->
+                            <a href="../../enrichments/copy-attribute/index.html" class="nav-subitem ">Copy Attribute</a><!--!-->
+                            <a href="../../enrichments/hide-attribute/index.html" class="nav-subitem ">Hide Attribute</a><!--!-->
+                            <a href="../../enrichments/hide-blank-attributes/index.html" class="nav-subitem ">Hide Blank Attributes</a><!--!-->
+                            <a href="../../enrichments/set-group-value/index.html" class="nav-subitem ">Set Group Value</a><!--!-->
+                            <a href="../../enrichments/attribute-changes-between-two-activities/index.html" class="nav-subitem ">Attribute Changes Between Two Activities</a><!--!-->
+                            <a href="../../enrichments/attribute-changes-in-a-case/index.html" class="nav-subitem ">Attribute Changes In A Case</a><!--!-->
+                            <a href="../../enrichments/compare-activity-counts/index.html" class="nav-subitem ">Compare Activity Counts</a><!--!-->
+                            <a href="../../enrichments/compare-case-attributes/index.html" class="nav-subitem ">Compare Case Attributes</a><!--!-->
+                            <a href="../../enrichments/compare-event-attributes-for-two-activities/index.html" class="nav-subitem ">Compare Event Attributes For Two Activities</a><!--!-->
+                            <a href="../../enrichments/compare-multiple-case-attributes/index.html" class="nav-subitem ">Compare Multiple Case Attributes</a><!--!-->
+                            <a href="../../enrichments/event-order-algorithm/index.html" class="nav-subitem ">Event Order Algorithm</a><!--!-->
+                            <a href="../../enrichments/allowed-case-end-activities/index.html" class="nav-subitem ">Allowed Case End Activities</a><!--!-->
+                            <a href="../../enrichments/allowed-case-start-activities/index.html" class="nav-subitem ">Allowed Case Start Activities</a><!--!-->
+                            <a href="../../enrichments/conformance-issue/index.html" class="nav-subitem ">Conformance Issue</a><!--!-->
+                            <a href="../../enrichments/expected-order/index.html" class="nav-subitem ">Expected Order</a><!--!-->
+                            <a href="../../enrichments/mandatory-activity/index.html" class="nav-subitem ">Mandatory Activity</a><!--!-->
+                            <a href="../../enrichments/repeated-activity/index.html" class="nav-subitem ">Repeated Activity</a><!--!-->
+                            <a href="../../enrichments/undesired-activity/index.html" class="nav-subitem ">Undesired Activity</a><!--!-->
+                            <a href="../../enrichments/wrong-activity-order/index.html" class="nav-subitem ">Wrong Activity Order</a><!--!-->
+                            <a href="../../enrichments/case-closed/index.html" class="nav-subitem ">Case Closed</a><!--!-->
+                            <a href="../../enrichments/categorize-attribute-values/index.html" class="nav-subitem ">Categorize Attribute Values</a><!--!-->
+                            <a href="../../enrichments/categorize-duration/index.html" class="nav-subitem ">Categorize Duration</a><!--!-->
+                            <a href="../../enrichments/count-boolean-attributes-with-value/index.html" class="nav-subitem ">Count Boolean Attributes With Value</a><!--!-->
+                            <a href="../../enrichments/group-attribute-values/index.html" class="nav-subitem ">Group Attribute Values</a><!--!-->
+                            <a href="../../enrichments/representative-case-attribute/index.html" class="nav-subitem ">Representative Case Attribute</a><!--!-->
+                            <a href="../../enrichments/representative-case-attribute-2/index.html" class="nav-subitem ">Representative Case Attribute 2</a><!--!-->
+                            <a href="../../enrichments/logical-or/index.html" class="nav-subitem ">Logical OR</a><!--!-->
+                            <a href="../../enrichments/negate/index.html" class="nav-subitem ">Negate</a><!--!-->
+                            <a href="../../enrichments/case-duration-category-for-activity/index.html" class="nav-subitem ">Case Duration Category For Activity</a><!--!-->
+                            <a href="../../enrichments/categorize-duration-for-activity/index.html" class="nav-subitem ">Categorize Duration For Activity</a><!--!-->
+                            <a href="../../enrichments/categorize-duration-for-selected-cases/index.html" class="nav-subitem ">Categorize Duration For Selected Cases</a><!--!-->
+                            <a href="../../enrichments/ai-case-prediction/index.html" class="nav-subitem ">AI Case Prediction</a><!--!-->
+                            <a href="../../enrichments/format-string/index.html" class="nav-subitem ">Format String</a><!--!-->
+                            <a href="../../enrichments/python/index.html" class="nav-subitem ">Python</a><!--!-->
+                            <a href="../../enrichments/count-activities/index.html" class="nav-subitem ">Count Activities</a><!--!-->
+                            <a href="../../enrichments/count-values/index.html" class="nav-subitem ">Count Values</a><!--!-->
+                            <a href="../../enrichments/event-count/index.html" class="nav-subitem ">Event Count</a><!--!-->
+                            <a href="../../enrichments/max-value/index.html" class="nav-subitem ">Max Value</a><!--!-->
+                            <a href="../../enrichments/predict-value/index.html" class="nav-subitem ">Predict Value</a><!--!-->
+                            <a href="../../enrichments/summarize-values/index.html" class="nav-subitem ">Summarize Values</a><!--!-->
+                            <a href="../../enrichments/limit-text-length/index.html" class="nav-subitem ">Limit Text Length</a><!--!-->
+                            <a href="../../enrichments/replace-text/index.html" class="nav-subitem ">Replace Text</a><!--!-->
+                            <a href="../../enrichments/text-end/index.html" class="nav-subitem ">Text End</a><!--!-->
+                            <a href="../../enrichments/text-start/index.html" class="nav-subitem ">Text Start</a><!--!-->
+                            <a href="../../enrichments/trim-text/index.html" class="nav-subitem ">Trim Text</a><!--!-->
+                            <a href="../../enrichments/upper-case/index.html" class="nav-subitem ">Upper Case</a><!--!-->
+                            <a href="../../enrichments/add-days-to-a-date/index.html" class="nav-subitem ">Add Days To A Date</a><!--!-->
+                            <a href="../../enrichments/add-time-to-attributes/index.html" class="nav-subitem ">Add Time To Attributes</a><!--!-->
+                            <a href="../../enrichments/correct-time-zone/index.html" class="nav-subitem ">Correct Time Zone</a><!--!-->
+                            <a href="../../enrichments/duration-between-an-activity-and-current-time/index.html" class="nav-subitem ">Duration Between An Activity And Current Time</a><!--!-->
+                            <a href="../../enrichments/duration-between-an-attribute-and-an-activity/index.html" class="nav-subitem ">Duration Between An Attribute And An Activity</a><!--!-->
+                            <a href="../../enrichments/duration-between-an-attribute-and-current-time/index.html" class="nav-subitem ">Duration Between An Attribute And Current Time</a><!--!-->
+                            <a href="../../enrichments/duration-between-two-activities/index.html" class="nav-subitem ">Duration Between Two Activities</a><!--!-->
+                            <a href="../../enrichments/duration-between-two-event-attributes/index.html" class="nav-subitem ">Duration Between Two Event Attributes</a><!--!-->
+                            <a href="../../enrichments/durations-between-case-attribute-and-activity-times/index.html" class="nav-subitem ">Durations Between Case Attribute And Activity Times</a><!--!-->
+                            <a href="../../enrichments/freeze-time/index.html" class="nav-subitem ">Freeze Time</a><!--!-->
+                            <a href="../../enrichments/shift-activity-time/index.html" class="nav-subitem ">Shift Activity Time</a><!--!-->
+                            <a href="../../enrichments/sort-log-on-start-time/index.html" class="nav-subitem ">Sort Log On Start Time</a><!--!-->
+                            <a href="../../enrichments/time-to-previous-case-in-group/index.html" class="nav-subitem ">Time To Previous Case In Group</a><!--!-->
+                            <a href="../../enrichments/filter-process-log/index.html" class="nav-subitem ">Filter Process Log</a></div></div></div></div><!--!-->
+            
+            
+            <div class="nav-section always-expanded expanded" id="process-discovery-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Process Discovery</span></div>
+                <div id="process-discovery" class="nav-section-content"><a href="../../process-discovery/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../process-discovery/case-explorer/index.html" class="nav-subitem">Case Explorer</a><!--!-->
+                    <a href="../../process-discovery/process-map/index.html" class="nav-subitem">Process Map</a><!--!-->
+                    <a href="../../process-discovery/process-performance-matrix/index.html" class="nav-subitem">Process Performance Matrix</a><!--!-->
+                    <a href="../../process-discovery/process-variants/index.html" class="nav-subitem">Process Variants</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="ai-assistants-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">AI Assistants</span></div>
+                <div id="ai-assistants" class="nav-section-content"><a href="../../ai-assistants/ai-model-configuration/index.html" class="nav-subitem">AI Model Configuration</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="how-to-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">How To</span></div>
+                <div id="how-to" class="nav-section-content"><a href="../../how-to/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../how-to/getting-started-creating-first-project/index.html" class="nav-subitem">Getting Started: Creating Your First Project</a><!--!-->
+                    <a href="../../how-to/uploading-configuring-data-sources/index.html" class="nav-subitem">Uploading and Configuring Data Sources</a><!--!-->
+                    <a href="../../how-to/understanding-dual-dataset-architecture/index.html" class="nav-subitem">Understanding Dual Dataset Architecture</a><!--!-->
+                    <a href="../../how-to/planning-dashboard-structure-for-user-roles/index.html" class="nav-subitem">Planning Dashboard Structure for User Roles</a><!--!-->
+                    <a href="../../how-to/working-with-investigations-and-notebooks/index.html" class="nav-subitem">Working with Investigations and Notebooks</a><!--!-->
+                    <a href="../../how-to/mastering-log-enrichment-engine/index.html" class="nav-subitem">Mastering Log Enrichment Engine</a><!--!-->
+                    <a href="../../how-to/building-conformance-rules-for-compliance/index.html" class="nav-subitem">Building Conformance Rules for Compliance</a><!--!-->
+                    <a href="../../how-to/creating-analysis-with-filters-and-calculators/index.html" class="nav-subitem">Creating Analysis with Filters and Calculators</a><!--!-->
+                    <a href="../../how-to/publishing-metrics-from-notebooks-to-dashboards/index.html" class="nav-subitem">Publishing Metrics from Notebooks to Dashboards</a><!--!-->
+                    <a href="../../how-to/advanced-implementing-activity-based-costing/index.html" class="nav-subitem">Advanced: Implementing Activity Based Costing</a><!--!-->
+                    <a href="../../how-to/reusing-analysis-copying-and-adapting-notebooks/index.html" class="nav-subitem">Reusing Analysis: Copying and Adapting Notebooks</a><!--!-->
+                    <a href="../../how-to/designing-user-friendly-dashboards-with-notes-and-formatting/index.html" class="nav-subitem">Designing User-Friendly Dashboards with Notes and Formatting</a><!--!-->
+                    <a href="../../how-to/understanding-drill-down-and-continuous-monitoring/index.html" class="nav-subitem">Understanding Drill Down and Continuous Monitoring</a><!--!-->
+                    <a href="../../how-to/end-to-end-project-build-complete-workflow/index.html" class="nav-subitem">End to End Project Build: Complete Workflow</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="on-premise-server-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">On-Premise Server</span></div>
+                <div id="on-premise-server" class="nav-section-content"><a href="../../on-premise-server/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../on-premise-server/installation-guide/index.html" class="nav-subitem">Installation Guide</a><!--!-->
+                    <a href="../../on-premise-server/install-sql-server-express/index.html" class="nav-subitem">Install SQL Server Express</a><!--!-->
+                    <a href="../../on-premise-server/technical-requirements/index.html" class="nav-subitem">Technical Requirements</a><!--!-->
+                    <a href="../../on-premise-server/auto-update/index.html" class="nav-subitem">Auto Update</a><!--!-->
+                    <a href="../../on-premise-server/force-update/index.html" class="nav-subitem">Force Update</a><!--!-->
+                    <a href="../../on-premise-server/backup-strategy/index.html" class="nav-subitem">Backup Strategy</a></div></div><!--!-->
+
+
+            <div class="nav-section always-expanded expanded" id="tenant-settings-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Tenant Settings</span></div>
+                <div id="tenant-settings" class="nav-section-content"><a href="../../tenant-settings/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="active-directory-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Active Directory</span></button><!--!-->
+                        <div id="active-directory" class="nav-subsection-items"><a href="../../tenant-settings/active-directory/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/setup-guide/index.html" class="nav-subitem ">Setup Guide</a><!--!-->
+                            <a href="../../tenant-settings/active-directory/azure-ad-app-registration/index.html" class="nav-subitem ">Azure AD App Registration</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="administration-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Administration</span></div>
+                <div id="administration" class="nav-section-content"><a href="../../administration/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+
+                    
+                    <a href="../../administration/tenant-management/index.html" class="nav-subitem ">Tenant Management</a><!--!-->
+                    <a href="../../administration/email_settings/index.html" class="nav-subitem ">Email Settings</a><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="user-management-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">User Management</span></button><!--!-->
+                        <div id="user-management" class="nav-subsection-items"><a href="../../administration/user-management/index.html" class="nav-subitem overview-item">Overview</a></div></div><!--!-->
+
+                    
+                    <div class="nav-subsection collapsed" id="service-accounts-subsection"><button class="nav-subsection-header"><!--!--><span class="chevron">▶</span>
+                            <!--!--><span class="subsection-title">Service Accounts</span></button><!--!-->
+                        <div id="service-accounts" class="nav-subsection-items"><a href="../../administration/service-accounts/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                            <a href="../../administration/service-accounts/what-are-service-accounts/index.html" class="nav-subitem ">What Are Service Accounts</a><!--!-->
+                            <a href="../../administration/service-accounts/promote-user-to-service-account/index.html" class="nav-subitem ">Promote User to Service Account</a><!--!-->
+                            <a href="../../administration/service-accounts/manage-service-accounts/index.html" class="nav-subitem ">Manage Service Accounts</a></div></div></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="resources-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Resources</span></div>
+                <div id="resources" class="nav-section-content"><a href="../../resources/index.html" class="nav-subitem overview-item">Overview</a><!--!-->
+                    <a href="../../resources/sample-datasets/index.html" class="nav-subitem">Sample Datasets</a></div></div><!--!-->
+
+            
+            <div class="nav-section always-expanded expanded" id="application-guide-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Application Guide</span></div>
+                <div id="application-guide" class="nav-section-content"><a href="../../application-guide/ai-copilot/index.html" class="nav-subitem">AI Copilot</a><!--!-->
+                    <a href="../../application-guide/actions-engine/index.html" class="nav-subitem">Actions Engine</a><!--!-->
+                    <a href="../../application-guide/bpmn-editor/index.html" class="nav-subitem">BPMN Editor</a><!--!-->
+                    <a href="../../application-guide/projects/index.html" class="nav-subitem">Projects</a><!--!-->
+                    <a href="../../application-guide/business-apps/index.html" class="nav-subitem">Business Apps</a></div></div><!--!-->
+
+            <div class="nav-section always-expanded expanded" id="task-mining-section"><!--!--><div class="nav-section-header-wrapper"><span class="nav-section-title-link">Task Mining</span></div>                <div id="task-mining" class="nav-section-content"><a href="../../task-mining/task-mining-agent-installation/index.html" class="nav-subitem">Task Mining Agent Installation</a></div></div></div></nav><!--!-->
+
+    
+    <main class="frame-content"><!--!--><div class="page-header-bar"><div class="page-header-content"><div class="page-header-left"><h1 class="page-title" tabindex="-1">Data Selector</h1><div class="page-breadcrumb">Calculators</div></div><!--!-->
+        <div class="page-header-right"><button class="page-action-button page-print-button" title="Print full document" aria-label="Print page"><!--!--><span class="oi oi-print" aria-hidden="true"></span>
+                    <!--!--><span class="page-action-text">Print</span></button></div></div></div><!--!--><!--!--><!--!--><!--!-->
+
+<!--!--><div class="documentation-content"><div class="markdown-content"><!--!-->
+<h2 id="overview">Overview</h2>
+<p>The Data Selector calculator is a data post-processing tool that selects specific columns from another calculator's output and optionally sorts and limits the results. This calculator is essential for creating focused data views by choosing relevant columns, ordering the data, and displaying only the top N rows.</p>
+<p>Unlike most calculators that analyze process data directly, Data Selector works with the output tables from other calculators, making it ideal for refining analysis results for dashboards, reports, and exports.</p>
+<h2 id="common-uses">Common Uses</h2>
+<ul>
+<li>Prepare specific data subsets for email delivery or export to stakeholders</li>
+<li>Create simplified dashboard views showing only key metrics from complex analysis</li>
+<li>Select and sort top N results from large analysis outputs (e.g., top 10 slowest cases)</li>
+<li>Focus reports on relevant columns by removing unnecessary detail</li>
+<li>Transform comprehensive analysis results into executive-friendly summaries</li>
+<li>Create data pipelines by chaining multiple calculators and selecting specific outputs at each stage</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<p><strong>Source Calculator:</strong> Select the calculator block whose output you want to work with. This calculator must have already been executed in the current notebook.</p>
+<p><strong>Source Table:</strong> Choose which table to use if the source calculator produces multiple result tables. Most calculators produce a single table (index 0), but some calculators return multiple tables with different types of information.</p>
+<p><strong>Columns to Include:</strong> Select which columns from the source table should appear in the output. You can select multiple columns, and they will appear in the order you specify. Column names must match exactly as they appear in the source calculator output.</p>
+<p><strong>Sort Column:</strong> Optionally choose a column to sort the results by. If you don't specify a sort column, the data will maintain the same order as the source calculator output.</p>
+<p><strong>Sort Direction:</strong> When sorting is enabled, choose whether to sort in:</p>
+<ul>
+<li><strong>Ascending order:</strong> Lowest to highest (A-Z, 0-9, oldest to newest)</li>
+<li><strong>Descending order:</strong> Highest to lowest (Z-A, 9-0, newest to oldest)</li>
+</ul>
+<p><strong>Maximum Rows:</strong> Specify the maximum number of rows to include in the output. Set to 0 or leave blank for no limit. When combined with sorting, this allows you to select "top N" results (e.g., top 20 slowest cases when sorted by duration descending).</p>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-top-10-slowest-purchase-orders-for-executive-report">Example 1: Top 10 Slowest Purchase Orders for Executive Report</h3>
+<p><strong>Scenario:</strong> Your Case Duration calculator has analyzed 2,500 purchase orders, but you want to create an executive dashboard showing only the 10 slowest cases for immediate attention.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Source Calculator: "Purchase Order Duration Analysis"</li>
+<li>Source Table: 0 (primary results table)</li>
+<li>Columns to Include: ["Case ID", "Supplier Name", "Duration", "Total Value"]</li>
+<li>Sort Column: Duration</li>
+<li>Sort Direction: Descending</li>
+<li>Maximum Rows: 10</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>The calculator displays a focused table with exactly 4 columns and 10 rows:</p>
+<table>
+<thead>
+<tr>
+<th>Case ID</th>
+<th>Supplier Name</th>
+<th>Duration</th>
+<th>Total Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PO-2024-8821</td>
+<td>Acme Manufacturing</td>
+<td>47.3 days</td>
+<td>$125,400</td>
+</tr>
+<tr>
+<td>PO-2024-9156</td>
+<td>Global Supplies Inc</td>
+<td>42.8 days</td>
+<td>$89,200</td>
+</tr>
+<tr>
+<td>PO-2024-7633</td>
+<td>TechParts Ltd</td>
+<td>38.5 days</td>
+<td>$156,800</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insights:</strong> By selecting only the essential columns and limiting to 10 rows, you've created an actionable dashboard that highlights problematic cases without overwhelming executives with 2,500 rows of data. The sorting by duration ensures the most urgent cases appear first. The inclusion of Total Value shows the financial impact of these delays.</p>
+<h3 id="example-2-weekly-activity-summary-for-email-distribution">Example 2: Weekly Activity Summary for Email Distribution</h3>
+<p><strong>Scenario:</strong> You run a weekly activity frequency analysis that generates detailed statistics for 45 different activities. You want to email the process owner just the top 15 most frequent activities with simplified metrics.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Source Calculator: "Weekly Activity Frequency Report"</li>
+<li>Source Table: 0</li>
+<li>Columns to Include: ["Activity Name", "Event Count", "Percentage of Total Events"]</li>
+<li>Sort Column: Event Count</li>
+<li>Sort Direction: Descending</li>
+<li>Maximum Rows: 15</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>A clean, focused table perfect for email:</p>
+<table>
+<thead>
+<tr>
+<th>Activity Name</th>
+<th>Event Count</th>
+<th>Percentage of Total Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create Purchase Requisition</td>
+<td>1,847</td>
+<td>18.2%</td>
+</tr>
+<tr>
+<td>Manager Approval</td>
+<td>1,823</td>
+<td>17.9%</td>
+</tr>
+<tr>
+<td>Vendor Selection</td>
+<td>1,792</td>
+<td>17.6%</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insights:</strong> This simplified view removes columns like "First Occurrence" and "Last Occurrence" that clutter the email, while keeping the essential metrics that show which activities dominate the process. The recipient immediately sees that the top 3 activities account for over half of all process events.</p>
+<h3 id="example-3-customer-analysis-dashboard-simplification">Example 3: Customer Analysis Dashboard Simplification</h3>
+<p><strong>Scenario:</strong> Your Breakdown by Categories calculator analyzed customers across 12 different metrics, but your dashboard widget only has space to show 5 columns for the top 20 customers.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Source Calculator: "Customer Performance Analysis"</li>
+<li>Source Table: 0</li>
+<li>Columns to Include: ["Customer Name", "Case Count", "Average Duration", "Total Revenue", "On-Time Percentage"]</li>
+<li>Sort Column: Total Revenue</li>
+<li>Sort Direction: Descending</li>
+<li>Maximum Rows: 20</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>Dashboard-ready table with focused metrics:</p>
+<table>
+<thead>
+<tr>
+<th>Customer Name</th>
+<th>Case Count</th>
+<th>Average Duration</th>
+<th>Total Revenue</th>
+<th>On-Time Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MegaCorp Industries</td>
+<td>487</td>
+<td>8.2 days</td>
+<td>$4,850,000</td>
+<td>92%</td>
+</tr>
+<tr>
+<td>TechStart Solutions</td>
+<td>356</td>
+<td>7.5 days</td>
+<td>$3,240,000</td>
+<td>95%</td>
+</tr>
+<tr>
+<td>Global Systems Inc</td>
+<td>298</td>
+<td>9.1 days</td>
+<td>$2,870,000</td>
+<td>88%</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insights:</strong> You've transformed a comprehensive 12-column analysis into a dashboard-friendly 5-column view showing exactly what stakeholders need to know: which customers generate the most revenue, how many orders they place, how long processing takes, and their delivery performance. Sorting by revenue ensures the most important customers are visible at a glance.</p>
+<h3 id="example-4-variant-analysis-top-variants-by-frequency">Example 4: Variant Analysis - Top Variants by Frequency</h3>
+<p><strong>Scenario:</strong> Your variant analysis identified 284 unique process variants. You want to focus your improvement efforts on the top 25 most common variants, which typically represent 80% of your case volume.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Source Calculator: "Process Variant Analysis"</li>
+<li>Source Table: 0</li>
+<li>Columns to Include: ["Variant ID", "Frequency", "Cumulative Percentage", "Average Duration", "Contains Rework"]</li>
+<li>Sort Column: Frequency</li>
+<li>Sort Direction: Descending</li>
+<li>Maximum Rows: 25</li>
+</ul>
+<p><strong>Output:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variant ID</th>
+<th>Frequency</th>
+<th>Cumulative Percentage</th>
+<th>Average Duration</th>
+<th>Contains Rework</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VAR-001</td>
+<td>1,245</td>
+<td>24.8%</td>
+<td>6.2 days</td>
+<td>No</td>
+</tr>
+<tr>
+<td>VAR-002</td>
+<td>876</td>
+<td>42.2%</td>
+<td>8.5 days</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>VAR-003</td>
+<td>623</td>
+<td>54.6%</td>
+<td>5.8 days</td>
+<td>No</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insights:</strong> The top 25 variants represent the core of your process, and the cumulative percentage column shows that focusing on these variants covers the majority of cases. The "Contains Rework" column immediately flags which common variants include inefficient rework steps, helping prioritize improvement opportunities.</p>
+<h3 id="example-5-date-range-analysis-for-trending">Example 5: Date Range Analysis for Trending</h3>
+<p><strong>Scenario:</strong> Your rate-over-time calculator generated daily statistics for 90 days, but you want to display just the key metrics in chronological order without any row limits for a complete trend analysis.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Source Calculator: "90-Day Completion Rate Analysis"</li>
+<li>Source Table: 0</li>
+<li>Columns to Include: ["Date", "Cases Completed", "Completion Rate"]</li>
+<li>Sort Column: Date</li>
+<li>Sort Direction: Ascending</li>
+<li>Maximum Rows: 0 (no limit)</li>
+</ul>
+<p><strong>Output:</strong></p>
+<p>All 90 rows displayed in chronological order:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Cases Completed</th>
+<th>Completion Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024-10-01</td>
+<td>23</td>
+<td>87.4%</td>
+</tr>
+<tr>
+<td>2024-10-02</td>
+<td>28</td>
+<td>91.2%</td>
+</tr>
+<tr>
+<td>2024-10-03</td>
+<td>31</td>
+<td>89.7%</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insights:</strong> By sorting by date ascending and not limiting rows, you maintain the complete time series for charting or export. You've simplified the output by removing statistical columns (like "Standard Deviation" and "Min/Max") that aren't needed for basic trend visualization, making the data cleaner for graphing tools.</p>
+<h3 id="example-6-multi-table-source-selection">Example 6: Multi-Table Source Selection</h3>
+<p><strong>Scenario:</strong> Your conformance checker returns two tables: table 0 contains summary statistics, and table 1 contains detailed violation listings. You want to create a report from the detailed violations table.</p>
+<p><strong>Settings:</strong></p>
+<ul>
+<li>Source Calculator: "Standard Process Conformance Check"</li>
+<li>Source Table: 1 (detail table, not summary)</li>
+<li>Columns to Include: ["Case ID", "Violation Type", "Activity Name", "Timestamp"]</li>
+<li>Sort Column: Violation Type</li>
+<li>Sort Direction: Ascending</li>
+<li>Maximum Rows: 100</li>
+</ul>
+<p><strong>Output:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Case ID</th>
+<th>Violation Type</th>
+<th>Activity Name</th>
+<th>Timestamp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CS-1234</td>
+<td>Missing Required Step</td>
+<td>Invoice Approval</td>
+<td>2024-11-15 14:22</td>
+</tr>
+<tr>
+<td>CS-5678</td>
+<td>Missing Required Step</td>
+<td>Purchase Approval</td>
+<td>2024-11-16 09:15</td>
+</tr>
+<tr>
+<td>CS-9012</td>
+<td>Out of Sequence</td>
+<td>Goods Receipt</td>
+<td>2024-11-16 11:45</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Insights:</strong> By selecting table 1 instead of the default table 0, you access the detailed violation data rather than just summary counts. Sorting by violation type groups similar problems together, making it easier to identify patterns. The 100-row limit ensures the report remains manageable while covering the most important violations.</p>
+<h2 id="output">Output</h2>
+<p>The Data Selector calculator displays a table with the exact columns you specified, in the order you selected them. The table structure is dynamic and depends on your column selections.</p>
+<h3 id="output-characteristics">Output Characteristics</h3>
+<p><strong>Column Structure:</strong> Only the columns you selected from "Columns to Include" appear in the output. Column names, data types, and formatting are preserved from the source calculator.</p>
+<p><strong>Row Count:</strong> Determined by the Maximum Rows setting:</p>
+<ul>
+<li>If Maximum Rows = 0 or blank: All rows from the source table</li>
+<li>If Maximum Rows &gt; 0: Up to that many rows (may be fewer if source has fewer rows)</li>
+</ul>
+<p><strong>Row Order:</strong> Determined by sorting settings:</p>
+<ul>
+<li>If no sort column specified: Maintains the same order as the source calculator</li>
+<li>If sort column specified: Rows are ordered according to the sort column and direction</li>
+</ul>
+<h3 id="interactive-features">Interactive Features</h3>
+<p><strong>Click on rows:</strong> In many cases, clicking on a row will drill down to show the underlying cases or details, just as you could in the source calculator.</p>
+<p><strong>Export capabilities:</strong> The refined output can be exported to Excel or CSV files, making it ideal for sharing with stakeholders who don't have access to the mindzie platform.</p>
+<p><strong>Email integration:</strong> This calculator's output is commonly used with automated email delivery to send focused data subsets to process owners and executives on a scheduled basis.</p>
+<p><strong>Dashboard widgets:</strong> The simplified, focused output is perfect for embedding in dashboard widgets where space is limited.</p>
+<h3 id="usage-tips">Usage Tips</h3>
+<ul>
+<li>Always ensure the source calculator has executed successfully before running Data Selector</li>
+<li>Use the preview feature in the calculator configuration to see available columns from your source</li>
+<li>Column names are case-sensitive - they must match exactly as they appear in the source</li>
+<li>When combining sorting with row limits, sorting is applied first, then the row limit (enabling "top N" selections)</li>
+<li>If the source calculator has no results or an error, Data Selector will produce an empty table</li>
+<li>Multiple Data Selector calculators can be used in sequence to progressively refine data</li>
+</ul>
+<h3 id="common-patterns">Common Patterns</h3>
+<p><strong>Dashboard Pattern:</strong> Complex calculator -&gt; Data Selector (select key columns, top N rows) -&gt; Dashboard widget</p>
+<p><strong>Email Pattern:</strong> Analysis calculator -&gt; Data Selector (focus on actionable data) -&gt; Automated email delivery</p>
+<p><strong>Export Pattern:</strong> Comprehensive analysis -&gt; Data Selector (simplify for external stakeholders) -&gt; Excel export</p>
+<p><strong>Pipeline Pattern:</strong> Calculator A -&gt; Data Selector 1 (refine) -&gt; Calculator B (further analysis) -&gt; Data Selector 2 (final output)</p>
+<p>The Data Selector is particularly valuable when you need to present analysis results to stakeholders who need focused, actionable information rather than comprehensive analytical detail. It bridges the gap between detailed process mining analysis and clear, decision-ready reporting.</p>
+<hr>
+<p><em>This documentation is part of the mindzie Studio process mining platform.</em></p>
+</div></div></main></div><!--!-->
+
+<!--!--><script>
+    // Search keyboard shortcut (Ctrl+K or Cmd+K)
+    window.registerSearchShortcut = function(dotNetRef) {
+        document.addEventListener('keydown', function(e) {
+            // Check for Ctrl+K (Windows/Linux) or Cmd+K (Mac)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                dotNetRef.invokeMethodAsync('OpenSearch');
+            }
+        });
+    };
+
+    window.toggleSection = function(sectionId) {
+        const section = document.getElementById(sectionId + '-section');
+        if (section) {
+            section.classList.toggle('expanded');
+            
+            // Save state
+            const isExpanded = section.classList.contains('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsection = function(subsectionId) {
+        const subsection = document.getElementById(subsectionId + '-subsection');
+        if (subsection) {
+            // Toggle between collapsed and expanded
+            if (subsection.classList.contains('expanded')) {
+                subsection.classList.remove('expanded');
+                subsection.classList.add('collapsed');
+            } else {
+                subsection.classList.remove('collapsed');
+                subsection.classList.add('expanded');
+            }
+            
+            // Save state
+            const isExpanded = subsection.classList.contains('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSectionHelper = function(sectionId) {
+        var section = document.getElementById(sectionId);
+        var sectionWrapper = document.querySelector('#' + sectionId + '-section');
+        if (section && sectionWrapper) {
+            var isExpanded = sectionWrapper.classList.toggle('expanded');
+            localStorage.setItem('nav-section-' + sectionId, isExpanded);
+        }
+    };
+    
+    window.toggleSubsectionHelper = function(subsectionId) {
+        console.log('Toggling subsection:', subsectionId);
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            // Toggle between collapsed and expanded
+            var isCurrentlyExpanded = subsectionWrapper.classList.contains('expanded');
+            console.log('Currently expanded:', isCurrentlyExpanded);
+
+            if (isCurrentlyExpanded) {
+                subsectionWrapper.classList.remove('expanded');
+                subsectionWrapper.classList.add('collapsed');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'false');
+                console.log('Collapsed:', subsectionId);
+            } else {
+                subsectionWrapper.classList.remove('collapsed');
+                subsectionWrapper.classList.add('expanded');
+                localStorage.setItem('nav-subsection-' + subsectionId, 'true');
+                console.log('Expanded:', subsectionId);
+            }
+        } else {
+            console.error('Subsection not found:', subsectionId);
+        }
+    };
+    
+    window.expandSubsection = function(subsectionId) {
+        var subsectionWrapper = document.querySelector('#' + subsectionId + '-subsection');
+        if (subsectionWrapper) {
+            subsectionWrapper.classList.remove('collapsed');
+            subsectionWrapper.classList.add('expanded');
+            localStorage.setItem('nav-subsection-' + subsectionId, true);
+        }
+    };
+    
+    window.initializeNavigation = function() {
+        // Set Core Concepts and other always-expanded sections
+        document.querySelectorAll('.nav-section.always-expanded').forEach(section => {
+            section.classList.add('expanded');
+        });
+
+        // Restore saved states for other sections
+        document.querySelectorAll('.nav-section:not(.always-expanded)[id$="-section"]').forEach(section => {
+            const sectionId = section.id.replace('-section', '');
+            const savedState = localStorage.getItem('nav-section-' + sectionId);
+            if (savedState === 'true') {
+                section.classList.add('expanded');
+            }
+        });
+
+        // Initialize ALL subsections as collapsed by default
+        document.querySelectorAll('.nav-subsection[id$="-subsection"]').forEach(subsection => {
+            // Remove any existing state classes first
+            subsection.classList.remove('collapsed');
+            subsection.classList.remove('expanded');
+
+            // Always start collapsed, ignore saved state for now to ensure they start collapsed
+            subsection.classList.add('collapsed');
+
+            // Clear any saved states to ensure fresh start
+            const subsectionId = subsection.id.replace('-subsection', '');
+            localStorage.removeItem('nav-subsection-' + subsectionId);
+        });
+    };
+
+    window.scrollToActiveMenuItem = function() {
+        // Find the active menu item
+        var activeItem = document.querySelector('.nav-subitem.active, .nav-item.active, .nav-section-title-link.active');
+        if (activeItem) {
+            // Get the sidebar element
+            var sidebar = document.querySelector('.frame-sidebar');
+            if (sidebar) {
+                // Calculate the position to scroll to
+                var itemTop = activeItem.offsetTop;
+                var itemHeight = activeItem.offsetHeight;
+                var sidebarHeight = sidebar.clientHeight;
+
+                // Scroll so the active item is visible, preferably centered
+                var scrollPosition = itemTop - (sidebarHeight / 2) + (itemHeight / 2);
+
+                // Smooth scroll to the active item
+                sidebar.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
+</script><!--!-->
+        <!--!--></div>
+
+    <div id="blazor-error-ui" style="display: none;">
+        <div style="background: #fff3cd; border: 1px solid #ffc107; color: #856404; padding: 15px; margin: 20px; border-radius: 4px;">
+            An error has occurred. <a href="" style="color: #533f03; font-weight: 600;">Reload</a> to try again.
+        </div>
+    </div>
+
+    <script src="../_framework/blazor.webassembly.js"></script>
+    <script>
+        // Global scroll-to-top function for navigation
+        window.scrollContentToTop = function() {
+            var mainContent = document.querySelector('.frame-content');
+            if (mainContent) {
+                mainContent.scrollTo({
+                    top: 0,
+                    behavior: 'instant'
+                });
+            }
+            window.scrollTo(0, 0);
+        };
+    </script>
+
+
+</body></html>

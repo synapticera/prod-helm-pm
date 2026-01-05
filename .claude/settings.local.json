@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(x-frontend-design)",
+      "Skill(x-frontend-design:*)",
+      "Skill(x-canvas-design)",
+      "Skill(x-canvas-design:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "backlog"
+  ]
+}
