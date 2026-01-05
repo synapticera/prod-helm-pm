@@ -1,17 +1,18 @@
 # Helm Product Positioning
 
-**Purpose**: Guide product team, documentation, and technical marketing on how Helm's architecture naturally maps to Decision Intelligence positioning and the Executive Function Lifecycle.
+**Purpose**: Guide product team, documentation, and technical marketing on how Helm's architecture implements the Executive Function Lifecycle and Decision Intelligence infrastructure for "Executive Agent for Service Leaders" positioning.
 
 ---
 
 ## Executive Summary
 
-Helm's Mine/Design/Manage/Monitor architecture isn't just a product structure—it's a complete implementation of the Executive Function Lifecycle for AI agent deployment. This positioning document shows:
+Helm's Mine/Design/Manage/Monitor architecture is a complete implementation of the Executive Function Lifecycle for AI agent deployment. This positioning document shows:
 
 1. How each Helm module maps to a stage in the lifecycle
-2. What "Decision Intelligence" means in product terms
-3. How to describe Helm's capabilities through this lens
+2. What "Decision Intelligence" means in product/technical terms (supporting infrastructure)
+3. How to describe Helm's capabilities through the Executive Agent lens
 4. Key technical positioning for different buyer personas
+5. How Executive Agent positioning connects to Decision Intelligence infrastructure
 
 ---
 
@@ -315,14 +316,14 @@ Helm's Mine/Design/Manage/Monitor architecture isn't just a product structure—
 - Time to compliance audit resolution
 
 ### Investor / Board
-**Frame**: Decision Intelligence = defensible infrastructure category
-> "Decision Intelligence is infrastructure, like databases or CRM systems. It will become mandatory as agent deployment scales. Helm is first-mover claiming this category for customer service, with defensible moat from decision trace data and domain expertise."
+**Frame**: Executive Agent = defensible infrastructure category powered by Decision Intelligence
+> "Executive Agent is infrastructure for knowledge worker automation, starting with service leaders. Decision Intelligence (decision traces, governance, policy enforcement) is the technical foundation that creates competitive advantage and defensible moat. Helm is first-mover in 'Executive Agent' category with defensible moat from decision trace data and domain expertise."
 
 **Key Messages**:
-- "Infrastructure Category" = Decision Intelligence will become mandatory
-- "Defensible Moat" = decision trace data creates competitive advantage
-- "Market Timing" = 95% of AI deployments fail due to lack of decision infrastructure; we're solving this
-- "Expansion Path" = start in CS, expand to finance, operations, HR—each a $100B+ market
+- "Market Category" = "Executive Agent" is what the market will buy and adopt (vs. analyst-friendly "Decision Intelligence")
+- "Defensible Moat" = decision trace data creates competitive advantage; more customers = better precedent library = stronger recommendations
+- "Market Timing" = 95% of AI deployments fail due to lack of executive function infrastructure; we're solving this
+- "Expansion Path" = start with service leaders in customer service, expand to all executives (finance, ops, HR), eventually all knowledge workers—each a $100B+ market
 
 **Success Metrics**:
 - Customer acquisition and retention
