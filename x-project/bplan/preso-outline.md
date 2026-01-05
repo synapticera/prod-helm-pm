@@ -8,17 +8,18 @@
 
 ✅ **Company name:** Helm by Synaptic
 
-✅ **Positioning:** "Decision Intelligence Platform for Customer Service"
+✅ **Positioning:** "Executive Agent for Service Leaders"
 
-✅ **Tagline:** "The AI Command Center That Enables Safe, Intelligent Agent Autonomy"
+✅ **Tagline:** "Give service leaders the insight and control they need to evolve their operations with confidence and impact"
 
 ✅ **Value Proposition:**
-- Helm captures how decisions are made in customer service
-- Gives leaders and AI agents the context they need for intelligent, auditable decisions at scale
+- Helm provides the executive function layer that separates winners (5-7x productivity gains) from those wasting 90% of their opportunity
+- Service leaders understand their current operations, design agent integration, execute with governance, and continuously improve outcomes
 
 ✅ **Bold Vision:**
-- Build the decision intelligence infrastructure for the customer service industry
-- Every decision is understood, every agent is governed, every outcome drives continuous improvement
+- Establish "Executive Agent" as the dominant category—starting with service leaders who have the most complex decisions and highest ROI
+- Underpinned by Decision Intelligence infrastructure (decision traces, governance, continuous learning) that makes safe, scalable agent deployment possible
+- Everyone will eventually have personal agents; Helm is creating the category with the segment that needs it most
 
 ---
 
@@ -81,13 +82,13 @@
 ✅ **Market Segmentation:**
 - Legacy vendors (Celonis, UiPath): Enterprise-only, $100K+ deals, process mining focus
 - Incumbent platforms (Salesforce, Microsoft): Agent-centric, no decision discovery
-- Helm positioning: Decision Intelligence for Customer Service (vertical specialist, inclusive pricing, fast time-to-value)
+- Helm positioning: Executive Agent for Service Leaders (vertical specialist, intuitive buyer language, fast time-to-value)
 
 ✅ **First-Mover Advantage:**
-- Own "Decision Intelligence for Customer Service" category before competitors
-- Build network effects (decision data moat) from day 1
-- Establish analyst coverage and thought leadership in vertical
-- Create defensible position before larger players enter
+- Own "Executive Agent" category before competitors crystallize around different terminology
+- Build network effects (decision data moat) from day 1 with high-value service leader segment
+- Establish analyst coverage and thought leadership in "Agent" category
+- Create defensible position before larger players enter—we'll own the category definition
 
 ---
 
@@ -99,10 +100,11 @@
 - Helps you design better processes and agent workflows (Design)
 - Continuously monitors and improves with governance guardrails (Manage)
 
-✅ **Why Decision Intelligence Matters:**
-- Decision traces become your competitive advantage (more customers = smarter recommendations)
+✅ **Executive Function Infrastructure (Decision Intelligence Underpinning):**
+- Decision traces become your competitive advantage (more customers = smarter recommendations for agents)
 - Governance built in from day 1 (compliance with EU AI Act, regulatory requirements)
 - Serves both humans and AI agents (context for strategic decisions + guardrails for agent autonomy)
+- This is what separates Helm from pure agent builders—we're the management layer
 
 ✅ **Key Differentiators:**
 - **Executive-Friendly:** Natural language interface, no technical training required
@@ -158,10 +160,10 @@
 - **Full stack:** Explore → Mine → Design → Manage (guided journey vs point solutions)
 
 ✅ **Market Positioning:**
-- **First-mover:** Owning "Decision Intelligence for Customer Service" category
-- **Vertical specialization:** Deep domain expertise (vs generic middleware)
-- **Regulatory advantage:** Built-in compliance/governance (required by law in 2026+)
-- **Agent-ready:** Positioned to serve agent adoption wave before incumbents dominate
+- **First-mover:** Owning "Executive Agent" category (buyer-friendly language, defensible positioning)
+- **Vertical specialization:** Deep domain expertise in customer service (vs generic middleware)
+- **Regulatory advantage:** Built-in Decision Intelligence infrastructure (decision traces, governance—required by law in 2026+)
+- **Expansion path:** Starting with service leaders; every function (finance, ops, HR) has executives that need this
 
 ### Slide 4b: Why Competitors Can't Match
 ✅ **Legacy Vendors (Celonis, UiPath):**
@@ -404,11 +406,12 @@
 - **Implication:** Helm is in that exact moment—thesis validation is happening NOW
 
 ✅ **Why This Matters for Investors:**
-- Not chasing a trend; leading a category
-- Have 6-month head start on category definition
-- Can own "Decision Intelligence for Customer Service" before competitors catch up
-- Analyst coverage opportunity (Gartner, Forrester will cover this space)
-- First-mover advantage compounds as market crystallizes
+- Not chasing a trend; defining a category
+- Have first-mover advantage in "Executive Agent" positioning (the language the market will adopt)
+- Starting with highest-ROI segment (service leaders) before category expands to all executives, all knowledge workers
+- Expansion path: Service Leaders (now) → Finance/Operations/HR executives (2027) → All knowledge workers (2028+)
+- Decision Intelligence infrastructure becomes defensible network effects moat (decision data + governance)
+- First-mover advantage compounds as market crystallizes around category we define
 
 ### Key Delivery Points
 
@@ -788,7 +791,66 @@ We had the thesis early. We saw AI coding coming. But we didn't capitalize. Here
 ✅ **Design Assets README** (`design-assets/README.md`) - Complete guide to visual assets and integration points
 
 **Reference Documents:**
-- Helm Strategic Narrative: `x-project/bplan/helm-positioning.md`
+- Helm Strategic Narrative: `x-project/bplan/helm-positioning-master.md`
 - Market Research: `x-project/reference/market-research/`
 - 2026 AI Predictions: `x-project/reference/market-research/2026-01-05-synaptic-ai-predictions-2026-comprehensive.md`
 - Design Philosophy: `x-project/bplan/design-assets/helm-transformation-philosophy.md`
+
+---
+
+## APPENDIX: Positioning History & Debates
+
+### Earlier Positioning Direction: "Decision Intelligence for Customer Service"
+
+**Dates**: December 3 - January 4, 2026
+**Status**: Archived (superseded by "Executive Agent for Service Leaders" positioning January 5, 2026)
+
+#### Rationale for Earlier "Decision Intelligence" Positioning
+
+The "Decision Intelligence" positioning was developed based on strong analyst validation:
+
+**Analyst Foundation:**
+- **Gartner**: "Decision Intelligence" positioned as #1 emerging technology category in 2026 Hype Cycle
+- **Forrester**: "Agent Control Planes" as governance infrastructure layer
+- **Combined thesis**: Management infrastructure (decision traces, policy enforcement, audit) is the emerging category
+
+**Why It Was Compelling:**
+- ✅ Formal analyst category (Gartner recognition)
+- ✅ Infrastructure language (defensible positioning)
+- ✅ Technical credibility (governance, compliance narrative)
+- ✅ Network effects story (decision data as moat)
+
+#### Why "Executive Agent" Is Better
+
+**Strategic Decision** (January 5, 2026):
+Shift primary positioning to "Executive Agent for Service Leaders"—what the market will buy and adopt as category language—while keeping "Decision Intelligence" as supporting technical infrastructure.
+
+**Key Insight**:
+- Analyst language (Decision Intelligence) is powerful for credibility but requires buyer education
+- Market language (Executive Agent) is intuitive for service leaders and will become the dominant category
+- The underlying Decision Intelligence infrastructure remains the technical foundation for governance, compliance, and continuous learning
+
+**Expansion Philosophy**:
+- Everyone will eventually have personal agents
+- Helm establishes the "Executive Agent" category starting with the highest-value segment (service leaders in customer service)
+- Decision Intelligence becomes the technical foundation that makes it work at scale
+
+**Timeline for Category Adoption**:
+- Now (2026): Own "Executive Agent" positioning with service leaders
+- 2027: Expand to Finance/Operations/HR executives (Decision Intelligence for Finance, Decision Intelligence for Ops)
+- 2028+: All knowledge workers have personal agents (Decision Intelligence infrastructure is presumed)
+
+### Key Documents from Earlier Analysis
+
+For reference, detailed analysis of positioning candidates was documented in:
+- `x-project/bplan/2026-01-03-category-brand-comparison.md` - Strategic comparison of positioning options
+- `x-project/bplan/archive/DAN-POSITIONING-ANALYSIS.md` - Detailed analysis of alternative positioning directions
+- `x-project/bplan/archive/POSITIONING-COMPARISON-QUICK-REFERENCE.md` - Quick reference comparison matrix
+
+### Summary
+
+**Primary Positioning (Jan 5, 2026):** "Executive Agent for Service Leaders"
+**Supporting Technical Language:** Decision Intelligence (governance, decision traces, compliance)
+**Category Definition:** Executive Agent infrastructure for knowledge worker automation
+**Expansion Path:** Service Leaders → All Executives → All Knowledge Workers
+**Competitive Advantage:** First-mover in category definition + Decision Intelligence moat from decision data
