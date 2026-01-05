@@ -102,41 +102,111 @@ This positioning:
 
 ## Market POV and Thesis
 
-### The Constraint-Based Thesis: Executive Function Is the Next Bottleneck
+### The Constraint-Based Thesis: Executive Function Lifecycle Is the Missing Layer
 
-**Our Core Insight**: The AI industry has solved the "arms and legs" problem. What's emerging as the critical constraint is **executive function**—the planning, management, rationalization, and course correction that keeps autonomous systems aligned with business outcomes.
+**Our Core Insight**: The AI industry has solved the "arms and legs" problem. What's emerging as the critical constraint is **executive function**—the entire lifecycle of understanding current work, planning how agents should operate, selling the plan to stakeholders, executing it, and continuously correcting course.
 
-This mirrors what happened in software development:
+Without executive function, execution cannot happen—and certainly not to its fullest extent. The 95% failure rate of AI projects isn't about capability. It's about incomplete executive function.
+
+#### The Executive Function Lifecycle
+
+Companies need a **five-stage lifecycle** to successfully deploy agents. Most companies attempt only 1-2 stages, which is why they fail:
+
+**1. UNDERSTAND** (Current State of Work)
+- What decisions are being made today?
+- How are they being made? (rules, heuristics, human judgment)
+- What patterns, exceptions, and edge cases exist?
+- What are the decision outcomes and metrics?
+- **Without this**: You build agents that automate the wrong decisions or miss critical context
+
+**2. PLAN** (Design Agent Decision-Making)
+- What decisions should agents make vs. what should humans decide?
+- What policies and constraints should govern agent behavior?
+- What context (data, history, precedent) does the agent need?
+- How do we measure if the agent is making good decisions?
+- **Without this**: You deploy agents with no clear intent or boundaries
+
+**3. SELL** (Build Stakeholder Consensus)
+- Do service leaders agree with the plan?
+- Do compliance and risk teams understand and approve the governance?
+- Are frontline employees bought in or resistant?
+- Do executives see the business case?
+- **Without this**: Agents fail not because they're broken, but because organization rejects them
+
+**4. EXECUTE** (Deploy & Govern)
+- Deploy agents according to the plan
+- Monitor that agents follow the decided policies
+- Log every decision with full context (why did it decide that?)
+- Enforce governance rules (escalation, spending limits, etc.)
+- **Without this**: Agents operate in chaos, decisions are unauditable, compliance fails
+
+**5. MONITOR & CORRECT** (Continuous Improvement)
+- Are agent decisions matching the intended outcomes?
+- Are there patterns in agent failures or deviations?
+- What context was missing? What policies need adjustment?
+- How do we course-correct in real-time?
+- **Build this feedback into next cycle of UNDERSTAND → PLAN → SELL → EXECUTE**
+- **Without this**: You repeat the same failures, waste accelerates, the 33% who initially fail never recover
+
+#### Why 95% of AI Projects Fail
+
+The harsh reality: **Most companies skip stages 1-3 and jump straight to execution.**
+
+```
+What Companies Try:
+❌ UNDERSTAND → ❌ (skip) → ❌ (skip) → EXECUTE → ❌ (can't monitor what you didn't plan)
+                            = 95% failure
+
+What Succeeds:
+✅ UNDERSTAND → ✅ PLAN → ✅ SELL → ✅ EXECUTE → ✅ MONITOR/CORRECT
+                            = Agents that work
+```
+
+The evidence:
+- **33% of service AI deployments fail** because companies rushed from "we have an agent" to "deploy it" without understanding current decisions or building stakeholder buy-in
+- **30% create parallel "AI functions"** because frontline workers reject agents they weren't sold on
+- Companies that do the full lifecycle see 5-7x better outcomes (from research we've seen)
+
+#### This Mirrors Software Product Management Evolution
 
 **Software Development Evolution**:
-1. **Problem Solved (1990s-2000s)**: Build and deploy code → solved by CI/CD, testing frameworks, deployment automation
-2. **New Constraint Emerged (2010s)**: Who decides WHAT to build and WHY? → solved by product management tooling (Jira, Asana, roadmapping)
-3. **Product Management Became Infrastructure**: Companies realized PM wasn't a nice-to-have; it was the missing layer that separated shipping features from shipping products
+1. **Constraint**: How do we build and deploy code? (solved by CI/CD, testing, deployment automation)
+2. **New Constraint**: Who decides WHAT to build and WHY? (solved by product management tooling—Jira, roadmapping)
+3. **Realization**: PM wasn't nice-to-have; it was the layer that separated "shipping features" from "shipping products"
+4. **Infrastructure**: PM tools became mandatory infrastructure because the constraint wasn't execution—it was *direction*
 
-**Same Pattern Is Now Playing Out in AI & Agents**:
-1. **Problem Solved (2024-2025)**: Build and deploy agents → solved by foundation models, agent frameworks (Claude, GPT, open models), orchestration (MCP, LlamaIndex)
-2. **New Constraint Emerging (2026)**: Who decides HOW agents should make decisions? What context do they need? What outcomes are acceptable? How do we correct course when agents go wrong? → **This is the management and rationalization layer**
-3. **The Market Inflection**: Companies are deploying agents at scale, but they lack the tools to manage them. This is why 33% of service AI deployments will fail—not because the agents aren't smart enough, but because there's no executive function layer governing them.
+**AI & Agents Evolution**:
+1. **Constraint**: How do we build and deploy agents? (solved by LLMs, agent frameworks, orchestration)
+2. **New Constraint**: Who decides HOW agents should decide? What outcomes matter? How do we course-correct? (solved by... not yet solved)
+3. **Market Reality**: Companies realize they can't just deploy agents; they need a full executive function lifecycle
+4. **Inflection Point**: Executive function will become mandatory infrastructure, just like PM tools are mandatory in software
 
-**In Software Development, the constraint sequence was**: execution → execution quality → execution *direction*
+#### The Constraint Sequence
 
-**In Agent-Based Systems, the constraint sequence is**: agent capability → agent reliability → agent *management*
+**In Software Development**: execution → execution quality → execution *direction*
+
+**In Agent-Based Systems**: agent capability → agent reliability → agent *executive function*
 
 ### Why This Matters for Helm's Positioning
 
 The glut of AI execution technology (Claude, GPT, open models, agent frameworks) means:
-- **Building agents is now table stakes**
-- **Running agents is becoming commoditized**
-- **But managing agents is still unsolved**
+- **Building agents is now table stakes** (arms and legs are solved)
+- **Running agents is becoming commoditized** (reliability is table stakes)
+- **But the full executive function lifecycle is still unsolved** (this is the real constraint)
 
-Companies can deploy agents. But they can't easily answer:
-- "Why did this agent make this decision?"
-- "What context should agents use?"
-- "How do we set policies for agent behavior?"
-- "What decisions did agents make last week, and were they correct?"
-- "How do we course-correct when an agent starts making bad decisions?"
+Companies can deploy agents. But they can't easily execute the full lifecycle:
 
-**This is where Helm comes in**: We're not building agents (everyone is). We're building the executive function layer that **manages, rationalizes, and directs** agent decision-making.
+| Stage | Company's Challenge | Helm's Answer |
+|-------|-------------------|----------------|
+| **Understand** | "How do we map current service decisions?" | Mine: Capture decision traces from current operations |
+| **Plan** | "How do we design agent decision policies?" | Design: Model and specify decision governance |
+| **Sell** | "How do we get stakeholders to trust the plan?" | Transparency: Show the full decision logic and precedents |
+| **Execute** | "How do we ensure agents follow the plan?" | Manage: Enforce policies, log all decisions, audit trails |
+| **Monitor & Correct** | "How do we know if agents are working? How do we fix it?" | Precedent Library: Show what worked before, guide continuous improvement |
+
+**This is where Helm comes in**: We're not building agents (everyone is). We're building the **executive function layer** that enables the full UNDERSTAND → PLAN → SELL → EXECUTE → MONITOR/CORRECT lifecycle.
+
+Without Helm (or something like it), companies attempt 1-2 stages and fail. With Helm, they can execute the full lifecycle—which is why they actually succeed instead of joining the 95% failure rate.
 
 ---
 
@@ -454,20 +524,22 @@ Compare these pitches to VCs:
 
 ## Strategic Narrative Architecture
 
-### For Investors (Constraint-Based + Scale Angle)
+### For Investors (Executive Function Lifecycle Angle)
 
-**Headline**: "Helm: The Executive Function Layer for AI Agents—Capturing $50B+ Opportunity as Management Becomes the Constraint"
+**Headline**: "Helm: The Executive Function Lifecycle Platform—95% of AI Projects Fail Because Companies Skip Stages 1-3"
 
 **Key Points**:
-- **Market Constraint Shift**: AI execution is now table stakes (Claude, GPT, open models). The bottleneck is **management**—who decides how agents should decide?
-- **The Evidence**: 40% of enterprise apps will have agents by 2026, but 33% will fail due to lack of executive function (decision governance)
-- **Helm's Position**: We don't build agents (everyone is). We provide the management infrastructure **all** agents need
-- **The Analogy**: Just as product management tools (Jira, Asana) became infrastructure when PM became the constraint in software, decision intelligence will become infrastructure as agent management becomes the constraint
-- **Defensible Moat**: Decision trace data becomes competitive advantage—more customers = better precedent library = stronger recommendations = more customers
-- **Regulatory Tailwind**: EU AI Act drives compliance demand; Helm = compliance-by-design
-- **Analyst Alignment**: First to claim "Decision Intelligence for Customer Service" category
+- **The Market Reality**: 95% of AI projects fail, not because agents aren't smart, but because companies skip the executive function lifecycle (Understand → Plan → Sell → Execute → Monitor/Correct)
+- **The Evidence**: 40% of enterprise apps will have agents by 2026. But 33% will fail because companies jump straight from "we have an agent" to "deploy it" without understanding current decisions or building stakeholder buy-in
+- **The Constraint**: AI execution (building agents) is now table stakes. The real bottleneck is: Who decides HOW agents should decide? What outcomes matter? How do we course-correct?
+- **Helm's Position**: We don't build agents (everyone is building them). We provide the executive function layer that enables the full 5-stage lifecycle
+- **The Analogy**: Just as product management tools (Jira, Asana) became mandatory infrastructure when PM became the constraint in software, executive function platforms will become mandatory as agent deployment becomes the constraint
+- **Defensible Moat**: Decision trace data from UNDERSTAND phase becomes competitive advantage over time—more customers = better precedent library = stronger recommendations = network effects moat
+- **Immediate TAM**: Every company attempting agent deployment needs this. 40% of enterprise apps = billions in deals
+- **Regulatory Tailwind**: EU AI Act requires "meaningful human review" and transparent decision lineage—Helm's EXECUTE + MONITOR phases are native compliance
+- **Analyst Alignment**: First to claim "Decision Intelligence for Customer Service" category; can expand to other verticals
 
-**Investor Takeaway**: 2026 is year agents go mainstream and the management crisis becomes visible (33% failures). 2027-2028 will be about making them work. Helm provides the executive function infrastructure that separates agents that succeed from agents that fail.
+**Investor Takeaway**: 2026 is when agent deployment becomes mainstream—and the failure crisis becomes visible (95% fail because they skip stages). Companies will realize you can't skip Understand/Plan/Sell and succeed. Those that execute the full lifecycle win 5-7x better outcomes. Helm provides the infrastructure that separates winners from the 95% who fail.
 
 ---
 
