@@ -1,8 +1,9 @@
 # Helm Strategic Positioning & Category Framework
 ## Comprehensive Brand, Category & Market Analysis for 2026
 
-**Date**: January 5, 2026 (Updated with Category Analysis)
-**Purpose**: Integrate latest market research, category positioning, and brand strategy into unified positioning framework
+**Date**: January 5, 2026 (Updated with Executive Agent Positioning, January 5)
+**Purpose**: Strategic positioning document articulating why Helm is the Executive Agent for Service Leaders—underpinned by Decision Intelligence infrastructure
+**Note on Terminology**: Primary positioning is "Executive Agent for Service Leaders" (what the market will buy). "Decision Intelligence" is supporting technical language describing the governance/decision-trace infrastructure
 **Key Sources**:
 - Category & Brand Comparison Analysis (Jan 3, 2026)
 - 2026 AI Predictions (Gartner, Stanford HAI, Microsoft, IBM)
@@ -17,9 +18,9 @@
 ## Table of Contents
 
 1. [Executive Summary](#executive-summary)
-2. [The Emerging Category](#the-emerging-category)
-3. [Positioning Candidate Analysis](#positioning-candidate-analysis)
-4. [Why Decision Intelligence for Customer Service Wins](#why-decision-intelligence-for-customer-service-wins)
+2. [Market POV and Thesis](#market-pov-and-thesis)
+3. [The Executive Agent Category](#the-executive-agent-category)
+4. [Positioning: Executive Agent for Service Leaders](#positioning-executive-agent-for-service-leaders)
 5. [Market Predictions Supporting Helm](#market-predictions-supporting-helm)
 6. [Strategic Narrative Architecture](#strategic-narrative-architecture)
 7. [Competitive Landscape & Helm's Advantages](#competitive-landscape--helms-advantages)
@@ -56,7 +57,11 @@ The evidence:
 
 ### Helm's Strategic Positioning
 
-**Helm is positioned to own "Decision Intelligence for Customer Service"** — a vertical instantiation of this emerging infrastructure category. This positioning is validated by:
+**Helm is the Executive Agent for Service Leaders** — providing the executive function infrastructure that separates winners (5-7x productivity gains) from those wasting 90% of their opportunity (95% of AI projects fail).
+
+This positioning is grounded in an emerging infrastructure category that industry voices describe as Decision Intelligence, Agent Control Planes, Execution Intelligence Layer, or Context Graphs—all capturing the same essential need: agents cannot operate safely without the executive function layer to understand decisions, design policies, execute with governance, and continuously improve.
+
+Helm's positioning is validated by:
 
 1. **Market Inflection** (2026):
    - 40% of enterprise apps will have AI agents by end of 2026
@@ -84,19 +89,24 @@ The evidence:
 
 After analyzing three positioning candidates:
 - **Helm (Current)**: "AI-native executive command center..." (strong brand, weak category signal)
-- **EA2**: "Executive Agent / Assistant 2.0" (creative, but infrastructure-agnostic)
-- **Decision Intelligence for CS**: "Decision Intelligence Platform for Customer Service" (strongest on all dimensions)
+- **Decision Intelligence for CS**: "Decision Intelligence Platform for Customer Service" (analyst-friendly, but requires buyer education)
+- **Executive Agent for Service Leaders**: "Executive Agent for Service Leaders" (what the market will buy and come to think of as the category)
 
-**Winner**: **"Helm: Decision Intelligence Platform for Customer Service"**
+**Winner**: **"Executive Agent for Service Leaders"**
+
+**Strategic Rationale**:
+- Everyone will eventually have personal agents. Helm is starting with executives (service leaders) who have the most complex decisions and highest ROI from automation.
+- "Executive Agent" is what the market will understand and adopt as the category—intuitive, buyer-centric language.
+- The underlying infrastructure (Decision Intelligence, governance, decision traces, policy enforcement) remains the technical foundation, but it's the supporting narrative, not the primary sell.
 
 This positioning:
-- ✅ Claims emerging analyst category (Gartner, Forrester alignment)
-- ✅ Emphasizes vertical specialization (Ed Sim's winning strategy)
-- ✅ Signals infrastructure (defensible, not just a tool)
-- ✅ Resonates with investors (VCs recognize "Decision Intelligence" language)
-- ✅ Translates to customers (clear value narrative)
-- ✅ Enables network effects story (decision traces as moat)
-- ✅ Aligns with compliance needs (governance + audit = regulatory asset)
+- ✅ Resonates with buyers (service leaders understand "executive agent" intuitively)
+- ✅ Defines the emerging category as "Executive Agent" (ahead of competitors)
+- ✅ Emphasizes vertical specialization (Ed Sim's winning strategy—starting with executives in customer service)
+- ✅ Enables expansion path (Finance executives, Operations executives, HR executives, eventually all knowledge workers)
+- ✅ Maintains technical credibility (Decision Intelligence underpins the architecture for compliance and governance)
+- ✅ Scales the narrative (everyone gets an agent; we're starting with the highest-ROI segment)
+- ✅ Aligns with investor thesis (category ownership before market crystallizes)
 
 ---
 
@@ -356,9 +366,24 @@ This is what agents need to replicate human judgment.
 
 ---
 
-## Positioning Candidate Analysis
+## Positioning: Executive Agent for Service Leaders
 
-### Candidate 1: "Helm" (Current Positioning)
+### Strategic Choice: "Executive Agent for Service Leaders"
+
+**Primary Positioning**: Helm is the **Executive Agent for Service Leaders**—providing the executive function layer that enables systematic understanding, planning, execution, and continuous improvement of agent deployment.
+
+**Why This Positioning Wins**:
+
+1. **Market-Friendly Language**: "Executive Agent" is intuitive to buyers and will become the dominant category language as the market matures
+2. **Vertical Specialization**: Starting with service leaders (executives) who have the highest decision complexity and ROI from automation
+3. **Expansion Path**: Everyone will eventually have personal agents (Workforce agents, Finance agents, Operations agents). Helm is establishing the category with the highest-value segment
+4. **Technical Credibility**: Underpinned by Decision Intelligence infrastructure (decision traces, governance, policy enforcement, continuous learning)
+5. **Investor Appeal**: Category ownership before competitors crystallize around "Agent Management," "AI Management," or other terminology
+6. **Regulatory Advantage**: Decision Intelligence infrastructure satisfies governance and audit requirements (EU AI Act, compliance audits)
+
+### Supporting Reference: Candidate Analysis
+
+#### Candidate 1: "Helm" (Previous Positioning)
 
 **Current Tagline**: "AI-native executive command center that gives service leaders the tailored insight they need to evolve their operations with confidence and impact"
 
