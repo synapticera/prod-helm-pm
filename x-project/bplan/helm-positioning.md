@@ -30,9 +30,20 @@
 
 ## Executive Summary
 
+**The Market Inflection: From Agent Capability to Agent Management**
+
 The 2026 AI market is experiencing a fundamental inflection: companies are moving from **"Can we build AI agents?"** to **"How do we manage AI agents safely, effectively, and compliantly?"**
 
-This inflection reveals an emerging **infrastructure category** that multiple industry voices are identifying using different terminology but describing the same concept:
+This inflection reflects a deeper truth: **The AI industry has solved the "arms and legs" problem. Management is now the constraint.**
+
+Just as software development evolved from "how do we build code?" → "how do we deploy code?" → "who decides WHAT code to build?" (solved by product management tooling), AI is now at: "we can build agents" → "we can deploy agents" → "**who decides HOW agents should decide?**" (this is unsolved and is where Helm comes in).
+
+The evidence:
+- 40% of enterprise apps will have AI agents by end of 2026
+- But ~33% of service AI deployments will fail—not because agents aren't smart enough, but because there's no executive function layer managing them
+- Companies can deploy agents, but can't answer: "Why did the agent make this decision?" "How do we course-correct?" "What context should it use?"
+
+**This inflection reveals an emerging infrastructure category** that multiple industry voices are identifying using different terminology but describing the same concept:
 
 | **Term** | **Who Uses It** | **Focus** |
 |----------|-----------------|----------|
@@ -89,6 +100,46 @@ This positioning:
 
 ---
 
+## Market POV and Thesis
+
+### The Constraint-Based Thesis: Executive Function Is the Next Bottleneck
+
+**Our Core Insight**: The AI industry has solved the "arms and legs" problem. What's emerging as the critical constraint is **executive function**—the planning, management, rationalization, and course correction that keeps autonomous systems aligned with business outcomes.
+
+This mirrors what happened in software development:
+
+**Software Development Evolution**:
+1. **Problem Solved (1990s-2000s)**: Build and deploy code → solved by CI/CD, testing frameworks, deployment automation
+2. **New Constraint Emerged (2010s)**: Who decides WHAT to build and WHY? → solved by product management tooling (Jira, Asana, roadmapping)
+3. **Product Management Became Infrastructure**: Companies realized PM wasn't a nice-to-have; it was the missing layer that separated shipping features from shipping products
+
+**Same Pattern Is Now Playing Out in AI & Agents**:
+1. **Problem Solved (2024-2025)**: Build and deploy agents → solved by foundation models, agent frameworks (Claude, GPT, open models), orchestration (MCP, LlamaIndex)
+2. **New Constraint Emerging (2026)**: Who decides HOW agents should make decisions? What context do they need? What outcomes are acceptable? How do we correct course when agents go wrong? → **This is the management and rationalization layer**
+3. **The Market Inflection**: Companies are deploying agents at scale, but they lack the tools to manage them. This is why 33% of service AI deployments will fail—not because the agents aren't smart enough, but because there's no executive function layer governing them.
+
+**In Software Development, the constraint sequence was**: execution → execution quality → execution *direction*
+
+**In Agent-Based Systems, the constraint sequence is**: agent capability → agent reliability → agent *management*
+
+### Why This Matters for Helm's Positioning
+
+The glut of AI execution technology (Claude, GPT, open models, agent frameworks) means:
+- **Building agents is now table stakes**
+- **Running agents is becoming commoditized**
+- **But managing agents is still unsolved**
+
+Companies can deploy agents. But they can't easily answer:
+- "Why did this agent make this decision?"
+- "What context should agents use?"
+- "How do we set policies for agent behavior?"
+- "What decisions did agents make last week, and were they correct?"
+- "How do we course-correct when an agent starts making bad decisions?"
+
+**This is where Helm comes in**: We're not building agents (everyone is). We're building the executive function layer that **manages, rationalizes, and directs** agent decision-making.
+
+---
+
 ## The Emerging Category
 
 ### What Companies Are Calling It
@@ -132,11 +183,13 @@ This is what agents need to replicate human judgment.
 
 ### Why This Category Is Emerging in 2026
 
-1. **Agent Maturity**: Agents are moving from demos to production (MCP adoption, Prediction #19)
-2. **Governance Urgency**: 60% of Fortune 100 appointing Chief AI Officer; they need tools
-3. **Regulatory Reality**: EU AI Act requires "meaningful human review" and transparency (Prediction #41)
-4. **Moat Shift**: Companies realize competitive advantage isn't in the model, it's in the decision data
-5. **Ecosystem Convergence**: VCs, analysts, and tech leaders all converging on same problem
+1. **Arms & Legs Are Solved**: Abundant AI execution technology (Claude, GPT, open models) means building agents is now table stakes
+2. **Management Becomes the Constraint**: With agents deployed at scale, the bottleneck shifts to **who decides HOW agents should decide?** → This is executive function
+3. **33% Deployment Failure Rate**: Companies are deploying agents without management infrastructure; 33% fail because there's no decision governance
+4. **Governance Urgency**: 60% of Fortune 100 appointing Chief AI Officer; they need tools to manage agent behavior
+5. **Regulatory Reality**: EU AI Act requires "meaningful human review" and transparent decision lineage (Prediction #41)
+6. **Moat Shift**: Companies realize competitive advantage isn't in having agents; it's in the decision data that governs agents
+7. **Ecosystem Convergence**: VCs, analysts, and tech leaders all converging on same problem—the missing executive function layer
 
 ---
 
@@ -401,19 +454,20 @@ Compare these pitches to VCs:
 
 ## Strategic Narrative Architecture
 
-### For Investors (Category + Scale Angle)
+### For Investors (Constraint-Based + Scale Angle)
 
-**Headline**: "Helm: The Decision Intelligence Platform for Customer Service—Capturing $50B+ Opportunity as Agents Go Mainstream"
+**Headline**: "Helm: The Executive Function Layer for AI Agents—Capturing $50B+ Opportunity as Management Becomes the Constraint"
 
 **Key Points**:
-- **Market Inflection**: 40% of enterprise apps getting agents by end of 2026
-- **Infrastructure Gap**: But ~33% of service AI deployments fail due to lack of decision infrastructure
-- **Helm's Position**: We don't compete in agent market; we provide infrastructure **all** agents need
-- **Defensible Moat**: Decision trace data becomes competitive advantage (network effects)
+- **Market Constraint Shift**: AI execution is now table stakes (Claude, GPT, open models). The bottleneck is **management**—who decides how agents should decide?
+- **The Evidence**: 40% of enterprise apps will have agents by 2026, but 33% will fail due to lack of executive function (decision governance)
+- **Helm's Position**: We don't build agents (everyone is). We provide the management infrastructure **all** agents need
+- **The Analogy**: Just as product management tools (Jira, Asana) became infrastructure when PM became the constraint in software, decision intelligence will become infrastructure as agent management becomes the constraint
+- **Defensible Moat**: Decision trace data becomes competitive advantage—more customers = better precedent library = stronger recommendations = more customers
 - **Regulatory Tailwind**: EU AI Act drives compliance demand; Helm = compliance-by-design
 - **Analyst Alignment**: First to claim "Decision Intelligence for Customer Service" category
 
-**Investor Takeaway**: 2026 is year agents go mainstream. 2027-2028 will be about making them work. Helm is the infrastructure for "making them work."
+**Investor Takeaway**: 2026 is year agents go mainstream and the management crisis becomes visible (33% failures). 2027-2028 will be about making them work. Helm provides the executive function infrastructure that separates agents that succeed from agents that fail.
 
 ---
 
