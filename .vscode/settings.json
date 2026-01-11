@@ -141,5 +141,7 @@
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "markdown.extension.preview.autoShowPreviewToSide": false
+    "markdown.extension.preview.autoShowPreviewToSide": false,
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }

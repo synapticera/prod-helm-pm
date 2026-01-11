@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helm EU AI Act Strategy Selector</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --dark-navy: #07253d;
+        --cyan: #01a9db;
+        --orange: #fb4100;
+        --white: #ffffff;
+        --gray-light: #f5f7fa;
+        --gray-text: #44546a;
+        --border-radius: 12px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", Arial, sans-serif;
+        background: linear-gradient(135deg, var(--dark-navy) 0%, #0a3a5f 100%);
+        color: var(--gray-text);
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 60px;
+        animation: slideDown 0.6s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .header h1 {
+        font-size: 48px;
+        color: var(--white);
+        margin-bottom: 12px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+      }
+
+      .header .subtitle {
+        font-size: 18px;
+        color: var(--cyan);
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .header .deadline {
+        font-size: 14px;
+        color: var(--orange);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .strategy-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 28px;
+        margin-bottom: 60px;
+      }
+
+      .strategy-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        transition: var(--transition);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        animation: fadeInUp 0.6s ease-out;
+        animation-fill-mode: both;
+      }
+
+      .strategy-card:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .strategy-card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .strategy-card:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .strategy-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+
+      .strategy-card.recommended {
+        border: 3px solid var(--orange);
+        transform: scale(1.02);
+      }
+
+      .strategy-card.recommended:hover {
+        transform: scale(1.02) translateY(-8px);
+      }
+
+      .card-header {
+        padding: 28px 28px 20px;
+        border-bottom: 2px solid var(--gray-light);
+        flex-shrink: 0;
+      }
+
+      .path-number {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--gray-text);
+        margin-bottom: 8px;
+      }
+
+      .strategy-card:nth-child(1) .path-number {
+        color: var(--cyan);
+      }
+      .strategy-card:nth-child(2) .path-number {
+        color: var(--orange);
+      }
+      .strategy-card:nth-child(3) .path-number {
+        color: #888;
+      }
+
+      .path-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--dark-navy);
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
+
+      .recommended-badge {
+        display: inline-block;
+        background: var(--orange);
+        color: var(--white);
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 6px;
+        margin-top: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .card-content {
+        padding: 28px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .metric-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .metric-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--gray-text);
+      }
+
+      .metric-value {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--dark-navy);
+        line-height: 1.4;
+      }
+
+      .timeline-badge {
+        display: inline-block;
+        background: var(--gray-light);
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--dark-navy);
+        width: fit-content;
+      }
+
+      .strategy-card:nth-child(1) .timeline-badge {
+        background: rgba(1, 169, 219, 0.1);
+        color: var(--cyan);
+      }
+      .strategy-card:nth-child(2) .timeline-badge {
+        background: rgba(251, 65, 0, 0.1);
+        color: var(--orange);
+      }
+      .strategy-card:nth-child(3) .timeline-badge {
+        background: rgba(68, 84, 106, 0.1);
+        color: var(--gray-text);
+      }
+
+      .audience-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .audience-tag {
+        background: var(--gray-light);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--dark-navy);
+        border: 1px solid #e0e0e0;
+      }
+
+      .message-box {
+        background: var(--gray-light);
+        padding: 14px;
+        border-radius: 8px;
+        border-left: 4px solid var(--cyan);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--dark-navy);
+        line-height: 1.5;
+      }
+
+      .strategy-card:nth-child(1) .message-box {
+        border-left-color: var(--cyan);
+      }
+      .strategy-card:nth-child(2) .message-box {
+        border-left-color: var(--orange);
+      }
+      .strategy-card:nth-child(3) .message-box {
+        border-left-color: #ccc;
+      }
+
+      .tam-value {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--dark-navy);
+      }
+
+      .strategy-card:nth-child(1) .tam-value {
+        color: var(--cyan);
+      }
+      .strategy-card:nth-child(2) .tam-value {
+        color: var(--orange);
+      }
+
+      .pros-cons-section {
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 2px solid var(--gray-light);
+      }
+
+      .pros-cons-label {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--gray-text);
+        margin-bottom: 12px;
+      }
+
+      .pros-list,
+      .cons-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .pros-list:last-child {
+        margin-bottom: 0;
+      }
+
+      .pro-item,
+      .con-item {
+        display: flex;
+        gap: 10px;
+        font-size: 13px;
+        line-height: 1.4;
+        color: var(--dark-navy);
+      }
+
+      .pro-item::before {
+        content: "✓";
+        font-weight: 700;
+        color: #22c55e;
+        flex-shrink: 0;
+      }
+
+      .con-item::before {
+        content: "⚠";
+        font-weight: 700;
+        color: var(--orange);
+        flex-shrink: 0;
+      }
+
+      .comparison-section {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 40px;
+        margin-bottom: 40px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        animation: fadeInUp 0.6s ease-out 0.4s both;
+      }
+
+      .section-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--dark-navy);
+        margin-bottom: 32px;
+        text-align: center;
+      }
+
+      .comparison-table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: auto;
+      }
+
+      .comparison-table thead {
+        background: var(--gray-light);
+      }
+
+      .comparison-table th {
+        padding: 16px;
+        text-align: left;
+        font-weight: 700;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--dark-navy);
+        border-bottom: 2px solid #e0e0e0;
+      }
+
+      .comparison-table td {
+        padding: 16px;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 14px;
+        color: var(--dark-navy);
+      }
+
+      .comparison-table tbody tr:hover {
+        background: var(--gray-light);
+      }
+
+      .comparison-table .metric-col {
+        font-weight: 600;
+        width: 25%;
+        color: var(--dark-navy);
+      }
+
+      .comparison-table .path-col {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .decision-box {
+        background: linear-gradient(135deg, var(--dark-navy), #0a3a5f);
+        border-radius: var(--border-radius);
+        padding: 40px;
+        color: var(--white);
+        text-align: center;
+        margin-top: 40px;
+        animation: fadeInUp 0.6s ease-out 0.5s both;
+      }
+
+      .decision-box h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+
+      .decision-box p {
+        font-size: 16px;
+        margin-bottom: 24px;
+        line-height: 1.6;
+        opacity: 0.95;
+      }
+
+      .decision-highlight {
+        background: var(--orange);
+        color: var(--white);
+        padding: 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 32px;
+        }
+
+        .strategy-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .comparison-section {
+          padding: 24px;
+        }
+
+        .comparison-table {
+          font-size: 12px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+          padding: 12px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Helm EU AI Act Strategy</h1>
+        <div class="subtitle">
+          Three Strategic Paths for August 2, 2026 Compliance Inflection
+        </div>
+        <div class="deadline">
+          Decision Required: January 2026 | Execution: Jan - Aug 2026 (7 Months)
+        </div>
+      </div>
+
+      <div class="strategy-grid">
+        <!-- Path 1: Aggressive -->
+        <div class="strategy-card">
+          <div class="card-header">
+            <div class="path-number">Path 1 of 3</div>
+            <h2 class="path-title">Aggressive Compliance Focus</h2>
+          </div>
+          <div class="card-content">
+            <div class="metric-group">
+              <div class="metric-label">Timeline</div>
+              <div class="timeline-badge">
+                Now → Aug 2026 | Compliance-First
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Primary Audience</div>
+              <div class="audience-tags">
+                <div class="audience-tag">CFOs</div>
+                <div class="audience-tag">CIOs</div>
+                <div class="audience-tag">Legal/Compliance</div>
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Key Messaging</div>
+              <div class="message-box">
+                "Compliance by August 2 or face €30M fines. Helm is the
+                infrastructure that makes you compliant."
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Market Opportunity (6 months)</div>
+              <div class="tam-value">€500M - €1B</div>
+              <div class="metric-value">10,000 companies × €50-100K ACV</div>
+            </div>
+
+            <div class="pros-cons-section">
+              <div class="pros-cons-label">Pros</div>
+              <div class="pros-list">
+                <div class="pro-item">
+                  Massive near-term revenue opportunity
+                </div>
+                <div class="pro-item">
+                  Creates urgency (regulatory deadline)
+                </div>
+                <div class="pro-item">Builds cash flow fast</div>
+                <div class="pro-item">First-mover in compliance category</div>
+              </div>
+
+              <div class="pros-cons-label">Cons</div>
+              <div class="cons-list">
+                <div class="con-item">
+                  Shifts from productivity to compliance messaging
+                </div>
+                <div class="con-item">May attract risk-averse buyers only</div>
+                <div class="con-item">Compliance is sticky, not expanding</div>
+                <div class="con-item">
+                  Competitors quickly catch up post-Aug 2
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Path 2: Balanced (Recommended) -->
+        <div class="strategy-card recommended">
+          <div class="card-header">
+            <div class="path-number">Path 2 of 3 — RECOMMENDED</div>
+            <h2 class="path-title">Balanced Compliance + Strategy</h2>
+            <div class="recommended-badge">Leadership Choice</div>
+          </div>
+          <div class="card-content">
+            <div class="metric-group">
+              <div class="metric-label">Timeline (3 Phases)</div>
+              <div class="timeline-badge">
+                Phase 1: Now-May | Phase 2: Jun-Aug | Phase 3: Sep 2026+
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Primary Audience (All Phases)</div>
+              <div class="audience-tags">
+                <div class="audience-tag">Service Leaders</div>
+                <div class="audience-tag">CFOs</div>
+                <div class="audience-tag">CIOs</div>
+                <div class="audience-tag">Finance/Ops Execs</div>
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Key Messaging Shift</div>
+              <div class="message-box">
+                <strong>Phase 1:</strong> "Compliance is required; we solve
+                both." <strong>Phase 2:</strong> "Compliance urgency wave."
+                <strong>Phase 3:</strong> "Competitive advantage through
+                decision data."
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Total Market Opportunity</div>
+              <div class="tam-value">€11B+ TAM</div>
+              <div class="metric-value">
+                €500M-1B (Phase 1-2) + €5.5B+ (expansion)
+              </div>
+            </div>
+
+            <div class="pros-cons-section">
+              <div class="pros-cons-label">Pros</div>
+              <div class="pros-list">
+                <div class="pro-item">
+                  Best of both worlds (urgency + strategy)
+                </div>
+                <div class="pro-item">
+                  Captures productivity and compliance buyers
+                </div>
+                <div class="pro-item">Compliance funds strategic growth</div>
+                <div class="pro-item">
+                  Sets up long-term defensible position
+                </div>
+              </div>
+
+              <div class="pros-cons-label">Cons</div>
+              <div class="cons-list">
+                <div class="con-item">
+                  Requires clear messaging shifts by phase
+                </div>
+                <div class="con-item">Need to service both buyer types</div>
+                <div class="con-item">More complex GTM execution</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Path 3: Productivity-Only -->
+        <div class="strategy-card">
+          <div class="card-header">
+            <div class="path-number">Path 3 of 3</div>
+            <h2 class="path-title">Productivity-Only</h2>
+          </div>
+          <div class="card-content">
+            <div class="metric-group">
+              <div class="metric-label">Timeline</div>
+              <div class="timeline-badge">
+                Now → Beyond 2026 | Ignore Compliance Wave
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Primary Audience</div>
+              <div class="audience-tags">
+                <div class="audience-tag">Service Leaders</div>
+                <div class="audience-tag">Operations</div>
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Key Messaging</div>
+              <div class="message-box">
+                "We're focused on productivity gains, not compliance
+                checkboxes."
+              </div>
+            </div>
+
+            <div class="metric-group">
+              <div class="metric-label">Market Opportunity Impact</div>
+              <div class="tam-value">€500M - €1B Missed</div>
+              <div class="metric-value">
+                Compliance surge goes to competitors
+              </div>
+            </div>
+
+            <div class="pros-cons-section">
+              <div class="pros-cons-label">Pros</div>
+              <div class="pros-list">
+                <div class="pro-item">
+                  Stay focused on productivity narrative
+                </div>
+                <div class="pro-item">Simpler GTM execution</div>
+                <div class="pro-item">No messaging complexity</div>
+              </div>
+
+              <div class="pros-cons-label">Cons</div>
+              <div class="cons-list">
+                <div class="con-item">
+                  Miss €500M-1B compliance surge (Aug 2026)
+                </div>
+                <div class="con-item">
+                  Competitors capture compliance market
+                </div>
+                <div class="con-item">
+                  Positioned as premium add-on, not required
+                </div>
+                <div class="con-item">
+                  Lose first-mover advantage in category
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Section -->
+      <div class="comparison-section">
+        <h2 class="section-title">Head-to-Head Comparison</h2>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Path 1: Aggressive Compliance</th>
+              <th>Path 2: Balanced (Recommended)</th>
+              <th>Path 3: Productivity-Only</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="metric-col">Immediate Revenue (6 mo)</td>
+              <td class="path-col">
+                <strong>€500M-1B</strong> (compliance surge)
+              </td>
+              <td class="path-col">
+                <strong>€500M-1B</strong> (both audiences)
+              </td>
+              <td class="path-col">€100-200M (productivity only)</td>
+            </tr>
+            <tr>
+              <td class="metric-col">Long-term TAM</td>
+              <td class="path-col">€500M-1B (compliance capped)</td>
+              <td class="path-col">
+                <strong>€11B+</strong> (expansion enabled)
+              </td>
+              <td class="path-col">€2-3B (productivity competitive)</td>
+            </tr>
+            <tr>
+              <td class="metric-col">Sales Cycle</td>
+              <td class="path-col">2-3 months (urgent)</td>
+              <td class="path-col">2-3 months (both phases shift)</td>
+              <td class="path-col">6-12 months (strategic)</td>
+            </tr>
+            <tr>
+              <td class="metric-col">Buyer Type</td>
+              <td class="path-col">Risk/Compliance-driven</td>
+              <td class="path-col"><strong>Both risk and growth</strong></td>
+              <td class="path-col">Growth-focused only</td>
+            </tr>
+            <tr>
+              <td class="metric-col">Competitive Risk</td>
+              <td class="path-col">
+                High (compliance is obvious to competitors)
+              </td>
+              <td class="path-col">
+                <strong>Mitigated</strong> (strategic moat via data)
+              </td>
+              <td class="path-col">Very High (leave compliance to others)</td>
+            </tr>
+            <tr>
+              <td class="metric-col">GTM Complexity</td>
+              <td class="path-col">Low (single message)</td>
+              <td class="path-col">Medium (phase-based shifts)</td>
+              <td class="path-col">Low (single message)</td>
+            </tr>
+            <tr>
+              <td class="metric-col">Strategic Position Post-Aug 2</td>
+              <td class="path-col">Compliance vendor (table-stakes)</td>
+              <td class="path-col">
+                <strong>Strategic leader</strong> (competitive advantage)
+              </td>
+              <td class="path-col">Premium productivity tool</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Decision Box -->
+      <div class="decision-box">
+        <h2>Path 2: Why Balanced Compliance + Strategy Wins</h2>
+        <p>
+          Captures the immediate €500M-1B compliance urgency wave while building
+          the foundation for €11B+ long-term expansion. Compliance funds
+          strategic growth. Decision data becomes defensible moat. You own the
+          Executive Agent category post-August 2026.
+        </p>
+        <div class="decision-highlight">
+          ✓ Immediate cash + Long-term defensibility + Category leadership =
+          Market dominance
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

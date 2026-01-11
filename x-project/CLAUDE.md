@@ -281,6 +281,87 @@ x-project/
 
 ---
 
+## 📚 Market Research Organization
+
+### Research File Structure
+
+The market research for Helm is organized in two complementary locations:
+
+**Master Consolidation File**: `bplan/helm-research-master.md`
+
+- Single source of truth for all market research
+- Contains quick-reference data table, research article index, validation framework
+- Used for: Quick fact-checking, investor conversations, complete market validation overview
+
+**Individual Research Summaries**: `reference/market-research/` (Authoritative Path)
+
+- Individual deep-dive research article summaries
+- Each file documents a specific market validation source
+- Used for: Detailed research review, source documentation, fact verification
+
+### Research Article Categories
+
+**VC & Strategic Theses**
+
+- Foundation Capital context graphs and $Trillion opportunity thesis
+- Ed Sim execution intelligence layer thesis
+- Internal evidence and strategic validation
+
+**Analyst Research**
+
+- Gartner Decision Intelligence 2026 positioning
+- Forrester Agent Control Planes 3-plane architecture
+- Market research on AI ROI and governance requirements
+
+**Customer Validation**
+
+- Direct customer conversation summaries (Mike, Shibohn, Colby, Mark)
+- Market need validation across enterprise verticals
+- Urgency indicators and pain point confirmation
+
+**Competitive & Category Analysis**
+
+- Category brand comparison and positioning rationale
+- Competitive landscape assessment
+- Market timing and inflection analysis
+
+### Current Research Files in `reference/market-research/`
+
+| File                                                       | Purpose                                                  | Category             |
+| ---------------------------------------------------------- | -------------------------------------------------------- | -------------------- |
+| `2026-01-05-customer-validation-interviews.md`             | Ground-truth validation from customer conversations      | Customer Validation  |
+| `2026-01-05-foundation-capital-context-graphs.md`          | VC thesis on context graphs and decision systems         | VC Thesis            |
+| `2026-01-05-ed-sim-execution-intelligence-layer.md`        | Boldstart thesis on vertical specialization              | VC Thesis            |
+| `2026-01-05-gartner-decision-intelligence-2026.md`         | Analyst positioning of Decision Intelligence as #1 trend | Analyst Research     |
+| `2026-01-05-forrester-agent-control-planes.md`             | Analyst 3-plane architecture framework for agents        | Analyst Research     |
+| `2026-01-03-category-brand-comparison.md`                  | Strategic analysis of positioning candidates             | Competitive Analysis |
+| `2026-01-05-eu-ai-act-governance-requirements.md`          | EU AI Act compliance framework and requirements          | Regulatory           |
+| `2026-01-05-synaptic-ai-predictions-2026-comprehensive.md` | Synaptic's 2026 AI market predictions                    | Market Analysis      |
+| Additional research files                                  | [See complete list in reference/market-research/]        | Various              |
+
+### How to Update Market Research
+
+**Adding New Research**:
+
+1. Create new file in `reference/market-research/` with date prefix: `YYYY-MM-DD-{description}.md`
+2. Document source, date, category, and relevance
+3. Add file to research article categories table in this CLAUDE.md
+4. Reference in [helm-research-master.md](bplan/helm-research-master.md) index if appropriate
+
+**Master File Updates**:
+
+1. Update [helm-research-master.md](bplan/helm-research-master.md) research index
+2. Add quick-reference data to validation table if applicable
+3. Keep master file as consolidated reference, not primary source
+
+**Workflow**:
+
+- Individual research summaries are the authoritative source documents (`reference/market-research/`)
+- Master consolidation file (`helm-research-master.md`) pulls from these sources
+- Both should be version-controlled in git
+
+---
+
 ## 🚀 Current Status & Next Steps
 
 ### Completed (Q1 2026)

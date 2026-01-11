@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helm by Synaptic - Investor Presentation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css"
+    />
+
+    <style>
+      /* --- CUSTOM THEME: SYNAPTIC DEEP NAVY --- */
+      :root {
+        --bg-color: #07253d;
+        --accent-blue: #01a9db;
+        --accent-orange: #fb4100;
+        --text-main: #ffffff;
+        --text-muted: #a0b3c6;
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      body {
+        background-color: var(--bg-color);
+        background: radial-gradient(
+          circle at top right,
+          #0b3a5e 0%,
+          #07253d 100%
+        );
+      }
+
+      .reveal {
+        font-family: "Inter", sans-serif;
+        color: var(--text-main);
+      }
+
+      /* Typography */
+      .reveal h1,
+      .reveal h2,
+      .reveal h3 {
+        font-family: "Inter", sans-serif;
+        text-transform: none;
+        letter-spacing: -0.02em;
+      }
+
+      .reveal h1 {
+        font-weight: 800;
+        font-size: 3.5em;
+        background: -webkit-linear-gradient(0deg, #ffffff, #01a9db);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .reveal h2 {
+        color: var(--accent-blue);
+        font-size: 1.6em;
+        margin-bottom: 40px;
+        text-align: left;
+        border-bottom: 1px solid var(--glass-border);
+        padding-bottom: 15px;
+      }
+
+      .reveal h3 {
+        font-size: 1.1em;
+        color: var(--text-main);
+        font-weight: 600;
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      .reveal p,
+      .reveal li {
+        font-size: 0.85em;
+        line-height: 1.6;
+        color: var(--text-muted);
+        text-align: left;
+      }
+
+      /* Layout Utilities */
+      .container {
+        display: flex;
+        gap: 30px;
+        text-align: left;
+      }
+
+      .col {
+        flex: 1;
+      }
+
+      /* Cards & Glassmorphism */
+      .card {
+        background: var(--glass-bg);
+        border: var(--glass-border);
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Highlights */
+      .highlight {
+        color: var(--accent-blue);
+        font-weight: 700;
+      }
+      .highlight-orange {
+        color: var(--accent-orange);
+        font-weight: 700;
+      }
+
+      .stat-big {
+        font-size: 3em;
+        font-weight: 800;
+        color: var(--accent-blue);
+        line-height: 1;
+        display: block;
+      }
+
+      /* Tables */
+      .reveal table {
+        font-size: 0.6em;
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 10px;
+      }
+      .reveal th {
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 1px solid var(--accent-blue);
+        padding-bottom: 10px;
+      }
+      .reveal td {
+        background: var(--glass-bg);
+        padding: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .reveal td:first-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        font-weight: bold;
+        color: var(--accent-blue);
+      }
+      .reveal td:last-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* Footer */
+      .footer-logo {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        opacity: 0.5;
+        z-index: 10;
+      }
+
+      .slide-number {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 14px;
+        opacity: 0.5;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="footer-logo">Helm by Synaptic</div>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background-gradient="linear-gradient(135deg, #07253D 0%, #000000 100%)"
+        >
+          <div style="text-align: left">
+            <p
+              style="
+                color: var(--accent-blue);
+                font-weight: 700;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 0;
+              "
+            >
+              Helm by Synaptic
+            </p>
+            <h1>Executive Agent<br />for Service Leaders</h1>
+            <p
+              style="
+                font-size: 1.2em;
+                max-width: 800px;
+                color: #fff;
+                border-left: 4px solid var(--accent-orange);
+                padding-left: 20px;
+                margin-top: 40px;
+              "
+            >
+              Give service leaders the insight and control they need to evolve
+              their operations with confidence and impact.
+            </p>
+            <div style="margin-top: 60px; display: flex; gap: 40px">
+              <div>
+                <span
+                  style="
+                    display: block;
+                    font-size: 12px;
+                    color: var(--text-muted);
+                  "
+                  >ROUND</span
+                >
+                <span style="font-weight: 600">Seed Extension</span>
+              </div>
+              <div>
+                <span
+                  style="
+                    display: block;
+                    font-size: 12px;
+                    color: var(--text-muted);
+                  "
+                  >DATE</span
+                >
+                <span style="font-weight: 600">January 2026</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>The AI Agent Explosion</h2>
+          <div class="container">
+            <div class="col card">
+              <h3 style="color: var(--accent-blue); margin-top: 0">
+                2026 Inflection Point
+              </h3>
+              <ul>
+                <li>
+                  <span class="highlight">Gartner:</span> 40% of enterprise apps
+                  will feature task-specific AI agents by end of 2026 (vs <5% in
+                  2025)
+                </li>
+                <li>
+                  <span class="highlight">Microsoft/Stanford:</span> Shift from
+                  "AI evangelism" to "pragmatic evaluation"
+                </li>
+                <li>Industry consensus: Pilots → Production</li>
+              </ul>
+            </div>
+            <div
+              class="col card"
+              style="border-left: 4px solid var(--accent-orange)"
+            >
+              <h3 style="color: var(--accent-orange); margin-top: 0">
+                Why Service First?
+              </h3>
+              <ul>
+                <li>Highest ROI use case (Cost/Contact, CSAT)</li>
+                <li>Salesforce Service Cloud: 70K+ customers</li>
+                <li>
+                  <span class="highlight-orange"
+                    >33% of deployments failing due to lack of governance</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>The Deployment Crisis</h2>
+          <div class="card">
+            <h3 style="color: var(--accent-orange); margin-top: 0">
+              The Problem
+            </h3>
+            <ul style="font-size: 0.9em">
+              <li class="fragment fade-up">
+                ❌
+                <span class="highlight"
+                  >33% of service AI deployments fail</span
+                >
+                due to lack of decision context.
+              </li>
+              <li class="fragment fade-up">
+                ❌ Companies mistake "deploying an agent" for "managing
+                decisions".
+              </li>
+              <li class="fragment fade-up">
+                ❌ No audit trail for compliance and transparency.
+              </li>
+              <li class="fragment fade-up">
+                ❌
+                <span class="highlight">95% of AI pilots deliver zero ROI</span>
+                (MIT).
+              </li>
+            </ul>
+          </div>
+          <h3 style="margin-top: 10px">Why This Matters Now</h3>
+          <div style="display: flex; gap: 20px">
+            <div
+              class="col"
+              style="
+                border-top: 2px solid var(--accent-blue);
+                padding-top: 10px;
+              "
+            >
+              <span class="highlight">EU AI Act</span><br />Fully applicable Aug
+              2026
+            </div>
+            <div
+              class="col"
+              style="
+                border-top: 2px solid var(--accent-blue);
+                padding-top: 10px;
+              "
+            >
+              <span class="highlight">Chief AI Officers</span><br />60% of F100
+              appointing in '26
+            </div>
+            <div
+              class="col"
+              style="
+                border-top: 2px solid var(--accent-blue);
+                padding-top: 10px;
+              "
+            >
+              <span class="highlight">Regulation</span><br />Forces "Meaningful
+              Human Review"
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Emerging Category: Decision Intelligence</h2>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 40px;
+            "
+          >
+            <div style="text-align: center">
+              <span style="font-size: 3em">🦄</span><br />
+              <span class="highlight">Gartner #1 Trend</span><br />Decision
+              Intelligence
+            </div>
+            <div style="text-align: center">
+              <span style="font-size: 3em">🛡️</span><br />
+              <span class="highlight">Forrester</span><br />Agent Control Planes
+            </div>
+            <div style="text-align: center">
+              <span style="font-size: 3em">🧠</span><br />
+              <span class="highlight">VC Consensus</span><br />Execution
+              Intelligence
+            </div>
+          </div>
+          <div class="card" style="text-align: center">
+            <h3 style="margin: 0; padding-bottom: 10px">
+              Revenue TAM Opportunity
+            </h3>
+            <span class="stat-big">$2-3 Billion</span>
+            <p style="text-align: center; margin-top: 10px">
+              Annual market for decision intelligence in CS alone
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Helm's Unique Approach</h2>
+          <div class="container">
+            <div class="col">
+              <div class="card fragment fade-right">
+                <span style="font-size: 1.5em; color: var(--accent-blue)"
+                  >01. Mine</span
+                >
+                <p>
+                  Captures how decisions are made across your customer service
+                  operation.
+                </p>
+              </div>
+              <div class="card fragment fade-right">
+                <span style="font-size: 1.5em; color: var(--accent-blue)"
+                  >02. Design</span
+                >
+                <p>Helps you design better processes and agent workflows.</p>
+              </div>
+              <div class="card fragment fade-right">
+                <span style="font-size: 1.5em; color: var(--accent-blue)"
+                  >03. Manage</span
+                >
+                <p>
+                  Continuously monitors and improves with governance guardrails.
+                </p>
+              </div>
+            </div>
+            <div class="col" style="padding-top: 20px">
+              <h3>Key Differentiators</h3>
+              <ul>
+                <li style="margin-bottom: 20px">
+                  <strong>Executive-Friendly:</strong> Natural language
+                  interface, no coding.
+                </li>
+                <li style="margin-bottom: 20px">
+                  <strong>Fast TTV:</strong> Mine in days, not months. Start
+                  free.
+                </li>
+                <li style="margin-bottom: 20px">
+                  <strong>AI-Native:</strong> Learns from usage patterns.
+                </li>
+                <li style="margin-bottom: 20px">
+                  <strong>Platform Independent:</strong> Works with Salesforce,
+                  Zendesk, etc.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Four-Module Monetization</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Module</th>
+                <th>Purpose</th>
+                <th>Price</th>
+                <th>User</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Explore</td>
+                <td>Education & User Base</td>
+                <td>Free</td>
+                <td>Ind. Contributors</td>
+              </tr>
+              <tr>
+                <td>Mine</td>
+                <td>Baseline, Quick Wins</td>
+                <td>$10K-$50K</td>
+                <td>Directors, VPs</td>
+              </tr>
+              <tr>
+                <td>Design</td>
+                <td>AI-Readiness Roadmap</td>
+                <td>$25K-$100K</td>
+                <td>VPs, C-Suite</td>
+              </tr>
+              <tr>
+                <td>Manage</td>
+                <td>Governance & Ops</td>
+                <td>$500-$50K/mo</td>
+                <td>C-Suite, Ops</td>
+              </tr>
+            </tbody>
+          </table>
+          <div
+            class="fragment"
+            style="
+              margin-top: 30px;
+              background: rgba(1, 169, 219, 0.1);
+              padding: 15px;
+              border-radius: 8px;
+              text-align: center;
+            "
+          >
+            <span class="highlight">Result:</span> 2% freemium conversion → 50K+
+            free users → <strong>$1-2M Y1 ARR</strong>
+          </div>
+        </section>
+
+        <section>
+          <h2>The Unfair Advantage</h2>
+          <div class="container">
+            <div class="col">
+              <h3 style="color: var(--accent-blue); margin-top: 0">4 Moats</h3>
+              <ol>
+                <li class="fragment">
+                  <strong>AI-Native Arch:</strong> Simplified deployment +
+                  better UX.
+                </li>
+                <li class="fragment">
+                  <strong>Platform Independence:</strong> Vendor-neutral
+                  (Customer maintains optionality).
+                </li>
+                <li class="fragment">
+                  <strong>Data Network Effects:</strong> Fleet learning + peer
+                  benchmarks.
+                </li>
+                <li class="fragment">
+                  <strong>First Mover:</strong> 12-18 month window to own
+                  "Executive Agent".
+                </li>
+              </ol>
+            </div>
+            <div
+              class="col card"
+              style="border: 1px solid var(--accent-orange)"
+            >
+              <h3 style="color: var(--accent-orange); margin-top: 0">
+                Why Competitors Fail
+              </h3>
+              <p>
+                <strong>Legacy Vendors:</strong> Trapped in "upfront analytics"
+                model. No network effects.
+              </p>
+              <p>
+                <strong>Incumbents (Salesforce):</strong> Platform bias. Cannot
+                be a trustworthy governance layer.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>5-Year Trajectory</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Paying Cust.</th>
+                <th>ARR</th>
+                <th>NDR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2026 (Y1)</td>
+                <td>500 - 1,000</td>
+                <td>$1M - $2M</td>
+                <td>110%</td>
+              </tr>
+              <tr>
+                <td>2027 (Y2)</td>
+                <td>2,500 - 4,000</td>
+                <td>$5M - $10M</td>
+                <td>130%</td>
+              </tr>
+              <tr>
+                <td>2028 (Y3)</td>
+                <td>7k - 10k</td>
+                <td>$20M - $40M</td>
+                <td>140%</td>
+              </tr>
+              <tr>
+                <td>2030 (Y5)</td>
+                <td>20,000</td>
+                <td>$100M+</td>
+                <td>150%+</td>
+              </tr>
+            </tbody>
+          </table>
+          <p
+            style="
+              text-align: center;
+              margin-top: 30px;
+              font-size: 0.9em;
+              opacity: 0.8;
+            "
+          >
+            Driven by <strong>2% freemium conversion</strong> + high NDR from
+            expansion
+          </p>
+        </section>
+
+        <section>
+          <h2>Unit Economics</h2>
+          <div class="container">
+            <div class="col card" style="text-align: center">
+              <span
+                class="highlight"
+                style="display: block; margin-bottom: 10px"
+                >SMB</span
+              >
+              LTV:CAC <br />
+              <span style="font-size: 1.5em; font-weight: bold; color: #fff"
+                >250:1</span
+              >
+              <br /><span style="font-size: 0.7em">1-2 mo Payback</span>
+            </div>
+            <div class="col card" style="text-align: center">
+              <span
+                class="highlight"
+                style="display: block; margin-bottom: 10px"
+                >Mid-Market</span
+              >
+              LTV:CAC <br />
+              <span style="font-size: 1.5em; font-weight: bold; color: #fff"
+                >300:1</span
+              >
+              <br /><span style="font-size: 0.7em">2-4 mo Payback</span>
+            </div>
+            <div class="col card" style="text-align: center">
+              <span
+                class="highlight"
+                style="display: block; margin-bottom: 10px"
+                >Enterprise</span
+              >
+              LTV:CAC <br />
+              <span style="font-size: 1.5em; font-weight: bold; color: #fff"
+                >400:1</span
+              >
+              <br /><span style="font-size: 0.7em">3-6 mo Payback</span>
+            </div>
+          </div>
+          <div class="fragment">
+            <h3
+              style="
+                border-top: 1px solid var(--glass-border);
+                padding-top: 20px;
+              "
+            >
+              Path to Profitability
+            </h3>
+            <ul>
+              <li>
+                <span class="highlight">Gross Margin:</span> 80-85% from Day 1
+              </li>
+              <li><span class="highlight">EBITDA Positive:</span> Year 2-3</li>
+              <li><span class="highlight">$100M ARR:</span> Year 5</li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h2>Three-Phase Expansion</h2>
+          <div style="position: relative">
+            <div class="card fragment fade-up">
+              <span class="highlight">Phase 1: SMB Domination (Y1-2)</span>
+              <p style="margin: 0">
+                Beachhead: 150k SMBs via Salesforce AppExchange. Target: $1-2M
+                ARR.
+              </p>
+            </div>
+            <div class="card fragment fade-up">
+              <span class="highlight">Phase 2: Mid-Market (Y2-3)</span>
+              <p style="margin: 0">
+                Leverage 5k proof points. Target: $5-10M ARR.
+              </p>
+            </div>
+            <div class="card fragment fade-up">
+              <span class="highlight">Phase 3: Enterprise (Y3+)</span>
+              <p style="margin: 0">
+                Grassroots adoption + Benchmarking Moat. Target: $20-40M ARR.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Expansion & Retention</h2>
+          <div class="container">
+            <div class="col">
+              <h3>Revenue Levers</h3>
+              <ul>
+                <li>Explore → Mine: <strong>60% conv</strong></li>
+                <li>Mine → Design: <strong>40% conv</strong></li>
+                <li>Design → Manage: <strong>50% conv</strong></li>
+              </ul>
+            </div>
+            <div
+              class="col card"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(1, 169, 219, 0.2) 0%,
+                  rgba(0, 0, 0, 0) 100%
+                );
+              "
+            >
+              <h3>The Network Effect</h3>
+              <p>
+                <strong>Fleet Learning:</strong> Every new customer makes the
+                product smarter for everyone else.
+              </p>
+              <p><strong>Peer Benchmarking:</strong> Drives 130-180% NDR.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Traction & Validation</h2>
+          <div class="card" style="border-left: 4px solid var(--accent-blue)">
+            <h3 style="color: var(--accent-blue); margin-top: 0">
+              Current Status
+            </h3>
+            <ul>
+              <li>
+                <span class="highlight">Customer Zero:</span> Live internally
+                (Project MAX) governing daily workflows.
+              </li>
+              <li>
+                <span class="highlight">Ecosystem:</span> Salesforce Agentforce
+                Early Access Partner.
+              </li>
+              <li>
+                <span class="highlight">Pipeline:</span> Early interest from
+                Agentforce beta cohort.
+              </li>
+            </ul>
+          </div>
+          <h3>Triple Validation</h3>
+          <ul>
+            <li>
+              <span class="highlight">Customers:</span> Urgent need for
+              governance.
+            </li>
+            <li>
+              <span class="highlight">Internal:</span> MAX & Claude Code proving
+              management constraints.
+            </li>
+            <li>
+              <span class="highlight">Market:</span> Ed Sim, Gartner, Forrester
+              thesis alignment.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Product Roadmap</h2>
+          <div style="display: flex; gap: 10px">
+            <div class="col card">
+              <span class="highlight">Q1 '26 (Now)</span><br />
+              <span style="font-size: 0.8em"
+                >Agentforce Native Integration, 'Mine' Module MVP</span
+              >
+            </div>
+            <div class="col card">
+              <span class="highlight">Q2-Q3 '26</span><br />
+              <span style="font-size: 0.8em"
+                >Design Module Beta, Auto-Playbooks</span
+              >
+            </div>
+            <div class="col card">
+              <span class="highlight">Q4 '26</span><br />
+              <span style="font-size: 0.8em">Manage Module & Guardrails</span>
+            </div>
+            <div class="col card">
+              <span class="highlight">2027+</span><br />
+              <span style="font-size: 0.8em">Cross-Platform (Zendesk)</span>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>The Ask</h2>
+          <div class="container">
+            <div
+              class="col card"
+              style="
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <span
+                style="
+                  font-size: 1.5em;
+                  font-weight: bold;
+                  color: var(--accent-orange);
+                "
+                >[ $ Amount ]</span
+              >
+              <span>Seed Extension</span>
+              <span
+                style="
+                  font-size: 0.7em;
+                  color: var(--text-muted);
+                  margin-top: 10px;
+                "
+                >(Priced Round)</span
+              >
+            </div>
+            <div class="col">
+              <h3>Use of Funds</h3>
+              <ul>
+                <li>Engineering/Product: 50%</li>
+                <li>Sales & Marketing: 40%</li>
+                <li>Operations: 10%</li>
+              </ul>
+              <h3>Key Milestones</h3>
+              <ul>
+                <li>Hit $1M ARR Run Rate</li>
+                <li>50k Free 'Explore' Users</li>
+                <li>Launch on Salesforce AppExchange</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section
+          data-background-gradient="linear-gradient(135deg, #07253D 0%, #01A9DB 100%)"
+        >
+          <h1>The Future of Governance</h1>
+          <blockquote
+            style="
+              font-size: 1.5em;
+              font-style: italic;
+              border-left: none;
+              background: rgba(0, 0, 0, 0.2);
+              padding: 40px;
+              border-radius: 20px;
+            "
+          >
+            "Helm is building the decision intelligence infrastructure for the
+            service industry—a world where every decision is understood, every
+            agent is governed by human wisdom, and every outcome drives
+            continuous learning."
+          </blockquote>
+          <p style="margin-top: 40px; color: #fff; font-weight: 600">
+            Helm by Synaptic
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        controls: true,
+        progress: true,
+        center: true,
+        transition: "slide", // none/fade/slide/convex/concave/zoom
+        width: 1200,
+        height: 700
+      });
+    </script>
+  </body>
+</html>

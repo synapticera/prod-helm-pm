@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      html {
+        background: #ffffff;
+      }
+      body {
+        width: 720pt;
+        height: 405pt;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #07253d;
+        padding: 20pt 30pt;
+        margin: 0;
+      }
+      .header h1 {
+        color: #ffffff;
+        font-size: 24pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .content {
+        display: flex;
+        flex: 1;
+        padding: 20pt 30pt;
+      }
+      .left {
+        width: 55%;
+        padding-right: 20pt;
+      }
+      .right {
+        width: 45%;
+        background: #f4f6f6;
+        padding: 15pt;
+        border-radius: 6pt;
+      }
+      .section-title {
+        color: #01a9db;
+        font-size: 14pt;
+        font-weight: bold;
+        margin-bottom: 8pt;
+        margin-top: 0;
+      }
+      .body-text {
+        color: #333333;
+        font-size: 11pt;
+        line-height: 1.4;
+        margin: 0 0 12pt 0;
+      }
+      .recommendation-box {
+        background: #07253d;
+        padding: 12pt;
+        border-radius: 4pt;
+        margin-top: 10pt;
+      }
+      .rec-label {
+        color: #01a9db;
+        font-size: 10pt;
+        font-weight: bold;
+        margin: 0 0 4pt 0;
+      }
+      .rec-text {
+        color: #ffffff;
+        font-size: 12pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .metric-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8pt;
+      }
+      .metric {
+        text-align: center;
+      }
+      .metric-value {
+        color: #01a9db;
+        font-size: 20pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .metric-label {
+        color: #666666;
+        font-size: 9pt;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><h1>Executive Summary</h1></div>
+    <div class="content">
+      <div class="left">
+        <p class="section-title">THE SITUATION</p>
+        <p class="body-text">
+          Two distinct assets: $4M Salesforce consulting business (AI-focused)
+          and Helm, an early-stage AI decision infrastructure product with
+          exceptional market timing.
+        </p>
+        <p class="section-title">THE DECISION</p>
+        <p class="body-text">
+          Four strategic paths analyzed: Lean operations, Liquidate services,
+          Grow both businesses, or Strategic Leverage (recommended hybrid
+          approach).
+        </p>
+        <div class="recommendation-box">
+          <p class="rec-label">RECOMMENDATION</p>
+          <p class="rec-text">
+            Strategic Leverage: Use services as bridge to product-focused future
+          </p>
+        </div>
+      </div>
+      <div class="right">
+        <p class="section-title">EXPECTED VALUE COMPARISON</p>
+        <div class="metric-row">
+          <div class="metric">
+            <p class="metric-value">$37.8M</p>
+            <p class="metric-label">Strategic Leverage</p>
+          </div>
+          <div class="metric">
+            <p class="metric-value">$32.2M</p>
+            <p class="metric-label">Growth Both</p>
+          </div>
+        </div>
+        <div class="metric-row">
+          <div class="metric">
+            <p class="metric-value">$30.5M</p>
+            <p class="metric-label">Liquidate</p>
+          </div>
+          <div class="metric">
+            <p class="metric-value">$17.8M</p>
+            <p class="metric-label">Lean</p>
+          </div>
+        </div>
+        <p class="body-text" style="margin-top: 12pt; font-size: 10pt">
+          Strategic Leverage optimizes for market timing while preserving
+          optionality if product struggles.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radar - CS Dashboard Best Practices Visual Reference</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        color: #1e3a5f;
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 28px;
+      }
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 14px;
+      }
+
+      .section {
+        background: white;
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      .section-title {
+        color: #1e3a5f;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #e8f4e8;
+      }
+      .section-label {
+        background: #2e7d32;
+        color: white;
+        font-size: 11px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
+      /* Morning Brief Mockup */
+      .morning-brief {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2e5077 100%);
+        color: white;
+      }
+      .morning-brief .section-title {
+        color: white;
+        border-bottom-color: rgba(255, 255, 255, 0.2);
+      }
+      .brief-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .brief-date {
+        font-size: 14px;
+        opacity: 0.8;
+      }
+      .brief-greeting {
+        font-size: 24px;
+        font-weight: 300;
+      }
+
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+      }
+      .kpi-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+      .kpi-value {
+        font-size: 32px;
+        font-weight: 600;
+      }
+      .kpi-label {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 4px;
+      }
+      .kpi-delta {
+        font-size: 12px;
+        margin-top: 8px;
+        padding: 2px 8px;
+        border-radius: 12px;
+        display: inline-block;
+      }
+      .kpi-delta.positive {
+        background: rgba(46, 125, 50, 0.3);
+        color: #8bc34a;
+      }
+      .kpi-delta.negative {
+        background: rgba(211, 47, 47, 0.3);
+        color: #ef5350;
+      }
+      .kpi-delta.neutral {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+
+      .priority-list {
+        list-style: none;
+      }
+      .priority-item {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        padding: 16px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        border-left: 4px solid;
+      }
+      .priority-item.critical {
+        border-left-color: #ef5350;
+      }
+      .priority-item.warning {
+        border-left-color: #ffb74d;
+      }
+      .priority-item.info {
+        border-left-color: #64b5f6;
+      }
+      .priority-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+      .priority-item.critical .priority-icon {
+        background: rgba(239, 83, 80, 0.2);
+      }
+      .priority-item.warning .priority-icon {
+        background: rgba(255, 183, 77, 0.2);
+      }
+      .priority-item.info .priority-icon {
+        background: rgba(100, 181, 246, 0.2);
+      }
+      .priority-content h4 {
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .priority-content p {
+        font-size: 13px;
+        opacity: 0.8;
+        margin-bottom: 8px;
+      }
+      .priority-action {
+        background: rgba(255, 255, 255, 0.15);
+        border: none;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      /* Health Score Dashboard */
+      .health-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+      }
+      .health-chart {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .health-bars {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .health-bar-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .health-bar-label {
+        width: 120px;
+        font-size: 13px;
+        color: #666;
+      }
+      .health-bar-container {
+        flex: 1;
+        height: 24px;
+        background: #e9ecef;
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+      }
+      .health-bar {
+        height: 100%;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 8px;
+        font-size: 11px;
+        color: white;
+        font-weight: 600;
+        transition: width 0.5s ease;
+      }
+      .health-bar.green {
+        background: linear-gradient(90deg, #66bb6a, #43a047);
+      }
+      .health-bar.yellow {
+        background: linear-gradient(90deg, #ffd54f, #ffc107);
+        color: #333;
+      }
+      .health-bar.red {
+        background: linear-gradient(90deg, #ef5350, #e53935);
+      }
+      .health-bar-delta {
+        width: 60px;
+        text-align: right;
+        font-size: 12px;
+      }
+      .health-bar-delta.up {
+        color: #43a047;
+      }
+      .health-bar-delta.down {
+        color: #e53935;
+      }
+
+      .health-summary {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .health-score-display {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .health-score-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin: 0 auto 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: white;
+      }
+      .health-score-circle.good {
+        background: linear-gradient(135deg, #66bb6a, #43a047);
+      }
+      .health-score-circle.warning {
+        background: linear-gradient(135deg, #ffd54f, #ffc107);
+        color: #333;
+      }
+      .health-score-circle.critical {
+        background: linear-gradient(135deg, #ef5350, #e53935);
+      }
+
+      .health-breakdown {
+        font-size: 13px;
+      }
+      .breakdown-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .breakdown-row:last-child {
+        border-bottom: none;
+      }
+      .breakdown-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 8px;
+      }
+      .breakdown-dot.green {
+        background: #43a047;
+      }
+      .breakdown-dot.yellow {
+        background: #ffc107;
+      }
+      .breakdown-dot.red {
+        background: #e53935;
+      }
+
+      /* Account Risk Table */
+      .risk-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      .risk-table th {
+        background: #f8f9fa;
+        padding: 12px;
+        text-align: left;
+        font-weight: 600;
+        color: #666;
+        border-bottom: 2px solid #e9ecef;
+      }
+      .risk-table td {
+        padding: 12px;
+        border-bottom: 1px solid #e9ecef;
+      }
+      .risk-table tr:hover {
+        background: #f8f9fa;
+      }
+      .status-badge {
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      .status-badge.critical {
+        background: #ffebee;
+        color: #c62828;
+      }
+      .status-badge.at-risk {
+        background: #fff8e1;
+        color: #f57c00;
+      }
+      .status-badge.healthy {
+        background: #e8f5e9;
+        color: #2e7d32;
+      }
+      .trend-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .trend-indicator.down {
+        color: #e53935;
+      }
+      .trend-indicator.up {
+        color: #43a047;
+      }
+
+      /* Best Practices Callout */
+      .best-practice {
+        background: #e8f5e9;
+        border-left: 4px solid #43a047;
+        padding: 16px;
+        border-radius: 0 8px 8px 0;
+        margin: 16px 0;
+      }
+      .best-practice h4 {
+        color: #2e7d32;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .best-practice p {
+        font-size: 13px;
+        color: #333;
+      }
+      .best-practice ul {
+        margin-left: 20px;
+        font-size: 13px;
+        color: #555;
+      }
+
+      /* Anti-pattern Callout */
+      .anti-pattern {
+        background: #ffebee;
+        border-left: 4px solid #e53935;
+        padding: 16px;
+        border-radius: 0 8px 8px 0;
+        margin: 16px 0;
+      }
+      .anti-pattern h4 {
+        color: #c62828;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .anti-pattern p {
+        font-size: 13px;
+        color: #333;
+      }
+
+      /* Feature Comparison */
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .comparison-card {
+        background: #f8f9fa;
+        border-radius: 8px;
+        padding: 16px;
+      }
+      .comparison-card h4 {
+        color: #1e3a5f;
+        margin-bottom: 12px;
+        font-size: 14px;
+      }
+      .comparison-card .logo {
+        font-weight: 700;
+        color: #666;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+      .feature-list {
+        list-style: none;
+        font-size: 12px;
+      }
+      .feature-list li {
+        padding: 6px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .feature-list .check {
+        color: #43a047;
+      }
+      .feature-list .partial {
+        color: #ffc107;
+      }
+      .feature-list .miss {
+        color: #e53935;
+      }
+
+      .footer {
+        text-align: center;
+        color: #999;
+        font-size: 12px;
+        margin-top: 30px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎯 Radar - CS Dashboard Visual Reference</h1>
+      <p class="subtitle">
+        Best practices and patterns from competitive analysis | January 2026
+      </p>
+
+      <!-- Morning Brief Example -->
+      <div class="section morning-brief">
+        <div class="section-title">
+          Morning Brief Example
+          <span class="section-label">RADAR CORE FEATURE</span>
+        </div>
+        <div class="brief-header">
+          <div>
+            <div class="brief-date">Friday, January 10, 2026 • 7:30 AM</div>
+            <div class="brief-greeting">
+              Good morning, Sarah. Here's what needs your attention today.
+            </div>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-value">127</div>
+            <div class="kpi-label">Active Accounts</div>
+            <div class="kpi-delta neutral">→ No change</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">$2.4M</div>
+            <div class="kpi-label">Revenue at Risk</div>
+            <div class="kpi-delta negative">↑ +$180K vs yesterday</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">8</div>
+            <div class="kpi-label">Red Accounts</div>
+            <div class="kpi-delta negative">↑ +2 from yesterday</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-value">14</div>
+            <div class="kpi-label">Renewals in 30 Days</div>
+            <div class="kpi-delta positive">$890K ARR</div>
+          </div>
+        </div>
+
+        <div class="section-title" style="font-size: 14px; margin-bottom: 12px">
+          ⚡ Priority Actions
+        </div>
+        <ul class="priority-list">
+          <li class="priority-item critical">
+            <div class="priority-icon">🚨</div>
+            <div class="priority-content">
+              <h4>Acme Corp health score dropped 15 points overnight</h4>
+              <p>
+                Support ticket #4521 opened at 11:42 PM (P1 severity). Champion
+                Maria Chen hasn't responded to 3 outreach attempts. $420K ARR
+                renewal in 28 days.
+              </p>
+              <button class="priority-action">
+                Schedule call before 11am →
+              </button>
+            </div>
+          </li>
+          <li class="priority-item warning">
+            <div class="priority-icon">⚠️</div>
+            <div class="priority-content">
+              <h4>GlobalTech champion went quiet 2 weeks ago</h4>
+              <p>
+                Last engagement: Dec 27. Renewal in 45 days. Usage down 23%
+                month-over-month. Recommend executive sponsor outreach.
+              </p>
+              <button class="priority-action">
+                Loop in executive sponsor →
+              </button>
+            </div>
+          </li>
+          <li class="priority-item info">
+            <div class="priority-icon">📊</div>
+            <div class="priority-content">
+              <h4>TechStart Inc crossed 90% feature adoption</h4>
+              <p>
+                Expansion opportunity identified. Usage patterns suggest
+                readiness for Enterprise tier. Current: $85K ARR.
+              </p>
+              <button class="priority-action">
+                Review expansion playbook →
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="best-practice">
+        <h4>✅ Best Practice: Morning Brief Design</h4>
+        <ul>
+          <li>
+            <strong>Push, don't pull:</strong> Executives shouldn't have to log
+            in and navigate—deliver insights proactively
+          </li>
+          <li>
+            <strong>Delta focus:</strong> Show what changed, not just current
+            state ("↑ +2 from yesterday")
+          </li>
+          <li>
+            <strong>Action-oriented:</strong> Every insight includes a specific
+            recommended action with context
+          </li>
+          <li>
+            <strong>5-7 metrics max:</strong> Research shows executives are
+            overwhelmed by more
+          </li>
+          <li>
+            <strong>Time-sensitive prioritization:</strong> Lead with what
+            requires action TODAY
+          </li>
+        </ul>
+      </div>
+
+      <!-- Health Score Dashboard -->
+      <div class="section">
+        <div class="section-title">
+          Health Score Visualization
+          <span class="section-label">GAINSIGHT/CHURNZERO PATTERN</span>
+        </div>
+
+        <div class="health-grid">
+          <div class="health-chart">
+            <h4 style="margin-bottom: 16px; color: #666; font-size: 14px">
+              Health Score by Component
+            </h4>
+            <div class="health-bars">
+              <div class="health-bar-row">
+                <div class="health-bar-label">Product Adoption</div>
+                <div class="health-bar-container">
+                  <div class="health-bar green" style="width: 78%">78</div>
+                </div>
+                <div class="health-bar-delta up">↑ +5</div>
+              </div>
+              <div class="health-bar-row">
+                <div class="health-bar-label">Engagement</div>
+                <div class="health-bar-container">
+                  <div class="health-bar yellow" style="width: 62%">62</div>
+                </div>
+                <div class="health-bar-delta down">↓ -8</div>
+              </div>
+              <div class="health-bar-row">
+                <div class="health-bar-label">Support Health</div>
+                <div class="health-bar-container">
+                  <div class="health-bar green" style="width: 85%">85</div>
+                </div>
+                <div class="health-bar-delta up">↑ +2</div>
+              </div>
+              <div class="health-bar-row">
+                <div class="health-bar-label">Sentiment (NPS)</div>
+                <div class="health-bar-container">
+                  <div class="health-bar red" style="width: 45%">45</div>
+                </div>
+                <div class="health-bar-delta down">↓ -12</div>
+              </div>
+              <div class="health-bar-row">
+                <div class="health-bar-label">Relationship Depth</div>
+                <div class="health-bar-container">
+                  <div class="health-bar yellow" style="width: 58%">58</div>
+                </div>
+                <div class="health-bar-delta">→ 0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="health-summary">
+            <div class="health-score-display">
+              <div class="health-score-circle warning">65</div>
+              <div style="font-weight: 600; color: #f57c00">At Risk</div>
+              <div style="font-size: 12px; color: #666">
+                ↓ 4 points from last week
+              </div>
+            </div>
+            <div class="health-breakdown">
+              <div style="font-weight: 600; margin-bottom: 8px; color: #666">
+                Contributing Factors
+              </div>
+              <div class="breakdown-row">
+                <span
+                  ><span class="breakdown-dot red"></span>NPS declined to
+                  45</span
+                >
+                <span style="color: #e53935">-12 pts</span>
+              </div>
+              <div class="breakdown-row">
+                <span
+                  ><span class="breakdown-dot yellow"></span>Champion engagement
+                  down</span
+                >
+                <span style="color: #f57c00">-8 pts</span>
+              </div>
+              <div class="breakdown-row">
+                <span
+                  ><span class="breakdown-dot green"></span>Support tickets
+                  resolved</span
+                >
+                <span style="color: #43a047">+2 pts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="best-practice">
+        <h4>✅ Best Practice: Health Score Display</h4>
+        <ul>
+          <li>
+            <strong>Show contributing factors:</strong> Don't just show a
+            number—explain what drove it
+          </li>
+          <li>
+            <strong>Trend visualization:</strong> Include historical trajectory
+            (improving/declining/stable)
+          </li>
+          <li>
+            <strong>Color coding with context:</strong> Red/Yellow/Green must
+            include explanation
+          </li>
+          <li>
+            <strong>Component breakdown:</strong> Let executives see which
+            measures are dragging down the score
+          </li>
+        </ul>
+      </div>
+
+      <div class="anti-pattern">
+        <h4>❌ Anti-Pattern: Dashboard Failure Modes</h4>
+        <p>
+          <strong>From research:</strong> "Executives ask for spreadsheets
+          because dashboards don't answer 'what should I do?'" Common failures
+          include:
+        </p>
+        <ul style="margin-left: 20px; margin-top: 8px">
+          <li>
+            Showing raw metrics without context ("100 tickets" vs "95% met
+            4-hour SLA")
+          </li>
+          <li>No escalation path when viewing a red metric</li>
+          <li>Stale data from infrequent updates (CS needs daily minimum)</li>
+          <li>Too many KPIs—research suggests 5-7 max for executive views</li>
+        </ul>
+      </div>
+
+      <!-- Account Risk Table -->
+      <div class="section">
+        <div class="section-title">
+          At-Risk Account Prioritization
+          <span class="section-label">EXECUTIVE VIEW</span>
+        </div>
+
+        <table class="risk-table">
+          <thead>
+            <tr>
+              <th>Account</th>
+              <th>ARR</th>
+              <th>Health</th>
+              <th>Trend (7d)</th>
+              <th>Renewal</th>
+              <th>Primary Risk Factor</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Acme Corp</strong></td>
+              <td>$420,000</td>
+              <td><span class="status-badge critical">Critical</span></td>
+              <td><span class="trend-indicator down">↓ 15 pts</span></td>
+              <td>28 days</td>
+              <td>P1 support ticket, champion unresponsive</td>
+              <td><a href="#" style="color: #1e3a5f">Call today →</a></td>
+            </tr>
+            <tr>
+              <td><strong>GlobalTech</strong></td>
+              <td>$285,000</td>
+              <td><span class="status-badge at-risk">At Risk</span></td>
+              <td><span class="trend-indicator down">↓ 8 pts</span></td>
+              <td>45 days</td>
+              <td>Usage down 23%, champion quiet 14 days</td>
+              <td>
+                <a href="#" style="color: #1e3a5f">Executive outreach →</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>DataFlow Inc</strong></td>
+              <td>$180,000</td>
+              <td><span class="status-badge at-risk">At Risk</span></td>
+              <td><span class="trend-indicator down">↓ 6 pts</span></td>
+              <td>62 days</td>
+              <td>Budget freeze announced, CFO change</td>
+              <td>
+                <a href="#" style="color: #1e3a5f">Value reinforcement →</a>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>CloudFirst</strong></td>
+              <td>$156,000</td>
+              <td><span class="status-badge healthy">Healthy</span></td>
+              <td><span class="trend-indicator up">↑ 3 pts</span></td>
+              <td>30 days</td>
+              <td>—</td>
+              <td>
+                <a href="#" style="color: #1e3a5f">Expansion opportunity →</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="best-practice">
+        <h4>✅ Best Practice: Account Prioritization</h4>
+        <ul>
+          <li>
+            <strong>Revenue-weighted risk:</strong> Sort by ARR at risk, not
+            just count of red accounts
+          </li>
+          <li>
+            <strong>Time-sensitive context:</strong> Surface renewal dates, SLA
+            deadlines, stale accounts
+          </li>
+          <li>
+            <strong>Root cause visibility:</strong> Show WHY an account is at
+            risk, not just that it is
+          </li>
+          <li>
+            <strong>Direct action links:</strong> One-click path to take the
+            recommended action
+          </li>
+          <li>
+            <strong>Confidence intervals:</strong> ChurnZero's approach of
+            showing prediction confidence
+          </li>
+        </ul>
+      </div>
+
+      <!-- Feature Comparison -->
+      <div class="section">
+        <div class="section-title">
+          Competitive Feature Gaps
+          <span class="section-label">RADAR OPPORTUNITY</span>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card">
+            <div class="logo">GAINSIGHT</div>
+            <h4>Enterprise Leader</h4>
+            <ul class="feature-list">
+              <li><span class="check">✓</span> Comprehensive C360 view</li>
+              <li><span class="check">✓</span> AI sentiment (Staircase)</li>
+              <li><span class="check">✓</span> Journey orchestration</li>
+              <li>
+                <span class="partial">◐</span> Executive dashboards limited
+              </li>
+              <li><span class="miss">✗</span> No proactive morning brief</li>
+              <li><span class="miss">✗</span> Limited external signals</li>
+            </ul>
+          </div>
+          <div class="comparison-card">
+            <div class="logo">CHURNZERO</div>
+            <h4>Highest User Satisfaction</h4>
+            <ul class="feature-list">
+              <li><span class="check">✓</span> Command Center dashboard</li>
+              <li><span class="check">✓</span> CS AI automation</li>
+              <li><span class="check">✓</span> Dynamic QBR slides</li>
+              <li><span class="partial">◐</span> CSM-focused, not exec</li>
+              <li><span class="miss">✗</span> No push-based briefing</li>
+              <li><span class="miss">✗</span> Limited external context</li>
+            </ul>
+          </div>
+          <div
+            class="comparison-card"
+            style="background: #e8f4e8; border: 2px solid #43a047"
+          >
+            <div class="logo" style="color: #2e7d32">RADAR</div>
+            <h4>Executive Intelligence Layer</h4>
+            <ul class="feature-list">
+              <li><span class="check">✓</span> Morning brief (push model)</li>
+              <li><span class="check">✓</span> Executive-first design</li>
+              <li><span class="check">✓</span> Action-oriented insights</li>
+              <li><span class="check">✓</span> External intelligence</li>
+              <li><span class="check">✓</span> Transparent reasoning</li>
+              <li><span class="check">✓</span> Integrates with CS platforms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          RADAR Visual Reference | Competitive Analysis Appendix | Version 1.0 |
+          January 2026
+        </p>
+        <p style="margin-top: 8px">
+          Sources: Gainsight, ChurnZero, Totango documentation; G2/Gartner
+          reviews; Industry research 2024-2025
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
