@@ -235,6 +235,79 @@ Based on the tool analysis, mid-market CCOs need:
 
 **The Gap:** These platforms are optimized for _customer success managers_ tracking account health, not _service leaders_ understanding why decisions are made. They measure churn risk, not decision patterns.
 
+#### Deep Dive: Gainsight Limitations
+
+**Sources:** [Vitally Gainsight Alternatives](https://www.vitally.io/post/gainsight-alternatives), [G2 Gainsight Reviews](https://www.g2.com/products/gainsight-customer-success/reviews), [Userpilot Gainsight PX Review](https://userpilot.com/blog/gainsight-px/)
+
+**Who Gainsight Is Built For:** Large enterprises with dedicated CS operations teams and 6+ month implementation timelines.
+
+| Limitation Category          | User Feedback                                                                                                    | Impact on Mid-Market CCO                                            |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Usability**                | G2 reviews cite: "Not Intuitive" (23 mentions), "Complexity" (21 mentions), "Steep Learning Curve" (19 mentions) | Mid-market teams without dedicated admin will struggle to get value |
+| **Health Score Accuracy**    | "Account healthscores are consistently inaccurate. The happiest customers are marked red"                        | If you can't trust the scores, what are you paying for?             |
+| **Salesforce Dependency**    | "All of the information is pulled from Salesforce, so this tool doesn't always feel necessary"                   | Adds a layer but doesn't provide new intelligence                   |
+| **Setup Burden**             | "Not addressing the challenges we face... minimal benefit"—often due to setup issues                             | Need Gainsight experts to configure properly                        |
+| **No Journey Orchestration** | "Doesn't offer real journey orchestration. You're creating individual engagements per channel"                   | Can't design connected experiences across touchpoints               |
+| **Pricing**                  | Median $50K+/year, enterprise starting ~$30K with no free trial                                                  | Out of reach for most mid-market service teams                      |
+
+**Key Quote:** "While Gainsight brings a lot to the table in terms of features and customization, it can be a daunting product for small to mid-sized CS teams... Its complexity and learning curve can overwhelm smaller teams."
+
+**Bottom Line:** Gainsight is "a useful tool, but it is not a one-stop shop for Customer Success." Its strengths "are most valuable for enterprises with the resources to fully implement and maintain the platform."
+
+#### Deep Dive: ChurnZero Limitations
+
+**Sources:** [G2 ChurnZero Reviews](https://www.g2.com/products/churnzero/reviews), [Capterra ChurnZero Reviews](https://www.capterra.com/p/157980/ChurnZero/reviews/), [Gartner ChurnZero Reviews](https://www.gartner.com/reviews/market/customer-success-management-platforms/vendor/churnzero)
+
+**Who ChurnZero Is Built For:** Mid-market CS teams focused on churn prevention—but not service decision intelligence.
+
+| Limitation Category     | User Feedback                                                                                        | Impact on Mid-Market CCO                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| **Learning Curve**      | "Possibly even too deep for its own good"—users report getting lost in customization options         | Time-to-value suffers; requires dedicated learning investment |
+| **Implementation Time** | "Full implementation took longer than expected (~3 months)" with Salesforce integration              | Mid-market needs faster deployment                            |
+| **Dashboard Rigidity**  | "Limited dashboard customization options"; default dashboards "rely on fields we don't utilize"      | Can't tailor views to service-specific questions              |
+| **Email Limitations**   | "Frustration with email capabilities, citing limitations in HTML formatting and multiple recipients" | Basic communication features limited                          |
+| **Reporting Rigidity**  | "Custom reporting and analytics can feel rigid, often necessitating data export for deeper analysis" | Can't answer "why" questions without manual work              |
+| **Integration Gaps**    | "Integration with other platforms is very limited" (Sept 2025 review)                                | Cross-system visibility not possible                          |
+| **No Mobile App**       | "Absence of a dedicated mobile application is a notable drawback"                                    | Executives can't check status on the go                       |
+| **UI Dated**            | "Platform's UI/UX, although functional, appears slightly dated compared to modern competitors"       | User adoption friction                                        |
+
+**Key Quote (Gartner):** ChurnZero is "very robust" but the dashboard and customer adoption control is weak, and integration with other platforms is very limited.
+
+**Bottom Line:** ChurnZero has strong user satisfaction (4.7/5 G2, 4.8/5 Capterra) but is fundamentally a churn-prediction tool, not a decision-intelligence platform. It answers "who might churn" but not "why did we make that decision."
+
+#### Deep Dive: Totango/Catalyst Limitations (Post-Merger)
+
+**Sources:** [CX Dive Merger Analysis](https://www.customerexperiencedive.com/news/catalyst-totango-merger-customer-success-teams/709373/), [CS Cafe Merger Coverage](https://www.thecscafe.com/p/totango-catalyst-merger-layoffs-growth), [G2 Catalyst Reviews](https://www.g2.com/products/totango-catalyst/reviews), [Vitally Comparison](https://www.vitally.io/post/vitally-vs-catalyst-vs-totango)
+
+**Merger Context:** Totango and Catalyst merged in February 2024, backed by Great Hill Partners. One week after announcement, dozens of employees were laid off due to role overlap.
+
+| Limitation Category           | User Feedback                                                                                                 | Impact on Mid-Market CCO                      |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **Transitional Uncertainty**  | "Transitional phases that could affect availability and functionality of certain features"                    | Risk of feature disruption mid-implementation |
+| **Automation Gaps**           | "Inability to trigger automation based on a data field"—can't send automated emails based on product adoption | Limits proactive intervention capabilities    |
+| **Data Source Visibility**    | "Not a lot of feedback from the platform on when data sources break or why—need to contact support"           | Debugging integration issues is opaque        |
+| **Calculated Field Rigidity** | "Some fields once set up can't be edited... have to start from scratch for major edits"                       | Configuration mistakes are costly             |
+| **No Outreach Integration**   | "Doesn't integrate with Outreach... can't sequence contacts directly from platform"                           | Adds manual steps to workflows                |
+| **Multi-Task Accounts**       | "Doesn't effectively organize accounts with multiple tasks—hard to track follow-ups"                          | Operational complexity for busy accounts      |
+| **Limited Customization**     | "Totango and Catalyst offer limited customization options compared to competitors"                            | Hard to tailor to service-specific needs      |
+| **Interface Complexity**      | "Not very intuitive, requiring a learning curve"                                                              | User adoption challenges                      |
+
+**Key Quote (Vitally):** "Catalyst offers basic automation capabilities and a more standard set of features with limited customization options... Totango and Catalyst offer limited customization options compared to competitors, making it challenging for users to tailor the platform to their specific workflows."
+
+**Bottom Line:** Post-merger uncertainty + limited customization + automation gaps = risk for mid-market buyers who need reliable, tailored solutions without enterprise support resources.
+
+#### Why CS Platforms Don't Solve the CCO Decision Gap
+
+| What CS Platforms Do          | What Mid-Market CCOs Need                           |
+| ----------------------------- | --------------------------------------------------- |
+| Track account health scores   | Understand why specific decisions were made         |
+| Predict churn risk            | Explain escalations to the CEO                      |
+| Automate playbooks for CSMs   | Govern AI agents making autonomous decisions        |
+| Measure renewal likelihood    | Connect decisions across Salesforce, Zendesk, Slack |
+| Score expansion opportunities | Capture institutional knowledge when agents leave   |
+
+**The Fundamental Mismatch:** CS platforms are built for Customer Success Managers managing a book of accounts. Helm is built for Service Executives who need to understand, govern, and improve decisions across the entire service operation.
+
 ### Category 3: Conversation Intelligence (Single Channel, Not Decision Layer)
 
 **Sources:** [MiaRec Market Guide](https://www.miarec.com/conversation-intelligence-market-guide), [MiaRec Pricing Blog](https://blog.miarec.com/conversation-intelligence-auto-qa-pricing), [CallMiner vs Observe.AI](https://callminer.com/compare/callminer-vs-observe-ai)

@@ -455,6 +455,43 @@ All documents are version controlled in git. Check recent commits to see what ch
 
 ---
 
-**Last Updated**: January 5, 2026
-**Branch**: bk/initial-commit
+## 📊 Key Market Data Points
+
+### McKinsey State of AI 2025 - Critical Findings
+
+**The Core Gap**: 88% of organizations use AI regularly, but only 39% see enterprise-level EBIT impact. This 49-point gap is Helm's core market opportunity.
+
+**Agent Adoption Status**:
+| Stage | % of Orgs |
+|-------|-----------|
+| Scaling agents | 23% |
+| Experimenting | 39% |
+| Not engaged | 38% |
+
+**High Performer Differentiation**: High performers are **3x more likely** to have:
+
+- Executive leadership actively driving AI adoption
+- Scaled agents across most business functions
+- Advanced agent use cases deployed
+
+**Critical Success Factor**: McKinsey explicitly states **"Workflow redesign has the biggest effect on EBIT impact"** - this directly validates Helm's Design module positioning. Companies can't just deploy agents; they must redesign how work happens.
+
+**Risk Escalation**: Companies managing 2x more AI-related risks in 2025 vs 2022 (4 vs 2 average). As agents scale, governance becomes critical.
+
+**Helm Alignment**: The 61% of companies NOT seeing enterprise ROI are Helm's addressable market—they can deploy agents but lack infrastructure to redesign workflows and achieve governance at scale.
+
+### Adjacent Market Categories
+
+**Customer Success Platforms** (Forrester Wave Q4 2025):
+
+- Gainsight, Totango, Planhat, ChurnZero
+- Focus: Post-sales customer outcomes, retention/expansion
+- Emerging sub-category: "Customer Growth Platforms" (Customer-Led Growth)
+
+**Helm Differentiation**: These platforms focus on customer relationship management; Helm focuses on **decision intelligence and agent governance** for customer service operations—complementary but different markets.
+
+---
+
+**Last Updated**: January 10, 2026
+**Branch**: bk-boulder-pitch-v1
 **Status**: Strategic positioning complete, EU AI Act path decision pending
