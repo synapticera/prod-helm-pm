@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helm Financial Projections</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        background: #ffffff;
+        color: #07253d;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .header h1 {
+        font-size: 44px;
+        font-weight: bold;
+        color: #07253d;
+        margin-bottom: 15px;
+      }
+
+      .header p {
+        font-size: 18px;
+        color: #44546a;
+        font-style: italic;
+      }
+
+      .charts-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+      }
+
+      .chart-wrapper {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 30px;
+        border: 2px solid #e0e0e0;
+      }
+
+      .chart-wrapper h2 {
+        font-size: 20px;
+        color: #07253d;
+        margin-bottom: 25px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .chart-container {
+        position: relative;
+        height: 350px;
+        width: 100%;
+      }
+
+      .metrics-table {
+        margin-top: 60px;
+        overflow-x: auto;
+      }
+
+      .metrics-table h2 {
+        font-size: 22px;
+        color: #07253d;
+        margin-bottom: 25px;
+        font-weight: 600;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+      }
+
+      thead {
+        background: #07253d;
+        color: white;
+      }
+
+      th,
+      td {
+        padding: 18px 20px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 15px;
+      }
+
+      th {
+        font-weight: 600;
+        text-align: center;
+      }
+
+      td:first-child,
+      th:first-child {
+        text-align: left;
+      }
+
+      tbody tr:nth-child(odd) {
+        background: #f8f9fa;
+      }
+
+      tbody tr:hover {
+        background: #f0f5f8;
+      }
+
+      .metric-value {
+        font-weight: 600;
+        color: #01a9db;
+      }
+
+      .metric-highlight {
+        background: #fff3e0;
+        font-weight: 600;
+        color: #fb4100;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #e0e0e0;
+        color: #44546a;
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      .assumptions-box {
+        background: #f0f8ff;
+        border-left: 4px solid #01a9db;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #44546a;
+        line-height: 1.6;
+      }
+
+      .assumptions-box h3 {
+        color: #07253d;
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      @media print {
+        body {
+          padding: 20px;
+        }
+        .chart-wrapper,
+        .metrics-table {
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .charts-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>HELM FINANCIAL PROJECTIONS</h1>
+        <p>5-Year Path to $100M+ ARR</p>
+      </div>
+
+      <div class="charts-grid">
+        <!-- ARR Growth Chart -->
+        <div class="chart-wrapper">
+          <h2>Annual Recurring Revenue Projection</h2>
+          <div class="chart-container">
+            <canvas id="arrChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Customer Growth Chart -->
+        <div class="chart-wrapper">
+          <h2>Paying Customer Growth</h2>
+          <div class="chart-container">
+            <canvas id="customerChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Free User Growth Chart -->
+        <div class="chart-wrapper">
+          <h2>Free User Acquisition</h2>
+          <div class="chart-container">
+            <canvas id="freeUsersChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Net Dollar Retention -->
+        <div class="chart-wrapper">
+          <h2>Net Dollar Retention by Segment</h2>
+          <div class="chart-container">
+            <canvas id="ndrChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5-Year Trajectory Table -->
+      <div class="metrics-table">
+        <h2>5-Year Financial Trajectory</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Free Users</th>
+              <th>Paying Customers</th>
+              <th>ARR</th>
+              <th>Net Dollar Retention</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Y1 (2026)</strong></td>
+              <td class="metric-value">50,000</td>
+              <td class="metric-value">500–1,000</td>
+              <td class="metric-highlight">$1–2M</td>
+              <td class="metric-value">110–120%</td>
+            </tr>
+            <tr>
+              <td><strong>Y2 (2027)</strong></td>
+              <td class="metric-value">200,000</td>
+              <td class="metric-value">2,500–4,000</td>
+              <td class="metric-highlight">$5–10M</td>
+              <td class="metric-value">130–150%</td>
+            </tr>
+            <tr>
+              <td><strong>Y3 (2028)</strong></td>
+              <td class="metric-value">500,000</td>
+              <td class="metric-value">7,000–10,000</td>
+              <td class="metric-highlight">$20–40M</td>
+              <td class="metric-value">140–160%</td>
+            </tr>
+            <tr>
+              <td><strong>Y4 (2029)</strong></td>
+              <td class="metric-value">1,000,000+</td>
+              <td class="metric-value">12,000–15,000</td>
+              <td class="metric-highlight">$50–75M</td>
+              <td class="metric-value">150–170%</td>
+            </tr>
+            <tr>
+              <td><strong>Y5 (2030)</strong></td>
+              <td class="metric-value">2,000,000+</td>
+              <td class="metric-value">18,000–20,000</td>
+              <td class="metric-highlight">$100–150M</td>
+              <td class="metric-value">150–180%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Unit Economics Table -->
+      <div class="metrics-table">
+        <h2>Target Unit Economics (at Scale)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Segment</th>
+              <th>LTV:CAC Ratio</th>
+              <th>CAC Payback Period</th>
+              <th>Gross Margin</th>
+              <th>NDR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>SMB</strong></td>
+              <td class="metric-value">80–250:1</td>
+              <td class="metric-value">1–2 months</td>
+              <td class="metric-value">80–85%</td>
+              <td class="metric-value">110–120%</td>
+            </tr>
+            <tr>
+              <td><strong>Mid-Market</strong></td>
+              <td class="metric-value">100–300:1</td>
+              <td class="metric-value">2–4 months</td>
+              <td class="metric-value">82–87%</td>
+              <td class="metric-value">130–150%</td>
+            </tr>
+            <tr>
+              <td><strong>Enterprise</strong></td>
+              <td class="metric-value">100–400:1</td>
+              <td class="metric-value">3–6 months</td>
+              <td class="metric-value">85–90%</td>
+              <td class="metric-value">140–180%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CAC by Module -->
+      <div class="metrics-table">
+        <h2>Customer Acquisition Cost by Module</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>Pricing Model</th>
+              <th>Target CAC</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Explore</strong></td>
+              <td>Free</td>
+              <td class="metric-value">$0</td>
+              <td>Organic, viral sharing, peer benchmarking</td>
+            </tr>
+            <tr>
+              <td><strong>Mine</strong></td>
+              <td>One-Time: $10K–$50K</td>
+              <td class="metric-value">$500–$1,500</td>
+              <td>Sales-assist, low-touch, baseline analysis</td>
+            </tr>
+            <tr>
+              <td><strong>Design</strong></td>
+              <td>One-Time: $25K–$100K</td>
+              <td class="metric-value">$1,500–$3,000</td>
+              <td>Higher-touch, strategic design, roadmap</td>
+            </tr>
+            <tr>
+              <td><strong>Manage</strong></td>
+              <td>Subscription: $500–$50K/mo</td>
+              <td class="metric-value">$2,000–$5,000</td>
+              <td>Annual payback 6–12 months, continuous value</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="assumptions-box">
+        <h3>Key Assumptions & Notes</h3>
+        <ul style="margin-left: 20px; line-height: 1.8">
+          <li>
+            <strong>Free-to-Paid Conversion:</strong> Year 1 starts at 2%
+            (50K→1K paying), increases to 30–40% at scale (2M→600K+ paying)
+            through network effects and proven ROI
+          </li>
+          <li>
+            <strong>Growth Drivers:</strong> Freemium viral coefficient 0.6+,
+            Explore→Mine 60% conversion, Mine→Design 40% conversion,
+            Design→Manage 50% conversion
+          </li>
+          <li>
+            <strong>Gross Margin:</strong> 80–85% from day 1 (software product,
+            minimal COGS). Supports sales/marketing expansion without burn
+            acceleration
+          </li>
+          <li>
+            <strong>Path to Profitability:</strong> EBITDA positive Year 2–3
+            when growth moderates. Operationally positive Year 3–4. Sustainable
+            cash generation by Year 5
+          </li>
+          <li>
+            <strong>Magic Number:</strong> Revenue growth efficiency target
+            0.75–1.0 by Year 2+. Rule of 40 target (growth % + FCF margin ≥ 40%)
+          </li>
+          <li>
+            <strong>Market Expansion:</strong> Phase 1 (Y1–2) SMB domination.
+            Phase 2 (Y2–3) Mid-Market. Phase 3 (Y3+) Enterprise & vertical
+            expansion (Finance, IT, HR)
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        Helm by Synaptic — Decision Intelligence Platform for Customer Service
+      </div>
+    </div>
+
+    <script>
+      // Chart.js configuration
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            labels: {
+              font: { size: 12, family: "Arial, sans-serif" },
+              color: "#07253D"
+            }
+          },
+          filler: {
+            propagate: true
+          }
+        },
+        scales: {
+          y: {
+            ticks: {
+              font: { size: 11 },
+              color: "#44546A"
+            },
+            grid: { color: "#E0E0E0" }
+          },
+          x: {
+            ticks: {
+              font: { size: 11 },
+              color: "#44546A"
+            },
+            grid: { color: "transparent" }
+          }
+        }
+      };
+
+      // ARR Chart
+      const arrCtx = document.getElementById("arrChart").getContext("2d");
+      new Chart(arrCtx, {
+        type: "line",
+        data: {
+          labels: ["Y1 2026", "Y2 2027", "Y3 2028", "Y4 2029", "Y5 2030"],
+          datasets: [
+            {
+              label: "ARR (Midpoint)",
+              data: [1.5, 7.5, 30, 62.5, 125],
+              borderColor: "#01A9DB",
+              backgroundColor: "rgba(1, 169, 219, 0.1)",
+              borderWidth: 3,
+              pointRadius: 6,
+              pointBackgroundColor: "#01A9DB",
+              pointBorderColor: "#FFFFFF",
+              pointBorderWidth: 2,
+              tension: 0.4,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          ...chartOptions,
+          plugins: {
+            ...chartOptions.plugins,
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return "$" + context.parsed.y.toFixed(1) + "M ARR";
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // Customer Chart
+      const customerCtx = document
+        .getElementById("customerChart")
+        .getContext("2d");
+      new Chart(customerCtx, {
+        type: "bar",
+        data: {
+          labels: ["Y1 2026", "Y2 2027", "Y3 2028", "Y4 2029", "Y5 2030"],
+          datasets: [
+            {
+              label: "Paying Customers",
+              data: [750, 3250, 8500, 13500, 19000],
+              backgroundColor: "#FB4100",
+              borderRadius: 6,
+              borderSkipped: false
+            }
+          ]
+        },
+        options: {
+          ...chartOptions,
+          plugins: {
+            ...chartOptions.plugins,
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return context.parsed.y.toLocaleString() + " customers";
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // Free Users Chart
+      const freeCtx = document
+        .getElementById("freeUsersChart")
+        .getContext("2d");
+      new Chart(freeCtx, {
+        type: "line",
+        data: {
+          labels: ["Y1 2026", "Y2 2027", "Y3 2028", "Y4 2029", "Y5 2030"],
+          datasets: [
+            {
+              label: "Free Users",
+              data: [50000, 200000, 500000, 1000000, 2000000],
+              borderColor: "#07253D",
+              backgroundColor: "rgba(7, 37, 61, 0.1)",
+              borderWidth: 3,
+              pointRadius: 6,
+              pointBackgroundColor: "#07253D",
+              pointBorderColor: "#FFFFFF",
+              pointBorderWidth: 2,
+              tension: 0.4,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          ...chartOptions,
+          scales: {
+            y: {
+              ticks: {
+                callback: function (value) {
+                  return (value / 1000000).toFixed(1) + "M";
+                },
+                font: { size: 11 },
+                color: "#44546A"
+              },
+              grid: { color: "#E0E0E0" }
+            },
+            x: {
+              ticks: {
+                font: { size: 11 },
+                color: "#44546A"
+              },
+              grid: { color: "transparent" }
+            }
+          },
+          plugins: {
+            ...chartOptions.plugins,
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return (context.parsed.y / 1000).toLocaleString() + "K users";
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // NDR Chart
+      const ndrCtx = document.getElementById("ndrChart").getContext("2d");
+      new Chart(ndrCtx, {
+        type: "bar",
+        data: {
+          labels: ["SMB", "Mid-Market", "Enterprise"],
+          datasets: [
+            {
+              label: "Min NDR %",
+              data: [110, 130, 140],
+              backgroundColor: "#01A9DB",
+              borderRadius: 6,
+              borderSkipped: false
+            },
+            {
+              label: "Max NDR %",
+              data: [120, 150, 180],
+              backgroundColor: "#FB4100",
+              borderRadius: 6,
+              borderSkipped: false
+            }
+          ]
+        },
+        options: {
+          ...chartOptions,
+          plugins: {
+            ...chartOptions.plugins,
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return context.dataset.label + ": " + context.parsed.y + "%";
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

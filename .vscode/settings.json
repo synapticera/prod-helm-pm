@@ -130,5 +130,18 @@
     // Claude Code Settings - Bypass permissions mode
     "claudeCode.allowDangerouslySkipPermissions": true,
     "claudeCode.initialPermissionMode": "bypassPermissions",
-    "claudeCode.bashPermissionMode": "bypassPermissions"
+    "claudeCode.bashPermissionMode": "bypassPermissions",
+
+    // Markdown Settings - Open .md files in preview mode by default
+    "workbench.editorAssociations": {
+        "*.md": "vscode.markdown.preview.editor"
+    },
+    "markdown.preview.breaks": true,
+    "markdown.preview.linkNewWindowOpenExternally": true,
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "markdown.extension.preview.autoShowPreviewToSide": false,
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }

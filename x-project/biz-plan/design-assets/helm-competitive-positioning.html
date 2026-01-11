@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helm Competitive Positioning</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        background: #ffffff;
+        color: #07253d;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .header h1 {
+        font-size: 44px;
+        font-weight: bold;
+        color: #07253d;
+        margin-bottom: 15px;
+      }
+
+      .header p {
+        font-size: 18px;
+        color: #44546a;
+        font-style: italic;
+      }
+
+      .matrix-section {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 40px;
+        margin-bottom: 60px;
+      }
+
+      .matrix-section h2 {
+        font-size: 22px;
+        color: #07253d;
+        margin-bottom: 30px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .matrix-container {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        background: white;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .axis-y-label {
+        position: absolute;
+        left: -80px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        transform-origin: center;
+        font-size: 14px;
+        font-weight: 600;
+        color: #07253d;
+        white-space: nowrap;
+      }
+
+      .axis-x-label {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        font-weight: 600;
+        color: #07253d;
+        white-space: nowrap;
+      }
+
+      .matrix-grid {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .grid-line-v {
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: #e0e0e0;
+        top: 0;
+      }
+
+      .grid-line-h {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: #e0e0e0;
+        left: 0;
+      }
+
+      .axis-label {
+        position: absolute;
+        font-size: 12px;
+        color: #999;
+        font-weight: 500;
+      }
+
+      .competitor {
+        position: absolute;
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .competitor:hover {
+        transform: scale(1.1);
+        z-index: 100;
+      }
+
+      .competitor-dot {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: center;
+        border: 3px solid white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .competitor-label {
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #07253d;
+        text-align: center;
+      }
+
+      .legend {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 40px;
+        flex-wrap: wrap;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .legend-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid white;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .legend-text {
+        font-size: 14px;
+        color: #44546a;
+      }
+
+      /* Competitor colors */
+      .helm {
+        background: #01a9db;
+      }
+      .legacy {
+        background: #44546a;
+      }
+      .incumbent {
+        background: #fb4100;
+      }
+
+      .comparison-table {
+        margin-top: 60px;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .comparison-table h3 {
+        font-size: 20px;
+        color: #07253d;
+        padding: 30px 30px 20px;
+        font-weight: 600;
+        background: #f8f9fa;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        background: #07253d;
+        color: white;
+      }
+
+      th,
+      td {
+        padding: 18px 20px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 14px;
+      }
+
+      th {
+        font-weight: 600;
+        text-align: center;
+      }
+
+      td:first-child,
+      th:first-child {
+        text-align: left;
+      }
+
+      tbody tr:nth-child(odd) {
+        background: #f8f9fa;
+      }
+
+      tbody tr:hover {
+        background: #f0f5f8;
+      }
+
+      .check {
+        color: #01a9db;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .x {
+        color: #999;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .partial {
+        color: #fb4100;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .positioning-insight {
+        background: #fff3e0;
+        border-left: 4px solid #fb4100;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 40px;
+        font-size: 14px;
+        color: #44546a;
+        line-height: 1.6;
+      }
+
+      .positioning-insight h3 {
+        color: #07253d;
+        margin-bottom: 10px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 80px;
+        padding-top: 40px;
+        border-top: 1px solid #e0e0e0;
+        color: #44546a;
+        font-size: 14px;
+        font-style: italic;
+      }
+
+      @media print {
+        body {
+          padding: 20px;
+        }
+        .matrix-section {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>HELM COMPETITIVE POSITIONING</h1>
+        <p>Market Positioning Matrix & Comparison</p>
+      </div>
+
+      <!-- Positioning Matrix -->
+      <div class="matrix-section">
+        <h2>
+          Market Positioning: Decision Intelligence vs Enterprise Maturity
+        </h2>
+        <div style="position: relative; margin: 60px 0">
+          <div class="axis-y-label">Enterprise Maturity & CAC →</div>
+          <div class="axis-x-label">Decision Intelligence Depth →</div>
+
+          <div class="matrix-container">
+            <div class="matrix-grid">
+              <div class="grid-line-v" style="left: 50%"></div>
+              <div class="grid-line-h" style="top: 50%"></div>
+
+              <div class="axis-label" style="bottom: 10px; left: 10px">Low</div>
+              <div class="axis-label" style="bottom: 10px; right: 10px">
+                High
+              </div>
+              <div class="axis-label" style="top: 10px; left: 10px">High</div>
+              <div class="axis-label" style="top: 10px; right: 10px">Low</div>
+
+              <!-- Competitors -->
+              <!-- Helm: High Decision Intelligence, Low Enterprise CAC -->
+              <div
+                class="competitor"
+                style="left: 70%; top: 25%; transform: translate(-50%, -50%)"
+              >
+                <div class="competitor-dot helm">H</div>
+                <div class="competitor-label">HELM</div>
+              </div>
+
+              <!-- Celonis: High Decision Intelligence, High Enterprise CAC -->
+              <div
+                class="competitor"
+                style="left: 25%; top: 20%; transform: translate(-50%, -50%)"
+              >
+                <div class="competitor-dot legacy">C</div>
+                <div class="competitor-label">Celonis</div>
+              </div>
+
+              <!-- UiPath: Medium Decision Intelligence, High Enterprise CAC -->
+              <div
+                class="competitor"
+                style="left: 20%; top: 35%; transform: translate(-50%, -50%)"
+              >
+                <div class="competitor-dot legacy">U</div>
+                <div class="competitor-label">UiPath</div>
+              </div>
+
+              <!-- Salesforce: Low Decision Intelligence, High Enterprise Maturity -->
+              <div
+                class="competitor"
+                style="left: 15%; top: 70%; transform: translate(-50%, -50%)"
+              >
+                <div class="competitor-dot incumbent">SF</div>
+                <div class="competitor-label">Salesforce</div>
+              </div>
+
+              <!-- Microsoft: Low Decision Intelligence, High Enterprise Maturity -->
+              <div
+                class="competitor"
+                style="left: 25%; top: 75%; transform: translate(-50%, -50%)"
+              >
+                <div class="competitor-dot incumbent">MS</div>
+                <div class="competitor-label">Microsoft</div>
+              </div>
+
+              <!-- Generic Process Mining: Medium Decision Intelligence, Medium CAC -->
+              <div
+                class="competitor"
+                style="left: 35%; top: 55%; transform: translate(-50%, -50%)"
+              >
+                <div class="competitor-dot legacy">PM</div>
+                <div class="competitor-label">Process<br />Mining</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-dot helm"></div>
+              <div class="legend-text">
+                Helm (Decision Intelligence Platform)
+              </div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot legacy"></div>
+              <div class="legend-text">Legacy Vendors (Enterprise-Focused)</div>
+            </div>
+            <div class="legend-item">
+              <div class="legend-dot incumbent"></div>
+              <div class="legend-text">Incumbent Platforms (Broad Tools)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="positioning-insight">
+          <h3>Strategic Insight</h3>
+          <p>
+            <strong>Helm's Unique Position:</strong> We own the intersection of
+            high decision intelligence depth AND low customer acquisition cost.
+            Legacy vendors (Celonis, UiPath) have deep capabilities but are
+            trapped in enterprise-only, $100K+ deal models. Incumbent platforms
+            (Salesforce, Microsoft) have scale and existing relationships but
+            lack decision discovery capabilities. Helm serves the 150,000 SMBs
+            and mid-market companies that incumbent platforms ignore, while
+            offering deeper decision intelligence than generic process mining
+            tools.
+          </p>
+        </div>
+      </div>
+
+      <!-- Detailed Comparison -->
+      <div class="comparison-table">
+        <h3>Feature & Strategy Comparison</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th style="text-align: center; width: 120px">Helm</th>
+              <th style="text-align: center; width: 120px">Celonis</th>
+              <th style="text-align: center; width: 120px">UiPath</th>
+              <th style="text-align: center; width: 120px">Salesforce</th>
+              <th style="text-align: center; width: 120px">Microsoft</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Decision Mining</strong></td>
+              <td class="check">✓ Native</td>
+              <td class="partial">Partial</td>
+              <td class="x">✗</td>
+              <td class="x">✗</td>
+              <td class="x">✗</td>
+            </tr>
+            <tr>
+              <td><strong>Executive-Friendly Interface</strong></td>
+              <td class="check">✓ Yes</td>
+              <td class="x">Technical</td>
+              <td class="x">Technical</td>
+              <td class="partial">Partial</td>
+              <td class="partial">Partial</td>
+            </tr>
+            <tr>
+              <td><strong>Freemium Model</strong></td>
+              <td class="check">✓ Yes</td>
+              <td class="x">Enterprise Only</td>
+              <td class="x">Enterprise Only</td>
+              <td class="partial">Limited</td>
+              <td class="partial">Limited</td>
+            </tr>
+            <tr>
+              <td><strong>SMB Addressable</strong></td>
+              <td class="check">✓ 150K+</td>
+              <td class="x">8K Enterprise</td>
+              <td class="x">8K Enterprise</td>
+              <td class="check">✓ Broad</td>
+              <td class="check">✓ Broad</td>
+            </tr>
+            <tr>
+              <td><strong>Time-to-Value</strong></td>
+              <td class="check">✓ Days</td>
+              <td class="x">Months</td>
+              <td class="x">Months</td>
+              <td class="partial">Weeks</td>
+              <td class="partial">Weeks</td>
+            </tr>
+            <tr>
+              <td><strong>AI Agent Governance</strong></td>
+              <td class="check">✓ Native</td>
+              <td class="partial">Through RPA</td>
+              <td class="check">✓ Via Bots</td>
+              <td class="partial">Emerging</td>
+              <td class="partial">Emerging</td>
+            </tr>
+            <tr>
+              <td><strong>Customer Service Focus</strong></td>
+              <td class="check">✓ Vertical</td>
+              <td class="x">Process Mining</td>
+              <td class="x">RPA Platform</td>
+              <td class="partial">General CRM</td>
+              <td class="partial">General Platform</td>
+            </tr>
+            <tr>
+              <td><strong>Net Dollar Retention</strong></td>
+              <td class="check">✓ 110–180%</td>
+              <td class="partial">80–110%</td>
+              <td class="partial">85–120%</td>
+              <td class="check">✓ 120–150%</td>
+              <td class="check">✓ 130–160%</td>
+            </tr>
+            <tr>
+              <td><strong>Regulatory Compliance Built-In</strong></td>
+              <td class="check">✓ Yes (EU AI Act)</td>
+              <td class="partial">Add-On</td>
+              <td class="partial">Add-On</td>
+              <td class="partial">Add-On</td>
+              <td class="partial">Add-On</td>
+            </tr>
+            <tr>
+              <td><strong>First-Mover in Category</strong></td>
+              <td class="check">✓ Yes (DI for CS)</td>
+              <td class="x">No</td>
+              <td class="x">No</td>
+              <td class="x">No</td>
+              <td class="x">No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Why Competitors Can't Match -->
+      <div class="matrix-section" style="margin-top: 60px">
+        <h2>Why Competitors Can't Match Helm's Position</h2>
+
+        <table style="margin-top: 0">
+          <thead>
+            <tr>
+              <th>Competitor Type</th>
+              <th>Their Constraint</th>
+              <th>Why They Can't Pivot</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Legacy Vendors<br />(Celonis, UiPath)</strong>
+              </td>
+              <td>Enterprise-only, high-CAC model ($100K+)</td>
+              <td>
+                Cost structure (sales team, support, implementation) prevents
+                serving SMB market. Freemium would destroy unit economics.
+                Technology built for enterprise complexity
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong
+                  >Incumbent Platforms<br />(Salesforce, Microsoft)</strong
+                >
+              </td>
+              <td>Broad platforms, generalist approach</td>
+              <td>
+                Too many masters (CRM, collaboration, productivity). Can't focus
+                on customer service decision intelligence. Building agents, not
+                decision infrastructure. Customer service not core
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Process Mining<br />(Generic Tools)</strong>
+              </td>
+              <td>Process-centric, not decision-centric</td>
+              <td>
+                Mining processes ≠ mining decisions. Can't serve customers who
+                need decision intelligence. No vertical specialization advantage
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Defensibility -->
+      <div class="positioning-insight">
+        <h3>Helm's Defensibility Moat</h3>
+        <ul style="margin-left: 20px; line-height: 1.8">
+          <li>
+            <strong>Network Effects:</strong> Decision data from every customer
+            improves recommendations for all users (fleet learning). More
+            customers = smarter product = stronger moat
+          </li>
+          <li>
+            <strong>Category Ownership:</strong> First to claim "Decision
+            Intelligence for Customer Service" before competitors catch up.
+            Analyst coverage and brand equity compound
+          </li>
+          <li>
+            <strong>Vertical Specialization:</strong> Deep domain expertise in
+            customer service that horizontal platforms can't match. Defensible
+            versus generalists
+          </li>
+          <li>
+            <strong>Regulatory Tailwind:</strong> EU AI Act compliance built in.
+            Harder for others to retrofit governance to existing systems
+          </li>
+          <li>
+            <strong>Product-Led Growth:</strong> Freemium model creates
+            switching costs. Millions of free users generate data, insights, and
+            expansion opportunities competitors can't replicate
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer">
+        Helm by Synaptic — Decision Intelligence Platform for Customer Service
+      </div>
+    </div>
+
+    <script>
+      // Make competitors clickable for interactivity (optional)
+      document.querySelectorAll(".competitor").forEach((el) => {
+        el.addEventListener("click", function () {
+          alert(this.textContent.trim());
+        });
+      });
+    </script>
+  </body>
+</html>

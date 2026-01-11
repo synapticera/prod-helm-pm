@@ -1,0 +1,992 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helm by Synaptic - Investor Presentation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #07253d;
+      }
+
+      .slide {
+        width: 960px;
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px;
+        background: #ffffff;
+        margin: 20px;
+        page-break-after: always;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slide[data-layout="title"] {
+        background: linear-gradient(
+          135deg,
+          #07253d 0%,
+          #07253d 70%,
+          #01a9db 100%
+        );
+        color: #ffffff;
+      }
+
+      .slide[data-layout="content"] {
+        background: #ffffff;
+        align-items: flex-start;
+        padding-top: 80px;
+      }
+
+      .slide[data-layout="metrics"] {
+        background: #ffffff;
+      }
+
+      .slide[data-layout="chart"] {
+        background: #ffffff;
+        align-items: flex-start;
+        padding-top: 80px;
+      }
+
+      h1 {
+        font-size: 48px;
+        color: #ffffff;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 24px;
+        color: #07253d;
+        margin-bottom: 30px;
+        text-align: left;
+        width: 100%;
+      }
+
+      .slide[data-layout="title"] h2 {
+        font-size: 28px;
+        color: #01a9db;
+      }
+
+      p {
+        font-size: 14px;
+        color: #44546a;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style: none;
+        width: 100%;
+      }
+
+      li {
+        font-size: 14px;
+        color: #44546a;
+        margin-left: 0;
+        margin-bottom: 12px;
+        line-height: 1.6;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      li:before {
+        content: "•";
+        color: #01a9db;
+        font-weight: bold;
+        display: inline-block;
+        width: 20px;
+        margin-left: -20px;
+      }
+
+      .metric {
+        text-align: center;
+        flex: 1;
+      }
+
+      .metric-value {
+        font-size: 48px;
+        color: #01a9db;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .metric-label {
+        font-size: 14px;
+        color: #44546a;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        font-size: 12px;
+        color: #44546a;
+      }
+
+      .slide-number {
+        position: absolute;
+        bottom: 20px;
+        right: 30px;
+        font-size: 12px;
+        color: #44546a;
+      }
+
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #07253d;
+      }
+
+      .slide[data-layout="title"] .logo {
+        color: #ffffff;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #e7e6e6;
+        font-size: 13px;
+      }
+
+      th {
+        background: #e7e6e6;
+        color: #07253d;
+        font-weight: bold;
+      }
+
+      td {
+        color: #44546a;
+      }
+
+      .metrics-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        gap: 40px;
+      }
+
+      .highlight {
+        color: #01a9db;
+        font-weight: bold;
+      }
+
+      .orange-accent {
+        color: #fb4100;
+      }
+    </style>
+    <style>
+      @media print {
+        .slide {
+          page-break-after: always;
+        }
+        body {
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slide" data-layout="title">
+      <div class="logo">Helm by Synaptic</div>
+      <h1>Executive Agent for Service Leaders</h1>
+      <h2>
+        Give service leaders the insight and control they need to evolve their
+        operations with confidence and impact
+      </h2>
+      <p style="margin-top: 40px; color: #ffffff; font-size: 16px">
+        Seed Extension Round
+      </p>
+      <p style="color: #01a9db; font-size: 14px">January 2026</p>
+      <div class="slide-number">1</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>The AI Agent Explosion</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Market Inflection Point (2026)
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Gartner:</span> 40% of enterprise apps will
+          feature task-specific AI agents by end of 2026 (vs <5% in 2025)
+        </li>
+        <li>
+          <span class="highlight">Microsoft/Stanford HAI:</span> Shift from "AI
+          evangelism" to "pragmatic AI evaluation" in 2026
+        </li>
+        <li>
+          <span class="highlight">Industry consensus:</span> Agent adoption
+          moving from pilots to production
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Why Customer Service First
+      </h3>
+      <ul>
+        <li>158,000 total addressable companies (150K SMB + 8K enterprise)</li>
+        <li>Highest ROI AI use case: cost per contact, CSAT improvement</li>
+        <li>
+          Salesforce Service Cloud: 70K+ customers, $9B revenue (~$125K ACV)
+        </li>
+        <li>
+          <span class="orange-accent"
+            >33% of deployments failing due to lack of governance</span
+          >
+        </li>
+      </ul>
+      <div class="slide-number">2</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>The AI Deployment Crisis</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #fb4100;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        The Problem
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">33% of service AI deployments fail</span> due
+          to lack of decision context and governance
+        </li>
+        <li>Companies mistake "deploying an agent" for "managing decisions"</li>
+        <li>
+          No audit trail for compliance and transparency (increasingly required)
+        </li>
+        <li>
+          Historic:
+          <span class="highlight">95% of AI pilots deliver zero ROI</span>
+          (MIT), 85% fail before value (Gartner)
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Why This Matters Now
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">EU AI Act</span> fully applicable August 2,
+          2026 (mandatory governance/transparency)
+        </li>
+        <li>
+          <span class="highlight">60% of Fortune 100</span> will appoint Chief
+          AI Officer in 2026
+        </li>
+        <li>
+          Regulatory pressure forces "meaningful human review" of AI decisions
+        </li>
+      </ul>
+      <div class="slide-number">3</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Market Evolution & Emerging Category</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Category Crystallization (2026)
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Gartner:</span> Decision Intelligence is #1
+          trend in 2026 Hype Cycle
+        </li>
+        <li>
+          <span class="highlight">Forrester:</span> Agent Control Planes
+          becoming essential governance layer
+        </li>
+        <li>
+          <span class="highlight">VCs/Foundation Capital:</span> Context Graphs
+          and "Execution Intelligence Layer" as key infrastructure
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        TAM Expansion
+      </h3>
+      <ul>
+        <li>Base TAM: 158,000 companies deploying customer service AI</li>
+        <li>
+          40% agent adoption by 2026 = billions in software transformation
+        </li>
+        <li>
+          <span class="highlight"
+            >Revenue TAM: $2-3B annual market opportunity</span
+          >
+          for decision intelligence infrastructure in CS alone
+        </li>
+      </ul>
+      <div class="slide-number">4</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Helm's Unique Approach</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        What Helm Does
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Mine:</span> Captures how decisions are made
+          across your customer service operation
+        </li>
+        <li>
+          <span class="highlight">Design:</span> Helps you design better
+          processes and agent workflows
+        </li>
+        <li>
+          <span class="highlight">Manage:</span> Continuously monitors and
+          improves with governance guardrails
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Key Differentiators
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Executive-Friendly:</span> Natural language
+          interface, no technical training required
+        </li>
+        <li>
+          <span class="highlight">Fast Time-to-Value:</span> Start free, get
+          insights immediately (Mine in days, not months)
+        </li>
+        <li>
+          <span class="highlight">AI-Native:</span> Continuously learns and
+          improves from usage patterns and outcomes
+        </li>
+        <li>
+          <span class="highlight">Platform Independent:</span> Works across
+          Salesforce, Zendesk, and any customer service system
+        </li>
+      </ul>
+      <div class="slide-number">5</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Four-Module Monetization Journey</h2>
+      <table>
+        <tr>
+          <th>Module</th>
+          <th>Purpose</th>
+          <th>Price</th>
+          <th>Users</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">Explore</span></td>
+          <td>Build user base, education</td>
+          <td>Free</td>
+          <td>Individual Contributors</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Mine</span></td>
+          <td>Baseline understanding, quick wins</td>
+          <td>$10K-$50K</td>
+          <td>Directors, VPs</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Design</span></td>
+          <td>AI-readiness plan, roadmap</td>
+          <td>$25K-$100K</td>
+          <td>VPs, C-Suite</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Manage</span></td>
+          <td>Continuous improvement, governance</td>
+          <td>$500-$50K/mo</td>
+          <td>C-Suite, Operations</td>
+        </tr>
+      </table>
+      <p style="margin-top: 30px; color: #44546a; text-align: center">
+        <strong>Result:</strong> 2% freemium conversion → 50K+ free users →
+        $1-2M Y1 ARR
+      </p>
+      <div class="slide-number">6</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>The Unfair Advantage</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Four Interconnected Advantages
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">1. AI-Native Architecture:</span> Every
+          component AI-driven = simplified deployment + experiences competitors
+          can't match
+        </li>
+        <li>
+          <span class="highlight">2. Platform Independence:</span>
+          Multi-platform aware, unbiased, vendor-neutral position (customers
+          maintain optionality)
+        </li>
+        <li>
+          <span class="highlight">3. Data Network Effects:</span> Fleet learning
+          + peer benchmarks from customer segment = true network effects moat
+        </li>
+        <li>
+          <span class="highlight">4. First-Mover Advantage:</span> Own
+          "Executive Agent" category before competitors recognize the
+          opportunity (12-18 month window)
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #fb4100;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Why Competitors Can't Match
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Legacy Vendors:</span> Trapped in enterprise
+          model, revenue locked in upfront analytics, no network effects
+        </li>
+        <li>
+          <span class="highlight">Incumbents (Salesforce):</span> Platform bias,
+          can't be trustworthy governance layer, lack specialization
+        </li>
+      </ul>
+      <div class="slide-number">7</div>
+    </div>
+
+    <div class="slide" data-layout="chart">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>5-Year Financial Trajectory</h2>
+      <table>
+        <tr>
+          <th>Year</th>
+          <th>Free Users</th>
+          <th>Paying Customers</th>
+          <th>ARR</th>
+          <th>NDR</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">Y1 (2026)</span></td>
+          <td>50,000</td>
+          <td>500-1,000</td>
+          <td>$1-2M</td>
+          <td>110-120%</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Y2 (2027)</span></td>
+          <td>200,000</td>
+          <td>2,500-4,000</td>
+          <td>$5-10M</td>
+          <td>130-150%</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Y3 (2028)</span></td>
+          <td>500,000</td>
+          <td>7,000-10,000</td>
+          <td>$20-40M</td>
+          <td>140-160%</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Y5 (2030)</span></td>
+          <td>2,000,000+</td>
+          <td>18,000-20,000</td>
+          <td>$100-150M</td>
+          <td>150-180%</td>
+        </tr>
+      </table>
+      <p style="margin-top: 30px; color: #44546a; text-align: center">
+        <strong>Key Driver:</strong> 2% freemium conversion + 130-180% NDR =
+        exponential growth trajectory
+      </p>
+      <div class="slide-number">8</div>
+    </div>
+
+    <div class="slide" data-layout="chart">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Unit Economics & Path to Profitability</h2>
+      <table>
+        <tr>
+          <th>Segment</th>
+          <th>LTV:CAC</th>
+          <th>CAC Payback</th>
+          <th>Gross Margin</th>
+          <th>NDR</th>
+        </tr>
+        <tr>
+          <td><span class="highlight">SMB</span></td>
+          <td>80-250:1</td>
+          <td>1-2 mo</td>
+          <td>80-85%</td>
+          <td>110-120%</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Mid-Market</span></td>
+          <td>100-300:1</td>
+          <td>2-4 mo</td>
+          <td>82-87%</td>
+          <td>130-150%</td>
+        </tr>
+        <tr>
+          <td><span class="highlight">Enterprise</span></td>
+          <td>100-400:1</td>
+          <td>3-6 mo</td>
+          <td>85-90%</td>
+          <td>140-180%</td>
+        </tr>
+      </table>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Profitability Timeline
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Gross Margin:</span> 80-85% from day 1
+          (software high margin)
+        </li>
+        <li>
+          <span class="highlight">EBITDA Positive:</span> Year 2-3 (when growth
+          moderates)
+        </li>
+        <li>
+          <span class="highlight">Path to $100M ARR:</span> Year 5 (sustainable,
+          cash-generative)
+        </li>
+      </ul>
+      <div class="slide-number">9</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Three-Phase Market Expansion</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Phase 1: SMB Domination (Y1-2)
+      </h3>
+      <ul>
+        <li>Beachhead: 150,000 SMB companies via Salesforce AppExchange</li>
+        <li>Target: 50K free → 1K paying → $1-2M ARR</li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Phase 2: Mid-Market Expansion (Y2-3)
+      </h3>
+      <ul>
+        <li>
+          Leverage: 5,000+ SMB proof points → "If it works for them, why not
+          us?"
+        </li>
+        <li>Target: 200K free → 4K paying → $5-10M ARR</li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Phase 3: Enterprise & Vertical Expansion (Y3+)
+      </h3>
+      <ul>
+        <li>
+          Strategy: Grassroots adoption + unmatched peer benchmarking
+          (competitive moat)
+        </li>
+        <li>Target: 500K+ free → 10K+ paying → $20-40M+ ARR</li>
+        <li>Expand: Finance, IT, HR, Support operations</li>
+      </ul>
+      <div class="slide-number">10</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Expansion & Retention Strategy</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Expansion Revenue Levers
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Explore → Mine:</span> 60% conversion
+          (baseline understanding triggers deeper engagement)
+        </li>
+        <li>
+          <span class="highlight">Mine → Design:</span> 40% conversion (roadmap
+          needed after understanding current state)
+        </li>
+        <li>
+          <span class="highlight">Design → Manage:</span> 50% conversion
+          (transformation success requires ongoing governance)
+        </li>
+        <li>
+          <span class="highlight">Cross-team adoption:</span> Finance,
+          Operations, HR teams using Helm independently
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Network Effects & Retention
+      </h3>
+      <ul>
+        <li>
+          Peer benchmarking: <span class="highlight">130-180% NDR</span> driven
+          by expansion revenue
+        </li>
+        <li>
+          Fleet learning: Every new customer makes product smarter for all (true
+          network effects)
+        </li>
+        <li>
+          Viral coefficient: Industry benchmarks incentivize sharing (NPS 50+
+          target)
+        </li>
+      </ul>
+      <div class="slide-number">11</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Traction & Early Validation</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #fb4100;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Product Status
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">[To fill in]:</span> MVP status, beta users,
+          pilot customers
+        </li>
+        <li>
+          <span class="highlight">[To fill in]:</span> User signups or waitlist
+          size
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Triple Validation Framework
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Customer Conversations:</span> Service leaders
+          report urgent need for governance + transparency
+        </li>
+        <li>
+          <span class="highlight">Our Own Products:</span> MAX, Claude Code show
+          teams hitting management constraint daily
+        </li>
+        <li>
+          <span class="highlight">Market Validation:</span> Ed Sim, Gartner,
+          Forrester publishing same thesis (industry converging)
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Product Demonstration
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Radar UI Prototype:</span> Interactive
+          visualization of real-time decision patterns (Mine module capability)
+        </li>
+      </ul>
+      <div class="slide-number">12</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>Product Roadmap</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Q1 2026 (Current Release)
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">[To fill in]:</span> MVP feature set and
+          current capabilities shipped
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 25px;
+          margin-bottom: 15px;
+        "
+      >
+        Q2-Q3 2026 (Near-Term)
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">[To fill in]:</span> Key features and customer
+          feedback integration
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 25px;
+          margin-bottom: 15px;
+        "
+      >
+        Q4 2026 - Q2 2027 (Mid-Term)
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">[To fill in]:</span> New module capabilities
+          and vertical specialization deepening
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 25px;
+          margin-bottom: 15px;
+        "
+      >
+        2027+ (Long-Term)
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">[To fill in]:</span> Enterprise features and
+          expansion to adjacent verticals
+        </li>
+      </ul>
+      <div class="slide-number">13</div>
+    </div>
+
+    <div class="slide" data-layout="content">
+      <div class="logo">Helm by Synaptic</div>
+      <h2>The Ask</h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #fb4100;
+          margin-top: 20px;
+          margin-bottom: 15px;
+        "
+      >
+        Funding Request
+      </h3>
+      <ul>
+        <li><span class="highlight">[To fill in]:</span> Amount sought</li>
+        <li>
+          <span class="highlight">[To fill in]:</span> Round structure (SAFE,
+          priced, etc.)
+        </li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Use of Funds
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">Engineering/Product:</span> [To fill in: %]
+        </li>
+        <li>
+          <span class="highlight">Sales & Marketing:</span> [To fill in: %]
+        </li>
+        <li><span class="highlight">Operations:</span> [To fill in: %]</li>
+      </ul>
+      <h3
+        style="
+          font-size: 16px;
+          color: #01a9db;
+          margin-top: 30px;
+          margin-bottom: 15px;
+        "
+      >
+        Key Milestones
+      </h3>
+      <ul>
+        <li>
+          <span class="highlight">[To fill in]:</span> 3-4 major objectives and
+          targets
+        </li>
+      </ul>
+      <div class="slide-number">14</div>
+    </div>
+
+    <div class="slide" data-layout="title">
+      <div class="logo">Helm by Synaptic</div>
+      <h1>Building the Future of Agent Governance</h1>
+      <h2 style="margin-top: 40px; text-align: center">
+        "Helm is building the decision intelligence infrastructure for the
+        service industry—a world where every decision is understood, every agent
+        is governed by human wisdom, and every outcome drives continuous
+        organizational learning."
+      </h2>
+      <h3
+        style="
+          font-size: 16px;
+          color: #fb4100;
+          margin-top: 40px;
+          margin-bottom: 15px;
+        "
+      >
+        Why Now
+      </h3>
+      <ul
+        style="
+          background: rgba(1, 169, 219, 0.1);
+          padding: 20px;
+          border-radius: 5px;
+          margin-top: 20px;
+        "
+      >
+        <li style="color: #ffffff">
+          40% of enterprise apps getting agents by end of 2026
+        </li>
+        <li style="color: #ffffff">
+          Market need for governance infrastructure is acute and urgent
+        </li>
+        <li style="color: #ffffff">
+          Category crystallizing as essential infrastructure
+        </li>
+      </ul>
+      <div class="slide-number">15</div>
+    </div>
+  </body>
+</html>

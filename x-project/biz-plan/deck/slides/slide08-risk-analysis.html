@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      html {
+        background: #ffffff;
+      }
+      body {
+        width: 720pt;
+        height: 405pt;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        background: #07253d;
+        padding: 15pt 30pt;
+        margin: 0;
+      }
+      .header h1 {
+        color: #ffffff;
+        font-size: 22pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .content {
+        display: flex;
+        flex: 1;
+        padding: 15pt 30pt;
+        gap: 15pt;
+      }
+      .path-col {
+        flex: 1;
+        background: #f4f6f6;
+        border-radius: 6pt;
+        padding: 12pt;
+        display: flex;
+        flex-direction: column;
+      }
+      .path-col-green {
+        flex: 1;
+        background: #e8f5e9;
+        border-radius: 6pt;
+        padding: 12pt;
+        display: flex;
+        flex-direction: column;
+        border: 2pt solid #2e7d32;
+      }
+      .path-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10pt;
+        padding-bottom: 8pt;
+        border-bottom: 2pt solid #e0e0e0;
+      }
+      .path-name {
+        color: #07253d;
+        font-size: 11pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .badge-high {
+        background: #ffcdd2;
+        padding: 3pt 8pt;
+        border-radius: 3pt;
+      }
+      .badge-high p {
+        color: #c62828;
+        font-size: 9pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .badge-med-high {
+        background: #ffe0b2;
+        padding: 3pt 8pt;
+        border-radius: 3pt;
+      }
+      .badge-med-high p {
+        color: #e65100;
+        font-size: 9pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .badge-med {
+        background: #c8e6c9;
+        padding: 3pt 8pt;
+        border-radius: 3pt;
+      }
+      .badge-med p {
+        color: #2e7d32;
+        font-size: 9pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .risk-item {
+        margin-bottom: 8pt;
+      }
+      .risk-title {
+        color: #07253d;
+        font-size: 9pt;
+        font-weight: bold;
+        margin: 0 0 2pt 0;
+      }
+      .risk-desc {
+        color: #666666;
+        font-size: 8pt;
+        margin: 0;
+      }
+      .bar-high {
+        height: 4pt;
+        border-radius: 2pt;
+        margin-top: 3pt;
+        background: #c62828;
+        width: 90%;
+      }
+      .bar-med-high {
+        height: 4pt;
+        border-radius: 2pt;
+        margin-top: 3pt;
+        background: #f57c00;
+        width: 75%;
+      }
+      .bar-med {
+        height: 4pt;
+        border-radius: 2pt;
+        margin-top: 3pt;
+        background: #fbc02d;
+        width: 60%;
+      }
+      .overall {
+        margin-top: auto;
+        padding-top: 8pt;
+        border-top: 1pt solid #e0e0e0;
+      }
+      .overall-text {
+        color: #07253d;
+        font-size: 8pt;
+        font-weight: bold;
+        margin: 0;
+      }
+      .overall-text-green {
+        color: #2e7d32;
+        font-size: 8pt;
+        font-weight: bold;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><h1>Risk Analysis by Path</h1></div>
+    <div class="content">
+      <div class="path-col">
+        <div class="path-header">
+          <p class="path-name">PATH 1: LEAN</p>
+          <div class="badge-high"><p>HIGH</p></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Product Underfunded</p>
+          <p class="risk-desc">High likelihood, Critical impact</p>
+          <div class="bar-high"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Team Attrition</p>
+          <p class="risk-desc">High likelihood, High impact</p>
+          <div class="bar-high"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Market Timing Miss</p>
+          <p class="risk-desc">Medium-High likelihood, Critical</p>
+          <div class="bar-med-high"></div>
+        </div>
+        <div class="overall">
+          <p class="overall-text">
+            Single point of failure with insufficient resources
+          </p>
+        </div>
+      </div>
+      <div class="path-col">
+        <div class="path-header">
+          <p class="path-name">PATH 2: LIQUIDATE</p>
+          <div class="badge-med-high"><p>MED-HIGH</p></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Transaction Delay</p>
+          <p class="risk-desc">High likelihood, High impact</p>
+          <div class="bar-high"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Earnout Trap</p>
+          <p class="risk-desc">Medium likelihood, High impact</p>
+          <div class="bar-med-high"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Product Fails</p>
+          <p class="risk-desc">Medium likelihood, Critical</p>
+          <div class="bar-med-high"></div>
+        </div>
+        <div class="overall">
+          <p class="overall-text">
+            High reward if executed; catastrophic if product fails
+          </p>
+        </div>
+      </div>
+      <div class="path-col">
+        <div class="path-header">
+          <p class="path-name">PATH 3: GROWTH</p>
+          <div class="badge-high"><p>HIGH</p></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Focus Dilution</p>
+          <p class="risk-desc">Very High likelihood, High impact</p>
+          <div class="bar-high"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">VC Disinterest</p>
+          <p class="risk-desc">High likelihood, High impact</p>
+          <div class="bar-high"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Capital Inefficiency</p>
+          <p class="risk-desc">High likelihood, Medium impact</p>
+          <div class="bar-med-high"></div>
+        </div>
+        <div class="overall">
+          <p class="overall-text">Complexity creates many failure modes</p>
+        </div>
+      </div>
+      <div class="path-col-green">
+        <div class="path-header">
+          <p class="path-name">PATH 4: STRATEGIC</p>
+          <div class="badge-med"><p>MEDIUM</p></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Services Cash Insufficient</p>
+          <p class="risk-desc">Medium likelihood, High impact</p>
+          <div class="bar-med"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Product Validation Slow</p>
+          <p class="risk-desc">Medium likelihood, Medium impact</p>
+          <div class="bar-med"></div>
+        </div>
+        <div class="risk-item">
+          <p class="risk-title">Team Uncertainty</p>
+          <p class="risk-desc">Medium likelihood, Medium impact</p>
+          <div class="bar-med"></div>
+        </div>
+        <div class="overall">
+          <p class="overall-text-green">
+            Maintains optionality while making progress
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

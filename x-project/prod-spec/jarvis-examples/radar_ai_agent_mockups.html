@@ -1,0 +1,2197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radar AI Agent — Visual Concepts</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-deep: #0a0f1a;
+        --bg-card: #111827;
+        --bg-elevated: #1a2332;
+        --bg-hover: #232d3f;
+        --accent-gold: #f59e0b;
+        --accent-gold-soft: rgba(245, 158, 11, 0.15);
+        --accent-emerald: #10b981;
+        --accent-emerald-soft: rgba(16, 185, 129, 0.15);
+        --accent-rose: #f43f5e;
+        --accent-rose-soft: rgba(244, 63, 94, 0.15);
+        --accent-sky: #0ea5e9;
+        --accent-sky-soft: rgba(14, 165, 233, 0.15);
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --text-tertiary: #64748b;
+        --border: rgba(148, 163, 184, 0.1);
+        --border-light: rgba(148, 163, 184, 0.05);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg-deep);
+        color: var(--text-primary);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(10, 15, 26, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        padding: 0 2rem;
+      }
+
+      .nav-inner {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+        background: linear-gradient(135deg, var(--accent-gold), #d97706);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .logo-text {
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 1.4rem;
+        letter-spacing: -0.02em;
+      }
+
+      .nav-tabs {
+        display: flex;
+        gap: 0.25rem;
+      }
+
+      .nav-tab {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        background: none;
+      }
+
+      .nav-tab:hover {
+        color: var(--text-primary);
+        background: var(--bg-elevated);
+      }
+
+      .nav-tab.active {
+        color: var(--accent-gold);
+        background: var(--accent-gold-soft);
+      }
+
+      /* Main content */
+      .main {
+        padding-top: 64px;
+      }
+
+      .screen {
+        display: none;
+        animation: fadeIn 0.4s ease;
+      }
+
+      .screen.active {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ========== SCREEN 1: MORNING BRIEF ========== */
+      .morning-brief {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+      }
+
+      .brief-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .brief-date {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--accent-gold);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .brief-greeting {
+        font-family: "Fraunces", serif;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .brief-summary {
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+
+      .brief-section {
+        margin-bottom: 2rem;
+      }
+
+      .brief-section-header {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .brief-section-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+      }
+
+      .brief-section-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+        letter-spacing: 0.02em;
+      }
+
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .kpi-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.25rem;
+        text-align: center;
+      }
+
+      .kpi-label {
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+
+      .kpi-value {
+        font-family: "Fraunces", serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      .kpi-delta {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+      }
+
+      .kpi-delta.positive {
+        color: var(--accent-emerald);
+        background: var(--accent-emerald-soft);
+      }
+
+      .kpi-delta.negative {
+        color: var(--accent-rose);
+        background: var(--accent-rose-soft);
+      }
+
+      .action-item {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.25rem;
+        margin-bottom: 0.75rem;
+        display: flex;
+        gap: 1rem;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+
+      .action-item:hover {
+        background: var(--bg-elevated);
+        border-color: var(--accent-gold);
+        transform: translateX(4px);
+      }
+
+      .action-priority {
+        width: 4px;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+
+      .action-priority.critical {
+        background: var(--accent-rose);
+      }
+      .action-priority.warning {
+        background: var(--accent-gold);
+      }
+      .action-priority.info {
+        background: var(--accent-sky);
+      }
+
+      .action-content {
+        flex: 1;
+      }
+
+      .action-title {
+        font-weight: 600;
+        font-size: 0.95rem;
+        margin-bottom: 0.35rem;
+      }
+
+      .action-context {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .action-meta {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+      }
+
+      .action-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .wins-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .win-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        background: var(--accent-emerald-soft);
+        border-radius: 8px;
+        font-size: 0.9rem;
+      }
+
+      .win-icon {
+        color: var(--accent-emerald);
+        font-size: 1rem;
+        margin-top: 0.1rem;
+      }
+
+      /* ========== SCREEN 2: CONVERSATIONAL AI ========== */
+      .chat-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+        height: calc(100vh - 64px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1rem 0;
+      }
+
+      .chat-message {
+        margin-bottom: 1.5rem;
+        animation: messageIn 0.3s ease;
+      }
+
+      @keyframes messageIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .chat-message.user {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .chat-message.user .message-bubble {
+        background: var(--accent-gold);
+        color: var(--bg-deep);
+        border-radius: 16px 16px 4px 16px;
+        max-width: 70%;
+      }
+
+      .message-bubble {
+        padding: 1rem 1.25rem;
+        border-radius: 16px 16px 16px 4px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+      }
+
+      .radar-response {
+        max-width: 100%;
+      }
+
+      .radar-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.8rem;
+        color: var(--text-tertiary);
+      }
+
+      .radar-avatar {
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, var(--accent-gold), #d97706);
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--bg-deep);
+      }
+
+      .response-text {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+
+      .response-card {
+        background: var(--bg-elevated);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .response-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .response-card-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .response-card-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+      }
+
+      .response-card-badge.critical {
+        background: var(--accent-rose-soft);
+        color: var(--accent-rose);
+      }
+
+      .response-card-badge.healthy {
+        background: var(--accent-emerald-soft);
+        color: var(--accent-emerald);
+      }
+
+      .response-card-body {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+      }
+
+      .response-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .response-action-btn {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        font-family: inherit;
+      }
+
+      .response-action-btn.primary {
+        background: var(--accent-gold);
+        color: var(--bg-deep);
+      }
+
+      .response-action-btn.primary:hover {
+        filter: brightness(1.1);
+      }
+
+      .response-action-btn.secondary {
+        background: var(--bg-card);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+      }
+
+      .response-action-btn.secondary:hover {
+        background: var(--bg-hover);
+      }
+
+      .chat-input-area {
+        padding: 1rem 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .chat-input-wrapper {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-end;
+      }
+
+      .chat-input {
+        flex: 1;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 0.95rem;
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .chat-input:focus {
+        border-color: var(--accent-gold);
+      }
+
+      .chat-input::placeholder {
+        color: var(--text-tertiary);
+      }
+
+      .chat-send-btn {
+        width: 48px;
+        height: 48px;
+        background: var(--accent-gold);
+        border: none;
+        border-radius: 12px;
+        color: var(--bg-deep);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: all 0.2s;
+      }
+
+      .chat-send-btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* ========== SCREEN 3: CRITICAL ALERTS ========== */
+      .alerts-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+
+      .alerts-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .alerts-title {
+        font-family: "Fraunces", serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+      }
+
+      .alerts-filter {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: var(--bg-card);
+        color: var(--text-secondary);
+        transition: all 0.2s;
+      }
+
+      .filter-btn.active {
+        background: var(--accent-rose-soft);
+        border-color: var(--accent-rose);
+        color: var(--accent-rose);
+      }
+
+      .alert-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.2s;
+      }
+
+      .alert-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .alert-card.critical {
+        border-left: 4px solid var(--accent-rose);
+      }
+
+      .alert-card.critical::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent-rose), transparent);
+      }
+
+      .alert-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+      }
+
+      .alert-badge-group {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .alert-badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+        border-radius: 4px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .alert-badge.critical {
+        background: var(--accent-rose-soft);
+        color: var(--accent-rose);
+      }
+
+      .alert-badge.churn-risk {
+        background: var(--accent-gold-soft);
+        color: var(--accent-gold);
+      }
+
+      .alert-time {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+      }
+
+      .alert-account {
+        font-family: "Fraunces", serif;
+        font-size: 1.35rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .alert-arr {
+        font-size: 0.85rem;
+        color: var(--accent-gold);
+        margin-bottom: 1rem;
+      }
+
+      .alert-signals {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .signal-tag {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.4rem 0.75rem;
+        background: var(--bg-elevated);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      .signal-tag .icon {
+        font-size: 0.9rem;
+      }
+
+      .alert-analysis {
+        background: var(--bg-elevated);
+        border-radius: 10px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .analysis-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        color: var(--accent-gold);
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .analysis-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--text-secondary);
+      }
+
+      .alert-actions {
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .alert-action-btn {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        font-family: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .alert-action-btn.primary {
+        background: var(--accent-gold);
+        color: var(--bg-deep);
+      }
+
+      .alert-action-btn.secondary {
+        background: var(--bg-elevated);
+        color: var(--text-primary);
+        border: 1px solid var(--border);
+      }
+
+      /* ========== SCREEN 4: TEAM PERFORMANCE ========== */
+      .team-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+
+      .team-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .team-title {
+        font-family: "Fraunces", serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+      }
+
+      .team-period {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        padding: 0.5rem 1rem;
+        background: var(--bg-card);
+        border-radius: 8px;
+        border: 1px solid var(--border);
+      }
+
+      .team-stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .team-stat-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.25rem;
+      }
+
+      .team-stat-label {
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+
+      .team-stat-value {
+        font-family: "Fraunces", serif;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      .team-stat-trend {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      .team-stat-trend .positive {
+        color: var(--accent-emerald);
+      }
+      .team-stat-trend .negative {
+        color: var(--accent-rose);
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .csm-table {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .csm-table-header {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        padding: 1rem 1.5rem;
+        background: var(--bg-elevated);
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .csm-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border-light);
+        align-items: center;
+        transition: background 0.2s;
+      }
+
+      .csm-row:hover {
+        background: var(--bg-elevated);
+      }
+
+      .csm-row:last-child {
+        border-bottom: none;
+      }
+
+      .csm-name {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .csm-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+
+      .csm-info h4 {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .csm-info p {
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+      }
+
+      .csm-health {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .health-bar {
+        width: 60px;
+        height: 6px;
+        background: var(--bg-deep);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+      .health-fill {
+        height: 100%;
+        border-radius: 3px;
+      }
+
+      .csm-metric {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+      }
+
+      .coaching-panel {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+      }
+
+      .coaching-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .coaching-item {
+        padding: 1rem;
+        background: var(--bg-elevated);
+        border-radius: 10px;
+        margin-bottom: 0.75rem;
+      }
+
+      .coaching-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .coaching-item-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      .coaching-item-name {
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+
+      .coaching-item-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        background: var(--accent-gold-soft);
+        color: var(--accent-gold);
+      }
+
+      .coaching-item-text {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+
+      /* ========== SCREEN 5: RENEWAL COMMAND CENTER ========== */
+      .renewals-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+
+      .renewals-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .renewals-title {
+        font-family: "Fraunces", serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+      }
+
+      .renewals-summary {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .renewal-summary-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1.25rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .renewal-summary-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+      }
+
+      .renewal-summary-card.critical::before {
+        background: var(--accent-rose);
+      }
+      .renewal-summary-card.warning::before {
+        background: var(--accent-gold);
+      }
+      .renewal-summary-card.healthy::before {
+        background: var(--accent-emerald);
+      }
+      .renewal-summary-card.total::before {
+        background: var(--accent-sky);
+      }
+
+      .renewal-summary-label {
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.5rem;
+      }
+
+      .renewal-summary-value {
+        font-family: "Fraunces", serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+      }
+
+      .renewal-summary-arr {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-top: 0.25rem;
+      }
+
+      .timeline-container {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .timeline-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .timeline-title {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .timeline-legend {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.75rem;
+        color: var(--text-secondary);
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .legend-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .legend-dot.critical {
+        background: var(--accent-rose);
+      }
+      .legend-dot.warning {
+        background: var(--accent-gold);
+      }
+      .legend-dot.healthy {
+        background: var(--accent-emerald);
+      }
+
+      .timeline-months {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+
+      .timeline-month {
+        background: var(--bg-elevated);
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .month-header {
+        font-size: 0.8rem;
+        color: var(--text-tertiary);
+        margin-bottom: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .renewal-dot {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.75rem;
+        background: var(--bg-card);
+        border-radius: 6px;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .renewal-dot:hover {
+        transform: scale(1.05);
+      }
+
+      .renewal-dot .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .renewal-dot .indicator.critical {
+        background: var(--accent-rose);
+      }
+      .renewal-dot .indicator.warning {
+        background: var(--accent-gold);
+      }
+      .renewal-dot .indicator.healthy {
+        background: var(--accent-emerald);
+      }
+
+      .renewals-table {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .renewals-table-header {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+        padding: 1rem 1.5rem;
+        background: var(--bg-elevated);
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .renewal-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid var(--border-light);
+        align-items: center;
+        transition: background 0.2s;
+      }
+
+      .renewal-row:hover {
+        background: var(--bg-elevated);
+      }
+
+      .renewal-account {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .renewal-status-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+
+      .renewal-status-dot.critical {
+        background: var(--accent-rose);
+      }
+      .renewal-status-dot.warning {
+        background: var(--accent-gold);
+      }
+      .renewal-status-dot.healthy {
+        background: var(--accent-emerald);
+      }
+
+      .renewal-account-info h4 {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .renewal-account-info p {
+        font-size: 0.75rem;
+        color: var(--text-tertiary);
+      }
+
+      .renewal-arr {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.9rem;
+        color: var(--accent-gold);
+      }
+
+      .renewal-date {
+        font-size: 0.85rem;
+      }
+
+      .renewal-likelihood {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .likelihood-bar {
+        width: 50px;
+        height: 6px;
+        background: var(--bg-deep);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+      .likelihood-fill {
+        height: 100%;
+        border-radius: 3px;
+      }
+
+      .renewal-risk-summary {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner">
+        <div class="logo">
+          <div class="logo-icon">R</div>
+          <span class="logo-text">Radar</span>
+        </div>
+        <div class="nav-tabs">
+          <button class="nav-tab active" data-screen="morning-brief">
+            Morning Brief
+          </button>
+          <button class="nav-tab" data-screen="chat">Ask Radar</button>
+          <button class="nav-tab" data-screen="alerts">Critical Alerts</button>
+          <button class="nav-tab" data-screen="team">Team Performance</button>
+          <button class="nav-tab" data-screen="renewals">Renewals</button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main">
+      <!-- SCREEN 1: MORNING BRIEF -->
+      <section class="screen active" id="morning-brief">
+        <div class="morning-brief">
+          <div class="brief-header">
+            <div class="brief-date">Friday, January 10, 2026 • 7:30 AM</div>
+            <h1 class="brief-greeting">Good morning, Sarah</h1>
+            <p class="brief-summary">
+              3 accounts need your attention today. Here's what changed
+              overnight.
+            </p>
+          </div>
+
+          <div class="brief-section">
+            <div class="brief-section-header">
+              <div
+                class="brief-section-icon"
+                style="
+                  background: var(--accent-sky-soft);
+                  color: var(--accent-sky);
+                "
+              >
+                📊
+              </div>
+              <h2 class="brief-section-title">Portfolio Health Snapshot</h2>
+            </div>
+            <div class="kpi-grid">
+              <div class="kpi-card">
+                <div class="kpi-label">Healthy Accounts</div>
+                <div class="kpi-value" style="color: var(--accent-emerald)">
+                  142
+                </div>
+                <span class="kpi-delta positive">↑ +3 vs yesterday</span>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label">At Risk</div>
+                <div class="kpi-value" style="color: var(--accent-gold)">
+                  18
+                </div>
+                <span class="kpi-delta negative">↑ +2 vs yesterday</span>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label">Revenue at Risk</div>
+                <div class="kpi-value">$2.1M</div>
+                <span class="kpi-delta negative">↑ +$180K</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="brief-section">
+            <div class="brief-section-header">
+              <div
+                class="brief-section-icon"
+                style="
+                  background: var(--accent-rose-soft);
+                  color: var(--accent-rose);
+                "
+              >
+                ⚡
+              </div>
+              <h2 class="brief-section-title">Priority Actions</h2>
+            </div>
+
+            <div class="action-item">
+              <div class="action-priority critical"></div>
+              <div class="action-content">
+                <h3 class="action-title">
+                  Acme Corp health score dropped 15 points overnight
+                </h3>
+                <p class="action-context">
+                  P1 support ticket #4521 opened at 11:42 PM — integration
+                  failure blocking their core workflow. Champion Maria Chen has
+                  emailed twice requesting escalation.
+                </p>
+                <div class="action-meta">
+                  <span>💰 $420K ARR</span>
+                  <span>📅 Renewal in 28 days</span>
+                  <span>🎯 Recommended: Call before 11am</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-item">
+              <div class="action-priority warning"></div>
+              <div class="action-content">
+                <h3 class="action-title">GlobalTech champion went quiet</h3>
+                <p class="action-context">
+                  Last response was 14 days ago. Usage dropped 23% this week.
+                  New VP of Engineering started 3 weeks ago — potential champion
+                  risk.
+                </p>
+                <div class="action-meta">
+                  <span>💰 $285K ARR</span>
+                  <span>📅 Renewal in 45 days</span>
+                  <span>🎯 Suggested: Executive sponsor outreach</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-item">
+              <div class="action-priority info"></div>
+              <div class="action-content">
+                <h3 class="action-title">TechStart expansion opportunity</h3>
+                <p class="action-context">
+                  Exceeded license utilization by 40% for 3 consecutive weeks.
+                  CEO posted on LinkedIn about opening 2 new offices. Perfect
+                  timing for expansion conversation.
+                </p>
+                <div class="action-meta">
+                  <span>💰 $95K ARR → $180K potential</span>
+                  <span>📈 Health Score: 92</span>
+                  <span>🎯 Schedule QBR to discuss growth</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="brief-section">
+            <div class="brief-section-header">
+              <div
+                class="brief-section-icon"
+                style="
+                  background: var(--accent-emerald-soft);
+                  color: var(--accent-emerald);
+                "
+              >
+                ✨
+              </div>
+              <h2 class="brief-section-title">Yesterday's Wins</h2>
+            </div>
+            <div class="wins-list">
+              <div class="win-item">
+                <span class="win-icon">🎉</span>
+                <span
+                  ><strong>DataFlow Inc renewed with 25% expansion</strong> —
+                  $180K → $225K. Marcus closed after the QBR addressed their API
+                  concerns.</span
+                >
+              </div>
+              <div class="win-item">
+                <span class="win-icon">💪</span>
+                <span
+                  ><strong>CloudFirst moved from Red to Green</strong> — Support
+                  ticket backlog cleared. NPS improved +20 points after product
+                  fix deployed.</span
+                >
+              </div>
+              <div class="win-item">
+                <span class="win-icon">⭐</span>
+                <span
+                  ><strong>NPS 10 received from FinanceHub CFO</strong> — "Best
+                  customer success team we've ever worked with." Potential case
+                  study candidate.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 2: CONVERSATIONAL AI -->
+      <section class="screen" id="chat">
+        <div class="chat-container">
+          <div class="chat-messages">
+            <div class="chat-message user">
+              <div class="message-bubble">
+                What's happening with our enterprise accounts this week? Any red
+                flags I should know about?
+              </div>
+            </div>
+
+            <div class="chat-message">
+              <div class="message-bubble radar-response">
+                <div class="radar-header">
+                  <div class="radar-avatar">R</div>
+                  <span>Radar • Just now</span>
+                </div>
+                <div class="response-text">
+                  I've analyzed your 47 enterprise accounts ($50K+ ARR). Here's
+                  what stands out this week:
+                </div>
+
+                <div class="response-card">
+                  <div class="response-card-header">
+                    <span class="response-card-title">🚨 Acme Corp</span>
+                    <span class="response-card-badge critical">CRITICAL</span>
+                  </div>
+                  <div class="response-card-body">
+                    Health dropped 15 points overnight. P1 ticket opened,
+                    champion emailed twice. Renewal in 28 days.
+                    <strong>This needs immediate attention.</strong>
+                  </div>
+                </div>
+
+                <div class="response-card">
+                  <div class="response-card-header">
+                    <span class="response-card-title">⚠️ GlobalTech</span>
+                    <span class="response-card-badge critical">AT RISK</span>
+                  </div>
+                  <div class="response-card-body">
+                    Champion silent for 14 days. New VP Engineering started —
+                    potential champion churn. Usage down 23% week-over-week.
+                  </div>
+                </div>
+
+                <div class="response-card">
+                  <div class="response-card-header">
+                    <span class="response-card-title">✅ MegaCorp</span>
+                    <span class="response-card-badge healthy">RECOVERED</span>
+                  </div>
+                  <div class="response-card-body">
+                    Good news: The billing dispute from last week was resolved.
+                    They've scheduled their QBR for next Tuesday.
+                  </div>
+                </div>
+
+                <div class="response-text" style="margin-top: 1rem">
+                  <strong>My recommendation:</strong> Call Acme Corp's Maria
+                  Chen before 11am today. I can draft talking points that
+                  address the integration issue and frame the renewal
+                  conversation.
+                </div>
+
+                <div class="response-actions">
+                  <button class="response-action-btn primary">
+                    📞 Draft Acme talking points
+                  </button>
+                  <button class="response-action-btn secondary">
+                    📊 Show full enterprise report
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="chat-message user">
+              <div class="message-bubble">
+                Yes, draft those talking points for the Acme call
+              </div>
+            </div>
+
+            <div class="chat-message">
+              <div class="message-bubble radar-response">
+                <div class="radar-header">
+                  <div class="radar-avatar">R</div>
+                  <span>Radar • Just now</span>
+                </div>
+                <div class="response-text">
+                  <strong
+                    >Talking Points: Acme Corp Call with Maria Chen</strong
+                  >
+                </div>
+
+                <div class="response-card">
+                  <div class="response-card-header">
+                    <span class="response-card-title"
+                      >1. Acknowledge & Empathize</span
+                    >
+                  </div>
+                  <div class="response-card-body">
+                    "Maria, I saw the P1 ticket came in late last night and
+                    wanted to reach out personally. I know this integration is
+                    critical to your month-end reporting — that's unacceptable
+                    for you to experience right before a deadline."
+                  </div>
+                </div>
+
+                <div class="response-card">
+                  <div class="response-card-header">
+                    <span class="response-card-title"
+                      >2. Concrete Resolution Path</span
+                    >
+                  </div>
+                  <div class="response-card-body">
+                    "Our senior engineer Jake is already working on this. Based
+                    on the logs, it's a timeout issue on our API gateway. He
+                    expects a fix deployed by 2pm EST. I'll personally confirm
+                    when it's live."
+                  </div>
+                </div>
+
+                <div class="response-card">
+                  <div class="response-card-header">
+                    <span class="response-card-title"
+                      >3. Bridge to Renewal</span
+                    >
+                  </div>
+                  <div class="response-card-body">
+                    "I also want to make sure we're set up for success as your
+                    renewal approaches. After we resolve this, could we schedule
+                    30 minutes next week to review the roadmap items you
+                    mentioned in our last QBR?"
+                  </div>
+                </div>
+
+                <div class="response-text" style="margin-top: 1rem">
+                  <em>Context from history:</em> Maria mentioned API rate limits
+                  in your October QBR. She's also the executive sponsor for
+                  their internal "Project Phoenix" which depends on your
+                  product.
+                </div>
+
+                <div class="response-actions">
+                  <button class="response-action-btn primary">
+                    📋 Copy to clipboard
+                  </button>
+                  <button class="response-action-btn secondary">
+                    📧 Draft follow-up email
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <div class="chat-input-wrapper">
+              <textarea
+                class="chat-input"
+                placeholder="Ask Radar anything about your customers..."
+                rows="1"
+              ></textarea>
+              <button class="chat-send-btn">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 3: CRITICAL ALERTS -->
+      <section class="screen" id="alerts">
+        <div class="alerts-container">
+          <div class="alerts-header">
+            <h1 class="alerts-title">Critical Alerts</h1>
+            <div class="alerts-filter">
+              <button class="filter-btn active">All (4)</button>
+              <button class="filter-btn">Churn Risk</button>
+              <button class="filter-btn">Support</button>
+              <button class="filter-btn">Renewal</button>
+            </div>
+          </div>
+
+          <div class="alert-card critical">
+            <div class="alert-top">
+              <div class="alert-badge-group">
+                <span class="alert-badge critical">CRITICAL</span>
+                <span class="alert-badge churn-risk">CHURN RISK: 73%</span>
+              </div>
+              <span class="alert-time">Detected 8 hours ago</span>
+            </div>
+            <h2 class="alert-account">Acme Corporation</h2>
+            <p class="alert-arr">$420,000 ARR • Renewal in 28 days</p>
+
+            <div class="alert-signals">
+              <span class="signal-tag"
+                ><span class="icon">🔴</span> P1 Ticket Open</span
+              >
+              <span class="signal-tag"
+                ><span class="icon">📉</span> Health −15 pts</span
+              >
+              <span class="signal-tag"
+                ><span class="icon">📧</span> Champion Escalated</span
+              >
+              <span class="signal-tag"
+                ><span class="icon">⏰</span> No Response 12h</span
+              >
+            </div>
+
+            <div class="alert-analysis">
+              <div class="analysis-header"><span>✨</span> RADAR ANALYSIS</div>
+              <p class="analysis-text">
+                This account shows a high-severity pattern I've seen in 12
+                churned accounts:
+                <strong
+                  >P1 ticket + champion escalation + upcoming renewal</strong
+                >. Maria Chen's email tone shifted from collaborative to
+                frustrated. Historical data shows accounts in this state have
+                73% churn probability without executive intervention within 24
+                hours.
+              </p>
+            </div>
+
+            <div class="alert-actions">
+              <button class="alert-action-btn primary">
+                📞 Schedule Call with Maria
+              </button>
+              <button class="alert-action-btn secondary">
+                📋 View Full Account Brief
+              </button>
+              <button class="alert-action-btn secondary">
+                🔕 Snooze 4 hours
+              </button>
+            </div>
+          </div>
+
+          <div class="alert-card critical">
+            <div class="alert-top">
+              <div class="alert-badge-group">
+                <span class="alert-badge critical">AT RISK</span>
+                <span class="alert-badge churn-risk">CHAMPION RISK</span>
+              </div>
+              <span class="alert-time">Pattern detected 3 days ago</span>
+            </div>
+            <h2 class="alert-account">GlobalTech Industries</h2>
+            <p class="alert-arr">$285,000 ARR • Renewal in 45 days</p>
+
+            <div class="alert-signals">
+              <span class="signal-tag"
+                ><span class="icon">👤</span> New VP Engineering</span
+              >
+              <span class="signal-tag"
+                ><span class="icon">🔇</span> Champion Silent 14d</span
+              >
+              <span class="signal-tag"
+                ><span class="icon">📉</span> Usage −23%</span
+              >
+              <span class="signal-tag"
+                ><span class="icon">📰</span> Hiring Freeze News</span
+              >
+            </div>
+
+            <div class="alert-analysis">
+              <div class="analysis-header"><span>✨</span> RADAR ANALYSIS</div>
+              <p class="analysis-text">
+                External signal detected: GlobalTech's LinkedIn shows a new VP
+                Engineering, James Liu, started 3 weeks ago. Your champion David
+                Park may have reduced influence. Additionally, TechCrunch
+                reported GlobalTech initiated a hiring freeze — budget scrutiny
+                likely. Recommend executive-to-executive outreach to establish
+                new relationship.
+              </p>
+            </div>
+
+            <div class="alert-actions">
+              <button class="alert-action-btn primary">
+                📧 Draft Exec Outreach Email
+              </button>
+              <button class="alert-action-btn secondary">
+                🔍 View LinkedIn Profile
+              </button>
+              <button class="alert-action-btn secondary">
+                📊 Account Deep Dive
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 4: TEAM PERFORMANCE -->
+      <section class="screen" id="team">
+        <div class="team-container">
+          <div class="team-header">
+            <h1 class="team-title">Team Performance Intelligence</h1>
+            <div class="team-period"><span>📅</span> January 2026</div>
+          </div>
+
+          <div class="team-stats">
+            <div class="team-stat-card">
+              <div class="team-stat-label">Team Book of Business</div>
+              <div class="team-stat-value">$24.8M</div>
+              <div class="team-stat-trend">
+                <span class="positive">↑ 3.2%</span> vs last month
+              </div>
+            </div>
+            <div class="team-stat-card">
+              <div class="team-stat-label">Avg Health Score</div>
+              <div class="team-stat-value">74</div>
+              <div class="team-stat-trend">
+                <span class="positive">↑ 2 pts</span> vs last month
+              </div>
+            </div>
+            <div class="team-stat-card">
+              <div class="team-stat-label">Renewals Closed</div>
+              <div class="team-stat-value">18/22</div>
+              <div class="team-stat-trend">82% close rate</div>
+            </div>
+            <div class="team-stat-card">
+              <div class="team-stat-label">Expansion Revenue</div>
+              <div class="team-stat-value">$892K</div>
+              <div class="team-stat-trend">
+                <span class="positive">↑ 18%</span> vs target
+              </div>
+            </div>
+          </div>
+
+          <div class="team-grid">
+            <div class="csm-table">
+              <div class="csm-table-header">
+                <span>CSM</span>
+                <span>Book Health</span>
+                <span>ARR Managed</span>
+                <span>At Risk</span>
+                <span>Renewals Due</span>
+              </div>
+              <div class="csm-row">
+                <div class="csm-name">
+                  <div
+                    class="csm-avatar"
+                    style="
+                      background: linear-gradient(135deg, #10b981, #059669);
+                    "
+                  >
+                    MJ
+                  </div>
+                  <div class="csm-info">
+                    <h4>Marcus Johnson</h4>
+                    <p>Senior CSM • Enterprise</p>
+                  </div>
+                </div>
+                <div class="csm-health">
+                  <div class="health-bar">
+                    <div
+                      class="health-fill"
+                      style="width: 82%; background: var(--accent-emerald)"
+                    ></div>
+                  </div>
+                  <span class="csm-metric">82</span>
+                </div>
+                <span class="csm-metric">$6.2M</span>
+                <span class="csm-metric" style="color: var(--accent-gold)"
+                  >2</span
+                >
+                <span class="csm-metric">4 this month</span>
+              </div>
+              <div class="csm-row">
+                <div class="csm-name">
+                  <div
+                    class="csm-avatar"
+                    style="
+                      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+                    "
+                  >
+                    SK
+                  </div>
+                  <div class="csm-info">
+                    <h4>Sarah Kim</h4>
+                    <p>CSM • Mid-Market</p>
+                  </div>
+                </div>
+                <div class="csm-health">
+                  <div class="health-bar">
+                    <div
+                      class="health-fill"
+                      style="width: 76%; background: var(--accent-emerald)"
+                    ></div>
+                  </div>
+                  <span class="csm-metric">76</span>
+                </div>
+                <span class="csm-metric">$4.8M</span>
+                <span class="csm-metric" style="color: var(--accent-gold)"
+                  >3</span
+                >
+                <span class="csm-metric">6 this month</span>
+              </div>
+              <div class="csm-row">
+                <div class="csm-name">
+                  <div
+                    class="csm-avatar"
+                    style="
+                      background: linear-gradient(135deg, #f59e0b, #d97706);
+                    "
+                  >
+                    AR
+                  </div>
+                  <div class="csm-info">
+                    <h4>Alex Rivera</h4>
+                    <p>CSM • Enterprise</p>
+                  </div>
+                </div>
+                <div class="csm-health">
+                  <div class="health-bar">
+                    <div
+                      class="health-fill"
+                      style="width: 68%; background: var(--accent-gold)"
+                    ></div>
+                  </div>
+                  <span class="csm-metric">68</span>
+                </div>
+                <span class="csm-metric">$5.1M</span>
+                <span class="csm-metric" style="color: var(--accent-rose)"
+                  >5</span
+                >
+                <span class="csm-metric">3 this month</span>
+              </div>
+              <div class="csm-row">
+                <div class="csm-name">
+                  <div
+                    class="csm-avatar"
+                    style="
+                      background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+                    "
+                  >
+                    JP
+                  </div>
+                  <div class="csm-info">
+                    <h4>Jamie Park</h4>
+                    <p>CSM • SMB</p>
+                  </div>
+                </div>
+                <div class="csm-health">
+                  <div class="health-bar">
+                    <div
+                      class="health-fill"
+                      style="width: 79%; background: var(--accent-emerald)"
+                    ></div>
+                  </div>
+                  <span class="csm-metric">79</span>
+                </div>
+                <span class="csm-metric">$3.4M</span>
+                <span class="csm-metric" style="color: var(--accent-gold)"
+                  >1</span
+                >
+                <span class="csm-metric">8 this month</span>
+              </div>
+            </div>
+
+            <div class="coaching-panel">
+              <h3 class="coaching-title">
+                <span>💡</span> Coaching Opportunities
+              </h3>
+
+              <div class="coaching-item">
+                <div class="coaching-item-header">
+                  <span class="coaching-item-name">Alex Rivera</span>
+                  <span class="coaching-item-badge">WORKLOAD</span>
+                </div>
+                <p class="coaching-item-text">
+                  5 at-risk accounts — highest on team. Two accounts (Vertex,
+                  NovaTech) have had no touchpoint in 21+ days. Consider
+                  rebalancing or coaching on prioritization.
+                </p>
+              </div>
+
+              <div class="coaching-item">
+                <div class="coaching-item-header">
+                  <span class="coaching-item-name">Sarah Kim</span>
+                  <span class="coaching-item-badge">OPPORTUNITY</span>
+                </div>
+                <p class="coaching-item-text">
+                  Strong renewal close rate (90%) but lowest expansion revenue
+                  on team. Three accounts showing expansion signals — recommend
+                  coaching on upsell conversations.
+                </p>
+              </div>
+
+              <div class="coaching-item">
+                <div class="coaching-item-header">
+                  <span class="coaching-item-name">Marcus Johnson</span>
+                  <span class="coaching-item-badge">RECOGNITION</span>
+                </div>
+                <p class="coaching-item-text">
+                  Top performer this month: $225K expansion closed, 2 at-risk
+                  accounts recovered. Consider having him share approach in team
+                  meeting.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 5: RENEWAL COMMAND CENTER -->
+      <section class="screen" id="renewals">
+        <div class="renewals-container">
+          <div class="renewals-header">
+            <h1 class="renewals-title">Renewal Command Center</h1>
+          </div>
+
+          <div class="renewals-summary">
+            <div class="renewal-summary-card total">
+              <div class="renewal-summary-label">Next 90 Days</div>
+              <div class="renewal-summary-value">47</div>
+              <div class="renewal-summary-arr">$8.2M ARR</div>
+            </div>
+            <div class="renewal-summary-card critical">
+              <div class="renewal-summary-label">Critical Risk</div>
+              <div class="renewal-summary-value">6</div>
+              <div class="renewal-summary-arr">$1.8M ARR at risk</div>
+            </div>
+            <div class="renewal-summary-card warning">
+              <div class="renewal-summary-label">Needs Attention</div>
+              <div class="renewal-summary-value">12</div>
+              <div class="renewal-summary-arr">$2.4M ARR</div>
+            </div>
+            <div class="renewal-summary-card healthy">
+              <div class="renewal-summary-label">On Track</div>
+              <div class="renewal-summary-value">29</div>
+              <div class="renewal-summary-arr">$4.0M ARR</div>
+            </div>
+          </div>
+
+          <div class="timeline-container">
+            <div class="timeline-header">
+              <span class="timeline-title">90-Day Renewal Timeline</span>
+              <div class="timeline-legend">
+                <span class="legend-item"
+                  ><span class="legend-dot critical"></span> Critical</span
+                >
+                <span class="legend-item"
+                  ><span class="legend-dot warning"></span> At Risk</span
+                >
+                <span class="legend-item"
+                  ><span class="legend-dot healthy"></span> On Track</span
+                >
+              </div>
+            </div>
+            <div class="timeline-months">
+              <div class="timeline-month">
+                <div class="month-header">January (14)</div>
+                <span class="renewal-dot"
+                  ><span class="indicator critical"></span> Acme $420K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator warning"></span> Vertex $180K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> Bloom $95K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> Peak $120K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> +10 more</span
+                >
+              </div>
+              <div class="timeline-month">
+                <div class="month-header">February (18)</div>
+                <span class="renewal-dot"
+                  ><span class="indicator critical"></span> Global $285K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator critical"></span> Nova $340K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator warning"></span> Apex $165K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> Swift $88K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> +14 more</span
+                >
+              </div>
+              <div class="timeline-month">
+                <div class="month-header">March (10)</div>
+                <span class="renewal-dot"
+                  ><span class="indicator warning"></span> Atlas $210K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> Prism $145K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> Core $178K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> +7 more</span
+                >
+              </div>
+              <div class="timeline-month">
+                <div class="month-header">April (5)</div>
+                <span class="renewal-dot"
+                  ><span class="indicator critical"></span> Titan $520K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> Spark $92K</span
+                >
+                <span class="renewal-dot"
+                  ><span class="indicator healthy"></span> +3 more</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="renewals-table">
+            <div class="renewals-table-header">
+              <span>Account</span>
+              <span>ARR</span>
+              <span>Renewal Date</span>
+              <span>Likelihood</span>
+              <span>Risk Summary</span>
+            </div>
+            <div class="renewal-row">
+              <div class="renewal-account">
+                <span class="renewal-status-dot critical"></span>
+                <div class="renewal-account-info">
+                  <h4>Acme Corporation</h4>
+                  <p>CSM: Marcus Johnson</p>
+                </div>
+              </div>
+              <span class="renewal-arr">$420,000</span>
+              <span class="renewal-date">Jan 28, 2026</span>
+              <div class="renewal-likelihood">
+                <div class="likelihood-bar">
+                  <div
+                    class="likelihood-fill"
+                    style="width: 27%; background: var(--accent-rose)"
+                  ></div>
+                </div>
+                <span>27%</span>
+              </div>
+              <span class="renewal-risk-summary"
+                >P1 ticket open, champion escalating, renewal in 28 days</span
+              >
+            </div>
+            <div class="renewal-row">
+              <div class="renewal-account">
+                <span class="renewal-status-dot critical"></span>
+                <div class="renewal-account-info">
+                  <h4>GlobalTech Industries</h4>
+                  <p>CSM: Alex Rivera</p>
+                </div>
+              </div>
+              <span class="renewal-arr">$285,000</span>
+              <span class="renewal-date">Feb 14, 2026</span>
+              <div class="renewal-likelihood">
+                <div class="likelihood-bar">
+                  <div
+                    class="likelihood-fill"
+                    style="width: 42%; background: var(--accent-rose)"
+                  ></div>
+                </div>
+                <span>42%</span>
+              </div>
+              <span class="renewal-risk-summary"
+                >Champion silent 14d, new VP, usage down 23%</span
+              >
+            </div>
+            <div class="renewal-row">
+              <div class="renewal-account">
+                <span class="renewal-status-dot warning"></span>
+                <div class="renewal-account-info">
+                  <h4>Vertex Solutions</h4>
+                  <p>CSM: Alex Rivera</p>
+                </div>
+              </div>
+              <span class="renewal-arr">$180,000</span>
+              <span class="renewal-date">Jan 31, 2026</span>
+              <div class="renewal-likelihood">
+                <div class="likelihood-bar">
+                  <div
+                    class="likelihood-fill"
+                    style="width: 58%; background: var(--accent-gold)"
+                  ></div>
+                </div>
+                <span>58%</span>
+              </div>
+              <span class="renewal-risk-summary"
+                >No touchpoint in 21 days, competitor RFP rumored</span
+              >
+            </div>
+            <div class="renewal-row">
+              <div class="renewal-account">
+                <span class="renewal-status-dot healthy"></span>
+                <div class="renewal-account-info">
+                  <h4>Bloom Technologies</h4>
+                  <p>CSM: Sarah Kim</p>
+                </div>
+              </div>
+              <span class="renewal-arr">$95,000</span>
+              <span class="renewal-date">Jan 22, 2026</span>
+              <div class="renewal-likelihood">
+                <div class="likelihood-bar">
+                  <div
+                    class="likelihood-fill"
+                    style="width: 94%; background: var(--accent-emerald)"
+                  ></div>
+                </div>
+                <span>94%</span>
+              </div>
+              <span class="renewal-risk-summary"
+                >Verbal commit received, expansion discussion underway</span
+              >
+            </div>
+            <div class="renewal-row">
+              <div class="renewal-account">
+                <span class="renewal-status-dot healthy"></span>
+                <div class="renewal-account-info">
+                  <h4>Peak Performance Inc</h4>
+                  <p>CSM: Jamie Park</p>
+                </div>
+              </div>
+              <span class="renewal-arr">$120,000</span>
+              <span class="renewal-date">Jan 25, 2026</span>
+              <div class="renewal-likelihood">
+                <div class="likelihood-bar">
+                  <div
+                    class="likelihood-fill"
+                    style="width: 88%; background: var(--accent-emerald)"
+                  ></div>
+                </div>
+                <span>88%</span>
+              </div>
+              <span class="renewal-risk-summary"
+                >Contract sent, awaiting signature from legal</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Tab navigation
+      document.querySelectorAll(".nav-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Update active tab
+          document
+            .querySelectorAll(".nav-tab")
+            .forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+
+          // Show corresponding screen
+          const screenId = tab.dataset.screen;
+          document
+            .querySelectorAll(".screen")
+            .forEach((s) => s.classList.remove("active"));
+          document.getElementById(screenId).classList.add("active");
+        });
+      });
+
+      // Auto-resize textarea
+      const textarea = document.querySelector(".chat-input");
+      if (textarea) {
+        textarea.addEventListener("input", function () {
+          this.style.height = "auto";
+          this.style.height = Math.min(this.scrollHeight, 150) + "px";
+        });
+      }
+    </script>
+  </body>
+</html>
