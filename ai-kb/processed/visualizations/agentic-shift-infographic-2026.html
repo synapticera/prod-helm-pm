@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Agentic Shift: AI in Customer Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chosen Palette: Modern Tech & Analytics (Deep Blue/Amber/Teal) -->
+    <!-- Palette Name: Strategic Insight -->
+    <!-- 
+        Palette Hex Codes:
+        Background: #f8fafc (Slate 50)
+        Card Bg: #ffffff (White)
+        Primary Text: #1e293b (Slate 800)
+        Secondary Text: #64748b (Slate 500)
+        Accent Blue: #3b82f6 (Blue 500)
+        Accent Amber: #f59e0b (Amber 500)
+        Accent Teal: #14b8a6 (Teal 500)
+        Accent Indigo: #6366f1 (Indigo 500)
+    -->
+    <style>
+      body {
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #f8fafc;
+        color: #1e293b;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        height: 350px;
+        max-height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @media (min-width: 768px) {
+        .chart-container {
+          height: 400px;
+        }
+      }
+      .prose-card {
+        background: white;
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.2s ease-in-out;
+      }
+      .prose-card:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .metric-big {
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1;
+      }
+      .timeline-connector {
+        width: 2px;
+        background-color: #cbd5e1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+      }
+      /* Gradient Text */
+      .text-gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to right, #3b82f6, #6366f1);
+      }
+    </style>
+  </head>
+  <body class="p-4 md:p-8">
+    <!-- 
+        PLAN SUMMARY:
+        1. Narrative: The infographic follows the "Agentic Shift" story—starting with the evolution from basic bots to autonomous agents, analyzing the market landscape (vendors), presenting hard evidence through case studies (Klarna/Morgan Stanley), and finishing with a strategic roadmap for implementation.
+        2. Structure:
+           - Header: Title & Hook.
+           - Section 1: The Evolution (Chatbot vs Agent capabilities).
+           - Section 2: Market Landscape (Vendor Ecosystem Bubble Chart).
+           - Section 3: Case Study Deep Dive (Klarna Efficiency vs Morgan Stanley Augmentation).
+           - Section 4: Industry Impact (Retail/Telecom Metrics).
+           - Section 5: Strategic Roadmap (Process Flow).
+        3. Visualizations:
+           - Radar Chart: Comparing capabilities (Chatbot vs Agent).
+           - Bubble Chart: Vendor Market Positioning.
+           - Bar Chart: Klarna Efficiency Metrics.
+           - Donut Charts: Telecom Resolution Rates.
+           - HTML Process Flow: Implementation Steps.
+    -->
+
+    <!-- Header Section -->
+    <div class="max-w-6xl mx-auto mb-12 text-center">
+      <h1
+        class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight text-slate-900"
+      >
+        The <span class="text-gradient">Agentic Shift</span>
+      </h1>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+        A comprehensive index and analysis of AI in Customer Service
+        (2025-2027). Exploring the transition from scripted chatbots to
+        autonomous agents, backed by case studies from Klarna, Morgan Stanley,
+        and global leaders.
+      </p>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Section 1: The Evolution (Introduction) -->
+      <div
+        class="col-span-1 md:col-span-2 prose-card bg-slate-50 border-l-4 border-blue-500"
+      >
+        <h2 class="text-2xl font-bold text-slate-800 mb-4">
+          The Evolution: From Scripted to Autonomous
+        </h2>
+        <p class="text-slate-600 mb-6">
+          We are witnessing a fundamental change in customer service technology.
+          Traditional "Gen 1" chatbots relied on rigid decision trees and
+          keywords, often frustrating users. The new "Gen 2" Agentic AI utilizes
+          Large Language Models (LLMs) to reason, plan, and execute complex
+          workflows autonomously. This shift isn't just about answering
+          FAQs—it's about resolving issues.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="font-semibold text-lg text-blue-600 mb-2">
+              Capability Comparison
+            </h3>
+            <p class="text-sm text-slate-500 mb-4">
+              Comparing legacy rule-based systems against modern Agentic AI
+              across five critical dimensions: Context Retention, Empathy, Task
+              Complexity, Integration, and Proactivity.
+            </p>
+          </div>
+          <!-- CHART: Radar Chart comparing Chatbot vs Agent -->
+          <!-- Goal: Compare categories. Chosen: Radar Chart. Library: Chart.js -->
+          <div class="chart-container">
+            <canvas id="evolutionRadarChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: The Vendor Ecosystem (Market Landscape) -->
+      <div class="col-span-1 md:col-span-2">
+        <div class="prose-card">
+          <h2 class="text-2xl font-bold text-slate-800 mb-4">
+            The Vendor Ecosystem
+          </h2>
+          <p class="text-slate-600 mb-6">
+            The market is fragmented between established platform giants
+            integrating AI into existing suites and agile, AI-native
+            specialists. Salesforce's "Agentforce" and ServiceNow represent the
+            platform approach, while players like Sierra and OpenAI's enterprise
+            solutions offer specialized "Empathy Engines."
+          </p>
+
+          <!-- CHART: Bubble Chart for Vendor Landscape -->
+          <!-- Goal: Relationships (Market Presence vs Innovation). Chosen: Bubble Chart. Library: Chart.js -->
+          <div class="chart-container" style="max-width: 800px">
+            <canvas id="vendorBubbleChart"></canvas>
+          </div>
+          <p class="text-xs text-center text-slate-400 mt-2">
+            X-Axis: Innovation/AI-Native Focus | Y-Axis: Enterprise Integration
+            Depth | Bubble Size: Market Presence
+          </p>
+        </div>
+      </div>
+
+      <!-- Section 3: Case Study - The Klarna Paradox -->
+      <div class="col-span-1 prose-card">
+        <h3 class="text-xl font-bold text-amber-600 mb-2">
+          Case Study: Klarna
+        </h3>
+        <h4
+          class="text-sm font-bold uppercase tracking-wide text-slate-400 mb-4"
+        >
+          Strategy: Total Replacement
+        </h4>
+        <p class="text-slate-600 text-sm mb-4">
+          Klarna aggressively deployed AI to replace 700 full-time agents. While
+          the financial metrics were staggering—saving $40M USD annually—the
+          strategy highlights the "efficiency vs. trust" trade-off.
+        </p>
+
+        <!-- CHART: Bar Chart for Klarna Metrics -->
+        <!-- Goal: Compare values. Chosen: Bar Chart. Library: Chart.js -->
+        <div class="chart-container">
+          <canvas id="klarnaBarChart"></canvas>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-4 text-center">
+          <div class="bg-amber-50 p-2 rounded">
+            <div class="text-2xl font-bold text-amber-600">$40M</div>
+            <div class="text-xs text-slate-500">Proj. Savings</div>
+          </div>
+          <div class="bg-amber-50 p-2 rounded">
+            <div class="text-2xl font-bold text-amber-600">2 min</div>
+            <div class="text-xs text-slate-500">Resolution Time</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Case Study - Morgan Stanley -->
+      <div class="col-span-1 prose-card">
+        <h3 class="text-xl font-bold text-blue-600 mb-2">
+          Case Study: Morgan Stanley
+        </h3>
+        <h4
+          class="text-sm font-bold uppercase tracking-wide text-slate-400 mb-4"
+        >
+          Strategy: Expert Augmentation
+        </h4>
+        <p class="text-slate-600 text-sm mb-4">
+          In contrast to Klarna, Morgan Stanley built "AskResearchGPT" to
+          empower, not replace, their financial advisors. The goal was to
+          synthesize vast amounts of data to improve the quality of human
+          advice.
+        </p>
+
+        <div class="flex flex-col items-center justify-center h-full pt-4">
+          <div class="text-center mb-8">
+            <span class="text-6xl font-bold text-blue-600 block mb-2"
+              >100k+</span
+            >
+            <span class="text-lg font-medium text-slate-600"
+              >Research Reports</span
+            >
+            <p class="text-sm text-slate-400 mt-2">
+              Synthesized instantly for advisors
+            </p>
+          </div>
+          <div class="w-full bg-blue-50 rounded-lg p-4">
+            <h5 class="font-bold text-blue-800 mb-2 text-sm">Key Outcome</h5>
+            <p class="text-sm text-slate-600">
+              Advisors shifted <strong>30% of their time</strong> from manual
+              research to client relationship management, increasing "Share of
+              Wallet" without reducing headcount.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 5: Industry Impact (Telecom & Retail) -->
+      <div class="col-span-1 md:col-span-2 prose-card bg-slate-900 text-white">
+        <h2 class="text-2xl font-bold mb-4 text-white">
+          Sector Spotlight: Telecom & Retail
+        </h2>
+        <p class="text-slate-300 mb-8">
+          Beyond finance, high-volume sectors are using AI for "Proactive Care."
+          Virgin Media O2 and Vodafone report shifting from reactive ticketing
+          to proactive resolution.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- CHART: Donut Chart for Telecom Stats -->
+          <!-- Goal: Inform (Proportion). Chosen: Donut Chart. Library: Chart.js -->
+          <div class="chart-container">
+            <canvas id="telecomDonutChart"></canvas>
+          </div>
+
+          <div class="flex flex-col justify-center space-y-6">
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-teal-500 flex items-center justify-center font-bold text-xl"
+              >
+                &#8593;
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-teal-400">89%</div>
+                <div class="text-sm text-slate-400">
+                  Same-Day Resolution (Telecom)
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-xl"
+              >
+                &#8595;
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-indigo-400">45%</div>
+                <div class="text-sm text-slate-400">
+                  Reduction in Truck Rolls
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-slate-800 p-4 rounded-lg border border-slate-700 mt-4"
+            >
+              <p class="text-sm italic text-slate-300">
+                "The shift is from 'Call us when it breaks' to 'We fixed it
+                before you noticed'."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6: Strategic Roadmap (Process Flow) -->
+      <div class="col-span-1 md:col-span-2 prose-card">
+        <h2 class="text-2xl font-bold text-slate-800 mb-6">
+          Strategic Roadmap: The "Build vs. Buy" Matrix
+        </h2>
+        <p class="text-slate-600 mb-8">
+          Success requires a deliberate strategy. Organizations must decide
+          where to simply buy capabilities, where to configure workflows, and
+          where to build proprietary models.
+        </p>
+
+        <!-- DIAGRAM: HTML/Tailwind Flowchart -->
+        <!-- Goal: Organize (Process). Chosen: Styled HTML. NO SVG/Mermaid. -->
+        <div class="relative grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Connector Line (Desktop only) -->
+          <div
+            class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-slate-200 -z-10 transform -translate-y-1/2"
+          ></div>
+
+          <!-- Step 1 -->
+          <div
+            class="bg-white border-2 border-slate-200 p-6 rounded-xl relative z-10 shadow-sm hover:border-blue-500 transition-colors"
+          >
+            <div
+              class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+            >
+              ZONE 1
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 text-center mb-2">
+              Buy (Standard)
+            </h3>
+            <p class="text-xs text-center text-slate-500 mb-4">
+              For common tasks (FAQs, Order Status)
+            </p>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">&#10003;</span>Low Risk
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">&#10003;</span>Fast
+                Time-to-Value
+              </li>
+              <li class="flex items-start">
+                <span class="text-blue-500 mr-2">&#10003;</span>Vendor:
+                Salesforce/Zendesk
+              </li>
+            </ul>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="bg-white border-2 border-slate-200 p-6 rounded-xl relative z-10 shadow-sm hover:border-amber-500 transition-colors"
+          >
+            <div
+              class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+            >
+              ZONE 2
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 text-center mb-2">
+              Configure (Workflow)
+            </h3>
+            <p class="text-xs text-center text-slate-500 mb-4">
+              For industry specific flows
+            </p>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2">&#10003;</span>Medium
+                Complexity
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2">&#10003;</span>API Integration
+                Req.
+              </li>
+              <li class="flex items-start">
+                <span class="text-amber-500 mr-2">&#10003;</span>Vendor:
+                Genesys/NICE
+              </li>
+            </ul>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="bg-white border-2 border-slate-200 p-6 rounded-xl relative z-10 shadow-sm hover:border-teal-500 transition-colors"
+          >
+            <div
+              class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full"
+            >
+              ZONE 3
+            </div>
+            <h3 class="text-lg font-bold text-slate-800 text-center mb-2">
+              Build (Proprietary)
+            </h3>
+            <p class="text-xs text-center text-slate-500 mb-4">
+              For core IP & differentiation
+            </p>
+            <ul class="text-sm text-slate-600 space-y-2">
+              <li class="flex items-start">
+                <span class="text-teal-500 mr-2">&#10003;</span>High Value /
+                High Risk
+              </li>
+              <li class="flex items-start">
+                <span class="text-teal-500 mr-2">&#10003;</span>Custom LLM
+                Fine-tuning
+              </li>
+              <li class="flex items-start">
+                <span class="text-teal-500 mr-2">&#10003;</span>Vendor:
+                OpenAI/Sierra/AWS
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div
+        class="col-span-1 md:col-span-2 text-center text-slate-400 text-sm mt-8"
+      >
+        <p>
+          Generated by Canvas Infographics. Sources: Salesforce State of
+          Service, Klarna Press Releases, Morgan Stanley AI Reports, Gartner
+          Magic Quadrant (2024/2025).
+        </p>
+        <p class="mt-2 text-xs">NO SVG Graphics Used. No Mermaid JS Used.</p>
+      </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+      // --- UTILITY: Label Wrapping Logic ---
+      // Splits long strings into arrays of strings for Chart.js
+      function wrapLabels(labels, maxLength = 16) {
+        return labels.map((label) => {
+          if (label.length <= maxLength) return label;
+          const words = label.split(" ");
+          const lines = [];
+          let currentLine = words[0];
+
+          for (let i = 1; i < words.length; i++) {
+            if (currentLine.length + 1 + words[i].length <= maxLength) {
+              currentLine += " " + words[i];
+            } else {
+              lines.push(currentLine);
+              currentLine = words[i];
+            }
+          }
+          lines.push(currentLine);
+          return lines;
+        });
+      }
+
+      // --- SHARED CONFIG: Tooltip Callback ---
+      // Mandatory configuration for handling multi-line tooltips
+      const sharedTooltipPlugin = {
+        tooltip: {
+          callbacks: {
+            title: function (tooltipItems) {
+              const item = tooltipItems[0];
+              let label = item.chart.data.labels[item.dataIndex];
+              if (Array.isArray(label)) {
+                return label.join(" ");
+              } else {
+                return label;
+              }
+            }
+          }
+        }
+      };
+
+      // --- CHART 1: Evolution Radar Chart ---
+      const ctxRadar = document
+        .getElementById("evolutionRadarChart")
+        .getContext("2d");
+      const radarLabels = [
+        "Context Retention",
+        "Empathy/Tone",
+        "Task Complexity",
+        "System Integration",
+        "Proactivity"
+      ];
+      const processedRadarLabels = wrapLabels(radarLabels);
+
+      new Chart(ctxRadar, {
+        type: "radar",
+        data: {
+          labels: processedRadarLabels,
+          datasets: [
+            {
+              label: "Traditional Chatbots",
+              data: [20, 10, 30, 40, 10],
+              fill: true,
+              backgroundColor: "rgba(148, 163, 184, 0.2)", // Slate 400
+              borderColor: "rgb(148, 163, 184)",
+              pointBackgroundColor: "rgb(148, 163, 184)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgb(148, 163, 184)"
+            },
+            {
+              label: "Agentic AI",
+              data: [90, 75, 85, 95, 80],
+              fill: true,
+              backgroundColor: "rgba(59, 130, 246, 0.2)", // Blue 500
+              borderColor: "rgb(59, 130, 246)",
+              pointBackgroundColor: "rgb(59, 130, 246)",
+              pointBorderColor: "#fff",
+              pointHoverBackgroundColor: "#fff",
+              pointHoverBorderColor: "rgb(59, 130, 246)"
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          elements: {
+            line: { borderWidth: 3 }
+          },
+          scales: {
+            r: {
+              angleLines: { color: "rgba(0, 0, 0, 0.1)" },
+              grid: { color: "rgba(0, 0, 0, 0.1)" },
+              pointLabels: {
+                font: { size: 12 },
+                color: "#64748b"
+              },
+              suggestedMin: 0,
+              suggestedMax: 100
+            }
+          },
+          plugins: sharedTooltipPlugin
+        }
+      });
+
+      // --- CHART 2: Vendor Bubble Chart ---
+      const ctxBubble = document
+        .getElementById("vendorBubbleChart")
+        .getContext("2d");
+      // No labels array needed for bubble x-axis, but good for tooltips if we mapped them
+      // Data format: {x, y, r}
+
+      new Chart(ctxBubble, {
+        type: "bubble",
+        data: {
+          datasets: [
+            {
+              label: "Platform Giants (Salesforce, ServiceNow)",
+              data: [
+                { x: 30, y: 90, r: 25 }, // High Integration, Low-Med "Native" innovation score compared to startups
+                { x: 40, y: 85, r: 20 }
+              ],
+              backgroundColor: "rgba(59, 130, 246, 0.7)" // Blue
+            },
+            {
+              label: "CCaaS Leaders (NICE, Genesys)",
+              data: [
+                { x: 60, y: 70, r: 18 },
+                { x: 55, y: 75, r: 18 }
+              ],
+              backgroundColor: "rgba(245, 158, 11, 0.7)" // Amber
+            },
+            {
+              label: "AI-Native Disruptors (Sierra, OpenAI)",
+              data: [
+                { x: 95, y: 40, r: 15 }, // High Innovation, Lower Legacy Integration
+                { x: 90, y: 30, r: 12 }
+              ],
+              backgroundColor: "rgba(20, 184, 166, 0.7)" // Teal
+            },
+            {
+              label: "System Integrators (Accenture/Deloitte)",
+              data: [
+                { x: 50, y: 50, r: 10 } // Middle ground
+              ],
+              backgroundColor: "rgba(99, 102, 241, 0.7)" // Indigo
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              title: { display: true, text: "AI-Native Innovation Focus" },
+              min: 0,
+              max: 100
+            },
+            y: {
+              title: { display: true, text: "Enterprise Integration Depth" },
+              min: 0,
+              max: 100
+            }
+          },
+          plugins: {
+            tooltip: {
+              callbacks: {
+                title: function (context) {
+                  // Custom title for bubble
+                  return context[0].dataset.label;
+                },
+                label: function (context) {
+                  return `Innovation: ${context.raw.x}, Integration: ${context.raw.y}`;
+                }
+              }
+            }
+          }
+        }
+      });
+
+      // --- CHART 3: Klarna Bar Chart ---
+      const ctxBar = document.getElementById("klarnaBarChart").getContext("2d");
+      const barLabels = [
+        "Avg Resolution Time (min)",
+        "Customer Satisfaction Score",
+        "Repeat Inquiries (%)"
+      ];
+      const processedBarLabels = wrapLabels(barLabels);
+
+      new Chart(ctxBar, {
+        type: "bar",
+        data: {
+          labels: processedBarLabels,
+          datasets: [
+            {
+              label: "Human Agents",
+              data: [11, 8.2, 25],
+              backgroundColor: "#cbd5e1" // Slate 300
+            },
+            {
+              label: "AI Assistant",
+              data: [2, 8.2, 5], // 2 mins, Equal CSAT, Low Repeat
+              backgroundColor: "#f59e0b" // Amber 500
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: { beginAtZero: true }
+          },
+          plugins: sharedTooltipPlugin
+        }
+      });
+
+      // --- CHART 4: Telecom Donut Chart ---
+      const ctxDonut = document
+        .getElementById("telecomDonutChart")
+        .getContext("2d");
+      const donutLabels = [
+        "AI Resolved (Proactive)",
+        "Human Agent Resolved",
+        "Unresolved/Escalated"
+      ];
+      const processedDonutLabels = wrapLabels(donutLabels);
+
+      new Chart(ctxDonut, {
+        type: "doughnut",
+        data: {
+          labels: processedDonutLabels,
+          datasets: [
+            {
+              data: [65, 25, 10], // Hypothetical split based on 65% proactive stat mentions
+              backgroundColor: [
+                "#14b8a6", // Teal (Proactive/Good)
+                "#3b82f6", // Blue (Human)
+                "#ef4444" // Red (Escalated)
+              ],
+              borderWidth: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: "70%",
+          plugins: sharedTooltipPlugin
+        }
+      });
+    </script>
+  </body>
+</html>

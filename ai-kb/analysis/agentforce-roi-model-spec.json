@@ -1,0 +1,740 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "metadata": {
+    "name": "Agentforce ROI Calculator Model",
+    "version": "1.0.0",
+    "created": "2026-01-20",
+    "description": "Machine-readable specification for building an Agentforce ROI calculator application",
+    "source": "Derived from Salesforce official ROI calculator and real-world case study analysis",
+    "intended_use": "AI systems building interactive ROI calculation interfaces"
+  },
+
+  "model_overview": {
+    "scenarios": [
+      {
+        "id": "salesforce_optimistic",
+        "name": "Salesforce Methodology",
+        "description": "How Salesforce officially calculates ROI (excludes implementation costs)",
+        "bias": "optimistic",
+        "use_when": "Comparing to Salesforce marketing claims"
+      },
+      {
+        "id": "conservative",
+        "name": "Conservative Estimate",
+        "description": "Realistic calculation including implementation and operational costs",
+        "bias": "realistic",
+        "use_when": "Business case planning"
+      },
+      {
+        "id": "pessimistic",
+        "name": "Pessimistic Scenario",
+        "description": "Risk-adjusted calculation for worst-case planning",
+        "bias": "pessimistic",
+        "use_when": "Risk assessment and downside planning"
+      }
+    ],
+    "calculation_period_years": 3,
+    "work_days_per_year": 260,
+    "work_hours_per_day": 8,
+    "annual_work_hours": 2080
+  },
+
+  "inputs": {
+    "required": [
+      {
+        "id": "service_reps",
+        "label": "Number of Service Agents",
+        "description": "Total FTE count of customer service representatives",
+        "type": "integer",
+        "min": 1,
+        "max": 10000,
+        "default": 25,
+        "ui_hint": "slider_or_number",
+        "validation": "Must be positive integer"
+      },
+      {
+        "id": "monthly_case_volume",
+        "label": "Monthly Case Volume",
+        "description": "Average number of support cases/tickets per month",
+        "type": "integer",
+        "min": 100,
+        "max": 10000000,
+        "default": 10000,
+        "ui_hint": "number_with_commas",
+        "validation": "Must be positive integer"
+      },
+      {
+        "id": "average_handle_time_minutes",
+        "label": "Average Handle Time (minutes)",
+        "description": "Average time to resolve a case including talk time and wrap-up",
+        "type": "number",
+        "min": 1,
+        "max": 120,
+        "default": 12,
+        "ui_hint": "slider",
+        "validation": "Must be between 1-120 minutes"
+      },
+      {
+        "id": "agent_fully_loaded_salary",
+        "label": "Fully Loaded Agent Cost",
+        "description": "Annual cost per agent including salary, benefits, overhead, facilities",
+        "type": "number",
+        "currency": "USD",
+        "min": 30000,
+        "max": 250000,
+        "default": 75000,
+        "ui_hint": "currency_input",
+        "validation": "Must be positive number",
+        "help_text": "Typically 1.3-1.5x base salary. Include benefits, taxes, equipment, facilities."
+      },
+      {
+        "id": "target_deflection_rate",
+        "label": "Target Deflection Rate",
+        "description": "Percentage of cases you expect AI to handle autonomously by Year 3",
+        "type": "percentage",
+        "min": 0.1,
+        "max": 0.85,
+        "default": 0.5,
+        "ui_hint": "percentage_slider",
+        "validation": "Must be between 10-85%",
+        "benchmark_guidance": {
+          "conservative": 0.3,
+          "typical": 0.5,
+          "optimistic": 0.7,
+          "exceptional": 0.85
+        }
+      }
+    ],
+
+    "optional": [
+      {
+        "id": "implementation_complexity",
+        "label": "Implementation Complexity",
+        "description": "Expected complexity of Agentforce deployment",
+        "type": "enum",
+        "options": [
+          {
+            "value": "minimal",
+            "label": "Minimal",
+            "cost": 100000,
+            "description": "Basic setup, existing Salesforce, clean data"
+          },
+          {
+            "value": "low",
+            "label": "Low",
+            "cost": 150000,
+            "description": "Some customization, minor data work"
+          },
+          {
+            "value": "mid",
+            "label": "Mid (Typical)",
+            "cost": 250000,
+            "description": "Standard enterprise deployment"
+          },
+          {
+            "value": "high",
+            "label": "High",
+            "cost": 400000,
+            "description": "Complex integration, data transformation"
+          },
+          {
+            "value": "enterprise",
+            "label": "Enterprise",
+            "cost": 500000,
+            "description": "Large scale, multiple use cases, extensive integration"
+          }
+        ],
+        "default": "mid",
+        "ui_hint": "radio_buttons_with_descriptions"
+      },
+      {
+        "id": "pricing_model",
+        "label": "Agentforce Pricing Model",
+        "description": "How you plan to license Agentforce",
+        "type": "enum",
+        "options": [
+          {
+            "value": "per_conversation",
+            "label": "Per Conversation ($2/conversation)",
+            "unit_cost": 2.0
+          },
+          {
+            "value": "flex_credits",
+            "label": "Flex Credits ($0.10/action avg)",
+            "unit_cost": 0.1
+          }
+        ],
+        "default": "per_conversation",
+        "ui_hint": "toggle_switch"
+      },
+      {
+        "id": "sdr_count",
+        "label": "Number of SDRs",
+        "description": "Sales Development Representatives (if using SDR Agent)",
+        "type": "integer",
+        "min": 0,
+        "max": 1000,
+        "default": 0,
+        "ui_hint": "number",
+        "show_if": "include_sdr_agent === true"
+      },
+      {
+        "id": "sdr_salary",
+        "label": "SDR Fully Loaded Cost",
+        "type": "number",
+        "currency": "USD",
+        "min": 50000,
+        "max": 200000,
+        "default": 80000,
+        "ui_hint": "currency_input",
+        "show_if": "sdr_count > 0"
+      },
+      {
+        "id": "field_technicians",
+        "label": "Field Technicians",
+        "description": "Number of field service technicians (if using Field Service Agent)",
+        "type": "integer",
+        "min": 0,
+        "max": 5000,
+        "default": 0,
+        "ui_hint": "number",
+        "show_if": "include_field_service === true"
+      },
+      {
+        "id": "cost_per_truck_roll",
+        "label": "Cost per Service Visit",
+        "description": "Fully loaded cost of dispatching a technician",
+        "type": "number",
+        "currency": "USD",
+        "min": 50,
+        "max": 500,
+        "default": 150,
+        "ui_hint": "currency_input",
+        "show_if": "field_technicians > 0"
+      }
+    ],
+
+    "feature_toggles": [
+      {
+        "id": "include_sdr_agent",
+        "label": "Include SDR Agent",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "include_field_service",
+        "label": "Include Field Service Agent",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "include_implementation_costs",
+        "label": "Include Implementation Costs",
+        "type": "boolean",
+        "default": true,
+        "help_text": "Salesforce calculator excludes this. Toggle off to match their methodology."
+      }
+    ]
+  },
+
+  "constants": {
+    "work_hours_per_year": 2080,
+    "maintenance_fte_fraction": 0.5,
+    "platform_cost_annual": 30000,
+    "recontact_rate_optimistic": 0.0,
+    "recontact_rate_conservative": 0.1,
+    "recontact_rate_pessimistic": 0.15,
+    "platform_cost_escalation_rate": 0.15
+  },
+
+  "scenario_parameters": {
+    "salesforce_optimistic": {
+      "ramp_factors": {
+        "year_1": 0.7,
+        "year_2": 0.85,
+        "year_3": 1.0
+      },
+      "recontact_rate": 0.0,
+      "include_implementation": false,
+      "include_maintenance": false,
+      "include_platform_cost": false,
+      "implementation_multiplier": 1.0,
+      "start_delay_months": 0
+    },
+    "conservative": {
+      "ramp_factors": {
+        "year_1": 0.5,
+        "year_2": 0.7,
+        "year_3": 0.85
+      },
+      "recontact_rate": 0.1,
+      "include_implementation": true,
+      "include_maintenance": true,
+      "include_platform_cost": true,
+      "implementation_multiplier": 1.0,
+      "start_delay_months": 0
+    },
+    "pessimistic": {
+      "ramp_factors": {
+        "year_1": 0.3,
+        "year_2": 0.5,
+        "year_3": 0.7
+      },
+      "recontact_rate": 0.15,
+      "include_implementation": true,
+      "include_maintenance": true,
+      "include_platform_cost": true,
+      "implementation_multiplier": 2.0,
+      "start_delay_months": 6
+    }
+  },
+
+  "calculations": {
+    "derived_values": [
+      {
+        "id": "annual_cases",
+        "formula": "monthly_case_volume * 12",
+        "description": "Total annual case volume"
+      },
+      {
+        "id": "agent_hourly_cost",
+        "formula": "agent_fully_loaded_salary / work_hours_per_year",
+        "description": "Cost per agent hour"
+      },
+      {
+        "id": "cost_per_case_manual",
+        "formula": "(average_handle_time_minutes / 60) * agent_hourly_cost",
+        "description": "Cost to handle one case manually"
+      }
+    ],
+
+    "yearly_calculations": [
+      {
+        "id": "effective_deflection_rate",
+        "formula": "target_deflection_rate * scenario.ramp_factors[year]",
+        "description": "Deflection rate after ramp adjustment"
+      },
+      {
+        "id": "cases_deflected_raw",
+        "formula": "annual_cases * effective_deflection_rate",
+        "description": "Cases AI attempts to handle"
+      },
+      {
+        "id": "cases_deflected_effective",
+        "formula": "cases_deflected_raw * (1 - scenario.recontact_rate)",
+        "description": "Net cases handled by AI after recontact adjustment"
+      },
+      {
+        "id": "hours_saved",
+        "formula": "cases_deflected_effective * (average_handle_time_minutes / 60)",
+        "description": "Agent hours saved per year"
+      },
+      {
+        "id": "fte_equivalent",
+        "formula": "hours_saved / work_hours_per_year",
+        "description": "Full-time equivalent headcount savings"
+      },
+      {
+        "id": "labor_savings",
+        "formula": "fte_equivalent * agent_fully_loaded_salary",
+        "description": "Dollar value of labor savings"
+      },
+      {
+        "id": "agentforce_cost_per_conversation",
+        "formula": "cases_deflected_raw * 2.00",
+        "description": "Agentforce licensing cost (per conversation model)"
+      },
+      {
+        "id": "agentforce_cost_flex_credits",
+        "formula": "cases_deflected_raw * 20 * 0.005",
+        "description": "Agentforce licensing cost (flex credits model)"
+      },
+      {
+        "id": "agentforce_cost",
+        "formula": "pricing_model === 'per_conversation' ? agentforce_cost_per_conversation : agentforce_cost_flex_credits",
+        "description": "Selected Agentforce licensing cost"
+      },
+      {
+        "id": "maintenance_cost",
+        "formula": "scenario.include_maintenance ? (agent_fully_loaded_salary * constants.maintenance_fte_fraction) : 0",
+        "description": "Cost of 0.5 FTE for ongoing AI tuning"
+      },
+      {
+        "id": "platform_cost",
+        "formula": "scenario.include_platform_cost ? (constants.platform_cost_annual * Math.pow(1 + constants.platform_cost_escalation_rate, year - 1)) : 0",
+        "description": "Incremental platform licensing costs"
+      },
+      {
+        "id": "total_operating_cost",
+        "formula": "agentforce_cost + maintenance_cost + platform_cost",
+        "description": "Total annual operating costs"
+      },
+      {
+        "id": "net_operating_benefit",
+        "formula": "labor_savings - total_operating_cost",
+        "description": "Annual net benefit from operations"
+      }
+    ],
+
+    "totals": [
+      {
+        "id": "implementation_cost",
+        "formula": "scenario.include_implementation ? (implementation_complexity.cost * scenario.implementation_multiplier) : 0",
+        "description": "One-time implementation investment"
+      },
+      {
+        "id": "three_year_labor_savings",
+        "formula": "sum(labor_savings[year_1, year_2, year_3])",
+        "description": "Total labor savings over 3 years"
+      },
+      {
+        "id": "three_year_operating_costs",
+        "formula": "sum(total_operating_cost[year_1, year_2, year_3])",
+        "description": "Total operating costs over 3 years"
+      },
+      {
+        "id": "three_year_net_operating",
+        "formula": "three_year_labor_savings - three_year_operating_costs",
+        "description": "Total net operating benefit over 3 years"
+      },
+      {
+        "id": "total_investment",
+        "formula": "implementation_cost + three_year_operating_costs",
+        "description": "Total 3-year investment"
+      },
+      {
+        "id": "three_year_net_benefit",
+        "formula": "three_year_net_operating - implementation_cost",
+        "description": "Total 3-year net benefit after implementation"
+      },
+      {
+        "id": "roi_percentage",
+        "formula": "((three_year_labor_savings - total_investment) / total_investment) * 100",
+        "description": "3-year return on investment percentage"
+      },
+      {
+        "id": "payback_months",
+        "formula": "implementation_cost / (net_operating_benefit[year_1] / 12)",
+        "description": "Months until implementation cost is recovered",
+        "note": "Returns null/infinity if net_operating_benefit is negative"
+      }
+    ]
+  },
+
+  "outputs": {
+    "summary_metrics": [
+      {
+        "id": "three_year_net_benefit",
+        "label": "3-Year Net Benefit",
+        "format": "currency",
+        "decimals": 0,
+        "highlight": true,
+        "color_rules": {
+          "positive": "green",
+          "negative": "red"
+        }
+      },
+      {
+        "id": "roi_percentage",
+        "label": "ROI",
+        "format": "percentage",
+        "decimals": 0,
+        "highlight": true,
+        "color_rules": {
+          ">100": "green",
+          "50-100": "yellow",
+          "0-50": "orange",
+          "<0": "red"
+        }
+      },
+      {
+        "id": "payback_months",
+        "label": "Payback Period",
+        "format": "months",
+        "decimals": 0,
+        "color_rules": {
+          "<12": "green",
+          "12-24": "yellow",
+          "24-36": "orange",
+          ">36": "red"
+        }
+      }
+    ],
+
+    "yearly_breakdown": {
+      "columns": [
+        { "id": "metric", "label": "Metric" },
+        { "id": "year_1", "label": "Year 1" },
+        { "id": "year_2", "label": "Year 2" },
+        { "id": "year_3", "label": "Year 3" },
+        { "id": "total", "label": "3-Year Total" }
+      ],
+      "rows": [
+        {
+          "metric": "Deflection Rate",
+          "format": "percentage",
+          "values": ["effective_deflection_rate"]
+        },
+        {
+          "metric": "Cases Deflected",
+          "format": "number",
+          "values": ["cases_deflected_effective"]
+        },
+        {
+          "metric": "Hours Saved",
+          "format": "number",
+          "values": ["hours_saved"]
+        },
+        {
+          "metric": "FTE Equivalent",
+          "format": "decimal_1",
+          "values": ["fte_equivalent"]
+        },
+        {
+          "metric": "Labor Savings",
+          "format": "currency",
+          "values": ["labor_savings"],
+          "style": "positive"
+        },
+        {
+          "metric": "Agentforce Cost",
+          "format": "currency",
+          "values": ["agentforce_cost"],
+          "style": "negative"
+        },
+        {
+          "metric": "Maintenance Cost",
+          "format": "currency",
+          "values": ["maintenance_cost"],
+          "style": "negative"
+        },
+        {
+          "metric": "Platform Cost",
+          "format": "currency",
+          "values": ["platform_cost"],
+          "style": "negative"
+        },
+        {
+          "metric": "Net Operating Benefit",
+          "format": "currency",
+          "values": ["net_operating_benefit"],
+          "style": "highlight"
+        }
+      ]
+    },
+
+    "scenario_comparison": {
+      "description": "Side-by-side comparison of all three scenarios",
+      "columns": [
+        { "id": "metric", "label": "Metric" },
+        { "id": "salesforce_optimistic", "label": "Salesforce Method" },
+        { "id": "conservative", "label": "Conservative" },
+        { "id": "pessimistic", "label": "Pessimistic" }
+      ],
+      "rows": [
+        { "metric": "3-Year Net Benefit", "format": "currency" },
+        { "metric": "ROI", "format": "percentage" },
+        { "metric": "Payback Period", "format": "months" },
+        { "metric": "Year 1 Cash Flow", "format": "currency" }
+      ]
+    },
+
+    "sensitivity_tables": [
+      {
+        "id": "deflection_sensitivity",
+        "title": "Sensitivity to Deflection Rate",
+        "vary_input": "target_deflection_rate",
+        "values": [0.3, 0.4, 0.5, 0.6, 0.7, 0.85],
+        "output_metrics": ["roi_percentage", "payback_months"]
+      },
+      {
+        "id": "salary_sensitivity",
+        "title": "Sensitivity to Agent Salary",
+        "vary_input": "agent_fully_loaded_salary",
+        "values": [50000, 65000, 75000, 100000, 125000],
+        "output_metrics": ["roi_percentage", "payback_months"]
+      },
+      {
+        "id": "implementation_sensitivity",
+        "title": "Sensitivity to Implementation Cost",
+        "vary_input": "implementation_complexity",
+        "values": ["minimal", "low", "mid", "high", "enterprise"],
+        "output_metrics": ["roi_percentage", "payback_months"]
+      }
+    ]
+  },
+
+  "visualizations": {
+    "recommended_charts": [
+      {
+        "id": "cumulative_cash_flow",
+        "type": "line_chart",
+        "title": "Cumulative Cash Flow Over 3 Years",
+        "x_axis": "Time (Months)",
+        "y_axis": "Cumulative Cash Flow ($)",
+        "series": ["salesforce_optimistic", "conservative", "pessimistic"],
+        "highlight_break_even": true
+      },
+      {
+        "id": "cost_benefit_waterfall",
+        "type": "waterfall_chart",
+        "title": "Cost-Benefit Breakdown",
+        "categories": [
+          "Labor Savings",
+          "Agentforce Cost",
+          "Implementation",
+          "Maintenance",
+          "Platform",
+          "Net Benefit"
+        ]
+      },
+      {
+        "id": "deflection_gauge",
+        "type": "gauge",
+        "title": "Target vs. Benchmark Deflection",
+        "min": 0,
+        "max": 100,
+        "zones": [
+          { "min": 0, "max": 30, "color": "red", "label": "Below Average" },
+          { "min": 30, "max": 50, "color": "yellow", "label": "Typical" },
+          { "min": 50, "max": 70, "color": "green", "label": "Good" },
+          {
+            "min": 70,
+            "max": 100,
+            "color": "darkgreen",
+            "label": "Exceptional"
+          }
+        ]
+      }
+    ]
+  },
+
+  "decision_support": {
+    "recommendation_logic": {
+      "green_light": {
+        "condition": "conservative.roi_percentage > 50",
+        "message": "Strong business case. Proceed with phased deployment.",
+        "actions": [
+          "Create detailed project plan",
+          "Identify SI partner",
+          "Begin Data Cloud preparation"
+        ]
+      },
+      "yellow_light": {
+        "condition": "conservative.roi_percentage > 0 AND conservative.roi_percentage <= 50",
+        "message": "Marginal business case. Consider reducing scope or piloting first.",
+        "actions": [
+          "Pilot with single use case",
+          "Reduce implementation complexity",
+          "Validate deflection assumptions"
+        ]
+      },
+      "red_light": {
+        "condition": "conservative.roi_percentage <= 0",
+        "message": "Negative ROI projected. Address barriers before investing.",
+        "actions": [
+          "Improve data quality first",
+          "Build AI skills on team",
+          "Evaluate alternative vendors"
+        ]
+      }
+    },
+
+    "readiness_checklist": [
+      { "item": "Data Cloud deployed", "critical": true },
+      { "item": "Service Cloud case data clean", "critical": true },
+      { "item": "Knowledge base comprehensive", "critical": true },
+      { "item": "AI skills on team", "critical": false },
+      { "item": "Clear use case scope", "critical": true },
+      { "item": "Executive sponsorship", "critical": false },
+      { "item": "Measurement KPIs defined", "critical": false },
+      { "item": "SI partner selected", "critical": false }
+    ],
+
+    "red_flags": [
+      {
+        "condition": "roi_percentage < 0 even with optimistic assumptions",
+        "message": "Not viable. Evaluate competitors."
+      },
+      {
+        "condition": "implementation_cost > 400000 AND service_reps < 50",
+        "message": "Over-engineered. Start with basic automation."
+      },
+      {
+        "condition": "monthly_case_volume < 5000",
+        "message": "Insufficient scale. Consider simpler tools."
+      },
+      {
+        "condition": "average_handle_time_minutes < 5",
+        "message": "Limited savings opportunity. Focus on quality, not deflection."
+      }
+    ]
+  },
+
+  "benchmarks": {
+    "deflection_rates": {
+      "salesforce_customer_zero": 0.85,
+      "uk_police_bobbi": 0.82,
+      "engie": 0.83,
+      "1800_accountant": 0.7,
+      "wyndham": 0.62,
+      "typical_mid_market": 0.35,
+      "industry_average": 0.3
+    },
+    "deployment_times": {
+      "engine_fastest": "12 days",
+      "engie_poc": "3 weeks",
+      "safari365": "6 weeks",
+      "fisher_paykel": "3 months",
+      "typical_enterprise": "3-6 months"
+    },
+    "roi_examples": {
+      "wiley": 2.13,
+      "loop_earplugs_ada": 3.57,
+      "genesys_customer_zero": 9.8
+    }
+  },
+
+  "ui_recommendations": {
+    "layout": {
+      "input_section": {
+        "position": "left_panel_or_top",
+        "style": "form_with_sliders",
+        "live_update": true
+      },
+      "results_section": {
+        "position": "right_panel_or_bottom",
+        "style": "dashboard_cards",
+        "highlight_key_metrics": true
+      },
+      "comparison_section": {
+        "position": "below_results",
+        "style": "three_column_table",
+        "default_expanded": true
+      }
+    },
+    "interactions": {
+      "scenario_toggle": "Allow switching between Salesforce/Conservative/Pessimistic views",
+      "export_options": ["PDF report", "Excel download", "Share link"],
+      "what_if": "Enable real-time adjustment of inputs with instant recalculation"
+    },
+    "accessibility": {
+      "color_blind_safe": true,
+      "keyboard_navigation": true,
+      "screen_reader_labels": true
+    }
+  },
+
+  "data_sources": {
+    "primary": [
+      "Salesforce official ROI calculator (accessed 2026-01-20)",
+      "15 Agentforce case studies from knowledge base",
+      "Salesforce pricing documentation"
+    ],
+    "validation": [
+      "Wiley case study (213% ROI verified)",
+      "Salesforce Customer Zero (85% resolution verified)",
+      "Industry benchmark research (Gartner, Forrester)"
+    ]
+  }
+}
