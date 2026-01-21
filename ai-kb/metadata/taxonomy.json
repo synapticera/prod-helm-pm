@@ -1,0 +1,104 @@
+{
+  "content_types": [
+    "case_study",
+    "vendor_announcement",
+    "analyst_report",
+    "implementation_guide",
+    "benchmark_data",
+    "thought_leadership",
+    "product_documentation",
+    "user_review",
+    "news_article",
+    "video_transcript",
+    "podcast_transcript"
+  ],
+  "industries": [
+    "financial_services",
+    "banking",
+    "insurance",
+    "healthcare",
+    "retail",
+    "ecommerce",
+    "telecommunications",
+    "technology",
+    "travel_hospitality",
+    "utilities",
+    "government",
+    "education",
+    "manufacturing",
+    "automotive",
+    "media_entertainment"
+  ],
+  "use_cases": [
+    "chatbot_virtual_agent",
+    "agent_assist_copilot",
+    "automated_ticket_resolution",
+    "sentiment_analysis",
+    "quality_monitoring",
+    "workforce_optimization",
+    "self_service_portal",
+    "email_automation",
+    "voice_ai_ivr",
+    "proactive_outreach",
+    "knowledge_base_ai",
+    "ticket_routing_classification"
+  ],
+  "vendors": {
+    "tier1_platforms": [
+      "Salesforce",
+      "ServiceNow",
+      "Microsoft",
+      "Google Cloud",
+      "AWS"
+    ],
+    "tier2_ccaas": [
+      "Zendesk",
+      "Intercom",
+      "NICE",
+      "Genesys",
+      "Five9",
+      "Talkdesk",
+      "Verint",
+      "Freshworks",
+      "HubSpot",
+      "LivePerson"
+    ],
+    "tier3_ai_native": [
+      "Sierra",
+      "Ada",
+      "Forethought",
+      "Cognigy",
+      "Yellow.ai",
+      "Kustomer",
+      "Gorgias",
+      "Gladly",
+      "Qualified",
+      "Rasa",
+      "Botpress",
+      "Voiceflow"
+    ]
+  },
+  "metrics": [
+    "deflection_rate",
+    "csat_score",
+    "nps",
+    "handle_time",
+    "first_contact_resolution",
+    "cost_per_contact",
+    "agent_productivity",
+    "resolution_time",
+    "containment_rate",
+    "automation_rate",
+    "ticket_volume_reduction",
+    "roi_percentage",
+    "payback_period"
+  ],
+  "company_sizes": ["smb", "mid_market", "enterprise", "global_enterprise"],
+  "deployment_scales": [
+    "pilot_poc",
+    "department",
+    "business_unit",
+    "enterprise_wide",
+    "global"
+  ]
+}
