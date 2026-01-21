@@ -16,3 +16,6 @@ Thumbs.db
 # Logs
 logs/
 *.log
+
+# Conversation logs (may contain sensitive data)
+x-user/max-log/
