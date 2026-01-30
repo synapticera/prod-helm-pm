@@ -6,10 +6,10 @@ import type { Scenario } from '@/lib/types';
 import { Zap } from 'lucide-react';
 
 const scenarios: { id: Scenario; label: string; description: string }[] = [
-  { id: 'conservative', label: 'Conservative', description: '10-15% efficiency' },
-  { id: 'moderate', label: 'Moderate', description: '20-30% efficiency' },
-  { id: 'aggressive', label: 'Aggressive', description: '35-50% efficiency' },
-  { id: 'transformed', label: 'Transformed', description: '50-70% efficiency' },
+  { id: 'conservative', label: 'Incremental', description: '0-3 months' },
+  { id: 'moderate', label: 'Moderate', description: '3-9 months' },
+  { id: 'aggressive', label: 'Aggressive', description: '9-15 months' },
+  { id: 'transformed', label: 'Transformed', description: '15-24 months' },
 ];
 
 export default function ScenarioSelector() {

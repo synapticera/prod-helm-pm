@@ -8,7 +8,7 @@ import { formatCurrency } from '@/lib/utils/formatters';
 import type { Scenario } from '@/lib/types';
 
 const scenarios: { id: Scenario; label: string }[] = [
-  { id: 'conservative', label: 'Conservative' },
+  { id: 'conservative', label: 'Incremental' },
   { id: 'moderate', label: 'Moderate' },
   { id: 'transformed', label: 'Aggressive' },
 ];
@@ -35,11 +35,10 @@ export default function SavingsCompositionChart() {
   // Calculate label positions for Aggressive scenario (rightmost column)
   const aggressiveData = data[2];
   const reversedDepts = [...departments].reverse();
-  // Actual chart plotting area (accounting for axis labels)
-  // Total height: 300px, Y-axis top ~15px from top, X-axis labels ~35px from bottom
-  const chartTop = 15;
-  const chartBottom = 265; // Where the 0 line is
-  const chartHeight = chartBottom - chartTop; // ~250px actual plotting area
+  // Calibrated chart plotting area based on Y-axis tick positions
+  // 100% (max) is at ~y=25, 0% (min) is at ~y=255
+  const chartTop = 25;
+  const chartHeight = 230; // From visual inspection of Y-axis ticks
   const labels: Array<{ yPixels: number; text: string }> = [];
 
   if (aggressiveData) {

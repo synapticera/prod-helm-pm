@@ -174,10 +174,10 @@ export default function AIRoadmapTable() {
       <div className="bg-surface border border-border rounded-xl p-6 backdrop-blur-xl" style={{ boxShadow: 'var(--shadow-card)' }}>
         <h3 className="text-base font-semibold text-text-primary mb-4 uppercase">Implementation Approach by Phase</h3>
         <div className="grid grid-cols-1 md:grid-cols-3">
-          {/* Conservative Phase */}
+          {/* Incremental Phase */}
           <div className="space-y-2 p-4 border-r border-border">
             <div className="flex items-center gap-2">
-              <div className="text-sm font-bold text-accent-blue uppercase">Conservative</div>
+              <div className="text-sm font-bold text-accent-blue uppercase">Incremental</div>
               <div className="text-xs text-text-tertiary">0-3 months</div>
             </div>
             <div className="text-sm text-text-secondary">
@@ -230,7 +230,7 @@ export default function AIRoadmapTable() {
 
             {/* 3-Column Scenarios */}
             <div className="grid grid-cols-1 md:grid-cols-3">
-              {/* Conservative */}
+              {/* Incremental */}
               <div className="p-4 border-r border-border">
                 <div className="mb-3">
                   <div className="flex items-baseline gap-2">
@@ -300,7 +300,7 @@ export default function AIRoadmapTable() {
       <div className="bg-surface border-2 border-border-strong rounded-xl backdrop-blur-xl overflow-hidden" style={{ boxShadow: 'var(--shadow-card)' }}>
         <div className="grid grid-cols-3">
           <div className="text-center p-4 border-r border-border">
-            <div className="text-xs text-text-tertiary mb-1">CONSERVATIVE TOTALS</div>
+            <div className="text-xs text-text-tertiary mb-1">INCREMENTAL TOTALS</div>
             <div className="text-xl font-bold text-accent-blue">$2.3M (12%)</div>
             <div className="text-xs text-text-secondary mt-1">≈ 8.8 FTE equivalent</div>
             <div className="text-xs text-text-secondary">Investment: $380K</div>

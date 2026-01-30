@@ -78,6 +78,7 @@ remotion/
 ## Next Steps
 
 The current implementation includes:
+
 - ✅ Video script with scene-by-scene narration
 - ✅ ElevenLabs voiceover generation script
 - ✅ Main composition structure

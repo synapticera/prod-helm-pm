@@ -7,7 +7,7 @@ import { getDepartmentColor } from '@/lib/utils/colors';
 import type { Scenario } from '@/lib/types';
 
 const scenarios: { id: Scenario; label: string }[] = [
-  { id: 'conservative', label: 'Conservative' },
+  { id: 'conservative', label: 'Incremental' },
   { id: 'moderate', label: 'Moderate' },
   { id: 'transformed', label: 'Aggressive' },
 ];
@@ -39,11 +39,10 @@ export default function SavingsPercentageChart() {
   // Calculate label positions for Aggressive scenario (rightmost column)
   const aggressiveData = data[2];
   const reversedDepts = [...departments].reverse();
-  // Actual chart plotting area (accounting for axis labels)
-  // Total height: 300px, Y-axis top ~15px from top, X-axis labels ~35px from bottom
-  const chartTop = 15;
-  const chartBottom = 265; // Where the 0% line is
-  const chartHeight = chartBottom - chartTop; // ~250px actual plotting area
+  // Calibrated chart plotting area based on Y-axis tick positions
+  // 100% is at ~y=18, 0% is at ~y=255 (adjusted to center labels better)
+  const chartTop = 18;
+  const chartHeight = 237; // Adjusted for better vertical centering
   const labels: Array<{ yPixels: number; text: string }> = [];
 
   if (aggressiveData) {
@@ -53,7 +52,7 @@ export default function SavingsPercentageChart() {
       const value = aggressiveData[dept.id] || 0;
       if (value > 2) {
         const bandCenter = cumulative + value / 2; // Center in percentage space (0-100)
-        // Convert: 0% at bottom (y=chartBottom), 100% at top (y=chartTop)
+        // Convert: 0% at bottom (y=chartTop+chartHeight), 100% at top (y=chartTop)
         const yPixels = chartTop + chartHeight * (1 - bandCenter / 100);
         labels.push({
           yPixels,

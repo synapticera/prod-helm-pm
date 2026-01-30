@@ -92,7 +92,7 @@ export default function Home() {
         )}
 
         {activeTab === 'ebitda-ev' && (
-          <div className="space-y-5" style={{ paddingLeft: '150px', paddingRight: '150px' }}>
+          <div className="space-y-5">
             <div>
               <h2 className="text-lg font-semibold text-text-primary mb-2.5">
                 EBITDA & Enterprise Value Impact
@@ -120,7 +120,7 @@ export default function Home() {
         )}
 
         {activeTab === 'cash-flow' && (
-          <div style={{ paddingLeft: '100px', paddingRight: '100px' }}>
+          <div>
             <h2 className="text-lg font-semibold text-text-primary mb-3">
               7-Year Cash Flow Projection (Aggressive Scenario)
             </h2>

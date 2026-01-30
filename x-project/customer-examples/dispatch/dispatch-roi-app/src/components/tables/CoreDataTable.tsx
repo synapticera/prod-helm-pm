@@ -17,8 +17,8 @@ export default function CoreDataTable() {
           {/* Main header row */}
           <tr className="border-b border-border">
             <th className="text-left py-2 px-4 font-semibold text-text-secondary">Department</th>
-            <th className="text-right py-2 px-4 font-semibold text-text-secondary" colSpan={2}>Current Spend</th>
-            <th className="text-center py-2 px-4 font-semibold text-text-secondary">vs Median</th>
+            <th className="text-center py-2 px-4 font-semibold text-text-secondary" colSpan={2}>Current Spend</th>
+            <th className="text-center py-2 px-4 font-semibold text-text-secondary">vs Market Median</th>
             <th className="text-center py-2 px-4 font-semibold text-text-secondary border-l-2 border-border-strong" colSpan={6}>
               AI Cost Savings Program
             </th>
@@ -26,8 +26,8 @@ export default function CoreDataTable() {
           {/* Sub-header row */}
           <tr className="border-b-2 border-border-strong text-xs">
             <th></th>
-            <th className="text-right py-1 px-4 text-text-tertiary">Amount</th>
-            <th className="text-right py-1 px-4 text-text-tertiary">% of Total</th>
+            <th className="text-right py-1 text-text-tertiary" style={{ paddingRight: '4px' }}>Amount</th>
+            <th className="text-right py-1 text-text-tertiary" style={{ paddingLeft: '4px', paddingRight: '16px' }}>% of Total</th>
             <th></th>
             <th className="text-right py-1 px-2 text-text-tertiary border-l-2 border-border-strong">Savings $</th>
             <th className="text-right py-1 px-1 text-text-tertiary">Savings %</th>
@@ -40,8 +40,15 @@ export default function CoreDataTable() {
             <th></th>
             <th></th>
             <th></th>
-            <th className="text-center text-text-tertiary text-[10px] font-normal" style={{ paddingTop: '10px', paddingBottom: '10px' }}>median</th>
-            <th className="px-4 font-semibold text-accent-blue border-l-2 border-border-strong uppercase text-sm" colSpan={2} style={{ textAlign: 'center', paddingLeft: '35px', paddingTop: '10px', paddingBottom: '10px' }}>Conservative</th>
+            <th className="py-2 px-4">
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-12"></span>
+                <div className="relative w-20 flex justify-center">
+                  <span className="text-text-tertiary text-[10px] font-normal">median</span>
+                </div>
+              </div>
+            </th>
+            <th className="px-4 font-semibold text-accent-blue border-l-2 border-border-strong uppercase text-sm" colSpan={2} style={{ textAlign: 'center', paddingLeft: '35px', paddingTop: '10px', paddingBottom: '10px' }}>Incremental</th>
             <th className="px-4 font-semibold text-accent-green uppercase text-sm" colSpan={2} style={{ textAlign: 'center', paddingLeft: '45px', paddingTop: '10px', paddingBottom: '10px' }}>Moderate</th>
             <th className="px-4 font-semibold uppercase text-sm" colSpan={2} style={{ color: 'var(--synaptic-orange)', textAlign: 'center', paddingLeft: '45px', paddingTop: '10px', paddingBottom: '10px' }}>Aggressive</th>
           </tr>
@@ -78,55 +85,51 @@ export default function CoreDataTable() {
                 <td className="py-2 px-4 font-medium text-text-primary">{dept.name}</td>
 
                 {/* Current Spend - Amount */}
-                <td className="text-right py-2 px-4 font-bold text-text-primary">
+                <td className="text-right py-2 font-bold text-text-primary" style={{ paddingRight: '4px' }}>
                   {formatCurrency(dept.annualSpend)}
                 </td>
 
                 {/* Current Spend - % of Total */}
-                <td className="text-right py-2 px-4 text-text-secondary">
+                <td className="text-right py-2 text-text-secondary" style={{ paddingLeft: '4px', paddingRight: '16px' }}>
                   {formatPercent(pctOfTotal)}
                 </td>
 
-                {/* vs Median - DOT */}
+                {/* vs Median - DOT with percentage on left */}
                 <td className="py-2 px-4">
-                  <div className="relative h-6 bg-surface-elevated rounded flex items-center">
-                    {/* Median line (center) - behind everything */}
-                    <div
-                      className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-text-tertiary -translate-x-1/2"
-                      style={{ zIndex: 0 }}
-                    />
-                    {/* Current position dot */}
-                    <div
-                      className="absolute top-1/2 w-3 h-3 rounded-full"
-                      style={{
-                        left: `${cappedPosition}%`,
-                        transform: 'translate(-50%, -50%)',
-                        background: isAboveMedian ? '#EF4444' : '#10B981',
-                        boxShadow: `0 0 6px ${isAboveMedian ? '#EF444480' : '#10B98180'}`,
-                        zIndex: 10
-                      }}
-                    />
-                    {/* Percentage label - offset to avoid overlaps, in front of line */}
-                    <div
-                      className={`absolute top-1/2 text-xs font-medium whitespace-nowrap ${isAboveMedian ? 'text-accent-red' : 'text-accent-green'}`}
-                      style={{
-                        left: cappedPosition < 50
-                          ? `calc(${cappedPosition}% + 14px)` // Right of dot if on left side
-                          : `calc(${cappedPosition}% - 14px)`, // Left of dot if on right side
-                        transform: cappedPosition < 50 ? 'translateY(-50%)' : 'translate(-100%, -50%)',
-                        zIndex: 10
-                      }}
+                  <div className="flex items-center justify-center gap-2">
+                    {/* Percentage label - left side */}
+                    <span
+                      className={`text-xs font-medium whitespace-nowrap w-12 text-left ${isAboveMedian ? 'text-accent-red' : 'text-accent-green'}`}
                     >
                       {isAboveMedian ? '+' : ''}{formatPercent(delta)}
+                    </span>
+                    {/* Graphic */}
+                    <div className="relative h-6 w-20 bg-surface-elevated rounded flex items-center">
+                      {/* Median line (center) - lighter gray */}
+                      <div
+                        className="absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2"
+                        style={{ backgroundColor: 'rgba(139, 164, 196, 0.3)', zIndex: 0 }}
+                      />
+                      {/* Current position dot - half width (w-1.5 instead of w-3) */}
+                      <div
+                        className="absolute top-1/2 w-1.5 h-1.5 rounded-full"
+                        style={{
+                          left: `${cappedPosition}%`,
+                          transform: 'translate(-50%, -50%)',
+                          background: isAboveMedian ? '#EF4444' : '#10B981',
+                          boxShadow: `0 0 4px ${isAboveMedian ? '#EF444480' : '#10B98180'}`,
+                          zIndex: 10
+                        }}
+                      />
                     </div>
                   </div>
                 </td>
 
-                {/* Conservative - Savings $ */}
+                {/* Incremental - Savings $ */}
                 <td className="text-right py-2 pl-2 font-semibold text-accent-blue border-l-2 border-border-strong" style={{ paddingRight: '0px' }}>
                   {formatCurrency(conservativeSavings)}
                 </td>
-                {/* Conservative - Savings % */}
+                {/* Incremental - Savings % */}
                 <td className="text-right py-2 pr-4 text-text-tertiary" style={{ paddingLeft: '0px' }}>
                   {formatPercent(conservativePct)}
                 </td>
@@ -153,35 +156,86 @@ export default function CoreDataTable() {
           })}
 
           {/* Totals Row */}
-          <tr className="border-t-2 border-border-strong bg-surface/50 font-bold">
-            <td className="py-3 px-4 text-text-primary">TOTAL</td>
-            <td className="text-right py-3 px-4 text-text-primary">
-              {formatCurrency(totalCurrentSpend)}
-            </td>
-            <td className="text-right py-3 px-4 text-text-secondary">100%</td>
-            <td className="py-3 px-4"></td>
+          {(() => {
+            const totalConservativeSavings = departments.reduce((sum, d) =>
+              sum + calculateDepartmentSavings(d, 'conservative', aiScenarios), 0
+            );
+            const totalModerateSavings = departments.reduce((sum, d) =>
+              sum + calculateDepartmentSavings(d, 'moderate', aiScenarios), 0
+            );
+            const totalAggressiveSavings = departments.reduce((sum, d) =>
+              sum + calculateDepartmentSavings(d, 'transformed', aiScenarios), 0
+            );
 
-            <td className="text-right py-3 pr-1 pl-2 text-accent-blue border-l-2 border-border-strong">
-              {formatCurrency(departments.reduce((sum, d) =>
-                sum + calculateDepartmentSavings(d, 'conservative', aiScenarios), 0
-              ))}
-            </td>
-            <td className="text-right py-3 pl-1 pr-4"></td>
+            // Calculate overall deviation from median
+            const totalCurrentPct = departments.reduce((sum, d) => sum + d.percentOfRevenue, 0);
+            const totalMedianPct = departments.reduce((sum, d) => sum + d.benchmark.median, 0);
+            const totalDelta = totalCurrentPct - totalMedianPct;
+            const isAboveMedian = totalDelta > 0;
 
-            <td className="text-right py-3 pr-1 pl-2 text-accent-green">
-              {formatCurrency(departments.reduce((sum, d) =>
-                sum + calculateDepartmentSavings(d, 'moderate', aiScenarios), 0
-              ))}
-            </td>
-            <td className="text-right py-3 pl-1 pr-4"></td>
+            return (
+              <tr className="border-t-2 border-border-strong bg-surface/50 font-bold">
+                <td className="py-3 px-4 text-text-primary">TOTAL</td>
+                <td className="text-right py-3 text-text-primary" style={{ paddingRight: '4px' }}>
+                  {formatCurrency(totalCurrentSpend)}
+                </td>
+                <td className="text-right py-3 text-text-secondary" style={{ paddingLeft: '4px', paddingRight: '16px' }}>100%</td>
+                <td className="py-3 px-4">
+                  <div className="flex items-center justify-center gap-2">
+                    <span className={`text-xs font-bold whitespace-nowrap w-12 text-left ${isAboveMedian ? 'text-accent-red' : 'text-accent-green'}`}>
+                      {isAboveMedian ? '+' : ''}{formatPercent(totalDelta)}
+                    </span>
+                    <div className="relative h-6 w-20 bg-surface-elevated rounded flex items-center">
+                      {/* Median line (center) */}
+                      <div
+                        className="absolute top-0 bottom-0 left-1/2 w-0.5 -translate-x-1/2"
+                        style={{ backgroundColor: 'rgba(139, 164, 196, 0.3)', zIndex: 0 }}
+                      />
+                      {/* Current position dot */}
+                      {(() => {
+                        const maxDelta = 0.10;
+                        const position = 50 + (totalDelta / maxDelta) * 50;
+                        const cappedPosition = Math.max(0, Math.min(100, position));
+                        return (
+                          <div
+                            className="absolute top-1/2 w-1.5 h-1.5 rounded-full"
+                            style={{
+                              left: `${cappedPosition}%`,
+                              transform: 'translate(-50%, -50%)',
+                              background: isAboveMedian ? '#EF4444' : '#10B981',
+                              boxShadow: `0 0 4px ${isAboveMedian ? '#EF444480' : '#10B98180'}`,
+                              zIndex: 10
+                            }}
+                          />
+                        );
+                      })()}
+                    </div>
+                  </div>
+                </td>
 
-            <td className="text-right py-3 pr-1 pl-2" style={{ color: 'var(--synaptic-orange)' }}>
-              {formatCurrency(departments.reduce((sum, d) =>
-                sum + calculateDepartmentSavings(d, 'transformed', aiScenarios), 0
-              ))}
-            </td>
-            <td className="text-right py-3 pl-1 pr-2"></td>
-          </tr>
+                <td className="text-right py-3 pr-1 pl-2 text-accent-blue border-l-2 border-border-strong">
+                  {formatCurrency(totalConservativeSavings)}
+                </td>
+                <td className="text-right py-3 pl-1 pr-4 text-accent-blue">
+                  {formatPercent(totalConservativeSavings / totalCurrentSpend)}
+                </td>
+
+                <td className="text-right py-3 pr-1 pl-2 text-accent-green">
+                  {formatCurrency(totalModerateSavings)}
+                </td>
+                <td className="text-right py-3 pl-1 pr-4 text-accent-green">
+                  {formatPercent(totalModerateSavings / totalCurrentSpend)}
+                </td>
+
+                <td className="text-right py-3 pr-1 pl-2" style={{ color: 'var(--synaptic-orange)' }}>
+                  {formatCurrency(totalAggressiveSavings)}
+                </td>
+                <td className="text-right py-3 pl-1 pr-2" style={{ color: 'var(--synaptic-orange)' }}>
+                  {formatPercent(totalAggressiveSavings / totalCurrentSpend)}
+                </td>
+              </tr>
+            );
+          })()}
         </tbody>
       </table>
 
@@ -189,15 +243,15 @@ export default function CoreDataTable() {
       <div className="mt-3 flex items-center gap-4 text-xs text-text-tertiary px-4">
         <span className="font-medium text-text-secondary">Benchmark:</span>
         <div className="flex items-center gap-1">
-          <div className="w-0.5 h-3 bg-text-tertiary" />
+          <div className="w-0.5 h-3" style={{ backgroundColor: 'rgba(139, 164, 196, 0.3)' }} />
           <span>Median</span>
         </div>
         <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-full bg-accent-green" />
+          <div className="w-1.5 h-1.5 rounded-full bg-accent-green" />
           <span>Below (efficient)</span>
         </div>
         <div className="flex items-center gap-1">
-          <div className="w-3 h-3 rounded-full bg-accent-red" />
+          <div className="w-1.5 h-1.5 rounded-full bg-accent-red" />
           <span>Above (opportunity)</span>
         </div>
       </div>

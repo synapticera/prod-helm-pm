@@ -5,7 +5,7 @@ import { formatCurrency, formatPercent, formatMultiple } from '@/lib/utils/forma
 import type { Scenario } from '@/lib/types';
 
 const scenarios: { id: Scenario; label: string; color: string }[] = [
-  { id: 'conservative', label: 'Conservative', color: '#00D4FF' },
+  { id: 'conservative', label: 'Incremental', color: '#00D4FF' },
   { id: 'moderate', label: 'Moderate', color: '#10B981' },
   { id: 'transformed', label: 'Aggressive', color: '#FB4100' },
 ];
@@ -33,7 +33,7 @@ export default function EBITDAImpactTable() {
             <tr className="border-b-2 border-border-strong">
               <th className="text-left py-2 px-4 font-semibold text-text-secondary">Metric</th>
               <th className="text-right py-2 px-4 font-semibold text-text-secondary">Current</th>
-              <th className="text-right py-2 px-4 font-semibold text-accent-blue">Conservative</th>
+              <th className="text-right py-2 px-4 font-semibold text-accent-blue">Incremental</th>
               <th className="text-right py-2 px-4 font-semibold text-accent-green">Moderate</th>
               <th className="text-right py-2 px-4 font-semibold" style={{ color: 'var(--synaptic-orange)' }}>Aggressive</th>
             </tr>
@@ -84,7 +84,7 @@ export default function EBITDAImpactTable() {
                   <tr className="border-b border-border">
                     <th className="text-left py-1 px-4 text-xs font-medium text-text-tertiary">Metric</th>
                     <th className="text-right py-1 px-4 text-xs font-medium text-text-tertiary">Current</th>
-                    <th className="text-right py-1 px-4 text-xs font-medium text-accent-blue">Conservative</th>
+                    <th className="text-right py-1 px-4 text-xs font-medium text-accent-blue">Incremental</th>
                     <th className="text-right py-1 px-4 text-xs font-medium text-accent-green">Moderate</th>
                     <th className="text-right py-1 px-4 text-xs font-medium" style={{ color: 'var(--synaptic-orange)' }}>Aggressive</th>
                   </tr>

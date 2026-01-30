@@ -10,7 +10,7 @@ export default function EVGrowthChart({ multiple = 10 }: { multiple?: 8 | 10 | 1
 
   const data = [
     { scenario: 'Current', ev: (evImpact.baselineEbitda * multiple) / 1000000 },
-    { scenario: 'Conservative', ev: evImpact.evByScenario.conservative[evKey] / 1000000 },
+    { scenario: 'Incremental', ev: evImpact.evByScenario.conservative[evKey] / 1000000 },
     { scenario: 'Moderate', ev: evImpact.evByScenario.moderate[evKey] / 1000000 },
     { scenario: 'Aggressive', ev: evImpact.evByScenario.transformed[evKey] / 1000000 },
   ];

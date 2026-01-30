@@ -5,18 +5,20 @@
  * Creates a self-contained file that works offline
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-console.log('📦 Creating standalone HTML export...\n');
+console.log("📦 Creating standalone HTML export...\n");
 
 // Read the data file
-const dataPath = path.join(__dirname, 'src/lib/data/dispatch-roi.json');
-const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+const dataPath = path.join(__dirname, "src/lib/data/dispatch-roi.json");
+const data = JSON.parse(fs.readFileSync(dataPath, "utf-8"));
 
 // Read the global CSS
-const cssPath = path.join(__dirname, 'src/app/globals.css');
-const globalCSS = fs.existsSync(cssPath) ? fs.readFileSync(cssPath, 'utf-8') : '';
+const cssPath = path.join(__dirname, "src/app/globals.css");
+const globalCSS = fs.existsSync(cssPath)
+  ? fs.readFileSync(cssPath, "utf-8")
+  : "";
 
 // Create standalone HTML
 const html = `<!DOCTYPE html>
@@ -80,7 +82,9 @@ const html = `<!DOCTYPE html>
       <p>AI Savings Potential: <strong style="color: #10B981;">$${(data.projectedOutcomes.scenarios.conservative.totalSavings / 1000000).toFixed(1)}M - $${(data.projectedOutcomes.scenarios.transformed.totalSavings / 1000000).toFixed(1)}M</strong></p>
 
       <h3 style="margin-top: 30px;">Three Transformation Scenarios</h3>
-      ${data.aiScenarios.definitions.map(scenario => `
+      ${data.aiScenarios.definitions
+        .map(
+          (scenario) => `
         <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(139, 164, 196, 0.2); border-radius: 12px; padding: 20px; margin: 15px 0;">
           <h4 style="color: #00D4FF; margin-top: 0;">${scenario.name}</h4>
           <p>${scenario.description}</p>
@@ -88,7 +92,9 @@ const html = `<!DOCTYPE html>
           <p><strong>Savings:</strong> $${(data.projectedOutcomes.scenarios[scenario.id].totalSavings / 1000000).toFixed(1)}M</p>
           <p><strong>ROI:</strong> ${data.projectedOutcomes.scenarios[scenario.id].roiMultiple.toFixed(1)}x</p>
         </div>
-      `).join('')}
+      `
+        )
+        .join("")}
     </div>
 
     <div id="scenarios-tab" class="hidden">
@@ -104,7 +110,9 @@ const html = `<!DOCTYPE html>
           </tr>
         </thead>
         <tbody>
-          ${data.aiScenarios.definitions.map(scenario => `
+          ${data.aiScenarios.definitions
+            .map(
+              (scenario) => `
             <tr style="border-bottom: 1px solid rgba(139, 164, 196, 0.1);">
               <td style="padding: 12px; font-weight: 600;">${scenario.name}</td>
               <td style="text-align: right; padding: 12px;">$${(data.projectedOutcomes.scenarios[scenario.id].investment / 1000).toFixed(0)}K</td>
@@ -112,28 +120,37 @@ const html = `<!DOCTYPE html>
               <td style="text-align: right; padding: 12px; font-weight: 600;">${data.projectedOutcomes.scenarios[scenario.id].roiMultiple.toFixed(1)}x</td>
               <td style="text-align: right; padding: 12px;">${data.projectedOutcomes.scenarios[scenario.id].paybackPeriod}</td>
             </tr>
-          `).join('')}
+          `
+            )
+            .join("")}
         </tbody>
       </table>
     </div>
 
     <div id="departments-tab" class="hidden">
       <h2>Department Analysis</h2>
-      ${data.departments.filter(d => d.aiOpportunity).map(dept => `
+      ${data.departments
+        .filter((d) => d.aiOpportunity)
+        .map(
+          (dept) => `
         <div style="background: rgba(30, 41, 59, 0.6); border-left: 4px solid #00D4FF; border-radius: 8px; padding: 20px; margin: 15px 0;">
           <h3 style="margin-top: 0;">${dept.name}</h3>
           <p><strong>Current Spend:</strong> $${(dept.annualSpend / 1000000).toFixed(1)}M | <strong>Headcount:</strong> ${dept.headcount || 0} FTEs</p>
           <p style="color: #8BA4C4;">${dept.notes}</p>
         </div>
-      `).join('')}
+      `
+        )
+        .join("")}
     </div>
 
     <div id="financial-tab" class="hidden">
       <h2>Financial Impact</h2>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-        ${data.aiScenarios.definitions.slice(0, 3).map(scenario => {
-          const outcome = data.projectedOutcomes.scenarios[scenario.id];
-          return `
+        ${data.aiScenarios.definitions
+          .slice(0, 3)
+          .map((scenario) => {
+            const outcome = data.projectedOutcomes.scenarios[scenario.id];
+            return `
             <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(139, 164, 196, 0.2); border-radius: 12px; padding: 20px; text-align: center;">
               <h4 style="color: #00D4FF;">${scenario.name}</h4>
               <div style="font-size: 36px; font-weight: bold; color: #10B981; margin: 15px 0;">
@@ -146,7 +163,8 @@ const html = `<!DOCTYPE html>
               <div style="color: #8BA4C4; font-size: 14px;">EBITDA Margin</div>
             </div>
           `;
-        }).join('')}
+          })
+          .join("")}
       </div>
     </div>
   </div>
@@ -180,14 +198,16 @@ const html = `<!DOCTYPE html>
 </html>`;
 
 // Write the file
-const outputPath = path.join(__dirname, 'dispatch-roi-standalone.html');
-fs.writeFileSync(outputPath, html, 'utf-8');
+const outputPath = path.join(__dirname, "dispatch-roi-standalone.html");
+fs.writeFileSync(outputPath, html, "utf-8");
 
 const stats = fs.statSync(outputPath);
 const fileSizeMB = (stats.size / 1024 / 1024).toFixed(2);
 
-console.log('✅ Standalone HTML file created!\n');
+console.log("✅ Standalone HTML file created!\n");
 console.log(`📄 File: dispatch-roi-standalone.html`);
 console.log(`📊 Size: ${fileSizeMB} MB`);
-console.log(`\n💡 To use: Open dispatch-roi-standalone.html in any web browser`);
+console.log(
+  `\n💡 To use: Open dispatch-roi-standalone.html in any web browser`
+);
 console.log(`   Works offline, no server required!`);

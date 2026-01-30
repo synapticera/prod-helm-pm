@@ -8,7 +8,7 @@ import type { Scenario } from '@/lib/types';
 import AnimatedNumber from '@/components/shared/AnimatedNumber';
 
 const scenarios: { id: Scenario; label: string }[] = [
-  { id: 'conservative', label: 'Conservative' },
+  { id: 'conservative', label: 'Incremental' },
   { id: 'moderate', label: 'Moderate' },
   { id: 'aggressive', label: 'Aggressive' },
   { id: 'transformed', label: 'Transformed' },

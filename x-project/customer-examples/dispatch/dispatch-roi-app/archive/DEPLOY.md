@@ -11,6 +11,7 @@
 ### Step 1: Update Configuration
 
 Edit `deploy-gcp.sh` and set your GCP project ID:
+
 ```bash
 PROJECT_ID="your-actual-project-id"  # Change this line
 ```
@@ -29,6 +30,7 @@ gcloud auth configure-docker
 ```
 
 This will:
+
 1. Build a Docker image
 2. Push to Google Container Registry
 3. Deploy to Cloud Run
@@ -37,11 +39,13 @@ This will:
 ## Result
 
 You'll get a URL like:
+
 ```
 https://dispatch-roi-app-xxxxx-uc.a.run.app
 ```
 
 **This URL**:
+
 - ✅ Works for anyone (no login required)
 - ✅ Full interactive app with all tabs
 - ✅ PDF download works
@@ -52,6 +56,7 @@ https://dispatch-roi-app-xxxxx-uc.a.run.app
 ## Cost
 
 Cloud Run pricing:
+
 - First 2 million requests/month: **FREE**
 - After that: ~$0.00002 per request
 - Idle time: FREE
@@ -83,6 +88,7 @@ gcloud run deploy dispatch-roi-app \
 ## Updating the App
 
 To deploy updates:
+
 1. Make your changes
 2. Run `./deploy-gcp.sh` again
 3. Same URL, new version deployed!

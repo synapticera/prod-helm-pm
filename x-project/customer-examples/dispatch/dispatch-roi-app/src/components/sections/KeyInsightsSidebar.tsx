@@ -24,7 +24,7 @@ export default function KeyInsightsSidebar() {
         <div className="text-2xl font-bold text-accent-blue">
           {formatMultiple(outcomes.scenarios.conservative.roiMultiple)}
         </div>
-        <div className="text-xs text-text-secondary mt-1">Conservative: {outcomes.scenarios.conservative.paybackPeriod}</div>
+        <div className="text-xs text-text-secondary mt-1">Incremental: {outcomes.scenarios.conservative.paybackPeriod}</div>
       </div>
 
       {/* Rule of 40 Target */}

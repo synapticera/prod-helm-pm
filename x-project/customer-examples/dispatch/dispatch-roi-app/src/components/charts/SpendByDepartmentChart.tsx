@@ -8,7 +8,7 @@ import { formatCurrency } from '@/lib/utils/formatters';
 import type { Scenario } from '@/lib/types';
 
 const scenarios: { id: Scenario; label: string }[] = [
-  { id: 'conservative', label: 'Conservative' },
+  { id: 'conservative', label: 'Incremental' },
   { id: 'moderate', label: 'Moderate' },
   { id: 'transformed', label: 'Aggressive' },
 ];

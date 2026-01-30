@@ -15,7 +15,7 @@
       "ruleOf40": 0.236
     }
   },
-  
+
   "industryBenchmarks": {
     "scale": "$20-50M ARR Enterprise SaaS",
     "sources": [
@@ -25,12 +25,12 @@
       "OPEXEngine 2025 SaaS Sector Operating Trends"
     ],
     "metrics": {
-      "recurringRevenue": { "median": 0.90, "topQuartile": 0.95 },
-      "grossMargin": { "median": 0.75, "topQuartile": 0.80 },
-      "ebitdaMargin": { "median": 0.08, "topQuartile": 0.20 },
+      "recurringRevenue": { "median": 0.9, "topQuartile": 0.95 },
+      "grossMargin": { "median": 0.75, "topQuartile": 0.8 },
+      "ebitdaMargin": { "median": 0.08, "topQuartile": 0.2 },
       "arrPerFte": { "median": 200000, "topQuartile": 300000 },
       "growthRate": { "median": 0.26, "topQuartile": 0.45 },
-      "ruleOf40": { "target": 0.40, "topQuartile": 0.50 }
+      "ruleOf40": { "target": 0.4, "topQuartile": 0.5 }
     }
   },
 
@@ -40,13 +40,31 @@
       "name": "Cost of Sales (COGS)",
       "annualSpend": 5425145,
       "percentOfRevenue": 0.211,
-      "benchmark": { "median": 0.20, "topQuartile": 0.15 },
+      "benchmark": { "median": 0.2, "topQuartile": 0.15 },
       "assessment": "At Benchmark",
       "notes": "Includes hosting, infrastructure, software",
       "subcategories": [
-        { "name": "Hosting & Infrastructure", "spend": 1869795, "percentOfRevenue": 0.073, "benchmarkMedian": 0.05, "notes": "Higher infra costs; review cloud optimization" },
-        { "name": "Software & Subscriptions", "spend": 736470, "percentOfRevenue": 0.029, "benchmarkMedian": 0.04, "notes": "Efficient software spend" },
-        { "name": "Direct Labor (COS)", "spend": 2767617, "percentOfRevenue": 0.108, "benchmarkMedian": 0.05, "notes": "High service labor; see CS&S detail" }
+        {
+          "name": "Hosting & Infrastructure",
+          "spend": 1869795,
+          "percentOfRevenue": 0.073,
+          "benchmarkMedian": 0.05,
+          "notes": "Higher infra costs; review cloud optimization"
+        },
+        {
+          "name": "Software & Subscriptions",
+          "spend": 736470,
+          "percentOfRevenue": 0.029,
+          "benchmarkMedian": 0.04,
+          "notes": "Efficient software spend"
+        },
+        {
+          "name": "Direct Labor (COS)",
+          "spend": 2767617,
+          "percentOfRevenue": 0.108,
+          "benchmarkMedian": 0.05,
+          "notes": "High service labor; see CS&S detail"
+        }
       ]
     },
     {
@@ -60,13 +78,33 @@
       "notes": "19 FTEs in COS roles; higher than median",
       "teams": [
         { "name": "Customer Experience", "ftes": 4, "entity": "Dispatch" },
-        { "name": "Professional Services", "ftes": 7, "breakdown": "4 Dispatch + 3 Youreka" },
-        { "name": "Customer Engagement", "ftes": 3, "breakdown": "2 Dispatch + 1 Youreka" },
-        { "name": "Customer Solutions", "ftes": 5, "breakdown": "2 Dispatch + 3 Youreka" },
-        { "name": "Customer Success (OpEx)", "ftes": 8, "breakdown": "4 Dispatch + 4 Youreka" }
+        {
+          "name": "Professional Services",
+          "ftes": 7,
+          "breakdown": "4 Dispatch + 3 Youreka"
+        },
+        {
+          "name": "Customer Engagement",
+          "ftes": 3,
+          "breakdown": "2 Dispatch + 1 Youreka"
+        },
+        {
+          "name": "Customer Solutions",
+          "ftes": 5,
+          "breakdown": "2 Dispatch + 3 Youreka"
+        },
+        {
+          "name": "Customer Success (OpEx)",
+          "ftes": 8,
+          "breakdown": "4 Dispatch + 4 Youreka"
+        }
       ],
       "aiOpportunity": {
-        "useCases": ["Ticket Deflection & Self-Service", "Response Time & Resolution", "AI Chatbots"],
+        "useCases": [
+          "Ticket Deflection & Self-Service",
+          "Response Time & Resolution",
+          "AI Chatbots"
+        ],
         "evidence": [
           "Klarna: 700 FTE equivalent, $40M savings",
           "AI chatbots cut costs 30-40%",
@@ -80,16 +118,27 @@
       "name": "Product & Engineering (R&D)",
       "annualSpend": 6306079,
       "percentOfRevenue": 0.246,
-      "benchmark": { "median": 0.26, "topQuartile": 0.20 },
+      "benchmark": { "median": 0.26, "topQuartile": 0.2 },
       "assessment": "At Benchmark",
       "headcount": 25,
       "notes": "25 FTEs combined (Eng + PM)",
       "teams": [
-        { "name": "Engineering", "ftes": 20, "breakdown": "12 Dispatch + 8 Youreka" },
-        { "name": "Product Management", "ftes": 5, "breakdown": "4 Dispatch + 1 Youreka" }
+        {
+          "name": "Engineering",
+          "ftes": 20,
+          "breakdown": "12 Dispatch + 8 Youreka"
+        },
+        {
+          "name": "Product Management",
+          "ftes": 5,
+          "breakdown": "4 Dispatch + 1 Youreka"
+        }
       ],
       "aiOpportunity": {
-        "useCases": ["Developer Productivity (Copilot)", "Code Review & QA Automation"],
+        "useCases": [
+          "Developer Productivity (Copilot)",
+          "Code Review & QA Automation"
+        ],
         "evidence": [
           "GitHub Copilot: 55% faster coding, 26% more PRs",
           "46% of code AI-generated",
@@ -148,7 +197,11 @@
       "notes": "Typical for PE-backed companies with reporting requirements",
       "teams": [
         { "name": "Corporate / Executive", "ftes": 2, "entity": "Dispatch" },
-        { "name": "Finance & Operations", "ftes": 7, "breakdown": "4 Dispatch + 3 Youreka" }
+        {
+          "name": "Finance & Operations",
+          "ftes": 7,
+          "breakdown": "4 Dispatch + 3 Youreka"
+        }
       ],
       "aiOpportunity": {
         "useCases": ["AP/AR Automation", "FP&A & Reporting"],
@@ -166,53 +219,94 @@
     "definitions": [
       {
         "id": "conservative",
-        "name": "Conservative",
-        "efficiencyTarget": { "min": 0.10, "max": 0.15 },
-        "investmentLevel": { "min": 0.01, "max": 0.02, "label": "1-2% of OpEx" },
-        "timeline": "6-12 months",
+        "name": "Incremental",
+        "efficiencyTarget": { "min": 0.1, "max": 0.15 },
+        "investmentLevel": {
+          "min": 0.01,
+          "max": 0.02,
+          "label": "1-2% of OpEx"
+        },
+        "timeline": "0-3 months",
         "riskProfile": "Low",
         "description": "Point solutions, existing vendor AI features, minimal change management"
       },
       {
         "id": "moderate",
         "name": "Moderate",
-        "efficiencyTarget": { "min": 0.20, "max": 0.30 },
-        "investmentLevel": { "min": 0.03, "max": 0.05, "label": "3-5% of OpEx" },
-        "timeline": "12-18 months",
+        "efficiencyTarget": { "min": 0.2, "max": 0.3 },
+        "investmentLevel": {
+          "min": 0.03,
+          "max": 0.05,
+          "label": "3-5% of OpEx"
+        },
+        "timeline": "3-9 months",
         "riskProfile": "Medium",
         "description": "Integrated AI workflows, cross-functional pilots, structured rollout"
       },
       {
         "id": "aggressive",
         "name": "Aggressive",
-        "efficiencyTarget": { "min": 0.35, "max": 0.50 },
-        "investmentLevel": { "min": 0.05, "max": 0.08, "label": "5-8% of OpEx" },
-        "timeline": "18-24 months",
+        "efficiencyTarget": { "min": 0.35, "max": 0.5 },
+        "investmentLevel": {
+          "min": 0.05,
+          "max": 0.08,
+          "label": "5-8% of OpEx"
+        },
+        "timeline": "9-15 months",
         "riskProfile": "Medium-High",
         "description": "Comprehensive AI adoption, significant process redesign, dedicated AI team"
       },
       {
         "id": "transformed",
         "name": "Transformed",
-        "efficiencyTarget": { "min": 0.50, "max": 0.70 },
-        "investmentLevel": { "min": 0.08, "max": 0.12, "label": "8-12% of OpEx" },
-        "timeline": "24-36 months",
+        "efficiencyTarget": { "min": 0.5, "max": 0.7 },
+        "investmentLevel": {
+          "min": 0.08,
+          "max": 0.12,
+          "label": "8-12% of OpEx"
+        },
+        "timeline": "15-24 months",
         "riskProfile": "High",
         "description": "AI-native operations, org restructuring, autonomous agents, new business models"
       }
     ],
     "departmentImpact": {
-      "css": { "conservative": 0.125, "moderate": 0.30, "aggressive": 0.45, "transformed": 0.60 },
-      "rd": { "conservative": 0.15, "moderate": 0.25, "aggressive": 0.40, "transformed": 0.55 },
-      "sales": { "conservative": 0.10, "moderate": 0.20, "aggressive": 0.35, "transformed": 0.50 },
-      "marketing": { "conservative": 0.15, "moderate": 0.30, "aggressive": 0.45, "transformed": 0.60 },
-      "ga": { "conservative": 0.10, "moderate": 0.20, "aggressive": 0.30, "transformed": 0.45 }
+      "css": {
+        "conservative": 0.125,
+        "moderate": 0.3,
+        "aggressive": 0.45,
+        "transformed": 0.6
+      },
+      "rd": {
+        "conservative": 0.15,
+        "moderate": 0.25,
+        "aggressive": 0.4,
+        "transformed": 0.55
+      },
+      "sales": {
+        "conservative": 0.1,
+        "moderate": 0.2,
+        "aggressive": 0.35,
+        "transformed": 0.5
+      },
+      "marketing": {
+        "conservative": 0.15,
+        "moderate": 0.3,
+        "aggressive": 0.45,
+        "transformed": 0.6
+      },
+      "ga": {
+        "conservative": 0.1,
+        "moderate": 0.2,
+        "aggressive": 0.3,
+        "transformed": 0.45
+      }
     },
     "investmentRates": {
       "conservative": 0.015,
       "moderate": 0.04,
       "aggressive": 0.07,
-      "transformed": 0.10
+      "transformed": 0.1
     }
   },
 
@@ -276,7 +370,11 @@
     "multiples": [
       { "multiple": 8, "label": "Lower-growth SaaS", "baselineEv": 32166248 },
       { "multiple": 10, "label": "Median SaaS", "baselineEv": 40207810 },
-      { "multiple": 12, "label": "Higher-growth / Premium SaaS", "baselineEv": 48249372 }
+      {
+        "multiple": 12,
+        "label": "Higher-growth / Premium SaaS",
+        "baselineEv": 48249372
+      }
     ],
     "evByScenario": {
       "conservative": {

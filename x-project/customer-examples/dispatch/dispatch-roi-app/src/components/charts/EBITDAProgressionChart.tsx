@@ -9,7 +9,7 @@ export default function EBITDAProgressionChart() {
 
   const data = [
     { scenario: 'Current', ebitda: outcomes.scenarios.baseline.ebitda / 1000000 },
-    { scenario: 'Conservative', ebitda: outcomes.scenarios.conservative.newEbitda / 1000000 },
+    { scenario: 'Incremental', ebitda: outcomes.scenarios.conservative.newEbitda / 1000000 },
     { scenario: 'Moderate', ebitda: outcomes.scenarios.moderate.newEbitda / 1000000 },
     { scenario: 'Aggressive', ebitda: outcomes.scenarios.transformed.newEbitda / 1000000 },
   ];
