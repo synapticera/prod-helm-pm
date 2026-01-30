@@ -1,0 +1,357 @@
+"{
+  ""company"": {
+    ""name"": ""Dispatch"",
+    ""description"": ""Enterprise SaaS company (includes Youreka subsidiary)"",
+    ""fiscalYear"": 2025,
+    ""metrics"": {
+      ""totalRevenue"": 25686093,
+      ""recurringRevenuePercent"": 0.97,
+      ""grossMargin"": 0.789,
+      ""ebitda"": 4020781,
+      ""ebitdaMargin"": 0.157,
+      ""totalEmployees"": 76,
+      ""arrPerEmployee"": 337975,
+      ""yoyRevenueGrowth"": 0.079,
+      ""ruleOf40"": 0.236
+    }
+  },
+  
+  ""industryBenchmarks"": {
+    ""scale"": ""$20-50M ARR Enterprise SaaS"",
+    ""sources"": [
+      ""SaaS Capital 2025 Spending Benchmarks (1,000+ private B2B SaaS companies)"",
+      ""High Alpha 2025 SaaS Benchmarks Report"",
+      ""Benchmarkit 2025 SaaS Performance Metrics"",
+      ""OPEXEngine 2025 SaaS Sector Operating Trends""
+    ],
+    ""metrics"": {
+      ""recurringRevenue"": { ""median"": 0.90, ""topQuartile"": 0.95 },
+      ""grossMargin"": { ""median"": 0.75, ""topQuartile"": 0.80 },
+      ""ebitdaMargin"": { ""median"": 0.08, ""topQuartile"": 0.20 },
+      ""arrPerFte"": { ""median"": 200000, ""topQuartile"": 300000 },
+      ""growthRate"": { ""median"": 0.26, ""topQuartile"": 0.45 },
+      ""ruleOf40"": { ""target"": 0.40, ""topQuartile"": 0.50 }
+    }
+  },
+
+  ""departments"": [
+    {
+      ""id"": ""cogs"",
+      ""name"": ""Cost of Sales (COGS)"",
+      ""annualSpend"": 5425145,
+      ""percentOfRevenue"": 0.211,
+      ""benchmark"": { ""median"": 0.20, ""topQuartile"": 0.15 },
+      ""assessment"": ""At Benchmark"",
+      ""notes"": ""Includes hosting, infrastructure, software"",
+      ""subcategories"": [
+        { ""name"": ""Hosting & Infrastructure"", ""spend"": 1869795, ""percentOfRevenue"": 0.073, ""benchmarkMedian"": 0.05, ""notes"": ""Higher infra costs; review cloud optimization"" },
+        { ""name"": ""Software & Subscriptions"", ""spend"": 736470, ""percentOfRevenue"": 0.029, ""benchmarkMedian"": 0.04, ""notes"": ""Efficient software spend"" },
+        { ""name"": ""Direct Labor (COS)"", ""spend"": 2767617, ""percentOfRevenue"": 0.108, ""benchmarkMedian"": 0.05, ""notes"": ""High service labor; see CS&S detail"" }
+      ]
+    },
+    {
+      ""id"": ""css"",
+      ""name"": ""Customer Success & Service"",
+      ""annualSpend"": 2767617,
+      ""percentOfRevenue"": 0.108,
+      ""benchmark"": { ""median"": 0.08, ""topQuartile"": 0.06 },
+      ""assessment"": ""Above Median"",
+      ""headcount"": 19,
+      ""notes"": ""19 FTEs in COS roles; higher than median"",
+      ""teams"": [
+        { ""name"": ""Customer Experience"", ""ftes"": 4, ""entity"": ""Dispatch"" },
+        { ""name"": ""Professional Services"", ""ftes"": 7, ""breakdown"": ""4 Dispatch + 3 Youreka"" },
+        { ""name"": ""Customer Engagement"", ""ftes"": 3, ""breakdown"": ""2 Dispatch + 1 Youreka"" },
+        { ""name"": ""Customer Solutions"", ""ftes"": 5, ""breakdown"": ""2 Dispatch + 3 Youreka"" },
+        { ""name"": ""Customer Success (OpEx)"", ""ftes"": 8, ""breakdown"": ""4 Dispatch + 4 Youreka"" }
+      ],
+      ""aiOpportunity"": {
+        ""useCases"": [""Ticket Deflection & Self-Service"", ""Response Time & Resolution"", ""AI Chatbots""],
+        ""evidence"": [
+          ""Klarna: 700 FTE equivalent, $40M savings"",
+          ""AI chatbots cut costs 30-40%"",
+          ""AI agents deflect 45-60% of tickets (Freshworks)"",
+          ""First response: 6hrs→4min; Resolution: 32hrs→32min""
+        ]
+      }
+    },
+    {
+      ""id"": ""rd"",
+      ""name"": ""Product & Engineering (R&D)"",
+      ""annualSpend"": 6306079,
+      ""percentOfRevenue"": 0.246,
+      ""benchmark"": { ""median"": 0.26, ""topQuartile"": 0.20 },
+      ""assessment"": ""At Benchmark"",
+      ""headcount"": 25,
+      ""notes"": ""25 FTEs combined (Eng + PM)"",
+      ""teams"": [
+        { ""name"": ""Engineering"", ""ftes"": 20, ""breakdown"": ""12 Dispatch + 8 Youreka"" },
+        { ""name"": ""Product Management"", ""ftes"": 5, ""breakdown"": ""4 Dispatch + 1 Youreka"" }
+      ],
+      ""aiOpportunity"": {
+        ""useCases"": [""Developer Productivity (Copilot)"", ""Code Review & QA Automation""],
+        ""evidence"": [
+          ""GitHub Copilot: 55% faster coding, 26% more PRs"",
+          ""46% of code AI-generated"",
+          ""90% Fortune 100 use Copilot"",
+          ""PR time: 9.6 days→2.4 days (4x faster)"",
+          ""67% faster code review""
+        ]
+      }
+    },
+    {
+      ""id"": ""sales"",
+      ""name"": ""Sales"",
+      ""annualSpend"": 4626641,
+      ""percentOfRevenue"": 0.18,
+      ""benchmark"": { ""median"": 0.19, ""topQuartile"": 0.14 },
+      ""assessment"": ""At Benchmark"",
+      ""headcount"": 11,
+      ""notes"": ""11 FTEs (7 Dispatch + 4 Youreka)"",
+      ""aiOpportunity"": {
+        ""useCases"": [""Rep Productivity & Admin"", ""Lead Scoring & Pipeline""],
+        ""evidence"": [
+          ""AI doubles active selling time (Bain 2025)"",
+          ""30%+ higher win rates"",
+          ""Reps save 1-5 hrs/week; 50-250 extra selling hours/year per rep"",
+          ""80%+ of sales teams using AI report increased revenue""
+        ]
+      }
+    },
+    {
+      ""id"": ""marketing"",
+      ""name"": ""Marketing"",
+      ""annualSpend"": 1041226,
+      ""percentOfRevenue"": 0.041,
+      ""benchmark"": { ""median"": 0.08, ""topQuartile"": 0.06 },
+      ""assessment"": ""Below Median"",
+      ""headcount"": 4,
+      ""notes"": ""4 FTEs (2 Dispatch + 2 Youreka) - Efficient but may limit growth"",
+      ""aiOpportunity"": {
+        ""useCases"": [""Content Generation"", ""Campaign Optimization""],
+        ""evidence"": [
+          ""Marketing AI: 300% avg ROI"",
+          ""44% higher productivity, 11 hrs saved/week"",
+          ""Content creation time reduced 50-99%"",
+          ""AI campaigns: 20-30% higher ROI; 40% higher conversion rates""
+        ]
+      }
+    },
+    {
+      ""id"": ""ga"",
+      ""name"": ""G&A (Finance, HR, Legal)"",
+      ""annualSpend"": 4266220,
+      ""percentOfRevenue"": 0.166,
+      ""benchmark"": { ""median"": 0.11, ""topQuartile"": 0.08 },
+      ""assessment"": ""Above Median"",
+      ""headcount"": 9,
+      ""notes"": ""Typical for PE-backed companies with reporting requirements"",
+      ""teams"": [
+        { ""name"": ""Corporate / Executive"", ""ftes"": 2, ""entity"": ""Dispatch"" },
+        { ""name"": ""Finance & Operations"", ""ftes"": 7, ""breakdown"": ""4 Dispatch + 3 Youreka"" }
+      ],
+      ""aiOpportunity"": {
+        ""useCases"": [""AP/AR Automation"", ""FP&A & Reporting""],
+        ""evidence"": [
+          ""Finance AI: 22-25% cost reduction"",
+          ""AP workflow time 20hrs→2hrs (BCG/Bain)"",
+          ""Invoice processing 85% faster"",
+          ""75%+ finance leaders expect AI agents within 3 years""
+        ]
+      }
+    }
+  ],
+
+  ""aiScenarios"": {
+    ""definitions"": [
+      {
+        ""id"": ""conservative"",
+        ""name"": ""Conservative"",
+        ""efficiencyTarget"": { ""min"": 0.10, ""max"": 0.15 },
+        ""investmentLevel"": { ""min"": 0.01, ""max"": 0.02, ""label"": ""1-2% of OpEx"" },
+        ""timeline"": ""6-12 months"",
+        ""riskProfile"": ""Low"",
+        ""description"": ""Point solutions, existing vendor AI features, minimal change management""
+      },
+      {
+        ""id"": ""moderate"",
+        ""name"": ""Moderate"",
+        ""efficiencyTarget"": { ""min"": 0.20, ""max"": 0.30 },
+        ""investmentLevel"": { ""min"": 0.03, ""max"": 0.05, ""label"": ""3-5% of OpEx"" },
+        ""timeline"": ""12-18 months"",
+        ""riskProfile"": ""Medium"",
+        ""description"": ""Integrated AI workflows, cross-functional pilots, structured rollout""
+      },
+      {
+        ""id"": ""aggressive"",
+        ""name"": ""Aggressive"",
+        ""efficiencyTarget"": { ""min"": 0.35, ""max"": 0.50 },
+        ""investmentLevel"": { ""min"": 0.05, ""max"": 0.08, ""label"": ""5-8% of OpEx"" },
+        ""timeline"": ""18-24 months"",
+        ""riskProfile"": ""Medium-High"",
+        ""description"": ""Comprehensive AI adoption, significant process redesign, dedicated AI team""
+      },
+      {
+        ""id"": ""transformed"",
+        ""name"": ""Transformed"",
+        ""efficiencyTarget"": { ""min"": 0.50, ""max"": 0.70 },
+        ""investmentLevel"": { ""min"": 0.08, ""max"": 0.12, ""label"": ""8-12% of OpEx"" },
+        ""timeline"": ""24-36 months"",
+        ""riskProfile"": ""High"",
+        ""description"": ""AI-native operations, org restructuring, autonomous agents, new business models""
+      }
+    ],
+    ""departmentImpact"": {
+      ""css"": { ""conservative"": 0.125, ""moderate"": 0.30, ""aggressive"": 0.45, ""transformed"": 0.60 },
+      ""rd"": { ""conservative"": 0.15, ""moderate"": 0.25, ""aggressive"": 0.40, ""transformed"": 0.55 },
+      ""sales"": { ""conservative"": 0.10, ""moderate"": 0.20, ""aggressive"": 0.35, ""transformed"": 0.50 },
+      ""marketing"": { ""conservative"": 0.15, ""moderate"": 0.30, ""aggressive"": 0.45, ""transformed"": 0.60 },
+      ""ga"": { ""conservative"": 0.10, ""moderate"": 0.20, ""aggressive"": 0.30, ""transformed"": 0.45 }
+    },
+    ""investmentRates"": {
+      ""conservative"": 0.015,
+      ""moderate"": 0.04,
+      ""aggressive"": 0.07,
+      ""transformed"": 0.10
+    }
+  },
+
+  ""projectedOutcomes"": {
+    ""totalOpEx"": 19007783,
+    ""scenarios"": {
+      ""baseline"": {
+        ""ebitda"": 4020781,
+        ""ebitdaMargin"": 0.157,
+        ""ruleOf40"": 0.237
+      },
+      ""conservative"": {
+        ""totalSavings"": 2338334,
+        ""investment"": 380156,
+        ""netBenefit"": 1958178,
+        ""roiMultiple"": 6.15,
+        ""paybackPeriod"": ""2-3 months"",
+        ""fteEquivalent"": 11,
+        ""newEbitda"": 5978959,
+        ""newEbitdaMargin"": 0.233,
+        ""newRuleOf40"": 0.313
+      },
+      ""moderate"": {
+        ""totalSavings"": 4497745,
+        ""investment"": 760311,
+        ""netBenefit"": 3737434,
+        ""roiMultiple"": 5.91,
+        ""paybackPeriod"": ""2-3 months"",
+        ""fteEquivalent"": 21,
+        ""newEbitda"": 8138370,
+        ""newEbitdaMargin"": 0.317,
+        ""newRuleOf40"": 0.397
+      },
+      ""aggressive"": {
+        ""totalSavings"": 7136105,
+        ""investment"": 1330545,
+        ""netBenefit"": 5805560,
+        ""roiMultiple"": 5.36,
+        ""paybackPeriod"": ""3-4 months"",
+        ""fteEquivalent"": 34,
+        ""newEbitda"": 10826730,
+        ""newEbitdaMargin"": 0.422,
+        ""newRuleOf40"": 0.502
+      },
+      ""transformed"": {
+        ""totalSavings"": 9987067,
+        ""investment"": 1900779,
+        ""netBenefit"": 8086288,
+        ""roiMultiple"": 5.25,
+        ""paybackPeriod"": ""3-4 months"",
+        ""fteEquivalent"": 47,
+        ""newEbitda"": 13107688,
+        ""newEbitdaMargin"": 0.51,
+        ""newRuleOf40"": 0.59
+      }
+    }
+  },
+
+  ""enterpriseValueImpact"": {
+    ""baselineEbitda"": 4020781,
+    ""multiples"": [
+      { ""multiple"": 8, ""label"": ""Lower-growth SaaS"", ""baselineEv"": 32166248 },
+      { ""multiple"": 10, ""label"": ""Median SaaS"", ""baselineEv"": 40207810 },
+      { ""multiple"": 12, ""label"": ""Higher-growth / Premium SaaS"", ""baselineEv"": 48249372 }
+    ],
+    ""evByScenario"": {
+      ""conservative"": {
+        ""ebitda"": 5978959,
+        ""ev8x"": 47831672,
+        ""ev10x"": 59789590,
+        ""ev12x"": 71747508,
+        ""evGain10x"": 19581780,
+        ""evReturnMultiple"": 51.5
+      },
+      ""moderate"": {
+        ""ebitda"": 8138370,
+        ""ev8x"": 65106960,
+        ""ev10x"": 81383700,
+        ""ev12x"": 97660440,
+        ""evGain10x"": 41175890,
+        ""evReturnMultiple"": 54.2
+      },
+      ""aggressive"": {
+        ""ebitda"": 10826730,
+        ""ev8x"": 86613840,
+        ""ev10x"": 108267300,
+        ""ev12x"": 129920760,
+        ""evGain10x"": 68059490,
+        ""evReturnMultiple"": 51.1
+      },
+      ""transformed"": {
+        ""ebitda"": 13107688,
+        ""ev8x"": 104861504,
+        ""ev10x"": 131076880,
+        ""ev12x"": 157292256,
+        ""evGain10x"": 90869070,
+        ""evReturnMultiple"": 47.8
+      }
+    }
+  },
+
+  ""marketEvidence"": {
+    ""generalStats"": [
+      ""Early AI adopters report $3.70 return per $1 invested; top performers achieve $10.30 (Fullview 2025)"",
+      ""78% of organizations now use AI in at least one business function (McKinsey 2025)"",
+      ""For every $1 on AI model development, expect $3 on change management (McKinsey)""
+    ],
+    ""byDepartment"": {
+      ""customerSuccess"": [
+        ""Klarna: 700 FTE equivalent work, $40M annual savings from AI chatbot"",
+        ""AI chatbot cost $0.50 vs $6 human interaction (12x cost reduction)"",
+        ""45-60% ticket deflection rates achievable with AI agents"",
+        ""First response time: 6 hours → 4 minutes (Freshworks 2025)""
+      ],
+      ""engineering"": [
+        ""GitHub Copilot: 55% faster task completion"",
+        ""26% more pull requests merged"",
+        ""46% of new code now AI-generated"",
+        ""90% of Fortune 100 companies use GitHub Copilot"",
+        ""PR cycle time: 9.6 days → 2.4 days (4x improvement)""
+      ],
+      ""sales"": [
+        ""AI can double active selling time (Bain 2025)"",
+        ""30%+ higher win rates with AI assistance"",
+        ""Sales reps save 1-5 hours per week on admin"",
+        ""80%+ of AI-enabled sales teams report increased revenue (Sopro 2025)""
+      ],
+      ""marketing"": [
+        ""Average 300% ROI on marketing AI investments"",
+        ""44% higher productivity; 11 hours saved per week"",
+        ""Content creation time reduced 50-99%"",
+        ""AI campaigns show 20-30% higher ROI, 40% higher conversion""
+      ],
+      ""finance"": [
+        ""22-25% cost reduction in finance functions (BCG/Bain)"",
+        ""AP workflow: 20 hours → 2 hours"",
+        ""Invoice processing 85% faster"",
+        ""75%+ of finance leaders expect AI agents within 3 years""
+      ]
+    }
+  }
+}"

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELM Context Graph Architecture Diagrams</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .diagram-container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .description {
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        svg {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        .node {
+            cursor: pointer;
+        }
+        .node circle {
+            stroke: #fff;
+            stroke-width: 3px;
+        }
+        .node text {
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .link {
+            fill: none;
+            stroke: #999;
+            stroke-width: 2px;
+        }
+        .link-label {
+            font-size: 10px;
+            fill: #666;
+        }
+        .legend {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .legend-item {
+            display: inline-block;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        .legend-color {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .highlight {
+            background: #fffbdd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔗 HELM Context Graph Architecture</h1>
+    <p class="description">
+        Interactive visualizations showing how context graphs transform HELM from an execution engine
+        into an organizational memory system for AI agents.
+    </p>
+
+    <!-- Diagram 1: Basic Context Graph Schema -->
+    <div class="diagram-container">
+        <h2>1. HELM Context Graph Schema - Core Node Types</h2>
+        <p class="description">
+            This diagram shows the fundamental node types in HELM's context graph and their relationships.
+            Click nodes to see details.
+        </p>
+        <div class="legend">
+            <div class="legend-item">
+                <span class="legend-color" style="background: #3498db;"></span> Entities
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #e74c3c;"></span> Events/Decisions
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #f39c12;"></span> Contextual Metadata
+            </div>
+            <div class="legend-item">
+                <span class="legend-color" style="background: #2ecc71;"></span> Evidence
+            </div>
+        </div>
+        <svg id="schema-diagram" width="1200" height="600"></svg>
+    </div>
+
+    <!-- Diagram 2: Execution Flow -->
+    <div class="diagram-container">
+        <h2>2. Context Graph Integration - Execution Flow</h2>
+        <p class="description">
+            How HELM automatically builds the context graph during agent execution.
+        </p>
+        <svg id="flow-diagram" width="1200" height="400"></svg>
+    </div>
+
+    <!-- Diagram 3: Query Example -->
+    <div class="diagram-container">
+        <h2>3. Real Example: Compliance Exception Query</h2>
+        <p class="description">
+            Visualizing how a "Why was this exception granted?" query traverses the context graph.
+        </p>
+        <div class="highlight">
+            <strong>Query:</strong> "Why was Task #T-1234 approved for $10,000 refund when policy limit is $5,000?"
+        </div>
+        <svg id="query-diagram" width="1200" height="500"></svg>
+        <div class="code-block">
+MATCH (task:Task {id: 'T-1234'})-[:APPROVED_BY]->(approver:User)
+MATCH (task)-[:REQUIRED_COMPLIANCE]->(policy:Policy)
+MATCH (task)-[:EXCEPTION_JUSTIFIED_BY]->(evidence:Evidence)
+MATCH (task)-[:PRECEDENT]->(priorTask:Task)
+RETURN task, approver, policy, evidence, priorTask
+        </div>
+    </div>
+
+    <!-- Diagram 4: Architecture Layers -->
+    <div class="diagram-container">
+        <h2>4. HELM Context Graph Architecture - Full Stack</h2>
+        <p class="description">
+            Complete architecture showing how context graphs fit into HELM's overall system.
+        </p>
+        <svg id="architecture-diagram" width="1200" height="600"></svg>
+    </div>
+
+    <script>
+        // Color schemes
+        const colors = {
+            entity: '#3498db',
+            event: '#e74c3c',
+            metadata: '#f39c12',
+            evidence: '#2ecc71',
+            link: '#999'
+        };
+
+        // Diagram 1: Schema Diagram
+        function drawSchemaDiagram() {
+            const svg = d3.select('#schema-diagram');
+            const width = 1200, height = 600;
+
+            const nodes = [
+                // Entities (blue)
+                { id: 'agent', label: 'Agent', type: 'entity', x: 200, y: 150, description: 'AI agent that executes tasks' },
+                { id: 'user', label: 'User', type: 'entity', x: 200, y: 300, description: 'Human users who approve/review' },
+                { id: 'resource', label: 'Resource', type: 'entity', x: 200, y: 450, description: 'Files, APIs, systems accessed' },
+
+                // Events (red)
+                { id: 'task', label: 'Task', type: 'event', x: 500, y: 250, description: 'Execution of specific task/workflow' },
+                { id: 'decision', label: 'Decision', type: 'event', x: 500, y: 400, description: 'Approval, exception, or judgment point' },
+
+                // Metadata (orange)
+                { id: 'policy', label: 'Policy', type: 'metadata', x: 800, y: 150, description: 'Business rules and compliance requirements' },
+                { id: 'template', label: 'Template', type: 'metadata', x: 800, y: 300, description: 'Reusable workflow patterns' },
+
+                // Evidence (green)
+                { id: 'document', label: 'Document', type: 'evidence', x: 1000, y: 200, description: 'Retrieved documents, contracts, specs' },
+                { id: 'api-response', label: 'API Response', type: 'evidence', x: 1000, y: 350, description: 'Data from external systems' },
+                { id: 'tool-output', label: 'Tool Output', type: 'evidence', x: 1000, y: 500, description: 'Results from tool executions' }
+            ];
+
+            const links = [
+                { source: 'agent', target: 'task', label: 'EXECUTED' },
+                { source: 'user', target: 'decision', label: 'APPROVED_BY' },
+                { source: 'task', target: 'resource', label: 'ACCESSED' },
+                { source: 'task', target: 'policy', label: 'REQUIRED_COMPLIANCE' },
+                { source: 'task', target: 'document', label: 'USED_CONTEXT' },
+                { source: 'decision', target: 'policy', label: 'EXCEPTION_TO' },
+                { source: 'decision', target: 'api-response', label: 'BASED_ON' },
+                { source: 'task', target: 'template', label: 'INSTANCE_OF' },
+                { source: 'task', target: 'tool-output', label: 'PRODUCED' }
+            ];
+
+            // Draw links
+            svg.selectAll('.link')
+                .data(links)
+                .enter()
+                .append('line')
+                .attr('class', 'link')
+                .attr('x1', d => nodes.find(n => n.id === d.source).x)
+                .attr('y1', d => nodes.find(n => n.id === d.source).y)
+                .attr('x2', d => nodes.find(n => n.id === d.target).x)
+                .attr('y2', d => nodes.find(n => n.id === d.target).y)
+                .attr('marker-end', 'url(#arrowhead)');
+
+            // Draw link labels
+            svg.selectAll('.link-label')
+                .data(links)
+                .enter()
+                .append('text')
+                .attr('class', 'link-label')
+                .attr('x', d => (nodes.find(n => n.id === d.source).x + nodes.find(n => n.id === d.target).x) / 2)
+                .attr('y', d => (nodes.find(n => n.id === d.source).y + nodes.find(n => n.id === d.target).y) / 2)
+                .text(d => d.label);
+
+            // Draw nodes
+            const nodeGroups = svg.selectAll('.node')
+                .data(nodes)
+                .enter()
+                .append('g')
+                .attr('class', 'node')
+                .attr('transform', d => `translate(${d.x},${d.y})`)
+                .on('mouseover', function(event, d) {
+                    d3.select(this).select('circle')
+                        .transition()
+                        .attr('r', 45);
+
+                    // Show description
+                    svg.append('text')
+                        .attr('class', 'tooltip')
+                        .attr('x', d.x)
+                        .attr('y', d.y - 60)
+                        .attr('text-anchor', 'middle')
+                        .style('font-size', '11px')
+                        .style('fill', '#333')
+                        .style('background', 'white')
+                        .text(d.description);
+                })
+                .on('mouseout', function(event, d) {
+                    d3.select(this).select('circle')
+                        .transition()
+                        .attr('r', 40);
+                    svg.selectAll('.tooltip').remove();
+                });
+
+            nodeGroups.append('circle')
+                .attr('r', 40)
+                .attr('fill', d => colors[d.type]);
+
+            nodeGroups.append('text')
+                .attr('text-anchor', 'middle')
+                .attr('dy', '.35em')
+                .attr('fill', 'white')
+                .text(d => d.label);
+
+            // Add arrow marker
+            svg.append('defs').append('marker')
+                .attr('id', 'arrowhead')
+                .attr('markerWidth', 10)
+                .attr('markerHeight', 10)
+                .attr('refX', 45)
+                .attr('refY', 3)
+                .attr('orient', 'auto')
+                .append('polygon')
+                .attr('points', '0 0, 6 3, 0 6')
+                .attr('fill', colors.link);
+        }
+
+        // Diagram 2: Flow Diagram
+        function drawFlowDiagram() {
+            const svg = d3.select('#flow-diagram');
+            const stages = [
+                { x: 100, y: 200, label: 'Agent\nExecutes Task', color: '#3498db' },
+                { x: 300, y: 200, label: 'HELM Captures\nExecution', color: '#9b59b6' },
+                { x: 500, y: 200, label: 'Graph Writer\nCreates Nodes', color: '#e74c3c' },
+                { x: 700, y: 200, label: 'Links\nRelationships', color: '#f39c12' },
+                { x: 900, y: 200, label: 'Context Graph\nUpdated', color: '#2ecc71' },
+                { x: 1050, y: 200, label: 'Available for\nNext Query', color: '#1abc9c' }
+            ];
+
+            // Draw flow arrows
+            for (let i = 0; i < stages.length - 1; i++) {
+                svg.append('line')
+                    .attr('x1', stages[i].x + 60)
+                    .attr('y1', stages[i].y)
+                    .attr('x2', stages[i + 1].x - 60)
+                    .attr('y2', stages[i + 1].y)
+                    .attr('stroke', '#999')
+                    .attr('stroke-width', 2)
+                    .attr('marker-end', 'url(#arrowhead2)');
+            }
+
+            // Draw stages
+            stages.forEach(stage => {
+                const g = svg.append('g');
+
+                g.append('rect')
+                    .attr('x', stage.x - 50)
+                    .attr('y', stage.y - 40)
+                    .attr('width', 120)
+                    .attr('height', 80)
+                    .attr('rx', 8)
+                    .attr('fill', stage.color)
+                    .attr('opacity', 0.9);
+
+                g.append('text')
+                    .attr('x', stage.x)
+                    .attr('y', stage.y)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', 'white')
+                    .attr('font-size', '12px')
+                    .attr('font-weight', 'bold')
+                    .selectAll('tspan')
+                    .data(stage.label.split('\n'))
+                    .enter()
+                    .append('tspan')
+                    .attr('x', stage.x)
+                    .attr('dy', (d, i) => i === 0 ? 0 : 15)
+                    .text(d => d);
+            });
+
+            svg.append('defs').append('marker')
+                .attr('id', 'arrowhead2')
+                .attr('markerWidth', 10)
+                .attr('markerHeight', 10)
+                .attr('refX', 5)
+                .attr('refY', 3)
+                .attr('orient', 'auto')
+                .append('polygon')
+                .attr('points', '0 0, 6 3, 0 6')
+                .attr('fill', '#999');
+        }
+
+        // Diagram 3: Query Example
+        function drawQueryDiagram() {
+            const svg = d3.select('#query-diagram');
+
+            const nodes = [
+                { id: 't1234', label: 'Task #T-1234\n$10k Refund', x: 600, y: 250, color: '#e74c3c', size: 60 },
+                { id: 'policy', label: 'Policy\nREFUND-001\nLimit: $5k', x: 300, y: 100, color: '#f39c12', size: 50 },
+                { id: 'vp', label: 'User\nVP Jones', x: 900, y: 100, color: '#3498db', size: 50 },
+                { id: 'incident', label: 'Evidence\n3 Outages', x: 300, y: 400, color: '#2ecc71', size: 50 },
+                { id: 'contract', label: 'Evidence\nSLA Contract', x: 500, y: 450, color: '#2ecc71', size: 50 },
+                { id: 'precedent', label: 'Prior Task\n#T-0987\n$8.5k', x: 900, y: 400, color: '#e74c3c', size: 50 }
+            ];
+
+            const links = [
+                { source: 't1234', target: 'policy', label: 'EXCEPTION_TO', color: '#e67e22' },
+                { source: 't1234', target: 'vp', label: 'APPROVED_BY', color: '#27ae60' },
+                { source: 't1234', target: 'incident', label: 'JUSTIFIED_BY', color: '#16a085' },
+                { source: 't1234', target: 'contract', label: 'JUSTIFIED_BY', color: '#16a085' },
+                { source: 't1234', target: 'precedent', label: 'SIMILAR_TO', color: '#8e44ad' }
+            ];
+
+            // Draw links
+            links.forEach(link => {
+                const sourceNode = nodes.find(n => n.id === link.source);
+                const targetNode = nodes.find(n => n.id === link.target);
+
+                svg.append('line')
+                    .attr('x1', sourceNode.x)
+                    .attr('y1', sourceNode.y)
+                    .attr('x2', targetNode.x)
+                    .attr('y2', targetNode.y)
+                    .attr('stroke', link.color)
+                    .attr('stroke-width', 3)
+                    .attr('marker-end', 'url(#arrowhead3)');
+
+                svg.append('text')
+                    .attr('x', (sourceNode.x + targetNode.x) / 2)
+                    .attr('y', (sourceNode.y + targetNode.y) / 2 - 10)
+                    .attr('text-anchor', 'middle')
+                    .attr('font-size', '11px')
+                    .attr('font-weight', 'bold')
+                    .attr('fill', link.color)
+                    .text(link.label);
+            });
+
+            // Draw nodes
+            nodes.forEach(node => {
+                const g = svg.append('g');
+
+                g.append('circle')
+                    .attr('cx', node.x)
+                    .attr('cy', node.y)
+                    .attr('r', node.size)
+                    .attr('fill', node.color)
+                    .attr('stroke', 'white')
+                    .attr('stroke-width', 3);
+
+                g.append('text')
+                    .attr('x', node.x)
+                    .attr('y', node.y)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', 'white')
+                    .attr('font-size', '11px')
+                    .attr('font-weight', 'bold')
+                    .selectAll('tspan')
+                    .data(node.label.split('\n'))
+                    .enter()
+                    .append('tspan')
+                    .attr('x', node.x)
+                    .attr('dy', (d, i) => i === 0 ? -8 : 12)
+                    .text(d => d);
+            });
+
+            svg.append('defs').append('marker')
+                .attr('id', 'arrowhead3')
+                .attr('markerWidth', 10)
+                .attr('markerHeight', 10)
+                .attr('refX', 8)
+                .attr('refY', 3)
+                .attr('orient', 'auto')
+                .append('polygon')
+                .attr('points', '0 0, 6 3, 0 6')
+                .attr('fill', '#666');
+        }
+
+        // Diagram 4: Architecture Layers
+        function drawArchitectureDiagram() {
+            const svg = d3.select('#architecture-diagram');
+
+            const layers = [
+                { y: 50, height: 80, label: 'Agent Execution Layer', color: '#3498db', items: ['Agents', 'Tasks', 'Tools', 'Workflows'] },
+                { y: 150, height: 80, label: 'Graph Writer Layer', color: '#9b59b6', items: ['Event Capture', 'Node Creation', 'Relationship Mapping'] },
+                { y: 250, height: 100, label: 'Context Graph Store', color: '#e74c3c', items: ['Neo4j', 'Entities', 'Events', 'Evidence', 'Policies'] },
+                { y: 370, height: 80, label: 'Query & Retrieval Layer', color: '#f39c12', items: ['GraphRAG', 'Cypher Queries', 'Subgraph Extraction'] },
+                { y: 470, height: 80, label: 'AI Context Assembly', color: '#2ecc71', items: ['Precedent Discovery', 'Evidence Chains', 'Policy Lookup'] }
+            ];
+
+            layers.forEach(layer => {
+                // Draw layer box
+                svg.append('rect')
+                    .attr('x', 50)
+                    .attr('y', layer.y)
+                    .attr('width', 1100)
+                    .attr('height', layer.height)
+                    .attr('fill', layer.color)
+                    .attr('opacity', 0.2)
+                    .attr('rx', 8);
+
+                // Draw label
+                svg.append('text')
+                    .attr('x', 100)
+                    .attr('y', layer.y + 25)
+                    .attr('font-size', '16px')
+                    .attr('font-weight', 'bold')
+                    .attr('fill', layer.color)
+                    .text(layer.label);
+
+                // Draw items
+                layer.items.forEach((item, i) => {
+                    svg.append('rect')
+                        .attr('x', 100 + i * 220)
+                        .attr('y', layer.y + 40)
+                        .attr('width', 200)
+                        .attr('height', 30)
+                        .attr('fill', layer.color)
+                        .attr('opacity', 0.8)
+                        .attr('rx', 4);
+
+                    svg.append('text')
+                        .attr('x', 200 + i * 220)
+                        .attr('y', layer.y + 60)
+                        .attr('text-anchor', 'middle')
+                        .attr('font-size', '12px')
+                        .attr('fill', 'white')
+                        .text(item);
+                });
+            });
+
+            // Draw arrows between layers
+            for (let i = 0; i < layers.length - 1; i++) {
+                svg.append('line')
+                    .attr('x1', 600)
+                    .attr('y1', layers[i].y + layers[i].height)
+                    .attr('x2', 600)
+                    .attr('y2', layers[i + 1].y)
+                    .attr('stroke', '#666')
+                    .attr('stroke-width', 2)
+                    .attr('marker-end', 'url(#arrowhead4)');
+            }
+
+            svg.append('defs').append('marker')
+                .attr('id', 'arrowhead4')
+                .attr('markerWidth', 10)
+                .attr('markerHeight', 10)
+                .attr('refX', 5)
+                .attr('refY', 3)
+                .attr('orient', 'auto')
+                .append('polygon')
+                .attr('points', '0 0, 6 3, 0 6')
+                .attr('fill', '#666');
+        }
+
+        // Initialize all diagrams
+        drawSchemaDiagram();
+        drawFlowDiagram();
+        drawQueryDiagram();
+        drawArchitectureDiagram();
+    </script>
+</body>
+</html>

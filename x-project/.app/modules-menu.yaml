@@ -2,145 +2,145 @@ version: "1.0"
 title: Modules Menu
 sections:
   Build Workflow:
-    id: grp-1767998493068-1j67c
+    id: grp-1769764525637-kdqid
     description: ""
     open: false
     items:
       - name: Intake
         action: cc-command
-        id: itm-1767998493068-gyssz
+        id: itm-1769764525637-5vysj
         source_module: core
         prompt: /x-intake
         description: Intake new requirements
         items: []
       - name: Intake from File
         action: cc-command
-        id: itm-1767998493068-z09bv
+        id: itm-1769764525637-7ik4e
         source_module: core
         prompt: /x-intake-file
         description: Intake from intake.md file
         items: []
       - name: Design
         action: cc-command
-        id: itm-1767998493068-d5ygk
+        id: itm-1769764525637-es3kh
         source_module: core
         prompt: /x-design
         description: Build design for requirements
         items: []
       - name: Get Tasks
         action: cc-command
-        id: itm-1767998493068-z9qzi
+        id: itm-1769764525637-5fj0p
         source_module: core
         prompt: /x-get-tasks
         description: Decompose into backlog tasks
         items: []
       - name: Do Tasks
         action: cc-command
-        id: itm-1767998493068-mrr0n
+        id: itm-1769764525637-i136y
         source_module: core
         prompt: /x-do-tasks
         description: Implement open tasks
         items: []
       - name: QA
         action: cc-command
-        id: itm-1767998493068-cvwrb
+        id: itm-1769764525637-2oid7
         source_module: core
         prompt: /x-qa
         description: Run QA checks
         items: []
       - name: Create PR
         action: cc-command
-        id: itm-1767998493068-9t3fa
+        id: itm-1769764525637-r4k3j
         source_module: core
         prompt: /x-pr
         description: Create pull request
         items: []
   Tasks & Backlog:
-    id: grp-1767998493068-u8hdm
+    id: grp-1769764525637-freyx
     description: ""
     open: false
     items:
       - name: Add Task
         action: cc-command
-        id: itm-1767998493068-s2f9f
+        id: itm-1769764525637-y008t
         source_module: core
         prompt: /x-add-task
         description: Add task to backlog
         items: []
       - name: Archive Tasks
         action: cc-command
-        id: itm-1767998493068-y11hg
+        id: itm-1769764525637-h8jd9
         source_module: core
         prompt: /x-archive-tasks
         description: Archive completed tasks
         items: []
       - name: Task Board
         action: browser
-        id: itm-1767998493068-qt7m6
+        id: itm-1769764525637-sj6jw
         source_module: core
         url: https://backlog.synapticera.com
         description: Open backlog board
         items: []
   Knowledge Base:
-    id: grp-1767998493068-5l583
+    id: grp-1769764525637-wuu9n
     description: ""
     open: false
     items:
       - name: Add Knowledge
         action: cc-command
-        id: itm-1767998493068-i896o
+        id: itm-1769764525637-7e7oj
         source_module: core
         prompt: /x-kb-add
         description: Add item to knowledge base
         items: []
   Project Files:
-    id: grp-1767998493068-njbmr
+    id: grp-1769764525637-hgs98
     description: ""
     open: false
     items:
       - name: Project Data
         action: edit-file
-        id: itm-1767998493068-t7r4c
+        id: itm-1769764525638-nbo6y
         source_module: core
         file: x-project/project-data.md
         description: Project metadata
         items: []
       - name: Project Notes
         action: edit-file
-        id: itm-1767998493068-rwyox
+        id: itm-1769764525638-o3l7o
         source_module: core
         file: x-project/project-notes.md
         description: Project notes
         items: []
       - name: Master Spec
         action: edit-file
-        id: itm-1767998493068-jxhnv
+        id: itm-1769764525638-sjg60
         source_module: core
         file: x-project/master-spec.md
         description: Master specification
         items: []
       - name: Master State
         action: edit-file
-        id: itm-1767998493068-uq2da
+        id: itm-1769764525638-iocxh
         source_module: core
         file: x-project/master-state.md
         description: Current project state
         items: []
       - name: CLAUDE.md
         action: edit-file
-        id: itm-1767998493068-0bl20
+        id: itm-1769764525638-abko8
         source_module: core
         file: CLAUDE.md
         description: Workflow configuration
         items: []
   Project Management:
-    id: grp-1767998493068-yvkgq
+    id: grp-1769764525638-pywyh
     description: ""
     open: false
     items:
       - name: PM Help
         action: cc-command
-        id: itm-1767998493068-5fkhn
+        id: itm-1769764525638-ynw8w
         source_module: pm-core
         prompt: /x-pm-help
         description: Get help with PM commands and workflows

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Graph - Interactive POC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .canvas-section {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        .controls {
+            width: 320px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .control-section {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .control-section:last-child {
+            border-bottom: none;
+        }
+
+        .control-section h3 {
+            font-size: 14px;
+            color: #667eea;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 8px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        canvas {
+            border-radius: 8px;
+            cursor: grab;
+        }
+
+        canvas:active {
+            cursor: grabbing;
+        }
+
+        .info-panel {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .info-panel h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .info-panel .stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+        }
+
+        .info-panel .stat-label {
+            color: #666;
+        }
+
+        .info-panel .stat-value {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .legend {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .context-flow {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 250px;
+            font-size: 12px;
+            display: none;
+        }
+
+        .context-flow.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .flow-path {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌐 Context Graph - Interactive Proof of Concept</h1>
+        <p>Visualizing entity relationships and context propagation in real-time</p>
+    </div>
+
+    <div class="container">
+        <div class="canvas-section">
+            <canvas id="graphCanvas"></canvas>
+            <div class="context-flow" id="contextFlow">
+                <h4>Context Flow Active</h4>
+                <p>Watch how context propagates through connected entities</p>
+                <div class="flow-path" id="flowPath"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-section">
+                <h3>Scenarios</h3>
+                <button class="btn-primary" onclick="app.loadScenario('customer')">Customer Service Graph</button>
+                <button class="btn-primary" onclick="app.loadScenario('product')">Product Knowledge Graph</button>
+                <button class="btn-primary" onclick="app.loadScenario('complex')">Complex Network</button>
+            </div>
+
+            <div class="control-section">
+                <h3>Interactions</h3>
+                <button class="btn-secondary" onclick="app.simulateQuery()">Simulate Query</button>
+                <button class="btn-secondary" onclick="app.showContextFlow()">Show Context Flow</button>
+                <button class="btn-secondary" onclick="app.highlightClusters()">Highlight Clusters</button>
+            </div>
+
+            <div class="control-section">
+                <h3>Graph Controls</h3>
+                <button class="btn-secondary" onclick="app.addRandomNode()">Add Random Node</button>
+                <button class="btn-danger" onclick="app.clearGraph()">Clear Graph</button>
+            </div>
+
+            <div class="info-panel">
+                <h4>Graph Statistics</h4>
+                <div class="stat">
+                    <span class="stat-label">Nodes:</span>
+                    <span class="stat-value" id="nodeCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Edges:</span>
+                    <span class="stat-value" id="edgeCount">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Clusters:</span>
+                    <span class="stat-value" id="clusterCount">0</span>
+                </div>
+            </div>
+
+            <div class="info-panel legend">
+                <h4>Node Types</h4>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #667eea;"></div>
+                    <span>Entity (Customer, Product)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f093fb;"></div>
+                    <span>Attribute (Property, Value)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4facfe;"></div>
+                    <span>Event (Action, Interaction)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #43e97b;"></div>
+                    <span>Context (Metadata, State)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class ContextGraph {
+            constructor(canvasId) {
+                this.canvas = document.getElementById(canvasId);
+                this.ctx = this.canvas.getContext('2d');
+                this.nodes = [];
+                this.edges = [];
+                this.selectedNode = null;
+                this.hoveredNode = null;
+                this.isDragging = false;
+                this.dragOffset = { x: 0, y: 0 };
+                this.camera = { x: 0, y: 0, zoom: 1 };
+
+                this.nodeTypes = {
+                    entity: { color: '#667eea', radius: 25 },
+                    attribute: { color: '#f093fb', radius: 18 },
+                    event: { color: '#4facfe', radius: 20 },
+                    context: { color: '#43e97b', radius: 22 }
+                };
+
+                this.setupCanvas();
+                this.setupEventListeners();
+                this.animate();
+            }
+
+            setupCanvas() {
+                const resize = () => {
+                    const rect = this.canvas.parentElement.getBoundingClientRect();
+                    this.canvas.width = rect.width - 40;
+                    this.canvas.height = rect.height - 40;
+                };
+                resize();
+                window.addEventListener('resize', resize);
+            }
+
+            setupEventListeners() {
+                this.canvas.addEventListener('mousedown', (e) => this.handleMouseDown(e));
+                this.canvas.addEventListener('mousemove', (e) => this.handleMouseMove(e));
+                this.canvas.addEventListener('mouseup', () => this.handleMouseUp());
+                this.canvas.addEventListener('wheel', (e) => this.handleWheel(e));
+            }
+
+            handleMouseDown(e) {
+                const rect = this.canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const node = this.findNodeAt(x, y);
+                if (node) {
+                    this.selectedNode = node;
+                    this.isDragging = true;
+                    this.dragOffset = { x: x - node.x, y: y - node.y };
+                }
+            }
+
+            handleMouseMove(e) {
+                const rect = this.canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                if (this.isDragging && this.selectedNode) {
+                    this.selectedNode.x = x - this.dragOffset.x;
+                    this.selectedNode.y = y - this.dragOffset.y;
+                    this.selectedNode.vx = 0;
+                    this.selectedNode.vy = 0;
+                } else {
+                    this.hoveredNode = this.findNodeAt(x, y);
+                }
+            }
+
+            handleMouseUp() {
+                this.isDragging = false;
+                if (this.selectedNode) {
+                    this.highlightConnected(this.selectedNode);
+                }
+            }
+
+            handleWheel(e) {
+                e.preventDefault();
+                const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
+                this.camera.zoom *= zoomFactor;
+                this.camera.zoom = Math.max(0.5, Math.min(2, this.camera.zoom));
+            }
+
+            findNodeAt(x, y) {
+                for (let i = this.nodes.length - 1; i >= 0; i--) {
+                    const node = this.nodes[i];
+                    const dx = x - node.x;
+                    const dy = y - node.y;
+                    const radius = this.nodeTypes[node.type].radius;
+                    if (dx * dx + dy * dy < radius * radius) {
+                        return node;
+                    }
+                }
+                return null;
+            }
+
+            addNode(type, label, x, y) {
+                const node = {
+                    id: this.nodes.length,
+                    type: type,
+                    label: label,
+                    x: x || Math.random() * this.canvas.width,
+                    y: y || Math.random() * this.canvas.height,
+                    vx: 0,
+                    vy: 0,
+                    highlighted: false,
+                    cluster: null
+                };
+                this.nodes.push(node);
+                return node;
+            }
+
+            addEdge(from, to, label = '') {
+                this.edges.push({ from, to, label, animated: false });
+            }
+
+            highlightConnected(node) {
+                // Reset all highlights
+                this.nodes.forEach(n => n.highlighted = false);
+                this.edges.forEach(e => e.animated = false);
+
+                // Highlight selected node
+                node.highlighted = true;
+
+                // Highlight connected nodes and edges
+                this.edges.forEach(edge => {
+                    if (edge.from === node || edge.to === node) {
+                        edge.animated = true;
+                        edge.from.highlighted = true;
+                        edge.to.highlighted = true;
+                    }
+                });
+            }
+
+            simulate() {
+                // Simple force-directed layout
+                const centerX = this.canvas.width / 2;
+                const centerY = this.canvas.height / 2;
+
+                this.nodes.forEach(node => {
+                    if (this.isDragging && this.selectedNode === node) return;
+
+                    // Center attraction
+                    const dx = centerX - node.x;
+                    const dy = centerY - node.y;
+                    node.vx += dx * 0.0001;
+                    node.vy += dy * 0.0001;
+
+                    // Repulsion between nodes
+                    this.nodes.forEach(other => {
+                        if (node === other) return;
+                        const dx = node.x - other.x;
+                        const dy = node.y - other.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+                        if (dist < 200) {
+                            const force = 100 / (dist * dist);
+                            node.vx += (dx / dist) * force;
+                            node.vy += (dy / dist) * force;
+                        }
+                    });
+
+                    // Damping
+                    node.vx *= 0.9;
+                    node.vy *= 0.9;
+
+                    // Update position
+                    node.x += node.vx;
+                    node.y += node.vy;
+
+                    // Boundary check
+                    const radius = this.nodeTypes[node.type].radius;
+                    node.x = Math.max(radius, Math.min(this.canvas.width - radius, node.x));
+                    node.y = Math.max(radius, Math.min(this.canvas.height - radius, node.y));
+                });
+
+                // Edge spring forces
+                this.edges.forEach(edge => {
+                    const dx = edge.to.x - edge.from.x;
+                    const dy = edge.to.y - edge.from.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+                    const force = (dist - 100) * 0.01;
+
+                    if (!this.isDragging || (this.selectedNode !== edge.from && this.selectedNode !== edge.to)) {
+                        edge.from.vx += (dx / dist) * force;
+                        edge.from.vy += (dy / dist) * force;
+                        edge.to.vx -= (dx / dist) * force;
+                        edge.to.vy -= (dy / dist) * force;
+                    }
+                });
+            }
+
+            draw() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // Draw edges
+                this.edges.forEach((edge, index) => {
+                    const from = edge.from;
+                    const to = edge.to;
+
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(from.x, from.y);
+                    this.ctx.lineTo(to.x, to.y);
+                    this.ctx.strokeStyle = edge.animated ? '#667eea' : '#ddd';
+                    this.ctx.lineWidth = edge.animated ? 3 : 1.5;
+
+                    if (edge.animated) {
+                        this.ctx.setLineDash([5, 5]);
+                        this.ctx.lineDashOffset = -Date.now() / 50;
+                    } else {
+                        this.ctx.setLineDash([]);
+                    }
+
+                    this.ctx.stroke();
+
+                    // Draw edge label
+                    if (edge.label && edge.animated) {
+                        const midX = (from.x + to.x) / 2;
+                        const midY = (from.y + to.y) / 2;
+                        this.ctx.fillStyle = '#667eea';
+                        this.ctx.font = '10px sans-serif';
+                        this.ctx.fillText(edge.label, midX, midY - 5);
+                    }
+                });
+
+                this.ctx.setLineDash([]);
+
+                // Draw nodes
+                this.nodes.forEach(node => {
+                    const nodeStyle = this.nodeTypes[node.type];
+                    const radius = nodeStyle.radius;
+
+                    // Outer glow for highlighted nodes
+                    if (node.highlighted) {
+                        this.ctx.beginPath();
+                        this.ctx.arc(node.x, node.y, radius + 8, 0, Math.PI * 2);
+                        this.ctx.fillStyle = nodeStyle.color + '33';
+                        this.ctx.fill();
+                    }
+
+                    // Node circle
+                    this.ctx.beginPath();
+                    this.ctx.arc(node.x, node.y, radius, 0, Math.PI * 2);
+                    this.ctx.fillStyle = nodeStyle.color;
+                    this.ctx.fill();
+
+                    // Border
+                    this.ctx.strokeStyle = node.highlighted ? '#fff' : nodeStyle.color;
+                    this.ctx.lineWidth = node.highlighted ? 3 : 1;
+                    this.ctx.stroke();
+
+                    // Label
+                    this.ctx.fillStyle = '#fff';
+                    this.ctx.font = 'bold 11px sans-serif';
+                    this.ctx.textAlign = 'center';
+                    this.ctx.textBaseline = 'middle';
+                    this.ctx.fillText(node.label, node.x, node.y);
+
+                    // Type label below
+                    if (node === this.hoveredNode || node.highlighted) {
+                        this.ctx.fillStyle = '#333';
+                        this.ctx.font = '9px sans-serif';
+                        this.ctx.fillText(node.type, node.x, node.y + radius + 12);
+                    }
+                });
+
+                // Update stats
+                document.getElementById('nodeCount').textContent = this.nodes.length;
+                document.getElementById('edgeCount').textContent = this.edges.length;
+                document.getElementById('clusterCount').textContent = this.detectClusters();
+            }
+
+            animate() {
+                this.simulate();
+                this.draw();
+                requestAnimationFrame(() => this.animate());
+            }
+
+            detectClusters() {
+                // Simple cluster detection based on connectivity
+                const clusters = new Set();
+                this.nodes.forEach(node => {
+                    const connected = this.edges.filter(e => e.from === node || e.to === node);
+                    if (connected.length > 0) {
+                        clusters.add(connected.length);
+                    }
+                });
+                return clusters.size;
+            }
+
+            clear() {
+                this.nodes = [];
+                this.edges = [];
+                this.selectedNode = null;
+                this.hoveredNode = null;
+            }
+        }
+
+        // Application logic
+        const app = {
+            graph: null,
+
+            init() {
+                this.graph = new ContextGraph('graphCanvas');
+                this.loadScenario('customer');
+            },
+
+            loadScenario(type) {
+                this.graph.clear();
+
+                if (type === 'customer') {
+                    this.buildCustomerServiceGraph();
+                } else if (type === 'product') {
+                    this.buildProductKnowledgeGraph();
+                } else if (type === 'complex') {
+                    this.buildComplexNetwork();
+                }
+            },
+
+            buildCustomerServiceGraph() {
+                const w = this.graph.canvas.width;
+                const h = this.graph.canvas.height;
+
+                // Entities
+                const customer = this.graph.addNode('entity', 'Customer', w/2, h/3);
+                const order = this.graph.addNode('entity', 'Order', w/2 + 150, h/3);
+                const product = this.graph.addNode('entity', 'Product', w/2 + 150, h/2);
+
+                // Attributes
+                const email = this.graph.addNode('attribute', 'Email', w/2 - 100, h/3 - 80);
+                const status = this.graph.addNode('attribute', 'Status', w/2 + 250, h/3);
+                const price = this.graph.addNode('attribute', 'Price', w/2 + 250, h/2);
+
+                // Events
+                const inquiry = this.graph.addNode('event', 'Inquiry', w/2 - 150, h/2);
+                const purchase = this.graph.addNode('event', 'Purchase', w/2 + 100, h/3 + 100);
+
+                // Context
+                const history = this.graph.addNode('context', 'History', w/2 - 100, h/2 + 80);
+                const pref = this.graph.addNode('context', 'Preferences', w/2 + 50, h/2 + 120);
+
+                // Connect nodes
+                this.graph.addEdge(customer, email, 'has');
+                this.graph.addEdge(customer, order, 'placed');
+                this.graph.addEdge(order, product, 'contains');
+                this.graph.addEdge(order, status, 'has');
+                this.graph.addEdge(product, price, 'priced_at');
+                this.graph.addEdge(customer, inquiry, 'submitted');
+                this.graph.addEdge(customer, purchase, 'completed');
+                this.graph.addEdge(customer, history, 'tracked_by');
+                this.graph.addEdge(customer, pref, 'defined_by');
+                this.graph.addEdge(purchase, order, 'created');
+            },
+
+            buildProductKnowledgeGraph() {
+                const w = this.graph.canvas.width;
+                const h = this.graph.canvas.height;
+
+                const product = this.graph.addNode('entity', 'Product', w/2, h/3);
+                const category = this.graph.addNode('entity', 'Category', w/2 - 150, h/3);
+                const brand = this.graph.addNode('entity', 'Brand', w/2 + 150, h/3);
+
+                const feature1 = this.graph.addNode('attribute', 'Feature A', w/2 - 100, h/2);
+                const feature2 = this.graph.addNode('attribute', 'Feature B', w/2 + 100, h/2);
+                const spec = this.graph.addNode('attribute', 'Specs', w/2, h/2 + 80);
+
+                const review = this.graph.addNode('event', 'Review', w/2 - 150, h/2 + 80);
+                const rating = this.graph.addNode('context', 'Rating', w/2 + 150, h/2 + 80);
+
+                this.graph.addEdge(product, category, 'belongs_to');
+                this.graph.addEdge(product, brand, 'made_by');
+                this.graph.addEdge(product, feature1, 'has');
+                this.graph.addEdge(product, feature2, 'has');
+                this.graph.addEdge(product, spec, 'detailed_in');
+                this.graph.addEdge(product, review, 'reviewed_in');
+                this.graph.addEdge(product, rating, 'rated_by');
+            },
+
+            buildComplexNetwork() {
+                const w = this.graph.canvas.width;
+                const h = this.graph.canvas.height;
+                const centerX = w / 2;
+                const centerY = h / 2;
+                const radius = Math.min(w, h) / 3;
+
+                // Create a circular network
+                const nodeCount = 12;
+                const nodes = [];
+
+                for (let i = 0; i < nodeCount; i++) {
+                    const angle = (i / nodeCount) * Math.PI * 2;
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    const types = ['entity', 'attribute', 'event', 'context'];
+                    const type = types[i % types.length];
+                    const node = this.graph.addNode(type, `N${i + 1}`, x, y);
+                    nodes.push(node);
+                }
+
+                // Connect nodes in interesting patterns
+                for (let i = 0; i < nodeCount; i++) {
+                    // Connect to next node (circle)
+                    this.graph.addEdge(nodes[i], nodes[(i + 1) % nodeCount]);
+
+                    // Connect to node across (star pattern)
+                    if (i % 2 === 0) {
+                        this.graph.addEdge(nodes[i], nodes[(i + nodeCount/2) % nodeCount]);
+                    }
+
+                    // Connect to nearby nodes
+                    if (i % 3 === 0) {
+                        this.graph.addEdge(nodes[i], nodes[(i + 3) % nodeCount]);
+                    }
+                }
+
+                // Add center hub
+                const hub = this.graph.addNode('entity', 'Hub', centerX, centerY);
+                for (let i = 0; i < nodeCount; i += 3) {
+                    this.graph.addEdge(hub, nodes[i]);
+                }
+            },
+
+            simulateQuery() {
+                // Randomly select a node and highlight its connections
+                const randomNode = this.graph.nodes[Math.floor(Math.random() * this.graph.nodes.length)];
+                this.graph.highlightConnected(randomNode);
+
+                // Show context flow
+                document.getElementById('contextFlow').classList.add('active');
+                document.getElementById('flowPath').textContent =
+                    `Query → ${randomNode.label} → Connected entities → Context retrieved`;
+
+                setTimeout(() => {
+                    document.getElementById('contextFlow').classList.remove('active');
+                }, 3000);
+            },
+
+            showContextFlow() {
+                // Animate all edges temporarily
+                this.graph.edges.forEach((edge, i) => {
+                    setTimeout(() => {
+                        edge.animated = true;
+                        setTimeout(() => edge.animated = false, 1000);
+                    }, i * 100);
+                });
+
+                document.getElementById('contextFlow').classList.add('active');
+                document.getElementById('flowPath').textContent =
+                    'Context propagating through graph structure...';
+
+                setTimeout(() => {
+                    document.getElementById('contextFlow').classList.remove('active');
+                }, this.graph.edges.length * 100 + 1000);
+            },
+
+            highlightClusters() {
+                // Highlight nodes in clusters
+                this.graph.nodes.forEach((node, i) => {
+                    setTimeout(() => {
+                        node.highlighted = true;
+                        setTimeout(() => node.highlighted = false, 500);
+                    }, i * 50);
+                });
+            },
+
+            addRandomNode() {
+                const types = ['entity', 'attribute', 'event', 'context'];
+                const type = types[Math.floor(Math.random() * types.length)];
+                const label = `${type[0].toUpperCase()}${this.graph.nodes.length + 1}`;
+                const newNode = this.graph.addNode(type, label);
+
+                // Connect to a random existing node
+                if (this.graph.nodes.length > 1) {
+                    const randomNode = this.graph.nodes[Math.floor(Math.random() * (this.graph.nodes.length - 1))];
+                    this.graph.addEdge(randomNode, newNode);
+                }
+            },
+
+            clearGraph() {
+                this.graph.clear();
+            }
+        };
+
+        // Initialize on load
+        window.addEventListener('load', () => app.init());
+    </script>
+</body>
+</html>

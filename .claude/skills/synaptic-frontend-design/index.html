@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSA Summer Camp Staffing - Strategic Phasing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #007acc;
+            --accent: #ff9800;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #6b7280;
+            --gray-light: #f3f4f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: var(--dark);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide {
+            position: absolute;
+            width: 90vw;
+            max-width: 1400px;
+            height: 85vh;
+            background: var(--light);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 80px 100px;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            pointer-events: none;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .slide.previous {
+            transform: translateX(-100px);
+        }
+
+        .slide-footer {
+            position: absolute;
+            bottom: 40px;
+            left: 100px;
+            right: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 2px solid var(--gray-light);
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .slide-number {
+            font-weight: 600;
+        }
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        h4 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: var(--gray);
+            margin-bottom: 80px;
+            font-weight: 400;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .badge.primary {
+            background: linear-gradient(135deg, var(--primary), #0096ff);
+            color: white;
+        }
+
+        .badge.accent {
+            background: linear-gradient(135deg, var(--accent), #ff6b00);
+            color: white;
+        }
+
+        .badge.success {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: white;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--gray-light);
+            padding: 35px;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 122, 204, 0.2);
+        }
+
+        .card.highlight {
+            background: linear-gradient(135deg, var(--primary), #0096ff);
+            color: white;
+        }
+
+        .card.highlight h3,
+        .card.highlight h4,
+        .card.highlight p {
+            color: white;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-family: 'Fraunces', serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 16px;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin-top: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -47px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            background: var(--primary);
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .timeline-content {
+            background: var(--gray-light);
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .chart-container {
+            background: var(--gray-light);
+            padding: 40px;
+            border-radius: 16px;
+            margin-top: 40px;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 300px;
+            gap: 20px;
+        }
+
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, var(--primary), #0096ff);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: growBar 1s ease-out forwards;
+        }
+
+        @keyframes growBar {
+            from {
+                height: 0;
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .bar.accent {
+            background: linear-gradient(180deg, var(--accent), #ff6b00);
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            white-space: nowrap;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tier-card {
+            background: white;
+            border: 3px solid var(--gray-light);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .tier-card:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .tier-card.premium {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0, 122, 204, 0.05), rgba(0, 150, 255, 0.05));
+        }
+
+        .tier-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .tier-price {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .tier-detail {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+
+        li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .status-indicator.success {
+            background: var(--success);
+        }
+
+        .status-indicator.warning {
+            background: var(--warning);
+        }
+
+        .quote-box {
+            background: linear-gradient(135deg, rgba(0, 122, 204, 0.05), rgba(0, 150, 255, 0.05));
+            border-left: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .quote-text {
+            font-family: 'Fraunces', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .quote-author {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .action-list {
+            background: var(--gray-light);
+            border-radius: 16px;
+            padding: 35px;
+            margin-top: 30px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px 0;
+            border-bottom: 1px solid #d1d5db;
+        }
+
+        .action-item:last-child {
+            border-bottom: none;
+        }
+
+        .action-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--primary);
+            border-radius: 6px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .nav-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(0, 122, 204, 0.3);
+        }
+
+        .nav-button:hover {
+            transform: scale(1.1);
+            background: #0096ff;
+        }
+
+        .nav-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gray-light);
+            z-index: 1000;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.3s ease;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), #0096ff);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .icon.accent {
+            background: linear-gradient(135deg, var(--accent), #ff6b00);
+        }
+
+        .risk-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 12px;
+            margin-top: 30px;
+        }
+
+        .risk-table th {
+            text-align: left;
+            padding: 15px 20px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .risk-table th:first-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+        .risk-table th:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        .risk-table td {
+            padding: 20px;
+            background: var(--gray-light);
+            font-size: 15px;
+        }
+
+        .risk-table tr td:first-child {
+            border-radius: 8px 0 0 8px;
+            font-weight: 600;
+        }
+
+        .risk-table tr td:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                position: relative;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .navigation {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="presentation-container" id="presentationContainer">
+        <!-- Slide 1: Title -->
+        <div class="slide active" data-slide="1">
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100%; text-align: center;">
+                <div class="badge primary">Strategic Phasing & Implementation Plan</div>
+                <h1>CSA Summer Camp<br>Staffing Platform</h1>
+                <p class="subtitle">A data-driven approach to transforming camp hiring</p>
+                <div style="margin-top: 60px; font-size: 18px; color: var(--gray);">
+                    <strong>Prepared for:</strong> Carney Sandoe & Associates<br>
+                    <strong>Date:</strong> December 26, 2025
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Prepared by Synaptic ERA</div>
+                <div class="slide-number">1 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Executive Summary -->
+        <div class="slide" data-slide="2">
+            <div class="badge success">Executive Summary</div>
+            <h2>Three Strategic Validations</h2>
+            <p>Design partner conversations revealed a clear path forward</p>
+
+            <div class="grid-3" style="margin-top: 60px;">
+                <div class="card highlight">
+                    <div style="font-size: 48px; margin-bottom: 20px;">✓</div>
+                    <h3>Market Validation</h3>
+                    <p>Strong hiring pain, willingness to pay, no effective alternatives exist today</p>
+                </div>
+                <div class="card highlight">
+                    <div style="font-size: 48px; margin-bottom: 20px;">✓</div>
+                    <h3>Product Clarity</h3>
+                    <p>MVP features well-defined with unanimous agreement on priorities</p>
+                </div>
+                <div class="card" style="background: linear-gradient(135deg, var(--accent), #ff6b00); color: white;">
+                    <div style="font-size: 48px; margin-bottom: 20px;">⚠</div>
+                    <h3 style="color: white;">Strategic Path</h3>
+                    <p>Hybrid phased approach mitigates risk while testing all assumptions</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">2 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 3: The Opportunity -->
+        <div class="slide" data-slide="3">
+            <div class="badge primary">Market Landscape</div>
+            <h2>The Opportunity</h2>
+
+            <div class="grid-2">
+                <div>
+                    <h3>Market Pain Points</h3>
+                    <div style="margin-top: 30px;">
+                        <div class="card" style="margin-bottom: 20px;">
+                            <h4><span class="status-indicator warning"></span>Post-COVID Shift</h4>
+                            <p>Alumni pipeline dropped from 80% to 50-60% returning staff</p>
+                        </div>
+                        <div class="card" style="margin-bottom: 20px;">
+                            <h4><span class="status-indicator warning"></span>J-1 Visa Crisis</h4>
+                            <p>Uncertainty creates urgent need for domestic solutions</p>
+                        </div>
+                        <div class="card">
+                            <h4><span class="status-indicator warning"></span>High Cost</h4>
+                            <p>International agencies charge $2,500-$3,000 per placement</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>CSA Competitive Advantages</h3>
+                    <ul style="margin-top: 30px;">
+                        <li><strong>15,000 vetted candidates</strong> with education focus</li>
+                        <li><strong>Brand credibility</strong> with 50%+ of camp directors</li>
+                        <li><strong>College infrastructure</strong> across 200+ schools</li>
+                        <li><strong>Teacher pipeline</strong> positioning increases quality</li>
+                        <li><strong>Independent school network</strong> with 1,200+ families</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">3 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Strategic Tensions -->
+        <div class="slide" data-slide="4">
+            <div class="badge accent">Strategic Decisions</div>
+            <h2>Critical Tensions Identified</h2>
+            <p>Four key decisions requiring resolution</p>
+
+            <div class="grid-2" style="margin-top: 50px;">
+                <div class="card">
+                    <h4>1. Launch Scale</h4>
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(0,122,204,0.1); border-radius: 8px; margin-right: 10px;">
+                            <div style="font-weight: 700; color: var(--primary);">Small Pilot</div>
+                            <div style="font-size: 14px; margin-top: 5px;">20-50 premium camps</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(255,152,0,0.1); border-radius: 8px; margin-left: 10px;">
+                            <div style="font-weight: 700; color: var(--accent);">Broad Launch</div>
+                            <div style="font-size: 14px; margin-top: 5px;">200-1,000 camps</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>2. Target Market</h4>
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(0,122,204,0.1); border-radius: 8px; margin-right: 10px;">
+                            <div style="font-weight: 700; color: var(--primary);">Prestigious</div>
+                            <div style="font-size: 14px; margin-top: 5px;">Higher budgets</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(255,152,0,0.1); border-radius: 8px; margin-left: 10px;">
+                            <div style="font-weight: 700; color: var(--accent);">Mid-Tier</div>
+                            <div style="font-size: 14px; margin-top: 5px;">Most pain</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>3. Pricing Model</h4>
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(0,122,204,0.1); border-radius: 8px; margin-right: 10px;">
+                            <div style="font-weight: 700; color: var(--primary);">Flat Fee</div>
+                            <div style="font-size: 14px; margin-top: 5px;">$500-$1,200</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(255,152,0,0.1); border-radius: 8px; margin-left: 10px;">
+                            <div style="font-weight: 700; color: var(--accent);">Success Fee</div>
+                            <div style="font-size: 14px; margin-top: 5px;">$500-$1k/hire</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h4>4. Branding</h4>
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(0,122,204,0.1); border-radius: 8px; margin-right: 10px;">
+                            <div style="font-weight: 700; color: var(--primary);">CSA Direct</div>
+                            <div style="font-size: 14px; margin-top: 5px;">Full recognition</div>
+                        </div>
+                        <div style="flex: 1; text-align: center; padding: 20px; background: rgba(255,152,0,0.1); border-radius: 8px; margin-left: 10px;">
+                            <div style="font-weight: 700; color: var(--accent);">Separate Brand</div>
+                            <div style="font-size: 14px; margin-top: 5px;">+ Powered by CSA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, var(--success), #059669); color: white; border-radius: 16px;">
+                <strong style="font-size: 22px;">Resolution: Hybrid approach tests all assumptions simultaneously</strong>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">4 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Three-Phase Strategy -->
+        <div class="slide" data-slide="5">
+            <div class="badge primary">Implementation Roadmap</div>
+            <h2>Three-Phase Strategy Overview</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">PHASE 1: Jan-May 2026</div>
+                    <div class="timeline-content">
+                        <h4>Pilot Launch</h4>
+                        <p><strong>10-15 camps</strong> across three tiers (Premium/Mid-Market/Budget)</p>
+                        <p>Flat fees: $500-$1,200 | ACA New England focus</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">PHASE 2: Jun-Aug 2026</div>
+                    <div class="timeline-content">
+                        <h4>Regional Expansion</h4>
+                        <p><strong>50-75 camps</strong> across 2-3 regions</p>
+                        <p>Test hybrid pricing model | Open applications</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">PHASE 3: Sept 2026+</div>
+                    <div class="timeline-content">
+                        <h4>National Scale</h4>
+                        <p><strong>200+ camps</strong> with tiered service offerings</p>
+                        <p>Self-Service / Managed / Premium white-glove</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">5 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Phase 1 Details -->
+        <div class="slide" data-slide="6">
+            <div class="badge success">Phase 1: Pilot</div>
+            <h2>Three-Tier Launch Strategy</h2>
+            <p style="margin-bottom: 50px;">10-15 Design Partner Camps | Jan-May 2026</p>
+
+            <div class="tier-grid">
+                <div class="tier-card premium">
+                    <div class="tier-name">TIER 1: Premium</div>
+                    <div class="tier-price">$1,200</div>
+                    <div class="tier-detail">3-5 camps</div>
+                    <ul style="text-align: left;">
+                        <li>Kiev/Wavas, Camp Kohut</li>
+                        <li>Validation + testimonials</li>
+                        <li>$60k+ staffing budgets</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-name">TIER 2: Mid-Market</div>
+                    <div class="tier-price">$800</div>
+                    <div class="tier-detail">5-7 camps</div>
+                    <ul style="text-align: left;">
+                        <li>ACA New England members</li>
+                        <li>Primary market testing</li>
+                        <li>$20k-40k typical spend</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-name">TIER 3: Budget</div>
+                    <div class="tier-price">$500</div>
+                    <div class="tier-detail">2-3 camps</div>
+                    <ul style="text-align: left;">
+                        <li>Cambridge Camping Assoc.</li>
+                        <li>Accessibility validation</li>
+                        <li>Tight discretionary budgets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; text-align: center;">
+                <div class="card" style="display: inline-block; padding: 25px 50px;">
+                    <h4 style="margin-bottom: 10px;">Geographic Focus</h4>
+                    <p style="margin: 0;"><strong>ACA New England</strong> regional concentration for easier logistics and faster feedback</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">6 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Phase 1 Success Metrics -->
+        <div class="slide" data-slide="7">
+            <div class="badge accent">Performance Targets</div>
+            <h2>Phase 1 Success Metrics</h2>
+            <p>Key performance indicators for May 2026</p>
+
+            <div class="grid-3" style="margin-top: 50px;">
+                <div class="card">
+                    <div class="metric">
+                        <div class="metric-value">80%+</div>
+                        <div class="metric-label">Pilot camps actively using platform</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="metric">
+                        <div class="metric-value">500+</div>
+                        <div class="metric-label">Candidate profiles completed</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="metric">
+                        <div class="metric-value">30+</div>
+                        <div class="metric-label">Successful placements</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 30px;">
+                <div class="card">
+                    <h4>Quality Metrics</h4>
+                    <ul>
+                        <li>Camp satisfaction: <strong>4.0+/5.0</strong></li>
+                        <li>Video completion rate: <strong>80%+</strong></li>
+                        <li>Time-to-hire reduction: <strong>25%+</strong></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Financial Metrics</h4>
+                    <ul>
+                        <li>Revenue: <strong>$8k-$14k</strong></li>
+                        <li>Prove unit economics</li>
+                        <li>Validate success fee tolerance</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">7 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Phase 2 -->
+        <div class="slide" data-slide="8">
+            <div class="badge primary">Phase 2: Expansion</div>
+            <h2>Regional Scale-Up</h2>
+            <p>50-75 camps across 2-3 regions | Jun-Aug 2026</p>
+
+            <div class="grid-2" style="margin-top: 50px;">
+                <div>
+                    <h3>Expansion Strategy</h3>
+                    <div class="card" style="margin-top: 30px;">
+                        <h4>Geographic Expansion</h4>
+                        <ul>
+                            <li>Add Mid-Atlantic: <strong>15-20 camps</strong></li>
+                            <li>Add Southeast: <strong>10-15 camps</strong></li>
+                            <li>Expand New England: <strong>25-30 more</strong></li>
+                        </ul>
+                    </div>
+                    <div class="card" style="margin-top: 20px;">
+                        <h4>Candidate Pool Expansion</h4>
+                        <ul>
+                            <li>Open applications with screening</li>
+                            <li>Target: <strong>2,000-3,000 candidates</strong></li>
+                            <li>Include F-1 visa students</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Hybrid Pricing Test</h3>
+                    <table style="width: 100%; margin-top: 30px; background: white; border-radius: 12px; overflow: hidden;">
+                        <thead style="background: var(--primary); color: white;">
+                            <tr>
+                                <th style="padding: 15px; text-align: left;">Tier</th>
+                                <th style="padding: 15px; text-align: center;">Base Fee</th>
+                                <th style="padding: 15px; text-align: center;">Success Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 15px; border-bottom: 1px solid var(--gray-light);"><strong>Small</strong></td>
+                                <td style="padding: 15px; text-align: center; border-bottom: 1px solid var(--gray-light);">$500</td>
+                                <td style="padding: 15px; text-align: center; border-bottom: 1px solid var(--gray-light);">$100/hire</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px; border-bottom: 1px solid var(--gray-light);"><strong>Medium</strong></td>
+                                <td style="padding: 15px; text-align: center; border-bottom: 1px solid var(--gray-light);">$800</td>
+                                <td style="padding: 15px; text-align: center; border-bottom: 1px solid var(--gray-light);">$150/hire</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 15px;"><strong>Large</strong></td>
+                                <td style="padding: 15px; text-align: center;">$1,200</td>
+                                <td style="padding: 15px; text-align: center;">$250/hire</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="card" style="margin-top: 30px; background: linear-gradient(135deg, rgba(255,152,0,0.1), rgba(255,107,0,0.1));">
+                        <h4 style="color: var(--accent);">A/B Testing</h4>
+                        <p><strong>Group A:</strong> Flat fee only (Year 1 model)</p>
+                        <p style="margin: 0;"><strong>Group B:</strong> Hybrid (base + success)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">8 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Phase 3 -->
+        <div class="slide" data-slide="9">
+            <div class="badge success">Phase 3: National Scale</div>
+            <h2>Three-Tier Service Model</h2>
+            <p>200+ camps nationwide | Sept 2026 onwards</p>
+
+            <div class="tier-grid" style="margin-top: 50px;">
+                <div class="tier-card">
+                    <div class="icon">📊</div>
+                    <div class="tier-name">SELF-SERVICE</div>
+                    <div class="tier-price" style="font-size: 36px;">$500-$1,200</div>
+                    <div class="tier-detail">200-500 camps</div>
+                    <ul style="text-align: left; font-size: 14px;">
+                        <li>Full platform access</li>
+                        <li>DIY hiring tools</li>
+                        <li>Knowledge base</li>
+                        <li>Email support</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card premium">
+                    <div class="icon accent">🤝</div>
+                    <div class="tier-name">MANAGED</div>
+                    <div class="tier-price" style="font-size: 36px;">$1k base</div>
+                    <div class="tier-detail" style="color: var(--accent);">+ $200-500/hire</div>
+                    <div class="tier-detail">50-100 camps</div>
+                    <ul style="text-align: left; font-size: 14px;">
+                        <li>Platform + placement support</li>
+                        <li>Account manager</li>
+                        <li>Interview preparation</li>
+                        <li>Priority support</li>
+                    </ul>
+                </div>
+
+                <div class="tier-card">
+                    <div class="icon">⭐</div>
+                    <div class="tier-name">PREMIUM</div>
+                    <div class="tier-price" style="font-size: 36px;">$5k+</div>
+                    <div class="tier-detail">+ custom success fees</div>
+                    <div class="tier-detail">20-30 camps</div>
+                    <ul style="text-align: left; font-size: 14px;">
+                        <li>Full-service placement</li>
+                        <li>On-site visits</li>
+                        <li>Customized candidate slate</li>
+                        <li>White-glove service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">9 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Revenue Projections -->
+        <div class="slide" data-slide="10">
+            <div class="badge accent">Financial Outlook</div>
+            <h2>3-Year Revenue Projections</h2>
+
+            <div class="chart-container">
+                <div class="bar-chart">
+                    <div class="bar" style="height: 18%;">
+                        <div class="bar-value">$170k</div>
+                        <div class="bar-label">Year 1<br>(2026)</div>
+                    </div>
+                    <div class="bar" style="height: 55%;">
+                        <div class="bar-value">$920k</div>
+                        <div class="bar-label">Year 2<br>(2027)</div>
+                    </div>
+                    <div class="bar accent" style="height: 100%;">
+                        <div class="bar-value">$1.9M</div>
+                        <div class="bar-label">Year 3<br>(2028)</div>
+                    </div>
+                    <div class="bar accent" style="height: 135%; opacity: 0.6;">
+                        <div class="bar-value">$2.25M</div>
+                        <div class="bar-label">Year 2<br>(Optimistic)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-3" style="margin-top: 50px;">
+                <div class="card">
+                    <h4>Year 1 Breakdown</h4>
+                    <p>Phase 1: <strong>$10k</strong></p>
+                    <p>Phase 2: <strong>$40k</strong></p>
+                    <p>Phase 3: <strong>$120k</strong></p>
+                </div>
+                <div class="card">
+                    <h4>Year 2 Mix (Conservative)</h4>
+                    <p>Self-Service: <strong>$400k</strong></p>
+                    <p>Managed: <strong>$320k</strong></p>
+                    <p>Premium: <strong>$200k</strong></p>
+                </div>
+                <div class="card">
+                    <h4>Year 3 Growth</h4>
+                    <p>Self-Service: <strong>$800k</strong></p>
+                    <p>Managed: <strong>$600k</strong></p>
+                    <p>Premium: <strong>$500k</strong></p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">10 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Branding Strategy -->
+        <div class="slide" data-slide="11">
+            <div class="badge primary">Brand Positioning</div>
+            <h2>Branding Strategy</h2>
+            <p>Separate brand + "Powered by Carney Sandoe"</p>
+
+            <div class="grid-2" style="margin-top: 50px;">
+                <div class="card" style="background: rgba(0,122,204,0.05); border: 2px solid var(--primary);">
+                    <h3 style="color: var(--primary);">✓ Recommended Approach</h3>
+                    <h4>Separate Brand + CSA Affiliation</h4>
+                    <ul>
+                        <li><strong>80% brand benefit</strong> with CSA association</li>
+                        <li><strong>100% risk protection</strong> for school placement brand</li>
+                        <li><strong>Allows different standards</strong> and processes</li>
+                        <li><strong>Future expansion</strong> into day camps, etc.</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="opacity: 0.5;">
+                    <h3 style="color: var(--gray);">Alternative Considered</h3>
+                    <h4>"Just Carney Sandoe"</h4>
+                    <ul>
+                        <li>Full brand recognition</li>
+                        <li>Lower marketing costs</li>
+                        <li><strong style="color: var(--warning);">Risk:</strong> Quality issues could damage school placement reputation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 50px; background: linear-gradient(135deg, rgba(0,122,204,0.1), rgba(0,150,255,0.1)); border: 2px solid var(--primary);">
+                <h3>Visual Identity Strategy</h3>
+                <div class="grid-2">
+                    <div>
+                        <h4>Design Elements</h4>
+                        <ul>
+                            <li>Borrow CSA turquoise color palette</li>
+                            <li>Incorporate puzzle piece motif (adapted)</li>
+                            <li>Clean, modern, mobile-first aesthetic</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Example Names to Test</h4>
+                        <ul>
+                            <li>CampStaffMatch</li>
+                            <li>SummerCounselors by CSA</li>
+                            <li>Campwise (powered by CSA)</li>
+                            <li>StaffBridge</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">11 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Implementation Timeline -->
+        <div class="slide" data-slide="12">
+            <div class="badge success">18-Month Rollout</div>
+            <h2>Implementation Timeline</h2>
+
+            <div style="margin-top: 50px;">
+                <div style="background: white; padding: 40px; border-radius: 16px;">
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px;">
+                        <div>
+                            <div style="font-weight: 700; color: var(--primary); margin-bottom: 20px; font-size: 20px;">Q1 2026</div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>January</strong>
+                                <p style="font-size: 14px;">Pilot recruitment, MVP development, candidate survey</p>
+                            </div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>February</strong>
+                                <p style="font-size: 14px;">10-15 camps go live, 500-1,000 candidates onboarded</p>
+                            </div>
+                            <div class="timeline-content">
+                                <strong>March</strong>
+                                <p style="font-size: 14px;">First placements, feedback collection</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="font-weight: 700; color: var(--primary); margin-bottom: 20px; font-size: 20px;">Q2 2026</div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>April</strong>
+                                <p style="font-size: 14px;">May visa crisis peak, rapid iteration</p>
+                            </div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>May</strong>
+                                <p style="font-size: 14px;">Phase 1 completion, 30+ placements</p>
+                            </div>
+                            <div class="timeline-content">
+                                <strong>June</strong>
+                                <p style="font-size: 14px;">Phase 2 expansion begins, 50-75 camps target</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent); margin-bottom: 20px; font-size: 20px;">Q3 2026</div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>July</strong>
+                                <p style="font-size: 14px;">Hybrid pricing A/B test</p>
+                            </div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>August</strong>
+                                <p style="font-size: 14px;">Open applications, 2k-3k candidate pool</p>
+                            </div>
+                            <div class="timeline-content">
+                                <strong>September</strong>
+                                <p style="font-size: 14px;">Phase 3 national planning</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div style="font-weight: 700; color: var(--accent); margin-bottom: 20px; font-size: 20px;">Q4 2026</div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>October</strong>
+                                <p style="font-size: 14px;">National launch (200+ camps)</p>
+                            </div>
+                            <div class="timeline-content" style="margin-bottom: 15px;">
+                                <strong>November</strong>
+                                <p style="font-size: 14px;">Premium tier launch</p>
+                            </div>
+                            <div class="timeline-content">
+                                <strong>December</strong>
+                                <p style="font-size: 14px;">Year 2 strategy finalization</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">12 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Critical Success Factors -->
+        <div class="slide" data-slide="13">
+            <div class="badge accent">Must-Haves</div>
+            <h2>Critical Success Factors</h2>
+            <p>Six essential elements for success</p>
+
+            <div class="grid-3" style="margin-top: 50px;">
+                <div class="card">
+                    <div class="icon">👥</div>
+                    <h4>Design Partner Involvement</h4>
+                    <p>Formalize Sarah Littlefield advisory role for product requirements and equity lens</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon accent">🤝</div>
+                    <h4>Consortium Access</h4>
+                    <p>Leverage Sam Kaplan's 30-camp peer network for validation</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">🏆</div>
+                    <h4>ACA Credibility</h4>
+                    <p>Use Carly Vargas board connections for association endorsement</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon accent">🎯</div>
+                    <h4>Progressive Filtering UI</h4>
+                    <p>Non-negotiable winnowing flow, favorites, and tracking system</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon">✓</div>
+                    <h4>Candidate Pool Quality</h4>
+                    <p>CSA education focus differentiates from CoolWorks competition</p>
+                </div>
+
+                <div class="card">
+                    <div class="icon accent">📱</div>
+                    <h4>Mobile-First Design</h4>
+                    <p>Camp directors work from phones during peak season</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">13 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Risk Management -->
+        <div class="slide" data-slide="14">
+            <div class="badge primary">Risk Mitigation</div>
+            <h2>Top Risks & Mitigation Strategies</h2>
+
+            <table class="risk-table">
+                <thead>
+                    <tr>
+                        <th>Risk</th>
+                        <th>Impact</th>
+                        <th>Mitigation Strategy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Insufficient candidate opt-ins</td>
+                        <td>High</td>
+                        <td>Multi-channel recruitment, $50 gift card incentives, teaching pipeline emphasis</td>
+                    </tr>
+                    <tr>
+                        <td>Candidate spam/overwhelm</td>
+                        <td>Medium</td>
+                        <td>Rate limiting (10 contacts/day), opt-in preferences, two-way matching</td>
+                    </tr>
+                    <tr>
+                        <td>Revenue model unsustainable</td>
+                        <td>High</td>
+                        <td>Success fee Year 2, tiered pricing, volume strategy (500+ camps)</td>
+                    </tr>
+                    <tr>
+                        <td>CSA brand damage</td>
+                        <td>High</td>
+                        <td>Separate brand firewall, minimum qualification standards</td>
+                    </tr>
+                    <tr>
+                        <td>Wrong market segment</td>
+                        <td>Medium</td>
+                        <td>Three-tier pilot tests all segments, data-driven decision</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">14 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Design Partner Insights -->
+        <div class="slide" data-slide="15">
+            <div class="badge success">Voice of Customer</div>
+            <h2>Design Partner Insights</h2>
+            <p>Key quotes from validation conversations</p>
+
+            <div class="quote-box">
+                <div class="quote-text">"Anyone through your service has credibility that CoolWorks doesn't bring"</div>
+                <div class="quote-author">— Sam Kaplan, Kiev/Wavas Camps</div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">"I will pay anything to get somebody to show up in three weeks because I had 10 visa dismissals"</div>
+                <div class="quote-author">— Carly Vargas, Camp Kohut</div>
+            </div>
+
+            <div class="quote-box">
+                <div class="quote-text">"I'm not going to look at 50 people... if there's some other thing I can put in to know this person is pre-qualified"</div>
+                <div class="quote-author">— Sarah Littlefield, Aloha Camp / Cambridge Camping Association</div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">15 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 16: 30-Day Action Plan -->
+        <div class="slide" data-slide="16">
+            <div class="badge accent">Next Steps</div>
+            <h2>30-Day Action Plan</h2>
+
+            <div class="grid-2">
+                <div class="action-list">
+                    <h3>Week 1: Strategic Decisions</h3>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Approve three-tier pilot approach (10-15 camps)</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Select brand name (naming workshop)</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Confirm Phase 1 pricing ($500/$800/$1,200)</div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Week 2: Design Partners</h3>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Formalize Sarah Littlefield advisory role</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Confirm Sam Kaplan pilot participation</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Request Carly Vargas ACA introductions</div>
+                    </div>
+                </div>
+
+                <div class="action-list">
+                    <h3>Week 3: Candidate Pipeline</h3>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Design CSA candidate survey</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Launch survey to 7,000 rookies + recent grads</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Create video profile templates</div>
+                    </div>
+
+                    <h3 style="margin-top: 30px;">Week 4: MVP Development</h3>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Finalize Phase 1 feature list (7 must-haves)</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Begin progressive filtering UI design</div>
+                    </div>
+                    <div class="action-item">
+                        <div class="action-checkbox"></div>
+                        <div>Prototype video upload system</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">16 / 17</div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Conclusion -->
+        <div class="slide" data-slide="17">
+            <div style="display: flex; flex-direction: column; justify-content: center; height: 100%; text-align: center;">
+                <div class="badge success">Conclusion</div>
+                <h1 style="font-size: 56px;">Why This Phased<br>Approach Wins</h1>
+
+                <div class="grid-3" style="margin-top: 60px;">
+                    <div class="card highlight">
+                        <div style="font-size: 48px; margin-bottom: 20px;">🛡️</div>
+                        <h3>Risk Mitigation</h3>
+                        <p>Small pilot limits exposure, tests all segments simultaneously</p>
+                    </div>
+                    <div class="card highlight">
+                        <div style="font-size: 48px; margin-bottom: 20px;">📊</div>
+                        <h3>Data-Driven</h3>
+                        <p>Don't guess — test pricing, features, and segments with real usage</p>
+                    </div>
+                    <div class="card highlight">
+                        <div style="font-size: 48px; margin-bottom: 20px;">🤝</div>
+                        <h3>Stakeholder Alignment</h3>
+                        <p>All design partners get their needs met in the phased approach</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 60px; padding: 40px; background: linear-gradient(135deg, var(--primary), #0096ff); color: white; border-radius: 16px;">
+                    <h3 style="color: white; font-size: 32px; margin-bottom: 15px;">Recommended Path Forward</h3>
+                    <p style="color: white; font-size: 20px; margin: 0;">Launch January 2026 with 10-15 camps, flat fees, ACA New England focus</p>
+                </div>
+            </div>
+
+            <div class="slide-footer">
+                <div>CSA Summer Camp Staffing Platform</div>
+                <div class="slide-number">17 / 17</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="previousSlide()">←</button>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">→</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 17;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+                return;
+            }
+            if (n < 1) {
+                currentSlide = 1;
+                return;
+            }
+
+            currentSlide = n;
+
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'previous');
+                if (index + 1 === currentSlide) {
+                    slide.classList.add('active');
+                } else if (index + 1 < currentSlide) {
+                    slide.classList.add('previous');
+                }
+            });
+
+            // Update progress bar
+            const progress = (currentSlide / totalSlides) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(1);
+
+        // Animate bars on slide 10
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.bar');
+                    bars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            bar.style.animation = 'growBar 1s ease-out forwards';
+                        }, index * 200);
+                    });
+                }
+            });
+        });
+
+        const chartSlide = document.querySelector('[data-slide="10"]');
+        if (chartSlide) {
+            observer.observe(chartSlide);
+        }
+    </script>
+</body>
+</html>

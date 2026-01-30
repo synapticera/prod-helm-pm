@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Roles vs. Titled Executives: Market Comparison</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .header .tagline {
+            font-size: 1.1em;
+            opacity: 0.85;
+            font-style: italic;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .card.highlight {
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+        }
+
+        .card h2 {
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .card.highlight h2 {
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .card.highlight .metric-row {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-row:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label {
+            font-weight: 600;
+            font-size: 1.05em;
+            color: #4a5568;
+        }
+
+        .card.highlight .metric-label {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .card.highlight .metric-value {
+            color: white;
+        }
+
+        .metric-value.huge {
+            font-size: 2em;
+        }
+
+        .insight-box {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .insight-box h2 {
+            font-size: 1.8em;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+
+        .insight-box .key-insight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            font-size: 1.2em;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .insight-item {
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .insight-item h3 {
+            color: #2d3748;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .insight-item p {
+            color: #4a5568;
+            line-height: 1.5;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .chart-container h2 {
+            font-size: 1.6em;
+            color: #2d3748;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 450px;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .badge.winner {
+            background: #48bb78;
+            color: white;
+        }
+
+        .badge.traditional {
+            background: #cbd5e0;
+            color: #2d3748;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-wrapper {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Market Sizing: Two Approaches Compared</h1>
+            <p class="subtitle">Titled Executives vs. Functional Roles</p>
+            <p class="tagline">"Who actually makes customer service AI decisions?"</p>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="card">
+                <h2>Titled Executive Approach <span class="badge traditional">Traditional</span></h2>
+                <div class="metric-row">
+                    <span class="metric-label">US Market (CCO, VP CS, Director)</span>
+                    <span class="metric-value">~72,000</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Global Market (US+UK+EU)</span>
+                    <span class="metric-value">~145,000</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Average ACV</span>
+                    <span class="metric-value">$55K</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Penetration for $300M ARR</span>
+                    <span class="metric-value huge">13%</span>
+                </div>
+            </div>
+
+            <div class="card highlight">
+                <h2>Functional Role Approach <span class="badge winner">7x Larger</span></h2>
+                <div class="metric-row">
+                    <span class="metric-label">US Market (Any title, CS responsibility)</span>
+                    <span class="metric-value">~501,500</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Global Market (US+UK+EU)</span>
+                    <span class="metric-value">~825,000</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Average ACV</span>
+                    <span class="metric-value">$38K</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Penetration for $300M ARR</span>
+                    <span class="metric-value huge">1.6%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h2>💡 Key Strategic Insights</h2>
+            <div class="key-insight">
+                The functional role market is <strong>7x larger</strong> and requires only <strong>1.6% penetration</strong> vs. 13% for titled executives to achieve $300M ARR. This dramatically improves market feasibility and reduces execution risk.
+            </div>
+            <div class="insight-grid">
+                <div class="insight-item">
+                    <h3>🎯 Market Accessibility</h3>
+                    <p>Functional roles are accessible via product-led growth, whereas titled executives require expensive field sales.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>💰 Achievable Penetration</h3>
+                    <p>1% market penetration is standard for successful SaaS companies; 13% is exceptionally rare.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>📈 Volume Advantage</h3>
+                    <p>500K+ addressable buyers enables rapid customer acquisition through digital channels.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>🚀 GTM Efficiency</h3>
+                    <p>Lower CAC from PLG enables profitable growth at scale, funding enterprise expansion.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container full-width">
+            <h2>Market Size Comparison: US Market</h2>
+            <div class="chart-wrapper">
+                <canvas id="marketSizeChart"></canvas>
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="chart-container">
+                <h2>Penetration Required for $300M ARR</h2>
+                <div class="chart-wrapper">
+                    <canvas id="penetrationChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h2>Customer Mix to Reach $300M ARR</h2>
+                <div class="chart-wrapper">
+                    <canvas id="customerMixChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container full-width">
+            <h2>Functional Role Breakdown by Company Size</h2>
+            <div class="chart-wrapper">
+                <canvas id="functionalRoleChart"></canvas>
+            </div>
+        </div>
+
+        <div class="insight-box">
+            <h2>📊 Recommended Strategy: Dual-Track Approach</h2>
+            <div class="insight-grid">
+                <div class="insight-item">
+                    <h3>Track 1: Volume (70% Revenue)</h3>
+                    <p><strong>Target</strong>: Functional roles, 100-2,000 employees<br>
+                    <strong>ACV</strong>: $18K-$45K<br>
+                    <strong>Acquisition</strong>: Product-led growth, digital marketing<br>
+                    <strong>Goal</strong>: 5,600 customers by Year 5</p>
+                </div>
+                <div class="insight-item">
+                    <h3>Track 2: Strategic (30% Revenue)</h3>
+                    <p><strong>Target</strong>: Titled executives, 1,000+ employees<br>
+                    <strong>ACV</strong>: $80K-$150K<br>
+                    <strong>Acquisition</strong>: Direct sales, ABM<br>
+                    <strong>Goal</strong>: 725 customers by Year 5</p>
+                </div>
+            </div>
+            <div class="key-insight" style="margin-top: 25px;">
+                <strong>Result</strong>: Both segments at ~1% penetration, totaling $300M ARR with 6,325 customers. This balanced approach maximizes market reach while maintaining high revenue per customer.
+            </div>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="card">
+                <h2>Who Are Functional Roles?</h2>
+                <div class="metric-row">
+                    <span class="metric-label">Operations Managers (Small SMB)</span>
+                    <span class="metric-value">~330,000</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Multi-Function Leaders (Mid-Market)</span>
+                    <span class="metric-value">~90,000</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Titled CS Executives (Enterprise)</span>
+                    <span class="metric-value">~72,000</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Founders/CEOs (Small SMB)</span>
+                    <span class="metric-value">~45,000</span>
+                </div>
+            </div>
+
+            <div class="card highlight">
+                <h2>Common Job Titles</h2>
+                <div class="metric-row">
+                    <span class="metric-label">Operations Manager</span>
+                    <span class="metric-value">✓</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Customer Service Manager</span>
+                    <span class="metric-value">✓</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Director of Operations</span>
+                    <span class="metric-value">✓</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">VP Operations</span>
+                    <span class="metric-value">✓</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Head of Customer Experience</span>
+                    <span class="metric-value">✓</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Market Size Comparison
+        const ctx1 = document.getElementById('marketSizeChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Titled Executives', 'Functional Roles'],
+                datasets: [{
+                    label: 'US Market Size',
+                    data: [72000, 501500],
+                    backgroundColor: [
+                        'rgba(203, 213, 224, 0.8)',
+                        'rgba(72, 187, 120, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(203, 213, 224, 1)',
+                        'rgba(72, 187, 120, 1)'
+                    ],
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y.toLocaleString() + ' potential buyers';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                if (value >= 1000) return (value / 1000) + 'K';
+                                return value;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Penetration Required
+        const ctx2 = document.getElementById('penetrationChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Penetrated', 'Untapped Market'],
+                datasets: [{
+                    label: 'Titled Executives',
+                    data: [13, 87],
+                    backgroundColor: [
+                        'rgba(203, 213, 224, 0.8)',
+                        'rgba(237, 242, 247, 0.3)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Titled Executives: 13% Required',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Customer Mix
+        const ctx3 = document.getElementById('customerMixChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: ['Functional Roles (5,600)', 'Titled Executives (725)'],
+                datasets: [{
+                    data: [5600, 725],
+                    backgroundColor: [
+                        'rgba(72, 187, 120, 0.8)',
+                        'rgba(102, 126, 234, 0.8)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const percentage = ((context.parsed / 6325) * 100).toFixed(1);
+                                return context.label + ' (' + percentage + '%)';
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Total: 6,325 customers = $300M ARR',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Functional Role Breakdown
+        const ctx4 = document.getElementById('functionalRoleChart').getContext('2d');
+        new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['Small SMB\n(50-249 employees)', 'Mid-Market\n(250-999 employees)', 'Enterprise\n(1,000+ employees)'],
+                datasets: [{
+                    label: 'Functional Roles',
+                    data: [337500, 156800, 7200],
+                    backgroundColor: [
+                        'rgba(102, 126, 234, 0.8)',
+                        'rgba(72, 187, 120, 0.8)',
+                        'rgba(237, 100, 166, 0.8)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y.toLocaleString() + ' roles';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                if (value >= 1000) return (value / 1000) + 'K';
+                                return value;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

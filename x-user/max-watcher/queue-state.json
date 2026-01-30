@@ -1,0 +1,1238 @@
+{
+  "queue": [],
+  "failed": [
+    {
+      "sessionId": "000cca98-dc12-4a89-96a4-0704afeaf57b",
+      "date": "2026-01-03",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T14:06:12.450Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "0b2e4414-b9f7-4c51-a3d0-6ffe153b2c06",
+      "date": "2026-01-11",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T14:17:05.348Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "12e41f4f-621a-4903-ad2e-f64ad5aac46d",
+      "date": "2026-01-05",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T14:21:08.978Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "20676409-8f9e-42f7-9cfd-6381690ea1ad",
+      "date": "2026-01-06",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T14:31:11.752Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "293b4c13-0e31-4787-846a-66143996ecf0",
+      "date": "2026-01-02",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T14:35:54.533Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "2d7b9e9e-4a12-4fc0-8cc9-bb04c694177f",
+      "date": "2026-01-05",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T14:41:17.054Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "3755c1f0-d897-4ae6-8d6d-43330833434e",
+      "date": "2026-01-03",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T14:57:25.963Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "46d48232-eb56-434b-aa02-b0442b8e50c2",
+      "date": "2026-01-10",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:03:21.118Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "527d53cd-79ae-43d9-b9bb-2c825b9e2905",
+      "date": "2026-01-03",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:07:16.253Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "5f0ee602-8cec-4058-a545-4420e48bc139",
+      "date": "2026-01-10",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:12:17.432Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "73d1d701-816d-4363-bc8b-2c99e1364dec",
+      "date": "2026-01-02",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:17:17.195Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "790871ad-d2bb-4ee7-9009-0fcd1495bfbf",
+      "date": "2026-01-03",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:22:25.107Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "84d2ae5c-f6f7-43c7-b289-36f9f0f8b19a",
+      "date": "2026-01-11",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:28:39.845Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "985ec254-6328-47ed-82ea-f2076d972367",
+      "date": "2026-01-11",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:32:32.046Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a06ba0f",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:37:08.599Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a0a770e",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:42:08.604Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a0aa22d",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:47:08.607Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a0b0fb2",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:52:08.608Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a0e7f89",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T15:57:08.614Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a12e48a",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:02:08.611Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a140589",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:07:08.613Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a15a837",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:12:08.617Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a185183",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:17:08.618Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a195ef6",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:22:08.621Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a1a2bf7",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:27:08.623Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a25b0f6",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:32:08.619Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a26cd89",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:37:08.647Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a271c80",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:42:08.648Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a2be26e",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:47:08.659Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a2d2180",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:52:08.658Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a3002d6",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T16:57:08.662Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a33995d",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:02:08.667Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a3482de",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:07:08.673Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a351a64",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:12:08.685Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a360478",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:17:08.688Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a38460d",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:22:08.692Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a3acc86",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:27:08.694Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a3c5681",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:32:08.680Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a3dbc8f",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:37:08.671Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a40560d",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:42:08.671Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a44c003",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:47:08.674Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a47ba8f",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:52:08.677Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a4f789d",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T17:57:08.675Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a55955f",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:02:08.676Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a57f9ad",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:07:08.705Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a5cc5d9",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:12:08.711Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a62c4d7",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:17:08.716Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a666797",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:22:08.715Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a6a60d4",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:27:08.717Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a6bcf4c",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:32:08.727Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a6ddb98",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:37:08.737Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a6f8d0c",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:42:08.740Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a70721e",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:47:08.747Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a724798",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:52:08.752Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a76c4af",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T18:57:08.754Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a782dfe",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:02:08.759Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a78fb6d",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:07:08.763Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a7c67d1",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:12:08.770Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a7d22b6",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:17:08.774Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a7d59da",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:22:08.781Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a7e7f3f",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:27:08.787Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a813b0b",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:32:08.766Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a8833c3",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:37:08.765Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a8879ca",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:42:08.764Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a894027",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:47:08.766Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a89e03e",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:52:08.769Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a8b226e",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T19:57:08.772Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a8d6d98",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T20:02:08.782Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a8de720",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T20:07:08.781Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a8e396d",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T20:12:08.780Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a90caad",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T20:17:08.790Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a92e0a4",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T20:59:06.329Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-a9f67ac",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:04:06.318Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aa57c33",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:09:06.316Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aa92cb5",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:14:06.321Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aa95386",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:23:04.470Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aaaa5a6",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:31:32.792Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aaf2352",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:37:11.053Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ab02eb1",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:48:46.056Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ab2db08",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T21:56:12.314Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ab37032",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:01:12.190Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ab37351",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:06:12.191Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ab7dca3",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:11:12.251Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ab8672a",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:16:12.252Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-abff186",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:21:12.268Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ac30447",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:26:12.273Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ac55ef2",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:31:12.286Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ac5acf9",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:36:12.289Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aca2282",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:41:12.292Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aca8164",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:46:12.301Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-acaba3e",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:51:12.306Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-acad361",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T22:56:12.307Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-acdf65b",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:01:12.313Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ad25cfe",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:06:12.320Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ad2cf99",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:11:12.319Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ad397bd",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:16:12.329Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ad3f332",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:21:12.332Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ad5eed0",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:26:12.293Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-adb922f",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:32:13.509Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ae0c7b9",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:40:11.156Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ae1ab42",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:45:11.045Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ae27b77",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:50:11.042Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-ae63cbe",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-26T23:55:11.041Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aed45eb",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:04:18.864Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aeed94b",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:09:18.868Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-aef5137",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:14:18.867Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-af1249a",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:19:18.875Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-af1bf11",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:24:18.886Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-af254d1",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:29:18.866Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-af33973",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:34:18.873Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-af461ba",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:39:18.876Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-af613ee",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:44:18.877Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-af64839",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:49:18.877Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "agent-afdc732",
+      "date": null,
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:54:18.880Z",
+      "error": "The \"path\" argument must be of type string. Received null",
+      "attempts": 1
+    },
+    {
+      "sessionId": "d97e9ce9-ce6a-4e74-833c-a3bd6dd669d2",
+      "date": "2026-01-02",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T01:59:18.895Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "ec29822f-374a-43b5-b3ab-86863c6d6736",
+      "date": "2026-01-02",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:04:18.900Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "f5186b6d-18c1-46ce-bcfa-28926fe8de4a",
+      "date": "2026-01-10",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:09:18.901Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "c9ad7a46-e3a7-4373-8745-d121e61c1cd8",
+      "date": "2026-01-11",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:14:18.909Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "e0878ac4-650b-470e-8313-94c64e0e6b57",
+      "date": "2026-01-12",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:19:18.913Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "8f811e40-4cca-456b-8d7e-29f2a05da083",
+      "date": "2026-01-13",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:24:18.898Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "0ea74633-7593-4e2e-a948-7a647e99fdaf",
+      "date": "2026-01-13",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:29:18.874Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "340483d9-cb3f-4a6c-88d4-0c07dda83d48",
+      "date": "2026-01-14",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:34:18.882Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "5db04f95-e1d1-4b43-9cf9-b71ec26dcdb3",
+      "date": "2026-01-14",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:39:18.877Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "74c395b7-37f1-457a-a358-d95ba7a709b2",
+      "date": "2026-01-18",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:44:18.882Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "b3a632d4-1f37-4006-8958-7615ada1aaa4",
+      "date": "2026-01-18",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:49:18.887Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "c1b9b2a2-5d18-406b-b64d-46bc398e3c65",
+      "date": "2026-01-18",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:54:18.895Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "0386d679-5a21-49fd-a25a-34a54f515545",
+      "date": "2026-01-18",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T02:59:18.918Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "ba29fb35-76e5-4834-8e7c-880ee4cef70f",
+      "date": "2026-01-20",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T03:04:18.926Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "748f5848-6bb6-476c-acfb-59b7a30edfa5",
+      "date": "2026-01-20",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T03:09:18.938Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "bfbdf944-75e8-4212-b704-8cf288edfd9e",
+      "date": "2026-01-20",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T03:14:18.938Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "344ff413-e7fe-4fde-a573-a8360ab4d832",
+      "date": "2026-01-20",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T03:19:18.942Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "1463721a-1900-4072-a559-9f2b010ba079",
+      "date": "2026-01-20",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T03:24:18.942Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "0686751b-ebc9-4560-9971-d19d6152eb99",
+      "date": "2026-01-21",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T03:29:18.954Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "9a57bd45-4eeb-4738-8bf3-292431306395",
+      "date": "2026-01-26",
+      "queued_at": "2026-01-26T14:03:58.090Z",
+      "failed_at": "2026-01-27T03:34:18.968Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "0403376a-8dde-422f-adc3-6876dbceb726",
+      "date": "2026-01-26",
+      "queued_at": "2026-01-26T14:33:58.134Z",
+      "failed_at": "2026-01-27T03:39:18.967Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "84d2ae5c-f6f7-43c7-b289-36f9f0f8b19a",
+      "date": "2026-01-11",
+      "queued_at": "2026-01-26T15:27:08.784Z",
+      "failed_at": "2026-01-27T03:44:18.969Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "2c071d7a-297d-4e88-950f-daedc117713d",
+      "date": "2026-01-26",
+      "queued_at": "2026-01-26T15:27:08.784Z",
+      "failed_at": "2026-01-27T03:49:18.976Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "085e5fe9-6521-4433-b473-6bd5a1908262",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T13:30:39.662Z",
+      "failed_at": "2026-01-29T13:30:39.666Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "c1203d68-5908-441e-b710-ba3dced8d901",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T13:30:39.662Z",
+      "failed_at": "2026-01-29T13:35:39.666Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "94fde0d1-a749-4cb7-8be0-8d8f34dbcf8a",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T13:45:39.602Z",
+      "failed_at": "2026-01-29T13:45:39.643Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "9fdbda64-8ecd-4912-88e6-c0a3df209047",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T14:15:39.588Z",
+      "failed_at": "2026-01-29T14:15:39.640Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "f00524c8-51c2-4b13-ba65-e7edf8de82c9",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T17:15:39.686Z",
+      "failed_at": "2026-01-29T17:15:39.796Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "501eb90c-b9ea-41dc-892f-081346334da1",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T17:30:39.699Z",
+      "failed_at": "2026-01-29T17:30:39.809Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "ed8f2101-66fc-4921-a365-ebdff419f99b",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T18:15:39.797Z",
+      "failed_at": "2026-01-29T18:15:39.847Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "6e5ee888-583e-4da2-8702-d6584420715b",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T19:15:39.705Z",
+      "failed_at": "2026-01-29T19:15:39.872Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "d2d0a9fe-b160-4aa0-8479-e88da483ecf6",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T19:15:39.705Z",
+      "failed_at": "2026-01-29T19:20:39.881Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "e2809340-dbbc-4007-a41c-13ec132f1d29",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T19:15:39.705Z",
+      "failed_at": "2026-01-29T19:25:39.888Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "d93d0e86-5777-4fd6-bfb3-efb33688666c",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T20:45:39.713Z",
+      "failed_at": "2026-01-29T20:45:39.952Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "aa82e8bc-c034-48b8-baf1-ea55254dc1d0",
+      "date": "2026-01-29",
+      "queued_at": "2026-01-29T21:00:39.745Z",
+      "failed_at": "2026-01-29T21:00:39.974Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "6654d44e-109b-41a6-96c2-72705f0d1a55",
+      "date": "2026-01-30",
+      "queued_at": "2026-01-30T00:45:39.854Z",
+      "failed_at": "2026-01-30T00:45:40.151Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "1c144e49-326e-4085-9701-49fd1f23deee",
+      "date": "2026-01-30",
+      "queued_at": "2026-01-30T02:01:12.653Z",
+      "failed_at": "2026-01-30T02:01:12.694Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "393be737-f9d8-47bf-ba3e-cb66f27b2b85",
+      "date": "2026-01-30",
+      "queued_at": "2026-01-30T02:01:12.653Z",
+      "failed_at": "2026-01-30T02:06:12.673Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "b14d5977-ced2-4944-880f-a28d61e5ec1f",
+      "date": "2026-01-30",
+      "queued_at": "2026-01-30T02:01:12.653Z",
+      "failed_at": "2026-01-30T02:11:12.676Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "774ac5a3-a8fd-4a7d-9942-a338b3f5040d",
+      "date": "2026-01-30",
+      "queued_at": "2026-01-30T10:01:12.299Z",
+      "failed_at": "2026-01-30T10:01:13.161Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    }
+  ],
+  "updated_at": "2026-01-30T10:01:13.161Z"
+}

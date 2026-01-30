@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Agent Architecture - Interactive Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0a1929 0%, #1e3a8a 100%);
+            color: #e5e7eb;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #60a5fa;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #9ca3af;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #60a5fa;
+        }
+
+        .tab.active {
+            background: #60a5fa;
+            border-color: #60a5fa;
+            color: #0a1929;
+        }
+
+        .viz-panel {
+            display: none;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .viz-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        .agent-box {
+            fill: #1e3a8a;
+            stroke: #60a5fa;
+            stroke-width: 2;
+        }
+
+        .agent-box:hover {
+            fill: #2563eb;
+            cursor: pointer;
+        }
+
+        .agent-text {
+            fill: #e5e7eb;
+            font-size: 14px;
+            font-weight: 600;
+            pointer-events: none;
+        }
+
+        .agent-desc {
+            fill: #9ca3af;
+            font-size: 11px;
+            pointer-events: none;
+        }
+
+        .connection {
+            stroke: #60a5fa;
+            stroke-width: 2;
+            fill: none;
+            opacity: 0.6;
+        }
+
+        .connection-animated {
+            stroke-dasharray: 5, 5;
+            animation: dash 1s linear infinite;
+        }
+
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+
+        .decision-graph {
+            fill: #064e3b;
+            stroke: #10b981;
+            stroke-width: 3;
+        }
+
+        .layer-label {
+            fill: #60a5fa;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .note {
+            background: rgba(96, 165, 250, 0.1);
+            border-left: 4px solid #60a5fa;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .note h3 {
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .legend {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .flow-diagram {
+            margin: 2rem 0;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            color: #e5e7eb;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Helm Agent Architecture</h1>
+        <p class="subtitle">Interactive Visualization of Distributed Intelligence System</p>
+
+        <div class="tab-container">
+            <div class="tab active" onclick="showPanel('overview')">System Overview</div>
+            <div class="tab" onclick="showPanel('agents')">8 Core Agents</div>
+            <div class="tab" onclick="showPanel('coordination')">Coordination Patterns</div>
+            <div class="tab" onclick="showPanel('deployment')">Deployment</div>
+            <div class="tab" onclick="showPanel('flows')">Example Flows</div>
+        </div>
+
+        <!-- Overview Panel -->
+        <div id="overview" class="viz-panel active">
+            <svg viewBox="0 0 1200 800">
+                <!-- Title -->
+                <text x="600" y="30" class="layer-label" text-anchor="middle">Helm's Three-Layer Architecture</text>
+
+                <!-- Layer 1: Customer-Facing -->
+                <rect x="100" y="60" width="1000" height="180" fill="rgba(139, 92, 246, 0.1)" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+                <text x="120" y="90" class="layer-label" fill="#a78bfa">CUSTOMER-FACING LAYER</text>
+
+                <!-- Conversational Agent -->
+                <rect x="400" y="110" width="400" height="100" class="agent-box" rx="8"/>
+                <text x="600" y="145" class="agent-text" text-anchor="middle">Conversational Agent</text>
+                <text x="600" y="165" class="agent-desc" text-anchor="middle">User Interface & Orchestration</text>
+                <text x="600" y="180" class="agent-desc" text-anchor="middle">Natural Language Q&A</text>
+                <text x="600" y="195" class="agent-desc" text-anchor="middle">Multi-turn Conversations</text>
+
+                <!-- Layer 2: Shared Intelligence -->
+                <rect x="100" y="270" width="1000" height="200" fill="rgba(16, 185, 129, 0.1)" stroke="#10b981" stroke-width="2" rx="8"/>
+                <text x="120" y="300" class="layer-label" fill="#34d399">SHARED INTELLIGENCE</text>
+
+                <!-- Decision Graph -->
+                <rect x="250" y="320" width="700" height="120" class="decision-graph" rx="8"/>
+                <text x="600" y="360" class="agent-text" text-anchor="middle" fill="#d1fae5">Decision Graph</text>
+                <text x="600" y="380" class="agent-desc" text-anchor="middle" fill="#6ee7b7">Knowledge Store • Event Bus • Audit Trail</text>
+                <text x="600" y="400" class="agent-desc" text-anchor="middle" fill="#6ee7b7">PostgreSQL + Redis + Pinecone</text>
+                <text x="600" y="420" class="agent-desc" text-anchor="middle" fill="#6ee7b7">All agents read/write shared intelligence</text>
+
+                <!-- Layer 3: Processing -->
+                <rect x="100" y="500" width="1000" height="280" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="2" rx="8"/>
+                <text x="120" y="530" class="layer-label" fill="#60a5fa">AGENT PROCESSING LAYER</text>
+
+                <!-- Sensing Column -->
+                <text x="250" y="560" class="agent-text" text-anchor="middle" fill="#60a5fa">SENSING</text>
+
+                <rect x="150" y="575" width="200" height="70" class="agent-box" rx="6"/>
+                <text x="250" y="605" class="agent-text" text-anchor="middle">Discovery Agent</text>
+                <text x="250" y="622" class="agent-desc" text-anchor="middle">Ambient capture</text>
+                <text x="250" y="637" class="agent-desc" text-anchor="middle">24/7 running</text>
+
+                <rect x="150" y="660" width="200" height="70" class="agent-box" rx="6"/>
+                <text x="250" y="690" class="agent-text" text-anchor="middle">Analysis Agent</text>
+                <text x="250" y="707" class="agent-desc" text-anchor="middle">Pattern detection</text>
+                <text x="250" y="722" class="agent-desc" text-anchor="middle">Causal inference</text>
+
+                <!-- Planning Column -->
+                <text x="600" y="560" class="agent-text" text-anchor="middle" fill="#60a5fa">PLANNING</text>
+
+                <rect x="450" y="575" width="200" height="70" class="agent-box" rx="6"/>
+                <text x="550" y="605" class="agent-text" text-anchor="middle">Strategy Agent</text>
+                <text x="550" y="622" class="agent-desc" text-anchor="middle">Policy optimization</text>
+                <text x="550" y="637" class="agent-desc" text-anchor="middle">On-demand</text>
+
+                <rect x="450" y="660" width="200" height="70" class="agent-box" rx="6"/>
+                <text x="550" y="690" class="agent-text" text-anchor="middle">Simulation Agent</text>
+                <text x="550" y="707" class="agent-desc" text-anchor="middle">Policy testing</text>
+                <text x="550" y="722" class="agent-desc" text-anchor="middle">Risk assessment</text>
+
+                <!-- Acting Column -->
+                <text x="900" y="560" class="agent-text" text-anchor="middle" fill="#60a5fa">ACTING</text>
+
+                <rect x="750" y="575" width="200" height="70" class="agent-box" rx="6"/>
+                <text x="850" y="605" class="agent-text" text-anchor="middle">Execution Agent</text>
+                <text x="850" y="622" class="agent-desc" text-anchor="middle">Policy enforcement</text>
+                <text x="850" y="637" class="agent-desc" text-anchor="middle">Real-time <100ms</text>
+
+                <rect x="750" y="660" width="200" height="70" class="agent-box" rx="6"/>
+                <text x="850" y="690" class="agent-text" text-anchor="middle">Insight Agent</text>
+                <text x="850" y="707" class="agent-desc" text-anchor="middle">Visualization</text>
+                <text x="850" y="722" class="agent-desc" text-anchor="middle">Narratives</text>
+
+                <!-- Market Sensing (spans bottom) -->
+                <rect x="380" y="745" width="440" height="30" class="agent-box" rx="6"/>
+                <text x="600" y="765" class="agent-text" text-anchor="middle" font-size="13">Market Sensing Agent (External Intelligence)</text>
+
+                <!-- Connections -->
+                <path d="M 600 210 L 600 320" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+                <path d="M 600 440 L 600 500" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+
+                <path d="M 250 440 L 250 575" class="connection" opacity="0.4"/>
+                <path d="M 550 440 L 550 575" class="connection" opacity="0.4"/>
+                <path d="M 850 440 L 850 575" class="connection" opacity="0.4"/>
+
+                <path d="M 250 645 L 250 440" class="connection" opacity="0.4"/>
+                <path d="M 550 645 L 550 440" class="connection" opacity="0.4"/>
+                <path d="M 850 645 L 850 440" class="connection" opacity="0.4"/>
+
+                <path d="M 600 745 L 600 440" class="connection connection-animated" opacity="0.3"/>
+
+                <!-- Arrow marker -->
+                <defs>
+                    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#60a5fa" />
+                    </marker>
+                </defs>
+            </svg>
+
+            <div class="note">
+                <h3>Architecture Principles</h3>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: #d1d5db;">
+                    <li><span class="highlight">Single Responsibility:</span> Each agent owns one problem domain</li>
+                    <li><span class="highlight">Shared Intelligence:</span> All agents read/write Decision Graph</li>
+                    <li><span class="highlight">Asynchronous:</span> Agents coordinate via events, no blocking</li>
+                    <li><span class="highlight">Human-in-the-Loop:</span> Critical decisions require approval</li>
+                    <li><span class="highlight">Graceful Degradation:</span> System functions if agents fail</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 8 Core Agents Panel -->
+        <div id="agents" class="viz-panel">
+            <svg viewBox="0 0 1200 1400">
+                <text x="600" y="30" class="layer-label" text-anchor="middle">The 8 Core Agents</text>
+
+                <!-- Row 1: Discovery & Conversational -->
+                <g class="agent-card">
+                    <rect x="50" y="60" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="275" y="95" class="agent-text" text-anchor="middle" font-size="18">1. Discovery Agent</text>
+                    <text x="275" y="120" class="agent-desc" text-anchor="middle">Responsibility: Continuous ambient capture</text>
+                    <text x="275" y="140" class="agent-desc" text-anchor="middle">Runtime: 24/7 background • Horizontal scaling</text>
+                    <text x="275" y="160" class="agent-desc" text-anchor="middle">Triggers: Webhook events, API streams, logs</text>
+                    <text x="275" y="180" class="agent-desc" text-anchor="middle">Intelligence: Pattern recognition, adaptive sampling</text>
+                    <text x="70" y="200" fill="#10b981" font-size="11" font-weight="600">SENSING</text>
+                </g>
+
+                <g class="agent-card">
+                    <rect x="550" y="60" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="775" y="95" class="agent-text" text-anchor="middle" font-size="18">7. Conversational Agent</text>
+                    <text x="775" y="120" class="agent-desc" text-anchor="middle">Responsibility: User interface & orchestration</text>
+                    <text x="775" y="140" class="agent-desc" text-anchor="middle">Runtime: Real-time (<2s) • High concurrency</text>
+                    <text x="775" y="160" class="agent-desc" text-anchor="middle">Triggers: User messages, proactive insights</text>
+                    <text x="775" y="180" class="agent-desc" text-anchor="middle">Intelligence: Intent parsing, multi-agent coordination</text>
+                    <text x="570" y="200" fill="#8b5cf6" font-size="11" font-weight="600">CUSTOMER-FACING</text>
+                </g>
+
+                <!-- Row 2: Analysis & Strategy -->
+                <g class="agent-card">
+                    <rect x="50" y="240" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="275" y="275" class="agent-text" text-anchor="middle" font-size="18">2. Analysis Agent</text>
+                    <text x="275" y="300" class="agent-desc" text-anchor="middle">Responsibility: Extract insights from decisions</text>
+                    <text x="275" y="320" class="agent-desc" text-anchor="middle">Runtime: Batch + On-demand • Vertical scaling</text>
+                    <text x="275" y="340" class="agent-desc" text-anchor="middle">Triggers: Threshold reached, scheduled, user query</text>
+                    <text x="275" y="360" class="agent-desc" text-anchor="middle">Intelligence: Causal inference, trend prediction</text>
+                    <text x="70" y="380" fill="#10b981" font-size="11" font-weight="600">SENSING</text>
+                </g>
+
+                <g class="agent-card">
+                    <rect x="550" y="240" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="775" y="275" class="agent-text" text-anchor="middle" font-size="18">3. Strategy Agent</text>
+                    <text x="775" y="300" class="agent-desc" text-anchor="middle">Responsibility: Generate optimal policies</text>
+                    <text x="775" y="320" class="agent-desc" text-anchor="middle">Runtime: On-demand (minutes) • Horizontal scaling</text>
+                    <text x="775" y="340" class="agent-desc" text-anchor="middle">Triggers: Insight-triggered, user request, scheduled</text>
+                    <text x="775" y="360" class="agent-desc" text-anchor="middle">Intelligence: Multi-objective optimization, risk assessment</text>
+                    <text x="570" y="380" fill="#f59e0b" font-size="11" font-weight="600">PLANNING</text>
+                </g>
+
+                <!-- Row 3: Simulation & Execution -->
+                <g class="agent-card">
+                    <rect x="50" y="420" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="275" y="455" class="agent-text" text-anchor="middle" font-size="18">4. Simulation Agent</text>
+                    <text x="275" y="480" class="agent-desc" text-anchor="middle">Responsibility: Test policies before deployment</text>
+                    <text x="275" y="500" class="agent-desc" text-anchor="middle">Runtime: On-demand (seconds) • Horizontal scaling</text>
+                    <text x="275" y="520" class="agent-desc" text-anchor="middle">Triggers: Strategy Agent requests validation</text>
+                    <text x="275" y="540" class="agent-desc" text-anchor="middle">Intelligence: Historical replay, Monte Carlo, A/B design</text>
+                    <text x="70" y="560" fill="#f59e0b" font-size="11" font-weight="600">PLANNING</text>
+                </g>
+
+                <g class="agent-card">
+                    <rect x="550" y="420" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="775" y="455" class="agent-text" text-anchor="middle" font-size="18">5. Execution Agent</text>
+                    <text x="775" y="480" class="agent-desc" text-anchor="middle">Responsibility: Enforce policies in production</text>
+                    <text x="775" y="500" class="agent-desc" text-anchor="middle">Runtime: Real-time (<100ms) • High throughput</text>
+                    <text x="775" y="520" class="agent-desc" text-anchor="middle">Triggers: Every decision request, policy update</text>
+                    <text x="775" y="540" class="agent-desc" text-anchor="middle">Intelligence: Context-aware, graceful degradation</text>
+                    <text x="570" y="560" fill="#ef4444" font-size="11" font-weight="600">ACTING</text>
+                </g>
+
+                <!-- Row 4: Insight & Market Sensing -->
+                <g class="agent-card">
+                    <rect x="50" y="600" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="275" y="635" class="agent-text" text-anchor="middle" font-size="18">6. Insight Agent</text>
+                    <text x="275" y="660" class="agent-desc" text-anchor="middle">Responsibility: Generate visualizations & narratives</text>
+                    <text x="275" y="680" class="agent-desc" text-anchor="middle">Runtime: On-demand (seconds) • Horizontal scaling</text>
+                    <text x="275" y="700" class="agent-desc" text-anchor="middle">Triggers: User question, scheduled report, alert</text>
+                    <text x="275" y="720" class="agent-desc" text-anchor="middle">Intelligence: Intent understanding, viz selection</text>
+                    <text x="70" y="740" fill="#ef4444" font-size="11" font-weight="600">ACTING</text>
+                </g>
+
+                <g class="agent-card">
+                    <rect x="550" y="600" width="450" height="150" class="agent-box" rx="8"/>
+                    <text x="775" y="635" class="agent-text" text-anchor="middle" font-size="18">8. Market Sensing Agent</text>
+                    <text x="775" y="660" class="agent-desc" text-anchor="middle">Responsibility: Monitor external environment</text>
+                    <text x="775" y="680" class="agent-desc" text-anchor="middle">Runtime: Scheduled (daily/weekly) • Single instance</text>
+                    <text x="775" y="700" class="agent-desc" text-anchor="middle">Triggers: Scheduled scan, breaking news detected</text>
+                    <text x="775" y="720" class="agent-desc" text-anchor="middle">Intelligence: Signal filtering, competitive analysis</text>
+                    <text x="570" y="740" fill="#06b6d4" font-size="11" font-weight="600">EXTERNAL INTELLIGENCE</text>
+                </g>
+
+                <!-- Decision Graph (center) -->
+                <rect x="350" y="820" width="500" height="100" class="decision-graph" rx="8"/>
+                <text x="600" y="855" class="agent-text" text-anchor="middle" fill="#d1fae5" font-size="18">Decision Graph</text>
+                <text x="600" y="880" class="agent-desc" text-anchor="middle" fill="#6ee7b7">Shared Memory Store</text>
+                <text x="600" y="900" class="agent-desc" text-anchor="middle" fill="#6ee7b7">All agents read/write • Event Bus • Audit Trail</text>
+
+                <!-- Connections to Decision Graph -->
+                <path d="M 275 210 L 450 820" class="connection" opacity="0.3"/>
+                <path d="M 775 210 L 650 820" class="connection" opacity="0.3"/>
+                <path d="M 275 390 L 470 820" class="connection" opacity="0.3"/>
+                <path d="M 775 390 L 630 820" class="connection" opacity="0.3"/>
+                <path d="M 275 570 L 490 820" class="connection" opacity="0.3"/>
+                <path d="M 775 570 L 610 820" class="connection" opacity="0.3"/>
+                <path d="M 275 750 L 510 820" class="connection" opacity="0.3"/>
+                <path d="M 775 750 L 590 820" class="connection" opacity="0.3"/>
+
+                <!-- Legend -->
+                <rect x="200" y="980" width="800" height="350" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.2)" rx="8"/>
+                <text x="600" y="1010" class="layer-label" text-anchor="middle" font-size="16">Agent Design Pattern</text>
+
+                <text x="220" y="1045" fill="#60a5fa" font-size="13" font-weight="600">It's an AGENT when:</text>
+                <text x="240" y="1070" class="agent-desc">✓ Makes autonomous decisions</text>
+                <text x="240" y="1090" class="agent-desc">✓ Maintains stateful memory</text>
+                <text x="240" y="1110" class="agent-desc">✓ Works toward goals</text>
+                <text x="240" y="1130" class="agent-desc">✓ Multi-turn reasoning (plan, act, reflect, adapt)</text>
+                <text x="240" y="1150" class="agent-desc">✓ Owns a domain responsibility</text>
+
+                <text x="620" y="1045" fill="#ef4444" font-size="13" font-weight="600">It's a FUNCTION when:</text>
+                <text x="640" y="1070" class="agent-desc">✗ Deterministic (same input → same output)</text>
+                <text x="640" y="1090" class="agent-desc">✗ Stateless (no memory)</text>
+                <text x="640" y="1110" class="agent-desc">✗ Task completion (single operation)</text>
+                <text x="640" y="1130" class="agent-desc">✗ No planning (just executes)</text>
+                <text x="640" y="1150" class="agent-desc">✗ Utility/helper logic</text>
+
+                <text x="220" y="1190" fill="#10b981" font-size="13" font-weight="600">Examples of AGENTS:</text>
+                <text x="240" y="1215" class="agent-desc">"Detect emerging decision patterns" → Analysis Agent</text>
+                <text x="240" y="1235" class="agent-desc">"Generate optimal policy for a goal" → Strategy Agent</text>
+                <text x="240" y="1255" class="agent-desc">"Monitor market for relevant signals" → Market Sensing Agent</text>
+
+                <text x="620" y="1190" fill="#9ca3af" font-size="13" font-weight="600">Examples of FUNCTIONS:</text>
+                <text x="640" y="1215" class="agent-desc">"Parse user question into intent" → NLP function</text>
+                <text x="640" y="1235" class="agent-desc">"Format chart data for viz" → Data transform function</text>
+                <text x="640" y="1255" class="agent-desc">"Send email notification" → Side effect function</text>
+            </svg>
+        </div>
+
+        <!-- Coordination Patterns Panel -->
+        <div id="coordination" class="viz-panel">
+            <h2 style="color: #60a5fa; margin-bottom: 1.5rem; font-size: 1.8rem;">Coordination Patterns: Choreography vs Orchestration</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h3 style="color: #10b981; margin-bottom: 1rem;">Event-Driven Choreography</h3>
+                    <p style="color: #9ca3af; margin-bottom: 1rem;">For background ambient work</p>
+
+                    <svg viewBox="0 0 500 400">
+                        <text x="250" y="25" class="agent-text" text-anchor="middle" font-size="14" fill="#10b981">No Central Orchestrator</text>
+
+                        <!-- Event Bus (center) -->
+                        <circle cx="250" cy="200" r="60" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="3"/>
+                        <text x="250" y="195" class="agent-text" text-anchor="middle" font-size="12">Event Bus</text>
+                        <text x="250" y="210" class="agent-desc" text-anchor="middle" font-size="10">(BullMQ/Redis)</text>
+
+                        <!-- Agents around -->
+                        <rect x="30" y="80" width="100" height="50" class="agent-box" rx="4"/>
+                        <text x="80" y="110" class="agent-text" text-anchor="middle" font-size="11">Discovery</text>
+
+                        <rect x="370" y="80" width="100" height="50" class="agent-box" rx="4"/>
+                        <text x="420" y="110" class="agent-text" text-anchor="middle" font-size="11">Analysis</text>
+
+                        <rect x="30" y="270" width="100" height="50" class="agent-box" rx="4"/>
+                        <text x="80" y="300" class="agent-text" text-anchor="middle" font-size="11">Strategy</text>
+
+                        <rect x="370" y="270" width="100" height="50" class="agent-box" rx="4"/>
+                        <text x="420" y="300" class="agent-text" text-anchor="middle" font-size="11">Market Sensing</text>
+
+                        <!-- Connections -->
+                        <path d="M 130 105 L 200 170" class="connection connection-animated" marker-end="url(#arrowgreen)"/>
+                        <path d="M 300 170 L 370 105" class="connection" opacity="0.4" marker-end="url(#arrowgreen)"/>
+                        <path d="M 130 295 L 200 230" class="connection" opacity="0.4" marker-end="url(#arrowgreen)"/>
+                        <path d="M 300 230 L 370 295" class="connection connection-animated" marker-end="url(#arrowgreen)"/>
+
+                        <defs>
+                            <marker id="arrowgreen" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                                <path d="M0,0 L0,6 L7,3 z" fill="#10b981" />
+                            </marker>
+                        </defs>
+                    </svg>
+
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(16, 185, 129, 0.1); border-radius: 6px;">
+                        <p style="color: #6ee7b7; font-weight: 600; margin-bottom: 0.5rem;">✓ Pros:</p>
+                        <ul style="margin-left: 1.5rem; color: #9ca3af; font-size: 0.9rem;">
+                            <li>Agents scale independently</li>
+                            <li>Failure isolation</li>
+                            <li>Easy to add new agents</li>
+                            <li>Natural parallelism</li>
+                        </ul>
+                        <p style="color: #ef4444; font-weight: 600; margin-top: 0.75rem; margin-bottom: 0.5rem;">✗ Cons:</p>
+                        <ul style="margin-left: 1.5rem; color: #9ca3af; font-size: 0.9rem;">
+                            <li>Harder to debug</li>
+                            <li>No global view</li>
+                            <li>Eventual consistency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: #8b5cf6; margin-bottom: 1rem;">Orchestrated Workflows</h3>
+                    <p style="color: #9ca3af; margin-bottom: 1rem;">For user-initiated actions</p>
+
+                    <svg viewBox="0 0 500 400">
+                        <text x="250" y="25" class="agent-text" text-anchor="middle" font-size="14" fill="#8b5cf6">Central Orchestrator</text>
+
+                        <!-- Orchestrator (top) -->
+                        <rect x="150" y="50" width="200" height="60" fill="#7c3aed" stroke="#a78bfa" stroke-width="2" rx="6"/>
+                        <text x="250" y="75" class="agent-text" text-anchor="middle" font-size="12">Conversational</text>
+                        <text x="250" y="92" class="agent-text" text-anchor="middle" font-size="12">Orchestrator</text>
+
+                        <!-- Coordinated Agents -->
+                        <rect x="50" y="180" width="120" height="50" class="agent-box" rx="4"/>
+                        <text x="110" y="210" class="agent-text" text-anchor="middle" font-size="11">Analysis</text>
+
+                        <rect x="190" y="180" width="120" height="50" class="agent-box" rx="4"/>
+                        <text x="250" y="210" class="agent-text" text-anchor="middle" font-size="11">Strategy</text>
+
+                        <rect x="330" y="180" width="120" height="50" class="agent-box" rx="4"/>
+                        <text x="390" y="210" class="agent-text" text-anchor="middle" font-size="11">Insight</text>
+
+                        <!-- User -->
+                        <circle cx="250" cy="340" r="30" fill="rgba(139, 92, 246, 0.3)" stroke="#a78bfa" stroke-width="2"/>
+                        <text x="250" y="348" class="agent-text" text-anchor="middle" font-size="11">User</text>
+
+                        <!-- Connections -->
+                        <path d="M 250 110 L 110 180" class="connection connection-animated" marker-end="url(#arrowpurple)"/>
+                        <path d="M 250 110 L 250 180" class="connection connection-animated" marker-end="url(#arrowpurple)"/>
+                        <path d="M 250 110 L 390 180" class="connection connection-animated" marker-end="url(#arrowpurple)"/>
+
+                        <path d="M 250 310 L 250 110" class="connection" marker-end="url(#arrowpurple)"/>
+
+                        <!-- Step labels -->
+                        <text x="150" y="150" fill="#a78bfa" font-size="10">1</text>
+                        <text x="255" y="150" fill="#a78bfa" font-size="10">2</text>
+                        <text x="360" y="150" fill="#a78bfa" font-size="10">3</text>
+
+                        <defs>
+                            <marker id="arrowpurple" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+                                <path d="M0,0 L0,6 L7,3 z" fill="#a78bfa" />
+                            </marker>
+                        </defs>
+                    </svg>
+
+                    <div style="margin-top: 1rem; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 6px;">
+                        <p style="color: #c4b5fd; font-weight: 600; margin-bottom: 0.5rem;">✓ Pros:</p>
+                        <ul style="margin-left: 1.5rem; color: #9ca3af; font-size: 0.9rem;">
+                            <li>Clear execution path</li>
+                            <li>Easy to debug</li>
+                            <li>Immediate response</li>
+                            <li>Transactional semantics</li>
+                        </ul>
+                        <p style="color: #ef4444; font-weight: 600; margin-top: 0.75rem; margin-bottom: 0.5rem;">✗ Cons:</p>
+                        <ul style="margin-left: 1.5rem; color: #9ca3af; font-size: 0.9rem;">
+                            <li>Orchestrator is SPOF</li>
+                            <li>Tighter coupling</li>
+                            <li>Less scalable</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note">
+                <h3>Helm's Hybrid Approach (Recommended)</h3>
+                <div class="code-block">
+                    <pre>
+<span class="highlight">// BACKGROUND: Event-Driven Choreography</span>
+discoveryAgent.startContinuous()   <span style="color: #6ee7b7;">// Always capturing decisions</span>
+analysisAgent.scheduleBatch()      <span style="color: #6ee7b7;">// Daily deep analysis</span>
+marketSensingAgent.schedule()      <span style="color: #6ee7b7;">// Weekly external scan</span>
+
+<span style="color: #6ee7b7;">// Agents coordinate via events (no orchestrator)</span>
+eventBus.on('decision.captured', ...)
+eventBus.on('insights.ready', ...)
+eventBus.on('market.signal', ...)
+
+<span class="highlight">// FOREGROUND: Orchestrated User Interactions</span>
+app.post('/api/ask', async (req, res) => {
+  const orchestrator = new ConversationalOrchestrator()
+  const response = await orchestrator.handle(
+    req.body.question,
+    req.user.id
+  )
+  res.json(response)  <span style="color: #6ee7b7;">// Immediate response to user</span>
+})
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deployment Panel -->
+        <div id="deployment" class="viz-panel">
+            <h2 style="color: #60a5fa; margin-bottom: 1.5rem; font-size: 1.8rem;">Production Deployment (Kubernetes)</h2>
+
+            <svg viewBox="0 0 1200 900">
+                <text x="600" y="30" class="layer-label" text-anchor="middle">Kubernetes Cluster Architecture</text>
+
+                <!-- Ingress Layer -->
+                <rect x="100" y="60" width="1000" height="80" fill="rgba(251, 191, 36, 0.1)" stroke="#fbbf24" stroke-width="2" rx="8"/>
+                <text x="120" y="90" class="layer-label" fill="#fbbf24" font-size="14">INGRESS LAYER</text>
+                <text x="120" y="110" class="agent-desc">NGINX • TLS • Rate Limiting • Load Balancer</text>
+
+                <!-- Frontend Layer -->
+                <rect x="100" y="160" width="1000" height="100" fill="rgba(139, 92, 246, 0.1)" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+                <text x="120" y="190" class="layer-label" fill="#a78bfa" font-size="14">FRONTEND LAYER</text>
+
+                <rect x="350" y="200" width="500" height="40" class="agent-box" rx="4"/>
+                <text x="600" y="225" class="agent-text" text-anchor="middle" font-size="12">Next.js Pods (3-10 replicas)</text>
+
+                <!-- Agent Layer -->
+                <rect x="100" y="280" width="1000" height="380" fill="rgba(59, 130, 246, 0.1)" stroke="#3b82f6" stroke-width="2" rx="8"/>
+                <text x="120" y="310" class="layer-label" fill="#60a5fa" font-size="14">AGENT LAYER</text>
+
+                <!-- Row 1 Agents -->
+                <g transform="translate(150, 330)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Discovery Agent</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">3 replicas • 24/7</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">1 CPU, 2GB RAM</text>
+                </g>
+
+                <g transform="translate(400, 330)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Analysis Agent</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">2 replicas • Batch</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">4 CPU, 8GB RAM</text>
+                </g>
+
+                <g transform="translate(650, 330)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Strategy Agent</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">1 replica • On-demand</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">2 CPU, 4GB RAM</text>
+                </g>
+
+                <!-- Row 2 Agents -->
+                <g transform="translate(150, 420)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Execution Agent</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">5-20 replicas • 24/7</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">2 CPU, 4GB RAM</text>
+                </g>
+
+                <g transform="translate(400, 420)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Conversational</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">4-15 replicas</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">2 CPU, 4GB RAM</text>
+                </g>
+
+                <g transform="translate(650, 420)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Simulation Agent</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">2 replicas • On-demand</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">4 CPU, 8GB RAM</text>
+                </g>
+
+                <!-- Row 3 Agents -->
+                <g transform="translate(275, 510)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Insight Agent</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">2 replicas • On-demand</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">2 CPU, 4GB RAM</text>
+                </g>
+
+                <g transform="translate(525, 510)">
+                    <rect width="200" height="70" class="agent-box" rx="4"/>
+                    <text x="100" y="25" class="agent-text" text-anchor="middle" font-size="11">Market Sensing</text>
+                    <text x="100" y="40" class="agent-desc" text-anchor="middle" font-size="9">1 replica • Scheduled</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" font-size="9">2 CPU, 4GB RAM</text>
+                </g>
+
+                <!-- Auto-scaling indicator -->
+                <text x="120" y="645" fill="#10b981" font-size="11" font-weight="600">↕ Horizontal Pod Autoscaling (HPA)</text>
+
+                <!-- Data Layer -->
+                <rect x="100" y="680" width="1000" height="180" fill="rgba(16, 185, 129, 0.1)" stroke="#10b981" stroke-width="2" rx="8"/>
+                <text x="120" y="710" class="layer-label" fill="#34d399" font-size="14">DATA LAYER (StatefulSets)</text>
+
+                <g transform="translate(200, 730)">
+                    <rect width="200" height="100" class="decision-graph" rx="6"/>
+                    <text x="100" y="35" class="agent-text" text-anchor="middle" fill="#d1fae5" font-size="12">PostgreSQL</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">Decision Graph</text>
+                    <text x="100" y="70" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">3-node cluster</text>
+                    <text x="100" y="85" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">8 CPU, 32GB RAM</text>
+                </g>
+
+                <g transform="translate(450, 730)">
+                    <rect width="200" height="100" class="decision-graph" rx="6"/>
+                    <text x="100" y="35" class="agent-text" text-anchor="middle" fill="#d1fae5" font-size="12">Redis</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">Event Bus + Cache</text>
+                    <text x="100" y="70" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">3-node cluster</text>
+                    <text x="100" y="85" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">4 CPU, 16GB RAM</text>
+                </g>
+
+                <g transform="translate(700, 730)">
+                    <rect width="200" height="100" class="decision-graph" rx="6"/>
+                    <text x="100" y="35" class="agent-text" text-anchor="middle" fill="#d1fae5" font-size="12">Pinecone</text>
+                    <text x="100" y="55" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">Vector Store</text>
+                    <text x="100" y="70" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">Managed service</text>
+                    <text x="100" y="85" class="agent-desc" text-anchor="middle" fill="#6ee7b7" font-size="10">100K+ vectors</text>
+                </g>
+            </svg>
+
+            <div class="note" style="margin-top: 2rem;">
+                <h3>Scaling Strategy</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 1rem; border-radius: 6px;">
+                        <p style="color: #60a5fa; font-weight: 600; margin-bottom: 0.5rem;">24/7 Agents</p>
+                        <ul style="margin-left: 1rem; font-size: 0.9rem; color: #d1d5db;">
+                            <li>Discovery</li>
+                            <li>Execution</li>
+                        </ul>
+                        <p style="color: #9ca3af; font-size: 0.85rem; margin-top: 0.5rem;">Always running, auto-scale based on load</p>
+                    </div>
+                    <div style="background: rgba(251, 191, 36, 0.1); padding: 1rem; border-radius: 6px;">
+                        <p style="color: #fbbf24; font-weight: 600; margin-bottom: 0.5rem;">Batch Agents</p>
+                        <ul style="margin-left: 1rem; font-size: 0.9rem; color: #d1d5db;">
+                            <li>Analysis</li>
+                            <li>Market Sensing</li>
+                        </ul>
+                        <p style="color: #9ca3af; font-size: 0.85rem; margin-top: 0.5rem;">Scheduled processing, scale up during batch</p>
+                    </div>
+                    <div style="background: rgba(139, 92, 246, 0.1); padding: 1rem; border-radius: 6px;">
+                        <p style="color: #a78bfa; font-weight: 600; margin-bottom: 0.5rem;">On-Demand Agents</p>
+                        <ul style="margin-left: 1rem; font-size: 0.9rem; color: #d1d5db;">
+                            <li>Strategy</li>
+                            <li>Simulation</li>
+                            <li>Insight</li>
+                            <li>Conversational</li>
+                        </ul>
+                        <p style="color: #9ca3af; font-size: 0.85rem; margin-top: 0.5rem;">Scale based on user traffic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Example Flows Panel -->
+        <div id="flows" class="viz-panel">
+            <h2 style="color: #60a5fa; margin-bottom: 1.5rem; font-size: 1.8rem;">Example Agent Interaction Flows</h2>
+
+            <!-- Flow 1: User Question -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: #10b981; margin-bottom: 1rem; font-size: 1.3rem;">Flow 1: User Asks "Why are escalations up?"</h3>
+
+                <svg viewBox="0 0 1000 500">
+                    <!-- User -->
+                    <circle cx="500" cy="50" r="30" fill="rgba(139, 92, 246, 0.3)" stroke="#a78bfa" stroke-width="2"/>
+                    <text x="500" y="57" class="agent-text" text-anchor="middle" font-size="12">User</text>
+
+                    <!-- Conversational Agent -->
+                    <rect x="400" y="120" width="200" height="60" fill="#7c3aed" stroke="#a78bfa" stroke-width="2" rx="6"/>
+                    <text x="500" y="145" class="agent-text" text-anchor="middle" font-size="12">Conversational Agent</text>
+                    <text x="500" y="162" class="agent-desc" text-anchor="middle" font-size="10">(Orchestrates)</text>
+
+                    <!-- Analysis Agent -->
+                    <rect x="150" y="250" width="180" height="60" class="agent-box" rx="6"/>
+                    <text x="240" y="275" class="agent-text" text-anchor="middle" font-size="12">Analysis Agent</text>
+                    <text x="240" y="292" class="agent-desc" text-anchor="middle" font-size="10">Causal inference</text>
+
+                    <!-- Market Sensing -->
+                    <rect x="410" y="250" width="180" height="60" class="agent-box" rx="6"/>
+                    <text x="500" y="275" class="agent-text" text-anchor="middle" font-size="12">Market Sensing</text>
+                    <text x="500" y="292" class="agent-desc" text-anchor="middle" font-size="10">External context</text>
+
+                    <!-- Insight Agent -->
+                    <rect x="670" y="250" width="180" height="60" class="agent-box" rx="6"/>
+                    <text x="760" y="275" class="agent-text" text-anchor="middle" font-size="12">Insight Agent</text>
+                    <text x="760" y="292" class="agent-desc" text-anchor="middle" font-size="10">Visualize answer</text>
+
+                    <!-- Decision Graph -->
+                    <rect x="350" y="380" width="300" height="80" class="decision-graph" rx="6"/>
+                    <text x="500" y="410" class="agent-text" text-anchor="middle" fill="#d1fae5">Decision Graph</text>
+                    <text x="500" y="430" class="agent-desc" text-anchor="middle" fill="#6ee7b7">Query historical decisions</text>
+
+                    <!-- Connections -->
+                    <path d="M 500 80 L 500 120" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+                    <path d="M 450 180 L 280 250" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+                    <text x="350" y="220" fill="#60a5fa" font-size="11">1. Analyze</text>
+
+                    <path d="M 500 180 L 500 250" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+                    <text x="510" y="220" fill="#60a5fa" font-size="11">2. Context</text>
+
+                    <path d="M 550 180 L 720 250" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+                    <text x="650" y="220" fill="#60a5fa" font-size="11">3. Visualize</text>
+
+                    <path d="M 240 310 L 400 380" class="connection" opacity="0.4"/>
+                    <path d="M 500 310 L 500 380" class="connection" opacity="0.4"/>
+                    <path d="M 760 310 L 600 380" class="connection" opacity="0.4"/>
+                </svg>
+
+                <div class="code-block" style="margin-top: 1rem;">
+                    <pre>
+<span class="highlight">User:</span> "Why did escalations spike 20% last week?"
+
+<span class="highlight">Conversational Agent (orchestrates):</span>
+  1. Parse intent → WHY_QUESTION about "escalations"
+  2. Parallel query:
+     - Analysis Agent: Find causal factors
+     - Market Sensing: Check external trends
+  3. Insight Agent: Generate chart + narrative
+
+<span class="highlight">Response (2 seconds later):</span>
+  📊 Chart: Time series showing spike on Tuesday
+  📝 Narrative:
+     "Escalations increased 20% due to three factors:
+      1. Staffing shortage (40% of variance)
+      2. Billing system confusion (30%)
+      3. After-hours surge (30%)
+
+      Recommendation: Provide billing training to Tier 1"
+
+  Confidence: 87% | Sources: 342 escalation decisions
+                    </pre>
+                </div>
+            </div>
+
+            <!-- Flow 2: Ambient Discovery -->
+            <div style="margin-bottom: 3rem;">
+                <h3 style="color: #10b981; margin-bottom: 1rem; font-size: 1.3rem;">Flow 2: Ambient Background Intelligence (Event-Driven)</h3>
+
+                <svg viewBox="0 0 1000 400">
+                    <!-- Discovery Agent (always running) -->
+                    <rect x="50" y="50" width="200" height="80" class="agent-box" rx="6"/>
+                    <text x="150" y="80" class="agent-text" text-anchor="middle" font-size="12">Discovery Agent</text>
+                    <text x="150" y="100" class="agent-desc" text-anchor="middle" font-size="10">24/7 capturing decisions</text>
+                    <text x="150" y="115" fill="#10b981" font-size="10" font-weight="600">▶ RUNNING</text>
+
+                    <!-- Event Bus -->
+                    <rect x="350" y="50" width="300" height="80" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="3" rx="6"/>
+                    <text x="500" y="85" class="agent-text" text-anchor="middle" font-size="14">Event Bus (BullMQ)</text>
+                    <text x="500" y="105" class="agent-desc" text-anchor="middle" font-size="10">decision.captured events</text>
+
+                    <!-- Analysis Agent (listens) -->
+                    <rect x="750" y="50" width="200" height="80" class="agent-box" rx="6"/>
+                    <text x="850" y="80" class="agent-text" text-anchor="middle" font-size="12">Analysis Agent</text>
+                    <text x="850" y="100" class="agent-desc" text-anchor="middle" font-size="10">Batch processing</text>
+                    <text x="850" y="115" fill="#fbbf24" font-size="10" font-weight="600">⏱ SCHEDULED</text>
+
+                    <!-- Strategy Agent (triggered) -->
+                    <rect x="375" y="250" width="250" height="80" class="agent-box" rx="6"/>
+                    <text x="500" y="280" class="agent-text" text-anchor="middle" font-size="12">Strategy Agent</text>
+                    <text x="500" y="300" class="agent-desc" text-anchor="middle" font-size="10">Generate optimization plan</text>
+                    <text x="500" y="315" fill="#60a5fa" font-size="10" font-weight="600">⚡ TRIGGERED</text>
+
+                    <!-- Connections -->
+                    <path d="M 250 90 L 350 90" class="connection connection-animated" marker-end="url(#arrowgreen)"/>
+                    <text x="290" y="80" fill="#10b981" font-size="11">emit</text>
+
+                    <path d="M 650 90 L 750 90" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+                    <text x="690" y="80" fill="#60a5fa" font-size="11">subscribe</text>
+
+                    <path d="M 850 130 L 850 200 L 500 200 L 500 250" class="connection connection-animated" marker-end="url(#arrowblue)"/>
+                    <text x="700" y="195" fill="#60a5fa" font-size="11">insights.ready event</text>
+
+                    <!-- Timeline -->
+                    <line x1="50" y1="380" x2="950" y2="380" stroke="#9ca3af" stroke-width="2"/>
+                    <circle cx="150" cy="380" r="6" fill="#10b981"/>
+                    <text x="150" y="400" class="agent-desc" text-anchor="middle" font-size="9">t=0 Capture</text>
+
+                    <circle cx="500" cy="380" r="6" fill="#fbbf24"/>
+                    <text x="500" y="400" class="agent-desc" text-anchor="middle" font-size="9">t=2h Batch</text>
+
+                    <circle cx="850" cy="380" r="6" fill="#60a5fa"/>
+                    <text x="850" y="400" class="agent-desc" text-anchor="middle" font-size="9">t=2.5h Strategy</text>
+                </svg>
+
+                <div class="code-block" style="margin-top: 1rem;">
+                    <pre>
+<span class="highlight">Discovery Agent (continuous):</span>
+  while (true) {
+    decision = captureFromWebhook()  <span style="color: #6ee7b7;">// New escalation detected</span>
+    decisionGraph.write(decision)
+    eventBus.emit('decision.captured', decision)
+  }
+
+<span class="highlight">Analysis Agent (listens):</span>
+  eventBus.on('decision.captured', async (decision) => {
+    if (await decisionCount('escalation') >= 100) {
+      insights = await analyze()
+      eventBus.emit('insights.ready', insights)  <span style="color: #6ee7b7;">// Trigger downstream</span>
+    }
+  })
+
+<span class="highlight">Strategy Agent (listens):</span>
+  eventBus.on('insights.ready', async (insights) => {
+    if (insights.priority === 'HIGH') {
+      plan = await generateOptimization(insights)
+      await requestHumanApproval(plan)  <span style="color: #6ee7b7;">// Never auto-deploy</span>
+    }
+  })
+                    </pre>
+                </div>
+            </div>
+
+            <div class="note">
+                <h3>Key Takeaways</h3>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: #d1d5db;">
+                    <li><span class="highlight">User interactions</span> use orchestrated workflows for immediate, coordinated responses</li>
+                    <li><span class="highlight">Background intelligence</span> uses event-driven choreography for scalable, fault-tolerant processing</li>
+                    <li><span class="highlight">Decision Graph</span> is the central knowledge store all agents share</li>
+                    <li><span class="highlight">Human approval</span> is required for critical policy changes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPanel(panelId) {
+            // Hide all panels
+            document.querySelectorAll('.viz-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+
+            // Deactivate all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected panel
+            document.getElementById(panelId).classList.add('active');
+
+            // Activate clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

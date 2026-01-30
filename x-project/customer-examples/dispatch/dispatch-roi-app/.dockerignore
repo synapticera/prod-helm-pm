@@ -1,0 +1,16 @@
+Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+.next
+.git
+.gitignore
+README.md
+out
+.env*.local
+remotion
+test-results
+*.sh
+dispatch-roi-app.zip
+dispatch-roi-standalone.html
+dispatch-roi-complete.html

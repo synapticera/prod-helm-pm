@@ -1,43 +1,133 @@
-# Claude Code Workflow Guardrails
+# Claude Code Workflow
 
-**SUPER CRITICAL**
-ALWAYS USE `AskUserQuestion` utility. After every prompt. I don't want to have to type. I want you to give me options for next steps. We can chat if I dont like any of your recommendations.
-
-> **CRITICAL**: This document defines MANDATORY workflow rules. Claude MUST follow these phases sequentially. No coding without requirements. No implementation without design review. No backlog creation without spec approval.
-
-TREAT EVERY TASK IN THIS WAY. ALWAYS FOLLOW THIS SPEC DRIVEN APPROACH, REGARDLESS OF HOW SMALL THE TASK (JUST BE EFFICIENT ABOUT IT, AND SMART). I WANT YOU CONSTANTLY LOGGING DESIGN, SPEC, AND ARCHIVING BACKLOG TASKS.
+> **Core Philosophy**: Use Claude Code's native tooling. Ask questions to clarify intent. Plan before building. Track work systematically. Test before completing.
 
 ---
 
-## Core Principles
+## Workflow Phases
 
-1. **Ask First, Act Later** - Use `AskUserQuestion` extensively before making assumptions
-2. **Document Before Code** - Requirements and design docs MUST exist before implementation
-3. **Explicit Approval Gates** - NEVER proceed to next phase without user saying "approved" or equivalent
-4. **Commit on Ask** - do not commit unless i ask
-5. **State Persistence** - The `PROJECT_STATE.md` file is the source of truth for progress
+### 1. Requirements & Clarification
+
+When receiving a new task:
+
+1. **Ask clarifying questions** (use `AskUserQuestion` tool)
+   - Understand the goal and success criteria
+   - Clarify technical constraints
+   - Identify scope boundaries
+   - Don't go overboard - keep it focused and helpful
+
+2. **Confirm understanding** before proceeding
+   - Brief summary of what you'll build
+   - Key assumptions or decisions
 
 ---
 
-## Mandatory Workflow Phases
+### 2. Planning (For Non-Trivial Tasks)
 
-### Phase 1: Gather Requirements
+For complex or multi-step work:
 
-**STOP and ask questions. Do NOT proceed without clarity.**
+1. **Enter Planning Mode** (use `EnterPlanMode` tool)
+   - Explore codebase architecture
+   - Design implementation approach
+   - Identify affected files and dependencies
+   - Ask questions during planning as needed
 
-Before ANY work begins:
+2. **Exit with approval** (use `ExitPlanMode` tool)
+   - Present plan for review
+   - Wait for explicit approval to proceed
 
-1. Read `PROJECT_STATE.md` if it exists (resume context)
-2. Use `AskUserQuestion` to clarify:
-   - What is the user trying to achieve? (goal)
-   - What does success look like? (acceptance criteria)
-   - What constraints exist? (tech stack, time, dependencies)
-   - What is out of scope?
-3. Document requirements in a structured format
-4. **APPROVAL GATE**: Ask user to confirm requirements are complete
+**Skip planning for**: Simple bug fixes, one-line changes, trivial tasks
 
-**Exit Criteria:**
+---
 
-- [ ] User has explicitly confirmed requirements are complete
-- [ ] Acceptance criteria are documented
-- [ ] Scope boundaries are clear
+### 3. Task Management
+
+After planning (or for simpler tasks):
+
+1. **Create tasks** (use `TodoWrite` tool)
+   - Break work into concrete, trackable steps
+   - Use clear, actionable task descriptions
+   - Keep tasks granular but meaningful
+
+2. **Track progress**
+   - Mark tasks `in_progress` when starting
+   - Mark `completed` immediately after finishing
+   - Keep exactly ONE task `in_progress` at a time
+
+---
+
+### 4. Implementation
+
+During implementation:
+
+1. **Use Synaptic design system**
+   - Apply `synaptic-frontend-design` skill for all UI work
+   - Use `synaptic-brand-guidelines` for colors and branding
+   - Maintain consistent visual identity
+
+2. **Follow best practices**
+   - Keep solutions simple and focused
+   - Only change what's needed
+   - Avoid over-engineering
+
+---
+
+### 5. Testing (Always Complete Before Done)
+
+Before marking work complete:
+
+1. **Run automated testing**
+   - Use Playwright in headless mode
+   - Capture screenshots of key flows
+   - Verify functionality works as expected
+
+2. **Complete end-user testing**
+   - Test from user perspective
+   - Verify acceptance criteria are met
+   - Document any issues found
+
+3. **Only mark complete when**:
+   - Tests pass
+   - Screenshots confirm correct behavior
+   - Acceptance criteria are satisfied
+
+---
+
+## Git & Commits
+
+- **Do NOT auto-commit** - Wait for explicit instruction
+- Create meaningful commit messages when asked
+- Follow conventional commit format when appropriate
+
+---
+
+## Design & Branding
+
+All frontend work MUST use:
+
+- `synaptic-frontend-design` skill for UI implementation
+- `synaptic-brand-guidelines` for colors, typography, logos
+- Consistent Synaptic visual identity
+
+---
+
+## Key Principles
+
+1. **Ask questions** to clarify intent (but don't overdo it)
+2. **Plan complex work** in planning mode
+3. **Track tasks** systematically with TodoWrite
+4. **Test thoroughly** before completion
+5. **Use Synaptic design** for all frontend work
+6. **Wait for commit approval** before pushing to git
+
+---
+
+## Media Generation
+
+API keys for all services are stored in environment variables.
+
+| Request | Tool/Service | Notes |
+|---------|--------------|-------|
+| Video generation | Remotion skill | Use `ELEVEN_API_KEY` for any voice in videos |
+| Image generation | Gemini Nano Banana model | Use `GEMINI_API_KEY` |
+| Voice generation | ElevenLabs API | Use `ELEVEN_API_KEY` |

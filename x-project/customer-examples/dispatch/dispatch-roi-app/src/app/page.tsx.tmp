@@ -1,0 +1,9 @@
+
+        {activeTab === 'ai-roadmap' && (
+          <div>
+            <h2 className="text-lg font-semibold text-text-primary mb-3">
+              AI Implementation Roadmap by Department
+            </h2>
+            <AIRoadmapTable />
+          </div>
+        )}

@@ -1,0 +1,11 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/chat/route.js")
+R.c("server/chunks/fcbc1_next_dist_6e2e7747._.js")
+R.c("server/chunks/fcbc1_@opentelemetry_api_build_esm_5b97767c._.js")
+R.c("server/chunks/fcbc1_zod-to-json-schema_dist_esm_ab6cd4ee._.js")
+R.c("server/chunks/fcbc1_zod_v3_ea4d6374._.js")
+R.c("server/chunks/fcbc1_ai_dist_index_mjs_f5c0db46._.js")
+R.c("server/chunks/fcbc1_8af7db65._.js")
+R.c("server/chunks/[root-of-the-server]__bc47c7a2._.js")
+R.c("server/chunks/x-project_proto_app__next-internal_server_app_api_chat_route_actions_47bc74ea.js")
+R.m("[project]/x-project/proto/app/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/x-project/proto/app/app/api/chat/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/x-project/proto/app/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/x-project/proto/app/app/api/chat/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports
