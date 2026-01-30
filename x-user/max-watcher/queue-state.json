@@ -1232,7 +1232,15 @@
       "failed_at": "2026-01-30T10:01:13.161Z",
       "error": "Extraction failed - no result from Claude Code",
       "attempts": 1
+    },
+    {
+      "sessionId": "4959f20f-f6e2-4d80-9e2d-4361586befb0",
+      "date": "2026-01-30",
+      "queued_at": "2026-01-30T10:37:15.798Z",
+      "failed_at": "2026-01-30T10:44:57.762Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
     }
   ],
-  "updated_at": "2026-01-30T10:01:13.161Z"
+  "updated_at": "2026-01-30T10:44:57.762Z"
 }

@@ -35,7 +35,12 @@ export default function SavingsCompositionChart() {
   // Calculate label positions for Aggressive scenario (rightmost column)
   const aggressiveData = data[2];
   const reversedDepts = [...departments].reverse();
-  const labels: Array<{ y: string; text: string }> = [];
+  // Actual chart plotting area (accounting for axis labels)
+  // Total height: 300px, Y-axis top ~15px from top, X-axis labels ~35px from bottom
+  const chartTop = 15;
+  const chartBottom = 265; // Where the 0 line is
+  const chartHeight = chartBottom - chartTop; // ~250px actual plotting area
+  const labels: Array<{ yPixels: number; text: string }> = [];
 
   if (aggressiveData) {
     let cumulative = 0;
@@ -45,10 +50,12 @@ export default function SavingsCompositionChart() {
       const value = aggressiveData[dept.id] || 0;
       if (value > 0.2) {
         const bandCenter = cumulative + value / 2;
-        // Convert from data value to position percentage
-        const yPercent = 100 - (bandCenter / totalStack * 100);
+        // Convert from data value to pixel position
+        // bandCenter/totalStack gives 0-1 where 0 is bottom, 1 is top
+        // Invert for pixel coords where 0 is top
+        const yPixels = chartTop + chartHeight * (1 - bandCenter / totalStack);
         labels.push({
-          y: `${yPercent}%`,
+          yPixels,
           text: formatCurrency(value * 1000000)
         });
       }
@@ -98,33 +105,24 @@ export default function SavingsCompositionChart() {
       </ResponsiveContainer>
 
       {/* Overlay labels using absolute positioning */}
-      {/* Account for margins: top=10px, bottom=10px, so chart area is 280px out of 300px */}
-      {labels.map((label, idx) => {
-        // Convert percentage position to pixel position accounting for margins
-        const yPercent = parseFloat(label.y);
-        const chartTop = 10; // margin-top
-        const chartHeight = 280; // 300 - margin-top(10) - margin-bottom(10)
-        const absoluteTop = chartTop + (chartHeight * (100 - yPercent) / 100);
-
-        return (
-          <div
-            key={idx}
-            style={{
-              position: 'absolute',
-              right: '46px',
-              top: `${absoluteTop}px`,
-              transform: 'translateY(-50%)',
-              color: '#F0F6FC',
-              fontSize: '10px',
-              fontWeight: 600,
-              pointerEvents: 'none',
-              whiteSpace: 'nowrap'
-            }}
-          >
-            {label.text}
-          </div>
-        );
-      })}
+      {labels.map((label, idx) => (
+        <div
+          key={idx}
+          style={{
+            position: 'absolute',
+            right: '46px',
+            top: `${label.yPixels}px`,
+            transform: 'translateY(-50%)',
+            color: '#F0F6FC',
+            fontSize: '10px',
+            fontWeight: 600,
+            pointerEvents: 'none',
+            whiteSpace: 'nowrap'
+          }}
+        >
+          {label.text}
+        </div>
+      ))}
     </div>
   );
 }

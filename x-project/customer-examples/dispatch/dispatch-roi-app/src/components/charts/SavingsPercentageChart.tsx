@@ -39,18 +39,21 @@ export default function SavingsPercentageChart() {
   // Calculate label positions for Aggressive scenario (rightmost column)
   const aggressiveData = data[2];
   const reversedDepts = [...departments].reverse();
+  // Actual chart plotting area (accounting for axis labels)
+  // Total height: 300px, Y-axis top ~15px from top, X-axis labels ~35px from bottom
+  const chartTop = 15;
+  const chartBottom = 265; // Where the 0% line is
+  const chartHeight = chartBottom - chartTop; // ~250px actual plotting area
   const labels: Array<{ yPixels: number; text: string }> = [];
 
   if (aggressiveData) {
     let cumulative = 0;
-    const chartTop = 10; // margin-top
-    const chartHeight = 280; // 300 - margins
 
     reversedDepts.forEach(dept => {
       const value = aggressiveData[dept.id] || 0;
       if (value > 2) {
         const bandCenter = cumulative + value / 2; // Center in percentage space (0-100)
-        // Convert: 0% at bottom (y=290), 100% at top (y=10)
+        // Convert: 0% at bottom (y=chartBottom), 100% at top (y=chartTop)
         const yPixels = chartTop + chartHeight * (1 - bandCenter / 100);
         labels.push({
           yPixels,
