@@ -122,7 +122,7 @@
     },
 
     // Synaptic MAX Extension Settings
-    "synapticMax.claudeCodeExperience": "vscode-plugin",
+    "synapticMax.claudeCodeExperience": "shell-terminal",
     "synapticMax.paths.projectFilesPath": "",
     "synapticMax.devMode": false,
     "synapticMax.localLibraryPath": "../x-library",

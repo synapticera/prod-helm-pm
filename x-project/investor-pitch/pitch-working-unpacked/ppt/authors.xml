@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ascii"?>
+<p188:authorLst xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p188="http://schemas.microsoft.com/office/powerpoint/2018/8/main">
+  <p188:author id="{F4FC2D01-2B55-CADE-A2B9-0615B9D29177}" name="Joey Kennedy" initials="JK" userId="S::joey.kennedy@synaptic.build::22c59c9f-a2ef-48a5-a7ab-cb3e7e1b0a49" providerId="AD"/>
+  <p188:author id="{37D37D08-E4CE-4B7B-695F-3776018CB7C7}" name="Bill Karpovich" initials="" userId="S::bill@Synapticadvisors.com::08b277c5-ecaf-4046-91f2-391dc19b2030" providerId="AD"/>
+  <p188:author id="{B1FC1A25-E5BA-9F97-613E-18DD43C658B3}" name="Sahil Kumar" initials="SK" userId="S::sahil@synaptic.build::6a309880-e516-46d4-a05e-750e11ec0d70" providerId="AD"/>
+  <p188:author id="{CF4AA22E-6F22-4060-F95A-1947701E40DE}" name="Bojan Cubela" initials="" userId="S::bojan@synaptic.build::8e0f3e2b-9b1d-4a7a-832f-993d512d5f9c" providerId="AD"/>
+  <p188:author id="{261C4741-E43C-CCF1-D5A8-CA164D2B1D07}" name="Haley Boosinger" initials="HB" userId="S::haley.boosinger@synapticadvisors.com::b4f6d6c2-1534-492e-8148-60cddefb06c5" providerId="AD"/>
+  <p188:author id="{DA08E357-BE73-C39F-87B1-1B68FF0BE8E5}" name="Bojan Cubela" initials="" userId="S::bojan@Synapticadvisors.com::8e0f3e2b-9b1d-4a7a-832f-993d512d5f9c" providerId="AD"/>
+  <p188:author id="{2CC1515C-C11B-BA39-5B4E-20E74E0C1186}" name="Joe Mallek" initials="" userId="S::joe@synaptic.build::f673a1a2-5e9a-4311-b719-30273ac6cf16" providerId="AD"/>
+  <p188:author id="{645BC87F-867C-8885-93E7-1114C2F340E6}" name="Bill Karpovich" initials="BK" userId="257b015b7ff0900e" providerId="Windows Live"/>
+  <p188:author id="{A422258C-5118-7D12-0EB3-21364AB34EF2}" name="Paul Peterson" initials="PP" userId="S::paul@synaptic.build::4b0dbe96-8ad9-46b3-a748-c51e95111cb6" providerId="AD"/>
+  <p188:author id="{2C832ABD-EBA7-B6F3-18E8-ED326AEAE18A}" name="Bill Karpovich" initials="" userId="S::bill@synaptic.build::08b277c5-ecaf-4046-91f2-391dc19b2030" providerId="AD"/>
+  <p188:author id="{C37B1ECF-5F1C-392B-154F-1D6E8B26F4F3}" name="Brian Reilly" initials="BR" userId="S::Brian.Reilly@Synapticadvisors.com::c7fa1817-a92b-4a05-85e2-b20b8cfd9c7e" providerId="AD"/>
+  <p188:author id="{85A89AD5-21D8-59F2-227E-E0EB6C5DDA75}" name="Duane Nelson" initials="DN" userId="S::duane.nelson@synapticadvisors.com::f7a8d586-1fbf-46ab-8af7-8f757b5432bb" providerId="AD"/>
+  <p188:author id="{D61635E3-9C7E-E0CF-E735-E6087F2B390A}" name="Joe Mallek" initials="JM" userId="S::jmallek@whereoware.com::992c4b69-0c85-4cea-9f8d-7286f7aa0dc8" providerId="AD"/>
+</p188:authorLst>

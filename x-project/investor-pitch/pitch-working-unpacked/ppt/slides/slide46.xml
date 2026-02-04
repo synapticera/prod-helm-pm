@@ -1,0 +1,2725 @@
+<?xml version="1.0" encoding="ascii"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name="Shape 831">
+          <a:extLst>
+            <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+              <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{18BFBCE2-73C4-9704-B31A-7FDA610F5034}"/>
+            </a:ext>
+          </a:extLst>
+        </p:cNvPr>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="832" name="Google Shape;832;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{468F7858-FF61-D55A-5CE8-EA61947671A3}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1">
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="title"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="495460" y="198431"/>
+            <a:ext cx="11006100" cy="633600"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:normAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="90000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:schemeClr val="accent1"/>
+              </a:buClr>
+              <a:buSzPts val="3200"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="3200" dirty="0">
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Working Road Map :  </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="3200" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>HELM</a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="3200" dirty="0">
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t> for Salesforce Service</a:t>
+            </a:r>
+            <a:endParaRPr sz="3200" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="833" name="Google Shape;833;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{DAD25FCB-D2F5-99E1-C151-A2E7B5F06C63}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1">
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="sldNum" idx="12"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="11368030" y="6356350"/>
+            <a:ext cx="641100" cy="365100"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="r" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="888A8F"/>
+              </a:buClr>
+              <a:buSzPts val="1200"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:fld id="{00000000-1234-1234-1234-123412341234}" type="slidenum">
+              <a:rPr lang="en-US" sz="1200" b="0" i="0" u="none" strike="noStrike" cap="none">
+                <a:solidFill>
+                  <a:srgbClr val="888A8F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>46</a:t>
+            </a:fld>
+            <a:endParaRPr sz="1200" b="0" i="0" u="none" strike="noStrike" cap="none">
+              <a:solidFill>
+                <a:srgbClr val="888A8F"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="834" name="Google Shape;834;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{832BFA00-B832-ED07-E300-9AFFFBD99479}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1">
+            <a:spLocks noGrp="1"/>
+          </p:cNvSpPr>
+          <p:nvPr>
+            <p:ph type="ftr" idx="11"/>
+          </p:nvPr>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="7892748" y="6378176"/>
+            <a:ext cx="3795900" cy="365100"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:solidFill>
+            <a:schemeClr val="lt1"/>
+          </a:solidFill>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="888A8F"/>
+              </a:buClr>
+              <a:buSzPts val="900"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="900" b="0" i="0" u="none" strike="noStrike" cap="none">
+                <a:solidFill>
+                  <a:srgbClr val="888A8F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Private and Confidential. Property of Synaptic Era, Inc</a:t>
+            </a:r>
+            <a:endParaRPr/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="835" name="Google Shape;835;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{5E0ACFE3-5E2D-1DE0-683B-1173936D9DAF}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="848813" y="1927621"/>
+            <a:ext cx="1145700" cy="538500"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 16667"/>
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1800"/>
+              <a:buFont typeface="Arial"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1800" b="1" i="0" u="none" strike="noStrike" cap="none">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Arial"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Arial"/>
+                <a:sym typeface="Arial"/>
+              </a:rPr>
+              <a:t>Explore</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" b="0" i="0" u="none" strike="noStrike" cap="none">
+              <a:solidFill>
+                <a:srgbClr val="07253D"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:grpSp>
+        <p:nvGrpSpPr>
+          <p:cNvPr id="836" name="Google Shape;836;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{B5B4CABB-BCE9-DC3B-E63B-B5D41BA6014F}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvGrpSpPr/>
+          <p:nvPr/>
+        </p:nvGrpSpPr>
+        <p:grpSpPr>
+          <a:xfrm>
+            <a:off x="2307077" y="1074946"/>
+            <a:ext cx="5883950" cy="5102801"/>
+            <a:chOff x="2688295" y="850041"/>
+            <a:chExt cx="5136578" cy="5160600"/>
+          </a:xfrm>
+        </p:grpSpPr>
+        <p:cxnSp>
+          <p:nvCxnSpPr>
+            <p:cNvPr id="837" name="Google Shape;837;g3b637480f9e_0_1546">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{9CE90647-F557-3AB2-3B17-BE21227B3A9D}"/>
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvCxnSpPr/>
+            <p:nvPr/>
+          </p:nvCxnSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="5219674" y="850041"/>
+              <a:ext cx="14400" cy="5160600"/>
+            </a:xfrm>
+            <a:prstGeom prst="straightConnector1">
+              <a:avLst/>
+            </a:prstGeom>
+            <a:noFill/>
+            <a:ln w="19050" cap="flat" cmpd="sng">
+              <a:solidFill>
+                <a:srgbClr val="A5A5A5"/>
+              </a:solidFill>
+              <a:prstDash val="solid"/>
+              <a:miter lim="800000"/>
+              <a:headEnd type="none" w="sm" len="sm"/>
+              <a:tailEnd type="none" w="sm" len="sm"/>
+            </a:ln>
+          </p:spPr>
+        </p:cxnSp>
+        <p:cxnSp>
+          <p:nvCxnSpPr>
+            <p:cNvPr id="838" name="Google Shape;838;g3b637480f9e_0_1546">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{3F684CBA-D789-3B86-FE6E-4BEEFC74A007}"/>
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvCxnSpPr/>
+            <p:nvPr/>
+          </p:nvCxnSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="7810473" y="850041"/>
+              <a:ext cx="14400" cy="5160600"/>
+            </a:xfrm>
+            <a:prstGeom prst="straightConnector1">
+              <a:avLst/>
+            </a:prstGeom>
+            <a:noFill/>
+            <a:ln w="19050" cap="flat" cmpd="sng">
+              <a:solidFill>
+                <a:srgbClr val="A5A5A5"/>
+              </a:solidFill>
+              <a:prstDash val="solid"/>
+              <a:miter lim="800000"/>
+              <a:headEnd type="none" w="sm" len="sm"/>
+              <a:tailEnd type="none" w="sm" len="sm"/>
+            </a:ln>
+          </p:spPr>
+        </p:cxnSp>
+        <p:cxnSp>
+          <p:nvCxnSpPr>
+            <p:cNvPr id="839" name="Google Shape;839;g3b637480f9e_0_1546">
+              <a:extLst>
+                <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                  <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{B710E064-522C-0F72-8039-5DDCAEC0D661}"/>
+                </a:ext>
+              </a:extLst>
+            </p:cNvPr>
+            <p:cNvCxnSpPr/>
+            <p:nvPr/>
+          </p:nvCxnSpPr>
+          <p:spPr>
+            <a:xfrm>
+              <a:off x="2688295" y="850041"/>
+              <a:ext cx="14400" cy="5160600"/>
+            </a:xfrm>
+            <a:prstGeom prst="straightConnector1">
+              <a:avLst/>
+            </a:prstGeom>
+            <a:noFill/>
+            <a:ln w="19050" cap="flat" cmpd="sng">
+              <a:solidFill>
+                <a:srgbClr val="A5A5A5"/>
+              </a:solidFill>
+              <a:prstDash val="solid"/>
+              <a:miter lim="800000"/>
+              <a:headEnd type="none" w="sm" len="sm"/>
+              <a:tailEnd type="none" w="sm" len="sm"/>
+            </a:ln>
+          </p:spPr>
+        </p:cxnSp>
+      </p:grpSp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="840" name="Google Shape;840;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{87AAD6E1-098D-592C-B813-82331F2B582D}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="557065" y="3896606"/>
+            <a:ext cx="1701000" cy="639000"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 16667"/>
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="007647"/>
+              </a:buClr>
+              <a:buSzPts val="1800"/>
+              <a:buFont typeface="Arial"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1800" b="1" i="0" u="none" strike="noStrike" cap="none">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Arial"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Arial"/>
+                <a:sym typeface="Arial"/>
+              </a:rPr>
+              <a:t>Design</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="841" name="Google Shape;841;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{B07C8926-77F9-54E9-60A6-F6A7A8D593FF}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="495460" y="2917630"/>
+            <a:ext cx="1701000" cy="639000"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 16667"/>
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1800"/>
+              <a:buFont typeface="Arial"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1800" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Arial"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Arial"/>
+                <a:sym typeface="Arial"/>
+              </a:rPr>
+              <a:t>Mine</a:t>
+            </a:r>
+            <a:endParaRPr sz="1600" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="01A9DB"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:cxnSp>
+        <p:nvCxnSpPr>
+          <p:cNvPr id="842" name="Google Shape;842;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{13310E03-FD10-C1ED-699C-25B9B2D521A2}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvCxnSpPr/>
+          <p:nvPr/>
+        </p:nvCxnSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="720082" y="1597415"/>
+            <a:ext cx="10615800" cy="47700"/>
+          </a:xfrm>
+          <a:prstGeom prst="straightConnector1">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln w="19050" cap="flat" cmpd="sng">
+            <a:solidFill>
+              <a:srgbClr val="A5A5A5"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:miter lim="800000"/>
+            <a:headEnd type="none" w="sm" len="sm"/>
+            <a:tailEnd type="none" w="sm" len="sm"/>
+          </a:ln>
+        </p:spPr>
+      </p:cxnSp>
+      <p:cxnSp>
+        <p:nvCxnSpPr>
+          <p:cNvPr id="843" name="Google Shape;843;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{9DD393BE-B9AB-AC5A-193E-BDFC9C1E0FE7}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvCxnSpPr/>
+          <p:nvPr/>
+        </p:nvCxnSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="629994" y="2696707"/>
+            <a:ext cx="10615800" cy="47700"/>
+          </a:xfrm>
+          <a:prstGeom prst="straightConnector1">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln w="19050" cap="flat" cmpd="sng">
+            <a:solidFill>
+              <a:srgbClr val="A5A5A5"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:miter lim="800000"/>
+            <a:headEnd type="none" w="sm" len="sm"/>
+            <a:tailEnd type="none" w="sm" len="sm"/>
+          </a:ln>
+        </p:spPr>
+      </p:cxnSp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="844" name="Google Shape;844;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{9563A397-F035-FEFB-8058-EAC3C25B5A76}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5405527" y="1675810"/>
+            <a:ext cx="2761500" cy="657832"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Ramp Users</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="07253D"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Feature evolution TBD</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Outreach tactics TBD</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:cxnSp>
+        <p:nvCxnSpPr>
+          <p:cNvPr id="845" name="Google Shape;845;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{48FCC30C-67C7-94B8-9F6C-F089B6225862}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvCxnSpPr/>
+          <p:nvPr/>
+        </p:nvCxnSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="609938" y="4777798"/>
+            <a:ext cx="10615800" cy="47700"/>
+          </a:xfrm>
+          <a:prstGeom prst="straightConnector1">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln w="19050" cap="flat" cmpd="sng">
+            <a:solidFill>
+              <a:srgbClr val="A5A5A5"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:miter lim="800000"/>
+            <a:headEnd type="none" w="sm" len="sm"/>
+            <a:tailEnd type="none" w="sm" len="sm"/>
+          </a:ln>
+        </p:spPr>
+      </p:cxnSp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="846" name="Google Shape;846;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{893D7E9B-D9A2-AC45-F9ED-BD73BAC222F2}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="581509" y="5067690"/>
+            <a:ext cx="1701000" cy="639000"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 16667"/>
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="898A91"/>
+              </a:buClr>
+              <a:buSzPts val="1800"/>
+              <a:buFont typeface="Arial"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1800" b="1" i="0" u="none" strike="noStrike" cap="none">
+                <a:solidFill>
+                  <a:srgbClr val="898A91"/>
+                </a:solidFill>
+                <a:latin typeface="Arial"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Arial"/>
+                <a:sym typeface="Arial"/>
+              </a:rPr>
+              <a:t>Manage</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:cxnSp>
+        <p:nvCxnSpPr>
+          <p:cNvPr id="847" name="Google Shape;847;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{9C25CBF0-DC4B-E40E-0589-42801A4A92BC}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvCxnSpPr/>
+          <p:nvPr/>
+        </p:nvCxnSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="628592" y="3723383"/>
+            <a:ext cx="10615800" cy="47700"/>
+          </a:xfrm>
+          <a:prstGeom prst="straightConnector1">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln w="19050" cap="flat" cmpd="sng">
+            <a:solidFill>
+              <a:srgbClr val="A5A5A5"/>
+            </a:solidFill>
+            <a:prstDash val="solid"/>
+            <a:miter lim="800000"/>
+            <a:headEnd type="none" w="sm" len="sm"/>
+            <a:tailEnd type="none" w="sm" len="sm"/>
+          </a:ln>
+        </p:spPr>
+      </p:cxnSp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="848" name="Google Shape;848;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{C5ED5EE1-AEAC-1010-721D-B930AA425D3E}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5722866" y="1056016"/>
+            <a:ext cx="1739700" cy="633600"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 16667"/>
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1800"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1800" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Q2-26</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="849" name="Google Shape;849;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{91C8A680-FC18-1BC9-9F52-F9F39EE855A6}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="8976132" y="1061239"/>
+            <a:ext cx="1739700" cy="633600"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 16667"/>
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1800"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1800" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>2H-26</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="850" name="Google Shape;850;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{903EF37B-AB51-9C9D-5083-93B87E7010BC}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2823171" y="1056646"/>
+            <a:ext cx="1739700" cy="633600"/>
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 16667"/>
+            </a:avLst>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="ctr" anchorCtr="0">
+            <a:noAutofit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="ctr" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1800"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1800" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Q1-26</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="852" name="Google Shape;852;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{6D464EA6-D5DE-52A7-3DFB-13DEC8F35CB4}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2430572" y="2839559"/>
+            <a:ext cx="2776200" cy="657832"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Commercial Release 1.0 (Server)</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="01A9DB"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Analysis of SFDC Service Cloud+</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0"/>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Desktop analysis (Design Partners)</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="853" name="Google Shape;853;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{195DE025-416B-D494-269B-26677A056ABC}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2430572" y="5005104"/>
+            <a:ext cx="2517769" cy="827109"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Commercial Release 1.0 </a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="7F7F7F"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Agent monitoring</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1400" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="7F7F7F"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Funnel dashboards</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1100" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- RADAR agent</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1100" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="854" name="Google Shape;854;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{3D13463B-B277-8B32-C053-F939DD8A4580}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5398332" y="5003910"/>
+            <a:ext cx="2444700" cy="657832"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Commercial Release 2.0</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="7F7F7F"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Financial calculation</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0"/>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Proactive improvement</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="7F7F7F"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="855" name="Google Shape;855;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{AA41FC4C-A07C-426A-D815-3EFCFEC78DC9}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5398332" y="3863728"/>
+            <a:ext cx="2444699" cy="819415"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Pre-Release (Design Partners)</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="007647"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Roadmap</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Specifications</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- ROI Forecast</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="007647"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="856" name="Google Shape;856;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{74C2AD38-90E1-4450-8AB6-0E3BAA2C8AD7}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5398332" y="2823505"/>
+            <a:ext cx="2776200" cy="657832"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Commercial Release 2.0</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="01A9DB"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Server capability enhancement</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Release desktop analysis release 1.0</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="858" name="Google Shape;858;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{FE54AD57-BF35-B8D6-0AE1-29681937F498}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2430572" y="1632570"/>
+            <a:ext cx="2761500" cy="980997"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Public Release  1.0</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="07253D"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- AI Learning center for Service execs</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Self service registration</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Initial capabilities </a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- </a:t>
+            </a:r>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Drive awareness</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1400" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="859" name="Google Shape;859;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{13BA5857-C403-FB9D-4EA1-7CDD2BE321AD}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="8329609" y="2844743"/>
+            <a:ext cx="2776200" cy="496249"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Expand  Customers &amp; Capability</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="01A9DB"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="01A9DB"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- TBD</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="860" name="Google Shape;860;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{BB15BE37-F365-A19A-022F-C9B6EB80FE7D}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="8329609" y="3824558"/>
+            <a:ext cx="2756611" cy="657832"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Commercial Launch</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="007647"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Key capabilities</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0"/>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="007647"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Feedback from Design Partners</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="007647"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="861" name="Google Shape;861;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{9898D3B5-33FC-0306-1A41-68540B75F5AE}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="999993" y="1121261"/>
+            <a:ext cx="771365" cy="307777"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none">
+                <a:solidFill>
+                  <a:srgbClr val="000000"/>
+                </a:solidFill>
+                <a:latin typeface="Arial"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Arial"/>
+                <a:sym typeface="Arial"/>
+              </a:rPr>
+              <a:t>Module</a:t>
+            </a:r>
+            <a:endParaRPr/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="2" name="Google Shape;844;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{CF722C8C-2B94-AF1F-9006-A3DA1D68430F}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="8329609" y="1710307"/>
+            <a:ext cx="2761500" cy="657832"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Ramp Users</a:t>
+            </a:r>
+            <a:endParaRPr sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="07253D"/>
+              </a:solidFill>
+              <a:latin typeface="Poppins"/>
+              <a:ea typeface="Poppins"/>
+              <a:cs typeface="Poppins"/>
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Feature evolution TBD</a:t>
+            </a:r>
+          </a:p>
+          <a:p>
+            <a:pPr marL="0" marR="0" lvl="0" indent="0" algn="l" rtl="0">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="07253D"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1050" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="07253D"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Arial"/>
+                <a:cs typeface="Poppins"/>
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- Outreach tactics TBD</a:t>
+            </a:r>
+            <a:endParaRPr sz="1400" b="0" i="0" u="none" strike="noStrike" cap="none" dirty="0">
+              <a:solidFill>
+                <a:srgbClr val="000000"/>
+              </a:solidFill>
+              <a:latin typeface="Arial"/>
+              <a:ea typeface="Arial"/>
+              <a:cs typeface="Arial"/>
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="Google Shape;859;g3b637480f9e_0_1546">
+            <a:extLst>
+              <a:ext uri="{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}">
+                <a16:creationId xmlns:a16="http://schemas.microsoft.com/office/drawing/2014/main" id="{7E42E9AD-EFB2-5CCB-9CF0-3522954A3902}"/>
+              </a:ext>
+            </a:extLst>
+          </p:cNvPr>
+          <p:cNvSpPr txBox="1"/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="8329609" y="5030759"/>
+            <a:ext cx="2776200" cy="488555"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln>
+            <a:noFill/>
+          </a:ln>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr spcFirstLastPara="1" wrap="square" lIns="91425" tIns="45700" rIns="91425" bIns="45700" anchor="t" anchorCtr="0">
+            <a:spAutoFit/>
+          </a:bodyPr>
+          <a:lstStyle>
+            <a:defPPr>
+              <a:defRPr lang="en-US"/>
+            </a:defPPr>
+            <a:lvl1pPr marR="0" lvl="0" indent="0">
+              <a:lnSpc>
+                <a:spcPct val="150000"/>
+              </a:lnSpc>
+              <a:spcBef>
+                <a:spcPts val="0"/>
+              </a:spcBef>
+              <a:spcAft>
+                <a:spcPts val="0"/>
+              </a:spcAft>
+              <a:buClr>
+                <a:srgbClr val="01A9DB"/>
+              </a:buClr>
+              <a:buSzPts val="1050"/>
+              <a:buFont typeface="Poppins"/>
+              <a:buNone/>
+              <a:defRPr sz="1050" b="1" i="0" u="none" strike="noStrike" cap="none">
+                <a:solidFill>
+                  <a:srgbClr val="7F7F7F"/>
+                </a:solidFill>
+                <a:latin typeface="Poppins"/>
+                <a:ea typeface="Poppins"/>
+                <a:cs typeface="Poppins"/>
+              </a:defRPr>
+            </a:lvl1pPr>
+          </a:lstStyle>
+          <a:p>
+            <a:r>
+              <a:rPr lang="en-US" dirty="0">
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>Expand  Customers &amp; Capability</a:t>
+            </a:r>
+            <a:endParaRPr dirty="0">
+              <a:sym typeface="Poppins"/>
+            </a:endParaRPr>
+          </a:p>
+          <a:p>
+            <a:pPr>
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1000" b="0" dirty="0">
+                <a:sym typeface="Poppins"/>
+              </a:rPr>
+              <a:t>- TBD</a:t>
+            </a:r>
+            <a:endParaRPr sz="1000" b="0" dirty="0">
+              <a:sym typeface="Arial"/>
+            </a:endParaRPr>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+    <p:extLst>
+      <p:ext uri="{BB962C8B-B14F-4D97-AF65-F5344CB8AC3E}">
+        <p14:creationId xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main" val="2993825993"/>
+      </p:ext>
+    </p:extLst>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+</p:sld>

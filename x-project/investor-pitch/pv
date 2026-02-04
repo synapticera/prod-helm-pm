@@ -1,0 +1,17 @@
+#!/bin/bash
+# Fast slide preview with anyview
+# Usage: ./pv <slide_number>
+# Example: ./pv 5
+
+SLIDE_NUM=${1:-0}
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Generate preview
+python3 "$SCRIPT_DIR/preview-any-slide.py" "$SLIDE_NUM" 2>/dev/null
+
+# Open in browser
+curl -s -X POST http://localhost:3333/action \
+  -H "Content-Type: application/json" \
+  -d "{\"action\": \"browser\", \"url\": \"file:///tmp/pptx-preview/slide-${SLIDE_NUM}.png\"}" > /dev/null
+
+echo "Slide $SLIDE_NUM → /tmp/pptx-preview/slide-${SLIDE_NUM}.png"

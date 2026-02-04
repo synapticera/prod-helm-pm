@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Problem Statement - Concept 2: The Missing Layer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0f1a;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 1200px;
+            height: 675px;
+            background: #0d1117;
+            border-radius: 16px;
+            padding: 50px 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .grid-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(0,212,170,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,212,170,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            height: 100%;
+        }
+
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 60px;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ff6b6b;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #8b949e;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .stat-callout {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(255,107,107,0.1);
+            border: 1px solid rgba(255,107,107,0.3);
+            border-radius: 12px;
+            padding: 20px 24px;
+        }
+
+        .stat-number {
+            font-size: 52px;
+            font-weight: 800;
+            color: #ff6b6b;
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 15px;
+            color: #c9d1d9;
+            line-height: 1.4;
+        }
+
+        .right-panel {
+            width: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .stack-layer {
+            padding: 24px 28px;
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .stack-layer.strategy {
+            background: linear-gradient(135deg, #1a2744 0%, #1e3a5f 100%);
+            border: 1px solid #30506d;
+        }
+
+        .stack-layer.missing {
+            background: transparent;
+            border: 2px dashed #ff6b6b;
+            margin: 8px 0;
+        }
+
+        .stack-layer.missing::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,107,107,0.05) 10px,
+                rgba(255,107,107,0.05) 20px
+            );
+            border-radius: 10px;
+        }
+
+        .stack-layer.execution {
+            background: linear-gradient(135deg, #1a3330 0%, #1e4a44 100%);
+            border: 1px solid #2d6a5f;
+        }
+
+        .layer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .layer-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .layer-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-owned {
+            background: rgba(0,212,170,0.2);
+            color: #00d4aa;
+        }
+
+        .badge-missing {
+            background: rgba(255,107,107,0.2);
+            color: #ff6b6b;
+        }
+
+        .layer-desc {
+            font-size: 13px;
+            color: #8b949e;
+            line-height: 1.4;
+            position: relative;
+            z-index: 1;
+        }
+
+        .layer-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .layer-item {
+            font-size: 11px;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.08);
+            color: #c9d1d9;
+        }
+
+        .missing .layer-title {
+            color: #ff6b6b;
+        }
+
+        .missing .layer-items .layer-item {
+            background: rgba(255,107,107,0.15);
+            color: #ff9999;
+            border: 1px dashed rgba(255,107,107,0.3);
+        }
+
+        .arrow-down {
+            width: 100%;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #30506d;
+        }
+
+        .source {
+            position: absolute;
+            bottom: 24px;
+            left: 70px;
+            font-size: 11px;
+            color: #484f58;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 24px;
+            right: 70px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #00d4aa;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="grid-bg"></div>
+        <div class="content">
+            <div class="left-panel">
+                <div class="eyebrow">The Problem</div>
+                <h1>Executives Have<br>Arms & Legs,<br>But No Brain.</h1>
+                <p class="subtitle">
+                    Companies have plenty of AI execution tools. What they lack is the
+                    <strong style="color:#fff">executive function layer</strong> to understand,
+                    plan, and measure what those tools actually do.
+                </p>
+                <div class="stat-callout">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-text">
+                        of AI pilots deliver<br><strong>zero measurable ROI</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="stack-layer strategy">
+                    <div class="layer-header">
+                        <span class="layer-title">Strategic Goals</span>
+                        <span class="layer-badge badge-owned">Defined</span>
+                    </div>
+                    <div class="layer-desc">Board targets, KPIs, budget allocation</div>
+                </div>
+
+                <div class="arrow-down">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                    </svg>
+                </div>
+
+                <div class="stack-layer missing">
+                    <div class="layer-header">
+                        <span class="layer-title">? Executive Function Layer</span>
+                        <span class="layer-badge badge-missing">Missing</span>
+                    </div>
+                    <div class="layer-desc">The layer that connects strategy to execution</div>
+                    <div class="layer-items">
+                        <span class="layer-item">Understand Current State</span>
+                        <span class="layer-item">Plan Transformation</span>
+                        <span class="layer-item">Measure Outcomes</span>
+                        <span class="layer-item">Govern Decisions</span>
+                    </div>
+                </div>
+
+                <div class="arrow-down">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                    </svg>
+                </div>
+
+                <div class="stack-layer execution">
+                    <div class="layer-header">
+                        <span class="layer-title">Execution Tools</span>
+                        <span class="layer-badge badge-owned">Abundant</span>
+                    </div>
+                    <div class="layer-desc">AI agents, copilots, automation tools</div>
+                    <div class="layer-items">
+                        <span class="layer-item">ChatGPT</span>
+                        <span class="layer-item">Salesforce AI</span>
+                        <span class="layer-item">Copilot</span>
+                        <span class="layer-item">Custom Agents</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="source">Source: MIT Sloan Management Review</div>
+        <div class="logo">HELM</div>
+    </div>
+</body>
+</html>

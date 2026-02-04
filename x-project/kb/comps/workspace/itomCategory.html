@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #FFFFFF; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { background: #44546A; padding: 12pt 30pt; }
+.header h1 { color: #FFFFFF; font-size: 22pt; margin: 0; }
+.content { flex: 1; padding: 10pt 25pt 50pt 25pt; display: flex; }
+.left { flex: 1.3; padding-right: 15pt; }
+.right { flex: 0.7; display: flex; flex-direction: column; justify-content: flex-start; }
+.metric { background: #07253D; color: #FFFFFF; padding: 5pt 8pt; border-radius: 4pt; margin-bottom: 4pt; }
+.metric-label { font-size: 7pt; opacity: 0.8; }
+.metric-value { font-size: 14pt; font-weight: bold; }
+.section-title { color: #07253D; font-size: 10pt; font-weight: bold; margin: 4pt 0 3pt 0; }
+.players { color: #44546A; font-size: 9pt; line-height: 1.3; }
+.sub-cat { background: #F5F7FA; padding: 4pt 6pt; border-radius: 4pt; margin: 2pt 0; }
+.sub-cat p { font-size: 8pt; color: #07253D; margin: 0; }
+.advantage { background: #01A9DB; color: #FFFFFF; padding: 6pt; border-radius: 4pt; margin-top: 4pt; }
+.advantage p { font-size: 8pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header"><h1>Category 3: ITOM & Observability</h1></div>
+<div class="content">
+  <div class="left">
+    <p class="section-title">Sub-Categories & Key Players</p>
+    <div class="sub-cat">
+      <p><b>ITSM:</b> ServiceNow, BMC, Freshworks</p>
+    </div>
+    <div class="sub-cat">
+      <p><b>Cloud:</b> VMware, CloudHealth, Flexera</p>
+    </div>
+    <div class="sub-cat">
+      <p><b>APM:</b> Datadog, Dynatrace, Splunk</p>
+    </div>
+    <div class="sub-cat">
+      <p><b>AIOps:</b> Moogsoft, BigPanda, PagerDuty</p>
+    </div>
+
+    <p class="section-title" style="color: #FB4100;">What's Missing</p>
+    <p class="players">Tech-focused, no process mining, lacks executive support</p>
+
+    <div class="advantage">
+      <p><b>Helm:</b> Business-outcome focused, ops + process intelligence</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="metric">
+      <p class="metric-label">ITSM Market</p>
+      <p class="metric-value">$15B</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">Observability</p>
+      <p class="metric-value">$22B</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">AIOps</p>
+      <p class="metric-value">$8B</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">CAGR</p>
+      <p class="metric-value">15%</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

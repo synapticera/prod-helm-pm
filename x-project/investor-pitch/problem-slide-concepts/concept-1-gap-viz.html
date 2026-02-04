@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Problem Statement - Concept 1: The ROI Gap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2d4a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 1200px;
+            height: 675px;
+            background: linear-gradient(180deg, #0d1b2a 0%, #1b2838 100%);
+            border-radius: 16px;
+            padding: 60px 80px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00d4aa, #0099ff, #00d4aa);
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .eyebrow {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #00d4aa;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        h1 span {
+            color: #00d4aa;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .gap-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .stat-bar {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .stat-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .stat-text {
+            font-size: 16px;
+            color: #8899aa;
+            font-weight: 500;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .bar-container {
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 16px;
+            transition: width 1s ease-out;
+        }
+
+        .bar-fill.adoption {
+            width: 88%;
+            background: linear-gradient(90deg, #0066cc, #0099ff);
+        }
+
+        .bar-fill.roi {
+            width: 39%;
+            background: linear-gradient(90deg, #ff4444, #ff6b6b);
+        }
+
+        .gap-indicator {
+            position: absolute;
+            left: 39%;
+            right: 12%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gap-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, #ff6b6b, #ff6b6b 8px, transparent 8px, transparent 16px);
+        }
+
+        .gap-badge {
+            background: linear-gradient(135deg, #ff4444, #cc0000);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 20px rgba(255,68,68,0.4);
+        }
+
+        .insight-panel {
+            flex: 0.9;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .insight-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .insight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .insight-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(0,212,170,0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .insight-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: #00d4aa;
+        }
+
+        .insight-text {
+            font-size: 15px;
+            color: #aabbcc;
+            line-height: 1.5;
+        }
+
+        .insight-text strong {
+            color: #ffffff;
+        }
+
+        .source {
+            position: absolute;
+            bottom: 30px;
+            left: 80px;
+            font-size: 12px;
+            color: #556677;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 30px;
+            right: 80px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #00d4aa;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <div class="eyebrow">The Problem</div>
+            <h1>Everyone's Using AI.<br><span>Almost No One Sees ROI.</span></h1>
+        </div>
+
+        <div class="main-content">
+            <div class="gap-visual">
+                <div class="stat-bar">
+                    <div class="stat-label">
+                        <span class="stat-text">Organizations using AI regularly</span>
+                        <span class="stat-number">88%</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill adoption"></div>
+                    </div>
+                </div>
+
+                <div class="stat-bar">
+                    <div class="stat-label">
+                        <span class="stat-text">Organizations seeing enterprise-level ROI</span>
+                        <span class="stat-number">39%</span>
+                    </div>
+                    <div class="bar-container">
+                        <div class="bar-fill roi"></div>
+                        <div class="gap-indicator">
+                            <div class="gap-line"></div>
+                            <div class="gap-badge">49-Point Gap</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-panel">
+                <div class="insight-title">Why the Gap Exists</div>
+
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/>
+                        </svg>
+                    </div>
+                    <div class="insight-text">
+                        <strong>No visibility</strong> into how work actually happens before deploying agents
+                    </div>
+                </div>
+
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="insight-text">
+                        <strong>No measurement</strong> framework to prove value and iterate
+                    </div>
+                </div>
+
+                <div class="insight-item">
+                    <div class="insight-icon">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </div>
+                    <div class="insight-text">
+                        <strong>No playbook</strong> for redesigning workflows around AI
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="source">Source: McKinsey State of AI 2025</div>
+        <div class="logo">HELM</div>
+    </div>
+</body>
+</html>

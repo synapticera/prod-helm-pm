@@ -1,0 +1,13 @@
+{
+  "preview_dir": "/tmp/pptx-preview",
+  "thumbnail_size": 1600,
+  "server": {
+    "enabled": true,
+    "port": 3333,
+    "action": "browser"
+  },
+  "backup": {
+    "enabled": true,
+    "suffix": ".backup"
+  }
+}

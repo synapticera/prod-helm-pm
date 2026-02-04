@@ -1240,7 +1240,31 @@
       "failed_at": "2026-01-30T10:44:57.762Z",
       "error": "Extraction failed - no result from Claude Code",
       "attempts": 1
+    },
+    {
+      "sessionId": "c4e8dd38-416f-4797-b6a6-d2f736339c87",
+      "date": "2026-02-01",
+      "queued_at": "2026-02-01T15:00:50.099Z",
+      "failed_at": "2026-02-01T15:00:54.753Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "5b117337-28fd-4f5a-ae21-95e6171d6256",
+      "date": "2026-02-01",
+      "queued_at": "2026-02-01T17:15:49.994Z",
+      "failed_at": "2026-02-01T17:15:54.936Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
+    },
+    {
+      "sessionId": "cb325450-b811-4305-a16e-ff1f9c53be78",
+      "date": "2026-02-01",
+      "queued_at": "2026-02-01T19:00:50.059Z",
+      "failed_at": "2026-02-01T19:00:54.801Z",
+      "error": "Extraction failed - no result from Claude Code",
+      "attempts": 1
     }
   ],
-  "updated_at": "2026-01-30T10:44:57.762Z"
+  "updated_at": "2026-02-01T20:20:01.894Z"
 }

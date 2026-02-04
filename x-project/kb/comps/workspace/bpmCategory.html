@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #FFFFFF; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { background: #FB4100; padding: 12pt 30pt; }
+.header h1 { color: #FFFFFF; font-size: 22pt; margin: 0; }
+.content { flex: 1; padding: 12pt 25pt 45pt 25pt; display: flex; }
+.left { flex: 1.2; padding-right: 15pt; }
+.right { flex: 0.8; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 5pt; }
+.metric { background: #07253D; color: #FFFFFF; padding: 7pt 10pt; border-radius: 6pt; margin-bottom: 6pt; }
+.metric-label { font-size: 8pt; opacity: 0.8; }
+.metric-value { font-size: 16pt; font-weight: bold; }
+.section-title { color: #07253D; font-size: 11pt; font-weight: bold; margin: 6pt 0 4pt 0; }
+.players { color: #44546A; font-size: 10pt; line-height: 1.3; }
+.evolution { background: #F5F7FA; padding: 6pt; border-radius: 6pt; margin: 6pt 0; }
+.evolution p { font-size: 9pt; color: #07253D; margin: 0; }
+.advantage { background: #01A9DB; color: #FFFFFF; padding: 7pt; border-radius: 6pt; margin-top: 6pt; }
+.advantage p { font-size: 9pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header"><h1>Category 2: BPM (Business Process Management)</h1></div>
+<div class="content">
+  <div class="left">
+    <p class="section-title">Key Players</p>
+    <p class="players"><b>Process Mining:</b> Celonis, Apromore, SAP Signavio<br/>
+    <b>BPM Suites:</b> Pega, Appian, IBM, Camunda<br/>
+    <b>RPA:</b> UiPath, Automation Anywhere, Blue Prism</p>
+
+    <div class="evolution">
+      <p><b>Evolution:</b> BPM → BOAT → Hyperautomation</p>
+    </div>
+
+    <p class="section-title" style="color: #FB4100;">What's Missing</p>
+    <p class="players">Enterprise-only pricing ($100K+), no executive decision layer</p>
+
+    <div class="advantage">
+      <p><b>Helm:</b> Mining is free, SMB-first pricing, executive command layer</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="metric">
+      <p class="metric-label">Process Mining TAM</p>
+      <p class="metric-value">$23B</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">RPA TAM</p>
+      <p class="metric-value">$36B</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">Combined CAGR</p>
+      <p class="metric-value">30%+</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

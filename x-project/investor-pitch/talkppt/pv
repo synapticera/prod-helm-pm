@@ -1,0 +1,47 @@
+#!/bin/bash
+# TalkPPT Quick Preview
+# Usage: ./pv <slide_number> [unpacked_dir]
+#
+# Examples:
+#   ./pv 5              # Preview slide 5 from current directory
+#   ./pv 0 ./working    # Preview first slide from ./working
+
+set -e
+
+SLIDE_NUM=${1:-0}
+UNPACKED_DIR=${2:-.}
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+CONFIG_FILE="$SCRIPT_DIR/config.json"
+
+# Defaults
+PREVIEW_DIR="/tmp/pptx-preview"
+SERVER_PORT=3333
+SERVER_ACTION="browser"
+THUMBNAIL_SIZE=1600
+
+# Load config if exists
+if [ -f "$CONFIG_FILE" ]; then
+    PREVIEW_DIR=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE')).get('preview_dir', '/tmp/pptx-preview'))" 2>/dev/null || echo "/tmp/pptx-preview")
+    SERVER_PORT=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE')).get('server', {}).get('port', 3333))" 2>/dev/null || echo "3333")
+    SERVER_ACTION=$(python3 -c "import json; print(json.load(open('$CONFIG_FILE')).get('server', {}).get('action', 'browser'))" 2>/dev/null || echo "browser")
+fi
+
+# Generate preview
+python3 "$SCRIPT_DIR/scripts/preview.py" "$SLIDE_NUM" "$UNPACKED_DIR" --output-dir "$PREVIEW_DIR" --size "$THUMBNAIL_SIZE"
+
+PREVIEW_FILE="$PREVIEW_DIR/slide-${SLIDE_NUM}.png"
+
+# Try to open via server action
+if curl -s -X POST "http://localhost:${SERVER_PORT}/action" \
+    -H "Content-Type: application/json" \
+    -d "{\"action\": \"${SERVER_ACTION}\", \"url\": \"file://${PREVIEW_FILE}\"}" > /dev/null 2>&1; then
+    echo "Opened in viewer via server action"
+else
+    # Fallback to macOS open
+    if command -v open &> /dev/null; then
+        open "$PREVIEW_FILE"
+        echo "Opened in Preview.app"
+    fi
+fi
+
+echo "Slide $SLIDE_NUM → $PREVIEW_FILE"

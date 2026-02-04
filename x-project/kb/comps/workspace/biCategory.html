@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #FFFFFF; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { background: #01A9DB; padding: 12pt 30pt; }
+.header h1 { color: #FFFFFF; font-size: 22pt; margin: 0; }
+.content { flex: 1; padding: 12pt 25pt 45pt 25pt; display: flex; }
+.left { flex: 1.2; padding-right: 15pt; }
+.right { flex: 0.8; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 5pt; }
+.metric { background: #07253D; color: #FFFFFF; padding: 7pt 10pt; border-radius: 6pt; margin-bottom: 6pt; }
+.metric-label { font-size: 8pt; opacity: 0.8; }
+.metric-value { font-size: 16pt; font-weight: bold; }
+.section-title { color: #07253D; font-size: 11pt; font-weight: bold; margin: 6pt 0 4pt 0; }
+.players { color: #44546A; font-size: 10pt; line-height: 1.3; }
+.good { color: #01A9DB; }
+.missing { color: #FB4100; }
+.advantage { background: #FB4100; color: #FFFFFF; padding: 7pt; border-radius: 6pt; margin-top: 8pt; }
+.advantage p { font-size: 9pt; margin: 0; }
+</style>
+</head>
+<body>
+<div class="header"><h1>Category 1: Business Intelligence (BI)</h1></div>
+<div class="content">
+  <div class="left">
+    <p class="section-title">Key Players</p>
+    <p class="players"><b>Enterprise:</b> Power BI, Tableau, Qlik, SAP<br/>
+    <b>Modern:</b> Looker, Domo, ThoughtSpot, Sisense<br/>
+    <b>Emerging:</b> Mode, Hex, Lightdash</p>
+
+    <p class="section-title good">What BI Does Well</p>
+    <p class="players">Data visualization, dashboards, historical reporting</p>
+
+    <p class="section-title missing">What's Missing</p>
+    <p class="players">No process context, backward-looking, no action path</p>
+
+    <div class="advantage">
+      <p><b>Helm:</b> Forward-looking decision intelligence with process context</p>
+    </div>
+  </div>
+  <div class="right">
+    <div class="metric">
+      <p class="metric-label">Market Size (2025)</p>
+      <p class="metric-value">$33B</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">CAGR</p>
+      <p class="metric-value">12%</p>
+    </div>
+    <div class="metric">
+      <p class="metric-label">2030 Projection</p>
+      <p class="metric-value">$58B</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

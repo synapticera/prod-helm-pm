@@ -1,9 +1,10 @@
 # Ask MAX History
 
-Last updated: 2026-01-30T09:40:36.564Z
+Last updated: 2026-02-01T18:45:59.573Z
 
 ## History Entries
 
+- **2026-02-01T18:45:59.573Z** - /usage
 - **2026-01-30T09:40:36.564Z** - /usage
 - **2026-01-30T00:32:43.772Z** - /usage
 - **2026-01-29T18:00:59.775Z** - # GenDoc Generation Task

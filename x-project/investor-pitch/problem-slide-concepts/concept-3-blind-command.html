@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Problem Statement - Concept 3: Flying Blind</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #000000;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .slide {
+            width: 1200px;
+            height: 675px;
+            background: radial-gradient(ellipse at 30% 50%, #0d1a2d 0%, #050a12 100%);
+            border-radius: 16px;
+            padding: 60px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated radar effect */
+        .radar {
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.15;
+        }
+
+        .radar-circle {
+            position: absolute;
+            border: 1px solid #00d4aa;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .radar-circle:nth-child(1) { width: 100px; height: 100px; }
+        .radar-circle:nth-child(2) { width: 200px; height: 200px; }
+        .radar-circle:nth-child(3) { width: 300px; height: 300px; }
+        .radar-circle:nth-child(4) { width: 400px; height: 400px; }
+        .radar-circle:nth-child(5) { width: 500px; height: 500px; }
+
+        .radar-sweep {
+            position: absolute;
+            width: 250px;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4aa, transparent);
+            top: 50%;
+            left: 50%;
+            transform-origin: left center;
+            animation: sweep 4s linear infinite;
+        }
+
+        @keyframes sweep {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-message {
+            max-width: 700px;
+        }
+
+        .question {
+            font-size: 56px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .question .highlight {
+            background: linear-gradient(135deg, #ff6b6b, #ff8f8f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .answer {
+            font-size: 20px;
+            color: #8899aa;
+            line-height: 1.6;
+        }
+
+        .answer strong {
+            color: #ffffff;
+        }
+
+        .bottom-stats {
+            display: flex;
+            gap: 40px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-card {
+            flex: 1;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+
+        .stat-card.red::before {
+            background: #ff6b6b;
+        }
+
+        .stat-card.orange::before {
+            background: #ffaa44;
+        }
+
+        .stat-card.gray::before {
+            background: #666;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #8899aa;
+            line-height: 1.4;
+        }
+
+        .stat-source {
+            font-size: 11px;
+            color: #556677;
+            margin-top: 12px;
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 30px;
+            right: 80px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #00d4aa;
+            letter-spacing: 2px;
+        }
+
+        /* Floating question marks effect */
+        .float-element {
+            position: absolute;
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(255,107,107,0.05);
+            z-index: 1;
+        }
+
+        .float-element:nth-child(1) {
+            top: 5%;
+            right: 15%;
+        }
+
+        .float-element:nth-child(2) {
+            top: 45%;
+            right: 5%;
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="radar">
+            <div class="radar-circle"></div>
+            <div class="radar-circle"></div>
+            <div class="radar-circle"></div>
+            <div class="radar-circle"></div>
+            <div class="radar-circle"></div>
+            <div class="radar-sweep"></div>
+        </div>
+
+        <div class="float-element">?</div>
+        <div class="float-element">?</div>
+
+        <div class="content">
+            <div class="top-section">
+                <div class="main-message">
+                    <h1 class="question">
+                        How do you command<br>
+                        what you <span class="highlight">can't see?</span>
+                    </h1>
+                    <p class="answer">
+                        Service leaders are drowning in AI tools but starving for answers.
+                        <strong>What's actually happening? Where should I invest? Is it working?</strong>
+                        Without visibility, every AI initiative is a gamble.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bottom-stats">
+                <div class="stat-card red">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">of AI pilots deliver<br>zero measurable ROI</div>
+                    <div class="stat-source">MIT Sloan</div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-value">85%</div>
+                    <div class="stat-label">fail before ever<br>proving business value</div>
+                    <div class="stat-source">Gartner</div>
+                </div>
+
+                <div class="stat-card gray">
+                    <div class="stat-value">78%</div>
+                    <div class="stat-label">see no bottom-line<br>impact from AI</div>
+                    <div class="stat-source">McKinsey</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logo">HELM</div>
+    </div>
+</body>
+</html>

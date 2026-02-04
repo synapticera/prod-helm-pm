@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Problem Slide Concepts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .critique {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .critique h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+        }
+
+        .critique-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .critique-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ff6b6b;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .critique-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .critique-section li {
+            font-size: 14px;
+            color: #444;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .concepts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .concept {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .concept-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .concept-number {
+            font-size: 12px;
+            font-weight: 600;
+            color: #00b894;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .concept-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .concept-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .concept-preview {
+            position: relative;
+            padding-top: 56.25%;
+            background: #1a1a1a;
+        }
+
+        .concept-preview iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform: scale(0.5);
+            transform-origin: top left;
+            width: 200%;
+            height: 200%;
+        }
+
+        .concept-actions {
+            padding: 16px 24px;
+            display: flex;
+            gap: 12px;
+            background: #fafafa;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: #00b894;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #00a884;
+        }
+
+        .btn-secondary {
+            background: #e8e8e8;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: #ddd;
+        }
+
+        .strengths {
+            padding: 16px 24px;
+            background: rgba(0,184,148,0.05);
+            border-top: 1px solid rgba(0,184,148,0.1);
+        }
+
+        .strengths-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #00b894;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .strengths-list {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Helm Problem Slide — Concept Exploration</h1>
+        <p class="subtitle">Four alternative approaches to the problem statement slide</p>
+
+        <div class="critique">
+            <h2>Critique of Original Slide</h2>
+            <div class="critique-grid">
+                <div class="critique-section">
+                    <h3>Copy Issues</h3>
+                    <ul>
+                        <li>"AI tsunami" is cliché and overused</li>
+                        <li>"bottleneck to progress" is passive—no urgency</li>
+                        <li>Four gaps are abstract, don't hit emotionally</li>
+                        <li>"ground truth" is insider jargon</li>
+                        <li>Conclusion "new platform" is weak—doesn't name Helm</li>
+                        <li>No data or proof points to establish credibility</li>
+                    </ul>
+                </div>
+                <div class="critique-section">
+                    <h3>Visual Issues</h3>
+                    <ul>
+                        <li>Text-heavy, reads like bullet points not a presentation</li>
+                        <li>No visual hierarchy beyond color differences</li>
+                        <li>No emotional impact or storytelling</li>
+                        <li>Missing the powerful McKinsey data (88% vs 39%)</li>
+                        <li>Generic circles as bullets—no visual interest</li>
+                        <li>No visual metaphor to anchor the message</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="concepts">
+            <div class="concept">
+                <div class="concept-header">
+                    <div class="concept-number">Concept 1</div>
+                    <div class="concept-title">The ROI Gap</div>
+                    <div class="concept-desc">Data-driven approach showing the 88% vs 39% gap visually with bar charts and a focused "Why the Gap Exists" panel.</div>
+                </div>
+                <div class="concept-preview">
+                    <iframe src="concept-1-gap-viz.html" loading="lazy"></iframe>
+                </div>
+                <div class="strengths">
+                    <div class="strengths-title">Strengths</div>
+                    <div class="strengths-list">Uses credible McKinsey data. Clear visual gap. Concrete "why" explanation. Professional dark theme.</div>
+                </div>
+                <div class="concept-actions">
+                    <a href="concept-1-gap-viz.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                </div>
+            </div>
+
+            <div class="concept">
+                <div class="concept-header">
+                    <div class="concept-number">Concept 2</div>
+                    <div class="concept-title">The Missing Layer</div>
+                    <div class="concept-desc">"Arms & Legs but No Brain" metaphor with a visual stack showing the missing executive function layer between strategy and execution.</div>
+                </div>
+                <div class="concept-preview">
+                    <iframe src="concept-2-missing-layer.html" loading="lazy"></iframe>
+                </div>
+                <div class="strengths">
+                    <div class="strengths-title">Strengths</div>
+                    <div class="strengths-list">Strong metaphor. Visual stack is memorable. Shows exactly where Helm fits. Sets up solution perfectly.</div>
+                </div>
+                <div class="concept-actions">
+                    <a href="concept-2-missing-layer.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                </div>
+            </div>
+
+            <div class="concept">
+                <div class="concept-header">
+                    <div class="concept-number">Concept 3</div>
+                    <div class="concept-title">Flying Blind</div>
+                    <div class="concept-desc">Provocative question approach with "How do you command what you can't see?" and animated radar visual suggesting navigation without instruments.</div>
+                </div>
+                <div class="concept-preview">
+                    <iframe src="concept-3-blind-command.html" loading="lazy"></iframe>
+                </div>
+                <div class="strengths">
+                    <div class="strengths-title">Strengths</div>
+                    <div class="strengths-list">Emotional hook. Radar visual ties to Helm/navigation. Triple stat reinforcement. Executive-focused language.</div>
+                </div>
+                <div class="concept-actions">
+                    <a href="concept-3-blind-command.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                </div>
+            </div>
+
+            <div class="concept">
+                <div class="concept-header">
+                    <div class="concept-number">Concept 4</div>
+                    <div class="concept-title">Single Stat Impact</div>
+                    <div class="concept-desc">Minimalist Apple-style approach with one massive number (61%) that demands attention, followed by simple explanation.</div>
+                </div>
+                <div class="concept-preview">
+                    <iframe src="concept-4-single-stat.html" loading="lazy"></iframe>
+                </div>
+                <div class="strengths">
+                    <div class="strengths-title">Strengths</div>
+                    <div class="strengths-list">Maximum visual impact. Clean and memorable. Easy to explain verbally. Modern and confident tone.</div>
+                </div>
+                <div class="concept-actions">
+                    <a href="concept-4-single-stat.html" target="_blank" class="btn btn-primary">View Full Size</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

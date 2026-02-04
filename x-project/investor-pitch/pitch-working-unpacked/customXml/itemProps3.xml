@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ascii"?>
+<ds:datastoreItem xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml" ds:itemID="{1D98C5F7-8A98-4681-9A88-B57187ECA254}">
+  <ds:schemaRefs>
+    <ds:schemaRef ds:uri="http://schemas.microsoft.com/office/2006/metadata/properties"/>
+    <ds:schemaRef ds:uri="75c494c1-6682-4d4a-ab40-ff9af6970620"/>
+    <ds:schemaRef ds:uri="http://purl.org/dc/terms/"/>
+    <ds:schemaRef ds:uri="http://www.w3.org/XML/1998/namespace"/>
+    <ds:schemaRef ds:uri="http://schemas.microsoft.com/office/infopath/2007/PartnerControls"/>
+    <ds:schemaRef ds:uri="http://purl.org/dc/elements/1.1/"/>
+    <ds:schemaRef ds:uri="http://schemas.microsoft.com/office/2006/documentManagement/types"/>
+    <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"/>
+    <ds:schemaRef ds:uri="53ea018d-d805-4f07-8292-ddcf85f807cb"/>
+    <ds:schemaRef ds:uri="http://purl.org/dc/dcmitype/"/>
+  </ds:schemaRefs>
+</ds:datastoreItem>

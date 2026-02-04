@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html { background: #FFFFFF; }
+body {
+  width: 720pt; height: 405pt; margin: 0; padding: 0;
+  background: #FFFFFF; font-family: Arial, sans-serif;
+  display: flex; flex-direction: column;
+}
+.header { background: #07253D; padding: 12pt 30pt; }
+.header h1 { color: #FFFFFF; font-size: 22pt; margin: 0; }
+.content { flex: 1; padding: 15pt 25pt 50pt 25pt; display: flex; }
+.left { flex: 0.55; display: flex; justify-content: center; align-items: center; }
+.right { flex: 0.45; display: flex; flex-direction: column; justify-content: flex-start; padding-left: 15pt; }
+.placeholder { background: #E8ECF0; }
+.total { background: #FB4100; color: #FFFFFF; padding: 10pt; border-radius: 6pt; margin-bottom: 10pt; text-align: center; }
+.total-label { font-size: 10pt; margin-bottom: 3pt; }
+.total-value { font-size: 26pt; font-weight: bold; }
+.breakdown { color: #07253D; font-size: 10pt; line-height: 1.5; }
+.sam { background: #01A9DB; color: #FFFFFF; padding: 8pt; border-radius: 6pt; margin-top: 10pt; text-align: center; }
+.sam p { margin: 0; font-size: 11pt; }
+</style>
+</head>
+<body>
+<div class="header"><h1>Combined TAM Opportunity</h1></div>
+<div class="content">
+  <div class="left">
+    <div id="tam" class="placeholder" style="width: 240pt; height: 200pt;"></div>
+  </div>
+  <div class="right">
+    <div class="total">
+      <p class="total-label">Combined Adjacent TAM (2030)</p>
+      <p class="total-value">$400B+</p>
+    </div>
+    <p class="breakdown">
+      <b>BI/Analytics:</b> $58B<br/>
+      <b>BPM + RPA:</b> $59B<br/>
+      <b>ITOM + Observability:</b> $45B<br/>
+      <b>Digital Transformation:</b> $165B+
+    </p>
+    <div class="sam">
+      <p><b>Helm SAM:</b> $31B (US/UK/EU)</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
