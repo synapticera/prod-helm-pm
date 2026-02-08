@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Velocity Gap | Helm by Synaptic Era</title>
+<meta name="description" content="$4.5 trillion in US labor value is shifting 6 years ahead of schedule. Infrastructure is sprinting while enterprise value walks. Explore the interactive research report.">
+<meta property="og:title" content="The AI Velocity Gap — Why $5T in AI Investment Isn't Paying Off Yet">
+<meta property="og:description" content="93% of jobs impacted today — 6 years ahead of schedule. Interactive research report based on Cognizant's New Work, New World 2026.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://helm.synaptic.build/velocity-gap/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #07253D;
+    --cyan: #01A9DB;
+    --orange: #FB4100;
+    --dark: #0a1225;
+    --dark-surface: #0e1a2e;
+    --card-bg: rgba(255,255,255,0.035);
+    --card-border: rgba(1,169,219,0.12);
+    --text: #e8edf3;
+    --text-dim: #8a9bb5;
+    --text-muted: #5a6d85;
+    --glow-cyan: rgba(1,169,219,0.25);
+    --glow-orange: rgba(251,65,0,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── Scroll Progress ─── */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cyan), var(--orange));
+    z-index: 1000;
+    transition: width 0.1s linear;
+    width: 0%;
+  }
+
+  /* ─── Navigation ─── */
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background: rgba(10,18,37,0.85);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .top-nav.visible { transform: translateY(0); }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .nav-brand .logo-mark {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--cyan), var(--orange));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 14px;
+    color: #fff;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--cyan); }
+
+  .nav-cta {
+    background: var(--cyan) !important;
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600 !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px var(--glow-cyan);
+  }
+
+  /* ─── Hero ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    background: radial-gradient(ellipse at 25% 15%, rgba(1,169,219,0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 75% 85%, rgba(251,65,0,0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(1,169,219,0.03) 0%, transparent 70%),
+                var(--dark);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--dark));
+    pointer-events: none;
+  }
+
+  /* Floating particles */
+  .particle-field {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: float-up 8s infinite;
+  }
+
+  @keyframes float-up {
+    0% { opacity: 0; transform: translateY(100vh) scale(0); }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(-20vh) scale(1); }
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    border: 1px solid var(--card-border);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 36px;
+    backdrop-filter: blur(10px);
+    background: rgba(1,169,219,0.04);
+  }
+
+  .hero-badge .dot {
+    width: 7px;
+    height: 7px;
+    background: var(--orange);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--glow-orange); }
+    50% { opacity: 0.5; box-shadow: 0 0 12px 4px var(--glow-orange); }
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 80px);
+    font-weight: 800;
+    line-height: 1.05;
+    max-width: 950px;
+    margin-bottom: 28px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--cyan) 0%, #01dbb5 40%, var(--orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 21px);
+    color: var(--text-dim);
+    max-width: 660px;
+    font-weight: 300;
+    margin-bottom: 56px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-stat {
+    text-align: center;
+    cursor: default;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-stat:hover { transform: translateY(-4px); }
+
+  .hero-stat .num {
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 900;
+    color: var(--cyan);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .hero-stat .num.orange { color: var(--orange); }
+
+  .hero-stat .label {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+    z-index: 1;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+
+  .scroll-cue svg { opacity: 0.4; }
+
+  /* ─── Section ─── */
+  section {
+    padding: 120px 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(30px, 3.8vw, 48px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .section-desc {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 700px;
+    margin-bottom: 56px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ─── Two Speeds ─── */
+  .two-speeds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  .speed-card {
+    padding: 36px;
+    border-radius: 20px;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .speed-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .speed-card.fast {
+    border-color: rgba(1,169,219,0.2);
+    background: linear-gradient(135deg, rgba(1,169,219,0.06), rgba(1,169,219,0.01));
+  }
+
+  .speed-card.fast:hover { box-shadow: 0 8px 40px var(--glow-cyan); }
+
+  .speed-card.slow {
+    border-color: rgba(251,65,0,0.2);
+    background: linear-gradient(135deg, rgba(251,65,0,0.06), rgba(251,65,0,0.01));
+  }
+
+  .speed-card.slow:hover { box-shadow: 0 8px 40px var(--glow-orange); }
+
+  .speed-card .speed-num {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .speed-card.fast .speed-num { color: var(--cyan); }
+  .speed-card.slow .speed-num { color: var(--orange); }
+
+  .speed-card .speed-unit {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .speed-card .speed-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .speed-card .speed-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* ─── Gap Visual ─── */
+  .gap-visual { position: relative; padding: 20px 0; }
+
+  .gap-track {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .gap-lane {
+    padding: 28px 32px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    overflow: hidden;
+  }
+
+  .gap-lane .lane-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .gap-lane .lane-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .gap-lane .lane-speed {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .progress-bar {
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.025);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 18px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    position: relative;
+    width: 0;
+    transition: width 2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .fill-infra {
+    background: linear-gradient(90deg, var(--cyan), #01dbb5);
+    color: var(--navy);
+  }
+
+  .fill-infra.animate { width: 88%; }
+
+  .fill-value {
+    background: linear-gradient(90deg, var(--orange), #ff7733);
+    color: #fff;
+  }
+
+  .fill-value.animate { width: 28%; }
+
+  .gap-arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 8px 0;
+  }
+
+  .gap-arrow-line {
+    flex: 1;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--orange), var(--orange) 6px, transparent 6px, transparent 12px);
+    opacity: 0.4;
+  }
+
+  .gap-label-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    border: 2px solid rgba(251,65,0,0.4);
+    background: rgba(251,65,0,0.06);
+    white-space: nowrap;
+    animation: gap-pulse 3s infinite;
+  }
+
+  @keyframes gap-pulse {
+    0%, 100% { border-color: rgba(251,65,0,0.4); box-shadow: none; }
+    50% { border-color: rgba(251,65,0,0.7); box-shadow: 0 0 20px rgba(251,65,0,0.15); }
+  }
+
+  /* ─── Interactive Stat Counter ─── */
+  .counter { display: inline-block; }
+
+  /* ─── J-Curve ─── */
+  .j-curve-wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .j-curve-svg { width: 100%; max-width: 520px; }
+
+  .j-curve-text h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .j-curve-text > p {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 24px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .j-phase {
+    padding: 18px 22px;
+    border-radius: 14px;
+    border-left: 4px solid;
+    background: var(--card-bg);
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .j-phase:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateX(4px);
+  }
+
+  .j-phase.phase-1 { border-color: var(--orange); }
+  .j-phase.phase-2 { border-color: var(--cyan); }
+
+  .j-phase .phase-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+  }
+
+  .j-phase.phase-1 .phase-label { color: var(--orange); }
+  .j-phase.phase-2 .phase-label { color: var(--cyan); }
+
+  .j-phase .phase-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* SVG animation */
+  .j-curve-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    transition: stroke-dashoffset 2.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .j-curve-path.animate { stroke-dashoffset: 0; }
+
+  .j-invest-path {
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    transition: stroke-dashoffset 2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+  }
+
+  .j-invest-path.animate { stroke-dashoffset: 0; }
+
+  .j-marker {
+    opacity: 0;
+    transition: opacity 0.5s ease 1.5s;
+  }
+
+  .j-marker.animate { opacity: 1; }
+
+  /* ─── Exposure Interactive ─── */
+  .exposure-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .exposure-btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-dim);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+  }
+
+  .exposure-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+  .exposure-btn.active { background: var(--cyan); color: #fff; border-color: var(--cyan); }
+
+  .exposure-grid { display: grid; gap: 12px; }
+
+  .exposure-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 100px;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 24px;
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    transition: transform 0.2s, background 0.2s;
+    cursor: default;
+  }
+
+  .exposure-row:hover {
+    background: rgba(255,255,255,0.05);
+    transform: translateX(4px);
+  }
+
+  .exposure-row.header {
+    background: none;
+    border: none;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0;
+  }
+
+  .exposure-row.header:hover { background: none; transform: none; }
+
+  .exposure-row.header span {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+  }
+
+  .occ-name {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .bar-container {
+    position: relative;
+    height: 32px;
+    background: rgba(255,255,255,0.025);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .bar-old {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(1,169,219,0.15);
+    border-radius: 8px;
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .bar-new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--cyan), var(--orange));
+    border-radius: 8px;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .bar-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background: var(--navy);
+    border-radius: 6px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    border: 1px solid var(--card-border);
+    margin-bottom: 6px;
+  }
+
+  .exposure-row:hover .bar-tooltip { opacity: 1; }
+
+  .change-badge {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--orange);
+    text-align: right;
+  }
+
+  /* ─── Donut Charts ─── */
+  .donut-section {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  .donut-item { text-align: center; }
+
+  .donut-item .donut-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-top: 12px;
+  }
+
+  .donut-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .donut-arrow .arrow-text {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .donut-circle-bg {
+    transition: stroke-dasharray 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* ─── Insights Grid ─── */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .insight-card {
+    padding: 36px;
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .insight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  .insight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .insight-card.cyan::before { background: linear-gradient(90deg, var(--cyan), transparent); }
+  .insight-card.orange::before { background: linear-gradient(90deg, var(--orange), transparent); }
+
+  .insight-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .insight-card.cyan .insight-icon { background: rgba(1,169,219,0.1); color: var(--cyan); }
+  .insight-card.orange .insight-icon { background: rgba(251,65,0,0.1); color: var(--orange); }
+
+  .insight-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+  .insight-card p { font-size: 14px; color: var(--text-dim); font-weight: 300; line-height: 1.7; }
+
+  /* ─── Timeline ─── */
+  .timeline { position: relative; padding-left: 48px; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 16px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--cyan), var(--orange), var(--cyan));
+    opacity: 0.2;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+    cursor: default;
+    transition: transform 0.2s;
+  }
+
+  .timeline-item:hover { transform: translateX(6px); }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--cyan);
+    border: 3px solid var(--dark);
+    box-shadow: 0 0 0 2px rgba(1,169,219,0.3);
+  }
+
+  .timeline-item:last-child::before {
+    background: var(--orange);
+    box-shadow: 0 0 0 2px var(--glow-orange), 0 0 16px var(--glow-orange);
+  }
+
+  .timeline-item .era {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-item:last-child .era { color: var(--orange); }
+
+  .timeline-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+
+  .timeline-item p { font-size: 14px; color: var(--text-dim); font-weight: 300; line-height: 1.7; }
+
+  /* ─── Interactive Quiz / Assessment ─── */
+  .assessment-section {
+    padding: 80px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .quiz-card {
+    background: linear-gradient(135deg, rgba(1,169,219,0.04), rgba(251,65,0,0.04));
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 48px;
+    text-align: center;
+  }
+
+  .quiz-card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+
+  .quiz-card .quiz-sub {
+    color: var(--text-dim);
+    font-size: 15px;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .quiz-options {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .quiz-option {
+    padding: 18px 24px;
+    border-radius: 14px;
+    border: 1px solid var(--card-border);
+    background: rgba(255,255,255,0.02);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    font-family: inherit;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .quiz-option:hover {
+    border-color: var(--cyan);
+    background: rgba(1,169,219,0.06);
+    transform: translateX(4px);
+  }
+
+  .quiz-option.selected {
+    border-color: var(--cyan);
+    background: rgba(1,169,219,0.1);
+    color: var(--cyan);
+    font-weight: 600;
+  }
+
+  .quiz-option .opt-letter {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+
+  .quiz-option.selected .opt-letter {
+    background: var(--cyan);
+    border-color: var(--cyan);
+    color: #fff;
+  }
+
+  .quiz-result {
+    display: none;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid;
+    text-align: left;
+    margin-top: 24px;
+  }
+
+  .quiz-result.show { display: block; animation: fadeIn 0.5s ease; }
+
+  .quiz-result h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .quiz-result p {
+    font-size: 14px;
+    color: var(--text-dim);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .quiz-result.dip { border-color: var(--orange); background: rgba(251,65,0,0.05); }
+  .quiz-result.dip h4 { color: var(--orange); }
+  .quiz-result.bridge { border-color: var(--cyan); background: rgba(1,169,219,0.05); }
+  .quiz-result.bridge h4 { color: var(--cyan); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── Helm CTA Section ─── */
+  .helm-section {
+    padding: 120px 24px;
+    text-align: center;
+    position: relative;
+    background: radial-gradient(ellipse at 50% 50%, rgba(1,169,219,0.06) 0%, transparent 60%);
+  }
+
+  .helm-section h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .helm-section h2 .accent {
+    background: linear-gradient(135deg, var(--cyan), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .helm-section .helm-sub {
+    font-size: 18px;
+    color: var(--text-dim);
+    max-width: 640px;
+    margin: 0 auto 48px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .helm-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 56px;
+  }
+
+  .pillar {
+    padding: 32px 24px;
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .pillar:hover {
+    transform: translateY(-6px);
+    border-color: var(--cyan);
+  }
+
+  .pillar-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .pillar h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .pillar p { font-size: 13px; color: var(--text-dim); font-weight: 300; line-height: 1.6; }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--cyan);
+    color: #fff;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 12px;
+    font: 600 15px 'Poppins', Arial, sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px var(--glow-cyan);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--cyan);
+    padding: 16px 36px;
+    border: 2px solid rgba(1,169,219,0.3);
+    border-radius: 12px;
+    font: 600 15px 'Poppins', Arial, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--cyan);
+    background: rgba(1,169,219,0.06);
+    transform: translateY(-3px);
+  }
+
+  /* ─── Closing ─── */
+  .closing-section {
+    text-align: center;
+    padding: 80px 24px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .closing-section .big-stat {
+    font-size: clamp(56px, 8vw, 110px);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--cyan), var(--orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .closing-section .big-label {
+    font-size: 18px;
+    color: var(--text-dim);
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  .closing-section .quote {
+    font-size: 21px;
+    font-style: italic;
+    color: var(--text);
+    font-weight: 300;
+    border-left: 4px solid var(--cyan);
+    padding-left: 28px;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 620px;
+    line-height: 1.6;
+  }
+
+  .closing-section .quote-attr {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 16px;
+    text-align: left;
+    padding-left: 28px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ─── Share Bar ─── */
+  .share-bar {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-dim);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    font-family: inherit;
+  }
+
+  .share-btn:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    transform: translateY(-2px);
+  }
+
+  .share-btn svg { width: 16px; height: 16px; }
+
+  /* ─── Source Footer ─── */
+  .source-footer {
+    text-align: center;
+    padding: 48px 24px 80px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .source-footer a {
+    color: var(--cyan);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .source-footer a:hover { text-decoration: underline; }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+
+  .footer-brand .logo-mark {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--cyan), var(--orange));
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 10px;
+    color: #fff;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 768px) {
+    .two-speeds,
+    .j-curve-wrapper,
+    .donut-section { grid-template-columns: 1fr; }
+
+    .helm-pillars { grid-template-columns: 1fr; max-width: 400px; }
+
+    .exposure-row { grid-template-columns: 120px 1fr 60px; gap: 12px; padding: 14px 16px; }
+
+    .hero-stats { gap: 28px; }
+
+    .nav-links { display: none; }
+
+    section { padding: 80px 20px; }
+
+    .quiz-card { padding: 32px 24px; }
+
+    .donut-arrow { transform: rotate(90deg); }
+  }
+
+  /* ─── Animation triggers ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navigation -->
+<nav class="top-nav" id="topNav">
+  <a href="#" class="nav-brand">
+    <span class="logo-mark">H</span>
+    Helm
+  </a>
+  <div class="nav-links">
+    <a href="#velocity-gap">The Gap</a>
+    <a href="#j-curve">J-Curve</a>
+    <a href="#exposure">Exposure</a>
+    <a href="#breakthroughs">Breakthroughs</a>
+    <a href="#assessment">Assessment</a>
+    <a href="https://www.synaptic.build" class="nav-cta" target="_blank">Learn More</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="particle-field" id="particles"></div>
+
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Interactive Research Report
+  </div>
+  <h1>The <span class="accent">AI Velocity Gap</span></h1>
+  <p class="hero-sub">
+    $5 trillion in AI infrastructure is racing ahead. Enterprise value realization is barely walking. The gap between them defines who wins and who gets left behind.
+  </p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="num"><span class="counter" data-target="4.5" data-prefix="$" data-suffix="T" data-decimals="1">$0T</span></div>
+      <div class="label">US Labor Value Shift</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num orange"><span class="counter" data-target="93" data-suffix="%" data-decimals="0">0%</span></div>
+      <div class="label">Jobs Impacted Today</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num"><span class="counter" data-target="6" data-suffix="yr" data-decimals="0">0yr</span></div>
+      <div class="label">Ahead of Schedule</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num orange"><span class="counter" data-target="5" data-prefix="$" data-suffix="T+" data-decimals="0">$0T+</span></div>
+      <div class="label">Infra Spend by 2030</div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Explore the data</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+  </div>
+</div>
+
+<!-- ═══ VELOCITY GAP ═══ -->
+<section id="velocity-gap">
+  <div class="fade-up">
+    <div class="section-label">Defining the Problem</div>
+    <div class="section-title">Two Clocks. Different Speeds.</div>
+    <p class="section-desc">
+      AI infrastructure innovation cycles every 6-12 months. Enterprise value realization takes 3-5 years. Cognizant calls this the Velocity Gap &mdash; and it's the defining challenge of enterprise AI.
+    </p>
+  </div>
+
+  <div class="two-speeds fade-up">
+    <div class="speed-card fast">
+      <div class="speed-num">6-12</div>
+      <div class="speed-unit">Month Innovation Cycles</div>
+      <div class="speed-title">AI Infrastructure</div>
+      <div class="speed-desc">Multimodal models, advanced reasoning, and agentic AI are advancing at breakneck speed. $5T+ in investment by 2030. JP Morgan estimates $650B in new annual revenue is needed for just a 10% return.</div>
+    </div>
+    <div class="speed-card slow">
+      <div class="speed-num">3-5</div>
+      <div class="speed-unit">Year Adoption Timelines</div>
+      <div class="speed-title">Enterprise Value</div>
+      <div class="speed-desc">Legacy processes, organizational inertia, and implementation complexity create massive friction. Cognizant's CEO says "the methodologies and tools to harness AI are only just emerging."</div>
+    </div>
+  </div>
+
+  <div class="gap-visual fade-up" id="gapVisual">
+    <div class="gap-track">
+      <div class="gap-lane">
+        <div class="lane-header">
+          <span class="lane-label" style="color: var(--cyan);">AI Capability & Infrastructure</span>
+          <span class="lane-speed">$5T+ invested &rarr; racing ahead</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill fill-infra" id="infraBar">$5T+ Invested</div>
+        </div>
+      </div>
+      <div class="gap-arrow-container">
+        <div class="gap-arrow-line"></div>
+        <div class="gap-label-badge">The Velocity Gap</div>
+        <div class="gap-arrow-line"></div>
+      </div>
+      <div class="gap-lane">
+        <div class="lane-header">
+          <span class="lane-label" style="color: var(--orange);">Enterprise Value Realization</span>
+          <span class="lane-speed">Only 39% see EBIT impact</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill fill-value" id="valueBar">39% with ROI</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ J-CURVE ═══ -->
+<section id="j-curve">
+  <div class="fade-up">
+    <div class="section-label">The Pattern</div>
+    <div class="section-title">The Elongated J-Curve</div>
+    <p class="section-desc">
+      Every transformative technology follows this curve: heavy investment, a painful dip, then breakthrough. We're in the dip right now &mdash; and the stakes are unprecedented.
+    </p>
+  </div>
+
+  <div class="j-curve-wrapper fade-up" id="jCurveSection">
+    <svg class="j-curve-svg" viewBox="0 0 520 370" fill="none">
+      <!-- Grid -->
+      <line x1="60" y1="40" x2="60" y2="290" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="290" x2="480" y2="290" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="60" y1="210" x2="480" y2="210" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="60" y1="130" x2="480" y2="130" stroke="rgba(255,255,255,0.04)" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+      <!-- Axis labels -->
+      <text x="270" y="325" fill="#5a6d85" font-size="10" font-family="Poppins" text-anchor="middle" font-weight="600" letter-spacing="2">TIME</text>
+      <text x="18" y="165" fill="#5a6d85" font-size="10" font-family="Poppins" text-anchor="middle" transform="rotate(-90, 18, 165)" font-weight="600" letter-spacing="2">VALUE</text>
+
+      <!-- Investment line -->
+      <path class="j-invest-path" d="M80,265 L180,225 L280,170 L380,110 L460,65" stroke="#01A9DB" stroke-width="2.5" stroke-dasharray="500" stroke-dashoffset="500" opacity="0.5"/>
+      <text x="462" y="58" fill="#01A9DB" font-size="9" font-family="Poppins" font-weight="700" letter-spacing="1">INVESTMENT</text>
+
+      <!-- J-Curve -->
+      <path class="j-curve-path" d="M80,235 Q150,260 190,280 Q230,300 270,275 Q330,220 390,145 L460,80" stroke="#FB4100" stroke-width="3.5" fill="none" stroke-dasharray="600" stroke-dashoffset="600"/>
+      <text x="462" y="75" fill="#FB4100" font-size="9" font-family="Poppins" font-weight="700" letter-spacing="1">VALUE</text>
+
+      <!-- Gap shading -->
+      <path d="M80,235 Q150,260 190,280 Q230,300 270,275 L270,170 L180,225 L80,265 Z" fill="rgba(251,65,0,0.05)"/>
+      <path d="M270,275 Q330,220 390,145 L390,110 L280,170 L270,170 Z" fill="rgba(1,169,219,0.04)"/>
+
+      <!-- WE ARE HERE marker -->
+      <g class="j-marker">
+        <line x1="210" y1="40" x2="210" y2="290" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+        <rect x="168" y="25" width="84" height="22" rx="11" fill="rgba(251,65,0,0.15)" stroke="rgba(251,65,0,0.4)" stroke-width="1"/>
+        <text x="210" y="40" fill="#FB4100" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="700" letter-spacing="1">WE ARE HERE</text>
+        <circle cx="210" cy="278" r="6" fill="#FB4100">
+          <animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- Phase labels -->
+      <text x="145" y="310" fill="rgba(251,65,0,0.4)" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="700" letter-spacing="1">PHASE 1: THE DIP</text>
+      <text x="380" y="310" fill="rgba(1,169,219,0.4)" font-size="9" font-family="Poppins" text-anchor="middle" font-weight="700" letter-spacing="1">PHASE 2: BREAKTHROUGH</text>
+    </svg>
+
+    <div class="j-curve-text">
+      <h3>Investment &ne; Value (Yet)</h3>
+      <p>JP Morgan estimates <strong style="color:var(--orange)">$650B in new annual revenue</strong> is needed for a 10% return on current AI infrastructure spend. We're not there yet &mdash; but history says breakthroughs come after the dip.</p>
+
+      <div class="j-phase phase-1">
+        <div class="phase-label">Phase 1 &mdash; The Dip (Now)</div>
+        <div class="phase-desc">Heavy investment, legacy workstream automation producing modest gains. Investment outpaces returns. Process reinvention has barely begun.</div>
+      </div>
+
+      <div class="j-phase phase-2">
+        <div class="phase-label">Phase 2 &mdash; Breakthrough (Emerging)</div>
+        <div class="phase-desc">New revenue streams, business model reinvention, compound AI value. This is where the $4.5T opportunity lives &mdash; but it's "not yet visible" for most enterprises.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPOSURE ACCELERATION ═══ -->
+<section id="exposure">
+  <div class="fade-up">
+    <div class="section-label">Occupation Impact</div>
+    <div class="section-title">The Roles That Got Hit Hardest</div>
+    <p class="section-desc">
+      Cognizant re-analyzed 18,000 tasks across 1,000 professions. The biggest jumps? Roles previously considered "safe" from AI.
+    </p>
+  </div>
+
+  <div class="donut-section fade-up">
+    <div class="donut-item">
+      <svg width="180" height="180" viewBox="0 0 180 180">
+        <circle cx="90" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="16"/>
+        <circle class="donut-circle-bg" cx="90" cy="90" r="70" fill="none" stroke="var(--orange)" stroke-width="16"
+          stroke-dasharray="0 440" stroke-dashoffset="-110" stroke-linecap="round" opacity="0.3" data-target="251"/>
+        <text x="90" y="82" fill="var(--text)" font-size="30" font-family="Poppins" font-weight="800" text-anchor="middle">57%</text>
+        <text x="90" y="105" fill="var(--text-muted)" font-size="10" font-family="Poppins" text-anchor="middle" font-weight="500" letter-spacing="0.5">NON-AUTOMATABLE</text>
+      </svg>
+      <div class="donut-label">2023 Assessment</div>
+    </div>
+
+    <div class="donut-arrow">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <span class="arrow-text">-25pp</span>
+    </div>
+
+    <div class="donut-item">
+      <svg width="180" height="180" viewBox="0 0 180 180">
+        <circle cx="90" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="16"/>
+        <circle class="donut-circle-bg" cx="90" cy="90" r="70" fill="none" stroke="var(--cyan)" stroke-width="16"
+          stroke-dasharray="0 440" stroke-dashoffset="-110" stroke-linecap="round" data-target="141"/>
+        <text x="90" y="82" fill="var(--text)" font-size="30" font-family="Poppins" font-weight="800" text-anchor="middle">32%</text>
+        <text x="90" y="105" fill="var(--text-muted)" font-size="10" font-family="Poppins" text-anchor="middle" font-weight="500" letter-spacing="0.5">NON-AUTOMATABLE</text>
+      </svg>
+      <div class="donut-label">2026 Assessment</div>
+    </div>
+  </div>
+
+  <div class="exposure-controls fade-up">
+    <button class="exposure-btn active" data-sort="change">Sort by Change</button>
+    <button class="exposure-btn" data-sort="score">Sort by 2026 Score</button>
+    <button class="exposure-btn" data-sort="alpha">Sort A-Z</button>
+  </div>
+
+  <div class="exposure-grid fade-up" id="exposureGrid">
+    <div class="exposure-row header">
+      <span>Occupation</span>
+      <span>Exposure Score (2024 vs 2026)</span>
+      <span>Change</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THREE BREAKTHROUGHS ═══ -->
+<section id="breakthroughs">
+  <div class="fade-up">
+    <div class="section-label">What Changed</div>
+    <div class="section-title">Three Breakthroughs. Three Years.</div>
+    <p class="section-desc">
+      Between 2023 and 2026, three AI capabilities matured faster than anyone expected &mdash; collapsing a decade of projected change into three years.
+    </p>
+  </div>
+
+  <div class="insights-grid fade-up">
+    <div class="insight-card cyan">
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
+      </div>
+      <h3>Multimodality</h3>
+      <p>AI systems now interpret images, diagrams, video, and audio &mdash; not just text. Entire industries previously considered safe from automation are now exposed.</p>
+    </div>
+    <div class="insight-card orange">
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Advanced Reasoning</h3>
+      <p>Models now handle complex multi-step logic, legal analysis, medical reasoning, and strategic planning that was completely out of reach in 2023.</p>
+    </div>
+    <div class="insight-card cyan">
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/></svg>
+      </div>
+      <h3>Agentic AI</h3>
+      <p>Agent-driven systems complete complex, multi-step workflows with minimal human intervention &mdash; shifting AI from "tool" to "autonomous worker."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ KEY INSIGHTS ═══ -->
+<section>
+  <div class="fade-up">
+    <div class="section-label">Critical Findings</div>
+    <div class="section-title">What Leaders Need to Know</div>
+  </div>
+
+  <div class="insights-grid fade-up">
+    <div class="insight-card orange">
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3>Manual Labor Isn't Safe</h3>
+      <p>Contrary to earlier assumptions, physical labor faces faster-than-expected impact through robotics, multimodal sensing, and agentic coordination.</p>
+    </div>
+    <div class="insight-card cyan">
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <h3>Knowledge Work Plateauing</h3>
+      <p>Computer and math roles have stabilized, suggesting AI has reached limits in some knowledge areas. The frontier has shifted to previously "safe" fields.</p>
+    </div>
+    <div class="insight-card orange">
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Humans Remain Essential</h3>
+      <p>40%+ of management, financial, and admin tasks cannot be automated. Human judgment, creativity, and relationships remain irreplaceable.</p>
+    </div>
+    <div class="insight-card cyan">
+      <div class="insight-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Process Reinvention Required</h3>
+      <p>"You can't apply this technology on existing old processes." Enterprises need wholesale reinvention &mdash; not just AI deployment on top of legacy workflows.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HISTORICAL PARALLELS ═══ -->
+<section>
+  <div class="fade-up">
+    <div class="section-label">Historical Context</div>
+    <div class="section-title">This Has Happened Before</div>
+    <p class="section-desc">
+      Every transformative technology follows the same pattern. Infrastructure outpaces adoption. The gap feels like a crisis &mdash; then becomes the biggest opportunity.
+    </p>
+  </div>
+
+  <div class="timeline fade-up">
+    <div class="timeline-item">
+      <div class="era">1880s-1920s</div>
+      <h4>Electrification</h4>
+      <p>Massive investment in power grids. Factories took 30+ years to redesign workflows around electric motors instead of steam-belt systems.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="era">1920s</div>
+      <h4>Radio Broadcasting</h4>
+      <p>Spectrum was allocated and towers built years before sustainable business models like advertising emerged.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="era">1960s</div>
+      <h4>Mainframe Computing</h4>
+      <p>Companies bought mainframes before understanding how to reorganize business processes around digital data.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="era">1990s</div>
+      <h4>Fiber-Optic Networks</h4>
+      <p>Trillions invested in dark fiber. The dot-com bust followed. Value arrived eventually &mdash; it just took longer than the investment cycle.</p>
+    </div>
+    <div class="timeline-item">
+      <div class="era">2024-2030</div>
+      <h4>Artificial Intelligence</h4>
+      <p>$5T+ in infrastructure by 2030. Need ~$650B in new annual revenue for 10% ROI. The velocity gap at unprecedented scale &mdash; and the biggest opportunity in a generation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ASSESSMENT ═══ -->
+<div class="assessment-section" id="assessment">
+  <div class="quiz-card fade-up">
+    <div class="section-label" style="text-align:center">Quick Assessment</div>
+    <h2>Where Is Your Organization on the J-Curve?</h2>
+    <p class="quiz-sub">Answer honestly. Most organizations are further left than they think.</p>
+
+    <div class="quiz-options" id="quizOptions">
+      <button class="quiz-option" data-answer="a" onclick="selectQuiz(this)">
+        <span class="opt-letter">A</span>
+        <span>We're still evaluating AI pilots &mdash; haven't deployed anything meaningful yet</span>
+      </button>
+      <button class="quiz-option" data-answer="b" onclick="selectQuiz(this)">
+        <span class="opt-letter">B</span>
+        <span>We've deployed some AI tools, but ROI is unclear and adoption is spotty</span>
+      </button>
+      <button class="quiz-option" data-answer="c" onclick="selectQuiz(this)">
+        <span class="opt-letter">C</span>
+        <span>We're seeing some productivity gains, but the AI strategy feels reactive, not strategic</span>
+      </button>
+      <button class="quiz-option" data-answer="d" onclick="selectQuiz(this)">
+        <span class="opt-letter">D</span>
+        <span>We're actively redesigning processes around AI and measuring business outcomes</span>
+      </button>
+    </div>
+
+    <div class="quiz-result dip" id="resultA">
+      <h4>You're at the Start of the Dip</h4>
+      <p>You're in Phase 1 of the J-Curve &mdash; which is exactly where 38% of organizations are, according to McKinsey. The good news: you have the opportunity to skip common mistakes. The key is <strong>don't just deploy technology &mdash; redesign how work happens</strong>. That's the single biggest predictor of ROI.</p>
+    </div>
+    <div class="quiz-result dip" id="resultB">
+      <h4>You're Deep in the J-Curve Dip</h4>
+      <p>This is the most common &mdash; and most dangerous &mdash; position. You've invested, but the gap between spend and returns is widening. Cognizant's research shows 93% of jobs are already impacted, but without <strong>process reinvention and strategic governance</strong>, those impacts don't translate to value. You need a command center view, not more tools.</p>
+    </div>
+    <div class="quiz-result dip" id="resultC">
+      <h4>You're Approaching the Inflection Point</h4>
+      <p>You're seeing early returns but feeling the pull of reactive decision-making. This is where the velocity gap bites hardest &mdash; the technology is moving faster than your ability to govern it strategically. The bridge from "some gains" to "breakthrough" requires <strong>cross-domain visibility</strong> (systems, process, data, team, financials) and a decision intelligence layer.</p>
+    </div>
+    <div class="quiz-result bridge" id="resultD">
+      <h4>You're Bridging the Gap</h4>
+      <p>You're in the minority &mdash; only 23% of organizations are scaling agents, and fewer still are measuring business outcomes. Your challenge now is <strong>sustaining and scaling</strong> what works while the landscape shifts beneath you. The organizations that win will have continuous monitoring, peer benchmarking, and the ability to adapt faster than the 9% annual acceleration in AI exposure.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CLOSING STAT ═══ -->
+<div class="closing-section fade-up">
+  <div class="big-stat"><span class="counter" data-target="9" data-suffix="%" data-decimals="0">0%</span></div>
+  <div class="big-label">Annual exposure score increase &mdash; up from 2% projected</div>
+
+  <div class="quote">
+    "The disruption is more extensive &mdash; and swift &mdash; than we anticipated just three years ago. The organizations that bridge the velocity gap first will define the next era of business."
+  </div>
+  <div class="quote-attr">&mdash; Cognizant, New Work New World 2026</div>
+</div>
+
+<!-- ═══ HELM CTA ═══ -->
+<div class="helm-section" id="helm">
+  <div class="fade-up">
+    <div class="section-label" style="text-align:center">The Bridge</div>
+    <h2>Bridging the Gap Requires<br><span class="accent">Decision Intelligence</span></h2>
+    <p class="helm-sub">
+      Technology alone won't close the velocity gap. Leaders need a command center that shows what they can't see &mdash; across systems, process, data, team, and financials &mdash; so they can act on what matters.
+    </p>
+  </div>
+
+  <div class="helm-pillars fade-up">
+    <div class="pillar">
+      <div class="pillar-icon">&#9878;</div>
+      <h4>Understand</h4>
+      <p>Map current operations, discover blind spots, and establish your baseline across every domain that matters.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#9881;</div>
+      <h4>Design</h4>
+      <p>Define your target state, model scenarios, and create transformation roadmaps grounded in data &mdash; not guesswork.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-icon">&#9670;</div>
+      <h4>Command</h4>
+      <p>Continuously monitor, measure, and improve with an AI-native executive command center built for the velocity gap era.</p>
+    </div>
+  </div>
+
+  <div class="cta-buttons fade-up">
+    <a href="https://www.synaptic.build" class="btn-primary" target="_blank">
+      Explore Helm
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="https://www.cognizant.com/us/en/aem-i/ai-and-the-future-of-work-report" class="btn-secondary" target="_blank">
+      Read the Full Report
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ═══ SHARE ═══ -->
+<div class="share-bar">
+  <a class="share-btn" id="shareLinkedIn" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+    Share on LinkedIn
+  </a>
+  <a class="share-btn" id="shareTwitter" href="#" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    Share on X
+  </a>
+  <button class="share-btn" onclick="copyLink()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+    Copy Link
+  </button>
+</div>
+
+<!-- ═══ SOURCE ═══ -->
+<div class="source-footer">
+  <div class="footer-brand">
+    <span class="logo-mark">H</span>
+    Helm by Synaptic Era
+  </div>
+  <p>Research data from <a href="https://www.cognizant.com/us/en/aem-i/ai-and-the-future-of-work-report" target="_blank">Cognizant &mdash; New Work, New World 2026</a></p>
+  <p style="margin-top: 6px;">
+    <a href="https://news.cognizant.com/2026-01-15-AI-Can-Unlock-4-5-Trillion-in-U-S-Labor-Productivity-Today,-Reveals-Cognizants-Latest-New-Work,-New-World-2026-Report" target="_blank">Press Release</a> &middot;
+    <a href="https://www.constellationr.com/insights/news/cognizant-aims-solve-ai-velocity-gap" target="_blank">Constellation Research Analysis</a>
+  </p>
+  <p style="margin-top: 16px; font-size: 11px; color: var(--text-muted);">
+    &copy; 2026 Synaptic Era, Inc. &middot; <a href="https://www.synaptic.build">synaptic.build</a>
+  </p>
+</div>
+
+<script>
+// ─── Exposure Data ───
+const exposureData = [
+  { name: 'Legal', old: 9, new: 63, change: 54 },
+  { name: 'C-Suite / CEO', old: 25, new: 60, change: 35 },
+  { name: 'Education', old: 11, new: 49, change: 38 },
+  { name: 'Healthcare', old: 10, new: 39, change: 29 },
+  { name: 'Transportation', old: 6, new: 25, change: 19 },
+  { name: 'Construction', old: 4, new: 12, change: 8 }
+];
+
+let currentSort = 'change';
+
+function renderExposure(sortBy) {
+  const sorted = [...exposureData].sort((a, b) => {
+    if (sortBy === 'change') return b.change - a.change;
+    if (sortBy === 'score') return b.new - a.new;
+    return a.name.localeCompare(b.name);
+  });
+
+  const grid = document.getElementById('exposureGrid');
+  // Keep header
+  const header = grid.querySelector('.header');
+  grid.innerHTML = '';
+  grid.appendChild(header);
+
+  sorted.forEach((d, i) => {
+    const row = document.createElement('div');
+    row.className = 'exposure-row';
+    row.dataset.old = d.old;
+    row.dataset.new = d.new;
+    row.innerHTML = `
+      <span class="occ-name">${d.name}</span>
+      <div class="bar-container">
+        <div class="bar-old" style="width: 0"></div>
+        <div class="bar-new" style="width: 0">${d.new}%</div>
+        <div class="bar-tooltip">${d.old}% (2024) &rarr; ${d.new}% (2026)</div>
+      </div>
+      <span class="change-badge">+${d.change}pp</span>
+    `;
+    grid.appendChild(row);
+
+    // Animate
+    setTimeout(() => {
+      row.querySelector('.bar-old').style.width = d.old + '%';
+      row.querySelector('.bar-new').style.width = d.new + '%';
+    }, 100 + i * 120);
+  });
+}
+
+// Sort buttons
+document.querySelectorAll('.exposure-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.exposure-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderExposure(btn.dataset.sort);
+  });
+});
+
+// ─── Counter Animation ───
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const decimals = parseInt(el.dataset.decimals) || 0;
+  const duration = 2000;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 4); // ease-out quart
+    const current = target * eased;
+    el.textContent = prefix + current.toFixed(decimals) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
+}
+
+// ─── Scroll Progress ───
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY;
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('scrollProgress').style.width = (scrolled / total * 100) + '%';
+
+  // Show nav after hero
+  const nav = document.getElementById('topNav');
+  if (scrolled > window.innerHeight * 0.5) {
+    nav.classList.add('visible');
+  } else {
+    nav.classList.remove('visible');
+  }
+});
+
+// ─── Intersection Observer ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+
+      // Progress bars
+      const infraBar = entry.target.querySelector('#infraBar');
+      const valueBar = entry.target.querySelector('#valueBar');
+      if (infraBar) setTimeout(() => infraBar.classList.add('animate'), 300);
+      if (valueBar) setTimeout(() => valueBar.classList.add('animate'), 300);
+
+      // Counters
+      entry.target.querySelectorAll('.counter').forEach(c => {
+        if (!c.dataset.animated) {
+          c.dataset.animated = 'true';
+          animateCounter(c);
+        }
+      });
+
+      // J-Curve paths
+      entry.target.querySelectorAll('.j-curve-path').forEach(p => p.classList.add('animate'));
+      entry.target.querySelectorAll('.j-invest-path').forEach(p => p.classList.add('animate'));
+      entry.target.querySelectorAll('.j-marker').forEach(p => p.classList.add('animate'));
+
+      // Exposure bars
+      const rows = entry.target.querySelectorAll('.exposure-row[data-old]');
+      rows.forEach((row, i) => {
+        setTimeout(() => {
+          row.querySelector('.bar-old').style.width = row.dataset.old + '%';
+          row.querySelector('.bar-new').style.width = row.dataset.new + '%';
+        }, 120 * i);
+      });
+
+      // Donut circles
+      entry.target.querySelectorAll('.donut-circle-bg').forEach(c => {
+        const target = c.dataset.target;
+        if (target) {
+          setTimeout(() => {
+            c.style.strokeDasharray = target + ' ' + (440 - parseInt(target));
+          }, 300);
+        }
+      });
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up, .hero').forEach(el => observer.observe(el));
+
+// ─── Initial Render ───
+renderExposure('change');
+
+// Also observe hero counters immediately
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.counter').forEach(c => {
+        if (!c.dataset.animated) {
+          c.dataset.animated = 'true';
+          setTimeout(() => animateCounter(c), 600);
+        }
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.hero').forEach(el => heroObserver.observe(el));
+
+// ─── Particles ───
+(function createParticles() {
+  const field = document.getElementById('particles');
+  const colors = ['var(--cyan)', 'var(--orange)', 'rgba(255,255,255,0.3)'];
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.animationDelay = Math.random() * 8 + 's';
+    p.style.animationDuration = (6 + Math.random() * 6) + 's';
+    field.appendChild(p);
+  }
+})();
+
+// ─── Quiz ───
+function selectQuiz(btn) {
+  document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+  btn.classList.add('selected');
+
+  document.querySelectorAll('.quiz-result').forEach(r => r.classList.remove('show'));
+  const answer = btn.dataset.answer.toUpperCase();
+  const result = document.getElementById('result' + answer);
+  if (result) result.classList.add('show');
+}
+
+// ─── Social Share ───
+const pageUrl = encodeURIComponent(window.location.href);
+const shareText = encodeURIComponent("$4.5T in US labor value is shifting 6 years ahead of schedule. 93% of jobs impacted today — not 2032. The AI Velocity Gap is real.\n\nExplore the interactive report:");
+
+document.getElementById('shareLinkedIn').href =
+  `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+
+document.getElementById('shareTwitter').href =
+  `https://twitter.com/intent/tweet?text=${shareText}&url=${pageUrl}`;
+
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = event.target.closest('.share-btn');
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+    btn.style.color = 'var(--cyan)';
+    btn.style.borderColor = 'var(--cyan)';
+    setTimeout(() => { btn.innerHTML = orig; btn.style.color = ''; btn.style.borderColor = ''; }, 2000);
+  });
+}
+
+// ─── Smooth scroll for nav links ───
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>

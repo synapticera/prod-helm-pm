@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Visual — AI Velocity Gap</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #1a1a2e;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .label {
+    text-align: center;
+    color: #8a9bb5;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: -20px;
+  }
+
+  /* ─── Card 1: Main Hero Image (1200x627 - standard LinkedIn) ─── */
+  .card-hero {
+    width: 1200px;
+    height: 627px;
+    background: #0a1225;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 80px;
+  }
+
+  .card-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 25% 20%, rgba(1,169,219,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 75% 80%, rgba(251,65,0,0.08) 0%, transparent 50%);
+  }
+
+  .card-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #01A9DB, #FB4100);
+  }
+
+  .card-hero * { position: relative; z-index: 1; }
+
+  .hero-top-bar {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .hero-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-brand .mark {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #01A9DB, #FB4100);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .hero-brand span {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e8edf3;
+  }
+
+  .hero-source {
+    font-size: 11px;
+    color: #5a6d85;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    border: 1px solid rgba(1,169,219,0.2);
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #01A9DB;
+    margin-bottom: 24px;
+    background: rgba(1,169,219,0.04);
+  }
+
+  .hero-badge .dot {
+    width: 6px;
+    height: 6px;
+    background: #FB4100;
+    border-radius: 50%;
+  }
+
+  .card-hero h1 {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #e8edf3;
+    margin: 0 0 20px;
+    letter-spacing: -1px;
+  }
+
+  .card-hero h1 .accent {
+    background: linear-gradient(135deg, #01A9DB, #01dbb5 50%, #FB4100);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    color: #8a9bb5;
+    font-weight: 300;
+    margin-bottom: 40px;
+    max-width: 700px;
+    line-height: 1.6;
+  }
+
+  .hero-stats-row {
+    display: flex;
+    gap: 56px;
+    justify-content: center;
+  }
+
+  .h-stat {
+    text-align: center;
+  }
+
+  .h-stat .val {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .h-stat .val.cyan { color: #01A9DB; }
+  .h-stat .val.orange { color: #FB4100; }
+
+  .h-stat .lbl {
+    font-size: 10px;
+    color: #5a6d85;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  .hero-bottom-bar {
+    position: absolute;
+    bottom: 28px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .hero-url {
+    font-size: 12px;
+    color: #01A9DB;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-arrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #8a9bb5;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ─── Card 2: Carousel Slide - The Gap ─── */
+  .card-carousel {
+    width: 1080px;
+    height: 1080px;
+    background: #0a1225;
+    overflow: hidden;
+    position: relative;
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-carousel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 30%, rgba(1,169,219,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(251,65,0,0.04) 0%, transparent 50%);
+  }
+
+  .card-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #01A9DB, #FB4100);
+  }
+
+  .card-carousel * { position: relative; z-index: 1; }
+
+  .c-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  .c-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .c-brand .mark {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #01A9DB, #FB4100);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .c-brand span {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e8edf3;
+  }
+
+  .c-page {
+    font-size: 13px;
+    color: #5a6d85;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .c-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #01A9DB;
+    margin-bottom: 16px;
+  }
+
+  .c-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #e8edf3;
+    margin-bottom: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+
+  .c-desc {
+    font-size: 18px;
+    color: #8a9bb5;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 800px;
+  }
+
+  .gap-bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .g-lane {
+    padding: 28px 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(1,169,219,0.12);
+    background: rgba(255,255,255,0.025);
+  }
+
+  .g-lane-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .g-lane-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .g-lane-sub {
+    font-size: 12px;
+    color: #5a6d85;
+    font-weight: 500;
+  }
+
+  .g-bar-track {
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.02);
+    overflow: hidden;
+  }
+
+  .g-bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .g-bar-fill.cyan {
+    width: 85%;
+    background: linear-gradient(90deg, #01A9DB, #01dbb5);
+    color: #07253D;
+  }
+
+  .g-bar-fill.orange {
+    width: 30%;
+    background: linear-gradient(90deg, #FB4100, #ff7733);
+    color: #fff;
+  }
+
+  .g-gap-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .g-gap-line {
+    flex: 1;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, #FB4100, #FB4100 6px, transparent 6px, transparent 12px);
+    opacity: 0.3;
+  }
+
+  .g-gap-text {
+    padding: 10px 28px;
+    border: 2px solid rgba(251,65,0,0.4);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #FB4100;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(251,65,0,0.05);
+    white-space: nowrap;
+  }
+
+  .c-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+  }
+
+  .c-source {
+    font-size: 11px;
+    color: #5a6d85;
+    font-weight: 500;
+  }
+
+  .c-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #01A9DB;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* ─── Card 3: Carousel Slide - J-Curve ─── */
+  .j-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .j-stats-row {
+    display: flex;
+    gap: 40px;
+    margin-top: 32px;
+  }
+
+  .j-stat-card {
+    flex: 1;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid rgba(1,169,219,0.12);
+    background: rgba(255,255,255,0.025);
+  }
+
+  .j-stat-val {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+
+  .j-stat-val.cyan { color: #01A9DB; }
+  .j-stat-val.orange { color: #FB4100; }
+
+  .j-stat-label {
+    font-size: 12px;
+    color: #8a9bb5;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  /* ─── Card 4: Exposure Scores ─── */
+  .exp-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .exp-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 90px;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(1,169,219,0.1);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .exp-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e8edf3;
+  }
+
+  .exp-bar-track {
+    height: 28px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .exp-bar-old {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: rgba(1,169,219,0.15);
+    border-radius: 6px;
+  }
+
+  .exp-bar-new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #01A9DB, #FB4100);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  .exp-change {
+    font-size: 15px;
+    font-weight: 800;
+    color: #FB4100;
+    text-align: right;
+  }
+
+  /* ─── Instructions ─── */
+  .instructions {
+    max-width: 800px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(1,169,219,0.15);
+    border-radius: 16px;
+    padding: 40px;
+    color: #e8edf3;
+    margin-top: 40px;
+  }
+
+  .instructions h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #01A9DB;
+  }
+
+  .instructions p {
+    font-size: 14px;
+    color: #8a9bb5;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .instructions code {
+    background: rgba(1,169,219,0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #01A9DB;
+  }
+
+  .instructions ol {
+    color: #8a9bb5;
+    font-size: 14px;
+    line-height: 2;
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO IMAGE (1200x627) ═══ -->
+<div class="label">Main LinkedIn Post Image (1200 x 627px) &mdash; Screenshot this</div>
+<div class="card-hero">
+  <div class="hero-top-bar">
+    <div class="hero-brand">
+      <div class="mark">H</div>
+      <span>Helm by Synaptic Era</span>
+    </div>
+    <div class="hero-source">Based on Cognizant Research, Jan 2026</div>
+  </div>
+
+  <div class="hero-badge">
+    <span class="dot"></span>
+    Interactive Research Report
+  </div>
+  <h1>The <span class="accent">AI Velocity Gap</span></h1>
+  <p class="hero-subtitle">
+    Infrastructure is sprinting. Enterprise value is walking.<br>
+    The gap defines who wins and who gets left behind.
+  </p>
+  <div class="hero-stats-row">
+    <div class="h-stat">
+      <div class="val cyan">$4.5T</div>
+      <div class="lbl">US Labor Value Shift</div>
+    </div>
+    <div class="h-stat">
+      <div class="val orange">93%</div>
+      <div class="lbl">Jobs Impacted Today</div>
+    </div>
+    <div class="h-stat">
+      <div class="val cyan">6yr</div>
+      <div class="lbl">Ahead of Schedule</div>
+    </div>
+    <div class="h-stat">
+      <div class="val orange">$5T+</div>
+      <div class="lbl">Infra Spend by 2030</div>
+    </div>
+  </div>
+
+  <div class="hero-bottom-bar">
+    <div class="hero-url">helm.synaptic.build/velocity-gap</div>
+    <div class="hero-arrow">
+      Explore the Interactive Report
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#01A9DB" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CAROUSEL SLIDE 1: The Gap (1080x1080) ═══ -->
+<div class="label">Carousel Slide 1 &mdash; The Velocity Gap (1080 x 1080)</div>
+<div class="card-carousel">
+  <div class="c-top">
+    <div class="c-brand">
+      <div class="mark">H</div>
+      <span>Helm</span>
+    </div>
+    <div class="c-page">1 / 4</div>
+  </div>
+
+  <div class="c-label">The Problem</div>
+  <div class="c-title">Two Clocks.<br>Different Speeds.</div>
+  <div class="c-desc">AI infrastructure innovates every 6-12 months. Enterprise value realization takes 3-5 years. The gap between them is the defining challenge.</div>
+
+  <div class="gap-bars">
+    <div class="g-lane">
+      <div class="g-lane-header">
+        <span class="g-lane-label" style="color:#01A9DB">AI Capability & Investment</span>
+        <span class="g-lane-sub">6-12 month cycles &bull; $5T+ by 2030</span>
+      </div>
+      <div class="g-bar-track">
+        <div class="g-bar-fill cyan">$5T+ Invested</div>
+      </div>
+    </div>
+
+    <div class="g-gap-badge">
+      <div class="g-gap-line"></div>
+      <div class="g-gap-text">The Velocity Gap</div>
+      <div class="g-gap-line"></div>
+    </div>
+
+    <div class="g-lane">
+      <div class="g-lane-header">
+        <span class="g-lane-label" style="color:#FB4100">Enterprise Value Realization</span>
+        <span class="g-lane-sub">3-5 year timelines &bull; Only 39% see EBIT impact</span>
+      </div>
+      <div class="g-bar-track">
+        <div class="g-bar-fill orange">39% with ROI</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-bottom">
+    <div class="c-source">Source: Cognizant New Work, New World 2026 &bull; McKinsey State of AI 2025</div>
+    <div class="c-cta">
+      Explore the full report
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#01A9DB" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CAROUSEL SLIDE 2: J-Curve (1080x1080) ═══ -->
+<div class="label">Carousel Slide 2 &mdash; The J-Curve (1080 x 1080)</div>
+<div class="card-carousel">
+  <div class="c-top">
+    <div class="c-brand">
+      <div class="mark">H</div>
+      <span>Helm</span>
+    </div>
+    <div class="c-page">2 / 4</div>
+  </div>
+
+  <div class="c-label">The Pattern</div>
+  <div class="c-title">The Elongated J-Curve</div>
+  <div class="c-desc">Every transformative technology follows this curve. We're in the dip right now &mdash; and JP Morgan says we need $650B in new annual revenue just for a 10% return.</div>
+
+  <div class="j-content">
+    <svg viewBox="0 0 920 360" fill="none" style="width:100%;max-width:920px;">
+      <!-- Grid -->
+      <line x1="80" y1="40" x2="80" y2="280" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="80" y1="280" x2="860" y2="280" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="80" y1="200" x2="860" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="80" y1="120" x2="860" y2="120" stroke="rgba(255,255,255,0.03)" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+      <!-- Investment line -->
+      <path d="M100,260 L280,210 L480,150 L680,90 L840,50" stroke="#01A9DB" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.4"/>
+      <text x="842" y="44" fill="#01A9DB" font-size="11" font-family="Poppins" font-weight="700">INVESTMENT</text>
+
+      <!-- J-Curve -->
+      <path d="M100,230 Q200,260 300,275 Q400,295 480,260 Q600,190 720,120 L840,60" stroke="#FB4100" stroke-width="4" fill="none"/>
+      <text x="842" y="55" fill="#FB4100" font-size="11" font-family="Poppins" font-weight="700">VALUE</text>
+
+      <!-- Gap shading -->
+      <path d="M100,230 Q200,260 300,275 Q400,295 480,260 L480,150 L280,210 L100,260 Z" fill="rgba(251,65,0,0.04)"/>
+
+      <!-- Marker -->
+      <line x1="340" y1="40" x2="340" y2="280" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,3"/>
+      <rect x="290" y="22" width="100" height="24" rx="12" fill="rgba(251,65,0,0.12)" stroke="rgba(251,65,0,0.4)" stroke-width="1"/>
+      <text x="340" y="40" fill="#FB4100" font-size="10" font-family="Poppins" text-anchor="middle" font-weight="700" letter-spacing="1">WE ARE HERE</text>
+      <circle cx="340" cy="273" r="7" fill="#FB4100"/>
+
+      <!-- Phase labels -->
+      <text x="210" y="308" fill="rgba(251,65,0,0.35)" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="700" letter-spacing="1">PHASE 1: THE DIP</text>
+      <text x="660" y="308" fill="rgba(1,169,219,0.35)" font-size="11" font-family="Poppins" text-anchor="middle" font-weight="700" letter-spacing="1">PHASE 2: BREAKTHROUGH</text>
+    </svg>
+
+    <div class="j-stats-row">
+      <div class="j-stat-card">
+        <div class="j-stat-val orange">$650B</div>
+        <div class="j-stat-label">Annual revenue needed for 10% ROI on AI infrastructure (JP Morgan)</div>
+      </div>
+      <div class="j-stat-card">
+        <div class="j-stat-val cyan">$4.5T</div>
+        <div class="j-stat-label">In US labor productivity value &mdash; happening now, not 2032</div>
+      </div>
+      <div class="j-stat-card">
+        <div class="j-stat-val orange">6yr</div>
+        <div class="j-stat-label">Ahead of schedule vs original Cognizant projections</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-bottom">
+    <div class="c-source">Source: Cognizant New Work, New World 2026 &bull; JP Morgan estimates</div>
+    <div class="c-cta">
+      helm.synaptic.build/velocity-gap
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#01A9DB" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CAROUSEL SLIDE 3: Exposure Scores (1080x1080) ═══ -->
+<div class="label">Carousel Slide 3 &mdash; Exposure Scores (1080 x 1080)</div>
+<div class="card-carousel">
+  <div class="c-top">
+    <div class="c-brand">
+      <div class="mark">H</div>
+      <span>Helm</span>
+    </div>
+    <div class="c-page">3 / 4</div>
+  </div>
+
+  <div class="c-label">The Acceleration</div>
+  <div class="c-title">No Role Is Safe Anymore</div>
+  <div class="c-desc">18,000 tasks re-analyzed across 1,000 professions. The biggest jumps are in roles previously considered untouchable by AI.</div>
+
+  <div class="exp-grid">
+    <div class="exp-row">
+      <span class="exp-name">Legal</span>
+      <div class="exp-bar-track">
+        <div class="exp-bar-old" style="width:9%"></div>
+        <div class="exp-bar-new" style="width:63%">63%</div>
+      </div>
+      <span class="exp-change">+54pp</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-name">C-Suite / CEO</span>
+      <div class="exp-bar-track">
+        <div class="exp-bar-old" style="width:25%"></div>
+        <div class="exp-bar-new" style="width:60%">60%</div>
+      </div>
+      <span class="exp-change">+35pp</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-name">Education</span>
+      <div class="exp-bar-track">
+        <div class="exp-bar-old" style="width:11%"></div>
+        <div class="exp-bar-new" style="width:49%">49%</div>
+      </div>
+      <span class="exp-change">+38pp</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-name">Healthcare</span>
+      <div class="exp-bar-track">
+        <div class="exp-bar-old" style="width:10%"></div>
+        <div class="exp-bar-new" style="width:39%">39%</div>
+      </div>
+      <span class="exp-change">+29pp</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-name">Transportation</span>
+      <div class="exp-bar-track">
+        <div class="exp-bar-old" style="width:6%"></div>
+        <div class="exp-bar-new" style="width:25%">25%</div>
+      </div>
+      <span class="exp-change">+19pp</span>
+    </div>
+    <div class="exp-row">
+      <span class="exp-name">Construction</span>
+      <div class="exp-bar-track">
+        <div class="exp-bar-old" style="width:4%"></div>
+        <div class="exp-bar-new" style="width:12%">12%</div>
+      </div>
+      <span class="exp-change">+8pp</span>
+    </div>
+  </div>
+
+  <div class="c-bottom">
+    <div class="c-source">Source: Cognizant analysis of 18,000 tasks across 1,000 professions (2026 vs 2024)</div>
+    <div class="c-cta">
+      Explore the interactive report
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#01A9DB" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CAROUSEL SLIDE 4: CTA (1080x1080) ═══ -->
+<div class="label">Carousel Slide 4 &mdash; Call to Action (1080 x 1080)</div>
+<div class="card-carousel" style="justify-content:center;align-items:center;text-align:center;">
+  <div class="c-top">
+    <div class="c-brand">
+      <div class="mark">H</div>
+      <span>Helm</span>
+    </div>
+    <div class="c-page">4 / 4</div>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;max-width:800px;margin:0 auto;">
+    <div class="c-label" style="text-align:center">The Bridge</div>
+    <div class="c-title" style="text-align:center;">Bridging the Gap Requires<br><span style="background:linear-gradient(135deg,#01A9DB,#FB4100);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Decision Intelligence</span></div>
+    <div class="c-desc" style="text-align:center;max-width:680px;">
+      Technology alone won't close the velocity gap. Leaders need a command center that connects systems, process, data, team, and financials &mdash; so they can act on what matters.
+    </div>
+
+    <div style="display:flex;gap:28px;margin:24px 0 48px;">
+      <div style="text-align:center;padding:28px 24px;border-radius:16px;border:1px solid rgba(1,169,219,0.12);background:rgba(255,255,255,0.025);width:200px;">
+        <div style="font-size:28px;margin-bottom:12px;">&#9878;</div>
+        <div style="font-size:16px;font-weight:700;color:#e8edf3;margin-bottom:6px;">Understand</div>
+        <div style="font-size:12px;color:#8a9bb5;font-weight:300;line-height:1.5;">Map operations. Discover blind spots. Establish baseline.</div>
+      </div>
+      <div style="text-align:center;padding:28px 24px;border-radius:16px;border:1px solid rgba(1,169,219,0.12);background:rgba(255,255,255,0.025);width:200px;">
+        <div style="font-size:28px;margin-bottom:12px;">&#9881;</div>
+        <div style="font-size:16px;font-weight:700;color:#e8edf3;margin-bottom:6px;">Design</div>
+        <div style="font-size:12px;color:#8a9bb5;font-weight:300;line-height:1.5;">Define target state. Model scenarios. Create roadmaps.</div>
+      </div>
+      <div style="text-align:center;padding:28px 24px;border-radius:16px;border:1px solid rgba(1,169,219,0.12);background:rgba(255,255,255,0.025);width:200px;">
+        <div style="font-size:28px;margin-bottom:12px;">&#9670;</div>
+        <div style="font-size:16px;font-weight:700;color:#e8edf3;margin-bottom:6px;">Command</div>
+        <div style="font-size:12px;color:#8a9bb5;font-weight:300;line-height:1.5;">Monitor. Measure. Improve. Continuously.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <div style="padding:18px 48px;background:#01A9DB;border-radius:12px;font-size:16px;font-weight:700;color:#fff;letter-spacing:0.5px;">Explore the Interactive Report</div>
+      <div style="font-size:14px;color:#01A9DB;font-weight:600;">helm.synaptic.build/velocity-gap</div>
+    </div>
+  </div>
+
+  <div class="c-bottom" style="width:100%;">
+    <div class="c-source">&copy; 2026 Synaptic Era, Inc. &bull; synaptic.build</div>
+    <div class="c-cta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#01A9DB" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INSTRUCTIONS ═══ -->
+<div class="instructions">
+  <h2>How to Use These Visuals</h2>
+  <p>These are pixel-perfect LinkedIn visuals. To capture them:</p>
+  <ol>
+    <li>Open this file in Chrome at <code>100% zoom</code></li>
+    <li>Use <strong>Chrome DevTools</strong> (F12) > click the device toolbar icon</li>
+    <li>For the hero image: Set viewport to <code>1200 x 627</code> and screenshot the card</li>
+    <li>For carousel slides: Set viewport to <code>1080 x 1080</code> and screenshot each card</li>
+    <li>Or right-click > <strong>Inspect</strong> any card, then right-click the element > <strong>Capture node screenshot</strong></li>
+  </ol>
+  <p style="margin-top:20px;color:#01A9DB;font-weight:600;">Tip: For the best quality, use "Capture node screenshot" from DevTools Inspector.</p>
+</div>
+
+</body>
+</html>
